@@ -1,0 +1,259 @@
+{
+  "ticker": "AAPL",
+  "reportDate": "Unavailable",
+  "videoTitle": "AAPL Stock Report",
+  "durationSeconds": 61.0,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Hello, fellow traders! Today, we're exploring Apple Inc., ticker AAPL, with a current rating of \"Wait\" due to mixed signals.\n\nApple's stock is priced at $311.28, showing slight upward movement as it flirts with its 52-week high.\n\nThe stock is enjoying a strong bullish trend, driven by positive technical indicators and recent cloud initiatives.\n\nHowever, trading volume is below average, suggesting a lack of strong conviction from investors.\n\nWe're seeing resistance near the 52-week high, so it's crucial to watch for a consolidation or breakout.\n\nTechnically, the stock is above key moving averages, but the MACD is giving mixed signals, keeping us cautious.\n\nFor tactical traders, the entry zone is between $300.41 and $305.03, with targets at $320 and $325.\n\nShort-selling risk is low, but be cautious of potential breakdowns or unexpected squeezes.\n\nApple's robust fundamentals and strategic initiatives bolster its long-term potential, despite current resistance.\n\nIn summary, patience is key; watch for a pullback or breakout, and always remember, investing carries risks.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 6,
+      "narration": "Hello, fellow traders! Today, we're exploring Apple Inc., ticker AAPL, with a current rating of \"Wait\" due to mixed signals.",
+      "pandaAction": "point",
+      "speechBubbleText": "Exploring AAPL: Wait Rating!",
+      "visualElements": [
+        "Atti Panda with a stock chart background",
+        "Apple logo"
+      ],
+      "chartElements": [
+        "Ticker: AAPL",
+        "Rating: WAIT"
+      ],
+      "animationInstructions": [
+        "Panda points at the Apple logo",
+        "Ticker and rating appear on screen"
+      ],
+      "dataFieldsUsed": [
+        "Ticker",
+        "Rating"
+      ]
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 7,
+      "narration": "Apple's stock is priced at $311.28, showing slight upward movement as it flirts with its 52-week high.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Price: $311.28, near 52-week high!",
+      "visualElements": [
+        "Price tag with $311.28",
+        "52-week high indicator"
+      ],
+      "chartElements": [
+        "Current Price: $311.28"
+      ],
+      "animationInstructions": [
+        "Panda uses magnifying glass on price tag",
+        "52-week high line flashes"
+      ],
+      "dataFieldsUsed": [
+        "Current Price"
+      ]
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 6,
+      "narration": "The stock is enjoying a strong bullish trend, driven by positive technical indicators and recent cloud initiatives.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Bullish trend with tech boosts!",
+      "visualElements": [
+        "Bullish trend arrow",
+        "Cloud icon"
+      ],
+      "chartElements": [
+        "EMA20",
+        "EMA50",
+        "EMA200"
+      ],
+      "animationInstructions": [
+        "Trend arrow moves upwards",
+        "Cloud icon appears with sparkles"
+      ],
+      "dataFieldsUsed": [
+        "Trend",
+        "Catalysts"
+      ]
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 5,
+      "narration": "However, trading volume is below average, suggesting a lack of strong conviction from investors.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Low volume: Investor caution!",
+      "visualElements": [
+        "Volume bar chart",
+        "Caution sign"
+      ],
+      "chartElements": [
+        "Trading Volume"
+      ],
+      "animationInstructions": [
+        "Volume bars appear low",
+        "Caution sign blinks"
+      ],
+      "dataFieldsUsed": [
+        "Trend"
+      ]
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 7,
+      "narration": "We're seeing resistance near the 52-week high, so it's crucial to watch for a consolidation or breakout.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Resistance ahead, watch closely!",
+      "visualElements": [
+        "Resistance line",
+        "Consolidation pattern"
+      ],
+      "chartElements": [
+        "52-week high"
+      ],
+      "animationInstructions": [
+        "Resistance line flashes",
+        "Consolidation pattern forms"
+      ],
+      "dataFieldsUsed": [
+        "Trend"
+      ]
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 6,
+      "narration": "Technically, the stock is above key moving averages, but the MACD is giving mixed signals, keeping us cautious.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Mixed signals: Stay cautious!",
+      "visualElements": [
+        "Moving averages lines",
+        "MACD indicator"
+      ],
+      "chartElements": [
+        "EMA20",
+        "EMA50",
+        "EMA200",
+        "MACD"
+      ],
+      "animationInstructions": [
+        "Moving averages highlighted",
+        "MACD line fluctuates"
+      ],
+      "dataFieldsUsed": [
+        "Trend"
+      ]
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 7,
+      "narration": "For tactical traders, the entry zone is between $300.41 and $305.03, with targets at $320 and $325.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Entry: $300.41-$305.03, Targets: $320, $325",
+      "visualElements": [
+        "Entry zone bracket",
+        "Target price markers"
+      ],
+      "chartElements": [
+        "Entry Zone",
+        "Targets"
+      ],
+      "animationInstructions": [
+        "Entry zone highlighted",
+        "Target markers pop up"
+      ],
+      "dataFieldsUsed": [
+        "Entry Zone",
+        "Targets"
+      ]
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 5,
+      "narration": "Short-selling risk is low, but be cautious of potential breakdowns or unexpected squeezes.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Low short risk, but stay alert!",
+      "visualElements": [
+        "Short risk meter",
+        "Alert icon"
+      ],
+      "chartElements": [
+        "SI%",
+        "Squeeze Risk"
+      ],
+      "animationInstructions": [
+        "Risk meter shows low",
+        "Alert icon flashes"
+      ],
+      "dataFieldsUsed": [
+        "Short Selling"
+      ]
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 6,
+      "narration": "Apple's robust fundamentals and strategic initiatives bolster its long-term potential, despite current resistance.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Strong fundamentals, bright future!",
+      "visualElements": [
+        "Apple logo",
+        "Growth chart"
+      ],
+      "chartElements": [
+        "EPS",
+        "Market Cap"
+      ],
+      "animationInstructions": [
+        "Growth chart rises",
+        "Apple logo shines"
+      ],
+      "dataFieldsUsed": [
+        "Trend"
+      ]
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 6,
+      "narration": "In summary, patience is key; watch for a pullback or breakout, and always remember, investing carries risks.",
+      "pandaAction": "walk",
+      "speechBubbleText": "Patience pays off, invest wisely!",
+      "visualElements": [
+        "Clock icon",
+        "Risk warning"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "Clock ticks",
+        "Risk warning appears"
+      ],
+      "dataFieldsUsed": []
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

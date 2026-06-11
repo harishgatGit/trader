@@ -1,0 +1,236 @@
+{
+  "ticker": "AMZN",
+  "reportDate": "Unavailable",
+  "videoTitle": "AMZN Stock Report",
+  "durationSeconds": 163.01999999999998,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for Amazon, ticker AMZN. In today's session, we dive into Amazon's current market position and explore whether the recent price action offers a strategic entry point or signals caution for investors.\n\nCurrently, Amazon is trading at $247.66, marking a noticeable 2.45% decline from its previous session. This intraday drop highlights a potential short-term weakness as the stock closed significantly lower despite opening on a higher note.\n\nThe prevailing trend for Amazon is bearish, driven primarily by negative market sentiment. This sentiment is largely influenced by sector-sympathy movements and broader market uncertainties impacting the stock.\n\nAnalyzing the evidence behind this trend, we note that recent news coverage has been predominantly negative. This sentiment is confirmed by a high relative volume on the 4-hour chart, suggesting increased selling pressure as traders react to market cues.\n\nOn the daily trend chart, Amazon faces strong resistance levels, indicating a consolidation phase. Support is evident, but the lack of a breakout suggests the stock is in a holding pattern, awaiting clearer directional signals.\n\nTechnical metrics paint a mixed picture. The bearish MACD and a RSI nearing oversold levels suggest selling pressure, while price action below key moving averages reinforces a cautious stance.\n\nFor tactical traders, the swing entry zone is identified between $199.16 and $204.63, with a stop loss strategically set at $196. Target levels are projected at $256.18 and $274.68, contingent on a shift in current sentiment.\n\nFrom a short trade perspective, caution is advised. While short squeeze risk remains medium, the lack of detailed short interest data necessitates a careful approach, especially given the stock's volatile nature.\n\nWithin the broader ecosystem, sector-specific challenges, particularly in cloud computing and AI, could impact Amazon's stock performance. However, its strong market position and growth potential provide a robust long-term outlook.\n\nIn conclusion, Amazon's mixed technical state and negative news sentiment warrant a \"Watchlist\" rating. Investors should monitor key levels and wait for a more defined entry signal or sentiment shift. As always, exercise due diligence, as market conditions can rapidly change.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 17.07,
+      "narration": "Welcome to the Investing Atti stock analysis for Amazon, ticker AMZN. In today's session, we dive into Amazon's current market position and explore whether the recent price action offers a strategic entry point or signals caution for investors.",
+      "pandaAction": "point",
+      "speechBubbleText": "Amazon's Market Position: Entry Point or Caution?",
+      "visualElements": [
+        "Amazon logo",
+        "stock ticker AMZN"
+      ],
+      "chartElements": [
+        "Amazon stock price chart"
+      ],
+      "animationInstructions": [
+        "fade in Amazon logo",
+        "highlight stock ticker"
+      ],
+      "dataFields": {
+        "catchyLine": "Amazon's Market Position: Entry Point or Caution?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 16.65,
+      "narration": "Currently, Amazon is trading at $247.66, marking a noticeable 2.45% decline from its previous session. This intraday drop highlights a potential short-term weakness as the stock closed significantly lower despite opening on a higher note.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Price Drop: $247.66 (-2.45%)",
+      "visualElements": [
+        "price drop indicator",
+        "intraday chart"
+      ],
+      "chartElements": [
+        "intraday price movement"
+      ],
+      "animationInstructions": [
+        "zoom into price drop",
+        "highlight percentage decline"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 14.69,
+      "narration": "The prevailing trend for Amazon is bearish, driven primarily by negative market sentiment. This sentiment is largely influenced by sector-sympathy movements and broader market uncertainties impacting the stock.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Bearish Trend: Negative Sentiment",
+      "visualElements": [
+        "bearish trend arrow",
+        "market sentiment graph"
+      ],
+      "chartElements": [
+        "sector-sympathy movements"
+      ],
+      "animationInstructions": [
+        "animate bearish arrow",
+        "highlight sentiment graph"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 17.77,
+      "narration": "Analyzing the evidence behind this trend, we note that recent news coverage has been predominantly negative. This sentiment is confirmed by a high relative volume on the 4-hour chart, suggesting increased selling pressure as traders react to market cues.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "High Relative Volume: Selling Pressure",
+      "visualElements": [
+        "news headlines",
+        "4-hour chart"
+      ],
+      "chartElements": [
+        "relative volume indicators"
+      ],
+      "animationInstructions": [
+        "highlight news headlines",
+        "zoom into volume indicators"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 15.88,
+      "narration": "On the daily trend chart, Amazon faces strong resistance levels, indicating a consolidation phase. Support is evident, but the lack of a breakout suggests the stock is in a holding pattern, awaiting clearer directional signals.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Resistance & Support: Holding Pattern",
+      "visualElements": [
+        "resistance and support lines",
+        "daily trend chart"
+      ],
+      "chartElements": [
+        "consolidation phase indicators"
+      ],
+      "animationInstructions": [
+        "draw resistance lines",
+        "highlight support areas"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 13.43,
+      "narration": "Technical metrics paint a mixed picture. The bearish MACD and a RSI nearing oversold levels suggest selling pressure, while price action below key moving averages reinforces a cautious stance.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Mixed Metrics: Bearish Signals",
+      "visualElements": [
+        "MACD chart",
+        "RSI indicator"
+      ],
+      "chartElements": [
+        "moving averages"
+      ],
+      "animationInstructions": [
+        "highlight MACD",
+        "zoom into RSI"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 15.74,
+      "narration": "For tactical traders, the swing entry zone is identified between $199.16 and $204.63, with a stop loss strategically set at $196. Target levels are projected at $256.18 and $274.68, contingent on a shift in current sentiment.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Tactical Entry: $199.16 - $204.63",
+      "visualElements": [
+        "entry zone chart",
+        "target levels"
+      ],
+      "chartElements": [
+        "stop loss indicator"
+      ],
+      "animationInstructions": [
+        "draw entry zone",
+        "highlight target levels"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 14.83,
+      "narration": "From a short trade perspective, caution is advised. While short squeeze risk remains medium, the lack of detailed short interest data necessitates a careful approach, especially given the stock's volatile nature.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Short Trade: Medium Squeeze Risk",
+      "visualElements": [
+        "short interest chart",
+        "risk indicator"
+      ],
+      "chartElements": [
+        "volatility graph"
+      ],
+      "animationInstructions": [
+        "highlight risk indicator",
+        "zoom into volatility"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 16.16,
+      "narration": "Within the broader ecosystem, sector-specific challenges, particularly in cloud computing and AI, could impact Amazon's stock performance. However, its strong market position and growth potential provide a robust long-term outlook.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Long-term Growth Potential",
+      "visualElements": [
+        "cloud computing graphic",
+        "AI sector chart"
+      ],
+      "chartElements": [
+        "growth potential indicators"
+      ],
+      "animationInstructions": [
+        "highlight growth sectors",
+        "fade in market position"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 20.8,
+      "narration": "In conclusion, Amazon's mixed technical state and negative news sentiment warrant a \"Watchlist\" rating. Investors should monitor key levels and wait for a more defined entry signal or sentiment shift. As always, exercise due diligence, as market conditions can rapidly change.",
+      "pandaAction": "walk",
+      "speechBubbleText": "Watchlist Rating: Monitor Closely",
+      "visualElements": [
+        "watchlist graphic",
+        "key levels chart"
+      ],
+      "chartElements": [
+        "sentiment shift indicators"
+      ],
+      "animationInstructions": [
+        "highlight watchlist",
+        "fade in key levels"
+      ],
+      "dataFields": {
+        "quote": "Patience is a virtue in the world of investing.",
+        "disclaimer": "This analysis is for informational purposes only and should not be considered financial advice. Always conduct your own research before making investment decisions."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

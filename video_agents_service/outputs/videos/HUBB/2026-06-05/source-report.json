@@ -1,0 +1,869 @@
+{
+  "symbol": "HUBB",
+  "analysisDateTime": "2026-06-05T17:37:40.429Z",
+  "currentPrice": 476.05,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "Comprehensive data available across technical, fundamental, and news aspects."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 60,
+    "decisionSummary": "The stock is currently in a bearish trend with significant selling pressure and distribution signals. The risk/reward setup is not attractive due to proximity to resistance and a bearish technical setup. Await a clearer entry signal or a reversal in trend before considering a buy.",
+    "shouldBuyNow": false,
+    "buyNowReason": "Current technicals are bearish with distribution signals; better to wait for trend reversal or clearer entry.",
+    "bestActionNow": "Add to watchlist and monitor for trend reversal or improved risk/reward setup."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": true,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "Hubbell Incorporated is trading at $476.05, showing a bearish trend across multiple timeframes. The stock is experiencing distribution with a proxy institutional flow score indicating selling pressure. Technical indicators such as moving averages and RSI suggest a bearish momentum, with the price below key moving averages and VWAP. The stock is near resistance levels, making it a risky buy at current levels. In the near term, the stock may continue to face downward pressure unless a reversal signal emerges. Long-term prospects could improve if the company capitalizes on strategic acquisitions and sector growth. LAYMAN'S TAKEAWAY: Hubbell is currently in a downtrend with selling pressure. It's best to watch and wait for a trend reversal or clearer buy signals before considering a purchase.",
+  "technicalAnalysis": {
+    "overallBias": "BEARISH",
+    "trendStage": "DISTRIBUTION",
+    "setupType": "NO_SETUP",
+    "technicalScore": 40,
+    "keySignals": [
+      "Price below EMA20, EMA50, EMA200",
+      "Strong downtrend (ADX>25, -DI>+DI)"
+    ],
+    "supportLevels": [
+      453.98,
+      458.2,
+      474.55
+    ],
+    "resistanceLevels": [
+      488,
+      504.4,
+      548.76
+    ],
+    "vwapAnalysis": "Price is below VWAP, indicating bearish pressure.",
+    "movingAverageAnalysis": "Price is below EMA20, EMA50, and EMA200, confirming a bearish trend.",
+    "rsiAnalysis": "RSI is at 44, indicating bearish momentum but not oversold.",
+    "macdAnalysis": "MACD histogram is positive but overall trend is bearish.",
+    "volumeAnalysis": "Volume is below average, indicating weak buying interest.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR suggests moderate volatility; risk management is crucial.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong downtrend.",
+    "bollingerBandAnalysis": "Price is near the lower Bollinger Band, indicating potential support but no reversal signal."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "No valid buy zone due to bearish trend."
+    },
+    "pullbackEntryZone": {
+      "low": 458.2,
+      "high": 474.55,
+      "description": "Potential pullback entry if price stabilizes and shows reversal signals."
+    },
+    "breakoutEntryLevel": {
+      "price": 488,
+      "confirmationRule": "Wait for price to break and hold above resistance with volume."
+    },
+    "accumulationZone": {
+      "low": 453.98,
+      "high": 458.2,
+      "description": "Consider accumulation if price stabilizes at support levels."
+    },
+    "invalidationLevel": {
+      "price": 453.98,
+      "reason": "Break below this level indicates further downside risk."
+    },
+    "stopLoss": {
+      "price": 453.98,
+      "stopType": "SUPPORT_BREAK",
+      "description": "Stop-loss set below key support level to manage downside risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 488,
+        "reason": "First resistance level and potential reversal point."
+      },
+      {
+        "label": "T2",
+        "price": 504.4,
+        "reason": "Second resistance level for potential upside."
+      },
+      {
+        "label": "T3",
+        "price": 548.76,
+        "reason": "Extended target if bullish reversal occurs."
+      }
+    ],
+    "exitRules": [
+      "Exit if price fails to hold above resistance levels.",
+      "Trim position if price approaches T1 with weak volume."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 476.05,
+    "riskPerShare": 22.07,
+    "rewardToTarget1": 11.95,
+    "rewardToTarget2": 28.35,
+    "rewardToTarget3": 72.71,
+    "riskRewardToTarget1": "0.54:1",
+    "riskRewardToTarget2": "1.28:1",
+    "riskRewardToTarget3": "3.29:1",
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Consider smaller position size due to poor risk/reward to initial targets."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": 458.2,
+      "high": 474.55,
+      "description": "Monitor for potential short-term reversal signals."
+    },
+    "stopLoss": {
+      "price": 453.98,
+      "description": "Set stop-loss below key support to manage risk."
+    },
+    "targets": [
+      {
+        "price": 488,
+        "label": "T1"
+      },
+      {
+        "price": 504.4,
+        "label": "T2"
+      },
+      {
+        "price": 548.76,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price fails to hold above support."
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": 458.2,
+      "high": 474.55,
+      "description": "Potential entry on confirmed reversal."
+    },
+    "stopLoss": {
+      "price": 453.98,
+      "description": "Stop-loss set below support level."
+    },
+    "targets": [
+      {
+        "price": 488,
+        "label": "T1"
+      },
+      {
+        "price": 504.4,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 453.98,
+      "high": 458.2,
+      "description": "Consider accumulation if price stabilizes at support."
+    },
+    "riskReward": "1.28:1",
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BEARISH",
+    "swingSetup": {
+      "setup": "BEARISH CONTINUATION",
+      "analysis": "The 1H and 4H charts show a bearish continuation with price below key moving averages and VWAP."
+    },
+    "entryTiming": {
+      "trigger": "Reversal Signal",
+      "analysis": "Monitor 15M and 5M charts for reversal signals near support levels."
+    },
+    "supportLevels": [
+      {
+        "price": 458.2,
+        "tests": 2
+      },
+      {
+        "price": 474.55,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 488,
+        "tests": 1
+      },
+      {
+        "price": 504.4,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 453.98,
+    "riskMetrics": {
+      "atr": 12.97,
+      "atrAnalysis": "ATR indicates moderate volatility; manage risk accordingly.",
+      "vwap": 477.84,
+      "vwapAnalysis": "Price below VWAP suggests bearish sentiment.",
+      "volumeAnalysis": "Volume is below average, indicating weak buying interest.",
+      "supportResistanceAnalysis": "Price is near support but facing strong resistance."
+    },
+    "catalysts": {
+      "news": "Mixed sentiment with recent acquisition news.",
+      "earnings": "Earnings data not provided; monitor for updates.",
+      "secFilings": "No recent filings impacting short-term view."
+    },
+    "shortFilter": {
+      "borrowFee": "Not provided",
+      "shortInterest": "Not provided",
+      "ssrStatus": "Not provided",
+      "squeezeRisk": "MEDIUM"
+    },
+    "horizonDetails": "The tactical outlook remains bearish with potential for further downside unless a reversal signal emerges. Monitor support levels for potential entry.",
+    "dailyTrend": {
+      "trend": "BEARISH",
+      "barCount": 252,
+      "analysis": "Hubbell Incorporated (HUBB) is experiencing a bearish trend, as indicated by the stock's price action and technical indicators. The stock closed at $476.05, down 1.9% from its opening price of $480.49, with a relatively low trading volume of 19,107 shares. The technical indicators across multiple timeframes show a consistent bearish bias, with the price trading below key moving averages (EMA20 and EMA50) and below the VWAP, indicating selling pressure. The ADX values are high, suggesting a strong downtrend, and the RSI is below 50, indicating bearish momentum. Fundamentally, the company's recent acquisition of NSI Industries for $3 billion, while a strategic move to capitalize on the electrification boom, has been met with mixed sentiment. The acquisition is seen as a significant bet on future growth, but the market may be concerned about integration risks and the financial impact of such a large deal. Additionally, the company received a delisting notice from Nasdaq due to a filing issue, which could have contributed to investor uncertainty and selling pressure. Institutional trade flow shows a distribution pattern, with below-average volume and large bearish candle bodies, indicating strong selling pressure from institutional investors.",
+      "laymanExplanation": "Imagine Hubbell as a car going downhill. Despite trying to speed up with a big purchase (buying NSI Industries), the car is still rolling down because of some bumps like a missed paperwork deadline and investors being unsure about the big buy. Right now, Hubbell's stock is facing a tough time, like a car with the brakes on, and it's struggling to climb back up."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "NEUTRAL",
+    "investmentQuality": "MODERATE",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "INSUFFICIENT_DATA"
+    },
+    "bullCase": "Successful integration of acquisitions and sector growth could drive long-term value.",
+    "baseCase": "Moderate growth with stable revenue and earnings trends.",
+    "bearCase": "Failure to capitalize on strategic initiatives and increased competition could pressure margins.",
+    "longTermVerdict": "HOLD"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 70,
+    "rating": "MIXED",
+    "revenueTrend": "Stable with potential for growth from acquisitions.",
+    "epsTrend": "Positive forward EPS trend.",
+    "profitability": "Strong profitability with healthy margins.",
+    "debtRisk": "Moderate debt-to-equity ratio.",
+    "cashFlowQuality": "Good cash flow supporting operations.",
+    "valuationCommentary": "Valuation appears fair relative to industry peers."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "FAIRLY_VALUED",
+    "valuationScore": 60,
+    "peerComparisonAvailable": true,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Current valuation metrics suggest the stock is fairly valued compared to peers."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 50,
+    "overallSentiment": "NEUTRAL",
+    "keyCatalysts": [
+      "Acquisition of NSI Industries"
+    ],
+    "keyRisksFromNews": [
+      "Delisting notice due to filing issues"
+    ],
+    "earningsRisk": "Not assessed due to lack of data",
+    "catalystVerdict": "NEUTRAL"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 30,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates distribution with below-average volume and strong selling pressure.",
+    "signals": [
+      "Below-average volume (0.3x)",
+      "Price rising with declining volume (weaker rally)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 30,
+    "reason": "Current bearish trend and distribution signals reduce multibagger potential.",
+    "requiredConditions": [
+      "Reversal of current bearish trend",
+      "Successful integration of acquisitions"
+    ],
+    "majorBlockers": [
+      "Strong selling pressure",
+      "Proximity to resistance levels"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "MEDIUM",
+    "technicalRisk": "Bearish trend with distribution signals.",
+    "fundamentalRisk": "Moderate due to mixed fundamentals.",
+    "valuationRisk": "Fairly valued, limiting upside potential.",
+    "newsRisk": "Neutral sentiment with mixed news.",
+    "liquidityRisk": "Acceptable liquidity for trading.",
+    "eventRisk": "Potential volatility from acquisition news.",
+    "topRisks": [
+      "Bearish technical setup",
+      "Distribution signals"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Successful acquisition integration and sector growth.",
+      "pricePath": "Potential upside towards $550 if bullish catalysts materialize.",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Stable performance with moderate growth.",
+      "pricePath": "Likely to trade within current range with occasional tests of resistance.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Continued selling pressure and failure to reverse trend.",
+      "pricePath": "Downside risk towards $450 if bearish trend persists.",
+      "probability": "MEDIUM"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for reversal signals near support levels.",
+    "Add to watchlist for potential entry on trend reversal.",
+    "Avoid buying into current bearish trend without clear signals."
+  ],
+  "doNotTradeConditions": [
+    "Avoid entry if price remains below key moving averages and VWAP."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": 488,
+    "stopLossAlert": 453.98,
+    "target1Alert": 488,
+    "target2Alert": 504.4,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Aclara Technologies",
+        "ownershipPct": "100%",
+        "performance": "Aclara has been focusing on expanding its smart infrastructure solutions, particularly in the utilities sector.",
+        "upcomingEvents": [
+          "Expansion of smart grid technologies",
+          "Potential new contract wins with utility companies"
+        ],
+        "impactPotential": "Successful expansion and contract wins could enhance Hubbell's revenue streams and market position in smart infrastructure."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Copper Suppliers",
+          "role": "Supplier",
+          "description": "Raw copper for electrical products",
+          "riskExposure": "Disruptions could lead to increased costs and production delays for Hubbell's electrical products."
+        },
+        {
+          "name": "Steel Manufacturers",
+          "role": "Supplier",
+          "description": "Steel for enclosures and fittings",
+          "riskExposure": "Supply chain disruptions could impact production schedules and increase material costs."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Contract Manufacturers in Asia",
+          "role": "Outsource Partner",
+          "description": "Manufacturing of certain electrical components",
+          "riskExposure": "Disruptions or quality issues could delay product launches and impact Hubbell's market competitiveness."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Electrical Distributors",
+          "role": "Marketing Partner",
+          "description": "Distribution of Hubbell's electrical products",
+          "riskExposure": "Changes in distributor relationships could affect market reach and sales volume."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Utility Companies",
+          "role": "Customer",
+          "description": "Purchase of smart grid and infrastructure solutions",
+          "riskExposure": "A decrease in utility company investments could reduce demand for Hubbell's smart infrastructure products."
+        },
+        {
+          "name": "Construction Firms",
+          "role": "Customer",
+          "description": "Use of electrical products in building projects",
+          "riskExposure": "A slowdown in construction activity could negatively impact sales of Hubbell's electrical products."
+        }
+      ]
+    },
+    "strategicOutlook": "Hubbell's ecosystem is robust with a strong focus on smart infrastructure and electrical solutions. The company faces moderate concentration risks with key suppliers and customers, particularly in the utilities and construction sectors. Upcoming technological expansions and potential contract wins in smart infrastructure are key externalities to watch for potential stock movement."
+  },
+  "trendStory": {
+    "ticker": "HUBB",
+    "analysis_date": "2026-06-05",
+    "price_summary": {
+      "current_price": 476.05,
+      "previous_close": 485.27,
+      "day_change_percent": -1.9,
+      "day_range": {
+        "high": 481.11,
+        "low": 475.22
+      },
+      "volume": 19107,
+      "average_volume": 57193,
+      "relative_volume": 0.33
+    },
+    "move_classification": {
+      "primary_reason": "low-volume-fake-move",
+      "secondary_reasons": [
+        "sector-sympathy"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "Hubbell's Stock Dips Slightly Amidst Low Trading Activity",
+      "simple_explanation": "Hubbell's stock price dropped a bit today, but not many shares were traded, suggesting it might not be a significant move.",
+      "why_it_moved": "The stock's decline seems to be more about the general mood in the industrial sector rather than any specific news about Hubbell.",
+      "who_may_be_buying_or_selling": "unknown",
+      "is_move_sustainable": "no",
+      "sustainability_reason": "The drop happened on low trading volume, which often means the move isn't strong or lasting."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "CORRECTION: Hub Cyber Security Received A Delisting Notification; Hubbell Did Not",
+          "summary": "CORRECTION: Hub Cyber Security Received A Delisting Notification; Hubbell Did Not",
+          "source": "benzinga",
+          "published_at": "2026-05-21T20:18:50Z",
+          "impact": "neutral",
+          "relevance_score": 90
+        },
+        {
+          "headline": "Hubbell Receives Delisting Notice From Nasdaq After Failing To File Form 20-F By Deadline",
+          "summary": "Hubbell Receives Delisting Notice From Nasdaq After Failing To File Form 20-F By Deadline",
+          "source": "benzinga",
+          "published_at": "2026-05-21T20:11:33Z",
+          "impact": "neutral",
+          "relevance_score": 80
+        },
+        {
+          "headline": "Sentinel Capital Partners Strikes $3B Deal To Sell NSI Industries To Hubbell",
+          "summary": "Sentinel Capital Partners Strikes $3B Deal To Sell NSI Industries To Hubbell",
+          "source": "benzinga",
+          "published_at": "2026-05-06T11:39:54Z",
+          "impact": "negative",
+          "relevance_score": 70
+        },
+        {
+          "headline": "Hubbell Strikes $3 Billion Deal To Acquire NSI, Bets Big On Electrification Boom",
+          "summary": "Hubbell (NYSE: HUBB) to acquire NSI Industries for $3B in cash. The deal targets data center and infrastructure growth. Read the details.",
+          "source": "benzinga",
+          "published_at": "2026-05-04T17:28:55Z",
+          "impact": "positive",
+          "relevance_score": 60
+        },
+        {
+          "headline": "Barclays Maintains Equal-Weight on Hubbell, Raises Price Target to $503",
+          "summary": "Barclays Maintains Equal-Weight on Hubbell, Raises Price Target to $503",
+          "source": "benzinga",
+          "published_at": "2026-05-04T14:53:50Z",
+          "impact": "neutral",
+          "relevance_score": 50
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": true,
+        "eps_surprise": 8.5,
+        "revenue_surprise": 2.1,
+        "guidance_change": "raised",
+        "summary": "Company announced earnings recently."
+      },
+      "analyst_actions": [
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "old_target": null,
+          "new_target": null,
+          "summary": "Sentinel Capital Partners Strikes $3B Deal To Sell NSI Industries To Hubbell"
+        },
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "old_target": null,
+          "new_target": null,
+          "summary": "Barclays Maintains Equal-Weight on Hubbell, Raises Price Target to $503"
+        },
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "old_target": null,
+          "new_target": null,
+          "summary": "Stephens & Co. Maintains Overweight on Hubbell, Raises Price Target to $600"
+        },
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "old_target": null,
+          "new_target": null,
+          "summary": "Wells Fargo Maintains Overweight on Hubbell, Raises Price Target to $560"
+        }
+      ],
+      "sector_context": {
+        "sector_name": "Industrials",
+        "sector_change_percent": -1.52,
+        "index_change_percent": -0.95,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector Industrials is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 0.33,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 0.3x. Institutional flow proxy score is 30."
+      },
+      "technical_context": {
+        "trend": "downtrend",
+        "breakout_level": 488,
+        "support_level": 453.98,
+        "resistance_level": 488,
+        "rsi": 44.04278554747196,
+        "macd_signal": "bullish",
+        "vwap_position": "below",
+        "summary": "Price is BEARISH overall. RSI at 44.04278554747196."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": 2.5,
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 453.98,
+        "high": 476.05
+      },
+      "stop_loss": 453.98,
+      "target_1": 488,
+      "target_2": 503,
+      "risk_reward": 1.5,
+      "entry_reason": "Wait for confirmation of support at 453.98 before considering entry.",
+      "wait_for_confirmation": "Ensure price holds above 453.98 with increased volume."
+    },
+    "short_trade_view": {
+      "short_bias": "wait_for_breakdown",
+      "short_entry_trigger": 453.98,
+      "short_stop_loss": 488,
+      "short_target_1": 440,
+      "short_target_2": 430,
+      "reason": "Wait for price to break below support at 453.98 with strong volume."
+    },
+    "final_summary": {
+      "one_line_story": "Hubbell's stock dipped on low volume, reflecting sector weakness rather than company-specific issues.",
+      "layman_summary": "Hubbell's stock fell a bit today, but it wasn't a big deal because not many shares changed hands. The whole industrial sector is having a tough time.",
+      "trader_action": "Swing traders should wait for a clearer signal, while short sellers should watch for a breakdown below support.",
+      "risk_warning": "Low volume suggests today's move may not last. Be cautious of false signals."
+    }
+  },
+  "marketData": {
+    "symbol": "HUBB",
+    "available": true,
+    "price": 476.05,
+    "open": 480.49,
+    "high": 481.11,
+    "low": 475.22,
+    "close": 476.05,
+    "volume": 19107,
+    "vwap": 477.841659,
+    "bid": 475.04,
+    "ask": 503.81,
+    "spread": 28.77,
+    "changePercent": -1.9,
+    "timestamp": "2026-06-05T17:36:07.597764635Z",
+    "raw": {
+      "dailyBar": {
+        "c": 476.05,
+        "h": 481.11,
+        "l": 475.22,
+        "n": 926,
+        "o": 480.49,
+        "t": "2026-06-05T04:00:00Z",
+        "v": 19107,
+        "vw": 477.841659
+      },
+      "latestQuote": {
+        "ap": 503.81,
+        "as": 40,
+        "ax": "V",
+        "bp": 475.04,
+        "bs": 40,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-05T17:37:24.16100802Z",
+        "z": "A"
+      },
+      "latestTrade": {
+        "c": [
+          " "
+        ],
+        "i": 52983810245186,
+        "p": 476.05,
+        "s": 75,
+        "t": "2026-06-05T17:36:07.597764635Z",
+        "x": "V",
+        "z": "A"
+      },
+      "minuteBar": {
+        "c": 476.05,
+        "h": 476.05,
+        "l": 476.05,
+        "n": 2,
+        "o": 476.05,
+        "t": "2026-06-05T17:36:00Z",
+        "v": 77,
+        "vw": 476.05
+      },
+      "prevDailyBar": {
+        "c": 485.28,
+        "h": 485.52,
+        "l": 475.015,
+        "n": 2188,
+        "o": 477.7,
+        "t": "2026-06-04T04:00:00Z",
+        "v": 28852,
+        "vw": 482.771717
+      },
+      "symbol": "HUBB"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 482.7874718704246,
+      "ema50": 492.8668955521647,
+      "ema200": 468.84807702342414,
+      "sma20": 477.32000000000005,
+      "sma50": 503.4311999999999,
+      "sma200": 469.4460500000001,
+      "rsi14": 44.04278554747196,
+      "rsi14Prev": 48.77716655090733,
+      "macdLine": -7.44117282132612,
+      "macdSignal": -9.657195192719179,
+      "macdHist": 2.216022371393059,
+      "bbUpper": 495.8132806716386,
+      "bbMiddle": 477.32000000000005,
+      "bbLower": 458.8267193283615,
+      "bbWidth": 7.748797733863469,
+      "atr14": 12.967542419263506,
+      "obv": 183196,
+      "relVolume": 0.3340773009449525,
+      "vwap": 476.35827234849074,
+      "adx14": 317.8430583168172,
+      "plusDI": 24.954636762900066,
+      "minusDI": 28.551657359398252,
+      "supportLevels": [
+        453.98,
+        458.2,
+        499,
+        518.11
+      ],
+      "resistanceLevels": [
+        488,
+        504.4,
+        548.76,
+        564.57
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "MACD histogram positive",
+        "Price below EMA20 < EMA50",
+        "Golden cross (EMA50 > EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 25187033088,
+    "peRatio": 28.137543,
+    "pbRatio": 6.683352,
+    "epsTrailing": 16.94,
+    "epsForward": 21.77325,
+    "revenue": 5996100096,
+    "debtToEquity": 72.468,
+    "dividendYield": 0.0117,
+    "beta": 0.911,
+    "week52High": 565.4999,
+    "week52Low": 380.86,
+    "sector": "Industrials",
+    "industry": "Electrical Equipment & Parts",
+    "description": "Hubbell Incorporated, together with its subsidiaries, manufactures and sells electrical and utility solutions in the United States and internationally. It operates through two segments, Electrical Solutions and Utility Solutions. The Utility Solution segment offers critical components that allow the grid to transmit and distribute energy, as well as the communications and controls technologies, including  utility transmission and distribution components, such as arresters, insulators, connectors"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "CORRECTION: Hub Cyber Security Received A Delisting Notification; Hubbell Did Not",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/HUBC",
+        "publishedAt": "2026-05-21T20:18:50Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Hubbell Receives Delisting Notice From Nasdaq After Failing To File Form 20-F By Deadline",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/05/52732357/hubbell-receives-delisting-notice-from-nasdaq-after-failing-to-file-form-20-f-by-deadline",
+        "publishedAt": "2026-05-21T20:11:33Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Sentinel Capital Partners Strikes $3B Deal To Sell NSI Industries To Hubbell",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/05/52317069/sentinel-capital-partners-strikes-3b-deal-to-sell-nsi-industries-to-hubbell",
+        "publishedAt": "2026-05-06T11:39:54Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Hubbell Strikes $3 Billion Deal To Acquire NSI, Bets Big On Electrification Boom",
+        "summary": "Hubbell (NYSE: HUBB) to acquire NSI Industries for $3B in cash. The deal targets data center and infrastructure growth. Read the details.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/m-a/26/05/52258600/hubbell-strikes-3-billion-deal-to-acquire-nsi-bets-big-on-electrification-boom",
+        "publishedAt": "2026-05-04T17:28:55Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Barclays Maintains Equal-Weight on Hubbell, Raises Price Target to $503",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/05/52252200/barclays-maintains-equal-weight-on-hubbell-raises-price-target-to-503",
+        "publishedAt": "2026-05-04T14:53:50Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Stephens & Co. Maintains Overweight on Hubbell, Raises Price Target to $600",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/05/52246232/stephens-co-maintains-overweight-on-hubbell-raises-price-target-to-600",
+        "publishedAt": "2026-05-04T12:56:16Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Hubbell Signs $3B Agreement To Acquire NSI Industries",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/05/52243448/hubbell-signs-3b-agreement-to-acquire-nsi-industries",
+        "publishedAt": "2026-05-04T11:33:44Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Wells Fargo Maintains Overweight on Hubbell, Raises Price Target to $560",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/05/52215591/wells-fargo-maintains-overweight-on-hubbell-raises-price-target-to-560",
+        "publishedAt": "2026-05-01T14:20:13Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Hubbell Q1 2026 Earnings Call Transcript",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/news/26/04/52177499/hubbell-q1-2026-earnings-call-transcript",
+        "publishedAt": "2026-04-30T15:10:49Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Hubbell Raises FY2026 Adj EPS Guidance from $19.15-$19.85 to $19.30-$19.85 vs $19.67 Est; Raises FY2026 Sales Guidance from $6.254B-$6.371B to $6.313B-$6.488B vs $6.326B Est",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/04/52165953/hubbell-raises-fy2026-adj-eps-guidance-from-19-15-19-85-to-19-30-19-85-vs-19-67-est-raises-fy2026-sa",
+        "publishedAt": "2026-04-30T11:34:58Z",
+        "sentiment": "NEUTRAL"
+      }
+    ],
+    "sentiment": "NEUTRAL"
+  },
+  "institutionalFlow": {
+    "proxyScore": 30,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 8,
+      "priceVwapScore": 8,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 0
+    },
+    "signals": [
+      "Below-average volume (0.3x)",
+      "Price rising with declining volume (weaker rally)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 40,
+  "fundamentalScore": 70,
+  "newsCatalystScore": 50,
+  "institutionalFlowProxyScore": 30,
+  "keyCatalysts": [
+    "Acquisition of NSI Industries"
+  ],
+  "keyRisks": [
+    "Bearish technical setup",
+    "Distribution signals"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates distribution with below-average volume and strong selling pressure."
+}

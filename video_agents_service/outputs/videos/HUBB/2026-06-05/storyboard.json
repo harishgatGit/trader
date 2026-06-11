@@ -1,0 +1,271 @@
+{
+  "ticker": "HUBB",
+  "reportDate": "Unavailable",
+  "videoTitle": "HUBB Stock Report",
+  "durationSeconds": 61.0,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Hello, my fellow traders! Today, let's talk about Hubbell Incorporated, ticker HUBB, currently on our watchlist.\n\nHubbell is trading at $476.05, down 1.9% from its opening price of $480.49.\n\nThe stock shows a bearish trend, driven mainly by distribution and institutional selling pressure.\n\nThis trend is supported by low volume and movement below key levels like the moving averages and VWAP.\n\nOn the daily chart, HUBB is near resistance, making it a risky buy in this current consolidation zone.\n\nTechnical indicators like RSI and moving averages confirm the bearish momentum.\n\nFor tactical traders, the swing entry zone is between $453.98 and $458.2, with targets at $488 and $504.4.\n\nBe cautious with short trades due to a medium squeeze risk and lack of specific short interest data.\n\nSector growth and strategic acquisitions, like NSI Industries, offer long-term potential but come with integration risks.\n\nIn summary, HUBB is in a bearish setup; it's prudent to await clearer signals while keeping an eye on key resistance.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 6,
+      "narration": "Hello, my fellow traders! Today, let's talk about Hubbell Incorporated, ticker HUBB, currently on our watchlist.",
+      "pandaAction": "point",
+      "speechBubbleText": "Hubbell Inc. on watch!",
+      "visualElements": [
+        "Atti Panda with a stock chart background",
+        "Hubbell logo"
+      ],
+      "chartElements": [
+        "Ticker: HUBB",
+        "Current Price: $476.05"
+      ],
+      "animationInstructions": [
+        "Zoom in on Hubbell logo",
+        "Highlight ticker HUBB"
+      ],
+      "dataFieldsUsed": [
+        "Ticker",
+        "Current Price",
+        "Rating"
+      ]
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 7,
+      "narration": "Hubbell is trading at $476.05, down 1.9% from its opening price of $480.49.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Price drop alert!",
+      "visualElements": [
+        "Price chart showing decline",
+        "Red downward arrow"
+      ],
+      "chartElements": [
+        "Opening Price: $480.49",
+        "Current Price: $476.05"
+      ],
+      "animationInstructions": [
+        "Animate price drop from $480.49 to $476.05",
+        "Show percentage decrease"
+      ],
+      "dataFieldsUsed": [
+        "Current Price",
+        "Trend"
+      ]
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 6,
+      "narration": "The stock shows a bearish trend, driven mainly by distribution and institutional selling pressure.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Bearish trend spotted!",
+      "visualElements": [
+        "Institutional investor icons",
+        "Bearish trend line"
+      ],
+      "chartElements": [
+        "Distribution pattern",
+        "Institutional selling pressure"
+      ],
+      "animationInstructions": [
+        "Highlight institutional selling",
+        "Fade in bearish trend line"
+      ],
+      "dataFieldsUsed": [
+        "Trend",
+        "Executive Summary"
+      ]
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 6,
+      "narration": "This trend is supported by low volume and movement below key levels like the moving averages and VWAP.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Low volume, key levels!",
+      "visualElements": [
+        "Volume bars",
+        "Moving averages lines"
+      ],
+      "chartElements": [
+        "Low trading volume",
+        "Below moving averages and VWAP"
+      ],
+      "animationInstructions": [
+        "Animate low volume bars",
+        "Show price below moving averages"
+      ],
+      "dataFieldsUsed": [
+        "Trend",
+        "Executive Summary"
+      ]
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 5,
+      "narration": "On the daily chart, HUBB is near resistance, making it a risky buy in this current consolidation zone.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Risky buy zone!",
+      "visualElements": [
+        "Daily chart",
+        "Resistance line"
+      ],
+      "chartElements": [
+        "Consolidation zone",
+        "Resistance level"
+      ],
+      "animationInstructions": [
+        "Highlight resistance level",
+        "Show consolidation zone"
+      ],
+      "dataFieldsUsed": [
+        "Trend",
+        "Executive Summary"
+      ]
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 6,
+      "narration": "Technical indicators like RSI and moving averages confirm the bearish momentum.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Bearish momentum confirmed!",
+      "visualElements": [
+        "RSI indicator",
+        "Moving averages"
+      ],
+      "chartElements": [
+        "RSI below 50",
+        "Price below EMA20 and EMA50"
+      ],
+      "animationInstructions": [
+        "Animate RSI line",
+        "Highlight moving averages"
+      ],
+      "dataFieldsUsed": [
+        "Trend",
+        "Executive Summary"
+      ]
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 7,
+      "narration": "For tactical traders, the swing entry zone is between $453.98 and $458.2, with targets at $488 and $504.4.",
+      "pandaAction": "point",
+      "speechBubbleText": "Swing trade setup!",
+      "visualElements": [
+        "Entry zone highlighted",
+        "Target prices"
+      ],
+      "chartElements": [
+        "Entry Zone: $453.98 - $458.2",
+        "Targets: $488, $504.4"
+      ],
+      "animationInstructions": [
+        "Highlight entry zone",
+        "Show target prices"
+      ],
+      "dataFieldsUsed": [
+        "Entry Zone",
+        "Targets"
+      ]
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 5,
+      "narration": "Be cautious with short trades due to a medium squeeze risk and lack of specific short interest data.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Short trade caution!",
+      "visualElements": [
+        "Warning sign",
+        "Squeeze risk indicator"
+      ],
+      "chartElements": [
+        "Medium squeeze risk",
+        "No short interest data"
+      ],
+      "animationInstructions": [
+        "Show warning sign",
+        "Animate squeeze risk indicator"
+      ],
+      "dataFieldsUsed": [
+        "Short Selling"
+      ]
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 7,
+      "narration": "Sector growth and strategic acquisitions, like NSI Industries, offer long-term potential but come with integration risks.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Long-term potential!",
+      "visualElements": [
+        "NSI Industries logo",
+        "Growth chart"
+      ],
+      "chartElements": [
+        "Sector growth",
+        "Acquisition of NSI Industries"
+      ],
+      "animationInstructions": [
+        "Highlight NSI acquisition",
+        "Show growth potential"
+      ],
+      "dataFieldsUsed": [
+        "Catalysts",
+        "Executive Summary"
+      ]
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 6,
+      "narration": "In summary, HUBB is in a bearish setup; it's prudent to await clearer signals while keeping an eye on key resistance.",
+      "pandaAction": "default",
+      "speechBubbleText": "Watch and wait!",
+      "visualElements": [
+        "Bearish setup icon",
+        "Key resistance line"
+      ],
+      "chartElements": [
+        "Bearish setup",
+        "Key resistance"
+      ],
+      "animationInstructions": [
+        "Show bearish setup icon",
+        "Highlight key resistance"
+      ],
+      "dataFieldsUsed": [
+        "Trend",
+        "Executive Summary"
+      ]
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

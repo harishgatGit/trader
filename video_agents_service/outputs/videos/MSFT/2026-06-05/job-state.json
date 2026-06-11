@@ -1,0 +1,22 @@
+{
+  "jobId": "742d2efe-17ed-472c-888c-a0cc623141d3",
+  "reportId": "cmq1amr3l01jo1ibplysgkgj1",
+  "ticker": "MSFT",
+  "reportDate": "2026-06-05",
+  "status": "VOICEOVER_GENERATED",
+  "startedAt": "2026-06-05T19:04:45.040953",
+  "completedAt": null,
+  "errorMessage": null,
+  "videoUrl": null,
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\MSFT\\2026-06-05\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\MSFT\\2026-06-05\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\MSFT\\2026-06-05\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\MSFT\\2026-06-05\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\MSFT\\2026-06-05\\narration-audio.mp3",
+    "ffprobe": null,
+    "validation": null,
+    "finalVideo": null
+  },
+  "forceRegenerate": false
+}

@@ -1,0 +1,193 @@
+import { Injectable, ConflictException } from '@nestjs/common';
+import { PrismaService } from '../../prisma/prisma.service';
+import * as crypto from 'crypto';
+import { CreateUserDto } from './dto/create-user.dto';
+
+@Injectable()
+export class AdminService {
+  constructor(private readonly prisma: PrismaService) {}
+
+  private hashPassword(password: string): string {
+    const salt = crypto.randomBytes(16).toString('hex');
+    const hash = crypto.scryptSync(password, salt, 64).toString('hex');
+    return `${salt}:${hash}`;
+  }
+
+  async getUsers() {
+    return this.prisma.user.findMany({
+      select: {
+        id: true,
+        username: true,
+        role: true,
+        createdAt: true,
+        _count: {
+          select: { searchLogs: true },
+        },
+      },
+      orderBy: { createdAt: 'desc' },
+    });
+  }
+
+  async createUser(dto: CreateUserDto) {
+    const existing = await this.prisma.user.findUnique({
+      where: { username: dto.username },
+    });
+    if (existing) {
+      throw new ConflictException('Username is already taken');
+    }
+
+    const passwordHash = this.hashPassword(dto.password);
+    const user = await this.prisma.user.create({
+      data: {
+        username: dto.username,
+        passwordHash,
+        role: dto.role,
+      },
+    });
+
+    return {
+      id: user.id,
+      username: user.username,
+      role: user.role,
+    };
+  }
+
+  async getAnalytics() {
+    const now = new Date();
+    const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+    // Fetch logs from the last 7 days (or all logs to prevent empty list, let's fall back to last 30 days if last 7 days is empty, or just fetch last 1000 logs)
+    const logs = await this.prisma.searchLog.findMany({
+      take: 2000,
+      include: {
+        user: {
+          select: { username: true }
+        }
+      },
+      orderBy: { timestamp: 'desc' }
+    });
+
+    // Grouping and aggregating stats
+    const uniqueSymbols = Array.from(new Set(logs.map(l => l.symbol)));
+    
+    // Resolve sectors from FundamentalSnapshot
+    const fundamentalSnaps = await this.prisma.fundamentalSnapshot.findMany({
+      where: {
+        symbol: { in: uniqueSymbols },
+        available: true
+      },
+      select: {
+        symbol: true,
+        sector: true
+      }
+    });
+
+    const symbolToSector: { [symbol: string]: string } = {};
+    fundamentalSnaps.forEach(snap => {
+      if (snap.sector) {
+        symbolToSector[snap.symbol] = snap.sector;
+      }
+    });
+
+    // 1. Daily search count (last 7 days)
+    const dailyCounts: { [dateStr: string]: number } = {};
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(now.getDate() - i);
+      const dateStr = d.toISOString().split('T')[0];
+      dailyCounts[dateStr] = 0;
+    }
+
+    logs.forEach(log => {
+      const dateStr = log.timestamp.toISOString().split('T')[0];
+      if (dailyCounts[dateStr] !== undefined) {
+        dailyCounts[dateStr]++;
+      }
+    });
+
+    const dailyStats = Object.entries(dailyCounts).map(([date, count]) => ({
+      date,
+      count,
+    })).sort((a, b) => a.date.localeCompare(b.date));
+
+    // 2. Top symbols
+    const symbolCounts: { [symbol: string]: number } = {};
+    logs.forEach(log => {
+      symbolCounts[log.symbol] = (symbolCounts[log.symbol] || 0) + 1;
+    });
+
+    const topSymbols = Object.entries(symbolCounts)
+      .map(([symbol, count]) => ({ symbol, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10);
+
+    // 3. Top sectors
+    const sectorCounts: { [sector: string]: number } = {};
+    logs.forEach(log => {
+      const sector = symbolToSector[log.symbol] || 'Unknown';
+      sectorCounts[sector] = (sectorCounts[sector] || 0) + 1;
+    });
+
+    const topSectors = Object.entries(sectorCounts)
+      .map(([sector, count]) => ({ sector, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10);
+
+    // 3.5. Top IP Addresses
+    const ipCounts: { [ip: string]: { count: number; city: string; state: string } } = {};
+    logs.forEach(log => {
+      const ip = log.ipAddress || 'Unknown';
+      const city = log.city || 'Unknown';
+      const state = log.state || 'Unknown';
+      if (!ipCounts[ip]) {
+        ipCounts[ip] = { count: 0, city, state };
+      }
+      ipCounts[ip].count++;
+    });
+
+    const topIps = Object.entries(ipCounts)
+      .map(([ip, data]) => ({
+        ip,
+        count: data.count,
+        city: data.city,
+        state: data.state
+      }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10);
+
+    // 4. Recent searches detail
+    const recentSearches = logs.map(log => ({
+      id: log.id,
+      username: log.user?.username || 'Unknown',
+      symbol: log.symbol,
+      sector: symbolToSector[log.symbol] || 'Unknown',
+      timestamp: log.timestamp,
+      ipAddress: log.ipAddress || 'Unknown',
+      city: log.city || 'Unknown',
+      state: log.state || 'Unknown',
+    })).slice(0, 100);
+
+    return {
+      dailyStats,
+      topSymbols,
+      topSectors,
+      recentSearches,
+      topIps,
+      totalSearches: logs.length
+    };
+  }
+
+  async getFeedback() {
+    return this.prisma.problemReport.findMany({
+      include: {
+        user: {
+          select: {
+            username: true,
+            role: true,
+          },
+        },
+      },
+      orderBy: { createdAt: 'desc' },
+    });
+  }
+}

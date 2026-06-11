@@ -1,0 +1,237 @@
+{
+  "ticker": "GOOGL",
+  "reportDate": "Unavailable",
+  "videoTitle": "GOOGL Stock Report",
+  "durationSeconds": 60.0,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Hello, I'm Atti Panda, here to help you explore GOOGL, currently on our watchlist radar.\n\nToday's price is $368.77, showing mixed signals with slight daily shifts.\n\nThe overall trend is bearish, driven by negative news sentiment.\n\nKey drivers include Meta's equity plans and AI spending buzz, weighing down the mood.\n\nOn the daily chart, GOOGL faces resistance but also hints at potential breakouts.\n\nThe MACD is negative, yet a golden cross suggests longer-term bullish potential.\n\nFor tactical traders, consider the entry zone between $331.46 and $342.31, with a stop loss at $364.63.\n\nShorting GOOGL carries medium squeeze risk, so caution is advised.\n\nSector-wise, GOOGL remains steady but faces pressure from broader market uncertainties.\n\nOur final take? Keep GOOGL on your watchlist; wait for clearer signals and stay informed.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 6,
+      "narration": "Hello, I'm Atti Panda, here to help you explore GOOGL, currently on our watchlist radar.",
+      "pandaAction": "point",
+      "speechBubbleText": "Let's dive into GOOGL!",
+      "visualElements": [
+        "Atti Panda introduction",
+        "GOOGL logo"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "Atti Panda waves",
+        "GOOGL logo appears"
+      ],
+      "dataFieldsUsed": [
+        "Ticker",
+        "Rating"
+      ]
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 7,
+      "narration": "Today's price is $368.77, showing mixed signals with slight daily shifts.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Price: $368.77, mixed signals!",
+      "visualElements": [
+        "Price tag",
+        "Mixed signal icons"
+      ],
+      "chartElements": [
+        "Price chart with slight shifts"
+      ],
+      "animationInstructions": [
+        "Price tag zooms in",
+        "Signal icons animate"
+      ],
+      "dataFieldsUsed": [
+        "Current Price"
+      ]
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 6,
+      "narration": "The overall trend is bearish, driven by negative news sentiment.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Bearish trend alert!",
+      "visualElements": [
+        "Bearish trend arrow",
+        "News headlines"
+      ],
+      "chartElements": [
+        "Trend line"
+      ],
+      "animationInstructions": [
+        "Arrow moves downward",
+        "Headlines scroll"
+      ],
+      "dataFieldsUsed": [
+        "Trend",
+        "Executive Summary"
+      ]
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 6,
+      "narration": "Key drivers include Meta's equity plans and AI spending buzz, weighing down the mood.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Meta & AI news impact!",
+      "visualElements": [
+        "Meta logo",
+        "AI icons"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "Logos and icons appear with effects"
+      ],
+      "dataFieldsUsed": [
+        "Catalysts"
+      ]
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 5,
+      "narration": "On the daily chart, GOOGL faces resistance but also hints at potential breakouts.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Resistance & breakout signs!",
+      "visualElements": [
+        "Resistance line",
+        "Breakout indicators"
+      ],
+      "chartElements": [
+        "Daily chart"
+      ],
+      "animationInstructions": [
+        "Chart highlights resistance",
+        "Indicators flash"
+      ],
+      "dataFieldsUsed": [
+        "Trend"
+      ]
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 7,
+      "narration": "The MACD is negative, yet a golden cross suggests longer-term bullish potential.",
+      "pandaAction": "default",
+      "speechBubbleText": "MACD vs Golden Cross!",
+      "visualElements": [
+        "MACD indicator",
+        "Golden cross symbol"
+      ],
+      "chartElements": [
+        "MACD chart"
+      ],
+      "animationInstructions": [
+        "MACD line moves",
+        "Golden cross shines"
+      ],
+      "dataFieldsUsed": [
+        "Technical Metrics"
+      ]
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 6,
+      "narration": "For tactical traders, consider the entry zone between $331.46 and $342.31, with a stop loss at $364.63.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Entry: $331.46-$342.31, Stop: $364.63",
+      "visualElements": [
+        "Entry zone",
+        "Stop loss line"
+      ],
+      "chartElements": [
+        "Entry and stop loss chart"
+      ],
+      "animationInstructions": [
+        "Entry zone highlights",
+        "Stop loss line blinks"
+      ],
+      "dataFieldsUsed": [
+        "Entry Zone",
+        "Stop Loss"
+      ]
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 5,
+      "narration": "Shorting GOOGL carries medium squeeze risk, so caution is advised.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Medium squeeze risk!",
+      "visualElements": [
+        "Risk warning icon"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "Warning icon pulses"
+      ],
+      "dataFieldsUsed": [
+        "Short Selling"
+      ]
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 6,
+      "narration": "Sector-wise, GOOGL remains steady but faces pressure from broader market uncertainties.",
+      "pandaAction": "walk",
+      "speechBubbleText": "Market pressures ahead!",
+      "visualElements": [
+        "Market pressure icons"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "Icons move across screen"
+      ],
+      "dataFieldsUsed": [
+        "Executive Summary"
+      ]
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 6,
+      "narration": "Our final take? Keep GOOGL on your watchlist; wait for clearer signals and stay informed.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Watchlist it for now!",
+      "visualElements": [
+        "Watchlist icon"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "Watchlist icon sparkles"
+      ],
+      "dataFieldsUsed": [
+        "Rating"
+      ]
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

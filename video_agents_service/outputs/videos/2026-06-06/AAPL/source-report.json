@@ -1,0 +1,856 @@
+{
+  "news": {
+    "items": [
+      {
+        "url": "https://www.benzinga.com/insights/options/26/06/53037256/10-information-technology-stocks-with-whale-alerts-in-todays-session",
+        "source": "benzinga",
+        "summary": " ",
+        "headline": "10 Information Technology Stocks With Whale Alerts In Today's Session",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-05T17:35:21Z"
+      },
+      {
+        "url": "https://www.benzinga.com/news/politics/26/06/53034789/congressman-discloses-first-stock-purchases-over-a-year-later-investors-see-red-flags",
+        "source": "benzinga",
+        "summary": "A congressman&#39;s first-ever stock purchases are drawing attention for the sectors bought and the timeliness of reporting.",
+        "headline": "Congressman Discloses First Stock Purchases Over A Year Later: Investors See Red Flags",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-05T16:32:40Z"
+      },
+      {
+        "url": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/06/53033363/apple-stock-could-finally-have-its-ai-moment-at-wwdc-ives-says-expect-fireworks",
+        "source": "benzinga",
+        "summary": "Apple hosts the WWDC event next week. Wedbush analyst Dan Ives sees the event as a key catalyst to show the company&#39;s AI monetization efforts.",
+        "headline": "Apple Stock Could Finally Have Its AI Moment At WWDC: Ives says 'Expect Fireworks'",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-05T15:55:07Z"
+      },
+      {
+        "url": "https://www.benzinga.com/Opinion/26/06/53032886/momo-aggressively-buys-semiconductor-dip-big-setback-for-spacex-blowout-jobs-report",
+        "source": "benzinga",
+        "summary": "\n\n\n\nBlowout Jobs Report\n\n\n",
+        "headline": "Momo Aggressively Buys Semiconductor Dip; Big Setback For SpaceX; Blowout Jobs Report",
+        "sentiment": "POSITIVE",
+        "publishedAt": "2026-06-05T15:42:13Z"
+      },
+      {
+        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/06/53030067/jim-cramer-says-a-4-trillion-spacex-could-force-investors-to-dump-nvidia-apple-and-microsoft",
+        "source": "benzinga",
+        "summary": "Jim Cramer warns investors may be selling Nvidia, Apple, Amazon and Microsoft as excitement builds around a potential $4 trillion valuation for SpaceX.",
+        "headline": "Jim Cramer Says A $4 Trillion SpaceX Could Force Investors To Dump Nvidia, Apple And Microsoft",
+        "sentiment": "NEGATIVE",
+        "publishedAt": "2026-06-05T14:31:26Z"
+      },
+      {
+        "url": "https://www.benzinga.com/news/26/06/53025930/wedbush-reiterates-outperform-on-apple-maintains-400-price-target",
+        "source": "benzinga",
+        "summary": null,
+        "headline": "Wedbush Reiterates Outperform on Apple, Maintains $400 Price Target",
+        "sentiment": "POSITIVE",
+        "publishedAt": "2026-06-05T13:16:14Z"
+      },
+      {
+        "url": "https://www.benzinga.com/markets/equities/26/06/53024614/abbvie-oracle-apple-and-more-on-cnbcs-final-trades",
+        "source": "benzinga",
+        "summary": "Bryn Talkington picks AbbVie as final trade with $232 price target. Bill Baruch chooses Entegris . Oracle and Apple also feature.",
+        "headline": "AbbVie, Oracle, Apple And More On CNBC's 'Final Trades'",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-05T12:26:42Z"
+      },
+      {
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53022380/whats-going-on-with-taiwan-semiconductor-stock-friday-2",
+        "source": "benzinga",
+        "summary": "Is the Taiwan Semiconductor stock pullback a buy signal? Technical indicators remain bullish as shares hold well above key moving averages.",
+        "headline": "What's Going On With Taiwan Semiconductor Stock Friday?",
+        "sentiment": "POSITIVE",
+        "publishedAt": "2026-06-05T09:40:00Z"
+      },
+      {
+        "url": "https://www.benzinga.com/Opinion/26/06/53019090/nvidias-ai-infrastructure-deepens-as-apple-moves-siri-workloads-to-cloud-gpus",
+        "source": "benzinga",
+        "summary": "Nvidia AI chip dominance now powers Apple&#39;s Siri via Google Cloud. Here is what that structural shift means for investors today.",
+        "headline": "Nvidia's AI Infrastructure Deepens as Apple Moves Siri Workloads to Cloud GPUs",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-04T21:32:02Z"
+      },
+      {
+        "url": "https://www.benzinga.com/Opinion/26/06/53016856/semi-mania-broadcom-problem-worlds-smartest-banker-to-pitch-spacex-japan-risk-to-ai-trade",
+        "source": "benzinga",
+        "summary": "\n\n\n\nSemi Mania\n\n\n",
+        "headline": "Semi Mania's Broadcom Problem; World's Smartest Banker To Pitch SpaceX; Japan Risk To AI Trade",
+        "sentiment": "NEGATIVE",
+        "publishedAt": "2026-06-04T20:10:49Z"
+      }
+    ],
+    "source": "alpaca_news",
+    "available": true,
+    "sentiment": "POSITIVE"
+  },
+  "symbol": "AAPL",
+  "keyRisks": [
+    "High valuation",
+    "Near-term resistance",
+    "Potential competitive threats"
+  ],
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "marketData": {
+    "ask": null,
+    "bid": 306.08,
+    "low": 307.16,
+    "raw": {
+      "symbol": "AAPL",
+      "dailyBar": {
+        "c": 307.59,
+        "h": 315.14,
+        "l": 307.16,
+        "n": 39103,
+        "o": 312.77,
+        "t": "2026-06-05T04:00:00Z",
+        "v": 2188603,
+        "vw": 311.357814
+      },
+      "minuteBar": {
+        "c": 307.23,
+        "h": 307.23,
+        "l": 307.23,
+        "n": 2,
+        "o": 307.23,
+        "t": "2026-06-05T20:15:00Z",
+        "v": 50,
+        "vw": 307.23
+      },
+      "latestQuote": {
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-05T20:00:53.860791327Z",
+        "z": "C",
+        "ap": 0,
+        "as": 0,
+        "ax": " ",
+        "bp": 306.08,
+        "bs": 640,
+        "bx": "V"
+      },
+      "latestTrade": {
+        "c": [
+          "@",
+          "T"
+        ],
+        "i": 39085,
+        "p": 307.23,
+        "s": 40,
+        "t": "2026-06-05T20:15:45.425873474Z",
+        "x": "V",
+        "z": "C"
+      },
+      "prevDailyBar": {
+        "c": 311.21,
+        "h": 313.38,
+        "l": 309.675,
+        "n": 24888,
+        "o": 313.335,
+        "t": "2026-06-04T04:00:00Z",
+        "v": 1230648,
+        "vw": 311.253208
+      }
+    },
+    "high": 315.14,
+    "open": 312.77,
+    "vwap": 311.357814,
+    "close": 307.59,
+    "price": 307.23,
+    "spread": null,
+    "symbol": "AAPL",
+    "volume": 2188603,
+    "available": true,
+    "timestamp": "2026-06-05T20:15:45.425873474Z",
+    "changePercent": -1.16
+  },
+  "technicals": {
+    "primary": {
+      "obv": 33847241,
+      "vwap": 304.9514321212932,
+      "adx14": 634.4893783447565,
+      "atr14": 6.020908131341684,
+      "ema20": 302.6738067865601,
+      "ema50": 288.0896423390619,
+      "rsi14": 61.099273212688,
+      "sma20": 304.2595,
+      "sma50": 281.2222,
+      "ema200": 261.858602104883,
+      "plusDI": 29.44525084428765,
+      "sma200": 265.1872250000001,
+      "bbLower": 290.6250645881467,
+      "bbUpper": 317.8939354118533,
+      "bbWidth": 8.962372850710201,
+      "minusDI": 11.91799270820501,
+      "signals": [
+        "MACD histogram negative",
+        "Price above EMA20 > EMA50",
+        "Golden cross (EMA50 > EMA200)",
+        "Price above VWAP",
+        "Strong uptrend (ADX>25, +DI>-DI)"
+      ],
+      "bbMiddle": 304.2595,
+      "macdHist": -0.9183951790151621,
+      "macdLine": 8.483985823441003,
+      "relVolume": 1.613021337532323,
+      "rsi14Prev": 66.51498048412518,
+      "macdSignal": 9.402381002456165,
+      "overallBias": "BULLISH",
+      "supportLevels": [
+        245.7,
+        265.1,
+        305.03
+      ],
+      "resistanceLevels": [
+        262.15,
+        275.71,
+        303.19
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "trendStory": {
+    "ticker": "AAPL",
+    "evidence": {
+      "short_context": {
+        "summary": "Short borrow is available. Squeeze risk is currently low.",
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "short_interest_percent": 2.5,
+        "short_interest_available": true
+      },
+      "news_catalysts": [
+        {
+          "impact": "neutral",
+          "source": "benzinga",
+          "summary": " ",
+          "headline": "10 Information Technology Stocks With Whale Alerts In Today's Session",
+          "published_at": "2026-06-05T17:35:21Z",
+          "relevance_score": 90
+        },
+        {
+          "impact": "neutral",
+          "source": "benzinga",
+          "summary": "A congressman&#39;s first-ever stock purchases are drawing attention for the sectors bought and the timeliness of reporting.",
+          "headline": "Congressman Discloses First Stock Purchases Over A Year Later: Investors See Red Flags",
+          "published_at": "2026-06-05T16:32:40Z",
+          "relevance_score": 80
+        },
+        {
+          "impact": "neutral",
+          "source": "benzinga",
+          "summary": "Apple hosts the WWDC event next week. Wedbush analyst Dan Ives sees the event as a key catalyst to show the company&#39;s AI monetization efforts.",
+          "headline": "Apple Stock Could Finally Have Its AI Moment At WWDC: Ives says 'Expect Fireworks'",
+          "published_at": "2026-06-05T15:55:07Z",
+          "relevance_score": 70
+        },
+        {
+          "impact": "positive",
+          "source": "benzinga",
+          "summary": "\n\n\n\nBlowout Jobs Report\n\n\n",
+          "headline": "Momo Aggressively Buys Semiconductor Dip; Big Setback For SpaceX; Blowout Jobs Report",
+          "published_at": "2026-06-05T15:42:13Z",
+          "relevance_score": 60
+        },
+        {
+          "impact": "negative",
+          "source": "benzinga",
+          "summary": "Jim Cramer warns investors may be selling Nvidia, Apple, Amazon and Microsoft as excitement builds around a potential $4 trillion valuation for SpaceX.",
+          "headline": "Jim Cramer Says A $4 Trillion SpaceX Could Force Investors To Dump Nvidia, Apple And Microsoft",
+          "published_at": "2026-06-05T14:31:26Z",
+          "relevance_score": 50
+        }
+      ],
+      "sector_context": {
+        "summary": "Sector Technology is moving. Index overall changed slightly.",
+        "sector_name": "Technology",
+        "index_change_percent": -0.58,
+        "sector_change_percent": -0.93,
+        "is_stock_outperforming_sector": false
+      },
+      "volume_context": {
+        "summary": "Relative volume is 1.6x. Institutional flow proxy score is 63.",
+        "relative_volume": 1.61,
+        "large_buyer_signal": "moderate",
+        "volume_interpretation": "above_average"
+      },
+      "analyst_actions": [
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "summary": "Momo Aggressively Buys Semiconductor Dip; Big Setback For SpaceX; Blowout Jobs Report",
+          "new_target": null,
+          "old_target": null
+        },
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "summary": "Wedbush Reiterates Outperform on Apple, Maintains $400 Price Target",
+          "new_target": null,
+          "old_target": null
+        }
+      ],
+      "earnings_catalyst": {
+        "summary": "No recent earnings announcement identified in news feeds.",
+        "eps_surprise": null,
+        "guidance_change": "unknown",
+        "revenue_surprise": null,
+        "has_recent_earnings": false
+      },
+      "technical_context": {
+        "rsi": 61.099273212688,
+        "trend": "uptrend",
+        "summary": "Price is BULLISH overall. RSI at 61.099273212688004.",
+        "macd_signal": "bearish",
+        "support_level": 245.7,
+        "vwap_position": "above",
+        "breakout_level": 262.15,
+        "resistance_level": 262.15
+      }
+    },
+    "analysis_date": "2026-06-06",
+    "final_summary": {
+      "risk_warning": "Be cautious of sector volatility and speculative news impacts.",
+      "trader_action": "Hold current positions and wait for sector stabilization.",
+      "layman_summary": "Apple's stock saw a small drop today because of general tech sector worries and news about SpaceX that might be drawing attention away from Apple.",
+      "one_line_story": "Apple's stock dipped slightly amid sector concerns and SpaceX excitement."
+    },
+    "price_summary": {
+      "volume": 2188603,
+      "day_range": {
+        "low": 307.16,
+        "high": 315.14
+      },
+      "current_price": 307.23,
+      "average_volume": 1356835,
+      "previous_close": 310.84,
+      "relative_volume": 1.61,
+      "day_change_percent": -1.16
+    },
+    "short_trade_view": {
+      "reason": "Avoid shorting due to overall bullish trend and low short squeeze risk.",
+      "short_bias": "avoid_short",
+      "short_target_1": 290,
+      "short_target_2": 280,
+      "short_stop_loss": 315,
+      "short_entry_trigger": 300
+    },
+    "story_for_layman": {
+      "headline": "Apple's Stock Dips Amid Sector Concerns and SpaceX Excitement",
+      "why_it_moved": "The stock moved due to a combination of general tech sector weakness and news suggesting investors might shift focus to SpaceX.",
+      "simple_explanation": "Apple's stock saw a slight drop today, partly because of general concerns in the tech sector and excitement about SpaceX drawing attention away from Apple.",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The move is influenced by broader sector trends and speculative news, which may not have a lasting impact.",
+      "who_may_be_buying_or_selling": "mixed"
+    },
+    "swing_trade_view": {
+      "target_1": 320,
+      "target_2": 330,
+      "stop_loss": 300,
+      "entry_zone": {
+        "low": 305,
+        "high": 310
+      },
+      "trade_bias": "hold",
+      "risk_reward": 2.5,
+      "entry_reason": "Holding due to overall bullish trend despite short-term sector weakness.",
+      "wait_for_confirmation": "Wait for sector stabilization and positive news from upcoming events."
+    },
+    "move_classification": {
+      "confidence": "medium",
+      "primary_reason": "news-driven",
+      "confidence_score": 70,
+      "secondary_reasons": [
+        "sector-sympathy"
+      ]
+    }
+  },
+  "alertLevels": {
+    "buyAlert": 305.03,
+    "riskAlert": null,
+    "target1Alert": 311.61,
+    "target2Alert": 313.22,
+    "breakoutAlert": 313.22,
+    "stopLossAlert": 300.41
+  },
+  "dataQuality": {
+    "rating": "HIGH",
+    "reason": "Comprehensive data available across technical, fundamental, and news aspects.",
+    "missingFields": [],
+    "decisionAllowed": true,
+    "staleDataWarning": null
+  },
+  "finalRating": "WAIT",
+  "currentPrice": 307.23,
+  "fundamentals": {
+    "beta": 1.086,
+    "sector": "Technology",
+    "source": "yahoo_finance",
+    "pbRatio": 42.333332,
+    "peRatio": 37.16324,
+    "revenue": 451442016256,
+    "industry": "Consumer Electronics",
+    "available": true,
+    "marketCap": 4514011676672,
+    "week52Low": 195.07,
+    "epsForward": 9.60792,
+    "week52High": 316.94,
+    "description": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories comprising AirPods, Apple Vision Pro, Apple TV, Apple Watch, Beats products, and HomePod, as well as Apple branded and third-party accessories. It also provides AppleCare support and cloud services; and operates v",
+    "epsTrailing": 8.27,
+    "debtToEquity": 79.548,
+    "dividendYield": 0.0034999999
+  },
+  "keyCatalysts": [
+    "Potential AI developments at WWDC",
+    "Strong sector performance in technology"
+  ],
+  "longTermView": {
+    "bias": "BULLISH",
+    "horizon": "6-24 months",
+    "baseCase": "Steady growth with strong revenue and EPS trends.",
+    "bearCase": "Increased competition and market saturation could impact growth.",
+    "bullCase": "Continued innovation and market leadership in technology.",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "INSUFFICIENT_DATA"
+    },
+    "longTermVerdict": "ACCUMULATE",
+    "investmentQuality": "STRONG"
+  },
+  "riskAnalysis": {
+    "newsRisk": "Mixed sentiment with potential competitive threats.",
+    "topRisks": [
+      "High valuation",
+      "Near-term resistance",
+      "Potential competitive threats"
+    ],
+    "eventRisk": "Potential impact from upcoming product announcements.",
+    "liquidityRisk": "Low, given high trading volume.",
+    "technicalRisk": "Near resistance increases pullback risk.",
+    "valuationRisk": "High due to overvaluation compared to peers.",
+    "fundamentalRisk": "Moderate due to strong fundamentals.",
+    "overallRiskLevel": "MEDIUM"
+  },
+  "entryExitPlan": {
+    "targets": [
+      {
+        "label": "T1",
+        "price": 311.61,
+        "reason": "First target at the next resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 313.22,
+        "reason": "Second target at the upper resistance level."
+      },
+      {
+        "label": "T3",
+        "price": 315.14,
+        "reason": "Third target at the 52-week high resistance."
+      }
+    ],
+    "stopLoss": {
+      "price": 300.41,
+      "stopType": "TECHNICAL",
+      "description": "Set stop loss below the key support level at 300.41."
+    },
+    "exitRules": [
+      "Exit partially at T1 and T2 to lock in profits.",
+      "Move stop loss to breakeven after reaching T1."
+    ],
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current price is near resistance; not ideal for immediate entry."
+    },
+    "accumulationZone": {
+      "low": 300.41,
+      "high": 305.03,
+      "description": "Consider accumulating if price pulls back to this zone."
+    },
+    "invalidationLevel": {
+      "price": 300.41,
+      "reason": "Break below this level would invalidate the current bullish setup."
+    },
+    "pullbackEntryZone": {
+      "low": 305.03,
+      "high": 307.83,
+      "description": "Wait for a pullback to the support zone for a better entry."
+    },
+    "breakoutEntryLevel": {
+      "price": 313.22,
+      "confirmationRule": "Enter on a confirmed breakout above 313.22 with volume."
+    },
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK"
+  },
+  "finalDecision": {
+    "finalRating": "WAIT",
+    "buyNowReason": "Price is near resistance with a suboptimal risk/reward ratio.",
+    "decisionType": "TRADE",
+    "shouldBuyNow": false,
+    "bestActionNow": "Wait for a pullback to support or a confirmed breakout above resistance.",
+    "confidenceScore": 75,
+    "decisionSummary": "AAPL is currently in a bullish technical trend but is near resistance levels, suggesting potential for a pullback. The risk/reward ratio is not optimal for immediate entry. Waiting for a better entry point or breakout confirmation is advised."
+  },
+  "shortTermView": {
+    "bias": "BULLISH",
+    "horizon": "1-5 days",
+    "targets": [
+      {
+        "label": "T1",
+        "price": 311.61
+      },
+      {
+        "label": "T2",
+        "price": 313.22
+      },
+      {
+        "label": "T3",
+        "price": 315.14
+      }
+    ],
+    "stopLoss": {
+      "price": 300.41,
+      "description": "Set stop loss below key support level."
+    },
+    "entryZone": {
+      "low": 305.03,
+      "high": 307.83,
+      "description": "Look for entry on pullback to this support zone."
+    },
+    "exitRules": [
+      "Exit partially at T1 and T2 to lock in profits.",
+      "Move stop loss to breakeven after reaching T1."
+    ],
+    "tradeQuality": "B"
+  },
+  "swingTradeView": {
+    "bias": "BULLISH",
+    "horizon": "2-6 weeks",
+    "targets": [
+      {
+        "label": "T1",
+        "price": 313.22
+      },
+      {
+        "label": "T2",
+        "price": 315.14
+      }
+    ],
+    "stopLoss": {
+      "price": 300.41,
+      "description": "Set stop loss below key support level."
+    },
+    "entryZone": {
+      "low": 305.03,
+      "high": 307.83,
+      "description": "Wait for a pullback to enter within this zone."
+    },
+    "riskReward": "ACCEPTABLE",
+    "swingVerdict": "WAIT",
+    "accumulationZone": {
+      "low": 300.41,
+      "high": 305.03,
+      "description": "Consider accumulating if price pulls back to this zone."
+    }
+  },
+  "technicalScore": 80,
+  "companyInsights": {
+    "dependencies": {
+      "customers": [
+        {
+          "name": "Consumer Electronics Market",
+          "role": "Customer",
+          "description": "Purchases iPhones, iPads, Macs, and other devices",
+          "riskExposure": "High impact as consumer demand fluctuations directly affect sales."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "TSMC",
+          "role": "Supplier",
+          "description": "Supplies advanced semiconductor chips",
+          "riskExposure": "High impact due to reliance on cutting-edge chips for product performance."
+        },
+        {
+          "name": "Foxconn",
+          "role": "Supplier",
+          "description": "Assembles iPhones and other products",
+          "riskExposure": "Significant impact if labor issues or geopolitical tensions disrupt production."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Verizon",
+          "role": "Marketing Partner",
+          "description": "Carrier partner for iPhone distribution",
+          "riskExposure": "Low to moderate impact as carrier promotions can influence iPhone sales."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Pegatron",
+          "role": "Outsource Partner",
+          "description": "Manufacturing of various Apple products",
+          "riskExposure": "Moderate impact if production is delayed or quality issues arise."
+        }
+      ]
+    },
+    "strategicOutlook": "Apple's ecosystem is robust with strong supplier relationships, though it faces concentration risks with key suppliers like TSMC and Foxconn. Regulatory developments in China and consumer demand trends are critical externalities to watch, as they could significantly influence Apple's performance.",
+    "investedCompanies": [
+      {
+        "name": "Didi Chuxing",
+        "performance": "Didi has faced regulatory challenges in China but is working on compliance and recovery.",
+        "ownershipPct": "unknown",
+        "upcomingEvents": [
+          "Potential relisting on the stock exchange",
+          "Expansion of services"
+        ],
+        "impactPotential": "A successful relisting or expansion could positively impact Apple's investment value, while further regulatory issues could negatively affect it."
+      }
+    ]
+  },
+  "finalActionPlan": [
+    "Monitor for pullback to support levels for entry.",
+    "Watch for breakout confirmation above resistance.",
+    "Adjust position size based on risk/reward assessment."
+  ],
+  "analysisDateTime": "2026-06-06T03:33:43.594Z",
+  "executiveSummary": "Apple Inc. (AAPL) is trading at $307.23, showing a strong bullish trend with price above key moving averages and a positive volume trend. However, it is near resistance levels, suggesting a potential pullback. The stock is not currently overbought, but the risk/reward ratio for a new entry is not favorable at this price point. Institutional flow proxy indicates neutral accumulation, and recent news sentiment is mixed, with no immediate negative catalysts. \nLAYMAN'S TAKEAWAY: AAPL is doing well, but it's near a price level where it might face selling pressure. It's better to wait for a clearer buying opportunity, like a dip or a confirmed breakout, before making a move.",
+  "fundamentalScore": 85,
+  "newsAndCatalysts": {
+    "earningsRisk": "No immediate earnings risk identified.",
+    "keyCatalysts": [
+      "Potential AI developments at WWDC",
+      "Strong sector performance in technology"
+    ],
+    "catalystVerdict": "SUPPORTIVE",
+    "keyRisksFromNews": [
+      "Potential competition from SpaceX as a market disruptor"
+    ],
+    "overallSentiment": "MIXED",
+    "newsCatalystScore": 70
+  },
+  "scenarioAnalysis": {
+    "baseCase": {
+      "condition": "Steady growth with strong fundamentals.",
+      "pricePath": "Gradual increase with periodic pullbacks.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Increased competition and market saturation.",
+      "pricePath": "Potential pullback to support levels.",
+      "probability": "LOW"
+    },
+    "bullCase": {
+      "condition": "Successful new product launches and market expansion.",
+      "pricePath": "Continued upward trend with new highs.",
+      "probability": "MEDIUM"
+    }
+  },
+  "institutionalFlow": {
+    "signals": [
+      "Above-average volume (1.6x)",
+      "Price above VWAP",
+      "Price rising with increasing volume (bullish)",
+      "Price holding near support ($305.03)"
+    ],
+    "subScores": {
+      "obvTrendScore": 8,
+      "largeBodyScore": 2,
+      "priceVwapScore": 10,
+      "relVolumeScore": 10,
+      "breakoutVolScore": 8,
+      "supportHoldScore": 10,
+      "pvDivergenceScore": 15
+    },
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity.",
+    "proxyScore": 63,
+    "interpretation": "NEUTRAL"
+  },
+  "newsCatalystScore": 70,
+  "technicalAnalysis": {
+    "setupType": "PULLBACK",
+    "keySignals": [
+      "Price above EMA20 > EMA50 > EMA200",
+      "Strong uptrend (ADX>25, +DI>-DI)",
+      "Price above VWAP"
+    ],
+    "trendStage": "MARKUP",
+    "overallBias": "BULLISH",
+    "rsiAnalysis": "RSI is at 61, indicating moderate bullish momentum.",
+    "macdAnalysis": "MACD histogram is negative, suggesting a potential short-term pullback.",
+    "vwapAnalysis": "Price is above VWAP, indicating bullish intraday sentiment.",
+    "supportLevels": [
+      305.03,
+      307.83,
+      300.41
+    ],
+    "technicalScore": 80,
+    "volumeAnalysis": "Volume is above average, supporting the current price action.",
+    "resistanceLevels": [
+      311.61,
+      313.22,
+      315.14
+    ],
+    "volumeTrendStatus": "GROWING_STRONGER",
+    "atrVolatilityAnalysis": "ATR indicates moderate volatility, suitable for swing trading.",
+    "bollingerBandAnalysis": "Price is near the upper Bollinger Band, indicating potential resistance.",
+    "movingAverageAnalysis": "Bullish alignment with price above all key moving averages.",
+    "adxTrendStrengthAnalysis": "ADX is very high, confirming a strong trend."
+  },
+  "valuationAnalysis": {
+    "commentary": "AAPL's P/E and P/B ratios suggest it is overvalued compared to peers, but strong fundamentals support the premium.",
+    "fairValueRange": {
+      "low": 290,
+      "high": 310
+    },
+    "valuationScore": 60,
+    "valuationRating": "OVERVALUED",
+    "marginOfSafetyBuyZone": {
+      "low": 290,
+      "high": 300
+    },
+    "peerComparisonAvailable": true
+  },
+  "riskRewardAnalysis": {
+    "riskPerShare": 6.82,
+    "rewardToTarget1": 4.38,
+    "rewardToTarget2": 5.99,
+    "rewardToTarget3": 7.91,
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Consider reducing position size due to suboptimal risk/reward ratio.",
+    "entryReferencePrice": 307.23,
+    "riskRewardToTarget1": "0.64:1",
+    "riskRewardToTarget2": "0.88:1",
+    "riskRewardToTarget3": "1.16:1"
+  },
+  "fundamentalAnalysis": {
+    "rating": "STRONG",
+    "debtRisk": "Moderate debt levels manageable with strong cash flows.",
+    "epsTrend": "Positive EPS trend with forward growth expectations.",
+    "revenueTrend": "Consistent growth with strong market position.",
+    "profitability": "High profitability with strong margins.",
+    "cashFlowQuality": "Strong cash flow supporting operations and dividends.",
+    "fundamentalScore": 85,
+    "valuationCommentary": "Valuation is high but justified by growth and market position."
+  },
+  "tacticalHorizonView": {
+    "bias": "BULLISH",
+    "horizon": "5-15 days",
+    "catalysts": {
+      "news": "Mixed sentiment with no immediate negative catalysts.",
+      "earnings": "No earnings data provided; rely on news sentiment.",
+      "secFilings": "No recent SEC filings impacting the stock."
+    },
+    "dailyTrend": {
+      "trend": "MIXED",
+      "analysis": "Apple's stock showed a mixed trend today, closing at $307.23, down 1.16% from its opening price of $312.77. Despite the price decline, technical indicators across multiple timeframes show a predominantly bullish bias, with the stock trading above key moving averages (EMA20, EMA50, EMA200) and a strong uptrend indicated by ADX values. However, the MACD histogram is negative on the daily and hourly charts, suggesting short-term bearish momentum. The stock's price action was influenced by a combination of factors: the anticipation of Apple's potential AI announcements at the upcoming WWDC, as suggested by positive news sentiment, and concerns about competitive pressures from SpaceX, as highlighted by Jim Cramer's comments. Additionally, institutional trading showed above-average volume, indicating heightened interest, but the overall sentiment was neutral, reflecting uncertainty. The stock's high P/E ratio of 37.16 suggests it is priced for growth, but this also makes it sensitive to market sentiment shifts and competitive threats.",
+      "barCount": 252,
+      "laymanExplanation": "Think of Apple's stock like a car on a bumpy road. It started the day at a high speed but hit some bumps (negative news and competitive concerns) that slowed it down by the end of the day. Overall, it's still moving forward, but the road ahead looks a bit uncertain with both positive and negative signals. Keep an eye on upcoming announcements, as they could give the stock a clearer direction."
+    },
+    "swingSetup": {
+      "setup": "PULLBACK",
+      "analysis": "The 1H and 4H charts show a bullish trend with price above key moving averages, but near resistance. A pullback to support could provide a better entry."
+    },
+    "entryTiming": {
+      "trigger": "Wait for a pullback to support",
+      "analysis": "The 15M and 5M charts indicate a bearish short-term bias, suggesting a pullback is likely."
+    },
+    "riskMetrics": {
+      "atr": 6.02,
+      "vwap": 311.36,
+      "atrAnalysis": "ATR indicates moderate volatility, suitable for tactical trading.",
+      "vwapAnalysis": "Price is below VWAP on shorter timeframes, indicating potential for a pullback.",
+      "volumeAnalysis": "Volume is above average, supporting the current price action.",
+      "supportResistanceAnalysis": "Price is near resistance; wait for a pullback to support."
+    },
+    "shortFilter": {
+      "borrowFee": "Unavailable",
+      "ssrStatus": "Unavailable",
+      "squeezeRisk": "MEDIUM",
+      "shortInterest": "Unavailable"
+    },
+    "stopLossPrice": 300.41,
+    "supportLevels": [
+      {
+        "price": 305.03,
+        "tests": 3
+      },
+      {
+        "price": 307.83,
+        "tests": 2
+      }
+    ],
+    "horizonDetails": "AAPL is in a bullish trend but near resistance. A pullback to support could offer a better entry point for tactical trades.",
+    "resistanceLevels": [
+      {
+        "price": 311.61,
+        "tests": 2
+      },
+      {
+        "price": 313.22,
+        "tests": 1
+      }
+    ],
+    "suggestedExitPrice": 313.22,
+    "suggestedEntryPrice": 307.23
+  },
+  "doNotTradeConditions": [
+    "Avoid entry if price remains near resistance without breakout confirmation."
+  ],
+  "preDecisionChecklist": {
+    "earningsRisk": false,
+    "trendConfirmed": true,
+    "stopLossDefined": true,
+    "volumeConfirmed": true,
+    "entryNotExtended": false,
+    "momentumConfirmed": true,
+    "finalChecklistPass": false,
+    "nearResistanceRisk": true,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "riskRewardAcceptable": false
+  },
+  "institutionalFlowProxy": {
+    "signals": [
+      "Above-average volume (1.6x)",
+      "Price above VWAP",
+      "Price rising with increasing volume (bullish)",
+      "Price holding near support ($305.03)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ],
+    "interpretation": "NEUTRAL",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates neutral accumulation with above-average volume and price holding above VWAP. This suggests some institutional interest but not a strong buying signal.",
+    "institutionalFlowProxyScore": 63
+  },
+  "multibaggerProbability": {
+    "rating": "MEDIUM",
+    "reason": "Strong fundamentals and market position support growth, but high valuation limits upside potential.",
+    "majorBlockers": [
+      "High valuation",
+      "Potential market saturation"
+    ],
+    "probabilityScore": 50,
+    "requiredConditions": [
+      "Continued innovation and market leadership",
+      "Expansion into new markets"
+    ]
+  },
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates neutral accumulation with above-average volume and price holding above VWAP. This suggests some institutional interest but not a strong buying signal.",
+  "institutionalFlowProxyScore": 63
+}

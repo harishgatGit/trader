@@ -1,0 +1,879 @@
+{
+  "news": {
+    "items": [
+      {
+        "url": "https://www.benzinga.com/economics/macro-economic-events/26/06/53039690/white-house-says-u-s-ai-technologies-shall-neither-be-developed-nor-used-by-the-n",
+        "source": "benzinga",
+        "summary": null,
+        "headline": "White House Says U.S. AI Technologies Shall Neither Be Developed Nor Used By The National Security Enterprise To Censor Free Speech, Embed Ideological Bias, Or Conduct Unauthorized Or Unlawful Surveillance Activities",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-05T18:39:10Z"
+      },
+      {
+        "url": "https://www.benzinga.com/opinion/26/06/53038114/3-good-ai-stocks-to-take-profits-on-right-now",
+        "source": "benzinga",
+        "summary": "\nAI stocks have seen explosive growth, but with rising costs and high valuations, it may be time to take profits. NVIDIA, Intel, and Alphabet are mentioned as potential options.",
+        "headline": "3 Good AI Stocks to Take Profits On Right Now",
+        "sentiment": "POSITIVE",
+        "publishedAt": "2026-06-05T17:58:15Z"
+      },
+      {
+        "url": "https://www.benzinga.com/economics/macro-economic-events/26/06/53037993/president-trump-says-meeting-scheduled-with-ai-companies-soon-they-are-coming-to-",
+        "source": "benzinga",
+        "summary": null,
+        "headline": "President Trump Says Meeting Scheduled With AI Companies Soon; They Are Coming To White House, Maybe Next Week",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-05T17:55:02Z"
+      },
+      {
+        "url": "https://www.benzinga.com/Opinion/26/06/53032886/momo-aggressively-buys-semiconductor-dip-big-setback-for-spacex-blowout-jobs-report",
+        "source": "benzinga",
+        "summary": "\n\n\n\nBlowout Jobs Report\n\n\n",
+        "headline": "Momo Aggressively Buys Semiconductor Dip; Big Setback For SpaceX; Blowout Jobs Report",
+        "sentiment": "POSITIVE",
+        "publishedAt": "2026-06-05T15:42:13Z"
+      },
+      {
+        "url": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/06/53032145/coreweave-vs-nebius-analyst-spotlights-upside-for-leading-ai-neocloud",
+        "source": "benzinga",
+        "summary": "CoreWeave (CRWV) stock target set to $192 at BNP Paribas, outshining Nebius Group (NBIS) due to a massive 98% long-term revenue contract safety net",
+        "headline": "CoreWeave Vs. Nebius: Analyst Spotlights Upside For Leading AI Neocloud",
+        "sentiment": "POSITIVE",
+        "publishedAt": "2026-06-05T15:22:14Z"
+      },
+      {
+        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/06/53031436/bill-ackman-dan-ives-pile-into-the-same-4-stocks-what-do-they-see-coming",
+        "source": "benzinga",
+        "summary": "Bill Ackman and Dan Ives have four stocks in common across their investment portfolios.",
+        "headline": "Bill Ackman, Dan Ives Pile Into The Same 4 stocks \u2013 What Do They See Coming?",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-05T15:01:39Z"
+      },
+      {
+        "url": "https://www.benzinga.com/news/26/06/53030463/reid-hoffman-to-step-down-from-microsoft-board-will-not-seek-re-election-at-2026-shareholder-meeting",
+        "source": "benzinga",
+        "summary": null,
+        "headline": "Reid Hoffman To Step Down From Microsoft Board, Will Not Seek Re-Election At 2026 Shareholder Meeting",
+        "sentiment": "NEGATIVE",
+        "publishedAt": "2026-06-05T14:39:54Z"
+      },
+      {
+        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/06/53030067/jim-cramer-says-a-4-trillion-spacex-could-force-investors-to-dump-nvidia-apple-and-microsoft",
+        "source": "benzinga",
+        "summary": "Jim Cramer warns investors may be selling Nvidia, Apple, Amazon and Microsoft as excitement builds around a potential $4 trillion valuation for SpaceX.",
+        "headline": "Jim Cramer Says A $4 Trillion SpaceX Could Force Investors To Dump Nvidia, Apple And Microsoft",
+        "sentiment": "NEGATIVE",
+        "publishedAt": "2026-06-05T14:31:26Z"
+      },
+      {
+        "url": "https://www.benzinga.com/insights/news/26/06/53029176/heres-how-much-100-invested-in-microsoft-10-years-ago-would-be-worth-today",
+        "source": "benzinga",
+        "summary": " ",
+        "headline": "Here's How Much $100 Invested In Microsoft 10 Years Ago Would Be Worth Today",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-05T14:15:42Z"
+      },
+      {
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53024576/why-is-micron-stock-falling-friday",
+        "source": "benzinga",
+        "summary": "Micron stock drops in premarket amid semiconductor profit-taking. Is MU still a buy before June 24 earnings? Find out.",
+        "headline": "Why Is Micron Stock Falling Friday?",
+        "sentiment": "NEUTRAL",
+        "publishedAt": "2026-06-05T12:22:47Z"
+      }
+    ],
+    "source": "alpaca_news",
+    "available": true,
+    "sentiment": "POSITIVE"
+  },
+  "symbol": "MSFT",
+  "keyRisks": [
+    "Regulatory challenges",
+    "Market volatility",
+    "Technical resistance levels"
+  ],
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "marketData": {
+    "ask": 421,
+    "bid": 417,
+    "low": 416.56,
+    "raw": {
+      "symbol": "MSFT",
+      "dailyBar": {
+        "c": 417,
+        "h": 429.385,
+        "l": 416.56,
+        "n": 12309,
+        "o": 428.005,
+        "t": "2026-06-05T04:00:00Z",
+        "v": 648275,
+        "vw": 422.239137
+      },
+      "minuteBar": {
+        "c": 417,
+        "h": 417.13,
+        "l": 416.93,
+        "n": 33,
+        "o": 416.93,
+        "t": "2026-06-05T19:02:00Z",
+        "v": 1399,
+        "vw": 417.044641
+      },
+      "latestQuote": {
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-05T19:03:33.631995022Z",
+        "z": "C",
+        "ap": 421,
+        "as": 40,
+        "ax": "V",
+        "bp": 417,
+        "bs": 80,
+        "bx": "V"
+      },
+      "latestTrade": {
+        "c": [
+          "@"
+        ],
+        "i": 12336,
+        "p": 417.08,
+        "s": 100,
+        "t": "2026-06-05T19:03:33.60082017Z",
+        "x": "V",
+        "z": "C"
+      },
+      "prevDailyBar": {
+        "c": 428.09,
+        "h": 436.05,
+        "l": 426.44,
+        "n": 18519,
+        "o": 435.81,
+        "t": "2026-06-04T04:00:00Z",
+        "v": 820194,
+        "vw": 429.453121
+      }
+    },
+    "high": 429.385,
+    "open": 428.005,
+    "vwap": 422.239137,
+    "close": 417,
+    "price": 417.08,
+    "spread": 4,
+    "symbol": "MSFT",
+    "volume": 648275,
+    "available": true,
+    "timestamp": "2026-06-05T19:03:33.60082017Z",
+    "changePercent": -2.59
+  },
+  "technicals": {
+    "primary": {
+      "obv": -10915178,
+      "vwap": 425.8784165659753,
+      "adx14": 257.0092896356181,
+      "atr14": 12.69929642906781,
+      "ema20": 424.5753810647304,
+      "ema50": 417.1188050723074,
+      "rsi14": 47.62102242022548,
+      "sma20": 422.5650000000001,
+      "sma50": 408.3373999999999,
+      "ema200": 452.5907586781765,
+      "plusDI": 33.18399940141881,
+      "sma200": 456.3783999999999,
+      "bbLower": 395.4750256552355,
+      "bbUpper": 449.6549743447646,
+      "bbWidth": 12.82168392780496,
+      "minusDI": 32.64679813069036,
+      "signals": [
+        "MACD histogram negative",
+        "Death cross (EMA50 < EMA200)",
+        "Price below VWAP",
+        "Strong uptrend (ADX>25, +DI>-DI)"
+      ],
+      "bbMiddle": 422.5650000000001,
+      "macdHist": -0.6126965321411966,
+      "macdLine": 5.568806341531285,
+      "relVolume": 0.7002754976868305,
+      "rsi14Prev": 52.95866343442936,
+      "macdSignal": 6.181502873672482,
+      "overallBias": "BEARISH",
+      "supportLevels": [
+        398.01,
+        400.92,
+        405.17,
+        410.8
+      ],
+      "resistanceLevels": [
+        384.99,
+        428.91,
+        433,
+        466.27
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "trendStory": {
+    "ticker": "MSFT",
+    "evidence": {
+      "short_context": {
+        "summary": "Short borrow is available. Squeeze risk is currently low.",
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "short_interest_percent": 2.5,
+        "short_interest_available": true
+      },
+      "news_catalysts": [
+        {
+          "impact": "neutral",
+          "source": "benzinga",
+          "summary": "White House Says U.S. AI Technologies Shall Neither Be Developed Nor Used By The National Security Enterprise To Censor Free Speech, Embed Ideological Bias, Or Conduct Unauthorized Or Unlawful Surveillance Activities",
+          "headline": "White House Says U.S. AI Technologies Shall Neither Be Developed Nor Used By The National Security Enterprise To Censor Free Speech, Embed Ideological Bias, Or Conduct Unauthorized Or Unlawful Surveillance Activities",
+          "published_at": "2026-06-05T18:39:10Z",
+          "relevance_score": 90
+        },
+        {
+          "impact": "positive",
+          "source": "benzinga",
+          "summary": "\nAI stocks have seen explosive growth, but with rising costs and high valuations, it may be time to take profits. NVIDIA, Intel, and Alphabet are mentioned as potential options.",
+          "headline": "3 Good AI Stocks to Take Profits On Right Now",
+          "published_at": "2026-06-05T17:58:15Z",
+          "relevance_score": 80
+        },
+        {
+          "impact": "neutral",
+          "source": "benzinga",
+          "summary": "President Trump Says Meeting Scheduled With AI Companies Soon; They Are Coming To White House, Maybe Next Week",
+          "headline": "President Trump Says Meeting Scheduled With AI Companies Soon; They Are Coming To White House, Maybe Next Week",
+          "published_at": "2026-06-05T17:55:02Z",
+          "relevance_score": 70
+        },
+        {
+          "impact": "positive",
+          "source": "benzinga",
+          "summary": "\n\n\n\nBlowout Jobs Report\n\n\n",
+          "headline": "Momo Aggressively Buys Semiconductor Dip; Big Setback For SpaceX; Blowout Jobs Report",
+          "published_at": "2026-06-05T15:42:13Z",
+          "relevance_score": 60
+        },
+        {
+          "impact": "positive",
+          "source": "benzinga",
+          "summary": "CoreWeave (CRWV) stock target set to $192 at BNP Paribas, outshining Nebius Group (NBIS) due to a massive 98% long-term revenue contract safety net",
+          "headline": "CoreWeave Vs. Nebius: Analyst Spotlights Upside For Leading AI Neocloud",
+          "published_at": "2026-06-05T15:22:14Z",
+          "relevance_score": 50
+        }
+      ],
+      "sector_context": {
+        "summary": "Sector Technology is moving. Index overall changed slightly.",
+        "sector_name": "Technology",
+        "index_change_percent": -1.29,
+        "sector_change_percent": -2.07,
+        "is_stock_outperforming_sector": false
+      },
+      "volume_context": {
+        "summary": "Relative volume is 0.7x. Institutional flow proxy score is 25.",
+        "relative_volume": 0.7,
+        "large_buyer_signal": "weak",
+        "volume_interpretation": "normal"
+      },
+      "analyst_actions": [
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "summary": "Momo Aggressively Buys Semiconductor Dip; Big Setback For SpaceX; Blowout Jobs Report",
+          "new_target": null,
+          "old_target": null
+        }
+      ],
+      "earnings_catalyst": {
+        "summary": "No recent earnings announcement identified in news feeds.",
+        "eps_surprise": null,
+        "guidance_change": "unknown",
+        "revenue_surprise": null,
+        "has_recent_earnings": false
+      },
+      "technical_context": {
+        "rsi": 47.62102242022548,
+        "trend": "downtrend",
+        "summary": "Price is BEARISH overall. RSI at 47.62102242022548.",
+        "macd_signal": "bearish",
+        "support_level": 398.01,
+        "vwap_position": "below",
+        "breakout_level": 384.99,
+        "resistance_level": 384.99
+      }
+    },
+    "analysis_date": "2026-06-05",
+    "final_summary": {
+      "risk_warning": "The move may not be sustainable as it's driven by sector trends rather than company-specific news.",
+      "trader_action": "Swing traders should wait for confirmation of support, while short sellers should wait for a breakdown.",
+      "layman_summary": "Microsoft's stock dropped today because the whole technology sector is facing some challenges, not because of any specific bad news about Microsoft.",
+      "one_line_story": "Microsoft's stock fell due to broader technology sector weakness."
+    },
+    "price_summary": {
+      "volume": 648275,
+      "day_range": {
+        "low": 416.56,
+        "high": 429.385
+      },
+      "current_price": 417.08,
+      "average_volume": 925743,
+      "previous_close": 428.17,
+      "relative_volume": 0.7,
+      "day_change_percent": -2.59
+    },
+    "short_trade_view": {
+      "reason": "Wait for a breakdown below $398.00 to confirm further downside.",
+      "short_bias": "wait_for_breakdown",
+      "short_target_1": 384,
+      "short_target_2": 370,
+      "short_stop_loss": 417.08,
+      "short_entry_trigger": 398
+    },
+    "story_for_layman": {
+      "headline": "Microsoft's Stock Drops as Technology Sector Faces Pressure",
+      "why_it_moved": "The technology sector, which Microsoft is a part of, saw a general decline today. This sector-wide movement influenced Microsoft's stock to drop.",
+      "simple_explanation": "Microsoft's stock fell today, mainly because the entire technology sector is facing some selling pressure. There wasn't any specific news about Microsoft itself causing this drop.",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The move is influenced by broader sector trends rather than specific company news, making its sustainability uncertain.",
+      "who_may_be_buying_or_selling": "mixed"
+    },
+    "swing_trade_view": {
+      "target_1": 429,
+      "target_2": 440,
+      "stop_loss": 398.01,
+      "entry_zone": {
+        "low": 398.01,
+        "high": 417.08
+      },
+      "trade_bias": "wait",
+      "risk_reward": 1.5,
+      "entry_reason": "Wait for confirmation of support at $398.01 before considering entry.",
+      "wait_for_confirmation": "Look for stabilization above $398.01."
+    },
+    "move_classification": {
+      "confidence": "medium",
+      "primary_reason": "sector-sympathy",
+      "confidence_score": 65,
+      "secondary_reasons": [
+        "technical-breakdown"
+      ]
+    }
+  },
+  "alertLevels": {
+    "buyAlert": null,
+    "riskAlert": null,
+    "target1Alert": 428.91,
+    "target2Alert": 433,
+    "breakoutAlert": 433,
+    "stopLossAlert": 398.01
+  },
+  "dataQuality": {
+    "rating": "HIGH",
+    "reason": "All necessary data provided for analysis.",
+    "missingFields": [],
+    "decisionAllowed": true,
+    "staleDataWarning": null
+  },
+  "finalRating": "WATCHLIST",
+  "currentPrice": 417.08,
+  "fundamentals": {
+    "beta": 1.103,
+    "sector": "Technology",
+    "source": "yahoo_finance",
+    "pbRatio": 7.476558,
+    "peRatio": 24.852203,
+    "revenue": 318272995328,
+    "industry": "Software - Infrastructure",
+    "available": true,
+    "marketCap": 3097805979648,
+    "week52Low": 356.28,
+    "epsForward": 19.34941,
+    "week52High": 555.45,
+    "description": "Microsoft Corporation develops and supports software, services, devices, and solutions worldwide. The Productivity and Business Processes segment offers Microsoft 365 commercial, enterprise mobility + security, windows commercial, power BI, exchange, sharepoint, Microsoft teams, security and compliance, and copilot; Microsoft 365 commercial products, such as Windows commercial on-premises and office licensed services; Microsoft 365 consumer products and cloud services, including Microsoft 365 co",
+    "epsTrailing": 16.78,
+    "debtToEquity": 30.271,
+    "dividendYield": 0.0085
+  },
+  "keyCatalysts": [
+    "Positive AI developments",
+    "Strong market position in cloud services"
+  ],
+  "longTermView": {
+    "bias": "BULLISH",
+    "horizon": "6-24 months",
+    "baseCase": "Steady growth with strong fundamentals supports gradual price increase.",
+    "bearCase": "Regulatory challenges or market downturn impacts growth.",
+    "bullCase": "Continued growth in AI and cloud services boosts revenue.",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient_data"
+    },
+    "longTermVerdict": "ACCUMULATE",
+    "investmentQuality": "STRONG"
+  },
+  "riskAnalysis": {
+    "newsRisk": "Positive sentiment but potential regulatory risks.",
+    "topRisks": [
+      "Regulatory challenges",
+      "Market volatility",
+      "Technical resistance levels"
+    ],
+    "eventRisk": "Potential regulatory events impacting AI sector.",
+    "liquidityRisk": "Low liquidity risk with high trading volume.",
+    "technicalRisk": "Mixed technical signals with bearish short-term indicators.",
+    "valuationRisk": "Fairly valued with room for growth.",
+    "fundamentalRisk": "Low due to strong financials.",
+    "overallRiskLevel": "MEDIUM"
+  },
+  "entryExitPlan": {
+    "targets": [
+      {
+        "label": "T1",
+        "price": 428.91,
+        "reason": "First resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 433,
+        "reason": "Breakout confirmation level."
+      },
+      {
+        "label": "T3",
+        "price": 466.27,
+        "reason": "Long-term resistance target."
+      }
+    ],
+    "stopLoss": {
+      "price": 398.01,
+      "stopType": "SUPPORT_BREAK",
+      "description": "Stop-loss set below key support level to limit downside risk."
+    },
+    "exitRules": [
+      "Exit if price breaks below 398.01 support.",
+      "Trim position at each target level."
+    ],
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current price is near resistance; not ideal for buying now."
+    },
+    "accumulationZone": {
+      "low": 398.01,
+      "high": 405.17,
+      "description": "Accumulation zone for potential long-term positions."
+    },
+    "invalidationLevel": {
+      "price": 398.01,
+      "reason": "Break below this level invalidates bullish setup."
+    },
+    "pullbackEntryZone": {
+      "low": 405.17,
+      "high": 410.8,
+      "description": "Consider buying if price pulls back to these support levels."
+    },
+    "breakoutEntryLevel": {
+      "price": 433,
+      "confirmationRule": "Buy on breakout above resistance with strong volume."
+    },
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK"
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "buyNowReason": "The stock is near resistance with mixed technical signals and an unfavorable risk/reward ratio.",
+    "decisionType": "TRADE",
+    "shouldBuyNow": false,
+    "bestActionNow": "WATCHLIST for a pullback or clearer breakout confirmation.",
+    "confidenceScore": 65,
+    "decisionSummary": "MSFT is currently experiencing mixed technical signals with bearish short-term indicators and bullish longer-term trends. The stock is near resistance levels, and the risk/reward profile is not favorable for immediate entry. It is advisable to watch for a clearer technical setup or a pullback to a more favorable entry point."
+  },
+  "shortTermView": {
+    "bias": "BEARISH",
+    "horizon": "1-5 days",
+    "targets": [
+      {
+        "label": "T1",
+        "price": 428.91
+      },
+      {
+        "label": "T2",
+        "price": 433
+      },
+      {
+        "label": "T3",
+        "price": 466.27
+      }
+    ],
+    "stopLoss": {
+      "price": 398.01,
+      "description": "Stop-loss below key support level."
+    },
+    "entryZone": {
+      "low": 405.17,
+      "high": 410.8,
+      "description": "Potential entry on pullback to support."
+    },
+    "exitRules": [
+      "Exit if price breaks below 398.01 support.",
+      "Trim position at each target level."
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "bias": "MIXED",
+    "horizon": "2-6 weeks",
+    "targets": [
+      {
+        "label": "T1",
+        "price": 428.91
+      },
+      {
+        "label": "T2",
+        "price": 433
+      }
+    ],
+    "stopLoss": {
+      "price": 398.01,
+      "description": "Stop-loss below key support level."
+    },
+    "entryZone": {
+      "low": 405.17,
+      "high": 410.8,
+      "description": "Potential entry on pullback to support."
+    },
+    "riskReward": "POOR",
+    "swingVerdict": "WATCHLIST",
+    "accumulationZone": {
+      "low": 398.01,
+      "high": 405.17,
+      "description": "Accumulation zone for potential long-term positions."
+    }
+  },
+  "technicalScore": 55,
+  "companyInsights": {
+    "dependencies": {
+      "customers": [
+        {
+          "name": "Enterprise Sector",
+          "role": "Customer",
+          "description": "Purchases cloud services and enterprise software",
+          "riskExposure": "Economic downturns could reduce IT spending, impacting revenue."
+        },
+        {
+          "name": "Government",
+          "role": "Customer",
+          "description": "Uses cloud services and productivity software",
+          "riskExposure": "Policy changes or budget cuts could affect contract renewals."
+        }
+      ],
+      "suppliers": [
+        {
+          "name": "Intel",
+          "role": "Supplier",
+          "description": "Microprocessors for Surface devices",
+          "riskExposure": "Disruption could impact hardware product line availability."
+        },
+        {
+          "name": "AMD",
+          "role": "Supplier",
+          "description": "Graphics processors for gaming consoles and PCs",
+          "riskExposure": "Supply issues could affect gaming and high-performance computing products."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Best Buy",
+          "role": "Marketing Partner",
+          "description": "Retail distribution of Microsoft products",
+          "riskExposure": "Changes in retail strategy or performance could affect product sales."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Foxconn",
+          "role": "Outsource Partner",
+          "description": "Manufacturing of Surface devices",
+          "riskExposure": "Disruptions could delay product launches and affect sales."
+        }
+      ]
+    },
+    "strategicOutlook": "Microsoft's ecosystem is robust with diversified investments and partnerships. The company faces moderate concentration risk in hardware supply chains but benefits from strong growth in cloud and AI sectors. Key externalities include technological advancements in AI and potential supply chain disruptions.",
+    "investedCompanies": [
+      {
+        "name": "OpenAI",
+        "performance": "Strong growth trajectory with increasing adoption of AI technologies.",
+        "ownershipPct": "49%",
+        "upcomingEvents": [
+          "Potential new AI product launches",
+          "Expansion into new markets"
+        ],
+        "impactPotential": "Positive impact on MSFT as new AI products could enhance Microsoft's AI capabilities and product offerings."
+      },
+      {
+        "name": "LinkedIn",
+        "performance": "Steady growth with increasing user engagement and advertising revenue.",
+        "ownershipPct": "100%",
+        "upcomingEvents": [
+          "New feature rollouts",
+          "Expansion of advertising tools"
+        ],
+        "impactPotential": "Positive impact on MSFT through increased ad revenue and user engagement."
+      }
+    ]
+  },
+  "finalActionPlan": [
+    "Monitor for a pullback to support levels.",
+    "Watch for breakout confirmation above resistance.",
+    "Consider accumulating on dips within the defined zones."
+  ],
+  "analysisDateTime": "2026-06-05T19:03:36.816Z",
+  "executiveSummary": "Microsoft Corporation (MSFT) is currently trading at $417.08, showing mixed technical signals. The short-term trend is bearish with the price below key moving averages and VWAP, indicating potential distribution. However, longer timeframes show bullish momentum, suggesting potential for recovery. The stock is near resistance, making immediate entry risky. In the near term, expect volatility as the stock navigates these technical levels. Long-term prospects remain positive due to strong fundamentals and positive news sentiment.\n\nLAYMAN'S TAKEAWAY: MSFT is not a buy right now due to mixed signals and resistance levels. Keep it on your watchlist and consider buying if it pulls back to a better price or breaks out with strong volume.",
+  "fundamentalScore": 85,
+  "newsAndCatalysts": {
+    "earningsRisk": "Earnings data not provided.",
+    "keyCatalysts": [
+      "Positive AI developments",
+      "Strong market position in cloud services"
+    ],
+    "catalystVerdict": "SUPPORTIVE",
+    "keyRisksFromNews": [
+      "Potential regulatory challenges"
+    ],
+    "overallSentiment": "POSITIVE",
+    "newsCatalystScore": 75
+  },
+  "scenarioAnalysis": {
+    "baseCase": {
+      "condition": "Steady growth with positive fundamentals.",
+      "pricePath": "Price gradually increases with market trends.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Regulatory challenges or market downturn.",
+      "pricePath": "Price declines to support levels.",
+      "probability": "LOW"
+    },
+    "bullCase": {
+      "condition": "AI and cloud services drive revenue growth.",
+      "pricePath": "Price breaks above resistance and trends higher.",
+      "probability": "MEDIUM"
+    }
+  },
+  "institutionalFlow": {
+    "signals": [
+      "Below-average volume (0.7x)",
+      "Price below VWAP (-2.1%)",
+      "Price declining with decreasing volume (possible absorption)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "subScores": {
+      "obvTrendScore": 8,
+      "largeBodyScore": 0,
+      "priceVwapScore": 0,
+      "relVolumeScore": 0,
+      "breakoutVolScore": 3,
+      "supportHoldScore": 6,
+      "pvDivergenceScore": 8
+    },
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity.",
+    "proxyScore": 25,
+    "interpretation": "DISTRIBUTION"
+  },
+  "newsCatalystScore": 75,
+  "technicalAnalysis": {
+    "setupType": "NO_SETUP",
+    "keySignals": [
+      "Price below VWAP",
+      "MACD bearish on 15Min and 5Min",
+      "RSI oversold on 15Min"
+    ],
+    "trendStage": "DISTRIBUTION",
+    "overallBias": "MIXED",
+    "rsiAnalysis": "RSI is oversold on 15Min, suggesting potential for a short-term bounce.",
+    "macdAnalysis": "MACD is bearish on short-term timeframes, indicating downward momentum.",
+    "vwapAnalysis": "Price is below VWAP indicating potential selling pressure.",
+    "supportLevels": [
+      398.01,
+      400.92,
+      405.17,
+      410.8
+    ],
+    "technicalScore": 55,
+    "volumeAnalysis": "Volume is below average, indicating lack of strong buying interest.",
+    "resistanceLevels": [
+      428.91,
+      433,
+      466.27
+    ],
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR indicates moderate volatility, suitable for swing trading.",
+    "bollingerBandAnalysis": "Bollinger Bands are squeezing, indicating potential for a volatility breakout.",
+    "movingAverageAnalysis": "Price is below EMA20, EMA50, and EMA200 on daily timeframe, indicating bearish momentum.",
+    "adxTrendStrengthAnalysis": "ADX indicates strong trend strength across timeframes, but direction is mixed."
+  },
+  "valuationAnalysis": {
+    "commentary": "MSFT is fairly valued with strong growth potential in AI and cloud services.",
+    "fairValueRange": {
+      "low": 400,
+      "high": 450
+    },
+    "valuationScore": 70,
+    "valuationRating": "FAIRLY_VALUED",
+    "marginOfSafetyBuyZone": {
+      "low": 380,
+      "high": 400
+    },
+    "peerComparisonAvailable": true
+  },
+  "riskRewardAnalysis": {
+    "riskPerShare": 19.07,
+    "rewardToTarget1": 11.83,
+    "rewardToTarget2": 15.92,
+    "rewardToTarget3": 49.19,
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Consider smaller position size due to poor risk/reward ratio.",
+    "entryReferencePrice": 417.08,
+    "riskRewardToTarget1": "0.62:1",
+    "riskRewardToTarget2": "0.83:1",
+    "riskRewardToTarget3": "2.58:1"
+  },
+  "fundamentalAnalysis": {
+    "rating": "STRONG",
+    "debtRisk": "Low debt-to-equity ratio indicates manageable debt levels.",
+    "epsTrend": "EPS is improving with strong forward guidance.",
+    "revenueTrend": "Consistent growth with strong market position.",
+    "profitability": "High profitability with solid margins.",
+    "cashFlowQuality": "Strong cash flow supports operations and dividends.",
+    "fundamentalScore": 85,
+    "valuationCommentary": "Valuation is reasonable given growth prospects and market position."
+  },
+  "tacticalHorizonView": {
+    "bias": "MIXED",
+    "horizon": "5-15 days",
+    "catalysts": {
+      "news": "Positive sentiment around AI developments.",
+      "earnings": "Earnings data not provided.",
+      "secFilings": "No recent SEC filings impacting price."
+    },
+    "dailyTrend": {
+      "trend": "BEARISH",
+      "analysis": "Microsoft's stock experienced a bearish trend today, closing at $417.08, down 2.59% from its opening price of $428.005. The technical indicators on the daily chart show a negative MACD histogram and a 'death cross' where the 50-day EMA is below the 200-day EMA, indicating a long-term bearish sentiment. The price also closed below the VWAP, suggesting selling pressure. The institutional flow shows a distribution pattern with below-average volume, indicating that institutional investors might be offloading shares. Despite the overall positive sentiment in the news, particularly around AI developments, the stock's decline could be attributed to profit-taking activities as suggested by the article recommending taking profits on AI stocks. Additionally, the high debt-to-equity ratio of 30.271 might be a concern for investors in a rising interest rate environment, adding to the bearish sentiment.",
+      "barCount": 252,
+      "laymanExplanation": "Think of Microsoft's stock like a car going downhill today. Despite some good news about AI, investors seem to be hitting the brakes and selling off, possibly to cash in on recent gains. This selling pressure is like a heavy foot on the brake pedal, causing the stock to slide down."
+    },
+    "swingSetup": {
+      "setup": "Bollinger Band squeeze",
+      "analysis": "The 1H and 4H charts show a squeeze indicating potential for a breakout, but direction is unclear."
+    },
+    "entryTiming": {
+      "trigger": "Wait for breakout confirmation",
+      "analysis": "15M and 5M charts show bearish momentum; wait for bullish reversal signal."
+    },
+    "riskMetrics": {
+      "atr": 12.7,
+      "vwap": 422.24,
+      "atrAnalysis": "ATR indicates moderate volatility.",
+      "vwapAnalysis": "Price is below VWAP, indicating potential selling pressure.",
+      "volumeAnalysis": "Volume is below average, suggesting lack of buying interest.",
+      "supportResistanceAnalysis": "Price is near resistance; watch for breakout or pullback."
+    },
+    "shortFilter": {
+      "borrowFee": "Unavailable",
+      "ssrStatus": "Unavailable",
+      "squeezeRisk": "MEDIUM",
+      "shortInterest": "Unavailable"
+    },
+    "stopLossPrice": 398.01,
+    "supportLevels": [
+      {
+        "price": 410.8,
+        "tests": 1
+      },
+      {
+        "price": 405.17,
+        "tests": 1
+      },
+      {
+        "price": 400.92,
+        "tests": 1
+      },
+      {
+        "price": 398.01,
+        "tests": 1
+      }
+    ],
+    "horizonDetails": "MSFT is in a technical squeeze with mixed signals. Monitor for a breakout or pullback for better entry.",
+    "resistanceLevels": [
+      {
+        "price": 428.91,
+        "tests": 1
+      },
+      {
+        "price": 433,
+        "tests": 1
+      },
+      {
+        "price": 466.27,
+        "tests": 1
+      }
+    ],
+    "suggestedExitPrice": null,
+    "suggestedEntryPrice": null
+  },
+  "doNotTradeConditions": [
+    "Price remains near resistance without breakout confirmation.",
+    "Technical signals remain mixed or bearish."
+  ],
+  "preDecisionChecklist": {
+    "earningsRisk": false,
+    "trendConfirmed": false,
+    "stopLossDefined": true,
+    "volumeConfirmed": false,
+    "entryNotExtended": true,
+    "momentumConfirmed": false,
+    "finalChecklistPass": false,
+    "nearResistanceRisk": true,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "riskRewardAcceptable": false
+  },
+  "institutionalFlowProxy": {
+    "signals": [
+      "Below-average volume (0.7x)",
+      "Price below VWAP (-2.1%)",
+      "Price declining with decreasing volume (possible absorption)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ],
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. Current proxy data suggests distribution with below-average volume and price below VWAP. This indicates potential selling pressure.",
+    "institutionalFlowProxyScore": 25
+  },
+  "multibaggerProbability": {
+    "rating": "MEDIUM",
+    "reason": "Strong fundamentals and market position support growth, but current technicals are mixed.",
+    "majorBlockers": [
+      "Regulatory challenges",
+      "Market volatility"
+    ],
+    "probabilityScore": 60,
+    "requiredConditions": [
+      "Clear breakout above resistance",
+      "Sustained revenue and EPS growth"
+    ]
+  },
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. Current proxy data suggests distribution with below-average volume and price below VWAP. This indicates potential selling pressure.",
+  "institutionalFlowProxyScore": 25
+}

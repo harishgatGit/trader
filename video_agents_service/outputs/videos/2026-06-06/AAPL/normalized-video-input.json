@@ -1,0 +1,30 @@
+{
+  "ticker": "AAPL",
+  "companyName": "AAPL",
+  "reportDate": "Unavailable",
+  "currentPrice": 307.23,
+  "dayChangePct": -1.16,
+  "overallSignal": "WAIT",
+  "whyStockMoved": "news-driven",
+  "catalystSummary": "Potential AI developments at WWDC; Strong sector performance in technology",
+  "volumeSummary": "Volume is above average, supporting the current price action.",
+  "trendSummary": "Apple's stock showed a mixed trend today, closing at $307.23, down 1.16% from its opening price of $312.77. Despite the price decline, technical indicators across multiple timeframes show a predominantly bullish bias, with the stock trading above key moving averages (EMA20, EMA50, EMA200) and a strong uptrend indicated by ADX values. However, the MACD histogram is negative on the daily and hourly charts, suggesting short-term bearish momentum. The stock's price action was influenced by a combination of factors: the anticipation of Apple's potential AI announcements at the upcoming WWDC, as suggested by positive news sentiment, and concerns about competitive pressures from SpaceX, as highlighted by Jim Cramer's comments. Additionally, institutional trading showed above-average volume, indicating heightened interest, but the overall sentiment was neutral, reflecting uncertainty. The stock's high P/E ratio of 37.16 suggests it is priced for growth, but this also makes it sensitive to market sentiment shifts and competitive threats.",
+  "supportLevels": [
+    305.03,
+    307.83
+  ],
+  "resistanceLevels": [
+    311.61,
+    313.22
+  ],
+  "entryZone": "Low: 300.41, High: 305.03",
+  "stopLoss": "Price: 300.41 (Set stop loss below key support level.)",
+  "targets": [
+    313.22,
+    315.14
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "High valuation; Near-term resistance; Potential competitive threats",
+  "finalVerdict": "AAPL is currently in a bullish technical trend but is near resistance levels, suggesting potential for a pullback. The risk/reward ratio is not optimal for immediate entry. Waiting for a better entry point or breakout confirmation is advised.",
+  "executiveSummary": "Apple Inc. (AAPL) is trading at $307.23, showing a strong bullish trend with price above key moving averages and a positive volume trend. However, it is near resistance levels, suggesting a potential pullback. The stock is not currently overbought, but the risk/reward ratio for a new entry is not favorable at this price point. Institutional flow proxy indicates neutral accumulation, and recent news sentiment is mixed, with no immediate negative catalysts. \nLAYMAN'S TAKEAWAY: AAPL is doing well, but it's near a price level where it might face selling pressure. It's better to wait for a clearer buying opportunity, like a dip or a confirmed breakout, before making a move."
+}

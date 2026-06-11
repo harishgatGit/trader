@@ -1,0 +1,99 @@
+{
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "sceneTitle": "Hook",
+      "durationSeconds": 6,
+      "voiceover": "Imagine you're at a Tesla showroom. The brand is sleek, promising, and undeniably futuristic\u2014much like its stock, TSLA, currently priced at $417.36.",
+      "textOverlay": "Tesla: Futuristic Brand, Promising Stock",
+      "visualInstruction": "Showroom visuals with Tesla cars",
+      "animationType": "slide_in",
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 2,
+      "sceneTitle": "Price summary",
+      "durationSeconds": 6,
+      "voiceover": "It's been climbing, like a Tesla accelerating on an open road, but now it's taking a breather.",
+      "textOverlay": "TSLA Price: $417.36",
+      "visualInstruction": "Display current price with upward trend line",
+      "animationType": "count_up",
+      "dataFields": {
+        "ticker": "TSLA",
+        "price": 417.36
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneTitle": "Why it moved",
+      "durationSeconds": 6,
+      "voiceover": "The stock is pulling back, trading below its VWAP with decreasing volume, hinting at potential absorption.",
+      "textOverlay": "Pullback: Below VWAP, Decreasing Volume",
+      "visualInstruction": "Chart showing pullback below VWAP",
+      "animationType": "chart_draw",
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneTitle": "Volume strength",
+      "durationSeconds": 6,
+      "voiceover": "While it's near a support level, this isn't the best time to jump in. The storm of institutional distribution suggests caution.",
+      "textOverlay": "Low Volume, Institutional Distribution",
+      "visualInstruction": "Volume bars decreasing",
+      "animationType": "fade_in",
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneTitle": "Trend story",
+      "durationSeconds": 7,
+      "voiceover": "Despite positive buzz from SpaceX and Tesla's robotaxi ventures, volume is low, lacking the horsepower for a strong push.",
+      "textOverlay": "Buzz vs. Volume: Watch for Breakout",
+      "visualInstruction": "Buzzwords with low volume indicator",
+      "animationType": "reveal",
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneTitle": "Swing trade plan",
+      "durationSeconds": 7,
+      "voiceover": "For now, keep TSLA on your watchlist. The swing entry zone lies between $337.27 and $364.04, with a stop-loss set at $393.70.",
+      "textOverlay": "Swing Entry: $337.27 - $364.04, Stop-loss: $393.70",
+      "visualInstruction": "Highlight entry zone and stop-loss on chart",
+      "animationType": "chart_draw",
+      "dataFields": {
+        "entryZoneLow": 337.27,
+        "entryZoneHigh": 364.04,
+        "stopLoss": 393.7
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneTitle": "Short trade view",
+      "durationSeconds": 6,
+      "voiceover": "Short sellers, beware of the medium squeeze risk.",
+      "textOverlay": "Short Sellers: Medium Squeeze Risk",
+      "visualInstruction": "Warning icon with squeeze risk indicator",
+      "animationType": "slide_in",
+      "dataFields": {
+        "squeezeRisk": "Medium"
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneTitle": "Final verdict",
+      "durationSeconds": 7,
+      "voiceover": "Our final verdict? Stay alert for a better entry point or a breakout. For more insights, visit investingatti.com.",
+      "textOverlay": "Verdict: Watch for Better Entry or Breakout",
+      "visualInstruction": "Call to action with website URL",
+      "animationType": "fade_in",
+      "dataFields": {
+        "website": "investingatti.com"
+      }
+    }
+  ],
+  "ticker": "TSLA",
+  "videoTitle": "TSLA Stock Report",
+  "format": "vertical_9_16",
+  "durationSeconds": 51.0
+}

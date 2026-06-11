@@ -1,0 +1,256 @@
+{
+  "ticker": "TSM",
+  "reportDate": "Unavailable",
+  "videoTitle": "TSM Stock Report",
+  "durationSeconds": 130.0,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Hello, fellow investors! It's Atti Panda here, ready to help you navigate the world of stocks with ease. Today, we're diving into the intriguing setup of TSM, also known as Taiwan Semiconductor Manufacturing Company. With a bullish rating and a cautious confidence level, it's important to understand the current dynamics at play.\n\nAt the moment, TSM is trading at $418.275, which reflects a nearly 6% drop from its opening price of $429.27. This intraday move signals caution in the air, despite its overall bullish trend. Such a decline might appear daunting, but let's explore what lies beneath the surface.\n\nCurrently, TSM is experiencing a bullish trend, driven largely by positive sector sentiment. However, this optimism is being counterbalanced by a number of factors, including a potential distribution phase where large investors might be selling off their shares. This mixed bag of signals suggests the need for a careful approach.\n\nThe positive news sentiment and strong sector performance have certainly been supportive, but today's price drop hints at underlying selling pressure. The volume is below average, indicating a potential lack of conviction among traders. The resistance levels at $425.05 and $432.34 are crucial to watch as they may dictate the next move.\n\nOn the daily trend chart, TSM is nearing crucial resistance levels, which could trigger either a pullback or consolidation. Support is seen around $410.12 and $415.11, providing a buffer zone that could offer a more attractive entry point. Patience may be key here as we observe how TSM maneuvers these price levels.\n\nLet's delve into some technical metrics. The RSI and MACD are showing mixed signals, with the 4-hour RSI indicating overbought conditions. Meanwhile, the MACD remains positive, suggesting that the overall trend is still upward. However, these indicators point to a complex picture that requires careful interpretation.\n\nFor tactical traders, TSM's swing entry zone lies between $399.7 and $410.12. A cautious approach recommends waiting for a pullback within this range before entering a position. The stop loss is set at $399.7, and potential targets are $432.34 and $450.16, aligning with key resistance levels.\n\nWhen it comes to shorting TSM, caution is advised. The squeeze risk is medium, and with the lack of specific short interest data, it's better to avoid shorting unless you have a high-risk tolerance. The potential for a breakdown below support could",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 12,
+      "narration": "Hello, fellow investors! It's Atti Panda here, ready to help you navigate the world of stocks with ease. Today, we're diving into the intriguing setup of TSM, also known as Taiwan Semiconductor Manufacturing Company.",
+      "pandaAction": "point",
+      "speechBubbleText": "Let's explore TSM!",
+      "visualElements": [
+        "Atti Panda with a stock chart",
+        "TSM logo"
+      ],
+      "chartElements": [
+        "TSM stock overview"
+      ],
+      "animationInstructions": [
+        "Panda points to TSM logo",
+        "Stock chart appears"
+      ],
+      "dataFields": {
+        "Ticker": "TSM",
+        "Current Price": 418.275,
+        "Rating": "WAIT"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 14,
+      "narration": "With a bullish rating and a cautious confidence level, it's important to understand the current dynamics at play. At the moment, TSM is trading at $418.275, which reflects a nearly 6% drop from its opening price of $429.27.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Price dropped 6% today!",
+      "visualElements": [
+        "Price drop arrow",
+        "TSM price chart"
+      ],
+      "chartElements": [
+        "Intraday price movement"
+      ],
+      "animationInstructions": [
+        "Price drop arrow animates downward"
+      ],
+      "dataFields": {
+        "Opening Price": 429.27,
+        "Current Price": 418.275,
+        "Price Drop": "6%"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 12,
+      "narration": "This intraday move signals caution in the air, despite its overall bullish trend. Such a decline might appear daunting, but let's explore what lies beneath the surface.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution: Mixed signals!",
+      "visualElements": [
+        "Caution sign",
+        "Bullish trend line"
+      ],
+      "chartElements": [
+        "Mixed trend indicators"
+      ],
+      "animationInstructions": [
+        "Caution sign blinks"
+      ],
+      "dataFields": {
+        "Trend": "Bullish",
+        "Confidence Level": "Cautious"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 14,
+      "narration": "Currently, TSM is experiencing a bullish trend, driven largely by positive sector sentiment. However, this optimism is being counterbalanced by a number of factors, including a potential distribution phase where large investors might be selling off their shares.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Sector sentiment is key!",
+      "visualElements": [
+        "Sector sentiment chart",
+        "Distribution phase illustration"
+      ],
+      "chartElements": [
+        "Sector performance",
+        "Distribution phase"
+      ],
+      "animationInstructions": [
+        "Sector sentiment chart highlights"
+      ],
+      "dataFields": {
+        "Sector Sentiment": "Positive",
+        "Distribution Phase": "Potential"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 12,
+      "narration": "The positive news sentiment and strong sector performance have certainly been supportive, but today's price drop hints at underlying selling pressure. The volume is below average, indicating a potential lack of conviction among traders.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Watch for selling pressure!",
+      "visualElements": [
+        "Volume chart",
+        "News sentiment icons"
+      ],
+      "chartElements": [
+        "Volume below average"
+      ],
+      "animationInstructions": [
+        "Volume chart fluctuates"
+      ],
+      "dataFields": {
+        "Volume": "Below Average",
+        "News Sentiment": "Positive"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 14,
+      "narration": "Let's delve into some technical metrics. The RSI and MACD are showing mixed signals, with the 4-hour RSI indicating overbought conditions. Meanwhile, the MACD remains positive, suggesting that the overall trend is still upward.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "RSI is overbought!",
+      "visualElements": [
+        "RSI chart",
+        "MACD chart"
+      ],
+      "chartElements": [
+        "RSI",
+        "MACD"
+      ],
+      "animationInstructions": [
+        "RSI chart highlights overbought"
+      ],
+      "dataFields": {
+        "RSI": "Overbought",
+        "MACD": "Positive"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 14,
+      "narration": "For tactical traders, TSM's swing entry zone lies between $399.7 and $410.12. A cautious approach recommends waiting for a pullback within this range before entering a position.",
+      "pandaAction": "point",
+      "speechBubbleText": "Wait for the pullback!",
+      "visualElements": [
+        "Entry zone chart"
+      ],
+      "chartElements": [
+        "Swing entry zone"
+      ],
+      "animationInstructions": [
+        "Entry zone highlights"
+      ],
+      "dataFields": {
+        "Entry Zone": {
+          "Low": 399.7,
+          "High": 410.12
+        },
+        "Stop Loss": 399.7
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 10,
+      "narration": "When it comes to shorting TSM, caution is advised. The squeeze risk is medium, and with the lack of specific short interest data, it's better to avoid shorting unless you have a high-risk tolerance.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Shorting? Be cautious!",
+      "visualElements": [
+        "Short trade warning"
+      ],
+      "chartElements": [
+        "Squeeze risk indicator"
+      ],
+      "animationInstructions": [
+        "Warning sign blinks"
+      ],
+      "dataFields": {
+        "Squeeze Risk": "Medium",
+        "Short Interest Data": "Unavailable"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 14,
+      "narration": "The stock's high P/E ratio might be causing some investors to take profits, especially in the face of a broader market correction or sector rotation.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "High P/E ratio alert!",
+      "visualElements": [
+        "P/E ratio chart",
+        "Market correction illustration"
+      ],
+      "chartElements": [
+        "P/E ratio"
+      ],
+      "animationInstructions": [
+        "P/E ratio chart animates"
+      ],
+      "dataFields": {
+        "P/E Ratio": 35.74,
+        "Market Correction": "Potential"
+      }
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 14,
+      "narration": "The potential for a breakdown below support could",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Stay informed, trade smart!",
+      "visualElements": [
+        "Support and resistance levels"
+      ],
+      "chartElements": [
+        "Support and resistance chart"
+      ],
+      "animationInstructions": [
+        "Support and resistance levels highlight"
+      ],
+      "dataFields": {
+        "quote": "Success in trading is not about being right, it's about making the right decisions.",
+        "disclaimer": "This video is for informational purposes only and should not be considered financial advice. Please consult with a financial advisor before making any investment decisions."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

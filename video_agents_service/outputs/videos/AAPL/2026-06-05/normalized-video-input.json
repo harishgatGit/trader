@@ -1,0 +1,30 @@
+{
+  "ticker": "AAPL",
+  "companyName": "AAPL",
+  "reportDate": "Unavailable",
+  "currentPrice": 311.28,
+  "dayChangePct": 0.32,
+  "overallSignal": "WAIT",
+  "whyStockMoved": "unknown-mixed",
+  "catalystSummary": "Positive sentiment from recent articles; Potential product launches",
+  "volumeSummary": "Volume is below average, indicating lack of strong conviction.",
+  "trendSummary": "Apple's stock is exhibiting a bullish trend, primarily driven by strong technical indicators across multiple timeframes. The stock is trading above its short, medium, and long-term moving averages (EMA20, EMA50, and EMA200), indicating sustained upward momentum. The presence of a 'golden cross' (EMA50 > EMA200) further supports the bullish outlook. Despite a negative MACD histogram, the overall bias remains positive due to the stock's position above the VWAP and strong ADX readings, suggesting a robust uptrend. Fundamentally, Apple's substantial market cap and strong earnings per share (EPS) figures, with a trailing EPS of 8.25 and a forward EPS of 9.60792, indicate solid financial health. Recent news has been mixed, but the positive sentiment around Apple's cloud initiatives and strategic moves, such as shifting Siri workloads to cloud GPUs, supports the bullish sentiment. However, institutional flow data suggests some distribution, with price declining on decreasing volume, indicating potential profit-taking or absorption by larger players.",
+  "supportLevels": [
+    305.03,
+    307.98
+  ],
+  "resistanceLevels": [
+    311.61,
+    313.38
+  ],
+  "entryZone": "Low: 300.41, High: 305.03",
+  "stopLoss": "Price: 300.41 (Wider stop-loss for swing trade below key support.)",
+  "targets": [
+    320.0,
+    325.0
+  ],
+  "shortTradeView": "SI%: LOW, Borrow Fee: LOW, Squeeze Risk: LOW",
+  "riskWarnings": "High valuation; Near resistance",
+  "finalVerdict": "The stock is currently in a bullish trend but is near its 52-week high, suggesting potential resistance. The risk/reward ratio is not optimal for immediate entry. Waiting for a pullback or breakout confirmation is advisable.",
+  "executiveSummary": "Apple Inc. is currently trading at $311.28, showing a strong bullish trend with price above key moving averages. However, the stock is near its 52-week high, which may act as resistance. The institutional flow proxy indicates distribution, suggesting some selling pressure. Given the current setup, it is advisable to wait for a pullback or a breakout confirmation before entering a new position. Near-term expectations should be cautious due to potential resistance, while long-term prospects remain positive given Apple's strong fundamentals and market position. LAYMAN'S TAKEAWAY: Apple is doing well, but it's near a high point where it might struggle to go higher. It's better to wait for a dip or clear signs of breaking past this high before buying."
+}

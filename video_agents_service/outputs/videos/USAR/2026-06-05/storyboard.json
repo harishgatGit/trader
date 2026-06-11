@@ -1,0 +1,266 @@
+{
+  "ticker": "USAR",
+  "reportDate": "Unavailable",
+  "videoTitle": "USAR Stock Report",
+  "durationSeconds": 140.0,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Hello there, fellow investors! It's Atti Panda here, ready to guide you through today's stock spotlight on USA Rare Earth, ticker symbol USAR. Currently, this stock is on our radar with a \"Watchlist\" rating, signaling caution amidst its recent movements and market dynamics. Let's dive into the details and see what's happening with USAR.\n\nUSAR is currently trading at $22.45, marking a notable decline from its recent highs. Just today, the stock experienced a sharp drop of 17.68%, opening at $25.85 and closing at its current level. This steep decline reflects the challenges the stock faces, despite some positive news on the horizon.\n\nThe current trend for USAR is bearish, driven primarily by strong selling pressure. This negative momentum is largely due to weak financials, including a trailing EPS of -4.4, which raises concerns about profitability. Despite the buzz around its potential funding and expansion, the market remains cautious.\n\nLooking deeper into the trend, the recent news of a $1.2 billion investment facility in South Carolina and the potential $1.6 billion funding from the CHIPS program were not enough to spur buying interest. Volume has been below average, suggesting a lack of enthusiasm among buyers, which is a critical factor behind the stock\u2019s decline.\n\nOn the daily chart, USAR shows a clear bearish pattern with strong resistance around the recent highs. The price is well below key moving averages, indicating distribution rather than accumulation. This suggests that the stock is currently in a consolidation phase, without any signs of a breakout just yet.\n\nTechnically speaking, the indicators paint a cautious picture. The MACD histogram is negative, and the stock is trading below its 50-day and 200-day moving averages, despite a recent golden cross. These signals reinforce the bearish sentiment, suggesting that the stock may have more room to fall before stabilizing.\n\nFor those considering a tactical trade, it's crucial to note the swing entry zone between $15.47 and $19.37. A prudent stop loss would be set at $21.46 to manage risk, with potential targets at $25.94 and $28.65 if conditions improve. However, patience and vigilance are key here.\n\nShort sellers, take note: while the squeeze risk is medium, caution is advised. The lack of substantial short interest data and borrowing fees suggests that while there may be opportunities, the current setup calls for careful consideration to avoid unnecessary risk.\n\nOn a broader scale, the",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 12,
+      "narration": "Hello there, fellow investors! It's Atti Panda here, ready to guide you through today's stock spotlight on USA Rare Earth, ticker symbol USAR.",
+      "pandaAction": "point",
+      "speechBubbleText": "Let's explore USAR!",
+      "visualElements": [
+        "Atti Panda with a stock chart",
+        "USAR logo"
+      ],
+      "chartElements": [
+        "Stock ticker: USAR"
+      ],
+      "animationInstructions": [
+        "Zoom in on Atti Panda",
+        "Highlight USAR logo"
+      ],
+      "dataFields": {
+        "Ticker": "USAR",
+        "Current Price": "$22.45",
+        "Rating": "WATCHLIST"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 15,
+      "narration": "Currently, this stock is on our radar with a 'Watchlist' rating, signaling caution amidst its recent movements and market dynamics. Let's dive into the details and see what's happening with USAR.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Proceed with caution!",
+      "visualElements": [
+        "Caution sign",
+        "USAR stock chart"
+      ],
+      "chartElements": [
+        "Price: $22.45",
+        "Recent high: $25.85"
+      ],
+      "animationInstructions": [
+        "Flash caution sign",
+        "Animate stock chart decline"
+      ],
+      "dataFields": {
+        "Current Price": "$22.45",
+        "Recent High": "$25.85"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 14,
+      "narration": "USAR is currently trading at $22.45, marking a notable decline from its recent highs. Just today, the stock experienced a sharp drop of 17.68%, opening at $25.85 and closing at its current level.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Why the drop?",
+      "visualElements": [
+        "Magnifying glass over stock chart"
+      ],
+      "chartElements": [
+        "Opening price: $25.85",
+        "Closing price: $22.45"
+      ],
+      "animationInstructions": [
+        "Magnify the drop on the chart"
+      ],
+      "dataFields": {
+        "Price Drop": "17.68%",
+        "Opening Price": "$25.85",
+        "Closing Price": "$22.45"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 12,
+      "narration": "The current trend for USAR is bearish, driven primarily by strong selling pressure. This negative momentum is largely due to weak financials, including a trailing EPS of -4.4, which raises concerns about profitability.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Bearish trend ahead!",
+      "visualElements": [
+        "Bearish trend line",
+        "EPS data"
+      ],
+      "chartElements": [
+        "Trailing EPS: -4.4"
+      ],
+      "animationInstructions": [
+        "Highlight bearish trend line"
+      ],
+      "dataFields": {
+        "Trend": "Bearish",
+        "Trailing EPS": "-4.4"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 14,
+      "narration": "Looking deeper into the trend, the recent news of a $1.2 billion investment facility in South Carolina and the potential $1.6 billion funding from the CHIPS program were not enough to spur buying interest.",
+      "pandaAction": "default",
+      "speechBubbleText": "News but no boost!",
+      "visualElements": [
+        "News headline graphics",
+        "Investment facility image"
+      ],
+      "chartElements": [
+        "Volume below average"
+      ],
+      "animationInstructions": [
+        "Display news headlines",
+        "Fade in investment facility image"
+      ],
+      "dataFields": {
+        "Investment Facility": "$1.2 billion",
+        "CHIPS Funding": "$1.6 billion"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 15,
+      "narration": "On the daily chart, USAR shows a clear bearish pattern with strong resistance around the recent highs. The price is well below key moving averages, indicating distribution rather than accumulation.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Resistance spotted!",
+      "visualElements": [
+        "Daily chart with resistance lines"
+      ],
+      "chartElements": [
+        "50-day MA",
+        "200-day MA"
+      ],
+      "animationInstructions": [
+        "Draw resistance lines",
+        "Highlight moving averages"
+      ],
+      "dataFields": {
+        "Resistance": "Recent Highs",
+        "Moving Averages": "Below 50-day and 200-day"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 14,
+      "narration": "For those considering a tactical trade, it's crucial to note the swing entry zone between $15.47 and $19.37. A prudent stop loss would be set at $21.46 to manage risk, with potential targets at $25.94 and $28.65 if conditions improve.",
+      "pandaAction": "point",
+      "speechBubbleText": "Plan your trade!",
+      "visualElements": [
+        "Entry zone chart",
+        "Stop loss marker"
+      ],
+      "chartElements": [
+        "Entry Zone: $15.47 - $19.37",
+        "Stop Loss: $21.46"
+      ],
+      "animationInstructions": [
+        "Highlight entry zone",
+        "Mark stop loss"
+      ],
+      "dataFields": {
+        "Entry Zone": "Low: $15.47, High: $19.37",
+        "Stop Loss": "$21.46",
+        "Targets": [
+          "$25.94",
+          "$28.65"
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 12,
+      "narration": "Short sellers, take note: while the squeeze risk is medium, caution is advised. The lack of substantial short interest data and borrowing fees suggests that while there may be opportunities, the current setup calls for careful consideration to avoid unnecessary risk.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Short with care!",
+      "visualElements": [
+        "Short interest chart",
+        "Caution icon"
+      ],
+      "chartElements": [
+        "Squeeze Risk: Medium"
+      ],
+      "animationInstructions": [
+        "Flash caution icon",
+        "Highlight short interest"
+      ],
+      "dataFields": {
+        "Squeeze Risk": "Medium"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 14,
+      "narration": "On a broader scale, the stock of USA Rare Earth (USAR) experienced a significant decline of 17.68% today, closing at $22.45 after opening at $25.85.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Big picture view!",
+      "visualElements": [
+        "Global market graphic",
+        "USAR stock chart"
+      ],
+      "chartElements": [
+        "Decline: 17.68%"
+      ],
+      "animationInstructions": [
+        "Zoom out to global market",
+        "Highlight stock decline"
+      ],
+      "dataFields": {
+        "Market Reaction": "Negative",
+        "Global Impact": "Significant Decline"
+      }
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 18,
+      "narration": "Despite recent positive news, including a $1.2 billion facility investment in South Carolina and potential access to $1.6 billion in funding under the CHIPS program, the market reacted negatively.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Stay informed!",
+      "visualElements": [
+        "Positive news graphics",
+        "CHIPS program logo"
+      ],
+      "chartElements": [
+        "Investment and funding news"
+      ],
+      "animationInstructions": [
+        "Display positive news graphics",
+        "Fade in CHIPS program logo"
+      ],
+      "dataFields": {
+        "quote": "In investing, what is comfortable is rarely profitable. - Robert Arnott",
+        "disclaimer": "This video is for informational purposes only and does not constitute financial advice. Please consult with a financial advisor before making any investment decisions."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

@@ -1,0 +1,108 @@
+# ── Secrets / Environment ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+
+# Keep the example so others know what vars are needed
+!.env.example
+
+# ── Node / npm ────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn/cache
+.yarn/unplugged
+.pnp.*
+
+# ── TypeScript / Build output ─────────────────────────────────────────────────
+dist/
+build/
+out/
+*.js.map
+*.d.ts.map
+
+# ── NestJS / Backend specific ─────────────────────────────────────────────────
+backend/dist/
+backend/output/
+backend/reports_pdf/
+backend/tmp/
+
+# ── Frontend / Vite ───────────────────────────────────────────────────────────
+frontend/dist/
+frontend/.vite/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+.eggs/
+.Python
+venv/
+.venv/
+env/
+.env/
+pip-log.txt
+pip-delete-this-directory.txt
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# ── Android / React Native ────────────────────────────────────────────────────
+mobile-app/android/.gradle/
+mobile-app/android/app/build/
+mobile-app/android/build/
+mobile-app/android/local.properties
+mobile-app/.expo/
+mobile-app/android/.kotlin/
+
+# ── Expo ──────────────────────────────────────────────────────────────────────
+.expo/
+expo-env.d.ts
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+# Keep docker-compose.yml but ignore override files
+docker-compose.override.yml
+docker-compose.*.local.yml
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+*.log.*
+
+# ── Temp / OS artifacts ───────────────────────────────────────────────────────
+tmp/
+temp/
+.tmp/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ── Prisma ────────────────────────────────────────────────────────────────────
+# Generated client — keep schema, migrations, and seeds
+backend/node_modules/.prisma/
+
+# ── Redis dump ────────────────────────────────────────────────────────────────
+redis/data/
+dump.rdb

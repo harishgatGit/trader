@@ -1,0 +1,22 @@
+{
+  "jobId": "aeca9ea5-26f3-434b-bf64-d01ed709738f",
+  "reportId": "cmq1su9re01jrsq2qvwouivnv",
+  "ticker": "AAPL",
+  "reportDate": "2026-06-06",
+  "status": "COMPLETED",
+  "startedAt": "2026-06-06T03:34:30.122995",
+  "completedAt": "2026-06-06T03:39:17.906218",
+  "errorMessage": null,
+  "videoUrl": "/api/video-jobs/aeca9ea5-26f3-434b-bf64-d01ed709738f/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-06\\AAPL\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-06\\AAPL\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-06\\AAPL\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-06\\AAPL\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-06\\AAPL\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-06\\AAPL\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-06\\AAPL\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-06\\AAPL\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

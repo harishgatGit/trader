@@ -1,0 +1,30 @@
+{
+  "ticker": "AMZN",
+  "companyName": "AMZN",
+  "reportDate": "Unavailable",
+  "currentPrice": 247.66,
+  "dayChangePct": -2.45,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "sector-sympathy",
+  "catalystSummary": "Growth in AI and cloud computing sectors",
+  "volumeSummary": "Volume is stable with high relative volume on 4-hour chart.",
+  "trendSummary": "Amazon's stock is experiencing a bearish trend, as indicated by the daily technical indicators showing a strong downtrend with the price below the VWAP and a bearish MACD. The RSI is also nearing oversold levels, suggesting selling pressure. The stock opened higher but closed significantly lower, reflecting a 2.45% drop in price. This decline is likely influenced by negative overall market sentiment, as reflected in recent news articles, and a bearish institutional flow proxy score. Additionally, despite Amazon's strong market position with a market cap of over $2.6 trillion and a forward EPS of 9.86, the stock is facing pressure due to broader market uncertainties and a lack of positive news catalysts specific to Amazon. The negative sentiment could be exacerbated by broader market concerns or sector-specific challenges, as indicated by the negative sentiment in news coverage.",
+  "supportLevels": [
+    199.16,
+    204.63
+  ],
+  "resistanceLevels": [
+    256.18,
+    274.68
+  ],
+  "entryZone": "Low: 199.16, High: 204.63",
+  "stopLoss": "Price: 196 (Stop loss set below 52-week low for risk management.)",
+  "targets": [
+    256.18,
+    274.68
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "Negative news sentiment; Short-term technical weakness",
+  "finalVerdict": "AMZN is currently in a mixed technical state with short-term bearish signals and medium-term bullish signals. The stock is near support levels but lacks a clear entry point due to conflicting signals and negative news sentiment. It is advisable to watch for a more defined entry signal or a change in sentiment.",
+  "executiveSummary": "Amazon (AMZN) is currently trading at $247.66, showing a mixed technical picture. The daily chart indicates a bearish trend with the price below key moving averages and a strong downtrend signal. However, the 4-hour chart shows bullish momentum with the price above short-term EMAs and high relative volume. The stock is near support levels, but the overall sentiment from recent news is negative, which could weigh on the price in the near term. Long-term fundamentals remain solid with a strong market position and growth potential.\n\nLAYMAN'S TAKEAWAY: AMZN is in a tricky spot right now. The stock is showing some short-term weakness but has potential for a bounce. It's best to keep an eye on it and wait for a clearer signal before making any moves."
+}

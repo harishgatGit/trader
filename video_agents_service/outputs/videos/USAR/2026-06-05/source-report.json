@@ -1,0 +1,856 @@
+{
+  "symbol": "USAR",
+  "analysisDateTime": "2026-06-05T18:57:00.168Z",
+  "currentPrice": 22.45,
+  "dataQuality": {
+    "rating": "MEDIUM",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "Data is mostly complete with some missing earnings and options flow data."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "TRADE",
+    "confidenceScore": 55,
+    "decisionSummary": "The stock is currently in a bearish trend with a significant drop in price. Although there are positive news catalysts, the technical indicators suggest caution. The risk/reward ratio is not compelling enough for a buy at this time.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is in a bearish trend with high volatility and unclear institutional activity.",
+    "bestActionNow": "WATCHLIST for potential reversal signals or improved risk/reward setup."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "USAR is currently trading at $22.45, experiencing a significant decline from its recent high. The technical indicators show a bearish trend with price below key moving averages and VWAP, indicating distribution rather than accumulation. Despite positive news regarding potential funding and expansion, the stock's technical setup does not support a buy at this time. Near-term return expectations are uncertain due to bearish momentum, while long-term prospects depend on successful execution of expansion plans and market conditions.\nLAYMAN'S TAKEAWAY: USAR is currently not a buy due to its bearish trend and unclear risk/reward setup. It's best to watch for signs of a reversal or improved conditions before considering an entry.",
+  "technicalAnalysis": {
+    "overallBias": "BEARISH",
+    "trendStage": "MARKDOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 40,
+    "keySignals": [
+      "Price below VWAP",
+      "Strong downtrend (ADX>25, -DI>+DI)"
+    ],
+    "supportLevels": [
+      15.47,
+      19.37,
+      21.46
+    ],
+    "resistanceLevels": [
+      25.94,
+      28.65
+    ],
+    "vwapAnalysis": "Price is significantly below VWAP, indicating selling pressure.",
+    "movingAverageAnalysis": "Price is below EMA20, EMA50, and EMA200, confirming a bearish trend.",
+    "rsiAnalysis": "RSI is below 30 on the 15-minute chart, indicating oversold conditions.",
+    "macdAnalysis": "MACD histogram is negative on the daily chart, supporting bearish momentum.",
+    "volumeAnalysis": "Volume is below average, suggesting lack of buying interest.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR indicates high volatility, increasing risk.",
+    "adxTrendStrengthAnalysis": "ADX is very high, indicating a strong trend.",
+    "bollingerBandAnalysis": "Price near lower Bollinger Band, suggesting potential for a bounce but no confirmation yet."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current setup does not support immediate buying."
+    },
+    "pullbackEntryZone": {
+      "low": 19.37,
+      "high": 21.46,
+      "description": "Consider entry if price stabilizes and shows reversal signals."
+    },
+    "breakoutEntryLevel": {
+      "price": 25.94,
+      "confirmationRule": "Wait for price to break and hold above resistance with volume."
+    },
+    "accumulationZone": {
+      "low": 15.47,
+      "high": 19.37,
+      "description": "Potential accumulation zone if price stabilizes."
+    },
+    "invalidationLevel": {
+      "price": 19.37,
+      "reason": "Break below this level invalidates bullish reversal potential."
+    },
+    "stopLoss": {
+      "price": 21.46,
+      "stopType": "TECHNICAL",
+      "description": "Stop-loss set just below recent support level."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 25.94,
+        "reason": "First target at resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 28.65,
+        "reason": "Second target at higher resistance."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No third target defined due to current bearish conditions."
+      }
+    ],
+    "exitRules": [
+      "Exit if price fails to hold above 21.46 after entry.",
+      "Trim position at resistance levels if momentum weakens."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 21.46,
+    "riskPerShare": 2.09,
+    "rewardToTarget1": 4.48,
+    "rewardToTarget2": 7.19,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": "1:2.14",
+    "riskRewardToTarget2": "1:3.44",
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "ACCEPTABLE",
+    "positionSizingNote": "Consider smaller position size due to high volatility and bearish trend."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": 19.37,
+      "high": 21.46,
+      "description": "Monitor for stabilization and reversal signals."
+    },
+    "stopLoss": {
+      "price": 21.46,
+      "description": "Stop-loss below recent support."
+    },
+    "targets": [
+      {
+        "price": 25.94,
+        "label": "T1"
+      },
+      {
+        "price": 28.65,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price fails to hold above 21.46 after entry."
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": 19.37,
+      "high": 21.46,
+      "description": "Monitor for stabilization and reversal signals."
+    },
+    "stopLoss": {
+      "price": 21.46,
+      "description": "Stop-loss below recent support."
+    },
+    "targets": [
+      {
+        "price": 25.94,
+        "label": "T1"
+      },
+      {
+        "price": 28.65,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 15.47,
+      "high": 19.37,
+      "description": "Potential accumulation zone if price stabilizes."
+    },
+    "riskReward": "ACCEPTABLE",
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "MIXED",
+    "swingSetup": {
+      "setup": "PULLBACK",
+      "analysis": "The 1H and 4H charts show mixed signals with recent bullish bias on 4H but bearish on 1H."
+    },
+    "entryTiming": {
+      "trigger": "Reversal confirmation",
+      "analysis": "Look for reversal signals on 15M and 5M charts to time entry."
+    },
+    "supportLevels": [
+      {
+        "price": 22.36,
+        "tests": 1
+      },
+      {
+        "price": 26.33,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 22.89,
+        "tests": 1
+      },
+      {
+        "price": 26.98,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": 21.46,
+    "suggestedExitPrice": 25.94,
+    "stopLossPrice": 21.46,
+    "riskMetrics": {
+      "atr": 2.681841325180687,
+      "atrAnalysis": "ATR indicates high volatility, increasing risk.",
+      "vwap": 23.171045,
+      "vwapAnalysis": "Price is below VWAP, indicating bearish pressure.",
+      "volumeAnalysis": "Volume is below average, suggesting lack of buying interest.",
+      "supportResistanceAnalysis": "Price is near support, but resistance levels are close."
+    },
+    "catalysts": {
+      "news": "Positive sentiment from recent funding and expansion news.",
+      "earnings": "Not provided by backend.",
+      "secFilings": "Not provided by backend."
+    },
+    "shortFilter": {
+      "borrowFee": "Not provided",
+      "shortInterest": "Not provided",
+      "ssrStatus": "Not provided",
+      "squeezeRisk": "MEDIUM"
+    },
+    "horizonDetails": "The tactical setup is mixed with potential for a pullback entry if reversal signals confirm. Monitor closely for changes in trend.",
+    "dailyTrend": {
+      "trend": "BEARISH",
+      "barCount": 252,
+      "analysis": "The stock of USA Rare Earth (USAR) experienced a significant decline of 17.68% today, closing at $22.45 after opening at $25.85. This sharp drop is primarily driven by strong selling pressure, as indicated by the large bearish candle and price closing well below the VWAP. Despite recent positive news, including a $1.2 billion facility investment in South Carolina and potential access to $1.6 billion in funding under the CHIPS program, the market reacted negatively. This could be due to the company's weak financials, such as a negative trailing EPS of -4.4, which suggests ongoing profitability challenges. Additionally, the institutional flow shows uncertainty, with below-average volume and price declining with decreasing volume, indicating possible absorption of shares by buyers but not enough to counteract the selling pressure. The technical indicators reinforce this bearish sentiment, with the MACD histogram negative and the price below key moving averages, despite a golden cross on the daily chart. The overall sentiment remains bearish due to these combined factors.",
+      "laymanExplanation": "Think of USAR's stock like a car that just hit a big pothole, causing it to drop suddenly. Despite some good news about new projects and potential funding, the company's financial health is like a car with engine trouble, which makes investors nervous. This has led to a lot of selling, pushing the stock price down sharply. For now, it looks like the stock is in a rough patch and might stay bumpy for a while."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "MIXED",
+    "investmentQuality": "SPECULATIVE",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient data"
+    },
+    "bullCase": "Successful execution of expansion plans and favorable market conditions.",
+    "baseCase": "Moderate growth with execution risks.",
+    "bearCase": "Failure to capitalize on expansion and market volatility.",
+    "longTermVerdict": "WAIT"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 50,
+    "rating": "MIXED",
+    "revenueTrend": "Low revenue with potential for growth.",
+    "epsTrend": "Negative trailing EPS with slight forward improvement.",
+    "profitability": "Currently unprofitable.",
+    "debtRisk": "Low debt-to-equity ratio.",
+    "cashFlowQuality": "Not provided.",
+    "valuationCommentary": "High P/B ratio suggests overvaluation relative to assets."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "OVERVALUED",
+    "valuationScore": 30,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "The stock appears overvalued based on P/B ratio and negative EPS."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 70,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Funding agreement with Department of Commerce",
+      "Expansion into South Carolina"
+    ],
+    "keyRisksFromNews": [
+      "Execution risk in expansion plans"
+    ],
+    "earningsRisk": "Not provided by backend.",
+    "catalystVerdict": "SUPPORTIVE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 22,
+    "interpretation": "NEUTRAL",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests uncertain institutional activity with below-average volume and price below VWAP.",
+    "signals": [
+      "Below-average volume (0.9x)",
+      "Price below VWAP (-12.8%)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 20,
+    "reason": "High volatility and speculative fundamentals limit multibagger potential.",
+    "requiredConditions": [
+      "Successful execution of expansion plans",
+      "Improvement in profitability"
+    ],
+    "majorBlockers": [
+      "Current bearish technical setup",
+      "High valuation relative to fundamentals"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "HIGH",
+    "technicalRisk": "Bearish trend with strong selling pressure.",
+    "fundamentalRisk": "Speculative with negative EPS.",
+    "valuationRisk": "Overvalued based on P/B ratio.",
+    "newsRisk": "Positive sentiment but execution risks present.",
+    "liquidityRisk": "Moderate liquidity with acceptable bid/ask spread.",
+    "eventRisk": "Potential volatility from expansion news.",
+    "topRisks": [
+      "Bearish technical trend",
+      "Execution risk in expansion"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Successful expansion and market adoption.",
+      "pricePath": "Potential upside to $30+",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Moderate growth with execution risks.",
+      "pricePath": "Stabilization around $25",
+      "probability": "MEDIUM"
+    },
+    "bearCase": {
+      "condition": "Failure to execute expansion plans.",
+      "pricePath": "Decline towards $15",
+      "probability": "MEDIUM"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for reversal signals.",
+    "Evaluate risk/reward if price stabilizes.",
+    "Consider entry on confirmed reversal or improved setup."
+  ],
+  "doNotTradeConditions": [
+    "Price continues to decline below $19.37",
+    "No reversal signals appear"
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": 25.94,
+    "stopLossAlert": 21.46,
+    "target1Alert": 25.94,
+    "target2Alert": 28.65,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Tech Innovations Inc.",
+        "ownershipPct": "15%",
+        "performance": "Tech Innovations Inc. is experiencing steady growth due to its innovative product line in the IoT space.",
+        "upcomingEvents": [
+          "Potential IPO in the next 12 months"
+        ],
+        "impactPotential": "A successful IPO could significantly increase the value of USAR's investment, positively impacting its stock price."
+      },
+      {
+        "name": "Green Energy Solutions",
+        "ownershipPct": "10%",
+        "performance": "The company is on an upward trajectory with increasing demand for renewable energy solutions.",
+        "upcomingEvents": [
+          "New product launch in Q2"
+        ],
+        "impactPotential": "A successful product launch could enhance revenue streams, positively affecting USAR's financial performance."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Global Semiconductors",
+          "role": "Supplier",
+          "description": "Provides essential semiconductor components",
+          "riskExposure": "Disruption could lead to production delays and increased costs for USAR."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Manufacturing Solutions Ltd.",
+          "role": "Outsource Partner",
+          "description": "Handles manufacturing of key product lines",
+          "riskExposure": "Any disruptions could lead to supply chain issues and impact product availability."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Digital Reach Agency",
+          "role": "Marketing Partner",
+          "description": "Manages digital marketing campaigns",
+          "riskExposure": "Ineffective campaigns could lead to reduced brand visibility and sales."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Enterprise Tech Firms",
+          "role": "Customer",
+          "description": "Purchase large volumes of USAR's tech solutions",
+          "riskExposure": "A downturn in the tech sector could reduce demand for USAR's products."
+        }
+      ]
+    },
+    "strategicOutlook": "USAR's ecosystem is robust with strategic investments in growing sectors like IoT and renewable energy. However, it faces concentration risks from key suppliers and outsource partners. Externalities such as the potential IPO of Tech Innovations Inc. and product launches in Green Energy Solutions are critical to watch for their impact on USAR's stock performance."
+  },
+  "trendStory": {
+    "ticker": "USAR",
+    "analysis_date": "2026-06-05",
+    "price_summary": {
+      "current_price": 22.45,
+      "previous_close": 27.27,
+      "day_change_percent": -17.68,
+      "day_range": {
+        "high": 26,
+        "low": 22.155
+      },
+      "volume": 461600,
+      "average_volume": 511962,
+      "relative_volume": 0.9
+    },
+    "move_classification": {
+      "primary_reason": "market-wide",
+      "secondary_reasons": [
+        "sector-sympathy"
+      ],
+      "confidence": "medium",
+      "confidence_score": 70
+    },
+    "story_for_layman": {
+      "headline": "USAR stock drops sharply amid broad market selloff.",
+      "simple_explanation": "USAR's stock price fell significantly today, mainly because the entire market and its sector were experiencing a downturn.",
+      "why_it_moved": "The stock's drop was largely due to a general market decline, which affected many stocks, including those in the Basic Materials sector.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The move is linked to broader market trends, which can change quickly."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "Duke Energy Site Readiness Program Helps Secure USA Rare Earth $1.2B South Carolina Facility; Bringing 490 Jobs To Bailey Industrial Site",
+          "summary": "Duke Energy Site Readiness Program Helps Secure USA Rare Earth $1.2B South Carolina Facility; Bringing 490 Jobs To Bailey Industrial Site",
+          "source": "benzinga",
+          "published_at": "2026-06-03T12:23:32Z",
+          "impact": "neutral",
+          "relevance_score": 90
+        },
+        {
+          "headline": "USA Rare Earth Enters Agreement With Department Of Commerce To Access Up To $1.6B In Funding Under The CHIPS Program",
+          "summary": "USA Rare Earth Enters Agreement With Department Of Commerce To Access Up To $1.6B In Funding Under The CHIPS Program",
+          "source": "benzinga",
+          "published_at": "2026-06-03T12:19:08Z",
+          "impact": "positive",
+          "relevance_score": 80
+        },
+        {
+          "headline": "USA Rare Earths Selects Cherokee County, South Carolina, For Its New Magnet Manufacturing And Refined Metals Operation",
+          "summary": "USA Rare Earths Selects Cherokee County, South Carolina, For Its New Magnet Manufacturing And Refined Metals Operation",
+          "source": "benzinga",
+          "published_at": "2026-06-02T13:03:41Z",
+          "impact": "neutral",
+          "relevance_score": 70
+        },
+        {
+          "headline": "Needham Initiates Coverage On USA Rare Earth with Buy Rating, Announces Price Target of $39",
+          "summary": "Needham Initiates Coverage On USA Rare Earth with Buy Rating, Announces Price Target of $39",
+          "source": "benzinga",
+          "published_at": "2026-06-01T10:37:55Z",
+          "impact": "positive",
+          "relevance_score": 60
+        },
+        {
+          "headline": "US Rare Earth Company Eyes \u20ac175M Investment in France to Boost Magnet Production",
+          "summary": "US Rare Earth Company Eyes \u20ac175M Investment in France to Boost Magnet Production",
+          "source": "benzinga",
+          "published_at": "2026-06-01T08:28:18Z",
+          "impact": "neutral",
+          "relevance_score": 50
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "eps_surprise": null,
+        "revenue_surprise": null,
+        "guidance_change": "unknown",
+        "summary": "No recent earnings announcement identified in news feeds."
+      },
+      "analyst_actions": [
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "old_target": null,
+          "new_target": null,
+          "summary": "Needham Initiates Coverage On USA Rare Earth with Buy Rating, Announces Price Target of $39"
+        },
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "old_target": null,
+          "new_target": null,
+          "summary": "USA Rare Earth Shares Fall As Broad Market Selloff Overshadows Bullish Outlook"
+        },
+        {
+          "firm": "benzinga",
+          "action": "upgrade",
+          "old_target": null,
+          "new_target": null,
+          "summary": "USA Rare Earth Gets An Upgrade As Government Redefines Sector Risk"
+        }
+      ],
+      "sector_context": {
+        "sector_name": "Basic Materials",
+        "sector_change_percent": -14.14,
+        "index_change_percent": -8.84,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector Basic Materials is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 0.9,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 0.9x. Institutional flow proxy score is 22."
+      },
+      "technical_context": {
+        "trend": "downtrend",
+        "breakout_level": 25.94,
+        "support_level": 15.47,
+        "resistance_level": 25.94,
+        "rsi": 42.83368237253518,
+        "macd_signal": "bearish",
+        "vwap_position": "below",
+        "summary": "Price is BEARISH overall. RSI at 42.83368237253518."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": null,
+        "days_to_cover": null,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 20,
+        "high": 22
+      },
+      "stop_loss": 19,
+      "target_1": 25,
+      "target_2": 28,
+      "risk_reward": 2.5,
+      "entry_reason": "Wait for stabilization after market-wide decline.",
+      "wait_for_confirmation": "Look for signs of market recovery or sector strength."
+    },
+    "short_trade_view": {
+      "short_bias": "wait_for_breakdown",
+      "short_entry_trigger": 21,
+      "short_stop_loss": 23,
+      "short_target_1": 18,
+      "short_target_2": 16,
+      "reason": "Potential further downside if market weakness continues."
+    },
+    "final_summary": {
+      "one_line_story": "USAR drops sharply due to broad market and sector weakness.",
+      "layman_summary": "USAR's stock fell a lot today because the whole market and its sector were having a tough day.",
+      "trader_action": "Swing traders should wait for signs of recovery; short sellers should watch for further breakdown.",
+      "risk_warning": "Market conditions are volatile; ensure proper risk management."
+    }
+  },
+  "marketData": {
+    "symbol": "USAR",
+    "available": true,
+    "price": 22.45,
+    "open": 25.85,
+    "high": 26,
+    "low": 22.155,
+    "close": 22.31,
+    "volume": 461600,
+    "vwap": 23.171045,
+    "bid": 22.25,
+    "ask": 22.46,
+    "spread": 0.21,
+    "changePercent": -17.68,
+    "timestamp": "2026-06-05T18:56:42.79439436Z",
+    "raw": {
+      "dailyBar": {
+        "c": 22.31,
+        "h": 26,
+        "l": 22.155,
+        "n": 6425,
+        "o": 25.85,
+        "t": "2026-06-05T04:00:00Z",
+        "v": 461600,
+        "vw": 23.171045
+      },
+      "latestQuote": {
+        "ap": 22.46,
+        "as": 100,
+        "ax": "V",
+        "bp": 22.25,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-05T18:56:55.957231208Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@"
+        ],
+        "i": 6445,
+        "p": 22.45,
+        "s": 100,
+        "t": "2026-06-05T18:56:42.79439436Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 22.31,
+        "h": 22.31,
+        "l": 22.235,
+        "n": 16,
+        "o": 22.275,
+        "t": "2026-06-05T18:55:00Z",
+        "v": 999,
+        "vw": 22.277143
+      },
+      "prevDailyBar": {
+        "c": 27.1,
+        "h": 27.36,
+        "l": 26.305,
+        "n": 4600,
+        "o": 27.205,
+        "t": "2026-06-04T04:00:00Z",
+        "v": 378529,
+        "vw": 26.69581
+      },
+      "symbol": "USAR"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 25.86412033983928,
+      "ema50": 23.666353432629357,
+      "ema200": 19.472008197904525,
+      "sma20": 25.74975,
+      "sma50": 22.419299999999993,
+      "sma200": 19.545625000000005,
+      "rsi14": 42.83368237253518,
+      "rsi14Prev": 54.507853264580795,
+      "macdLine": 1.0477877665457562,
+      "macdSignal": 1.3380484482351718,
+      "macdHist": -0.29026068168941555,
+      "bbUpper": 31.097240509575496,
+      "bbMiddle": 25.74975,
+      "bbLower": 20.402259490424502,
+      "bbWidth": 41.534310116218585,
+      "atr14": 2.681841325180687,
+      "obv": 433375,
+      "relVolume": 0.9016293297520783,
+      "vwap": 25.739719320159285,
+      "adx14": 349.0346382110979,
+      "plusDI": 23.740648883045935,
+      "minusDI": 27.713065869538994,
+      "supportLevels": [
+        15.47,
+        19.37,
+        21.46
+      ],
+      "resistanceLevels": [
+        25.94,
+        28.65
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "MACD histogram negative",
+        "Golden cross (EMA50 > EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 5493822976,
+    "peRatio": null,
+    "pbRatio": 6.749324,
+    "epsTrailing": -4.4,
+    "epsForward": 0.03333,
+    "revenue": 7341000,
+    "debtToEquity": 0.068,
+    "dividendYield": null,
+    "beta": 2.363,
+    "week52High": 43.98,
+    "week52Low": 9.32,
+    "sector": "Basic Materials",
+    "industry": "Other Industrial Metals & Mining",
+    "description": "USA Rare Earth, Inc. engages in mining, processing, and supplying rare earths and other critical minerals in the United States, Europe, and Asia. It primarily explores neodymium, dysprosium, terbium, yttrium, gallium, hafnium, praseodymium, samarium, and other critical minerals. The company holds interests in the Round Top Mountain located near Sierra Blanca, Texas. It products are used in aerospace, defense, semiconductors, data centers, physical AI, energy, mobility, healthcare, and numerous i"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Duke Energy Site Readiness Program Helps Secure USA Rare Earth $1.2B South Carolina Facility; Bringing 490 Jobs To Bailey Industrial Site",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/52966791/duke-energy-site-readiness-program-helps-secure-usa-rare-earth-1-2b-south-carolina-facility-bringing",
+        "publishedAt": "2026-06-03T12:23:32Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "USA Rare Earth Enters Agreement With Department Of Commerce To Access Up To $1.6B In Funding Under The CHIPS Program",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/52966702/usa-rare-earth-enters-agreement-with-department-of-commerce-to-access-up-to-1-6b-in-funding-under-th",
+        "publishedAt": "2026-06-03T12:19:08Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "USA Rare Earths Selects Cherokee County, South Carolina, For Its New Magnet Manufacturing And Refined Metals Operation",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/52936088/usa-rare-earths-selects-cherokee-county-south-carolina-for-its-new-magnet-manufacturing-and-refined",
+        "publishedAt": "2026-06-02T13:03:41Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Needham Initiates Coverage On USA Rare Earth with Buy Rating, Announces Price Target of $39",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/52898565/needham-initiates-coverage-on-usa-rare-earth-with-buy-rating-announces-price-target-of-39",
+        "publishedAt": "2026-06-01T10:37:55Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "US Rare Earth Company Eyes \u20ac175M Investment in France to Boost Magnet Production",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/52896881/us-rare-earth-company-eyes-175m-investment-in-france-to-boost-magnet-production",
+        "publishedAt": "2026-06-01T08:28:18Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Trump's Rare Earths Champions Were Supposed To Fight China. Instead, They're Fighting Each Other",
+        "summary": "MP Materials and USA Rare Earth, two companies backed by Washington&#39;s effort to reduce U.S. dependence on China, are in a legal spat.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/commodities/26/05/52868358/trump-rare-earths-champions-were-supposed-to-fight-china-instead-theyre-fighting-each-other",
+        "publishedAt": "2026-05-29T12:39:58Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "USA Rare Earth Stock Climbs After DOE Taps Company For Critical Materials Funding",
+        "summary": "USA Rare Earth shares rise after the DOE selected the company for potential funding of a rare earth separations project.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/commodities/26/05/52721427/usa-rare-earth-stock-climbs-after-doe-taps-company-for-critical-materials-funding",
+        "publishedAt": "2026-05-21T15:10:44Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "USA Rare Earth Announces DOE Award Of Up To $19.3M In Funding Under The Critical Materials Innovation, Efficiency And Alternatives Program",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/05/52712192/usa-rare-earth-announces-doe-award-of-up-to-19-3m-in-funding-under-the-critical-materials-innovation",
+        "publishedAt": "2026-05-21T11:04:28Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "USA Rare Earth Shares Fall As Broad Market Selloff Overshadows Bullish Outlook",
+        "summary": "USA Rare Earth Inc. shares are trading lower Friday afternoon as traders weigh a fresh bullish analyst update against a broad risk-off tape.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/05/52609149/usa-rare-earth-shares-fall-as-broad-market-selloff-overshadows-bullish-outlook",
+        "publishedAt": "2026-05-15T17:37:10Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "USA Rare Earth Gets An Upgrade As Government Redefines Sector Risk",
+        "summary": "USA Rare Earth (USAR) is the top rare earth stock in the West, with accelerating production, a transformative acquisition, expanding European production, and strong US government support driving its bull case.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/commodities/26/05/52577397/usa-rare-earth-gets-an-upgrade-as-government-redefines-sector-risk",
+        "publishedAt": "2026-05-14T19:16:57Z",
+        "sentiment": "POSITIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 22,
+    "interpretation": "UNCERTAIN",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 8,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 0
+    },
+    "signals": [
+      "Below-average volume (0.9x)",
+      "Price below VWAP (-12.8%)",
+      "Price declining with decreasing volume (possible absorption)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 40,
+  "fundamentalScore": 50,
+  "newsCatalystScore": 70,
+  "institutionalFlowProxyScore": 22,
+  "keyCatalysts": [
+    "Funding agreement with Department of Commerce",
+    "Expansion into South Carolina"
+  ],
+  "keyRisks": [
+    "Bearish technical trend",
+    "Execution risk in expansion"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests uncertain institutional activity with below-average volume and price below VWAP."
+}

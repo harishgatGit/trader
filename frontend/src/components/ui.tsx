@@ -1,0 +1,326 @@
+import React from 'react';
+import { useAppStore } from '../store/useAppStore';
+import { FinalRating } from '../types';
+
+interface RatingBadgeProps {
+  rating: FinalRating | string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const ratingConfig: Record<string, { label: string; className: string; dot: string }> = {
+  BUY: { label: 'BUY', className: 'badge-buy', dot: 'bg-emerald-400' },
+  SELL: { label: 'SELL', className: 'badge-sell', dot: 'bg-red-400' },
+  HOLD: { label: 'HOLD', className: 'badge-hold', dot: 'bg-amber-400' },
+  WATCHLIST: { label: 'WATCHLIST', className: 'badge-watchlist', dot: 'bg-indigo-400' },
+  AVOID: { label: 'AVOID', className: 'badge-avoid', dot: 'bg-slate-400' },
+};
+
+export const RatingBadge: React.FC<RatingBadgeProps> = ({ rating, size = 'md' }) => {
+  const config = ratingConfig[rating] || { label: rating, className: 'badge-avoid', dot: 'bg-slate-400' };
+  const sizeClass = size === 'lg' ? 'text-sm px-3 py-1' : size === 'sm' ? 'text-xs px-1.5 py-0.5' : 'text-xs px-2 py-0.5';
+
+  return (
+    <span className={`${config.className} ${sizeClass} inline-flex items-center gap-1.5 font-bold tracking-wider`}>
+      <span className={`w-1.5 h-1.5 rounded-full ${config.dot} animate-pulse-slow`} />
+      {config.label}
+    </span>
+  );
+};
+
+interface ScoreBarProps {
+  label: string;
+  value: number | null;
+  max?: number;
+  color?: string;
+}
+
+export const ScoreBar: React.FC<ScoreBarProps> = ({ label, value, max = 100, color }) => {
+  if (value === null || value === undefined) {
+    return (
+      <div className="flex items-center gap-3">
+        <span className="text-xs text-slate-500 w-36 shrink-0">{label}</span>
+        <span className="text-xs text-slate-600">N/A</span>
+      </div>
+    );
+  }
+
+  const pct = Math.min(100, Math.max(0, (value / max) * 100));
+  const barColor = color ||
+    (pct >= 70 ? 'bg-emerald-500' : pct >= 40 ? 'bg-amber-500' : 'bg-red-500');
+
+  return (
+    <div className="flex items-center gap-3">
+      <span className="text-xs text-slate-400 w-36 shrink-0">{label}</span>
+      <div className="flex-1 progress-bar">
+        <div
+          className={`progress-fill ${barColor}`}
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+      <span className="text-xs font-mono font-semibold text-slate-200 w-8 text-right">
+        {value.toFixed(0)}
+      </span>
+    </div>
+  );
+};
+
+interface PriceChangeProps {
+  value: number | null;
+  showArrow?: boolean;
+  className?: string;
+}
+
+export const PriceChange: React.FC<PriceChangeProps> = ({ value, showArrow = true, className = '' }) => {
+  if (value === null || value === undefined) return <span className="text-slate-500">—</span>;
+
+  const isUp = value >= 0;
+  const color = isUp ? 'text-price-up' : 'text-price-down';
+  const arrow = isUp ? '▲' : '▼';
+
+  return (
+    <span className={`${color} font-mono text-sm ${className}`}>
+      {showArrow && <span className="text-xs mr-0.5">{arrow}</span>}
+      {isUp ? '+' : ''}{value.toFixed(2)}%
+    </span>
+  );
+};
+
+interface LoadingSpinnerProps {
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+}
+
+export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ size = 'md', className = '' }) => {
+  const sizeClass = size === 'sm' ? 'w-4 h-4' : size === 'lg' ? 'w-8 h-8' : 'w-6 h-6';
+  return (
+    <div className={`${sizeClass} ${className} border-2 border-slate-700 border-t-brand-500 rounded-full animate-spin`} />
+  );
+};
+
+interface EmptyStateProps {
+  icon?: React.ReactNode;
+  title: string;
+  description?: string;
+  action?: React.ReactNode;
+}
+
+export const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description, action }) => (
+  <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
+    {icon && <div className="text-slate-600 mb-4 text-4xl">{icon}</div>}
+    <h3 className="text-slate-300 font-semibold mb-2">{title}</h3>
+    {description && <p className="text-slate-500 text-sm max-w-sm mb-4">{description}</p>}
+    {action}
+  </div>
+);
+
+interface ToastProps {
+  type: 'success' | 'error' | 'info' | 'warning';
+  message: string;
+  onDismiss: () => void;
+}
+
+export const Toast: React.FC<ToastProps> = ({ type, message, onDismiss }) => {
+  const config = {
+    success: 'border-emerald-500/40 bg-emerald-900/30 text-emerald-300',
+    error: 'border-red-500/40 bg-red-900/30 text-red-300',
+    warning: 'border-amber-500/40 bg-amber-900/30 text-amber-300',
+    info: 'border-brand-500/40 bg-brand-900/30 text-brand-300',
+  };
+
+  return (
+    <div className={`flex items-start gap-3 p-3 rounded-lg border backdrop-blur-sm slide-up ${config[type]}`}>
+      <span className="flex-1 text-sm">{message}</span>
+      <button onClick={onDismiss} className="text-slate-500 hover:text-slate-300 text-xs mt-0.5">✕</button>
+    </div>
+  );
+};
+
+export const ToastContainer: React.FC = () => {
+  const { toasts, removeToast } = useAppStore();
+  return (
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2 max-w-sm">
+      {toasts.map((t: any) => (
+        <Toast key={t.id} type={t.type} message={t.message} onDismiss={() => removeToast(t.id)} />
+      ))}
+    </div>
+  );
+};
+
+interface SkeletonProps {
+  className?: string;
+  lines?: number;
+}
+
+export const Skeleton: React.FC<SkeletonProps> = ({ className = 'h-4 w-full', lines = 1 }) => (
+  <div className="space-y-2">
+    {Array.from({ length: lines }).map((_, i) => (
+      <div key={i} className={`skeleton ${className}`} />
+    ))}
+  </div>
+);
+
+// ── DataUnavailable ────────────────────────────────────────────────────────
+// Shown whenever a fetch fails, returns null, or critical fields are N/A.
+
+interface DataUnavailableProps {
+  symbol?: string;
+  reason?: string;        // optional technical hint (for devs / superusers)
+  onRetry?: () => void;
+  compact?: boolean;      // smaller inline version
+}
+
+export const DataUnavailable: React.FC<DataUnavailableProps> = ({
+  symbol,
+  reason,
+  onRetry,
+  compact = false,
+}) => {
+  if (compact) {
+    return (
+      <div className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-amber-500/8 border border-amber-500/20 text-xs text-amber-300/80">
+        <span className="text-base">⚠️</span>
+        <span>
+          We couldn't load this data right now.{' '}
+          {onRetry && (
+            <button
+              onClick={onRetry}
+              className="underline underline-offset-2 hover:text-amber-200 transition-colors font-medium"
+            >
+              Try again
+            </button>
+          )}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col items-center justify-center py-14 px-6 text-center animate-fade-in">
+      {/* Logo / icon */}
+      <div className="relative mb-6">
+        <img
+          src="/brand/icon_256.png"
+          alt="InvestingAtti"
+          className="w-16 h-16 object-contain opacity-60 grayscale"
+        />
+        {/* Warning badge */}
+        <span className="absolute -bottom-1 -right-1 text-lg">😔</span>
+      </div>
+
+      {/* Heading */}
+      <h3 className="text-lg font-bold text-slate-200 mb-2">
+        {symbol ? `${symbol} — Data Unavailable` : 'Data Unavailable'}
+      </h3>
+
+      {/* Message */}
+      <p className="text-sm text-slate-400 max-w-sm leading-relaxed mb-6">
+        We are sorry, we are not able to serve you this time. We will fix it. Please try again.
+      </p>
+
+      {/* Technical reason — subtle */}
+      {reason && (
+        <div className="mb-5 px-4 py-2 rounded-lg bg-slate-900/60 border border-slate-800/60 text-xs text-slate-600 font-mono max-w-xs break-words">
+          {reason}
+        </div>
+      )}
+
+      {/* Actions */}
+      <div className="flex items-center gap-3">
+        {onRetry && (
+          <button
+            onClick={onRetry}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 text-sm font-semibold hover:bg-brand-500/20 transition-all duration-200"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            Try Again
+          </button>
+        )}
+        <a
+          href="/analyze"
+          className="text-sm text-slate-500 hover:text-slate-300 transition-colors"
+        >
+          Search another ticker →
+        </a>
+      </div>
+    </div>
+  );
+};
+
+interface TooltipProps {
+  content: string;
+  children: React.ReactNode;
+  position?: 'top' | 'bottom' | 'left' | 'right';
+}
+
+export const Tooltip: React.FC<TooltipProps> = ({ content, children, position = 'top' }) => {
+  const [visible, setVisible] = React.useState(false);
+
+  const positionClasses = {
+    top: 'bottom-full left-1/2 -translate-x-1/2 mb-2',
+    bottom: 'top-full left-1/2 -translate-x-1/2 mt-2',
+    left: 'right-full top-1/2 -translate-y-1/2 mr-2',
+    right: 'left-full top-1/2 -translate-y-1/2 ml-2',
+  };
+
+  return (
+    <div
+      className="relative inline-block cursor-help group"
+      onMouseEnter={() => setVisible(true)}
+      onMouseLeave={() => setVisible(false)}
+    >
+      {children}
+      {visible && (
+        <div className={`absolute z-[9999] w-52 p-2 text-[11px] leading-relaxed font-normal text-slate-200 bg-slate-950/95 border border-slate-800 rounded-lg shadow-xl backdrop-blur-sm pointer-events-none transition-all duration-200 fade-in ${positionClasses[position]}`}>
+          {content}
+          <div className={`absolute w-1.5 h-1.5 bg-slate-950 border-r border-b border-slate-800 rotate-45 ${
+            position === 'top' ? 'top-full left-1/2 -translate-x-1/2 -mt-0.75 border-t-0 border-l-0' :
+            position === 'bottom' ? 'bottom-full left-1/2 -translate-x-1/2 -mb-0.75 border-b-0 border-r-0 border-t border-l' :
+            position === 'left' ? 'left-full top-1/2 -translate-y-1/2 -ml-0.75 border-b-0 border-l-0 border-t border-r' :
+            'right-full top-1/2 -translate-y-1/2 -mr-0.75 border-t-0 border-r-0 border-b border-l'
+          }`} />
+        </div>
+      )}
+    </div>
+  );
+};
+
+interface TermTooltipProps {
+  term: string;
+  children: React.ReactNode;
+  position?: 'top' | 'bottom' | 'left' | 'right';
+}
+
+const termDefinitions: Record<string, string> = {
+  mixed: "Multiple timeframes or indicators are conflicting, showing no clear unified trend direction.",
+  bias: "The dominant trend direction indicated by technical moving averages and indicator configurations.",
+  technicalbias: "The dominant trend direction indicated by technical moving averages and indicator configurations.",
+  bearish: "Technicals indicate selling pressure, with price generally declining or trading below key moving averages.",
+  bullish: "Technicals indicate buying momentum, with price generally rising or trading above key moving averages.",
+  neutral: "Price is trading within a consolidation range with low volatility and no clear directional bias.",
+  accumulation: "Wyckoff Phase 1: Smart money quietly buys and builds positions near support levels, establishing a base.",
+  markup: "Wyckoff Phase 2: Price breaks out of consolidation and trends steadily upward with increasing momentum.",
+  distribution: "Wyckoff Phase 3: Smart money sells and distributes shares to buyers near resistance levels, forming a top.",
+  markdown: "Wyckoff Phase 4: Price breaks key support levels and trends steadily downward as selling pressure intensifies.",
+  sideways: "Price action is oscillating within horizontal support and resistance boundaries with no clear trend.",
+  squeezerisk: "Risk that high short-interest shares are rapidly bought back to cover shorts, causing an explosive upward price spike.",
+  ssr: "Short Sale Restriction (Rule 201) prevents short selling on downward ticks once a stock falls 10% in a session.",
+  ssrstatus: "Short Sale Restriction (Rule 201) status, restricting short sales to upticks if triggered.",
+  borrowfee: "Annualized interest rate charged by brokers to borrow shares for shorting, reflecting share availability.",
+  shortinterest: "Percentage of outstanding shares that have been sold short but not yet covered/closed.",
+  confidencescore: "The AI's conviction level (0-100%) in its final recommendation (e.g. BUY, WAIT, HOLD). A low score indicates conflicting indicators or highly speculative conditions, while a high score indicates strong alignment across technicals, news, and fundamentals.",
+  confidence: "The AI's confidence level in the primary driver of the stock's daily movement. A low score implies multiple speculative factors or mixed news, while a high score indicates a clear, dominant catalyst.",
+};
+
+export const TermTooltip: React.FC<TermTooltipProps> = ({ term, children, position = 'top' }) => {
+  const cleanKey = term.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const definition = termDefinitions[cleanKey] || `Definition for ${term}`;
+
+  return (
+    <Tooltip content={definition} position={position}>
+      {children}
+    </Tooltip>
+  );
+};
+

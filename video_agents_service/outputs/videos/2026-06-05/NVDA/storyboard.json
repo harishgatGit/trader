@@ -1,0 +1,227 @@
+{
+  "ticker": "NVDA",
+  "reportDate": "Unavailable",
+  "videoTitle": "NVDA Stock Report",
+  "durationSeconds": 175.96,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for NVIDIA Corporation, ticker NVDA. Today, we're diving into the intricacies of a stock currently navigating through stormy seas. Stay tuned as we dissect whether this slump is a temporary setback or a signal of deeper issues.\n\nNVDA is currently trading at $205.61, reflecting a 5.88% decline as of June 5, 2026. This drop aligns with a bearish intraday trend, pointing to significant selling pressure that has been a consistent theme throughout the session.\n\nThe primary reason for this downturn appears to be sector-sympathy movements. Despite NVIDIA's robust position in AI and semiconductors, broader sector weakness seems to have spurred the recent sell-off, overshadowing the company's individual strengths.\n\nVolume analysis confirms strong selling pressure, with the current volume above average. This indicates a robust distribution phase, further confirmed by the stock trading below key moving averages and the VWAP, suggesting a persistent downtrend.\n\nExamining the daily trend chart, NVDA finds itself in a challenging position. Strong resistance levels loom overhead, while support zones are being tested, indicating a lack of clear breakout potential and a prevailing consolidation phase.\n\nFrom a technical standpoint, indicators such as the MACD histogram and ADX underscore the bearish sentiment. The RSI suggests oversold conditions in shorter timeframes, yet the absence of a reversal signal advises caution for prospective buyers.\n\nFor tactical traders, the swing entry zone lies between $194.76 and $197.25. Setting a stop loss at $202 can help manage downside risk, with potential targets identified at $216.82 and $232.28, should a reversal materialize.\n\nShort sellers should note a medium squeeze risk, despite the lack of SI% and borrow fee data. The current bearish momentum might offer opportunities, but caution is advised due to potential volatility and the possibility of abrupt reversals.\n\nNVIDIA's challenges are not isolated, as mixed sentiments around AI stocks and broader macroeconomic uncertainties reflect on its current predicament. The company's high valuation ratios also suggest caution, potentially leading to profit-taking by investors.\n\nIn conclusion, NVDA is firmly in a bearish trend with no immediate buy signals. Investors should watch for a confirmed breakout or reversal before considering entry. As always, remain vigilant of market conditions and personal risk tolerance when making investment decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 19.1,
+      "narration": "Welcome to the Investing Atti stock analysis for NVIDIA Corporation, ticker NVDA. Today, we're diving into the intricacies of a stock currently navigating through stormy seas. Stay tuned as we dissect whether this slump is a temporary setback or a signal of deeper issues.",
+      "pandaAction": "point",
+      "speechBubbleText": "NVIDIA: Navigating Stormy Seas",
+      "visualElements": [
+        "NVIDIA logo",
+        "stormy sea background"
+      ],
+      "chartElements": [
+        "NVDA stock price chart"
+      ],
+      "animationInstructions": [
+        "fade-in logo",
+        "wave animation"
+      ],
+      "dataFields": {
+        "catchyLine": "NVIDIA Slump: Temporary Setback or Deeper Issue?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 16.15,
+      "narration": "NVDA is currently trading at $205.61, reflecting a 5.88% decline as of June 5, 2026. This drop aligns with a bearish intraday trend, pointing to significant selling pressure that has been a consistent theme throughout the session.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Price Drop: $205.61 (-5.88%)",
+      "visualElements": [
+        "price tag",
+        "bearish trend arrow"
+      ],
+      "chartElements": [
+        "intraday price movement"
+      ],
+      "animationInstructions": [
+        "highlight price drop",
+        "animate bearish arrow"
+      ]
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 17.77,
+      "narration": "The primary reason for this downturn appears to be sector-sympathy movements. Despite NVIDIA's robust position in AI and semiconductors, broader sector weakness seems to have spurred the recent sell-off, overshadowing the company's individual strengths.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Sector Weakness Impact",
+      "visualElements": [
+        "AI and semiconductor icons"
+      ],
+      "chartElements": [
+        "sector performance comparison"
+      ],
+      "animationInstructions": [
+        "fade-in sector icons",
+        "highlight sector trend"
+      ]
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 17.28,
+      "narration": "Volume analysis confirms strong selling pressure, with the current volume above average. This indicates a robust distribution phase, further confirmed by the stock trading below key moving averages and the VWAP, suggesting a persistent downtrend.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "High Volume: Strong Selling",
+      "visualElements": [
+        "volume bars",
+        "moving averages"
+      ],
+      "chartElements": [
+        "volume vs. average",
+        "VWAP line"
+      ],
+      "animationInstructions": [
+        "highlight volume bars",
+        "draw moving averages"
+      ]
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 16.79,
+      "narration": "Examining the daily trend chart, NVDA finds itself in a challenging position. Strong resistance levels loom overhead, while support zones are being tested, indicating a lack of clear breakout potential and a prevailing consolidation phase.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Resistance & Support Tested",
+      "visualElements": [
+        "resistance and support lines"
+      ],
+      "chartElements": [
+        "daily trend chart"
+      ],
+      "animationInstructions": [
+        "highlight resistance",
+        "highlight support"
+      ]
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 17.21,
+      "narration": "From a technical standpoint, indicators such as the MACD histogram and ADX underscore the bearish sentiment. The RSI suggests oversold conditions in shorter timeframes, yet the absence of a reversal signal advises caution for prospective buyers.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Bearish Indicators",
+      "visualElements": [
+        "MACD histogram",
+        "ADX line",
+        "RSI gauge"
+      ],
+      "chartElements": [
+        "technical indicators"
+      ],
+      "animationInstructions": [
+        "animate MACD",
+        "highlight RSI"
+      ]
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 15.73,
+      "narration": "For tactical traders, the swing entry zone lies between $194.76 and $197.25. Setting a stop loss at $202 can help manage downside risk, with potential targets identified at $216.82 and $232.28, should a reversal materialize.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Swing Entry Zone: $194.76 - $197.25",
+      "visualElements": [
+        "entry zone range",
+        "stop loss marker"
+      ],
+      "chartElements": [
+        "entry and target zones"
+      ],
+      "animationInstructions": [
+        "highlight entry zone",
+        "draw stop loss"
+      ]
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 16.93,
+      "narration": "Short sellers should note a medium squeeze risk, despite the lack of SI% and borrow fee data. The current bearish momentum might offer opportunities, but caution is advised due to potential volatility and the possibility of abrupt reversals.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Medium Squeeze Risk",
+      "visualElements": [
+        "squeeze risk gauge"
+      ],
+      "chartElements": [
+        "bearish momentum indicators"
+      ],
+      "animationInstructions": [
+        "highlight squeeze risk",
+        "animate momentum"
+      ]
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 18.19,
+      "narration": "NVIDIA's challenges are not isolated, as mixed sentiments around AI stocks and broader macroeconomic uncertainties reflect on its current predicament. The company's high valuation ratios also suggest caution, potentially leading to profit-taking by investors.",
+      "pandaAction": "default",
+      "speechBubbleText": "AI Sector Sentiment",
+      "visualElements": [
+        "AI stock icons",
+        "valuation ratio indicators"
+      ],
+      "chartElements": [
+        "macroeconomic factors"
+      ],
+      "animationInstructions": [
+        "fade-in AI icons",
+        "highlight valuation"
+      ]
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 20.81,
+      "narration": "In conclusion, NVDA is firmly in a bearish trend with no immediate buy signals. Investors should watch for a confirmed breakout or reversal before considering entry. As always, remain vigilant of market conditions and personal risk tolerance when making investment decisions.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Stay Vigilant",
+      "visualElements": [
+        "bearish trend summary",
+        "breakout watch"
+      ],
+      "chartElements": [
+        "final trend analysis"
+      ],
+      "animationInstructions": [
+        "highlight bearish trend",
+        "animate vigilance"
+      ],
+      "dataFields": {
+        "quote": "Success in trading comes from patience and discipline.",
+        "disclaimer": "This analysis is for informational purposes only and should not be considered financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

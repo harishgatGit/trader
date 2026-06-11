@@ -1,0 +1,264 @@
+{
+  "ticker": "MSFT",
+  "reportDate": "Unavailable",
+  "videoTitle": "MSFT Stock Report",
+  "durationSeconds": 128.0,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Hello, fellow traders! It\u2019s Atti Panda here, your friendly guide through the world of stocks, bringing you the latest on Microsoft Corporation, ticker symbol MSFT. Today, we\u2019re putting MSFT on our watchlist. While it shows promise in the long-term, the current mixed signals suggest caution. Let\u2019s dive in to understand why this tech giant might need a little more time before it becomes a strong buy.\n\nCurrently, MSFT is trading at $417.08. The stock has been on a bit of a roller coaster today, finishing down 2.59% from its opening price of $428.005. This percentage drop highlights a bearish trend in today's trading session, which suggests selling pressure among investors.\n\nNow, why the bearish trend, you ask? Despite Microsoft's strong fundamentals and exciting developments in their AI initiatives, the short-term outlook is impacted by sector-sympathy movements. Investors are being cautious, possibly moving away from tech stocks due to broader market sentiment.\n\nWe can see this caution reflected in the volume data. Today\u2019s trading volume was below average, which tells us there wasn't significant buying interest to support a price rally. This lack of volume, combined with the stock closing below the VWAP, indicates more sellers than buyers at these levels.\n\nLooking at the daily trend chart, we observe that MSFT is close to resistance levels, which are acting as a ceiling for the stock price. The stock is hovering in a distribution zone, where sellers dominate and push the stock lower, preventing any breakout attempts.\n\nOn the technical side, we see a negative MACD histogram and a notable 'death cross' with the 50-day EMA below the 200-day EMA. These are typically bearish signals, indicating that investors might want to wait for a reversal before considering a buy.\n\nFor those eyeing a tactical trade, the swing entry zone is between $398.01 and $405.17. If MSFT falls into this range, it could present a buying opportunity, provided it\u2019s accompanied by a volume surge. A prudent stop loss would be set just below $398.01, with targets in the $428.91 to $433.0 range.\n\nWhen considering shorting MSFT, it's crucial to note the medium squeeze risk. Short interest data is currently unavailable, so tread carefully. A breakdown below $398.01 could trigger further selling, but always be prepared for volatility.\n\nOn the broader market front, while Microsoft has strong positions in cloud services and AI,",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 12,
+      "narration": "Hello, fellow traders! It\u2019s Atti Panda here, your friendly guide through the world of stocks, bringing you the latest on Microsoft Corporation, ticker symbol MSFT. Today, we\u2019re putting MSFT on our watchlist.",
+      "pandaAction": "point",
+      "speechBubbleText": "MSFT is on our radar!",
+      "visualElements": [
+        "Atti Panda with a stock chart background",
+        "MSFT logo"
+      ],
+      "chartElements": [
+        "MSFT stock overview chart"
+      ],
+      "animationInstructions": [
+        "Zoom in on MSFT logo",
+        "Highlight 'watchlist'"
+      ],
+      "dataFields": {
+        "Ticker": "MSFT",
+        "Current Price": "$417.08",
+        "Rating": "WATCHLIST"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 10,
+      "narration": "While it shows promise in the long-term, the current mixed signals suggest caution. Let\u2019s dive in to understand why this tech giant might need a little more time before it becomes a strong buy.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Mixed signals ahead!",
+      "visualElements": [
+        "Caution sign",
+        "Clock ticking"
+      ],
+      "chartElements": [
+        "Mixed signals chart"
+      ],
+      "animationInstructions": [
+        "Flash caution sign",
+        "Clock hands moving"
+      ],
+      "dataFields": {
+        "Current Price": "$417.08",
+        "Long-term Outlook": "Positive"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 15,
+      "narration": "Currently, MSFT is trading at $417.08. The stock has been on a bit of a roller coaster today, finishing down 2.59% from its opening price of $428.005. This percentage drop highlights a bearish trend in today's trading session, which suggests selling pressure among investors.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Bearish trend detected!",
+      "visualElements": [
+        "Roller coaster graph",
+        "Bear icon"
+      ],
+      "chartElements": [
+        "Price drop chart"
+      ],
+      "animationInstructions": [
+        "Roller coaster animation",
+        "Bear icon appears"
+      ],
+      "dataFields": {
+        "Opening Price": "$428.005",
+        "Closing Price": "$417.08",
+        "Percentage Drop": "2.59%"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 12,
+      "narration": "Now, why the bearish trend, you ask? Despite Microsoft's strong fundamentals and exciting developments in their AI initiatives, the short-term outlook is impacted by sector-sympathy movements.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Sector sympathy in play!",
+      "visualElements": [
+        "AI icon",
+        "Sector graph"
+      ],
+      "chartElements": [
+        "Sector-sympathy impact chart"
+      ],
+      "animationInstructions": [
+        "Draw AI icon",
+        "Sector graph animation"
+      ],
+      "dataFields": {
+        "AI Developments": "Positive",
+        "Short-term Outlook": "Bearish"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 15,
+      "narration": "We can see this caution reflected in the volume data. Today\u2019s trading volume was below average, which tells us there wasn't significant buying interest to support a price rally.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Low volume alert!",
+      "visualElements": [
+        "Volume bars",
+        "Alert icon"
+      ],
+      "chartElements": [
+        "Volume data chart"
+      ],
+      "animationInstructions": [
+        "Highlight low volume bars",
+        "Flash alert icon"
+      ],
+      "dataFields": {
+        "Volume": "Below Average",
+        "VWAP": "Below"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 15,
+      "narration": "Looking at the daily trend chart, we observe that MSFT is close to resistance levels, which are acting as a ceiling for the stock price.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Resistance ahead!",
+      "visualElements": [
+        "Ceiling icon",
+        "Resistance line"
+      ],
+      "chartElements": [
+        "Resistance level chart"
+      ],
+      "animationInstructions": [
+        "Draw resistance line",
+        "Ceiling icon appears"
+      ],
+      "dataFields": {
+        "Resistance Level": "Close",
+        "Distribution Zone": "Active"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 12,
+      "narration": "For those eyeing a tactical trade, the swing entry zone is between $398.01 and $405.17. If MSFT falls into this range, it could present a buying opportunity, provided it\u2019s accompanied by a volume surge.",
+      "pandaAction": "point",
+      "speechBubbleText": "Look for entry zone!",
+      "visualElements": [
+        "Entry zone graph",
+        "Volume surge icon"
+      ],
+      "chartElements": [
+        "Swing entry zone chart"
+      ],
+      "animationInstructions": [
+        "Highlight entry zone",
+        "Volume surge icon appears"
+      ],
+      "dataFields": {
+        "Entry Zone": "398.01 - 405.17",
+        "Stop Loss": "398.01"
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 10,
+      "narration": "When considering shorting MSFT, it's crucial to note the medium squeeze risk. Short interest data is currently unavailable, so tread carefully.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Squeeze risk warning!",
+      "visualElements": [
+        "Squeeze risk icon",
+        "Caution tape"
+      ],
+      "chartElements": [
+        "Short trade risk chart"
+      ],
+      "animationInstructions": [
+        "Flash squeeze risk icon",
+        "Caution tape animation"
+      ],
+      "dataFields": {
+        "Squeeze Risk": "Medium",
+        "Short Interest": "Unavailable"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 12,
+      "narration": "On the broader market front, while Microsoft has strong positions in cloud services and AI,",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Strong market position!",
+      "visualElements": [
+        "Cloud icon",
+        "AI icon"
+      ],
+      "chartElements": [
+        "Market position chart"
+      ],
+      "animationInstructions": [
+        "Highlight cloud and AI icons",
+        "Celebrate animation"
+      ],
+      "dataFields": {
+        "Cloud Services": "Strong",
+        "AI Position": "Positive"
+      }
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 15,
+      "narration": "Long-term prospects remain positive due to strong fundamentals and positive news sentiment.",
+      "pandaAction": "default",
+      "speechBubbleText": "Keep MSFT on watch!",
+      "visualElements": [
+        "Positive sentiment icon",
+        "Watchlist icon"
+      ],
+      "chartElements": [
+        "Long-term prospects chart"
+      ],
+      "animationInstructions": [
+        "Highlight positive sentiment icon",
+        "Watchlist icon animation"
+      ],
+      "dataFields": {
+        "Long-term Prospects": "Positive",
+        "quote": "Patience is the key to successful trading.",
+        "disclaimer": "This video is for informational purposes only and should not be considered financial advice. Always consult with a financial advisor before making investment decisions."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

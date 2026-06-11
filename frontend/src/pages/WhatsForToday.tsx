@@ -1,0 +1,932 @@
+import React, { useEffect, useState, useCallback } from 'react';
+import { 
+  TrendingUp, Clock, AlertTriangle, ArrowUpRight, ArrowDownRight, 
+  HelpCircle, Eye, Star, Info, CheckCircle2, X, RefreshCw, Layers, Sparkles, Lock
+} from 'lucide-react';
+import { whatsForTodayApi, watchlistApi } from '../services/api';
+import { useAppStore } from '../store/useAppStore';
+import { LoadingSpinner, EmptyState } from '../components/ui';
+
+interface IndexMovement {
+  price: number;
+  changePercent: number;
+}
+
+interface TopStock {
+  symbol: string;
+  companyName: string;
+  price: number;
+  changePercent: number;
+  catalyst: string;
+  watchReason: string;
+  explanation: string;
+  riskLevel: string;
+  technicalSetup: string;
+  liquidityScore: string;
+  heatmap: {
+    priceMomentum: string;
+    volumeStrength: string;
+    newsSentiment: string;
+    sectorStrength: string;
+    technicalTrend: string;
+    volatilityRisk: string;
+    liquidity: string;
+    catalystImpact: string;
+    accDistSignal: string;
+    overallWatchScore: number;
+  };
+}
+
+interface SectorWatchItem {
+  id: string;
+  sectorName: string;
+  trend: string;
+  reasoning: string;
+  catalyst: string;
+  volumeStrength: string;
+  riskLevel: string;
+  topStocks: TopStock[];
+}
+
+interface DailyReport {
+  id: string;
+  date: string;
+  runNumber: number;
+  runTime: string;
+  title: string;
+  marketStorySummary: string;
+  mood: string;
+  indexMovements: Record<string, IndexMovement>;
+  catalystSummary: string;
+  economicEvents: string[];
+  newsSentiment: string;
+  volumeBehavior: string;
+  volatilityLevel: string;
+  riskLevel: string;
+  beginnerExplanation: string;
+  sectors: SectorWatchItem[];
+}
+
+interface FeedbackLog {
+  id: string;
+  date: string;
+  expectedSectors: string[];
+  actualSectors: string[];
+  expectedStocks: string[];
+  actualStocks: string[];
+  failedInsights: string[];
+  explanationOfFails: string;
+  missingDataNotes: string;
+  misleadingSignals: string;
+  promptImprovementNotes: string;
+  createdAt: string;
+}
+
+const WhatsForToday: React.FC = () => {
+  const { user } = useAppStore();
+  const [report, setReport] = useState<DailyReport | null>(null);
+  const [loading, setLoading] = useState(true);
+  
+  // Phase handling
+  const [activePhase, setActivePhase] = useState<number>(1);
+  const [phaseData, setPhaseData] = useState<Record<number, DailyReport | null>>({});
+  const [triggering, setTriggering] = useState<Record<number, boolean>>({});
+
+  // Feedback history
+  const [feedbackLogs, setFeedbackLogs] = useState<FeedbackLog[]>([]);
+
+  // Toggles
+  const [showLaymanSummary, setShowLaymanSummary] = useState(true);
+  const [showLaymanExplanation, setShowLaymanExplanation] = useState(true);
+
+  // Selected Stock Modal
+  const [selectedStock, setSelectedStock] = useState<TopStock | null>(null);
+  const [expandedSectors, setExpandedSectors] = useState<Record<string, boolean>>({});
+
+  const toggleSector = (sectorId: string) => {
+    setExpandedSectors(prev => ({
+      ...prev,
+      [sectorId]: !prev[sectorId]
+    }));
+  };
+  const [watchlistStatus, setWatchlistStatus] = useState<Record<string, boolean>>({});
+  const [watchlistAdding, setWatchlistAdding] = useState<string | null>(null);
+
+  const isAdmin = user?.role === 'SUPERUSER';
+
+  const phases = [
+    { num: 1, label: 'Pre-Market',   time: '8:00 AM',  title: "What's Going to Happen?", unlockHour: 8,  unlockMin: 0  },
+    { num: 2, label: 'After Open',   time: '10:00 AM', title: 'What Is Happening Now?',   unlockHour: 10, unlockMin: 0  },
+    { num: 3, label: 'Mid-Market',   time: '1:00 PM',  title: 'What Is Changing?',         unlockHour: 13, unlockMin: 0  },
+    { num: 4, label: 'Market Close', time: '4:30 PM',  title: 'What Happened Today?',      unlockHour: 16, unlockMin: 30 },
+  ];
+
+  // ── Live CST clock (ticks every second) ─────────────────────────────────
+  const getCSTNow = () => new Date(
+    new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
+  );
+  const getCSTDateStr = () => {
+    const d = getCSTNow();
+    return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+  };
+
+  const [nowCST, setNowCST] = useState<Date>(getCSTNow);
+  const [cstDateStr, setCstDateStr] = useState<string>(getCSTDateStr);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const next = getCSTNow();
+      setNowCST(next);
+
+      // ── Midnight reset: if CST date rolled over, wipe all phase data ──
+      const nextDateStr = `${next.getFullYear()}-${next.getMonth()}-${next.getDate()}`;
+      setCstDateStr(prev => {
+        if (prev !== nextDateStr) {
+          // New trading day — lock all tabs and clear cached reports
+          setPhaseData({});
+          setReport(null);
+          setActivePhase(1);
+          return nextDateStr;
+        }
+        return prev;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Formatted clock string with CST label
+  const cstTimeStr = nowCST.toLocaleTimeString('en-US', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true,
+  });
+
+  // A phase is only unlocked if current CST time >= its scheduled CST time
+  const isPhaseUnlocked = useCallback((phase: { unlockHour: number; unlockMin: number }) => {
+    const nowMins = nowCST.getHours() * 60 + nowCST.getMinutes();
+    const unlockMins = phase.unlockHour * 60 + phase.unlockMin;
+    return nowMins >= unlockMins;
+  }, [nowCST]);
+
+  // Next locked phase + live countdown
+  const nextLockedPhase = phases.find(p => !isPhaseUnlocked(p));
+  const countdownStr = (() => {
+    if (!nextLockedPhase) return null;
+    const unlockMins = nextLockedPhase.unlockHour * 60 + nextLockedPhase.unlockMin;
+    const nowMins = nowCST.getHours() * 60 + nowCST.getMinutes();
+    let diffSecs = (unlockMins - nowMins) * 60 - nowCST.getSeconds();
+    if (diffSecs < 0) diffSecs = 0;
+    const hh = Math.floor(diffSecs / 3600);
+    const mm = Math.floor((diffSecs % 3600) / 60);
+    const ss = diffSecs % 60;
+    if (hh > 0) return `${hh}h ${mm}m`;
+    return `${mm}m ${ss.toString().padStart(2, '0')}s`;
+  })();
+
+
+  const loadLatest = async () => {
+    setLoading(true);
+    try {
+      // Use CST date so we always fetch the correct trading day
+      const todayStr = (() => {
+        const d = getCSTNow();
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${y}-${m}-${day}`;
+      })();
+
+      // Try to fetch all 4 phases for today in parallel to populate cache and unlock tabs
+      const results = await Promise.all([
+        whatsForTodayApi.getByPhase(1, todayStr).catch(() => null),
+        whatsForTodayApi.getByPhase(2, todayStr).catch(() => null),
+        whatsForTodayApi.getByPhase(3, todayStr).catch(() => null),
+        whatsForTodayApi.getByPhase(4, todayStr).catch(() => null),
+      ]);
+
+      const newPhaseData: Record<number, any> = {};
+      let latestReport: any = null;
+      
+      results.forEach((res, index) => {
+        if (res) {
+          const phaseNum = index + 1;
+          newPhaseData[phaseNum] = res;
+          if (!latestReport || res.runNumber > latestReport.runNumber) {
+            latestReport = res;
+          }
+        }
+      });
+
+      // If no reports found for today, load the latest report overall
+      if (!latestReport) {
+        const overallLatest = await whatsForTodayApi.getLatest();
+        if (overallLatest) {
+          latestReport = overallLatest;
+          const targetDate = overallLatest.date;
+          
+          // Fetch all phases for this historical target date
+          const historicalResults = await Promise.all([
+            whatsForTodayApi.getByPhase(1, targetDate).catch(() => null),
+            whatsForTodayApi.getByPhase(2, targetDate).catch(() => null),
+            whatsForTodayApi.getByPhase(3, targetDate).catch(() => null),
+            whatsForTodayApi.getByPhase(4, targetDate).catch(() => null),
+          ]);
+          
+          historicalResults.forEach((res, index) => {
+            if (res) {
+              newPhaseData[index + 1] = res;
+            }
+          });
+        }
+      }
+
+      setPhaseData(newPhaseData);
+
+      if (Object.keys(newPhaseData).length > 0) {
+        // Pick the highest-numbered phase that is BOTH unlocked (per CST time) AND has data
+        const nowMins = getCSTNow().getHours() * 60 + getCSTNow().getMinutes();
+        const bestPhase = phases
+          .slice()
+          .reverse() // highest phase number first
+          .find(p => {
+            const unlockMins = p.unlockHour * 60 + p.unlockMin;
+            return nowMins >= unlockMins && !!newPhaseData[p.num];
+          });
+
+        if (bestPhase) {
+          setActivePhase(bestPhase.num);
+          setReport(newPhaseData[bestPhase.num]);
+        } else {
+          // All phases with data are still locked — show phase 1 tab (will display lock wall)
+          const firstWithData = phases.find(p => !!newPhaseData[p.num]);
+          if (firstWithData) {
+            setActivePhase(firstWithData.num);
+            setReport(newPhaseData[firstWithData.num]);
+          }
+        }
+      }
+      
+      // Load feedback history
+      const feedback = await whatsForTodayApi.getFeedbackLogs();
+      setFeedbackLogs(feedback);
+    } catch (err) {
+      console.error('Failed to load WhatsForToday dashboard data', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadLatest();
+  }, []);
+
+  const switchPhase = async (phaseNum: number) => {
+    if (phaseData[phaseNum]) {
+      setReport(phaseData[phaseNum]);
+      setActivePhase(phaseNum);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      // Use CST date so we always fetch the correct trading day
+      const todayStr = (() => {
+        const d = getCSTNow();
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        return `${y}-${m}-${day}`;
+      })();
+      
+      const res = await whatsForTodayApi.getByPhase(phaseNum, todayStr);
+      if (res) {
+        setReport(res);
+        setPhaseData(prev => ({ ...prev, [phaseNum]: res }));
+      } else {
+        setReport(null);
+      }
+      setActivePhase(phaseNum);
+    } catch (err) {
+      console.error(`Failed to load phase ${phaseNum}`, err);
+      setReport(null);
+      setActivePhase(phaseNum);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleAdminTrigger = async (phaseNum: number) => {
+    setTriggering(prev => ({ ...prev, [phaseNum]: true }));
+    try {
+      const generated = await whatsForTodayApi.manualTrigger(phaseNum);
+      if (generated) {
+        setReport(generated);
+        setPhaseData(prev => ({ ...prev, [phaseNum]: generated }));
+        
+        // Refresh feedback logs if close is run
+        if (phaseNum === 4) {
+          const feedback = await whatsForTodayApi.getFeedbackLogs();
+          setFeedbackLogs(feedback);
+        }
+      }
+    } catch (err) {
+      console.error(`Admin generation trigger failed for phase ${phaseNum}`, err);
+      alert(`Trigger failed: ${err instanceof Error ? err.message : 'Unknown error'}`);
+    } finally {
+      setTriggering(prev => ({ ...prev, [phaseNum]: false }));
+    }
+  };
+
+  const handleStockClick = async (stock: TopStock) => {
+    setSelectedStock(stock);
+    whatsForTodayApi.trackInteraction(stock.symbol, 'click');
+  };
+
+  const handleAddToWatchlist = async (symbol: string) => {
+    setWatchlistAdding(symbol);
+    try {
+      await whatsForTodayApi.trackInteraction(symbol, 'watchlist_add');
+      await watchlistApi.add(symbol);
+      setWatchlistStatus(prev => ({ ...prev, [symbol]: true }));
+    } catch (err) {
+      console.error(`Failed to add ${symbol} to watchlist`, err);
+    } finally {
+      setWatchlistAdding(null);
+    }
+  };
+
+  // Helper to color code heatmap metrics
+  const getHeatmapColor = (val: string) => {
+    const clean = val.toLowerCase().trim();
+    if (clean === 'strong' || clean === 'improving') return 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+    if (clean === 'weak' || clean === 'falling' || clean === 'high risk') return 'bg-rose-500/10 text-rose-400 border border-rose-500/20';
+    if (clean === 'medium') return 'bg-amber-500/10 text-amber-400 border border-amber-500/20';
+    return 'bg-slate-800 text-slate-300 border border-slate-700'; // neutral / weak / other
+  };
+
+  // Helper for trend sector color-coding
+  const getSectorTrendStyle = (trend: string) => {
+    const t = trend.toUpperCase();
+    if (t === 'STRONG') return 'border-t-4 border-t-emerald-500 bg-emerald-500/3';
+    if (t === 'WEAK') return 'border-t-4 border-t-rose-500 bg-rose-500/3';
+    if (t === 'REVERSING') return 'border-t-4 border-t-amber-500 bg-amber-500/3';
+    return 'border-t-4 border-t-slate-500 bg-slate-500/3';
+  };
+
+  const getMoodColor = (mood: string) => {
+    const m = mood.toUpperCase();
+    if (m === 'BULLISH' || m === 'RISK_ON') return 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20';
+    if (m === 'BEARISH' || m === 'RISK_OFF') return 'text-rose-400 bg-rose-500/10 border-rose-500/20';
+    if (m === 'CAUTIOUS' || m === 'MIXED') return 'text-amber-400 bg-amber-500/10 border-amber-500/20';
+    return 'text-slate-300 bg-slate-800 border-slate-700';
+  };
+
+  const formatTitleCase = (str: string) => {
+    if (!str) return '';
+    return str.toLowerCase().replace(/(?:^|_|\s)\S/g, l => l.toUpperCase()).replace(/_/g, ' ');
+  };
+
+  return (
+    <div className="p-6 space-y-6 fade-in max-w-6xl mx-auto">
+      {/* Header section */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-5">
+        <div>
+          <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight flex items-center gap-2.5">
+            <span className="bg-brand-500/10 text-brand-400 p-2 rounded-lg border border-brand-500/20">
+              <Sparkles className="w-6 h-6 animate-pulse" />
+            </span>
+            What's For Today?
+          </h1>
+          <p className="text-sm text-slate-400 mt-1">
+            Layman-friendly storytelling and daily market intelligence running 4 times per trading day.
+          </p>
+        </div>
+
+        {/* Live CST clock + next phase countdown */}
+        <div className="flex flex-col items-end gap-1.5 min-w-[200px]">
+          <div className="flex items-center gap-2 text-sm font-mono font-bold text-slate-100 bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2">
+            <Clock className="w-4 h-4 text-brand-400" />
+            <span>{cstTimeStr}</span>
+            <span className="text-[11px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded px-1.5 py-0.5 ml-1">CST</span>
+          </div>
+          {nextLockedPhase && countdownStr && (
+            <div className="text-[11px] text-amber-400 font-semibold flex items-center gap-1">
+              <Lock className="w-3 h-3" />
+              <span>{nextLockedPhase.label} unlocks in {countdownStr}</span>
+            </div>
+          )}
+          {!nextLockedPhase && (
+            <div className="text-[11px] text-emerald-400 font-semibold">✓ All phases unlocked today</div>
+          )}
+        </div>
+      </div>
+
+      {/* Sticky Phase Timeline selector */}
+          <div className="sticky top-0 z-20 bg-slate-950/80 backdrop-blur-md py-3 border-y border-slate-900/90 -mx-6 px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {phases.map(phase => {
+                const isActive = activePhase === phase.num;
+                const isTriggered = !!phaseData[phase.num];
+                const unlocked = isPhaseUnlocked(phase);
+
+                return (
+                  <div
+                    key={phase.num}
+                    onClick={() => { if (unlocked) switchPhase(phase.num); }}
+                    role="button"
+                    tabIndex={unlocked ? 0 : -1}
+                    onKeyDown={(e) => { if (unlocked && e.key === 'Enter') switchPhase(phase.num); }}
+                    title={!unlocked ? `Locked — opens at ${phase.time} CST` : undefined}
+                    style={!unlocked ? {
+                      background: 'repeating-linear-gradient(-45deg, rgba(15,15,20,0.95) 0px, rgba(15,15,20,0.95) 8px, rgba(30,30,40,0.7) 8px, rgba(30,30,40,0.7) 16px)',
+                    } : {}}
+                    className={`flex flex-col text-left p-3 rounded-lg border transition-all relative overflow-hidden select-none ${
+                      !unlocked
+                        ? 'border-slate-800/60 cursor-not-allowed'
+                        : isActive
+                          ? 'border-brand-500 bg-brand-500/5 shadow-md cursor-pointer'
+                          : isTriggered
+                            ? 'border-slate-800 bg-slate-900/40 hover:bg-slate-900/70 hover:border-slate-700 cursor-pointer'
+                            : 'border-slate-900 bg-slate-950/40 text-slate-500 hover:border-slate-800 hover:text-slate-400 cursor-pointer'
+                    }`}
+                  >
+                    {/* Locked full-card overlay */}
+                    {!unlocked && (
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 z-10 bg-slate-950/60 rounded-lg">
+                        <Lock className="w-5 h-5 text-slate-500" />
+                        <span className="text-[10px] font-bold text-slate-500 tracking-wider">LOCKED</span>
+                        <span className="text-[9px] text-amber-400/80 font-semibold">{phase.time} CST</span>
+                      </div>
+                    )}
+
+                    <div className={`flex items-center justify-between text-[10px] font-mono font-bold tracking-wider ${!unlocked ? 'opacity-30' : ''}`}>
+                      <span className={!unlocked ? 'text-slate-600' : isActive ? 'text-brand-400' : isTriggered ? 'text-slate-400' : 'text-slate-600'}>
+                        {phase.label}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        {!unlocked
+                          ? <Lock className="w-3 h-3 text-slate-500" />
+                          : <Clock className="w-3 h-3 text-slate-400" />
+                        }
+                        <span className={!unlocked ? 'text-slate-500' : 'text-slate-300'}>{phase.time}</span>
+                        <span className="text-[9px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded px-1 py-0.5">CST</span>
+                      </span>
+                    </div>
+                    <div className={`text-xs font-extrabold mt-1 truncate ${!unlocked ? 'opacity-30 text-slate-600' : isActive ? 'text-slate-100' : isTriggered ? 'text-slate-300' : 'text-slate-600'}`}>
+                      {phase.title}
+                    </div>
+
+                    {/* Admin trigger overlay — only for unlocked phases without data */}
+                    {unlocked && !isTriggered && (
+                      <div className="absolute inset-0 bg-black/10 backdrop-blur-[0.5px] flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                        {isAdmin ? (
+                          <button
+                            onClick={(e) => { e.stopPropagation(); handleAdminTrigger(phase.num); }}
+                            disabled={triggering[phase.num]}
+                            className="bg-brand-500 hover:bg-brand-600 text-slate-950 text-[10px] font-bold px-2 py-1 rounded shadow-lg flex items-center gap-1 border border-brand-400/20"
+                          >
+                            <RefreshCw className={`w-2.5 h-2.5 ${triggering[phase.num] ? 'animate-spin' : ''}`} />
+                            Run Daily Agent
+                          </button>
+                        ) : (
+                          <span className="text-[10px] font-mono text-slate-500 font-bold bg-slate-950 px-2 py-0.5 rounded border border-slate-800/80">
+                            🔒 Awaiting Phase Run
+                          </span>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ── Content area: locked wall or actual report ── */}
+          {!isPhaseUnlocked(phases.find(p => p.num === activePhase)!) ? (
+            // Phase is time-locked — show a full locked panel, load nothing
+            <div className="card-glass py-20 flex flex-col items-center justify-center text-center space-y-5 border border-slate-800/60"
+              style={{ background: 'repeating-linear-gradient(-45deg, rgba(10,10,15,0.98) 0px, rgba(10,10,15,0.98) 10px, rgba(20,20,28,0.85) 10px, rgba(20,20,28,0.85) 20px)' }}
+            >
+              <div className="w-16 h-16 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center shadow-xl">
+                <Lock className="w-7 h-7 text-slate-500" />
+              </div>
+              <div className="space-y-1.5">
+                <h3 className="text-xl font-black text-slate-300 tracking-tight">
+                  {phases.find(p => p.num === activePhase)?.label} — Phase Locked
+                </h3>
+                <p className="text-sm text-slate-500 max-w-xs">
+                  This report becomes available at{' '}
+                  <span className="text-amber-400 font-bold">
+                    {phases.find(p => p.num === activePhase)?.time} CST
+                  </span>
+                </p>
+                {countdownStr && nextLockedPhase?.num === activePhase && (
+                  <div className="inline-flex items-center gap-2 mt-2 bg-amber-500/10 border border-amber-500/20 rounded-lg px-4 py-2">
+                    <Clock className="w-4 h-4 text-amber-400" />
+                    <span className="font-mono text-amber-300 font-bold text-sm">{countdownStr}</span>
+                    <span className="text-amber-500/70 text-xs">until unlock</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          ) : loading ? (
+            <div className="flex items-center justify-center py-32">
+              <LoadingSpinner size="lg" />
+            </div>
+          ) : !report ? (
+            <div className="card-glass py-16 flex flex-col items-center justify-center text-center space-y-4">
+              <span className="text-4xl text-slate-500">📅</span>
+              <div>
+                <h3 className="text-lg font-bold text-slate-200">No Report Generated Yet</h3>
+                <p className="text-sm text-slate-500 mt-1 max-w-sm">
+                  This phase report does not have any cached insights for today.
+                </p>
+              </div>
+              {isAdmin && (
+                <button
+                  onClick={() => handleAdminTrigger(activePhase)}
+                  disabled={triggering[activePhase]}
+                  className="btn-primary flex items-center gap-2 px-5 py-2.5"
+                >
+                  <RefreshCw className={`w-4 h-4 ${triggering[activePhase] ? 'animate-spin' : ''}`} />
+                  Trigger Report Compilation (OpenAI)
+                </button>
+              )}
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {/* Market Mood & Stats Horizontal Status Ribbon */}
+              <div className="card-glass p-3 flex flex-wrap items-center justify-between gap-4 text-xs">
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-slate-500 font-medium">Mood State:</span>
+                    <span className={`font-bold px-2 py-0.5 rounded border text-[10px] flex items-center gap-1 ${getMoodColor(report.mood)}`}>
+                      {report.mood === 'BULLISH' || report.mood === 'RISK_ON' ? '🐂 ' : report.mood === 'BEARISH' || report.mood === 'RISK_OFF' ? '🐻 ' : '⚖️ '}{formatTitleCase(report.mood)}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-slate-500 font-medium">Sentiment:</span>
+                    <span className="text-slate-200 font-bold flex items-center gap-1">
+                      {report.newsSentiment === 'POSITIVE' ? '🟢 ' : report.newsSentiment === 'NEGATIVE' ? '🔴 ' : report.newsSentiment === 'MIXED' ? '🟠 ' : '🟡 '}{formatTitleCase(report.newsSentiment)}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-slate-500 font-medium">Volatility:</span>
+                    <span className="text-slate-200 font-bold flex items-center gap-1">
+                      {report.volatilityLevel === 'HIGH' ? '⚡ ' : report.volatilityLevel === 'MEDIUM' ? '📊 ' : '📉 '}{formatTitleCase(report.volatilityLevel)}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-slate-500 font-medium">Daily Risk:</span>
+                    <span className="text-slate-200 font-bold flex items-center gap-1">
+                      {report.riskLevel === 'HIGH' ? '🚨 ' : report.riskLevel === 'MEDIUM' ? '⚠️ ' : '🛡️ '}{formatTitleCase(report.riskLevel)}
+                    </span>
+                  </div>
+                </div>
+                {report.volumeBehavior && (
+                  <div className="flex items-center gap-1.5 text-[11px] text-slate-400 lg:border-l lg:border-slate-800/80 lg:pl-4">
+                    <span className="text-slate-500">Volume:</span>
+                    <span className="italic font-light">"{report.volumeBehavior}"</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Primary Layout grid: Story summary & Indicators summary */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                {/* Left side: Main story narrative */}
+                <div className="lg:col-span-2 space-y-6">
+                  {/* Story summary card */}
+                  <div className="card-glass p-6 space-y-4 relative">
+                    <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                      <h2 className="text-xl font-black text-slate-100 tracking-tight flex items-center gap-2">
+                        <TrendingUp className="w-5 h-5 text-brand-400" />
+                        {report.title}
+                      </h2>
+                      <button
+                        onClick={() => setShowLaymanSummary(!showLaymanSummary)}
+                        className="text-xs font-bold text-brand-400 hover:text-brand-300 transition-transform active:scale-95"
+                        title={showLaymanSummary ? 'Collapse Analogy' : 'Expand Analogy'}
+                      >
+                        {showLaymanSummary ? '▲' : '▼'}
+                      </button>
+                    </div>
+
+                    {showLaymanSummary && (
+                      <div className="text-slate-300 text-sm leading-relaxed space-y-3 font-light">
+                        {report.marketStorySummary.split('\n\n').map((para, i) => (
+                          <p key={i}>{para}</p>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Beginner Education and Market Catalysts in parallel */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Beginner take-home explanation */}
+                    <div className="card-glass p-5 bg-brand-500/3 border border-brand-500/10 space-y-3">
+                      <div className="flex items-center justify-between border-b border-brand-500/10 pb-2">
+                        <h3 className="text-sm font-extrabold text-brand-400 tracking-wider flex items-center gap-1.5">
+                          <Info className="w-4 h-4" />
+                          Beginner Education Column
+                        </h3>
+                        <button
+                          onClick={() => setShowLaymanExplanation(!showLaymanExplanation)}
+                          className="text-xs font-bold text-slate-400 hover:text-slate-300"
+                        >
+                          {showLaymanExplanation ? '▲' : '▼'}
+                        </button>
+                      </div>
+                      {showLaymanExplanation && (
+                        <p className="text-xs text-slate-300 leading-relaxed italic font-sans">
+                          {report.beginnerExplanation}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Market Catalysts card */}
+                    <div className="card-glass p-5 space-y-3">
+                      <h3 className="text-xs font-extrabold text-slate-400 tracking-widest border-b border-slate-800 pb-2">
+                        Market Catalysts
+                      </h3>
+                      <p className="text-xs text-slate-300 leading-relaxed font-sans font-light">
+                        {report.catalystSummary}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right side: Snapshot widgets */}
+                <div className="space-y-6">
+
+
+
+                  {/* Economic Events Calendar card */}
+                  <div className="card-glass p-5 space-y-3">
+                    <h3 className="text-xs font-extrabold text-slate-400 tracking-widest border-b border-slate-800 pb-2">
+                      Economic Events Calendar
+                    </h3>
+                    {report.economicEvents && report.economicEvents.length > 0 ? (
+                      <ul className="space-y-2">
+                        {report.economicEvents.map((ev, i) => (
+                          <li key={i} className="text-xs text-slate-300 flex items-start gap-2 bg-slate-900/30 p-2 rounded border border-slate-800/40">
+                            <CheckCircle2 className="w-4 h-4 text-brand-400 shrink-0 mt-0.5" />
+                            <span>{ev}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-xs text-slate-500 italic">No economic event releases processed today.</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Sector watch Heatmap Grid */}
+              <div className="space-y-4">
+                <h2 className="text-xl font-black text-slate-100 tracking-tight flex items-center gap-2">
+                  <Layers className="w-5 h-5 text-brand-400" />
+                  Sector Watch Heatmap
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {report.sectors && report.sectors.map((sec) => (
+                    <div
+                      key={sec.id}
+                      className={`card-glass transition-all duration-300 p-5 ${getSectorTrendStyle(sec.trend)}`}
+                    >
+                      <div className="space-y-3.5">
+                        <div 
+                          className="flex items-start justify-between border-b border-slate-800/60 pb-2.5 cursor-pointer hover:bg-slate-900/40 p-2 -m-2 rounded transition-colors"
+                          onClick={() => toggleSector(sec.id)}
+                        >
+                          <div>
+                            <h3 className="font-extrabold text-slate-200 tracking-wide text-sm flex items-center gap-1.5">
+                              {sec.sectorName}
+                              <span className="text-[10px] font-normal text-brand-400 bg-brand-500/10 px-1.5 py-0.5 rounded border border-brand-500/20">
+                                {expandedSectors[sec.id] ? 'Collapse' : 'Expand'}
+                              </span>
+                            </h3>
+                            <span className="text-[10px] text-slate-500 font-semibold mt-1 block">
+                              Trend: <span className="font-extrabold">{sec.trend}</span>
+                            </span>
+                          </div>
+                          <div className="text-right text-[10px]">
+                            <span className="text-slate-500 block">Risk: <span className="font-bold text-slate-300">{sec.riskLevel}</span></span>
+                            <span className="text-slate-500 block">Volume: <span className="font-bold text-slate-300">{sec.volumeStrength}</span></span>
+                          </div>
+                        </div>
+
+                        {expandedSectors[sec.id] && (
+                          <div className="space-y-3.5 pt-2 animate-fade-in">
+                            <div className="space-y-2">
+                              <p className="text-xs text-slate-300 leading-relaxed font-light">
+                                {sec.reasoning}
+                              </p>
+                              <div className="text-[11px] text-slate-400 italic bg-slate-900/50 p-2 rounded border border-slate-800/80">
+                                <strong>Catalyst:</strong> {sec.catalyst}
+                              </div>
+                            </div>
+
+                            {/* Top Stocks list */}
+                            <div className="space-y-1.5">
+                              <span className="text-[10px] text-slate-500 tracking-widest font-extrabold block">Top Stocks to Watch</span>
+                              <div className="space-y-1">
+                                {sec.topStocks && sec.topStocks.map((st) => {
+                                  const isUp = st.changePercent >= 0;
+                                  return (
+                                    <div
+                                      key={st.symbol}
+                                      onClick={() => handleStockClick(st)}
+                                      className="flex items-center justify-between bg-slate-950/40 hover:bg-slate-900/80 border border-slate-850 p-2 rounded cursor-pointer transition-colors"
+                                    >
+                                      <div>
+                                        <span className="font-mono text-xs font-bold text-brand-400 group-hover:text-brand-300">
+                                          {st.symbol}
+                                        </span>
+                                        <span className="text-[10px] text-slate-500 ml-1.5 block md:inline truncate max-w-[100px]">
+                                          {st.companyName}
+                                        </span>
+                                      </div>
+                                      <div className="text-right">
+                                        <span className={`font-mono text-[10px] font-bold ${isUp ? 'text-emerald-400' : 'text-rose-400'}`}>
+                                          {isUp ? '+' : ''}{st.changePercent.toFixed(2)}%
+                                        </span>
+                                        <span className="text-[10px] text-slate-500 font-medium ml-1.5 block">
+                                          {st.technicalSetup}
+                                        </span>
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+      {/* Selected Stock Modal overlay */}
+      {selectedStock && (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="card-glass border border-slate-800 bg-slate-950 max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-xl shadow-2xl relative p-6 animate-fade-in space-y-5">
+            
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedStock(null)}
+              className="absolute top-4 right-4 p-1.5 rounded-lg hover:bg-slate-900 border border-slate-800 text-slate-500 hover:text-slate-400 focus:outline-none transition-colors"
+            >
+              <X className="w-4.5 h-4.5" />
+            </button>
+
+            {/* Header info */}
+            <div className="flex items-start justify-between gap-4 border-b border-slate-900 pb-4 pr-8">
+              <div>
+                <div className="flex items-center gap-2.5">
+                  <span className="font-mono text-2xl font-black text-slate-100 tracking-wider">
+                    {selectedStock.symbol}
+                  </span>
+                  <span className="text-xs text-slate-400 font-medium truncate max-w-[200px]">
+                    {selectedStock.companyName}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 mt-1.5">
+                  <span className="font-mono text-base font-bold text-slate-200">
+                    ${selectedStock.price.toFixed(2)}
+                  </span>
+                  <span className={`font-mono text-xs px-2 py-0.5 rounded font-bold ${selectedStock.changePercent >= 0 ? 'text-emerald-400 bg-emerald-500/10' : 'text-rose-400 bg-rose-500/10'}`}>
+                    {selectedStock.changePercent >= 0 ? '+' : ''}{selectedStock.changePercent.toFixed(2)}%
+                  </span>
+                </div>
+              </div>
+
+              {/* Watchlist Interaction */}
+              <div>
+                <button
+                  onClick={() => handleAddToWatchlist(selectedStock.symbol)}
+                  disabled={watchlistStatus[selectedStock.symbol] || watchlistAdding === selectedStock.symbol}
+                  className={`btn-ghost text-xs py-2 px-3 flex items-center gap-1.5 border ${
+                    watchlistStatus[selectedStock.symbol]
+                      ? 'border-emerald-500/30 text-emerald-400 bg-emerald-500/5'
+                      : 'border-slate-800 text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+                  }`}
+                >
+                  {watchlistAdding === selectedStock.symbol ? (
+                    <LoadingSpinner size="sm" />
+                  ) : watchlistStatus[selectedStock.symbol] ? (
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                  ) : (
+                    <Star className="w-3.5 h-3.5" />
+                  )}
+                  {watchlistStatus[selectedStock.symbol] ? 'Added to Watchlist' : 'Add to Watchlist'}
+                </button>
+              </div>
+            </div>
+
+            {/* Beginner explanation */}
+            <div className="bg-brand-500/3 border border-brand-500/10 p-4 rounded-xl space-y-1.5">
+              <span className="text-[10px] text-brand-400 font-extrabold tracking-widest block">Layperson Context</span>
+              <p className="text-xs text-slate-300 font-sans italic leading-relaxed">
+                {selectedStock.explanation}
+              </p>
+            </div>
+
+            {/* Quick stats panel */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs bg-slate-900/30 p-3 rounded-lg border border-slate-900">
+              <div>
+                <span className="text-slate-500 block">Watch Reason</span>
+                <span className="text-slate-200 font-medium leading-relaxed">{selectedStock.watchReason}</span>
+              </div>
+              <div>
+                <span className="text-slate-500 block">Setup State</span>
+                <span className="text-slate-200 font-medium">{selectedStock.technicalSetup}</span>
+              </div>
+              <div>
+                <span className="text-slate-500 block">Catalyst Description</span>
+                <span className="text-slate-200 font-medium">{selectedStock.catalyst}</span>
+              </div>
+              <div>
+                <span className="text-slate-500 block">Risk Rating</span>
+                <span className="text-rose-400 font-bold">{selectedStock.riskLevel}</span>
+              </div>
+            </div>
+
+            {/* Heat map blocks section */}
+            <div className="space-y-2.5">
+              <h4 className="text-xs font-extrabold text-slate-400 tracking-widest border-b border-slate-900 pb-1.5">
+                Technical & Sentiment Heatmap Metrics
+              </h4>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-[11px]">
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-500">Price Momentum</span>
+                  <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.priceMomentum)}`}>
+                    {selectedStock.heatmap.priceMomentum}
+                  </span>
+                </div>
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-500">Volume Strength</span>
+                  <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.volumeStrength)}`}>
+                    {selectedStock.heatmap.volumeStrength}
+                  </span>
+                </div>
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-500">News Sentiment</span>
+                  <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.newsSentiment)}`}>
+                    {selectedStock.heatmap.newsSentiment}
+                  </span>
+                </div>
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-500">Sector Strength</span>
+                  <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.sectorStrength)}`}>
+                    {selectedStock.heatmap.sectorStrength}
+                  </span>
+                </div>
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-500">Technical Trend</span>
+                  <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.technicalTrend)}`}>
+                    {selectedStock.heatmap.technicalTrend}
+                  </span>
+                </div>
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-500">Volatility Risk</span>
+                  <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.volatilityRisk)}`}>
+                    {selectedStock.heatmap.volatilityRisk}
+                  </span>
+                </div>
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-500">Liquidity Score</span>
+                  <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.liquidity)}`}>
+                    {selectedStock.heatmap.liquidity}
+                  </span>
+                </div>
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-500">Catalyst/Earnings</span>
+                  <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.catalystImpact)}`}>
+                    {selectedStock.heatmap.catalystImpact}
+                  </span>
+                </div>
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center">
+                  <span className="text-slate-500">Accum/Distrib Flow</span>
+                  <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.accDistSignal)}`}>
+                    {selectedStock.heatmap.accDistSignal}
+                  </span>
+                </div>
+                <div className="bg-slate-900/40 p-2.5 rounded border border-slate-900 flex justify-between items-center col-span-2 sm:col-span-1">
+                  <span className="text-slate-500">Watch List Score</span>
+                  <span className="font-mono text-xs font-black text-brand-400">
+                    {selectedStock.heatmap.overallWatchScore}/100
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+    </div>
+  );
+};
+
+export default WhatsForToday;

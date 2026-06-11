@@ -1,0 +1,574 @@
+// AI Stock Analyst Agent - Prisma Schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// WATCHLIST
+// ─────────────────────────────────────────────────────────────────
+model Watchlist {
+  id          String    @id @default(cuid())
+  symbol      String    @unique
+  addedAt     DateTime  @default(now())
+  lastAnalyzedAt DateTime?
+  latestRating String?
+  latestPrice  Float?
+  latestSignal String?
+  notes        String?
+
+  @@map("watchlists")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// MARKET DATA
+// ─────────────────────────────────────────────────────────────────
+model MarketSnapshot {
+  id          String   @id @default(cuid())
+  symbol      String
+  timestamp   DateTime @default(now())
+  price       Float?
+  open        Float?
+  high        Float?
+  low         Float?
+  close       Float?
+  volume      BigInt?
+  vwap        Float?
+  bid         Float?
+  ask         Float?
+  bidSize     Int?
+  askSize     Int?
+  spread      Float?
+  raw         Json?
+
+  @@index([symbol, timestamp])
+  @@map("market_snapshots")
+}
+
+model HistoricalPrice {
+  id        String   @id @default(cuid())
+  symbol    String
+  timeframe String   // 1Min, 5Min, 15Min, 1Hour, 1Day
+  timestamp DateTime
+  open      Float
+  high      Float
+  low       Float
+  close     Float
+  volume    BigInt
+  vwap      Float?
+  tradeCount Int?
+
+  @@unique([symbol, timeframe, timestamp])
+  @@index([symbol, timeframe])
+  @@map("historical_prices")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// TECHNICAL INDICATORS
+// ─────────────────────────────────────────────────────────────────
+model TechnicalIndicator {
+  id        String   @id @default(cuid())
+  symbol    String
+  timeframe String
+  timestamp DateTime @default(now())
+  // Trend
+  ema20     Float?
+  ema50     Float?
+  ema200    Float?
+  sma20     Float?
+  sma50     Float?
+  sma200    Float?
+  // Momentum
+  rsi14     Float?
+  macdLine  Float?
+  macdSignal Float?
+  macdHist  Float?
+  // Volatility
+  bbUpper   Float?
+  bbMiddle  Float?
+  bbLower   Float?
+  bbWidth   Float?
+  atr14     Float?
+  // Volume
+  obv       BigInt?
+  relVolume Float?
+  vwap      Float?
+  // Trend Strength
+  adx14     Float?
+  plusDI    Float?
+  minusDI   Float?
+  // Support/Resistance
+  supportLevels  Json?
+  resistanceLevels Json?
+  // Signals
+  overallBias String?  // BULLISH, BEARISH, NEUTRAL
+  signals    Json?     // array of signal strings
+
+  @@index([symbol, timeframe, timestamp])
+  @@map("technical_indicators")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// FUNDAMENTALS
+// ─────────────────────────────────────────────────────────────────
+model FundamentalSnapshot {
+  id          String   @id @default(cuid())
+  symbol      String
+  timestamp   DateTime @default(now())
+  source      String   // "alpaca", "yahoo", "unavailable"
+  available   Boolean  @default(false)
+  marketCap   Float?
+  peRatio     Float?
+  pbRatio     Float?
+  epsTrailing Float?
+  epsForward  Float?
+  revenue     Float?
+  debtToEquity Float?
+  dividendYield Float?
+  beta        Float?
+  week52High  Float?
+  week52Low   Float?
+  sector      String?
+  industry    String?
+  description String?
+  raw         Json?
+
+  @@index([symbol, timestamp])
+  @@map("fundamental_snapshots")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// NEWS
+// ─────────────────────────────────────────────────────────────────
+model NewsEvent {
+  id          String   @id @default(cuid())
+  symbol      String
+  headline    String
+  summary     String?
+  source      String?
+  url         String?
+  sentiment   String?  // POSITIVE, NEGATIVE, NEUTRAL
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+
+  @@index([symbol, createdAt])
+  @@map("news_events")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// INSTITUTIONAL FLOW PROXY
+// ─────────────────────────────────────────────────────────────────
+model InstitutionalFlow {
+  id              String   @id @default(cuid())
+  symbol          String
+  timestamp       DateTime @default(now())
+  proxyScore      Float    // 0–100 composite score
+  // Sub-scores
+  relVolumeScore  Float?
+  obvTrendScore   Float?
+  priceVwapScore  Float?
+  pvDivergScore   Float?
+  supportHoldScore Float?
+  breakoutVolScore Float?
+  largeBodyScore  Float?
+  // Interpretation
+  interpretation  String?  // ACCUMULATION, DISTRIBUTION, NEUTRAL, UNCERTAIN
+  signals         Json?
+  disclaimer      String?
+
+  @@index([symbol, timestamp])
+  @@map("institutional_flows")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// AI AGENT REPORTS
+// ─────────────────────────────────────────────────────────────────
+model AgentReport {
+  id              String   @id @default(cuid())
+  symbol          String
+  createdAt       DateTime @default(now())
+  // Ratings
+  finalRating     String   // BUY, HOLD, SELL, WATCHLIST, AVOID
+  confidenceScore Float?
+  // Report JSON (full structured output)
+  reportJson      Json
+  // Summary fields for quick queries
+  currentPrice    Float?
+  technicalScore  Float?
+  fundamentalScore Float?
+  newsCatalystScore Float?
+  institutionalFlowProxyScore Float?
+  executiveSummary String?
+  // Processing metadata
+  processingTime  Int?     // milliseconds
+  openaiModel     String?
+  promptTokens    Int?
+  completionTokens Int?
+  // Status
+  status          String   @default("completed") // completed, failed, partial
+
+  @@index([symbol, createdAt])
+  @@map("agent_reports")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// ALERTS
+// ─────────────────────────────────────────────────────────────────
+model Alert {
+  id          String   @id @default(cuid())
+  symbol      String
+  name        String?
+  type        String   // price_above, price_below, rsi_above, rsi_below, macd_bullish, macd_bearish, signal_buy, signal_sell, accumulation_zone, stop_loss_hit, target_hit
+  value       Float?   // threshold value (price, RSI level, etc.)
+  enabled     Boolean  @default(true)
+  notifyEmail Boolean  @default(false)
+  notifyInApp Boolean  @default(true)
+  emailAddress String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  lastChecked DateTime?
+  lastTriggered DateTime?
+  triggerCount Int     @default(0)
+  events      AlertEvent[]
+
+  @@index([symbol, enabled])
+  @@map("alerts")
+}
+
+model AlertEvent {
+  id        String   @id @default(cuid())
+  alertId   String
+  alert     Alert    @relation(fields: [alertId], references: [id], onDelete: Cascade)
+  symbol    String
+  message   String
+  value     Float?
+  triggeredAt DateTime @default(now())
+  notified  Boolean  @default(false)
+
+  @@index([alertId, triggeredAt])
+  @@map("alert_events")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// PAPER TRADING
+// ─────────────────────────────────────────────────────────────────
+model PaperOrder {
+  id            String   @id @default(cuid())
+  alpacaOrderId String?  @unique
+  symbol        String
+  side          String   // buy, sell
+  orderType     String   // market, limit, stop, stop_limit
+  qty           Float?
+  notional      Float?
+  limitPrice    Float?
+  stopPrice     Float?
+  timeInForce   String   // day, gtc, ioc, fok
+  status        String   // pending, submitted, filled, cancelled, rejected, preview
+  filledQty     Float?
+  filledPrice   Float?
+  // Risk info
+  riskReward    Float?
+  stopLoss      Float?
+  target        Float?
+  positionSizePercent Float?
+  // Preview
+  isPreview     Boolean  @default(false)
+  previewApproved Boolean @default(false)
+  // From AI report
+  reportId      String?
+  // Timestamps
+  submittedAt   DateTime?
+  filledAt      DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  // Raw Alpaca response
+  raw           Json?
+
+  @@index([symbol, createdAt])
+  @@map("paper_orders")
+}
+
+model TradeLog {
+  id        String   @id @default(cuid())
+  orderId   String?
+  symbol    String
+  action    String   // order_preview, order_submitted, order_filled, order_cancelled, risk_blocked
+  details   Json?
+  createdAt DateTime @default(now())
+
+  @@index([symbol, createdAt])
+  @@map("trade_logs")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// RISK SETTINGS
+// ─────────────────────────────────────────────────────────────────
+model RiskSetting {
+  id                   String  @id @default(cuid())
+  maxPositionSizePct   Float   @default(5.0)
+  maxLossPerTradePct   Float   @default(2.0)
+  minRiskReward        Float   @default(1.5)
+  requireStopLoss      Boolean @default(true)
+  blockDuplicateWindow Int     @default(24) // hours
+  paperTradingOnly     Boolean @default(true)
+  maxDailyOrders       Int     @default(10)
+  updatedAt            DateTime @updatedAt
+
+  @@map("risk_settings")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// API CONNECTION STATUS
+// ─────────────────────────────────────────────────────────────────
+model ApiConnectionStatus {
+  id          String   @id @default(cuid())
+  service     String   @unique // openai, alpaca_data, postgres, redis
+  status      String   // connected, error, unchecked
+  lastChecked DateTime @default(now())
+  message     String?
+  latencyMs   Int?
+
+  @@map("api_connection_status")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// USER MANAGEMENT
+// ─────────────────────────────────────────────────────────────────
+model User {
+  id           String          @id @default(cuid())
+  username     String          @unique
+  passwordHash String
+  role         String          @default("BASIC") // BASIC, SUPERUSER
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  sessions     UserSession[]
+  problemReports ProblemReport[]
+  searchLogs   SearchLog[]
+
+  @@map("users")
+}
+
+model UserSession {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token        String   @unique
+  deviceInfo   String?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  lastActiveAt DateTime @default(now())
+
+  @@map("user_sessions")
+}
+
+model ProblemReport {
+  id             String   @id @default(cuid())
+  userId         String?
+  user           User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  classification String   // "Incorrect data", "Data not available", "Fetching old data", "Good to have", "Must have"
+  summary        String   @db.VarChar(4000)
+  createdAt      DateTime @default(now())
+
+  @@map("problem_reports")
+}
+
+model SearchLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  symbol    String
+  timestamp DateTime @default(now())
+  ipAddress String?
+  city      String?
+  state     String?
+
+  @@index([userId, symbol])
+  @@index([timestamp])
+  @@map("search_logs")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// TRAFFIC INTELLIGENCE
+// ─────────────────────────────────────────────────────────────────
+model IpRequestLog {
+  id          String   @id @default(cuid())
+  ip          String
+  userId      String?
+  username    String?
+  method      String   // GET, POST, etc.
+  route       String   // e.g. /api/analysis
+  statusCode  Int?
+  userAgent   String?
+  durationMs  Int?
+  timestamp   DateTime @default(now())
+
+  @@index([ip, timestamp])
+  @@index([userId, timestamp])
+  @@index([timestamp])
+  @@map("ip_request_logs")
+}
+
+model PageVisitLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  username   String?
+  ip         String?
+  page       String   // e.g. /analyze, /dashboard, /reports
+  durationMs Int?     // time spent on page in ms
+  referrer   String?  // previous page
+  timestamp  DateTime @default(now())
+
+  @@index([userId, timestamp])
+  @@index([page, timestamp])
+  @@index([timestamp])
+  @@map("page_visit_logs")
+}
+
+model ClientLog {
+  id        String   @id @default(cuid())
+  level     String   // "error" | "warn" | "info"
+  message   String
+  stack     String?
+  url       String?
+  userAgent String?
+  userId    String?
+  username  String?
+  timestamp DateTime @default(now())
+
+  @@index([level, timestamp])
+  @@index([userId, timestamp])
+  @@map("client_logs")
+}
+
+model VideoGenerationJob {
+  id                  String    @id @default(cuid())
+  jobId               String?   @unique @map("job_id")
+  reportId            String?   @map("report_id")
+  ticker              String
+  reportDate          String    @map("report_date") // YYYY-MM-DD
+  status              String    // PENDING, REPORT_RECEIVED, SCRIPT_GENERATED, STORYBOARD_GENERATED, VOICEOVER_GENERATED, ANIMATION_RENDERED, MP4_EXPORTED, VALIDATION_PASSED, COMPLETED, FAILED, SKIPPED_EXISTING_VIDEO
+  videoUrl            String?   @map("video_url")
+  sourceReportPath    String?   @map("source_report_path")
+  normalizedInputPath String?   @map("normalized_input_path")
+  scriptPath          String?   @map("script_path")
+  storyboardPath      String?   @map("storyboard_path")
+  audioPath           String?   @map("audio_path")
+  finalVideoPath      String?   @map("final_video_path")
+  validationPath      String?   @map("validation_path")
+  errorMessage        String?   @map("error_message")
+  createdAt           DateTime  @default(now()) @map("created_at")
+  updatedAt           DateTime  @updatedAt @map("updated_at")
+  completedAt         DateTime? @map("completed_at")
+  forceRegenerate     Boolean   @default(false) @map("force_regenerate")
+
+  @@unique([ticker, reportDate])
+  @@map("video_generation_jobs")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// WHATS FOR TODAY DAILY MARKET STORY
+// ─────────────────────────────────────────────────────────────────
+
+model DailyMarketReport {
+  id                    String              @id @default(cuid())
+  date                  String              // YYYY-MM-DD
+  runNumber             Int                 // 1 (Pre-market), 2 (Open), 3 (Mid-market), 4 (Close)
+  runTime               DateTime            @default(now())
+  title                 String              // e.g. "What's Going to Happen Today?"
+  marketStorySummary    String              @db.Text
+  mood                  String              // BULLISH, BEARISH, MIXED, CAUTIOUS, RISK_ON, RISK_OFF
+  indexMovements        Json                // index percentage changes (S&P, Nasdaq, Dow, Russell)
+  catalystSummary       String              @db.Text
+  economicEvents        Json?               // major economic news releases
+  newsSentiment         String              // POSITIVE, NEGATIVE, NEUTRAL, MIXED
+  volumeBehavior        String
+  volatilityLevel       String              // LOW, MEDIUM, HIGH
+  riskLevel             String              // LOW, MEDIUM, HIGH
+  beginnerExplanation   String              @db.Text
+  rawOpenAiResponse     Json?
+  
+  sectors               SectorWatchItem[]
+
+  @@unique([date, runNumber])
+  @@index([date])
+  @@map("daily_market_reports")
+}
+
+model SectorWatchItem {
+  id                    String              @id @default(cuid())
+  reportId              String
+  report                DailyMarketReport   @relation(fields: [reportId], references: [id], onDelete: Cascade)
+  sectorName            String
+  trend                 String              // STRONG, WEAK, NEUTRAL, REVERSING
+  reasoning             String              @db.Text
+  catalyst              String              @db.Text
+  volumeStrength        String              // High, Medium, Low
+  riskLevel             String              // Low, Medium, High
+  topStocks             Json                // Array of Top 10 Stocks details
+
+  @@index([reportId])
+  @@map("sector_watch_items")
+}
+
+model PennyStockWatchItem {
+  id                    String              @id @default(cuid())
+  date                  String              // YYYY-MM-DD
+  symbol                String
+  companyName           String
+  price                 Float
+  changePercent         Float
+  volumeSpike           Float               // volume multiplier
+  catalyst              String              @db.Text
+  riskLevel             String              // High, Extremely High
+  liquidityScore        String              // Strong, Medium, Weak
+  watchReason           String              @db.Text
+  explanation           String              @db.Text
+  timestamp             DateTime            @default(now())
+
+  @@index([date])
+  @@index([symbol])
+  @@map("penny_stock_watch_items")
+}
+
+model WhatsForTodayFeedbackLog {
+  id                    String              @id @default(cuid())
+  date                  String              @unique // YYYY-MM-DD
+  expectedSectors       Json
+  actualSectors         Json
+  expectedStocks        Json
+  actualStocks          Json
+  failedInsights        Json
+  explanationOfFails    String              @db.Text
+  missingDataNotes      String              @db.Text
+  misleadingSignals     String              @db.Text
+  promptImprovementNotes String             @db.Text
+  createdAt             DateTime            @default(now())
+
+  @@map("whats_for_today_feedback_logs")
+}
+
+model WhatsForTodayInteraction {
+  id        String   @id @default(cuid())
+  userId    String?
+  symbol    String
+  action    String   // "click", "watchlist_add"
+  timestamp DateTime @default(now())
+
+  @@index([userId, symbol])
+  @@map("whats_for_today_interactions")
+}
+
+model PromptImprovementNote {
+  id        String   @id @default(cuid())
+  date      String   // YYYY-MM-DD
+  note      String   @db.Text
+  createdAt DateTime @default(now())
+
+  @@map("prompt_improvement_notes")
+}
+

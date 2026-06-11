@@ -1,0 +1,30 @@
+{
+  "ticker": "TSM",
+  "companyName": "TSM",
+  "reportDate": "Unavailable",
+  "currentPrice": 418.275,
+  "dayChangePct": -5.97,
+  "overallSignal": "WAIT",
+  "whyStockMoved": "sector-sympathy",
+  "catalystSummary": "Positive news sentiment; Strong sector performance",
+  "volumeSummary": "Volume is below average, indicating potential lack of conviction.",
+  "trendSummary": "Despite the overall bullish technical indicators, TSM experienced a significant price drop of nearly 6% today. The stock opened at $429.27 and closed at $418.275, indicating a bearish intraday move. This decline occurred even though the broader technical setup remains strong, with the price above key moving averages and a bullish MACD. The mixed trend is further complicated by institutional distribution signals, suggesting that large investors may be offloading shares despite the positive sentiment in the news. The recent positive news articles, including aggressive buying in the semiconductor sector and a positive outlook on TSM, were not enough to counteract the selling pressure. Additionally, the stock's high P/E ratio of 35.74 might be causing some investors to take profits, especially in the face of a broader market correction or sector rotation.",
+  "supportLevels": [
+    410.12,
+    415.11
+  ],
+  "resistanceLevels": [
+    425.05,
+    432.34
+  ],
+  "entryZone": "Low: 399.7, High: 410.12",
+  "stopLoss": "Price: 399.7 (Technical stop loss below key support.)",
+  "targets": [
+    432.34,
+    450.16
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "High valuation; Near-term resistance",
+  "finalVerdict": "TSM is currently in a bullish trend but has shown signs of distribution with a recent price decline. The stock is near resistance levels, and the risk/reward ratio is not favorable for a new entry at this time. Waiting for a pullback or breakout confirmation is advised.",
+  "executiveSummary": "TSM is currently trading at $418.275, showing a bullish trend with price above key moving averages and a positive MACD. However, recent price action indicates potential distribution as the price has declined with decreasing volume. The stock is near resistance levels, suggesting a potential pullback or consolidation phase. Short-term momentum indicators like RSI and MACD are mixed, with the 4-hour RSI indicating overbought conditions.\n\nIn the near term, TSM may face resistance around $425.05 and $432.34, with support at $410.12 and $415.11. Long-term, the stock remains fundamentally strong with a positive outlook in the semiconductor sector. However, the current valuation appears stretched with a high P/E ratio.\n\nLAYMAN'S TAKEAWAY: TSM is in a strong uptrend but may face short-term resistance. It's wise to wait for a better entry point, either on a pullback or a confirmed breakout above resistance levels."
+}

@@ -1,0 +1,32 @@
+{
+  "ticker": "NVDA",
+  "companyName": "NVDA",
+  "reportDate": "Unavailable",
+  "currentPrice": 205.61,
+  "dayChangePct": -5.88,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "sector-sympathy",
+  "catalystSummary": "Growth in AI and semiconductor sectors",
+  "volumeSummary": "Volume is above average, indicating strong selling pressure.",
+  "trendSummary": "NVIDIA's stock experienced a significant decline, closing down 5.88% on June 5, 2026. The bearish trend is supported by several technical indicators: the MACD histogram is negative, the price is below the VWAP, and there is a strong downtrend indicated by the ADX. The 1-hour and 15-minute charts also show bearish signals, with the price below key moving averages and high relative volume, suggesting strong selling pressure. Fundamentally, NVIDIA's high P/E ratio of 31.43 and P/B ratio of 31.76 indicate that the stock might be overvalued, which could have prompted profit-taking. Despite a robust forward EPS of 12.68, the market may be reacting to broader sector movements or macroeconomic factors, as indicated by neutral news sentiment and uncertain institutional flow. The news articles reflect a mixed sentiment towards AI stocks, with some suggesting profit-taking, which could have influenced the sell-off.",
+  "supportLevels": [
+    194.76,
+    197.25,
+    208.79
+  ],
+  "resistanceLevels": [
+    216.82,
+    232.28,
+    236.54
+  ],
+  "entryZone": "Low: 194.76, High: 197.25",
+  "stopLoss": "Price: 202 (Set stop-loss below recent support to limit downside risk.)",
+  "targets": [
+    216.82,
+    232.28
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "Bearish technical trend; High valuation; Market volatility",
+  "finalVerdict": "NVDA is currently in a bearish trend with significant selling pressure. The stock is oversold on shorter timeframes but lacks a clear reversal signal. Risk/reward is not favorable for a new entry at this time. Watch for potential reversal signals or a confirmed breakout before considering a buy.",
+  "executiveSummary": "NVIDIA Corporation (NVDA) is trading at $205.61, showing a bearish trend across most technical indicators. The stock is experiencing distribution with strong selling pressure, as evidenced by its position below key moving averages and VWAP. While the stock is oversold on shorter timeframes, there is no clear reversal signal yet. In the near term, NVDA may continue to face downward pressure unless a reversal pattern emerges. Long-term prospects remain tied to its fundamental strengths in the AI and semiconductor sectors. LAYMAN'S TAKEAWAY: NVDA is currently in a downtrend with no clear buy signal. It's best to watch for signs of a reversal or breakout before considering a purchase."
+}

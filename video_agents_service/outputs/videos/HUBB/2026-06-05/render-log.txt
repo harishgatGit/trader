@@ -1,0 +1,56 @@
+STDOUT:
+[90mRemotion root directory:[39m [90mC:\Users\haris\Documents\code_base\trader\video_agents_service\templates\remotion[39m
+[90mNo config file loaded.[39m
+[90mChecking if[39m [90mindex.ts[39m [90mis the entry file[39m
+[90m[90mEntry point = C:\Users\haris\Documents\code_base\trader\video_agents_service\templates\remotion\index.ts (argument passed - found in cwd)[39m[90m[39m
+[90mEnsuring browser executable[39m
+[90mEnsured browser is available.[39m
+[40m openBrowser() [49m [90mOpening browser: gl = null, executable = C:\Users\haris\Documents\code_base\trader\video_agents_service\templates\remotion\node_modules\.remotion\chrome-headless-shell\win64\chrome-headless-shell-win64\chrome-headless-shell.exe, enableMultiProcessOnLinux = true[39m
+Bundling 6%
+Bundling 18%
+Bundling 30%
+Bundling 65%
+Bundling 71%
+Bundling 76%
+Bundling 81%
+Bundling 86%
+Bundling 91%
+Bundling 98%
+Bundling 100%
+[90mBundling done in 1825ms[39m
+[90mCopying done in 0ms[39m
+Getting composition
+[90mBundled under[39m [90mC:\Users\haris\AppData\Local\Temp\remotion-webpack-bundle-5WEhTr[39m
+[90mCreated directory for temporary files[39m [90mC:\Users\haris\AppData\Local\Temp\remotion-v4.0.472-assets46mxj9wys3[39m
+[40m compositor [49m [90mStarting Rust process. Max video cache size: 855MB, max threads = 2[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 0ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 2ms[39m[90m[39m
+[40m selectComposition() [49m [90mRunning calculateMetadata()...[39m
+
+[31mAn error occurred:[39m
+
+at [4mnode_modules/remotion/dist/esm/index.mjs:679[24m
+[90m677[39m │ [90m}[39m
+[90m678[39m │ [90mif (durationInFrames <= 0) {[39m
+679 │   throw new TypeError(`The "durationInFrames" prop ${component} must be positive, but got ${durationInFrames}.`);
+[90m680[39m │ [90m}[39m
+[90m681[39m │ [90mif (!allowFloats && durationInFrames % 1 !== 0) {[39m
+[90m682[39m │ [90m  throw new TypeError(`The "durationInFrames" prop ${component} must be an integer, but got ${durationInFrames}.`);[39m
+
+[90mat validateCalculated [94m(node_modules/remotion/dist/esm/index.mjs:9500)[39m[90m[39m
+[90mat resolveVideoConfig [94m(node_modules/remotion/dist/esm/index.mjs:9580)[39m[90m[39m
+[90mat window.remotion_calculateComposition [94m(node_modules/@remotion/studio/dist/esm/renderEntry.mjs:321)[39m[90m[39m
+[90mCleaning up...[39m
+[90mCleanup job "Delete C:\Users\haris\AppData\Local\Temp\remotion-webpack-bundle-5WEhTr" done[39m
+[90mCleanup job "Cleanup bundle" done[39m
+[90mReceived SIGTERM signal. Killing browser process[39m
+[90mCleanup job "Closing browser instance" done[39m
+[90mCleanup job "Close server" done[39m
+[90mCleanup done in 45ms[39m
+
+
+STDERR:
+[40m chrome [49m [31m[0605/123903.029:INFO:CONSOLE:3670] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 0ms", source: http://localhost:3001/bundle.js (3670)[39m
+[40m chrome [49m [31m[0605/123903.049:INFO:CONSOLE:3670] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 2ms", source: http://localhost:3001/bundle.js (3670)[39m
+[31mWas not able to close puppeteer page[39m [31mProtocolError: Protocol error (Target.closeTarget): No target found for targetId[39m
+[31m[41m[37m TypeError [39m[31m[49m[39m [31mTypeError: The "durationInFrames" prop of the "<Composition />" component with the id "StockReportVideo" must be positive, but got 0.[39m

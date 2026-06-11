@@ -1,0 +1,227 @@
+{
+  "ticker": "AAPL",
+  "reportDate": "Unavailable",
+  "videoTitle": "AAPL Stock Report",
+  "durationSeconds": 163.45,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for Apple Inc., ticker symbol AAPL. Today, we delve into whether Apple\u2019s current bullish run is a sustainable upswing or if caution is warranted as it approaches critical resistance levels.\n\nApple is currently priced at $307.23, experiencing a slight decline of 1.16% from the day\u2019s open at $312.77. Despite this drop, the stock\u2019s recent price action displays resilience, maintaining a strong position above key moving averages.\n\nDriving this trend is a combination of bullish sentiment surrounding potential AI developments and sector strength in technology. However, competitive pressures, particularly from companies like SpaceX, are contributing to mixed news sentiment.\n\nVolume tells a supporting story, with above-average trading activity indicating strong market interest. This increased activity reflects a confluence of enthusiasm for potential announcements and caution due to competitive threats.\n\nOn the daily trend chart, AAPL is navigating a critical zone, testing resistance levels while maintaining support above $300. This places the stock in a precarious position, poised between potential breakout and pullback scenarios.\n\nTechnically, AAPL exhibits bullish tendencies with its price above EMA20, EMA50, and EMA200. However, the MACD histogram\u2019s negative reading highlights short-term bearish momentum, indicating a need for careful observation.\n\nFor tactical traders, the recommended entry zone lies between $300.41 and $305.03, with a stop loss set just below at $300.41. Target levels are identified at $313.22 and $315.14, suggesting careful precision in timing entries.\n\nShort selling AAPL carries a medium squeeze risk, with unavailable short interest and borrow fee data. This underscores potential volatility if the stock begins a significant move downward.\n\nWithin Apple\u2019s broader ecosystem, strong sector performance in technology supports its bullish outlook. Yet, caution is advised due to the influence of market sentiment shifts and competitive dynamics.\n\nIn conclusion, while AAPL maintains a bullish technical stance, its proximity to resistance suggests waiting for a clearer buying opportunity. Monitor key levels closely, and remember that all investments carry inherent risks, including the potential for loss.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 16.65,
+      "narration": "Welcome to the Investing Atti stock analysis for Apple Inc., ticker symbol AAPL. Today, we delve into whether Apple\u2019s current bullish run is a sustainable upswing or if caution is warranted as it approaches critical resistance levels.",
+      "pandaAction": "point",
+      "speechBubbleText": "AAPL: Bullish Run or Resistance Ahead?",
+      "visualElements": [
+        "Apple logo",
+        "Bullish trend icon",
+        "Resistance level graphic"
+      ],
+      "chartElements": [
+        "AAPL stock price chart"
+      ],
+      "animationInstructions": [
+        "Fade in Apple logo",
+        "Highlight resistance levels"
+      ],
+      "dataFields": {
+        "catchyLine": "AAPL: Bullish Run or Resistance Ahead?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 16.86,
+      "narration": "Apple is currently priced at $307.23, experiencing a slight decline of 1.16% from the day\u2019s open at $312.77. Despite this drop, the stock\u2019s recent price action displays resilience, maintaining a strong position above key moving averages.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Current Price: $307.23",
+      "visualElements": [
+        "Price tag graphic",
+        "Moving averages line"
+      ],
+      "chartElements": [
+        "Intraday price movement chart"
+      ],
+      "animationInstructions": [
+        "Zoom into price tag",
+        "Overlay moving averages"
+      ]
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 17.36,
+      "narration": "Driving this trend is a combination of bullish sentiment surrounding potential AI developments and sector strength in technology. However, competitive pressures, particularly from companies like SpaceX, are contributing to mixed news sentiment.",
+      "pandaAction": "caution",
+      "speechBubbleText": "AI Hopes vs. Competition",
+      "visualElements": [
+        "AI icon",
+        "SpaceX logo"
+      ],
+      "chartElements": [
+        "Sentiment analysis chart"
+      ],
+      "animationInstructions": [
+        "Highlight AI icon",
+        "Fade in SpaceX logo"
+      ]
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 16.44,
+      "narration": "Volume tells a supporting story, with above-average trading activity indicating strong market interest. This increased activity reflects a confluence of enthusiasm for potential announcements and caution due to competitive threats.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "High Trading Volume",
+      "visualElements": [
+        "Volume bars",
+        "Market interest icon"
+      ],
+      "chartElements": [
+        "Volume trend chart"
+      ],
+      "animationInstructions": [
+        "Emphasize volume bars",
+        "Draw attention to market interest icon"
+      ]
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 16.44,
+      "narration": "On the daily trend chart, AAPL is navigating a critical zone, testing resistance levels while maintaining support above $300. This places the stock in a precarious position, poised between potential breakout and pullback scenarios.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Critical Zone: $300 Support",
+      "visualElements": [
+        "Support and resistance lines"
+      ],
+      "chartElements": [
+        "Daily trend chart"
+      ],
+      "animationInstructions": [
+        "Highlight support and resistance lines",
+        "Animate potential breakout/pullback"
+      ]
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 15.8,
+      "narration": "Technically, AAPL exhibits bullish tendencies with its price above EMA20, EMA50, and EMA200. However, the MACD histogram\u2019s negative reading highlights short-term bearish momentum, indicating a need for careful observation.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Bullish Above EMAs",
+      "visualElements": [
+        "EMA lines",
+        "MACD histogram"
+      ],
+      "chartElements": [
+        "Technical indicators chart"
+      ],
+      "animationInstructions": [
+        "Zoom into EMA lines",
+        "Highlight MACD histogram"
+      ]
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 16.15,
+      "narration": "For tactical traders, the recommended entry zone lies between $300.41 and $305.03, with a stop loss set just below at $300.41. Target levels are identified at $313.22 and $315.14, suggesting careful precision in timing entries.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Entry: $300.41-$305.03",
+      "visualElements": [
+        "Entry zone graphic",
+        "Target levels"
+      ],
+      "chartElements": [
+        "Entry and target levels chart"
+      ],
+      "animationInstructions": [
+        "Draw entry zone",
+        "Highlight target levels"
+      ]
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 13.45,
+      "narration": "Short selling AAPL carries a medium squeeze risk, with unavailable short interest and borrow fee data. This underscores potential volatility if the stock begins a significant move downward.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Medium Squeeze Risk",
+      "visualElements": [
+        "Risk warning icon"
+      ],
+      "chartElements": [
+        "Short interest chart"
+      ],
+      "animationInstructions": [
+        "Flash risk warning icon",
+        "Animate potential volatility"
+      ]
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 14.3,
+      "narration": "Within Apple\u2019s broader ecosystem, strong sector performance in technology supports its bullish outlook. Yet, caution is advised due to the influence of market sentiment shifts and competitive dynamics.",
+      "pandaAction": "walk",
+      "speechBubbleText": "Tech Sector Strength",
+      "visualElements": [
+        "Technology sector icon",
+        "Market sentiment arrows"
+      ],
+      "chartElements": [
+        "Sector performance chart"
+      ],
+      "animationInstructions": [
+        "Highlight technology sector icon",
+        "Animate sentiment arrows"
+      ]
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 20.0,
+      "narration": "In conclusion, while AAPL maintains a bullish technical stance, its proximity to resistance suggests waiting for a clearer buying opportunity. Monitor key levels closely, and remember that all investments carry inherent risks, including the potential for loss.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Wait for Clear Signals",
+      "visualElements": [
+        "Bullish stance icon",
+        "Resistance level graphic"
+      ],
+      "chartElements": [
+        "Key levels chart"
+      ],
+      "animationInstructions": [
+        "Emphasize bullish stance icon",
+        "Highlight resistance level"
+      ],
+      "dataFields": {
+        "quote": "Patience is a trader's best friend.",
+        "disclaimer": "Investing involves risks, including potential loss of principal."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}
