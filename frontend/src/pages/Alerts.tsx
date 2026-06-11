@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Plus, Trash2, Power, Mail, MailX, Bell } from 'lucide-react';
+import { Plus, Trash2, Power, Mail, MailX, Bell, AlertCircle, Sparkles } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
-import { EmptyState, LoadingSpinner } from '../components/ui';
+import { EmptyState, LoadingSpinner, PageContainer, PageHeader } from '../components/ui';
 import { AlertType } from '../types';
 
 const ALERT_TYPE_LABELS: Record<AlertType, string> = {
@@ -27,7 +27,9 @@ const AlertsPage: React.FC = () => {
     symbol: '', type: 'price_above' as AlertType, value: '', notifyEmail: false, emailAddress: '', name: '',
   });
 
-  useEffect(() => { fetchAlerts(); }, []);
+  useEffect(() => {
+    fetchAlerts();
+  }, []);
 
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,27 +48,34 @@ const AlertsPage: React.FC = () => {
   const needsValue = NUMERIC_TYPES.includes(form.type);
 
   return (
-    <div className="p-6 space-y-5 fade-in">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-slate-100">Alerts</h1>
-          <p className="text-sm text-slate-500 mt-0.5">{alerts.filter((a) => a.enabled).length} active · {alerts.length} total</p>
-        </div>
-        <button onClick={() => setShowForm(!showForm)} className="btn-primary">
-          <Plus className="w-4 h-4" /> Create Alert
-        </button>
-      </div>
+    <PageContainer className="max-w-4xl py-8 space-y-6">
+      {/* Header */}
+      <PageHeader
+        title="Timing Alerts"
+        subtitle={`${alerts.filter((a) => a.enabled).length} active triggers configured across watchlist`}
+        actions={
+          <button 
+            onClick={() => setShowForm(!showForm)} 
+            className="btn btn-primary px-4 py-2.5 rounded-xl text-xs"
+          >
+            <Plus className="w-4.5 h-4.5" /> Create Alert Rule
+          </button>
+        }
+      />
 
-      {/* Create Form */}
+      {/* Create Alert Form Card */}
       {showForm && (
-        <div className="card-glass slide-up">
-          <h2 className="text-sm font-semibold text-slate-200 mb-4">New Alert</h2>
-          <form onSubmit={handleCreate} className="space-y-3">
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="label">Symbol</label>
+        <div className="card bg-surface-900 border-slate-850 p-5 md:p-6 space-y-4 slide-up">
+          <h2 className="text-base font-bold text-slate-100 border-b border-slate-850 pb-3 flex items-center gap-2">
+            <Sparkles className="w-4.5 h-4.5 text-brand-400" />
+            Configure New Alert Rule
+          </h2>
+          <form onSubmit={handleCreate} className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
+                <label className="label">Stock Symbol</label>
                 <input
-                  className="input font-mono font-bold"
+                  className="input font-mono font-bold w-full uppercase"
                   value={form.symbol}
                   onChange={(e) => setForm({ ...form, symbol: e.target.value.toUpperCase() })}
                   placeholder="AAPL"
@@ -74,122 +83,136 @@ const AlertsPage: React.FC = () => {
                   required
                 />
               </div>
-              <div>
+              <div className="space-y-1.5">
                 <label className="label">Alert Name (optional)</label>
                 <input
-                  className="input"
+                  className="input w-full"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  placeholder="My AAPL alert"
+                  placeholder="e.g., AAPL Support Hold"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="label">Alert Type</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
+                <label className="label">Trigger Condition</label>
                 <select
-                  className="input"
+                  className="input w-full bg-slate-950/40 text-slate-100"
                   value={form.type}
                   onChange={(e) => setForm({ ...form, type: e.target.value as AlertType })}
                 >
                   {Object.entries(ALERT_TYPE_LABELS).map(([value, label]) => (
-                    <option key={value} value={value}>{label}</option>
+                    <option key={value} value={value} className="bg-surface-900 text-slate-100">{label}</option>
                   ))}
                 </select>
               </div>
               {needsValue && (
-                <div>
+                <div className="space-y-1.5">
                   <label className="label">
-                    {form.type.includes('rsi') ? 'RSI Level' : 'Price ($)'}
+                    {form.type.includes('rsi') ? 'Target RSI Level (0-100)' : 'Target Price Threshold ($)'}
                   </label>
                   <input
                     type="number"
                     step="0.01"
-                    className="input font-mono"
+                    className="input font-mono w-full"
                     value={form.value}
                     onChange={(e) => setForm({ ...form, value: e.target.value })}
-                    placeholder={form.type.includes('rsi') ? '30' : '185.00'}
+                    placeholder={form.type.includes('rsi') ? '30' : '150.00'}
                     required
                   />
                 </div>
               )}
             </div>
 
-            <div className="flex items-center gap-3">
-              <label className="flex items-center gap-2 cursor-pointer">
+            <div className="flex flex-col md:flex-row md:items-center gap-4 bg-slate-950/40 border border-slate-850 p-4 rounded-xl">
+              <label className="flex items-center gap-2.5 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={form.notifyEmail}
                   onChange={(e) => setForm({ ...form, notifyEmail: e.target.checked })}
-                  className="w-4 h-4"
+                  className="w-4 h-4 rounded text-brand-500 focus:ring-brand-500 bg-slate-950 border-slate-800"
                 />
-                <span className="text-sm text-slate-300">Email notification</span>
+                <span className="text-sm font-semibold text-slate-200">Enable Email Notification</span>
               </label>
               {form.notifyEmail && (
                 <input
                   type="email"
-                  className="input flex-1"
+                  className="input flex-1 py-2"
                   value={form.emailAddress}
                   onChange={(e) => setForm({ ...form, emailAddress: e.target.value })}
                   placeholder="your@email.com"
+                  required
                 />
               )}
             </div>
 
             <div className="flex gap-3 pt-2">
-              <button type="submit" className="btn-primary">Create Alert</button>
-              <button type="button" onClick={() => setShowForm(false)} className="btn-secondary">Cancel</button>
+              <button type="submit" className="btn btn-primary px-5 py-2.5 rounded-xl">Create Alert Rule</button>
+              <button type="button" onClick={() => setShowForm(false)} className="btn btn-secondary px-5 py-2.5 rounded-xl">Cancel</button>
             </div>
           </form>
         </div>
       )}
 
-      {/* Alerts List */}
+      {/* Alerts Rule Grid */}
       {alertsLoading ? (
-        <div className="flex justify-center py-12"><LoadingSpinner size="lg" /></div>
+        <div className="flex justify-center py-16"><LoadingSpinner size="lg" /></div>
       ) : alerts.length === 0 ? (
-        <EmptyState icon="🔔" title="No alerts configured" description="Create your first price or signal alert" />
+        <EmptyState 
+          icon="🔔" 
+          title="No Alert Rules Configured" 
+          description="Build price triggers, RSI level crossers, or AI signal upgrade alerts to capture perfect entries." 
+        />
       ) : (
-        <div className="space-y-2">
+        <div className="grid grid-cols-1 gap-3.5">
           {alerts.map((alert) => (
             <div
               key={alert.id}
-              className={`card flex items-center justify-between gap-4 transition-all ${!alert.enabled ? 'opacity-50' : ''}`}
+              className={`card flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 md:p-5 bg-surface-900 border-slate-850 transition-all ${
+                !alert.enabled ? 'opacity-50' : 'hover:border-slate-800'
+              }`}
             >
-              <div className="flex items-center gap-3">
-                <div className={`w-2 h-2 rounded-full ${alert.enabled ? 'bg-emerald-400 animate-pulse' : 'bg-slate-600'}`} />
+              <div className="flex items-start md:items-center gap-3.5">
+                <div className={`w-2.5 h-2.5 rounded-full mt-2.5 md:mt-0 shrink-0 ${alert.enabled ? 'bg-emerald-500 animate-pulse' : 'bg-slate-600'}`} />
                 <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono font-bold text-brand-400 text-sm">{alert.symbol}</span>
-                    <span className="text-slate-300 text-sm">{alert.name || ALERT_TYPE_LABELS[alert.type as AlertType]}</span>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono font-black text-brand-500 text-base">{alert.symbol}</span>
+                    <span className="font-semibold text-slate-200 text-sm">{alert.name || ALERT_TYPE_LABELS[alert.type as AlertType]}</span>
                   </div>
-                  <div className="text-xs text-slate-500 flex items-center gap-2">
-                    <span>{ALERT_TYPE_LABELS[alert.type as AlertType]}</span>
-                    {alert.value && <span className="font-mono">@ ${alert.value}</span>}
-                    <span>· Triggered {alert.triggerCount}x</span>
-                    {alert.lastTriggered && <span>· Last: {new Date(alert.lastTriggered).toLocaleDateString()}</span>}
+                  <div className="text-[10px] sm:text-xs text-slate-500 flex flex-wrap items-center gap-x-2 gap-y-1 mt-1 font-sans">
+                    <span className="font-semibold text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-850">{ALERT_TYPE_LABELS[alert.type as AlertType]}</span>
+                    {alert.value && <span className="font-mono font-bold text-indigo-400">@ ${alert.value.toFixed(2)}</span>}
+                    <span className="text-slate-500">· Triggered {alert.triggerCount}x</span>
+                    {alert.lastTriggered && <span className="text-slate-500">· Last run: {new Date(alert.lastTriggered).toLocaleDateString()}</span>}
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 shrink-0">
+              <div className="flex items-center gap-3 shrink-0 self-end md:self-center border-t md:border-t-0 border-slate-850/60 pt-3 md:pt-0 w-full md:w-auto justify-end">
                 {alert.notifyEmail ? (
-                  <span title="Email notifications on"><Mail className="w-4 h-4 text-brand-400" /></span>
+                  <span className="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400" title="Email alerts active"><Mail className="w-4 h-4" /></span>
                 ) : (
-                  <span title="Email notifications off"><MailX className="w-4 h-4 text-slate-600" /></span>
+                  <span className="p-2 rounded-lg bg-slate-950 border border-slate-850 text-slate-600" title="Email alerts disabled"><MailX className="w-4 h-4" /></span>
                 )}
+                
                 <button
                   onClick={() => updateAlert(alert.id, { enabled: !alert.enabled })}
-                  className={`btn-ghost text-xs py-1 ${alert.enabled ? 'text-emerald-400' : 'text-slate-500'}`}
+                  className={`btn text-xs py-1.5 px-3 rounded-lg border flex items-center gap-1.5 transition-all select-none cursor-pointer ${
+                    alert.enabled 
+                      ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20 dark:bg-emerald-500/20 dark:text-emerald-400' 
+                      : 'bg-slate-950 text-slate-450 border-slate-850'
+                  }`}
                   title={alert.enabled ? 'Disable' : 'Enable'}
                 >
                   <Power className="w-3.5 h-3.5" />
-                  {alert.enabled ? 'ON' : 'OFF'}
+                  <span>{alert.enabled ? 'Active' : 'Muted'}</span>
                 </button>
+                
                 <button
                   onClick={() => deleteAlert(alert.id)}
-                  className="btn-danger text-xs py-1"
+                  className="btn btn-danger text-xs py-1.5 px-3 rounded-lg"
+                  title="Delete Alert Rule"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>
@@ -198,7 +221,7 @@ const AlertsPage: React.FC = () => {
           ))}
         </div>
       )}
-    </div>
+    </PageContainer>
   );
 };
 

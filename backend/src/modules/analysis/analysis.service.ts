@@ -3,6 +3,7 @@ import { OrchestratorAgent, sanitizeSymbol } from '../../agents/orchestrator.age
 import { PrismaService } from '../../prisma/prisma.service';
 import { VideoJobService } from '../video/video-job.service';
 import axios from 'axios';
+import * as crypto from 'crypto';
 
 export function isFundSymbol(symbol: string): boolean {
   const clean = symbol.toUpperCase().trim();

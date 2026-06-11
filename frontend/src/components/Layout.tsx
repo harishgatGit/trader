@@ -4,7 +4,7 @@ import { addTransitionType } from 'react';
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, Search, Star, Bell, TrendingUp,
-  FileText, Settings, Activity, Shield, BookOpen, AlertTriangle, Menu, X, Compass
+  FileText, Settings, Activity, Shield, BookOpen, AlertTriangle, Menu, X, Compass, Sun, Moon
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { FeedbackWidget } from './FeedbackWidget';
@@ -38,20 +38,39 @@ const navItems = [
 ];
 
 const Layout: React.FC = () => {
-  const { apiHealth, checkHealth, alerts, user, logout } = useAppStore();
+  const { apiHealth, checkHealth, alerts, user } = useAppStore();
   const location = useLocation();
   const navigate = useNavigate();
   const enabledAlerts = alerts ? alerts.filter((a) => a.enabled).length : 0;
   const [isOpen, setIsOpen] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || saved === 'light') return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
 
   useEffect(() => {
     checkHealth();
   }, []);
 
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
   // Auto-close sidebar on mobile when route navigation changes
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
 
   const statusColor = apiHealth === 'ok' ? 'bg-emerald-500' : apiHealth === 'degraded' ? 'bg-amber-500' : 'bg-slate-500';
 
@@ -69,20 +88,20 @@ const Layout: React.FC = () => {
   });
 
   return (
-    <div className="flex flex-col h-screen overflow-hidden bg-surface-950">
+    <div className="flex flex-col h-screen overflow-hidden bg-surface-950 transition-colors duration-200">
       {/* Mobile Top Header */}
       <header
         style={{ viewTransitionName: 'site-header' }}
-        className="md:hidden flex items-center justify-between px-4 py-2.5 bg-surface-900 border-b border-slate-800 shrink-0 z-20 animate-fade-in"
+        className="md:hidden flex items-center justify-between px-4 py-2.5 bg-surface-900 border-b border-slate-850 shrink-0 z-20 animate-fade-in transition-colors duration-200"
       >
         <img
           src="/brand/logo_mobile_dark.png"
           alt="InvestingAtti"
-          className="h-8 w-auto object-contain"
+          className="h-8 w-auto object-contain dark:invert-0 invert transition-all duration-200"
         />
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-1.5 rounded hover:bg-slate-800 text-slate-400 focus:outline-none"
+          className="p-1.5 rounded-xl hover:bg-slate-850 text-slate-450 focus:outline-none transition-colors"
           aria-label="Toggle menu"
         >
           <Menu className="w-5 h-5" />
@@ -94,7 +113,7 @@ const Layout: React.FC = () => {
         {isOpen && (
           <div
             onClick={() => setIsOpen(false)}
-            className="md:hidden fixed inset-0 bg-black/60 z-20 transition-opacity duration-300"
+            className="md:hidden fixed inset-0 bg-black/60 z-20 transition-opacity duration-300 animate-fade-in"
           />
         )}
 
@@ -102,24 +121,25 @@ const Layout: React.FC = () => {
         <aside
           style={{ viewTransitionName: 'site-sidebar' }}
           className={`
-            w-60 flex-shrink-0 bg-surface-900 border-r border-slate-800 flex flex-col
+            w-60 flex-shrink-0 bg-surface-900 border-r border-slate-850 flex flex-col
             fixed md:static inset-y-0 left-0 z-30 transition-transform duration-300 ease-in-out
             ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+            transition-colors duration-200
           `}
         >
           {/* Logo with Close button on Mobile */}
-          <div className="p-4 border-b border-slate-800 flex items-center justify-between">
+          <div className="p-4 border-b border-slate-850 flex items-center justify-between">
             <img
               src="/brand/logo_dark_600x160.png"
               alt="InvestingAtti"
-              className="h-9 w-auto object-contain"
+              className="h-9 w-auto object-contain dark:invert-0 invert transition-all duration-200"
             />
             <button
               onClick={() => setIsOpen(false)}
-              className="md:hidden p-1 rounded hover:bg-slate-800 text-slate-500 hover:text-slate-400"
+              className="md:hidden p-1.5 rounded-xl hover:bg-slate-850 text-slate-500 hover:text-slate-450 transition-colors"
               aria-label="Close menu"
             >
-              <X className="w-4.5 h-4.5" />
+              <X className="w-4 h-4" />
             </button>
           </div>
 
@@ -154,7 +174,7 @@ const Layout: React.FC = () => {
                 <item.icon className="w-4 h-4 shrink-0" />
                 <span>{item.label}</span>
                 {item.label === 'Alerts' && enabledAlerts > 0 && (
-                  <span className="ml-auto text-xs bg-brand-500/20 text-brand-400 border border-brand-500/30 px-1.5 py-0.5 rounded font-bold">
+                  <span className="ml-auto text-[10px] bg-brand-500/20 text-brand-700 dark:text-brand-300 border border-brand-500/30 px-1.5 py-0.5 rounded-full font-bold">
                     {enabledAlerts}
                   </span>
                 )}
@@ -162,15 +182,33 @@ const Layout: React.FC = () => {
             ))}
           </nav>
 
-          <div className="p-3 border-t border-slate-800">
-            <div className="flex items-center justify-between px-1">
+          {/* Theme & Health status Section */}
+          <div className="p-3 border-t border-slate-850 flex flex-col gap-2">
+            <button
+              onClick={toggleTheme}
+              className="flex items-center justify-between w-full px-3 py-2 rounded-xl text-sm font-semibold text-slate-450 hover:text-slate-100 hover:bg-slate-850/50 transition-all duration-150 cursor-pointer"
+            >
+              <div className="flex items-center gap-2.5">
+                {theme === 'light' ? (
+                  <Sun className="w-4.5 h-4.5 text-amber-500 animate-pulse-slow" />
+                ) : (
+                  <Moon className="w-4.5 h-4.5 text-indigo-400" />
+                )}
+                <span>{theme === 'light' ? 'Light Theme' : 'Dark Theme'}</span>
+              </div>
+              <span className="text-[10px] uppercase font-bold px-1.5 py-0.5 rounded-lg bg-slate-850 text-slate-450 border border-slate-800">
+                Switch
+              </span>
+            </button>
+
+            <div className="flex items-center justify-between px-1 mt-1">
               <div className="flex items-center gap-2">
-                <Activity className="w-3 h-3 text-slate-500" />
+                <Activity className="w-3.5 h-3.5 text-slate-500" />
                 <span className="text-xs text-slate-500">System</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className={`w-1.5 h-1.5 rounded-full ${statusColor} ${apiHealth === 'ok' ? 'animate-pulse' : ''}`} />
-                <span className={`text-xs font-medium ${apiHealth === 'ok' ? 'text-emerald-400' : apiHealth === 'degraded' ? 'text-amber-400' : 'text-slate-500'}`}>
+                <span className={`text-xs font-semibold ${apiHealth === 'ok' ? 'text-emerald-500' : apiHealth === 'degraded' ? 'text-amber-500' : 'text-slate-500'}`}>
                   {apiHealth === 'ok' ? 'Online' : apiHealth === 'degraded' ? 'Degraded' : 'Checking...'}
                 </span>
               </div>
@@ -188,7 +226,7 @@ const Layout: React.FC = () => {
       {/* Bottom Disclaimer Banner */}
       <footer
         style={{ viewTransitionName: 'site-disclaimer' }}
-        className="bg-slate-950 border-t border-slate-800/80 py-2.5 px-4 text-center text-[10px] text-slate-500 font-mono flex items-center justify-center gap-2 z-10 shrink-0"
+        className="bg-slate-950 border-t border-slate-850 py-2.5 px-4 text-center text-[10px] text-slate-500 font-mono flex items-center justify-center gap-2 z-10 shrink-0"
       >
         <AlertTriangle className="w-3.5 h-3.5 text-amber-500/80 shrink-0" />
         <span>

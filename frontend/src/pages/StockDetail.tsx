@@ -2,12 +2,19 @@ import React, { useEffect, useState } from 'react';
 // @ts-ignore
 import { ViewTransition } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { RefreshCw, Star, Bell, TrendingUp, TrendingDown, AlertCircle, ChevronDown, ChevronUp, Globe, Coins, Building2, Activity, Layers, Clock, ShieldAlert, Sparkles, Zap, CheckCircle2, Play, Loader2 } from 'lucide-react';
+import {
+  RefreshCw, Star, Bell, TrendingUp, TrendingDown, AlertCircle, ChevronDown, ChevronUp,
+  Globe, Coins, Building2, Activity, Layers, Clock, ShieldAlert, Sparkles, Zap,
+  CheckCircle2, Loader2, ShieldCheck, HelpCircle, Target, ArrowRight, BookOpen, Compass,
+  Info, AlertTriangle
+} from 'lucide-react';
 import { stocksApi } from '../services/api';
 import { useAppStore } from '../store/useAppStore';
-import { RatingBadge, ScoreBar, PriceChange, LoadingSpinner, EmptyState, Skeleton, DataUnavailable, TermTooltip } from '../components/ui';
-import { TrendStoryCard } from '../components/TrendStoryCard';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import {
+  RatingBadge, ScoreBar, PriceChange, LoadingSpinner, EmptyState, Skeleton,
+  DataUnavailable, TermTooltip, StatusBadge, PageContainer
+} from '../components/ui';
+import { Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area, XAxis, YAxis } from 'recharts';
 
 const StockDetail: React.FC = () => {
   const { symbol } = useParams<{ symbol: string }>();
@@ -15,18 +22,34 @@ const StockDetail: React.FC = () => {
   const location = useLocation();
   const fromContext = location.state?.from || 'direct';
   const { addToWatchlist, watchlist, runAnalysis, analyzing, user } = useAppStore();
+  
   const [report, setReport] = useState<any>(null);
   const [candles, setCandles] = useState<any[]>([]);
   const [technicals, setTechnicals] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'overview' | 'technical' | 'tactical' | 'insight'>('overview');
+  const [activeTab, setActiveTab] = useState<'fundamentals' | 'news' | 'analysts' | 'institutional' | 'sector'>('fundamentals');
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [showStickyBar, setShowStickyBar] = useState(false);
+  const [actionTab, setActionTab] = useState<'swing' | 'short' | 'long'>('swing');
+
   const isWatchlisted = watchlist.some((w) => w.symbol === symbol);
 
   useEffect(() => {
     if (!symbol) return;
     loadData();
   }, [symbol]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 180) {
+        setShowStickyBar(true);
+      } else {
+        setShowStickyBar(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const loadData = async () => {
     setLoading(true);
@@ -36,17 +59,14 @@ const StockDetail: React.FC = () => {
         stocksApi.getTechnicals(symbol!),
       ]);
 
-      let loadedReport = null;
       if (reportData.status === 'fulfilled') {
-        loadedReport = reportData.value;
-        setReport(loadedReport);
+        setReport(reportData.value);
       }
       if (techData.status === 'fulfilled') {
         const td = techData.value as any;
         setTechnicals(td.indicators);
         setCandles(td.candles || []);
       }
-
     } finally {
       setLoading(false);
     }
@@ -61,15 +81,45 @@ const StockDetail: React.FC = () => {
 
   const toggleSection = (key: string) => setExpanded((p) => ({ ...p, [key]: !p[key] }));
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // height of top nav / sticky controls
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   if (loading) {
     return (
-      <div className="p-6 space-y-4">
-        <Skeleton className="h-10 w-64" />
-        <div className="grid grid-cols-4 gap-4">
+      <PageContainer className="py-8 space-y-6">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-850">
+          <div className="space-y-2">
+            <Skeleton className="h-9 w-40" />
+            <Skeleton className="h-5 w-60" />
+          </div>
+          <Skeleton className="h-10 w-32" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {[...Array(4)].map((_, i) => <Skeleton key={i} className="h-24 w-full" />)}
         </div>
-        <Skeleton className="h-64 w-full" />
-      </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="lg:col-span-8 space-y-6">
+            <Skeleton className="h-64 w-full" />
+            <Skeleton className="h-40 w-full" />
+          </div>
+          <div className="lg:col-span-4">
+            <Skeleton className="h-96 w-full" />
+          </div>
+        </div>
+      </PageContainer>
     );
   }
 
@@ -81,1017 +131,1289 @@ const StockDetail: React.FC = () => {
     (report && !r?.finalRating) ||
     (r && !r.currentPrice && !r.technicalScore && !r.fundamentalScore);
 
+  const statusColor = (apiHealth: string) => apiHealth === 'ok' ? 'bg-emerald-500' : apiHealth === 'degraded' ? 'bg-amber-500' : 'bg-slate-500';
+
+  // Fallback structures for safety
+  const ts = r?.trendStory;
+  const th = r?.tacticalHorizonView;
+  const swing = ts?.swing_trade_view || r?.swingTradeView;
+  const short = ts?.short_trade_view || r?.shortTermView;
+  const layman = ts?.story_for_layman || r?.laymanExplanation;
+  const finalSummary = ts?.final_summary;
+
+  const bias = r?.finalRating || finalSummary?.trade_bias || th?.bias || technicals?.overallBias || 'HOLD';
+  const confidence = r?.finalDecision?.confidenceScore || finalSummary?.confidence || 50;
+
+  // Derive Support & Resistance probability estimates
+  const getProbabilities = () => {
+    let hold = 50;
+    let breakProb = 30;
+    let reversal = 40;
+    let sideways = 30;
+
+    if (technicals) {
+      const rsi = technicals.rsi14 || 50;
+      const currentBias = (technicals.overallBias || bias || '').toUpperCase();
+      
+      if (currentBias.includes('BULL')) {
+        hold = 75;
+        breakProb = 15;
+        reversal = 60;
+        sideways = 15;
+      } else if (currentBias.includes('BEAR')) {
+        hold = 35;
+        breakProb = 60;
+        reversal = 25;
+        sideways = 15;
+      }
+
+      if (rsi < 35) {
+        reversal += 15;
+        hold += 10;
+        breakProb -= 15;
+      } else if (rsi > 65) {
+        reversal -= 10;
+        breakProb += 15;
+        hold -= 5;
+      }
+    }
+
+    return {
+      hold: Math.min(85, Math.max(15, hold)),
+      breakProb: Math.min(85, Math.max(15, breakProb)),
+      reversal: Math.min(85, Math.max(15, reversal)),
+      sideways: Math.min(80, Math.max(15, sideways))
+    };
+  };
+
+  const probabilities = getProbabilities();
+
+  // Decision meter options
+  const meterOptions = [
+    { label: 'Strong Risk', color: 'bg-rose-500 border-rose-500/25 text-rose-500' },
+    { label: 'Caution', color: 'bg-red-500 border-red-500/25 text-red-500' },
+    { label: 'Wait', color: 'bg-amber-500 border-amber-500/25 text-amber-500' },
+    { label: 'Watch', color: 'bg-indigo-500 border-indigo-500/25 text-indigo-500' },
+    { label: 'Entry Zone', color: 'bg-teal-500 border-teal-500/25 text-teal-500' },
+    { label: 'Strong Setup', color: 'bg-emerald-500 border-emerald-500/25 text-emerald-500' }
+  ];
+
+  const getMeterIndex = (rating: string) => {
+    const rate = rating?.toUpperCase() || '';
+    if (rate.includes('SELL')) return 0;
+    if (rate.includes('AVOID') || rate.includes('HIGH')) return 1;
+    if (rate.includes('WAIT') || rate.includes('HOLD')) return 2;
+    if (rate.includes('WATCH')) return 3;
+    if (rate.includes('ENTRY')) return 4;
+    if (rate.includes('BUY') || rate.includes('STRONG')) return 5;
+    return 2; // Default Wait
+  };
+
+  const meterIndex = getMeterIndex(bias);
+
   return (
-    <div className="p-6 space-y-5 fade-in">
-      {/* Header */}
-      <div className="flex items-start justify-between">
-        <div>
-          <div className="flex items-center gap-3">
-            {/* @ts-ignore */}
-            <ViewTransition name={`stock-symbol-${fromContext}-${symbol}`} share="text-morph">
-              <h1 className="text-3xl font-bold font-mono text-slate-100">{symbol}</h1>
-            </ViewTransition>
-            {r?.finalRating && <RatingBadge rating={r.finalRating} size="lg" />}
-            <button
-              onClick={handleAnalyze}
-              disabled={analyzing}
-              className="btn-primary text-xs py-1.5 px-3.5 flex items-center gap-1.5 shrink-0"
-            >
-              <RefreshCw className={`w-3.5 h-3.5 ${analyzing ? 'animate-spin' : ''}`} />
-              {analyzing ? 'Analyzing…' : 'Re-analyze'}
-            </button>
-          </div>
-          {price && (
-            <div className="flex items-baseline gap-3 mt-1">
-              <span className="text-2xl font-bold font-mono text-slate-200">${price.toFixed(2)}</span>
-            </div>
+    <div className="min-h-screen bg-surface-950 text-slate-100 transition-colors duration-200">
+      
+      {/* Scroll-sticky mini summary bar */}
+      <div 
+        className={`fixed top-0 inset-x-0 bg-surface-900 border-b border-slate-850 px-4 md:px-8 py-3 flex items-center justify-between z-40 transition-all duration-300 ${
+          showStickyBar ? 'translate-y-0 opacity-100 shadow-md' : '-translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex items-center gap-4">
+          <span className="text-xl font-black font-mono text-slate-100">{symbol}</span>
+          <div className="h-4 w-px bg-slate-800" />
+          <span className="font-mono font-bold text-slate-200">${price?.toFixed(2)}</span>
+          {ts?.price_summary?.day_change_percent != null && (
+            <PriceChange value={ts.price_summary.day_change_percent} />
           )}
         </div>
-        <div className="flex gap-2">
-          {user?.role === 'SUPERUSER' && (
-            <>
-              <button
-                onClick={() => addToWatchlist(symbol!)}
-                disabled={isWatchlisted}
-                className={isWatchlisted ? 'btn-ghost text-brand-400' : 'btn-secondary'}
-              >
-                <Star className={`w-4 h-4 ${isWatchlisted ? 'fill-brand-400' : ''}`} />
-                {isWatchlisted ? 'Watchlisted' : 'Add to Watchlist'}
-              </button>
-              <button onClick={() => navigate('/alerts')} className="btn-secondary">
-                <Bell className="w-4 h-4" />
-                Alert
-              </button>
-            </>
-          )}
+        <div className="flex items-center gap-3">
+          <span className="text-xs text-slate-450 font-semibold uppercase hidden md:inline">Outlook:</span>
+          <StatusBadge status={bias} size="sm" />
+          <button 
+            onClick={() => scrollToSection('action')}
+            className="btn-primary text-xs py-1.5 px-3 rounded-lg"
+          >
+            View Entry Plan
+          </button>
         </div>
       </div>
 
-      {!report && (
-        <EmptyState
-          icon="📊"
-          title="No analysis yet"
-          description="Run an analysis to see the full report"
-          action={<button onClick={handleAnalyze} className="btn-primary">{analyzing ? 'Analyzing…' : 'Run Analysis'}</button>}
-        />
-      )}
-
-      {hasInsufficientData ? (
-        <div className="slide-up">
-          <DataUnavailable onRetry={handleAnalyze} />
+      <PageContainer className="py-6 md:py-8 space-y-6">
+        
+        {/* Header Title Bar */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-850 pb-5">
+          <div className="space-y-1">
+            <div className="flex items-center flex-wrap gap-3">
+              {/* @ts-ignore */}
+              <ViewTransition name={`stock-symbol-${fromContext}-${symbol}`} share="text-morph">
+                <h1 className="text-3xl md:text-4xl font-extrabold font-mono text-slate-100 tracking-tight">{symbol}</h1>
+              </ViewTransition>
+              <StatusBadge status={bias} />
+              <div className="flex items-center gap-1.5 text-xs text-slate-450 bg-slate-900 px-2.5 py-1 rounded-full border border-slate-800">
+                <Sparkles className="w-3.5 h-3.5 text-brand-400" />
+                <span>AI Confidence: <strong className="text-slate-200">{confidence}%</strong></span>
+              </div>
+            </div>
+            {r?.fundName && <p className="text-slate-400 text-sm font-medium">{r.fundName} · ETF Review</p>}
+            {!r?.fundName && price && (
+              <div className="flex items-center gap-3">
+                <span className="text-2xl font-black font-mono text-slate-200">${price.toFixed(2)}</span>
+                {ts?.price_summary?.day_change_percent != null && (
+                  <PriceChange value={ts.price_summary.day_change_percent} />
+                )}
+              </div>
+            )}
+          </div>
+          
+          <div className="flex flex-wrap gap-2.5 shrink-0">
+            <button
+              onClick={handleAnalyze}
+              disabled={analyzing}
+              className="btn-primary text-xs py-2 px-4 flex items-center gap-1.5 rounded-xl"
+            >
+              <RefreshCw className={`w-4 h-4 ${analyzing ? 'animate-spin' : ''}`} />
+              {analyzing ? 'Running AI Agent…' : 'Re-analyze Stock'}
+            </button>
+            {user?.role === 'SUPERUSER' && (
+              <button
+                onClick={() => addToWatchlist(symbol!)}
+                disabled={isWatchlisted}
+                className={`btn px-4 py-2 rounded-xl text-xs ${isWatchlisted ? 'btn-ghost text-brand-400' : 'btn-secondary'}`}
+              >
+                <Star className={`w-4 h-4 ${isWatchlisted ? 'fill-brand-400 text-brand-400' : ''}`} />
+                {isWatchlisted ? 'Watchlisted' : 'Add Watchlist'}
+              </button>
+            )}
+          </div>
         </div>
-      ) : report ? (
-        r?.isFund === true ? (
-          <div className="space-y-6 slide-up">
-            {/* Fund Header Card */}
-            <div className="card-glass p-6 border border-brand-500/10 rounded-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl pointer-events-none" />
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                  <span className="text-xs text-brand-400 font-bold uppercase tracking-wider font-mono">
-                    {r.issuer} · ETF / Mutual Fund Review
-                  </span>
-                  <h2 className="text-2xl font-bold text-slate-100 mt-1">{r.fundName}</h2>
-                  <p className="text-xs text-slate-450 mt-1">
-                    Benchmark: <span className="font-semibold text-slate-350">{r.benchmarkIndex}</span>
-                  </p>
-                </div>
-                <div className="flex items-center gap-3 bg-slate-900/40 p-4 rounded-xl border border-slate-800 shrink-0">
-                  <div className="text-right">
-                    <span className="text-[10px] text-slate-500 font-bold uppercase block">CONFIDENCE</span>
-                    <span className="text-xl font-bold font-mono text-brand-400">{r.finalDecision?.confidenceScore}%</span>
+
+        {!report && (
+          <EmptyState
+            icon="📊"
+            title="No Analysis Report Available"
+            description="Our smart analyst hasn't generated a deck for this stock yet. Click compile to trigger the research pipeline."
+            action={
+              <button onClick={handleAnalyze} className="btn-primary">
+                {analyzing ? 'Analyzing…' : 'Analyze Symbol'}
+              </button>
+            }
+          />
+        )}
+
+        {hasInsufficientData ? (
+          <div className="slide-up">
+            <DataUnavailable symbol={symbol} onRetry={handleAnalyze} />
+          </div>
+        ) : report ? (
+          r?.isFund === true ? (
+            /* ETF / Fund View (styled to matching style) */
+            <div className="space-y-6 slide-up">
+              <div className="card border border-brand-500/10 relative overflow-hidden p-6 rounded-2xl">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div>
+                    <span className="text-xs text-brand-400 font-bold uppercase tracking-wider font-mono">
+                      {r.issuer} · Mutual Fund & Index Review
+                    </span>
+                    <h2 className="text-2xl font-bold text-slate-100 mt-1">{r.fundName}</h2>
+                    <p className="text-xs text-slate-450 mt-1">
+                      Benchmark Index: <span className="font-semibold text-slate-350">{r.benchmarkIndex}</span>
+                    </p>
                   </div>
-                  <div className="h-8 w-px bg-slate-800" />
-                  <div className="text-center">
-                    <span className="text-[10px] text-slate-500 font-bold uppercase block">RATING</span>
-                    <RatingBadge rating={r.finalDecision?.finalRating} size="lg" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Fund Overview Metrics */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { label: 'Expense Ratio', value: r.fundOverview?.expenseRatio, color: 'text-brand-400' },
-                { label: 'Estimated AUM', value: r.fundOverview?.aum, color: 'text-indigo-400' },
-                { label: 'Dividend Yield', value: r.fundOverview?.dividendYield, color: 'text-emerald-400' },
-                { label: 'Inception Date', value: r.fundOverview?.inceptionDate, color: 'text-amber-400' },
-              ].map((m) => (
-                <div key={m.label} className="stat-card">
-                  <div className="stat-label">{m.label}</div>
-                  <div className={`stat-value text-lg sm:text-xl font-mono font-bold ${m.color}`}>
-                    {m.value || 'N/A'}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Objective & Decision Details */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="card-glass p-5 border border-slate-850 rounded-2xl bg-slate-900/20">
-                <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider mb-3">Investment Objective</h3>
-                <p className="text-sm text-slate-300 leading-relaxed font-sans">{r.fundOverview?.objective}</p>
-              </div>
-              <div className="card-glass p-5 border border-slate-850 rounded-2xl bg-slate-900/20">
-                <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider mb-3">Best Action Now</h3>
-                <p className="text-sm text-slate-350 leading-relaxed font-sans">{r.finalDecision?.bestActionNow}</p>
-                <div className="mt-4 p-3.5 bg-brand-500/5 border border-brand-500/10 rounded-xl">
-                  <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Executive Summary</span>
-                  <p className="text-xs text-slate-300 mt-1 leading-relaxed">{r.finalDecision?.decisionSummary}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Pros and Cons */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="card-glass p-5 border border-emerald-500/10 rounded-2xl">
-                <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Key Advantages (Pros)
-                </h3>
-                <ul className="space-y-2.5">
-                  {r.pros?.map((pro: string, idx: number) => (
-                    <li key={idx} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2" />
-                      <span className="leading-relaxed">{pro}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="card-glass p-5 border border-red-500/10 rounded-2xl">
-                <h3 className="text-sm font-bold text-red-400 uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <ShieldAlert className="w-4 h-4 text-red-400" /> Main Risks (Cons)
-                </h3>
-                <ul className="space-y-2.5">
-                  {r.cons?.map((con: string, idx: number) => (
-                    <li key={idx} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-2" />
-                      <span className="leading-relaxed">{con}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Allocation Breakdowns (Sectors & Holdings) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="card p-5 border border-slate-800 rounded-2xl">
-                <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider mb-4">Top Sector Allocations</h3>
-                <div className="space-y-3.5">
-                  {r.topSectors?.map((sec: any, idx: number) => {
-                    const pctFloat = parseFloat(sec.percentage?.replace(/[^0-9.]/g, '')) || 0;
-                    return (
-                      <div key={idx} className="space-y-1">
-                        <div className="flex justify-between text-xs font-semibold text-slate-300">
-                          <span>{sec.sector}</span>
-                          <span className="font-mono text-slate-400">{sec.percentage}</span>
-                        </div>
-                        <div className="h-1.5 w-full bg-slate-850 rounded-full overflow-hidden">
-                          <div 
-                            className="h-full bg-brand-500 rounded-full" 
-                            style={{ width: `${Math.min(100, Math.max(0, pctFloat))}%` }}
-                          />
-                        </div>
-                      </div>
-                    );
-                  })}
-                  {(!r.topSectors || r.topSectors.length === 0) && (
-                    <div className="text-xs text-slate-500 italic">No sector details provided.</div>
-                  )}
-                </div>
-              </div>
-
-              <div className="card p-5 border border-slate-800 rounded-2xl">
-                <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wider mb-4">Top Holdings & Weightings</h3>
-                <div className="divide-y divide-slate-800 max-h-72 overflow-y-auto pr-1">
-                  {r.topHoldings?.map((h: any, idx: number) => (
-                    <div key={idx} className="flex justify-between items-center py-2.5 text-xs sm:text-sm text-slate-300">
-                      <div>
-                        <span className="font-mono font-bold text-brand-400 mr-2">{h.ticker}</span>
-                        <span className="text-slate-450">{h.name}</span>
-                      </div>
-                      <span className="font-mono font-bold text-slate-200">{h.percentage}</span>
+                  <div className="flex items-center gap-3 bg-slate-950/40 p-4 rounded-xl border border-slate-850 shrink-0">
+                    <div className="text-right">
+                      <span className="text-[10px] text-slate-500 font-bold uppercase block">CONFIDENCE</span>
+                      <span className="text-xl font-bold font-mono text-brand-400">{r.finalDecision?.confidenceScore}%</span>
                     </div>
-                  ))}
-                  {(!r.topHoldings || r.topHoldings.length === 0) && (
-                    <div className="text-xs text-slate-500 italic">No holdings details provided.</div>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {/* Layman take and disclaimer */}
-            <div className="card p-5 border border-slate-800 rounded-2xl bg-slate-950/25">
-              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-indigo-400" /> Layman's Analogy
-              </h3>
-              <p className="text-sm text-slate-300 italic leading-relaxed">
-                "{r.laymanExplanation}"
-              </p>
-            </div>
-
-            <div className="text-[11px] leading-relaxed text-slate-500 italic">
-              Disclaimer: {r.disclaimer}
-            </div>
-          </div>
-        ) : (
-          <>
-          {/* Scores Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[
-              { label: 'Technical', value: r?.technicalScore, color: 'text-brand-400' },
-              { label: 'Fundamental', value: r?.fundamentalScore, color: 'text-indigo-400' },
-              { label: 'News Catalyst', value: r?.newsCatalystScore, color: 'text-amber-400' },
-              { label: 'Inst. Flow Proxy', value: r?.institutionalFlowProxyScore, color: 'text-emerald-400' },
-            ].map((s) => (
-              <div key={s.label} className="stat-card">
-                <div className="stat-label">{s.label}</div>
-                <div className={`stat-value ${s.color}`}>
-                  {s.value != null ? s.value.toFixed(0) : 'N/A'}
-                  {s.value != null && <span className="text-sm text-slate-500">/100</span>}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Chart */}
-          {candles.length > 0 && (
-            <div className="card">
-              <h2 className="text-sm font-semibold text-slate-300 mb-4">Price Chart (Daily)</h2>
-              <ResponsiveContainer width="100%" height={220}>
-                <AreaChart data={candles.slice(-60)}>
-                  <defs>
-                    <linearGradient id="colorClose" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#14b8a6" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="#14b8a6" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <XAxis dataKey="time" tick={{ fontSize: 10, fill: '#64748b' }} tickLine={false} axisLine={false} interval={9} />
-                  <YAxis domain={['auto', 'auto']} tick={{ fontSize: 10, fill: '#64748b' }} tickLine={false} axisLine={false} tickFormatter={(v) => `$${v.toFixed(0)}`} width={55} />
-                  <Tooltip
-                    contentStyle={{ background: '#1e293b', border: '1px solid #334155', borderRadius: 8, fontSize: 12 }}
-                    labelStyle={{ color: '#94a3b8' }}
-                    itemStyle={{ color: '#14b8a6' }}
-                    formatter={(val: any) => [`$${Number(val).toFixed(2)}`, 'Close']}
-                  />
-                  <Area type="monotone" dataKey="close" stroke="#14b8a6" strokeWidth={2} fill="url(#colorClose)" dot={false} />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-          )}
-
-          {/* Tabs */}
-          <div className="border-b border-slate-700/50 overflow-x-auto scrollbar-none">
-            <div className="flex gap-1 min-w-max pb-px">
-              {(['overview', 'technical', 'tactical', 'insight'] as const).map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-4 py-2.5 text-sm font-medium capitalize transition-colors border-b-2 shrink-0 ${
-                    activeTab === tab
-                      ? 'border-brand-500 text-brand-400'
-                      : 'border-transparent text-slate-500 hover:text-slate-300'
-                  }`}
-                >
-                  {tab === 'tactical' 
-                    ? 'Tactical Setup' 
-                    : tab === 'insight' 
-                      ? 'Ecosystem Insights' 
-                      : tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Tab Content */}
-          {activeTab === 'overview' && (
-            <div className="space-y-4 slide-up">
-              {r?.trendStory && (
-                <TrendStoryCard trendStory={r.trendStory} />
-              )}
-
-              <div className="card p-5 sm:p-6 bg-gradient-to-br from-slate-900/80 to-slate-950/80 border-brand-500/10">
-                <h3 className="section-title text-slate-300 font-bold mb-4 flex items-center gap-2">
-                  <Activity className="w-4.5 h-4.5 text-brand-400" />
-                  Executive Summary & Outlook
-                </h3>
-                <p className="text-[15px] text-slate-200 leading-relaxed sm:leading-loose whitespace-pre-line font-sans font-normal">
-                  {r?.executiveSummary}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="card p-5">
-                  <h3 className="section-title mb-4 flex items-center gap-2">
-                    <CheckCircle2 className="w-4.5 h-4.5 text-emerald-400" />
-                    Key Catalysts
-                  </h3>
-                  <ul className="space-y-3">
-                    {(r?.keyCatalysts || []).map((c: string, i: number) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-slate-350">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                        <span className="font-sans leading-relaxed">{c}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="card p-5">
-                  <h3 className="section-title mb-4 flex items-center gap-2">
-                    <AlertCircle className="w-4.5 h-4.5 text-red-400" />
-                    Key Risks
-                  </h3>
-                  <ul className="space-y-3">
-                    {(r?.keyRisks || []).map((rk: string, i: number) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-slate-355">
-                        <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
-                        <span className="font-sans leading-relaxed">{rk}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="card p-5 bg-gradient-to-br from-slate-900/60 to-slate-950/60">
-                <h3 className="section-title mb-4 flex items-center gap-2">
-                  <Sparkles className="w-4.5 h-4.5 text-amber-400" />
-                  Multibagger Potential Assessment
-                </h3>
-                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                  <div className="shrink-0">
-                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1">Probability Rating</div>
-                    <div className={`text-2xl font-black tracking-wide font-sans ${
-                      r?.multibaggerProbability?.rating === 'VERY_HIGH' ? 'text-emerald-400' :
-                      r?.multibaggerProbability?.rating === 'HIGH' ? 'text-brand-400' :
-                      r?.multibaggerProbability?.rating === 'MEDIUM' ? 'text-amber-400' : 'text-slate-400'
-                    }`}>
-                      {r?.multibaggerProbability?.rating?.replace('_', ' ')}
+                    <div className="h-8 w-px bg-slate-800" />
+                    <div className="text-center">
+                      <span className="text-[10px] text-slate-500 font-bold uppercase block">RATING</span>
+                      <RatingBadge rating={r.finalDecision?.finalRating} size="lg" />
                     </div>
                   </div>
-                  <div className="flex-1 space-y-3">
-                    <p className="text-[14px] text-slate-200 leading-relaxed font-sans font-normal">{r?.multibaggerProbability?.reason}</p>
-                    {r?.multibaggerProbability?.requiredConditions?.length > 0 && (
-                      <div className="space-y-2 pt-2 border-t border-slate-850">
-                        <span className="text-[11px] font-bold text-slate-450 uppercase tracking-wider block">Required Catalyst Conditions:</span>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {r.multibaggerProbability.requiredConditions.map((cond: string, idx: number) => (
-                            <div key={idx} className="text-xs text-slate-350 bg-slate-950/40 p-2.5 rounded-lg border border-slate-850 flex items-start gap-2">
-                              <span className="text-brand-500 font-mono mt-0.5">•</span>
-                              <span>{cond}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
                 </div>
               </div>
 
-              {/* Inst. Flow Proxy */}
-              <div className="card border border-amber-500/20 bg-amber-500/5">
-                <div className="flex items-center gap-2 mb-2">
-                  <AlertCircle className="w-4 h-4 text-amber-400" />
-                  <h3 className="text-xs font-semibold text-amber-400 uppercase tracking-wider">Institutional Flow Proxy (NOT Official Data)</h3>
-                </div>
-                <p className="text-sm text-slate-300">{r?.institutionalFlowSummary}</p>
-              </div>
-            </div>
-          )}
-
-
-          {activeTab === 'technical' && technicals && (
-            <div className="space-y-4 slide-up">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {/* Fund overview widgets */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  {
-                    label: 'RSI (14)',
-                    value: technicals.rsi14 != null
-                      ? `${technicals.rsi14.toFixed(1)}${
-                          technicals.rsi14Prev != null
-                            ? ` (${technicals.rsi14 > technicals.rsi14Prev ? '↗ reached from ' : technicals.rsi14 < technicals.rsi14Prev ? '↘ reached from ' : '→ flat '} ${technicals.rsi14Prev.toFixed(1)})`
-                            : ''
-                        }`
-                      : '—',
-                    alert: technicals.rsi14 < 30 ? 'Oversold' : technicals.rsi14 > 70 ? 'Overbought' : null
-                  },
-                  { label: 'MACD', value: technicals.macdLine?.toFixed(3) },
-                  { label: 'EMA 20', value: technicals.ema20?.toFixed(2) },
-                  { label: 'EMA 50', value: technicals.ema50?.toFixed(2) },
-                  { label: 'EMA 200', value: technicals.ema200?.toFixed(2) },
-                  { label: 'ATR (14)', value: technicals.atr14?.toFixed(2) },
-                  { label: 'ADX (14)', value: technicals.adx14?.toFixed(1) },
-                  { label: 'Rel. Volume', value: technicals.relVolume?.toFixed(2) + 'x' },
-                  { label: 'VWAP', value: technicals.vwap ? '$' + technicals.vwap.toFixed(2) : null },
-                ].map((ind) => (
-                  <div key={ind.label} className="stat-card">
-                    <div className="stat-label">{ind.label}</div>
-                    <div className="stat-value text-slate-200 text-base">{ind.value || '—'}</div>
-                    {ind.alert && <div className="text-xs text-amber-400">{ind.alert}</div>}
+                  { label: 'Expense Ratio', value: r.fundOverview?.expenseRatio, color: 'text-brand-400' },
+                  { label: 'Asset Size (AUM)', value: r.fundOverview?.aum, color: 'text-indigo-400' },
+                  { label: 'Dividend Yield', value: r.fundOverview?.dividendYield, color: 'text-emerald-400' },
+                  { label: 'Inception Date', value: r.fundOverview?.inceptionDate, color: 'text-amber-400' },
+                ].map((m) => (
+                  <div key={m.label} className="card p-4 flex flex-col gap-1">
+                    <span className="text-[10px] text-slate-450 uppercase font-bold tracking-wider">{m.label}</span>
+                    <span className={`text-lg sm:text-xl font-mono font-bold ${m.color}`}>
+                      {m.value || 'N/A'}
+                    </span>
                   </div>
                 ))}
               </div>
 
-              <div className="card">
-                <h3 className="section-title">
-                  Technical Bias:{' '}
-                  <TermTooltip term={technicals.overallBias}>
-                    <span className={technicals.overallBias === 'BULLISH' ? 'text-emerald-400' : technicals.overallBias === 'BEARISH' ? 'text-red-400' : 'text-amber-400'}>
-                      {technicals.overallBias}
-                    </span>
-                  </TermTooltip>
-                </h3>
-                 <div className="space-y-2 mt-3 bg-slate-950/20 p-3 rounded-xl border border-slate-850">
-                  {(technicals.signals || []).map((s: string, i: number) => {
-                    const lowSig = s.toLowerCase();
-                    const isBullishSignal = lowSig.includes('bullish') || lowSig.includes('buy') || lowSig.includes('above') || lowSig.includes('over') || lowSig.includes('crossover');
-                    const isBearishSignal = lowSig.includes('bearish') || lowSig.includes('sell') || lowSig.includes('below') || lowSig.includes('under') || lowSig.includes('crossunder');
-                    return (
-                      <div key={i} className="text-sm text-slate-300 flex items-start gap-2.5 py-1 last:border-0 border-b border-slate-900/40">
-                        {isBullishSignal ? (
-                          <TrendingUp className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                        ) : isBearishSignal ? (
-                          <TrendingDown className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
-                        ) : (
-                          <Activity className="w-4 h-4 text-brand-400 shrink-0 mt-0.5" />
-                        )}
-                        <span className="font-sans leading-relaxed">{s}</span>
-                      </div>
-                    );
-                  })}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="card p-5 space-y-3">
+                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Investment Strategy</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed">{r.fundOverview?.objective}</p>
+                </div>
+                <div className="card p-5 space-y-3">
+                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Analyst Assessment</h3>
+                  <p className="text-sm text-slate-350 leading-relaxed">{r.finalDecision?.bestActionNow}</p>
+                  <div className="p-3 bg-slate-950/40 border border-slate-850 rounded-xl">
+                    <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Decision Summary</span>
+                    <p className="text-xs text-slate-300 mt-1 leading-relaxed">{r.finalDecision?.decisionSummary}</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="card">
-                  <h3 className="section-title">Support Levels</h3>
-                  {(technicals.supportLevels || []).map((l: number, i: number) => (
-                    <div key={i} className="font-mono text-sm text-emerald-400">${l.toFixed(2)}</div>
-                  ))}
-                  {!technicals.supportLevels?.length && <div className="text-slate-500 text-sm">Insufficient data</div>}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="card p-5 border-emerald-500/10">
+                  <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Key Pros / Advantages
+                  </h3>
+                  <ul className="space-y-2.5">
+                    {r.pros?.map((pro: string, idx: number) => (
+                      <li key={idx} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2" />
+                        <span className="leading-relaxed">{pro}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="card">
-                  <h3 className="section-title">Resistance Levels</h3>
-                  {(technicals.resistanceLevels || []).map((l: number, i: number) => (
-                    <div key={i} className="font-mono text-sm text-red-400">${l.toFixed(2)}</div>
-                  ))}
-                  {!technicals.resistanceLevels?.length && <div className="text-slate-500 text-sm">Insufficient data</div>}
+
+                <div className="card p-5 border-red-500/10">
+                  <h3 className="text-sm font-bold text-red-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <ShieldAlert className="w-4 h-4 text-red-400" /> Potential Drawbacks / Risks
+                  </h3>
+                  <ul className="space-y-2.5">
+                    {r.cons?.map((con: string, idx: number) => (
+                      <li key={idx} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-2" />
+                        <span className="leading-relaxed">{con}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="card p-5">
+                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-4">Sector Exposure</h3>
+                  <div className="space-y-3.5">
+                    {r.topSectors?.map((sec: any, idx: number) => {
+                      const pctFloat = parseFloat(sec.percentage?.replace(/[^0-9.]/g, '')) || 0;
+                      return (
+                        <div key={idx} className="space-y-1.5">
+                          <div className="flex justify-between text-xs font-semibold text-slate-350">
+                            <span>{sec.sector}</span>
+                            <span className="font-mono text-slate-200">{sec.percentage}</span>
+                          </div>
+                          <div className="progress-bar">
+                            <div 
+                              className="progress-fill bg-brand-500" 
+                              style={{ width: `${Math.min(100, Math.max(0, pctFloat))}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="card p-5">
+                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-4">Top Holding Weightings</h3>
+                  <div className="divide-y divide-slate-850 max-h-72 overflow-y-auto pr-1">
+                    {r.topHoldings?.map((h: any, idx: number) => (
+                      <div key={idx} className="flex justify-between items-center py-2.5 text-xs sm:text-sm">
+                        <div>
+                          <span className="font-mono font-bold text-brand-400 mr-2">{h.ticker}</span>
+                          <span className="text-slate-400">{h.name}</span>
+                        </div>
+                        <span className="font-mono font-bold text-slate-200">{h.percentage}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="card p-5 bg-slate-950/20">
+                <h3 className="text-xs font-bold text-slate-450 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-indigo-400" /> Analogy Explanation
+                </h3>
+                <p className="text-sm text-slate-300 italic leading-relaxed">"{r.laymanExplanation}"</p>
+              </div>
+
+              <div className="text-xs text-slate-500 font-mono italic p-3 border border-slate-850 rounded-xl bg-slate-950/30">
+                Disclaimer: {r.disclaimer || 'This is educational analysis only.'}
               </div>
             </div>
-          )}
-
-          {activeTab === 'tactical' && (
-            <div className="space-y-4 slide-up">
-              {/* Short Term */}
-              <div className="card">
-                <h3 className="section-title">Short-Term View ({r?.shortTermView?.horizon})</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
-                  {r?.shortTermView?.entryZone && (
-                    <div>
-                      <div className="label">Entry Zone</div>
-                      <div className="font-mono text-brand-400 font-bold">
-                        ${r.shortTermView.entryZone.low?.toFixed(2)} – ${r.shortTermView.entryZone.high?.toFixed(2)}
-                      </div>
-                      {r.shortTermView.entryZone.description && (
-                        <div className="text-xs text-slate-500 mt-0.5">{r.shortTermView.entryZone.description}</div>
-                      )}
-                    </div>
-                  )}
-                  {r?.shortTermView?.stopLoss && (
-                    <div>
-                      <div className="label">Stop Loss</div>
-                      <div className="font-mono text-red-400 font-bold">
-                        ${(r.shortTermView.stopLoss.price || r.shortTermView.stopLoss.low)?.toFixed(2)}
-                      </div>
-                    </div>
-                  )}
-                  {r?.shortTermView?.targets?.[0] && (
-                    <div>
-                      <div className="label">Target</div>
-                      <div className="font-mono text-emerald-400 font-bold">
-                        ${r.shortTermView.targets[0].price?.toFixed(2)}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Swing Trade Setup */}
-              {r?.tacticalHorizonView && (() => {
-                const th = r.tacticalHorizonView;
-                const hasDetailedTactical = !!th.dailyTrend;
-
-                return (
-                  <div className="space-y-4">
-                    <div className="card border border-brand-500/20 bg-brand-500/5">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2">
-                          <Activity className="w-5 h-5 text-brand-400" />
-                          <h3 className="section-title mb-0">Swing Trade Setup</h3>
-                        </div>
-                        <TermTooltip term={th.bias}>
-                          <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
-                            th.bias === 'BULLISH' ? 'bg-emerald-500/25 text-emerald-400 border border-emerald-500/30' :
-                            th.bias === 'BEARISH' ? 'bg-red-500/25 text-red-400 border border-red-500/30' :
-                            th.bias === 'MIXED' ? 'bg-amber-500/25 text-amber-400 border border-amber-500/30' : 'bg-slate-500/25 text-slate-400 border border-slate-700/30'
-                          }`}>
-                            {th.bias} Bias
-                          </span>
-                        </TermTooltip>
-                      </div>
-
-                      {/* Entry/Exit/Stop Loss Suggestions */}
-                      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4 pb-4 border-b border-slate-700/50">
-                        <div className="bg-slate-900/40 p-2.5 rounded border border-slate-800/40">
-                          <div className="label text-[10px] text-slate-500 uppercase tracking-wider">Current Price</div>
-                          <div className="font-mono text-slate-200 font-bold text-lg">
-                            {price ? `$${price.toFixed(2)}` : 'N/A'}
-                          </div>
-                        </div>
-                        <div className="bg-slate-900/40 p-2.5 rounded border border-slate-800/40">
-                          <div className="label text-[10px] text-slate-500 uppercase tracking-wider">Entry / Accumulation</div>
-                          <div className="font-mono text-indigo-400 font-bold text-lg">
-                            {r.swingTradeView?.accumulationZone?.low != null && r.swingTradeView?.accumulationZone?.high != null
-                              ? `$${r.swingTradeView.accumulationZone.low.toFixed(2)} – $${r.swingTradeView.accumulationZone.high.toFixed(2)}`
-                              : th.suggestedEntryPrice
-                                ? `$${th.suggestedEntryPrice.toFixed(2)}`
-                                : 'N/A'}
-                          </div>
-                          {r.swingTradeView?.accumulationZone?.description && (
-                            <div className="text-[10px] text-slate-500 font-sans mt-0.5 leading-tight">
-                              {r.swingTradeView.accumulationZone.description}
-                            </div>
-                          )}
-                        </div>
-                        <div className="bg-slate-900/40 p-2.5 rounded border border-slate-800/40">
-                          <div className="label text-[10px] text-slate-500 uppercase tracking-wider">Target Exit</div>
-                          <div className="font-mono text-emerald-400 font-bold text-lg">
-                            {th.suggestedExitPrice
-                              ? `$${th.suggestedExitPrice.toFixed(2)}`
-                              : r.swingTradeView?.targets?.[0]?.price
-                                ? `$${r.swingTradeView.targets[0].price.toFixed(2)}`
-                                : 'N/A'}
-                          </div>
-                        </div>
-                        <div className="bg-slate-900/40 p-2.5 rounded border border-slate-800/40">
-                          <div className="label text-[10px] text-slate-500 uppercase tracking-wider">Stop Loss</div>
-                          <div className="font-mono text-red-400 font-bold text-lg">
-                            {th.stopLossPrice
-                              ? `$${th.stopLossPrice.toFixed(2)}`
-                              : r.swingTradeView?.stopLoss?.price
-                                ? `$${r.swingTradeView.stopLoss.price.toFixed(2)}`
-                                : r.swingTradeView?.stopLoss?.low
-                                  ? `$${r.swingTradeView.stopLoss.low.toFixed(2)}`
-                                  : 'N/A'}
-                          </div>
-                          {r.swingTradeView?.stopLoss?.description && (
-                            <div className="text-[10px] text-slate-500 font-sans mt-0.5 leading-tight">
-                              {r.swingTradeView.stopLoss.description}
-                            </div>
-                          )}
-                        </div>
-                        <div className="bg-slate-900/40 p-2.5 rounded border border-slate-800/40 col-span-2 md:col-span-1">
-                          <div className="label text-[10px] text-slate-500 uppercase tracking-wider">Risk / Reward</div>
-                          <div className="font-bold text-amber-400 text-lg">
-                            {r.swingTradeView?.riskReward || 'N/A'}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Fallback Banner for old reports */}
-                      {!hasDetailedTactical && (
-                        <div className="p-3 bg-slate-900/50 border border-slate-800 rounded-lg text-center my-3">
-                          <p className="text-xs text-slate-400 mb-2">
-                            This report does not contain the latest detailed timeframe analysis, catalysts, or short squeeze filters.
-                          </p>
-                          <button onClick={handleAnalyze} disabled={analyzing} className="btn-secondary text-[11px] py-1 px-3">
-                            {analyzing ? 'Analyzing…' : 'Generate Detailed Setup now'}
-                          </button>
-                        </div>
-                      )}
-
-                      {/* Timeframe Alignment & Sourcing Details (Only if available) */}
-                      {hasDetailedTactical && (() => {
-                        const isUpward = th.dailyTrend.trend.toUpperCase().includes('UP') || th.dailyTrend.trend.toUpperCase().includes('BULL');
-                        const isDownward = th.dailyTrend.trend.toUpperCase().includes('DOWN') || th.dailyTrend.trend.toUpperCase().includes('BEAR');
-                        return (
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mb-4">
-                            <div className="bg-slate-900/35 p-3 rounded-lg border border-slate-800/60 hover:border-slate-700/40 transition-colors">
-                              <div className="flex items-center justify-between gap-2 mb-2 text-slate-350">
-                                <div className="flex items-center gap-2">
-                                  <span className={`inline-flex items-center justify-center p-1.5 rounded-lg border ${
-                                    isUpward
-                                      ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
-                                      : isDownward
-                                        ? 'bg-red-500/20 text-red-400 border-red-500/30'
-                                        : 'bg-slate-500/20 text-slate-400 border-slate-700/30'
-                                  }`}>
-                                    {isDownward ? (
-                                      <TrendingDown className="w-5 h-5" strokeWidth={3} />
-                                    ) : (
-                                      <TrendingUp className="w-5 h-5" strokeWidth={3} />
-                                    )}
-                                  </span>
-                                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Daily Trend</span>
-                                </div>
-                                <button
-                                  type="button"
-                                  onClick={() => toggleSection('dailyTrend')}
-                                  className="text-slate-450 hover:text-slate-200 transition p-1 rounded-lg hover:bg-slate-800/40"
-                                >
-                                  {expanded['dailyTrend'] ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-                                </button>
-                              </div>
-                              <div className="text-xs font-semibold text-slate-200 mb-1">
-                                Status: <span className={
-                                  isDownward ? 'text-red-400' : isUpward ? 'text-emerald-400' : 'text-slate-400'
-                                }>{th.dailyTrend.trend}</span> ({th.dailyTrend.barCount} daily bars)
-                              </div>
-                              {expanded['dailyTrend'] && (
-                                <div className="mt-2 pt-2 border-t border-slate-800/60 space-y-1.5 animate-fade-in">
-                                  <p className="text-[11px] text-slate-400 leading-relaxed font-sans text-xs">
-                                    <strong className="text-slate-300 font-semibold mr-1">Reasoning / Catalyst:</strong>
-                                    {th.dailyTrend.analysis}
-                                  </p>
-                                  {th.dailyTrend.laymanExplanation && (
-                                    <p className="text-[10px] text-slate-450 mt-1.5 pt-1.5 border-t border-slate-800/65 leading-relaxed font-sans italic">
-                                      <strong className="text-slate-350 font-medium not-italic mr-1">Layman's Takeaway:</strong>
-                                      {th.dailyTrend.laymanExplanation}
-                                    </p>
-                                  )}
-                                </div>
-                              )}
-                            </div>
-
-                            <div className="bg-slate-900/35 p-3 rounded-lg border border-slate-800/60 hover:border-slate-700/40 transition-colors">
-                              <div className="flex items-center gap-1.5 mb-1.5 text-slate-350">
-                                <Activity className="w-4 h-4 text-indigo-400" />
-                                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Swing Setup</span>
-                              </div>
-                              <div className="text-xs font-semibold text-slate-200 mb-1">
-                                Pattern: <span className="text-indigo-400">{th.swingSetup.setup}</span> (1H / 4H bars)
-                              </div>
-                              <p className="text-[11px] text-slate-400 leading-relaxed font-sans">{th.swingSetup.analysis}</p>
-                            </div>
-
-                            <div className="bg-slate-900/35 p-3 rounded-lg border border-slate-800/60 hover:border-slate-700/40 transition-colors">
-                              <div className="flex items-center gap-1.5 mb-1.5 text-slate-350">
-                                <Clock className="w-4 h-4 text-emerald-400" />
-                                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Entry Timing</span>
-                              </div>
-                              <div className="text-xs font-semibold text-slate-200 mb-1">
-                                Trigger: <span className="text-emerald-400">{th.entryTiming.trigger}</span> (15M & 5M bars)
-                              </div>
-                              <p className="text-[11px] text-slate-400 leading-relaxed font-sans">{th.entryTiming.analysis}</p>
-                            </div>
-                          </div>
-                        );
-                      })()}
-
-                      {/* Support / Resistance Levels side by side */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <div className="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
-                          <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">
-                            <span>Top 5 Support Levels</span>
-                            <span className="text-[10px] text-slate-500 font-normal">Nearest first</span>
-                          </div>
-                          <div className="space-y-1.5 font-mono text-sm">
-                            {th.supportLevels && th.supportLevels.length > 0 ? (
-                              th.supportLevels.slice(0, 5).map((level: any, i: number) => (
-                                <div key={i} className="flex justify-between items-center text-emerald-400/90 py-0.5 border-b border-slate-800/30 last:border-0">
-                                  <span className="flex items-center gap-1.5">
-                                    <span>S{i + 1}</span>
-                                    {level.tests != null && (
-                                      <span className="text-[10px] text-slate-500 bg-slate-800/80 px-1 py-0.25 rounded font-sans">
-                                        Tested {level.tests}x
-                                      </span>
-                                    )}
-                                  </span>
-                                  <span className="font-bold">${level.price?.toFixed(2)}</span>
-                                </div>
-                              ))
-                            ) : (
-                              <div className="text-slate-500 text-xs">No levels provided</div>
-                            )}
-                          </div>
-                        </div>
-
-                        <div className="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
-                          <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 flex items-center justify-between">
-                            <span>Top 5 Resistance Levels</span>
-                            <span className="text-[10px] text-slate-500 font-normal">Nearest first</span>
-                          </div>
-                          <div className="space-y-1.5 font-mono text-sm">
-                            {th.resistanceLevels && th.resistanceLevels.length > 0 ? (
-                              th.resistanceLevels.slice(0, 5).map((level: any, i: number) => (
-                                <div key={i} className="flex justify-between items-center text-red-400/90 py-0.5 border-b border-slate-800/30 last:border-0">
-                                  <span className="flex items-center gap-1.5">
-                                    <span>R{i + 1}</span>
-                                    {level.tests != null && (
-                                      <span className="text-[10px] text-slate-500 bg-slate-800/80 px-1 py-0.25 rounded font-sans">
-                                        Tested {level.tests}x
-                                      </span>
-                                    )}
-                                  </span>
-                                  <span className="font-bold">${level.price?.toFixed(2)}</span>
-                                </div>
-                              ))
-                            ) : (
-                              <div className="text-slate-500 text-xs">No levels provided</div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Detailed Risk Indicators Card (Only if available) */}
-                      {hasDetailedTactical && th.riskMetrics && (
-                        <div className="bg-slate-900/40 p-4 rounded-xl border border-slate-800/70 mb-4 hover:border-slate-700/40 transition-colors">
-                          <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider mb-3 flex items-center gap-1.5 border-b border-slate-800/60 pb-2">
-                            <AlertCircle className="w-4 h-4 text-red-400" />
-                            Tactical Risk Controls (ATR, S/R, Volume, VWAP)
-                          </h4>
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
-                            <div className="text-xs space-y-0.5">
-                              <span className="text-slate-500">Average True Range (ATR):</span>
-                              <div className="font-mono text-slate-200 font-bold">
-                                {th.riskMetrics.atr ? `$${th.riskMetrics.atr.toFixed(2)}` : 'N/A'}
-                              </div>
-                              <p className="text-[10px] text-slate-400 mt-0.5">{th.riskMetrics.atrAnalysis}</p>
-                            </div>
-                            <div className="text-xs space-y-0.5">
-                              <span className="text-slate-500">VWAP Anchoring:</span>
-                              <div className="font-mono text-slate-200 font-bold">
-                                {th.riskMetrics.vwap ? `$${th.riskMetrics.vwap.toFixed(2)}` : 'N/A'}
-                              </div>
-                              <p className="text-[10px] text-slate-400 mt-0.5">{th.riskMetrics.vwapAnalysis}</p>
-                            </div>
-                            <div className="text-xs space-y-0.5">
-                              <span className="text-slate-500">S/R & Volume Stability:</span>
-                              <div className="font-semibold text-slate-200">
-                                {th.riskMetrics.volumeStatus || 'Stable'}
-                              </div>
-                              <p className="text-[10px] text-slate-400 mt-0.5">{th.riskMetrics.supportResistanceAnalysis}</p>
-                            </div>
-                          </div>
-                          <div className="pt-2 border-t border-slate-800/40 text-[11px] text-slate-450 leading-relaxed font-sans">
-                            <strong className="text-slate-350 font-semibold text-xs block mb-1">Risk Summary:</strong>
-                            {th.riskMetrics.analysis}
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Catalyst & Short Squeeze Filters (Only if available) */}
-                      {hasDetailedTactical && (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                          {/* Catalyst Filters */}
-                          <div className="bg-slate-900/40 p-4 rounded-xl border border-slate-800/70 hover:border-slate-700/40 transition-colors">
-                            <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider mb-3 flex items-center gap-1.5 border-b border-slate-800/60 pb-2">
-                              <Sparkles className="w-4 h-4 text-amber-400" />
-                              Catalyst Filter Validation
-                            </h4>
-                            <div className="space-y-2.5">
-                              <div className="text-[11px]">
-                                <span className="font-semibold text-slate-400 block mb-0.5">News Catalyst Check</span>
-                                <p className="text-slate-300 font-sans leading-relaxed">{th.catalysts.news}</p>
-                              </div>
-                              <div className="text-[11px]">
-                                <span className="font-semibold text-slate-400 block mb-0.5">Earnings Catalyst Runway</span>
-                                <p className="text-slate-300 font-sans leading-relaxed">{th.catalysts.earnings}</p>
-                              </div>
-                              <div className="text-[11px]">
-                                <span className="font-semibold text-slate-400 block mb-0.5">SEC Filings & Capital Structure</span>
-                                <p className="text-slate-300 font-sans leading-relaxed">{th.catalysts.secFilings}</p>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Short / Squeeze Filters */}
-                          <div className="bg-slate-900/40 p-4 rounded-xl border border-slate-800/70 hover:border-slate-700/40 transition-colors flex flex-col justify-between">
-                            <div>
-                              <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider mb-3 flex items-center gap-1.5 border-b border-slate-800/60 pb-2">
-                                <ShieldAlert className="w-4 h-4 text-brand-400" />
-                                Short-Selling & Squeeze Filters
-                              </h4>
-                              <div className="grid grid-cols-2 gap-3.5 mb-3.5">
-                                <div className="text-xs">
-                                  <span className="text-slate-500">Borrow Fee / Availability:</span>
-                                  <div className="font-semibold text-slate-200 mt-0.5">{th.shortFilter.borrowFee}</div>
-                                </div>
-                                <div className="text-xs">
-                                  <span className="text-slate-500">Short Interest (SI%):</span>
-                                  <div className="font-semibold text-slate-200 mt-0.5">{th.shortFilter.shortInterest}</div>
-                                </div>
-                                <div className="text-xs">
-                                  <span className="text-slate-500">SSR Status:</span>
-                                  <div className="font-semibold text-slate-200 mt-0.5">{th.shortFilter.ssrStatus}</div>
-                                </div>
-                                <div className="text-xs">
-                                  <span className="text-slate-500">Squeeze Risk Grade:</span>
-                                  <div className="mt-1">
-                                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider font-mono ${
-                                      th.shortFilter.squeezeRisk === 'HIGH' ? 'bg-red-500/20 text-red-400 border border-red-500/35 animate-pulse' :
-                                      th.shortFilter.squeezeRisk === 'MEDIUM' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/35' :
-                                      'bg-emerald-500/20 text-emerald-400 border border-emerald-500/35'
-                                    }`}>
-                                      {th.shortFilter.squeezeRisk}
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="bg-slate-950/40 p-2.5 rounded border border-slate-800/50 text-[10px] text-slate-450 leading-relaxed font-sans">
-                              <span className="text-slate-400 font-bold block mb-0.5">Short Sale Regulation Warning:</span>
-                              Squeeze risk estimates are evaluated via technical signals, relative volume surges, and estimated short parameters. SSR status restricts short entries on downtick sessions.
-                            </div>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Horizon Setup Details */}
-                      {th.horizonDetails && (
-                        <div className="mt-3 bg-slate-900/35 p-3 rounded border border-slate-800/60">
-                          <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Horizon Setup Details</div>
-                          <p className="text-sm text-slate-350 leading-relaxed font-sans">{th.horizonDetails}</p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                );
-              })()}
-
-              {/* Action Plan */}
-              <div className="card relative overflow-hidden p-5 sm:p-6 bg-gradient-to-br from-slate-900/60 to-slate-950/60">
-                <h3 className="section-title mb-5 flex items-center gap-2">
-                  <Zap className="w-4.5 h-4.5 text-brand-400" />
-                  Final Execution Timeline & Action Plan
-                </h3>
-                <div className="relative pl-6 sm:pl-8 space-y-6">
-                  {/* Vertical connecting line */}
-                  <div className="absolute left-[11px] sm:left-[15px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-brand-500 via-indigo-500 to-slate-800" />
-                  
-                  {(r?.finalActionPlan || []).map((step: string, i: number) => (
-                    <div key={i} className="relative flex gap-4 items-start group">
-                      {/* Timeline Node */}
-                      <div className="absolute -left-[27px] sm:-left-[31px] w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-slate-900 border-2 border-brand-500 flex items-center justify-center text-xs font-bold text-brand-400 z-10 shadow-lg group-hover:scale-110 transition-transform duration-200">
-                        {i + 1}
-                      </div>
-                      
-                      {/* Step content card */}
-                      <div className="flex-1 bg-slate-950/40 p-4 rounded-xl border border-slate-850 hover:border-brand-500/30 transition-all duration-200">
-                        <div className="text-xs font-bold text-brand-400 uppercase tracking-wider mb-1">Step {i + 1}</div>
-                        <p className="text-sm text-slate-200 leading-relaxed font-sans font-normal">{step}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-
-
-          {activeTab === 'insight' && (
-            <div className="space-y-6 slide-up animate-fade-in">
-              {/* Fallback Check */}
-              {!r?.companyInsights ? (
-                <div className="card border border-slate-800 bg-slate-900/40 p-8 text-center flex flex-col items-center justify-center space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-550">
-                    <AlertCircle className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-slate-200">Ecosystem Insights Unavailable</h3>
-                    <p className="text-xs text-slate-500 max-w-sm mx-auto mt-1">
-                      This report was generated using an older cache schema. Click the "Re-analyze" button in the top right to compile fresh, deep business ecosystem insights for {symbol}.
-                    </p>
-                  </div>
-                  <button onClick={handleAnalyze} disabled={analyzing} className="btn-primary text-xs">
-                    <RefreshCw className={`w-3.5 h-3.5 ${analyzing ? 'animate-spin' : ''}`} />
-                    {analyzing ? 'Analyzing…' : 'Generate Insights Now'}
+          ) : (
+            /* Stock Overhaul Layout: 2-Column Split + Sticky Sidebar */
+            <div className="space-y-6">
+              
+              {/* Section Anchor navigation */}
+              <div className="sticky top-0 bg-surface-950/90 backdrop-blur border-b border-slate-850 pb-3 z-30 flex items-center gap-1 overflow-x-auto scrollbar-none py-2">
+                {[
+                  { id: 'summary', label: 'Summary' },
+                  { id: 'action', label: 'Action Plan' },
+                  { id: 'story', label: 'Story' },
+                  { id: 'trend', label: 'Trend Health' },
+                  { id: 'levels', label: 'Probability' },
+                  { id: 'signals', label: 'Signals' },
+                  { id: 'risks', label: 'Risks' },
+                  { id: 'details', label: 'Details' }
+                ].map((sec) => (
+                  <button
+                    key={sec.id}
+                    onClick={() => scrollToSection(sec.id)}
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-850 text-slate-450 hover:text-slate-200 hover:bg-slate-850 transition"
+                  >
+                    {sec.label}
                   </button>
-                </div>
-              ) : (
-                <>
-                  {/* Strategic Ecosystem Outlook */}
-                  {r.companyInsights.strategicOutlook && (
-                    <div className="card-glass border border-brand-500/15 bg-brand-500/5 p-6 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl" />
-                      <h3 className="text-sm font-bold text-brand-400 uppercase tracking-wider mb-2.5 flex items-center gap-2">
-                        <Globe className="w-4 h-4" />
-                        Strategic Ecosystem Outlook
-                      </h3>
-                      <p className="text-sm text-slate-350 leading-relaxed font-sans">{r.companyInsights.strategicOutlook}</p>
-                    </div>
-                  )}
+                ))}
+              </div>
 
-                  {/* Invested Companies Grid */}
-                  <div className="card">
-                    <h3 className="section-title mb-4 flex items-center gap-2 text-slate-100">
-                      <Coins className="w-4.5 h-4.5 text-brand-400" />
-                      Strategic Investment Portfolio
-                    </h3>
-                    
-                    {r.companyInsights.investedCompanies && r.companyInsights.investedCompanies.length > 0 ? (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {r.companyInsights.investedCompanies.map((company: any, idx: number) => (
-                          <div key={idx} className="bg-slate-950/45 p-4 rounded-xl border border-slate-800/80 hover:border-slate-700/60 transition-all flex flex-col justify-between space-y-3">
-                            <div className="space-y-2">
-                              <div className="flex items-center justify-between">
-                                <span className="text-sm font-bold text-slate-150 flex items-center gap-1.5">
-                                  <Building2 className="w-4 h-4 text-brand-400" />
-                                  {company.name}
-                                </span>
-                                {company.ownershipPct && (
-                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-brand-500/15 border border-brand-500/25 text-brand-400 font-mono">
-                                    Est. Ownership: {company.ownershipPct}
-                                  </span>
-                                )}
-                              </div>
-                              <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                                <strong className="text-slate-300">Performance:</strong> {company.performance}
-                              </p>
-                              {company.upcomingEvents && company.upcomingEvents.length > 0 && (
-                                <div className="text-[11px] text-slate-450 space-y-1">
-                                  <span className="font-semibold text-slate-350">Upcoming Catalyst Events:</span>
-                                  <ul className="list-disc pl-4 space-y-0.5">
-                                    {company.upcomingEvents.map((evt: string, eIdx: number) => (
-                                      <li key={eIdx}>{evt}</li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              )}
-                            </div>
-                            
-                            {/* Impact analysis potential */}
-                            <div className="pt-2 border-t border-slate-800/60 flex items-start gap-2">
-                              <Activity className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                              <div className="text-xs text-slate-350 leading-relaxed">
-                                <strong className="text-emerald-400 font-semibold">Stock Impact Channel:</strong>{' '}
-                                {company.impactPotential}
-                              </div>
-                            </div>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+                
+                {/* Left Main Story Panel */}
+                <div className="lg:col-span-8 space-y-6 md:space-y-8">
+                  
+                  {/* SECTION 1: EXECUTIVE SUMMARY */}
+                  <section id="summary" className="card relative overflow-hidden flex flex-col gap-5 border-l-4 border-l-brand-500">
+                    <div className="flex items-center justify-between border-b border-slate-850/50 pb-3">
+                      <div>
+                        <h2 className="text-lg font-bold text-slate-100">Executive Summary</h2>
+                        <p className="text-xs text-slate-450 mt-0.5">Is the stock moving up, down, or sideways?</p>
+                      </div>
+                      <RatingBadge rating={bias} size="md" />
+                    </div>
+
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-slate-950/35 p-4 rounded-2xl border border-slate-850/50">
+                      <div>
+                        <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Score</span>
+                        <span className="text-xl font-extrabold font-mono text-slate-100">
+                          {r?.technicalScore != null ? r.technicalScore.toFixed(0) : 'N/A'}
+                          <span className="text-xs text-slate-500">/100</span>
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Action</span>
+                        <span className="text-sm font-bold text-brand-400 capitalize">{r?.finalDecision?.bestActionNow || swing?.trade_bias || 'Watch'}</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Timeframe</span>
+                        <span className="text-sm font-bold text-indigo-400">{r?.shortTermView?.horizon || swing?.horizon || 'Short-term'}</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Confidence</span>
+                        <span className="text-sm font-bold text-emerald-400">{confidence}% Match</span>
+                      </div>
+                    </div>
+
+                    {/* Decision Meter */}
+                    <div className="space-y-2.5">
+                      <div className="flex items-center justify-between text-xs font-bold text-slate-450 px-1">
+                        <span>Current Outlook Zone</span>
+                        <span className="text-slate-200">Marker: {meterOptions[meterIndex].label}</span>
+                      </div>
+                      <div className="grid grid-cols-6 gap-1 h-3 rounded-full overflow-hidden bg-slate-900 border border-slate-800">
+                        {meterOptions.map((opt, i) => (
+                          <div
+                            key={i}
+                            className={`h-full transition-all duration-300 relative ${
+                              i === meterIndex ? `${opt.color.split(' ')[0]} opacity-100 ring-2 ring-slate-100` : 'bg-slate-800/40 opacity-40'
+                            }`}
+                          >
+                            {i === meterIndex && (
+                              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-100 rounded-full border border-slate-900 animate-ping" />
+                            )}
                           </div>
                         ))}
                       </div>
-                    ) : (
-                      <div className="text-center py-6 text-xs text-slate-500 bg-slate-950/20 rounded-lg border border-slate-800/40">
-                        No major strategic investment holdings reported.
+                      <div className="flex justify-between text-[9px] text-slate-500 px-1 font-mono uppercase">
+                        <span>Risk</span>
+                        <span>Consolidation</span>
+                        <span>Setup</span>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-slate-200 leading-relaxed font-sans bg-brand-500/5 p-4 rounded-xl border border-brand-500/10">
+                      {r?.executiveSummary || r?.finalDecision?.decisionSummary || finalSummary?.one_line_story}
+                    </p>
+                  </section>
+
+                  {/* SECTION 2: ACTION PLAN */}
+                  <section id="action" className="card flex flex-col gap-4">
+                    <div>
+                      <h2 className="text-lg font-bold text-slate-100">Trade Action Plan</h2>
+                      <p className="text-xs text-slate-450 mt-0.5">Execution zones, exit targets, and timing parameters</p>
+                    </div>
+
+                    <div className="flex border-b border-slate-850 overflow-x-auto scrollbar-none">
+                      <button
+                        onClick={() => setActionTab('swing')}
+                        className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+                          actionTab === 'swing' ? 'border-brand-500 text-brand-400' : 'border-transparent text-slate-500 hover:text-slate-350'
+                        }`}
+                      >
+                        Swing Setup
+                      </button>
+                      <button
+                        onClick={() => setActionTab('short')}
+                        className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+                          actionTab === 'short' ? 'border-brand-500 text-brand-400' : 'border-transparent text-slate-500 hover:text-slate-350'
+                        }`}
+                      >
+                        Short View
+                      </button>
+                      <button
+                        onClick={() => setActionTab('long')}
+                        className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+                          actionTab === 'long' ? 'border-brand-500 text-brand-400' : 'border-transparent text-slate-500 hover:text-slate-350'
+                        }`}
+                      >
+                        Long-Term Valuation
+                      </button>
+                    </div>
+
+                    {actionTab === 'swing' && (
+                      <div className="space-y-4 animate-fade-in">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Accumulation Zone</span>
+                            <span className="font-mono text-sm sm:text-base font-extrabold text-indigo-400 mt-1 block">
+                              {swing?.entry_zone ? `$${swing.entry_zone.low?.toFixed(2)} – $${swing.entry_zone.high?.toFixed(2)}` : th?.suggestedEntryPrice ? `$${th.suggestedEntryPrice.toFixed(2)}` : 'N/A'}
+                            </span>
+                            <span className="text-[10px] text-slate-500 font-sans block mt-1">Where buying may make sense</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Targets</span>
+                            <span className="font-mono text-sm sm:text-base font-extrabold text-emerald-400 mt-1 block">
+                              {swing?.target_1 ? `$${swing.target_1?.toFixed(2)} / $${swing.target_2?.toFixed(2)}` : th?.suggestedExitPrice ? `$${th.suggestedExitPrice.toFixed(2)}` : 'N/A'}
+                            </span>
+                            <span className="text-[10px] text-slate-500 font-sans block mt-1">Possible profit zones</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Stop Loss</span>
+                            <span className="font-mono text-sm sm:text-base font-extrabold text-rose-400 mt-1 block">
+                              {swing?.stop_loss ? `$${swing.stop_loss?.toFixed(2)}` : th?.stopLossPrice ? `$${th.stopLossPrice.toFixed(2)}` : 'N/A'}
+                            </span>
+                            <span className="text-[10px] text-slate-500 font-sans block mt-1">Where this idea becomes wrong</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Risk / Reward</span>
+                            <span className="font-mono text-sm sm:text-base font-extrabold text-slate-100 mt-1 block">
+                              {swing?.risk_reward || r?.swingTradeView?.riskReward || 'N/A'}
+                            </span>
+                            <span className="text-[10px] text-slate-500 font-sans block mt-1">Estimated trade metric</span>
+                          </div>
+                        </div>
+
+                        {swing?.wait_for_confirmation && (
+                          <div className="p-3 bg-indigo-500/5 border border-indigo-500/15 rounded-xl text-xs flex items-start gap-2">
+                            <Info className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
+                            <div>
+                              <strong className="text-indigo-300 font-bold uppercase text-[10px] tracking-wider block mb-0.5">What must happen first</strong>
+                              <span className="text-slate-300 leading-relaxed font-sans">{swing.wait_for_confirmation}</span>
+                            </div>
+                          </div>
+                        )}
+                        {swing?.entry_reason && (
+                          <div className="p-3 bg-slate-950/40 border border-slate-850 rounded-xl text-xs flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
+                            <div>
+                              <strong className="text-slate-400 font-semibold uppercase text-[10px] tracking-wider block mb-0.5">Confirmation Summary</strong>
+                              <span className="text-slate-300 font-sans">{swing.entry_reason}</span>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     )}
-                  </div>
 
-                  {/* Business Dependency Network */}
-                  <div className="card">
-                    <h3 className="section-title mb-4 flex items-center gap-2 text-slate-100">
-                      <Layers className="w-4.5 h-4.5 text-indigo-400" />
-                      Business Dependency Network (Supply Chain & Partners)
-                    </h3>
+                    {actionTab === 'short' && (
+                      <div className="space-y-4 animate-fade-in">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Short Trigger</span>
+                            <span className="font-mono text-sm sm:text-base font-extrabold text-purple-400 mt-1 block">
+                              {short?.short_entry_trigger ? `$${short.short_entry_trigger.toFixed(2)}` : 'N/A'}
+                            </span>
+                            <span className="text-[10px] text-slate-500 font-sans block mt-1">Breakdown Entry Point</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Short Targets</span>
+                            <span className="font-mono text-sm sm:text-base font-extrabold text-emerald-400 mt-1 block">
+                              {short?.short_target_1 ? `$${short.short_target_1.toFixed(2)} / $${short.short_target_2.toFixed(2)}` : 'N/A'}
+                            </span>
+                            <span className="text-[10px] text-slate-500 font-sans block mt-1">Downward profit zones</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Short Stop Loss</span>
+                            <span className="font-mono text-sm sm:text-base font-extrabold text-rose-400 mt-1 block">
+                              {short?.short_stop_loss ? `$${short.short_stop_loss.toFixed(2)}` : 'N/A'}
+                            </span>
+                            <span className="text-[10px] text-slate-500 font-sans block mt-1">Exit if buyers push back</span>
+                          </div>
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Squeeze Risk</span>
+                            <span className="mt-1 block">
+                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase font-mono border ${
+                                ts?.evidence?.short_context?.short_squeeze_risk === 'high' ? 'bg-red-500/10 text-red-500 border-red-500/20' : 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20'
+                              }`}>
+                                {ts?.evidence?.short_context?.short_squeeze_risk || 'LOW'}
+                              </span>
+                            </span>
+                            <span className="text-[10px] text-slate-500 font-sans block mt-1">Short covering potential</span>
+                          </div>
+                        </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                      {[
-                        { title: 'Suppliers & Infrastructure', items: r.companyInsights.dependencies?.suppliers, color: 'text-indigo-400 border-indigo-500/10' },
-                        { title: 'Consumer Base & Customers', items: r.companyInsights.dependencies?.customers, color: 'text-brand-400 border-brand-500/10' },
-                        { title: 'Outsourcing & Support', items: r.companyInsights.dependencies?.outsourcePartners, color: 'text-amber-400 border-amber-500/10' },
-                        { title: 'Marketing Channels & Partners', items: r.companyInsights.dependencies?.marketingPartners, color: 'text-emerald-400 border-emerald-500/10' },
-                      ].map((group, idx) => (
-                        <div key={idx} className={`bg-slate-950/30 p-4 rounded-xl border border-slate-800/80`}>
-                          <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-3 pb-2 border-b border-slate-800/60 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-brand-500" />
-                            {group.title}
-                          </h4>
+                        {ts?.evidence?.short_context?.summary && (
+                          <div className="p-3 bg-red-500/5 border border-red-500/15 rounded-xl text-xs flex items-start gap-2">
+                            <AlertTriangle className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
+                            <div>
+                              <strong className="text-red-300 font-bold uppercase text-[10px] tracking-wider block mb-0.5">Short Warning Context</strong>
+                              <span className="text-slate-300 leading-relaxed font-sans">{ts.evidence.short_context.summary}</span>
+                            </div>
+                          </div>
+                        )}
+                        {short?.reason && (
+                          <div className="p-3 bg-slate-950/40 border border-slate-850 rounded-xl text-xs flex items-start gap-2">
+                            <Info className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
+                            <div>
+                              <strong className="text-slate-400 font-semibold uppercase text-[10px] tracking-wider block mb-0.5">Tactical Setup commentary</strong>
+                              <span className="text-slate-300 font-sans">{short.reason}</span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {actionTab === 'long' && (
+                      <div className="space-y-4 animate-fade-in">
+                        <div className="p-4 bg-slate-950/45 border border-slate-850 rounded-xl space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Multibagger Potential Assessment</span>
+                            {r?.multibaggerProbability?.rating && (
+                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
+                                r.multibaggerProbability.rating === 'VERY_HIGH' || r.multibaggerProbability.rating === 'HIGH' ? 'bg-emerald-500/15 border-emerald-500/20 text-emerald-400' : 'bg-slate-800 border-slate-700 text-slate-300'
+                              }`}>
+                                Rating: {r.multibaggerProbability.rating.replace('_', ' ')}
+                              </span>
+                            )}
+                          </div>
                           
-                          {group.items && group.items.length > 0 ? (
-                            <div className="space-y-3.5">
-                              {group.items.map((partner: any, pIdx: number) => (
-                                <div key={pIdx} className="space-y-1.5 text-xs">
-                                  <div className="flex justify-between items-baseline font-sans">
-                                    <span className="font-bold text-slate-200">{partner.name}</span>
-                                    <span className="text-[10px] text-slate-500 italic">{partner.role}</span>
+                          <p className="text-sm text-slate-300 leading-relaxed font-sans">
+                            {r?.multibaggerProbability?.reason || 'Long term valuation logic requires fundamentals validation.'}
+                          </p>
+
+                          {r?.multibaggerProbability?.requiredConditions?.length > 0 && (
+                            <div className="pt-3 border-t border-slate-850 space-y-2">
+                              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Required Catalyst Conditions:</span>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                {r.multibaggerProbability.requiredConditions.map((cond: string, idx: number) => (
+                                  <div key={idx} className="text-xs text-slate-300 bg-slate-950/60 p-2.5 rounded-lg border border-slate-850 flex items-start gap-1.5">
+                                    <span className="text-brand-500 font-mono font-bold">•</span>
+                                    <span>{cond}</span>
                                   </div>
-                                  <p className="text-slate-400 font-sans">{partner.description}</p>
-                                  {partner.riskExposure && (
-                                    <div className="bg-slate-900/50 p-2 rounded border border-slate-800/50 text-[11px] text-slate-350 leading-relaxed">
-                                      <strong className="text-brand-400 font-semibold">External Risk exposure:</strong> {partner.riskExposure}
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </section>
+
+                  {/* SECTION 3: WHY THE STOCK MOVED TODAY */}
+                  <section id="story" className="card flex flex-col gap-4">
+                    <div className="flex items-center justify-between border-b border-slate-850/50 pb-3">
+                      <div>
+                        <h2 className="text-lg font-bold text-slate-100">Why the stock moved today</h2>
+                        <p className="text-xs text-slate-450 mt-0.5">Analyses on recent events, earnings, and news catalysts</p>
+                      </div>
+                      {ts?.classification?.primary_reason && (
+                        <span className="px-2.5 py-0.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-bold font-sans uppercase">
+                          {ts.classification.primary_reason.replace('-', ' ')}
+                        </span>
+                      )}
+                    </div>
+
+                    {layman ? (
+                      <div className="space-y-4 font-sans leading-relaxed text-sm">
+                        <div className="p-4 bg-slate-950/45 border border-slate-850 rounded-2xl">
+                          <h4 className="text-sm font-extrabold text-slate-200 mb-1.5">{layman.headline}</h4>
+                          <p className="text-slate-300 font-normal leading-relaxed whitespace-pre-line font-sans">{layman.simple_explanation}</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="p-4 bg-slate-950/20 border border-slate-850 rounded-xl space-y-1.5">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">Sustainability</span>
+                            <div className="flex items-center gap-2">
+                              <span className={`px-2 py-0.25 rounded text-[9px] font-bold uppercase ${
+                                layman.is_move_sustainable === 'yes' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/10 text-rose-500 border border-rose-500/20'
+                              }`}>
+                                Sustainable: {layman.is_move_sustainable}
+                              </span>
+                            </div>
+                            <p className="text-xs text-slate-400 font-sans mt-2">{layman.sustainability_reason}</p>
+                          </div>
+
+                          <div className="p-4 bg-slate-950/20 border border-slate-850 rounded-xl space-y-1.5">
+                            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">Participation / Driver</span>
+                            <div className="text-xs font-semibold text-slate-200 capitalize">{layman.who_may_be_buying_or_selling} participation</div>
+                            <p className="text-xs text-slate-400 font-sans mt-2">
+                              {layman.who_may_be_buying_or_selling === 'institution' && 'Unusually high volume indicates institutional position scaling.'}
+                              {layman.who_may_be_buying_or_selling === 'retail' && 'Heavy retail discussion and news ticker speculation drives this move.'}
+                              {layman.who_may_be_buying_or_selling === 'shorts covering' && 'Spike driven by short sellers closing borrows rapidly.'}
+                              {layman.who_may_be_buying_or_selling === 'mixed' && 'Balanced participation on tape between retail accounts and institutional desks.'}
+                              {(!layman.who_may_be_buying_or_selling || layman.who_may_be_buying_or_selling === 'unknown') && 'Ticker liquidity tracking makes buyer proxy unclear.'}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <p className="text-sm text-slate-400 italic">No story data logged for this period.</p>
+                    )}
+                  </section>
+
+                  {/* SECTION 4: CURRENT TREND HEALTH */}
+                  <section id="trend" className="card flex flex-col gap-4">
+                    <div>
+                      <h2 className="text-lg font-bold text-slate-100">Current Trend Health</h2>
+                      <p className="text-xs text-slate-450 mt-0.5">Analyzing prices, volumes, and directional indices</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {/* Price Trend lane */}
+                      <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-2xl space-y-3">
+                        <div className="flex items-center justify-between border-b border-slate-900/60 pb-2">
+                          <span className="text-xs font-bold text-slate-350 uppercase tracking-wider">1. Price Trend</span>
+                          <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold uppercase font-mono ${
+                            (th?.dailyTrend?.trend || '').toUpperCase().includes('BULL') || (th?.dailyTrend?.trend || '').toUpperCase().includes('UP') ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-500'
+                          }`}>
+                            {th?.dailyTrend?.trend || ts?.evidence?.technical_context?.trend || 'Mixed'}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-400 font-sans leading-relaxed">{th?.dailyTrend?.analysis || 'Price position relative to key 20EMA, 50EMA lines indicates current bias.'}</p>
+                      </div>
+
+                      {/* Volume Strength lane */}
+                      <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-2xl space-y-3">
+                        <div className="flex items-center justify-between border-b border-slate-900/60 pb-2">
+                          <span className="text-xs font-bold text-slate-350 uppercase tracking-wider">2. Volume Strength</span>
+                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-bold uppercase font-mono">
+                            {ts?.price_summary?.relative_volume ? `${ts.price_summary.relative_volume.toFixed(1)}x Vol` : 'Normal'}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-400 font-sans leading-relaxed">
+                          {ts?.evidence?.volume_context?.summary || 'Relative daily volume compares current activity against the 30-day average.'}
+                        </p>
+                      </div>
+
+                      {/* Momentum lane */}
+                      <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-2xl space-y-3">
+                        <div className="flex items-center justify-between border-b border-slate-900/60 pb-2">
+                          <span className="text-xs font-bold text-slate-350 uppercase tracking-wider">3. Momentum Lane</span>
+                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-bold uppercase font-mono">
+                            RSI {technicals?.rsi14?.toFixed(0) || 'N/A'}
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-400 font-sans leading-relaxed">
+                          {technicals?.rsi14Prev ? `RSI momentum is ${technicals.rsi14 > technicals.rsi14Prev ? 'improving' : 'cooling'} (previously ${technicals.rsi14Prev.toFixed(0)}).` : 'MACD lines and RSI readings reflect underlying directional velocity.'}
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+
+                  {/* SECTION 5: SUPPORT, RESISTANCE & SCENARIO PROBABILITY */}
+                  <section id="levels" className="card flex flex-col gap-4">
+                    <div>
+                      <h2 className="text-lg font-bold text-slate-100">Support, Resistance & Scenario Probability</h2>
+                      <p className="text-xs text-slate-450 mt-0.5">Model-estimated scenario probability based on current signals. Not a guarantee.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {/* Scenario A */}
+                      <div className="p-4 rounded-xl border border-emerald-500/10 bg-emerald-500/5 hover:bg-emerald-500/8 transition-colors flex flex-col justify-between space-y-4">
+                        <div className="space-y-1">
+                          <div className="flex justify-between items-center">
+                            <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">A: Holds Support</span>
+                            <span className="text-lg font-extrabold text-emerald-400 font-mono">{probabilities.hold}%</span>
+                          </div>
+                          <span className="text-[10px] text-slate-500 block">Trigger: Defends S1 level (${th?.supportLevels?.[0]?.price?.toFixed(2) || 'Nearest Support'})</span>
+                          <p className="text-xs text-slate-350 font-sans mt-2">Buyers step in near primary support, generating an accumulation base to reverse control.</p>
+                        </div>
+                        <div className="pt-2.5 border-t border-emerald-500/15 text-[10px] text-slate-400 font-sans font-semibold">
+                          Action: Buy entry on S1 bounce with stop loss intact
+                        </div>
+                      </div>
+
+                      {/* Scenario B */}
+                      <div className="p-4 rounded-xl border border-red-500/10 bg-red-500/5 hover:bg-red-500/8 transition-colors flex flex-col justify-between space-y-4">
+                        <div className="space-y-1">
+                          <div className="flex justify-between items-center">
+                            <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">B: Support Breaks</span>
+                            <span className="text-lg font-extrabold text-red-400 font-mono">{probabilities.breakProb}%</span>
+                          </div>
+                          <span className="text-[10px] text-slate-500 block">Trigger: Drops below Stop Loss (${th?.stopLossPrice?.toFixed(2) || 'Stop Price'})</span>
+                          <p className="text-xs text-slate-350 font-sans mt-2">Sellers dominate, forcing a break of S1 levels. High volume confirms breakdown continuation.</p>
+                        </div>
+                        <div className="pt-2.5 border-t border-red-500/15 text-[10px] text-slate-400 font-sans font-semibold">
+                          Action: Exit long holdings; watch for short entry trigger
+                        </div>
+                      </div>
+
+                      {/* Scenario C */}
+                      <div className="p-4 rounded-xl border border-indigo-500/10 bg-indigo-500/5 hover:bg-indigo-500/8 transition-colors flex flex-col justify-between space-y-4">
+                        <div className="space-y-1">
+                          <div className="flex justify-between items-center">
+                            <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">C: Sideways</span>
+                            <span className="text-lg font-extrabold text-indigo-400 font-mono">{probabilities.sideways}%</span>
+                          </div>
+                          <span className="text-[10px] text-slate-500 block">Trigger: Stays in S1-R1 Range</span>
+                          <p className="text-xs text-slate-350 font-sans mt-2">Low volume consolidation between support and resistance lines with no clear direction.</p>
+                        </div>
+                        <div className="pt-2.5 border-t border-indigo-500/15 text-[10px] text-slate-400 font-sans font-semibold">
+                          Action: Wait for breakout confirmation; write premium/straddle
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-3 bg-slate-950/40 border border-slate-850 rounded-xl text-[11px] text-slate-450 leading-relaxed font-sans">
+                      <strong className="text-slate-350 font-semibold">Risk Probability Commentary:</strong>{' '}
+                      {th?.riskMetrics?.analysis || 'Trend structure is evaluated dynamically based on relative distance to key pivot targets.'}
+                    </div>
+                  </section>
+
+                  {/* SECTION 6: SIGNAL CORRELATION EXPLANATION */}
+                  <section id="signals" className="card flex flex-col gap-4">
+                    <div>
+                      <h2 className="text-lg font-bold text-slate-100">Signal Correlation & Score Explanation</h2>
+                      <p className="text-xs text-slate-450 mt-0.5">Why the score is bullish, bearish, or mixed</p>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row gap-5 items-start justify-between bg-slate-950/40 p-4 rounded-2xl border border-slate-850/60">
+                      <div className="space-y-2 max-w-sm">
+                        <h4 className="text-sm font-extrabold text-slate-200">
+                          Why is the outlook{' '}
+                          <span className={bias === 'BULLISH' ? 'text-emerald-400' : bias === 'BEARISH' ? 'text-red-400' : 'text-amber-400'}>
+                            {bias}
+                          </span>?
+                        </h4>
+                        <p className="text-xs text-slate-400 font-sans leading-relaxed">
+                          {bias === 'BULLISH' && 'The daily trend is positive, price is holding above the 20EMA, and relative volume/momentum confirms buying interest.'}
+                          {bias === 'BEARISH' && 'Sellers have control. Price trades below key EMA lines, and MACD/RSI structures indicate continuing selling pressure.'}
+                          {bias === 'HOLD' && 'Signals are mixed. The stock is near major support levels, but volume and momentum have not confirmed a bounce yet.'}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-3 bg-slate-900 border border-slate-800 p-3.5 rounded-xl shrink-0">
+                        <div className="text-right">
+                          <span className="text-[10px] text-slate-500 font-bold block">CONFIDENCE</span>
+                          <span className="text-lg font-extrabold text-brand-400 font-mono">{confidence}%</span>
+                        </div>
+                        <div className="h-8 w-px bg-slate-800" />
+                        <div>
+                          <span className="text-[10px] text-slate-500 font-bold block">SIGNAL STATUS</span>
+                          <RatingBadge rating={bias} size="sm" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Breakdown of Bullish / Bearish evidence list */}
+                    <div className="space-y-3">
+                      <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider">Active Signals Correlation</h4>
+                      <div className="space-y-2 bg-slate-950/20 p-3.5 rounded-xl border border-slate-850">
+                        {technicals?.signals && technicals.signals.length > 0 ? (
+                          technicals.signals.map((sig: string, idx: number) => {
+                            const lowSig = sig.toLowerCase();
+                            const isBullish = lowSig.includes('bullish') || lowSig.includes('buy') || lowSig.includes('above') || lowSig.includes('crossover');
+                            const isBearish = lowSig.includes('bearish') || lowSig.includes('sell') || lowSig.includes('below') || lowSig.includes('under');
+                            return (
+                              <div key={idx} className="flex gap-2.5 items-start py-1.5 border-b border-slate-900 last:border-0 text-xs">
+                                {isBullish ? (
+                                  <TrendingUp className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                ) : isBearish ? (
+                                  <TrendingDown className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                                ) : (
+                                  <Activity className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+                                )}
+                                <span className="text-slate-300 font-sans leading-relaxed">{sig}</span>
+                              </div>
+                            );
+                          })
+                        ) : (
+                          <div className="text-xs text-slate-500 italic">No signals analyzed.</div>
+                        )}
+                      </div>
+                    </div>
+                  </section>
+
+                  {/* SECTION 7: CATALYSTS AND RISKS */}
+                  <section id="risks" className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Catalyst card */}
+                    <div className="card border border-emerald-500/10 flex flex-col gap-3.5">
+                      <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-2">
+                        <CheckCircle2 className="w-4.5 h-4.5 text-emerald-400" /> What can push the stock up?
+                      </h3>
+                      <ul className="space-y-3">
+                        {r?.keyCatalysts && r.keyCatalysts.length > 0 ? (
+                          r.keyCatalysts.map((c: string, i: number) => (
+                            <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0" />
+                              <span className="font-sans leading-relaxed">{c}</span>
+                            </li>
+                          ))
+                        ) : (
+                          <li className="text-xs text-slate-500 italic">No positive catalysts logged.</li>
+                        )}
+                      </ul>
+                    </div>
+
+                    {/* Risks card */}
+                    <div className="card border border-red-500/10 flex flex-col gap-3.5">
+                      <h3 className="text-sm font-bold text-red-400 uppercase tracking-wider flex items-center gap-2">
+                        <AlertCircle className="w-4.5 h-4.5 text-red-400" /> What can push the stock down?
+                      </h3>
+                      <ul className="space-y-3">
+                        {r?.keyRisks && r.keyRisks.length > 0 ? (
+                          r.keyRisks.map((c: string, i: number) => (
+                            <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300">
+                              <span className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 shrink-0" />
+                              <span className="font-sans leading-relaxed">{c}</span>
+                            </li>
+                          ))
+                        ) : (
+                          <li className="text-xs text-slate-500 italic">No negative risks logged.</li>
+                        )}
+                      </ul>
+                    </div>
+                  </section>
+
+                  {/* SECTION 8: TECHNICAL EVIDENCE */}
+                  <section id="details" className="card border border-slate-850">
+                    <button
+                      onClick={() => toggleSection('technicalDetails')}
+                      className="w-full flex items-center justify-between text-left focus:outline-none"
+                    >
+                      <div>
+                        <h2 className="text-lg font-bold text-slate-100">Advanced Technical Evidence</h2>
+                        <p className="text-xs text-slate-450 mt-0.5">Underlying mathematical indicators for expert review</p>
+                      </div>
+                      {expanded['technicalDetails'] ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+                    </button>
+
+                    {expanded['technicalDetails'] && (
+                      <div className="mt-5 space-y-6 animate-fade-in border-t border-slate-850 pt-5">
+                        
+                        {/* Price Area Chart */}
+                        {candles.length > 0 && (
+                          <div className="space-y-2">
+                            <h4 className="text-xs font-bold text-slate-450 uppercase tracking-wider font-mono">Price History (60 Days)</h4>
+                            <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/50">
+                              <ResponsiveContainer width="100%" height={220}>
+                                <AreaChart data={candles.slice(-60)}>
+                                  <defs>
+                                    <linearGradient id="colorClose" x1="0" y1="0" x2="0" y2="1">
+                                      <stop offset="5%" stopColor="#0f766e" stopOpacity={0.3} />
+                                      <stop offset="95%" stopColor="#0f766e" stopOpacity={0} />
+                                    </linearGradient>
+                                  </defs>
+                                  <XAxis dataKey="time" tick={{ fontSize: 9, fill: '#64748b' }} tickLine={false} axisLine={false} interval={9} />
+                                  <YAxis domain={['auto', 'auto']} tick={{ fontSize: 9, fill: '#64748b' }} tickLine={false} axisLine={false} tickFormatter={(v) => `$${v.toFixed(0)}`} width={45} />
+                                  <RechartsTooltip
+                                    contentStyle={{ background: '#172033', border: '1px solid #334155', borderRadius: 12, fontSize: 11 }}
+                                    labelStyle={{ color: '#94a3b8' }}
+                                    itemStyle={{ color: '#0d9488' }}
+                                    formatter={(val: any) => [`$${Number(val).toFixed(2)}`, 'Close']}
+                                  />
+                                  <Area type="monotone" dataKey="close" stroke="#0f766e" strokeWidth={2.5} fill="url(#colorClose)" dot={false} />
+                                </AreaChart>
+                              </ResponsiveContainer>
+                            </div>
+                          </div>
+                        )}
+
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3.5">
+                          {[
+                            { 
+                              name: 'RSI (14)', 
+                              value: technicals?.rsi14 ? technicals.rsi14.toFixed(1) : 'N/A', 
+                              term: 'rsi',
+                              meaning: technicals?.rsi14 < 30 ? 'Oversold / Rebound candidate' : technicals?.rsi14 > 70 ? 'Overbought / Cooldown candidate' : 'Neutral range' 
+                            },
+                            { 
+                              name: 'MACD Line', 
+                              value: technicals?.macdLine ? technicals.macdLine.toFixed(3) : 'N/A', 
+                              term: 'macd',
+                              meaning: technicals?.macdLine > 0 ? 'Bullish crossover trend' : 'Bearish momentum structure' 
+                            },
+                            { 
+                              name: 'Average Volume', 
+                              value: ts?.price_summary?.average_volume ? ts.price_summary.average_volume.toLocaleString() : 'N/A', 
+                              term: 'volume',
+                              meaning: '30-day liquidity baseline' 
+                            },
+                            { 
+                              name: 'Average Range (ATR)', 
+                              value: technicals?.atr14 ? `$${technicals.atr14.toFixed(2)}` : 'N/A', 
+                              term: 'atr',
+                              meaning: 'Average daily dollar fluctuation' 
+                            },
+                            { 
+                              name: 'Trend Strength (ADX)', 
+                              value: technicals?.adx14 ? technicals.adx14.toFixed(1) : 'N/A', 
+                              term: 'adx',
+                              meaning: technicals?.adx14 > 25 ? 'Strong active trend' : 'Consolidating / rangebound' 
+                            },
+                            { 
+                              name: 'VWAP Position', 
+                              value: technicals?.vwap ? `$${technicals.vwap.toFixed(2)}` : 'N/A', 
+                              term: 'vwap',
+                              meaning: 'Institution average price weight' 
+                            }
+                          ].map((ind) => (
+                            <TermTooltip key={ind.name} term={ind.term}>
+                              <div className="p-3 bg-slate-950/45 border border-slate-850 hover:border-slate-800 rounded-xl space-y-1.5 transition-colors">
+                                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">{ind.name}</span>
+                                <span className="text-sm font-bold text-slate-100 font-mono block">{ind.value}</span>
+                                <span className="text-[10px] text-slate-450 block leading-tight">{ind.meaning}</span>
+                              </div>
+                            </TermTooltip>
+                          ))}
+                        </div>
+
+                        {/* Support & Resistance pivot details */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/50">
+                            <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-2">Support Levels (S1 - S3)</span>
+                            <div className="space-y-1.5 font-mono text-xs">
+                              {technicals?.supportLevels?.length > 0 ? (
+                                technicals.supportLevels.slice(0, 3).map((lvl: number, i: number) => (
+                                  <div key={i} className="flex justify-between items-center py-1 border-b border-slate-900/60 last:border-0">
+                                    <span>Support Level {i + 1}</span>
+                                    <span className="font-bold text-emerald-400">${lvl.toFixed(2)}</span>
+                                  </div>
+                                ))
+                              ) : (
+                                <span className="text-slate-500 italic block">No support pivots resolved.</span>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/50">
+                            <span className="text-xs font-bold text-red-400 uppercase tracking-wider block mb-2">Resistance Levels (R1 - R3)</span>
+                            <div className="space-y-1.5 font-mono text-xs">
+                              {technicals?.resistanceLevels?.length > 0 ? (
+                                technicals.resistanceLevels.slice(0, 3).map((lvl: number, i: number) => (
+                                  <div key={i} className="flex justify-between items-center py-1 border-b border-slate-900/60 last:border-0">
+                                    <span>Resistance Level {i + 1}</span>
+                                    <span className="font-bold text-red-400">${lvl.toFixed(2)}</span>
+                                  </div>
+                                ))
+                              ) : (
+                                <span className="text-slate-500 italic block">No resistance pivots resolved.</span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    )}
+                  </section>
+
+                  {/* SECTION 9: FUNDAMENTAL / NEWS / INSTITUTIONAL CONTEXT */}
+                  <section className="card flex flex-col gap-4">
+                    <div>
+                      <h2 className="text-lg font-bold text-slate-100">Fundamental & News Context</h2>
+                      <p className="text-xs text-slate-450 mt-0.5">Corporate health, analyst consensus, and supply chain network</p>
+                    </div>
+
+                    <div className="flex border-b border-slate-850 overflow-x-auto scrollbar-none gap-1">
+                      {[
+                        { id: 'fundamentals', label: 'Score Cards' },
+                        { id: 'news', label: 'Catalyst News' },
+                        { id: 'analysts', label: 'Analyst Sentiment' },
+                        { id: 'institutional', label: 'Supply Chain' },
+                        { id: 'sector', label: 'Investment Portfolio' }
+                      ].map((tab) => (
+                        <button
+                          key={tab.id}
+                          onClick={() => setActiveTab(tab.id as any)}
+                          className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-b-2 transition shrink-0 ${
+                            activeTab === tab.id ? 'border-brand-500 text-brand-400' : 'border-transparent text-slate-500 hover:text-slate-350'
+                          }`}
+                        >
+                          {tab.label}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div className="pt-2">
+                      {activeTab === 'fundamentals' && (
+                        <div className="space-y-4 animate-fade-in">
+                          <div className="grid grid-cols-2 gap-4">
+                            <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-xl">
+                              <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider mb-2">Fundamental Rating</span>
+                              <ScoreBar label="Corporate Score" value={r?.fundamentalScore} />
+                            </div>
+                            <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-xl">
+                              <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider mb-2">News Rating</span>
+                              <ScoreBar label="News Sentiment" value={r?.newsCatalystScore} />
+                            </div>
+                          </div>
+                          {th?.shortFilter && (
+                            <div className="p-4 bg-slate-950/20 border border-slate-850 rounded-xl space-y-3">
+                              <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Short Selling parameters</h4>
+                              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-xs font-mono">
+                                <div>
+                                  <span className="text-slate-500 block">Short Interest:</span>
+                                  <span className="text-slate-200 font-bold">{th.shortFilter.shortInterest || 'N/A'}</span>
+                                </div>
+                                <div>
+                                  <span className="text-slate-500 block">Borrow Fee:</span>
+                                  <span className="text-slate-200 font-bold">{th.shortFilter.borrowFee || 'N/A'}</span>
+                                </div>
+                                <div>
+                                  <span className="text-slate-500 block">SSR Status:</span>
+                                  <span className="text-slate-200 font-bold">{th.shortFilter.ssrStatus || 'Inactive'}</span>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {activeTab === 'news' && (
+                        <div className="space-y-3.5 animate-fade-in">
+                          {ts?.evidence?.news_catalysts?.length > 0 ? (
+                            ts.evidence.news_catalysts.map((news: any, idx: number) => (
+                              <div key={idx} className="p-3.5 bg-slate-950/40 border border-slate-850 rounded-xl flex flex-col gap-1.5">
+                                <div className="flex items-center justify-between text-[10px] text-slate-550">
+                                  <span>{news.source} · {new Date(news.published_at).toLocaleDateString()}</span>
+                                  <span className={`px-1.5 py-0.25 rounded uppercase font-bold text-[9px] ${
+                                    news.impact === 'positive' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-500'
+                                  }`}>
+                                    {news.impact}
+                                  </span>
+                                </div>
+                                <h4 className="text-xs sm:text-sm font-bold text-slate-200 leading-snug">{news.headline}</h4>
+                                <p className="text-xs text-slate-400 font-sans leading-relaxed">{news.summary}</p>
+                              </div>
+                            ))
+                          ) : (
+                            <p className="text-xs text-slate-500 italic py-4">No recent news catalyst logs resolved.</p>
+                          )}
+                        </div>
+                      )}
+
+                      {activeTab === 'analysts' && (
+                        <div className="space-y-3 animate-fade-in">
+                          {ts?.evidence?.analyst_actions?.length > 0 ? (
+                            ts.evidence.analyst_actions.map((act: any, idx: number) => (
+                              <div key={idx} className="p-3.5 bg-slate-950/40 border border-slate-850 rounded-xl flex items-start justify-between gap-4 text-xs font-sans">
+                                <div className="space-y-1">
+                                  <strong className="text-slate-200 block">{act.firm}</strong>
+                                  <p className="text-slate-400 font-normal leading-relaxed">{act.summary}</p>
+                                </div>
+                                <div className="text-right shrink-0">
+                                  <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase ${
+                                    act.action === 'upgrade' ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/15 text-rose-400 border border-rose-500/20'
+                                  }`}>
+                                    {act.action}
+                                  </span>
+                                  {act.new_target && <span className="font-mono text-slate-400 block mt-1">${act.new_target} target</span>}
+                                </div>
+                              </div>
+                            ))
+                          ) : (
+                            <p className="text-xs text-slate-500 italic py-4">No analyst coverage upgrades logged today.</p>
+                          )}
+                        </div>
+                      )}
+
+                      {activeTab === 'institutional' && (
+                        <div className="space-y-4 animate-fade-in">
+                          {r?.companyInsights?.dependencies ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              {[
+                                { title: 'Suppliers & Infrastructure', items: r.companyInsights.dependencies.suppliers },
+                                { title: 'Target Customers', items: r.companyInsights.dependencies.customers },
+                                { title: 'Support Partners', items: r.companyInsights.dependencies.outsourcePartners },
+                                { title: 'Marketing Partners', items: r.companyInsights.dependencies.marketingPartners }
+                              ].map((group, idx) => (
+                                <div key={idx} className="p-4 bg-slate-950/30 border border-slate-850 rounded-xl space-y-3">
+                                  <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider border-b border-slate-900 pb-1.5">{group.title}</h4>
+                                  {group.items && group.items.length > 0 ? (
+                                    <div className="space-y-3 font-sans text-xs">
+                                      {group.items.map((partner: any, pIdx: number) => (
+                                        <div key={pIdx} className="space-y-1">
+                                          <div className="flex justify-between font-bold text-slate-200">
+                                            <span>{partner.name}</span>
+                                            <span className="text-[10px] text-slate-500 font-normal italic">{partner.role}</span>
+                                          </div>
+                                          <p className="text-slate-400 leading-normal">{partner.description}</p>
+                                        </div>
+                                      ))}
                                     </div>
+                                  ) : (
+                                    <span className="text-[11px] text-slate-500 italic">No supply chain dependencies reported.</span>
                                   )}
                                 </div>
                               ))}
                             </div>
                           ) : (
-                            <div className="text-center py-6 text-slate-500 text-xs italic">
-                              No major entries logged for this segment.
-                            </div>
+                            <p className="text-xs text-slate-500 italic py-4">Supply chain and supplier networks require re-analysis.</p>
                           )}
                         </div>
-                      ))}
+                      )}
+
+                      {activeTab === 'sector' && (
+                        <div className="space-y-4 animate-fade-in">
+                          {r?.companyInsights?.investedCompanies?.length > 0 ? (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              {r.companyInsights.investedCompanies.map((company: any, idx: number) => (
+                                <div key={idx} className="p-4 bg-slate-950/40 border border-slate-850 rounded-xl space-y-2.5 text-xs">
+                                  <div className="flex justify-between items-center">
+                                    <strong className="text-slate-200 text-sm">{company.name}</strong>
+                                    {company.ownershipPct && (
+                                      <span className="px-2 py-0.5 rounded bg-brand-500/15 text-brand-400 font-mono text-[10px] font-bold">
+                                        Ownership: {company.ownershipPct}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <p className="text-slate-400 font-sans"><strong className="text-slate-350">Performance:</strong> {company.performance}</p>
+                                  <p className="text-slate-450 font-sans"><strong className="text-slate-350">Stock Impact Channel:</strong> {company.impactPotential}</p>
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="text-xs text-slate-500 italic py-4">No major strategic investment portfolio reported.</p>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </section>
+
+                  {/* SECTION 10: FINAL ANALYST VIEW */}
+                  <section className="card border border-brand-500/15 bg-brand-500/5 p-5 md:p-6 space-y-3.5">
+                    <h3 className="text-sm font-bold text-brand-400 uppercase tracking-wider flex items-center gap-1.5">
+                      <Sparkles className="w-4.5 h-4.5 text-brand-400" />
+                      Final Analyst View
+                    </h3>
+                    
+                    <div className="space-y-3 font-sans leading-relaxed text-sm">
+                      <div className="text-slate-200 italic">
+                        "{finalSummary?.one_line_story || r?.executiveSummary || 'Research results are aggregated and structured for safe study.'}"
+                      </div>
+                      
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-slate-850/60 text-xs">
+                        <div className="space-y-1">
+                          <strong className="text-slate-350 uppercase tracking-wider text-[10px] block">Best-Case Scenario</strong>
+                          <span className="text-slate-300 leading-normal block">Defends key support pivot, holds S1 levels, and rallies on volume breakout confirmation to Target 1.</span>
+                        </div>
+                        <div className="space-y-1">
+                          <strong className="text-slate-350 uppercase tracking-wider text-[10px] block">Worst-Case / Breakdown Risk</strong>
+                          <span className="text-rose-400/90 leading-normal block">{finalSummary?.risk_warning || 'Breaks below Stop Loss, invalidating trade setup. Keep stops tight.'}</span>
+                        </div>
+                      </div>
+
+                      <div className="p-3.5 bg-slate-950/40 border border-slate-850 rounded-xl text-xs space-y-1 font-sans">
+                        <strong className="text-slate-300 font-bold block mb-0.5">Safer Action Recommendation</strong>
+                        <p className="text-slate-350">{swing?.wait_for_confirmation ? `Wait for confirmation: ${swing.wait_for_confirmation}` : 'Wait for volume breakout before entering positions near the accumulation zone.'}</p>
+                      </div>
+                    </div>
+                  </section>
+
+                  {/* SECTION 11: DISCLAIMER */}
+                  <section className="text-[11px] leading-relaxed text-slate-500 italic pt-2 font-mono">
+                    Disclaimer: {r?.disclaimer || 'This analysis is for educational purposes only and is not financial advice. Market conditions can change quickly. Always manage risk and consult standard advisor desks.'}
+                  </section>
+
+                </div>
+
+                {/* Right Sticky Summary panel (Desktop) */}
+                <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-6 hidden lg:block">
+                  <div className="card border-slate-850 space-y-4">
+                    <div className="border-b border-slate-850/50 pb-3 flex justify-between items-center">
+                      <span className="text-xs text-slate-500 uppercase font-black tracking-wider">Quick Action Plan</span>
+                      <StatusBadge status={bias} size="sm" />
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-slate-450">Current Price</span>
+                        <span className="font-mono font-bold text-slate-200">${price?.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-slate-450">Accumulation / Entry</span>
+                        <span className="font-mono font-bold text-indigo-400">
+                          {swing?.entry_zone ? `$${swing.entry_zone.low?.toFixed(2)} - $${swing.entry_zone.high?.toFixed(2)}` : 'N/A'}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-slate-450">Targets</span>
+                        <span className="font-mono font-bold text-emerald-400">
+                          {swing?.target_1 ? `$${swing.target_1?.toFixed(2)} / $${swing.target_2?.toFixed(2)}` : 'N/A'}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-slate-450">Stop Loss</span>
+                        <span className="font-mono font-bold text-rose-400">
+                          {swing?.stop_loss ? `$${swing.stop_loss?.toFixed(2)}` : 'N/A'}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="border-t border-slate-850/50 pt-3 space-y-2.5">
+                      <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block">Estimated Scenarios</span>
+                      <div className="space-y-1.5 text-xs font-semibold">
+                        <div className="flex justify-between text-emerald-400">
+                          <span>Support Holds Probability</span>
+                          <span>{probabilities.hold}%</span>
+                        </div>
+                        <div className="flex justify-between text-rose-400">
+                          <span>Support Breaks Probability</span>
+                          <span>{probabilities.breakProb}%</span>
+                        </div>
+                        <div className="flex justify-between text-indigo-400">
+                          <span>Sideways Consolidation</span>
+                          <span>{probabilities.sideways}%</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t border-slate-850/50 pt-3 text-[10px] text-slate-450 leading-relaxed font-sans">
+                      <strong className="text-slate-350 font-bold block mb-0.5">Confirmation Trigger:</strong>
+                      {swing?.wait_for_confirmation || 'Wait for buyers to defend S1 pivot before scaling entry.'}
                     </div>
                   </div>
-                </>
-              )}
+                </div>
+
+              </div>
+
+              {/* Mobile sticky bottom action bar */}
+              <div className="lg:hidden fixed bottom-11 inset-x-0 bg-surface-900 border-t border-slate-850 px-4 py-3 flex items-center justify-between z-40 shadow-inner">
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Bias Recommendation</span>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <RatingBadge rating={bias} size="sm" />
+                    <span className="text-xs font-mono font-bold text-slate-300">Confidence: {confidence}%</span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => scrollToSection('action')}
+                  className="btn-primary text-xs py-2 px-4 rounded-xl"
+                >
+                  View Entry Plan
+                </button>
+              </div>
+
             </div>
-          )}
-        </>
-        )
-      ) : null}
+          )
+        ) : null}
+      </PageContainer>
     </div>
   );
 };

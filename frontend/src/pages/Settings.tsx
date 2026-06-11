@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { riskSettingsApi, healthApi } from '../services/api';
-import { LoadingSpinner } from '../components/ui';
-import { CheckCircle, XCircle, AlertCircle, Shield, RefreshCw, Save } from 'lucide-react';
+import { LoadingSpinner, PageContainer, PageHeader } from '../components/ui';
+import { CheckCircle, XCircle, AlertCircle, RefreshCw, Save, Key, ShieldCheck } from 'lucide-react';
 
 const Settings: React.FC = () => {
   const [riskSettings, setRiskSettings] = useState<any>(null);
@@ -59,162 +59,208 @@ const Settings: React.FC = () => {
   };
 
   if (loading) {
-    return <div className="flex items-center justify-center h-64"><LoadingSpinner size="lg" /></div>;
+    return (
+      <PageContainer className="flex items-center justify-center min-h-[400px]">
+        <LoadingSpinner size="lg" />
+      </PageContainer>
+    );
   }
 
   const statusIcon = (status: string) => {
-    if (status === 'connected') return <CheckCircle className="w-4 h-4 text-emerald-400" />;
-    if (status === 'unconfigured') return <AlertCircle className="w-4 h-4 text-amber-400" />;
-    return <XCircle className="w-4 h-4 text-red-400" />;
+    if (status === 'connected') return <CheckCircle className="w-4.5 h-4.5 text-emerald-500" />;
+    if (status === 'unconfigured') return <AlertCircle className="w-4.5 h-4.5 text-amber-500" />;
+    return <XCircle className="w-4.5 h-4.5 text-rose-500" />;
   };
 
   return (
-    <div className="p-6 max-w-3xl space-y-6 fade-in">
-      <div>
-        <h1 className="text-2xl font-bold text-slate-100">Settings</h1>
-        <p className="text-sm text-slate-500 mt-0.5">API status and risk management configuration</p>
-      </div>
+    <PageContainer className="max-w-3xl py-8 space-y-6">
+      {/* Header */}
+      <PageHeader
+        title="Settings"
+        subtitle="Configure risk variables, order parameters, and review system diagnostics"
+      />
 
-      {/* API Status */}
-      <div className="card">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-sm font-semibold text-slate-200">API Connection Status</h2>
-          <button onClick={refreshStatus} disabled={statusLoading} className="btn-ghost text-xs">
+      {/* API Connections Health Card */}
+      <div className="card bg-surface-900 border-slate-850 p-5 md:p-6 space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-850 pb-3">
+          <h2 className="text-base font-bold text-slate-100 flex items-center gap-2">
+            <RefreshCw className="w-4.5 h-4.5 text-brand-400" />
+            API Connection Status
+          </h2>
+          <button 
+            onClick={refreshStatus} 
+            disabled={statusLoading} 
+            className="btn btn-secondary text-xs py-1.5 px-3 rounded-lg"
+          >
             <RefreshCw className={`w-3.5 h-3.5 ${statusLoading ? 'animate-spin' : ''}`} />
-            Refresh
+            Refresh Diagnostics
           </button>
         </div>
 
         {apiStatus ? (
-          <div className="space-y-3">
+          <div className="space-y-1">
             {Object.entries(apiStatus.services).map(([key, svc]: [string, any]) => (
-              <div key={key} className="flex items-center justify-between py-2 border-b border-slate-800/50 last:border-0">
-                <div className="flex items-center gap-2">
+              <div key={key} className="flex items-center justify-between py-3 border-b border-slate-850/40 last:border-0 hover:bg-slate-950/20 px-2 rounded-xl transition-all">
+                <div className="flex items-center gap-2.5">
                   {statusIcon(svc.status)}
-                  <span className="text-sm text-slate-300 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+                  <span className="text-sm font-semibold text-slate-200 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
                 </div>
-                <div className="text-right">
-                  <span className={`text-xs font-medium ${svc.status === 'connected' ? 'text-emerald-400' : svc.status === 'unconfigured' ? 'text-amber-400' : 'text-red-400'}`}>
+                <div className="text-right flex items-center gap-2">
+                  <span className={`text-xs font-bold uppercase ${
+                    svc.status === 'connected' ? 'text-emerald-500' : svc.status === 'unconfigured' ? 'text-amber-500' : 'text-rose-500'
+                  }`}>
                     {svc.status}
                   </span>
-                  {svc.latencyMs && <span className="text-xs text-slate-500 ml-2">{svc.latencyMs}ms</span>}
-                  {svc.note && <span className="text-xs text-slate-500 ml-2">{svc.note}</span>}
-                  {svc.message && <span className="text-xs text-red-400 ml-2">{svc.message}</span>}
+                  {svc.latencyMs && <span className="text-xs text-slate-500 font-mono">({svc.latencyMs}ms)</span>}
+                  {svc.note && <span className="text-xs text-slate-450">· {svc.note}</span>}
+                  {svc.message && <span className="text-xs text-rose-500 block">{svc.message}</span>}
                 </div>
               </div>
             ))}
 
-            <div className="mt-3 pt-3 border-t border-t-slate-800">
-              <div className="text-xs text-slate-500 space-y-1">
-                <div>OpenAI Model: <span className="font-mono text-slate-300">{apiStatus.config?.openaiModel}</span></div>
-                <div>Max Position Size: <span className="font-mono text-slate-300">{apiStatus.config?.maxPositionSizePct}%</span></div>
-                <div>Email Configured: <span className={apiStatus.config?.emailConfigured ? 'text-emerald-400' : 'text-slate-500'}>{apiStatus.config?.emailConfigured ? 'Yes' : 'No'}</span></div>
+            <div className="mt-4 pt-4 border-t border-slate-850 text-xs text-slate-500 space-y-2">
+              <div className="flex items-center justify-between">
+                <span>Active OpenAI Model:</span>
+                <span className="font-mono text-slate-300 font-bold bg-slate-950 border border-slate-850 px-2 py-0.5 rounded-lg">{apiStatus.config?.openaiModel || 'gpt-4o'}</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span>Broker Position Limit:</span>
+                <span className="font-mono text-slate-300 font-bold bg-slate-950 border border-slate-850 px-2 py-0.5 rounded-lg">{apiStatus.config?.maxPositionSizePct}%</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span>Email Notifications Agent:</span>
+                <span className={`font-bold ${apiStatus.config?.emailConfigured ? 'text-emerald-500' : 'text-slate-500'}`}>
+                  {apiStatus.config?.emailConfigured ? 'Configured' : 'Offline / Missing Key'}
+                </span>
               </div>
             </div>
           </div>
         ) : (
-          <div className="text-sm text-slate-500">Unable to load status</div>
+          <p className="text-xs text-slate-500 italic">Failed to run probe diagnostics.</p>
         )}
       </div>
 
-      {/* Risk Settings */}
+      {/* Risk Management Parameters Card */}
       {riskSettings && (
-        <div className="card">
-          <h2 className="text-sm font-semibold text-slate-200 mb-4">Risk Management Settings</h2>
+        <div className="card bg-surface-900 border-slate-850 p-5 md:p-6 space-y-4">
+          <h2 className="text-base font-bold text-slate-100 border-b border-slate-850 pb-3 flex items-center gap-2">
+            <ShieldCheck className="w-4.5 h-4.5 text-indigo-400" />
+            Risk Management Rules
+          </h2>
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
                 <label className="label">Max Position Size (%)</label>
                 <input
                   type="number"
-                  className="input font-mono"
+                  className="input font-mono w-full"
                   min={1} max={100} step={0.5}
                   value={riskSettings.maxPositionSizePct}
                   onChange={(e) => setRiskSettings({ ...riskSettings, maxPositionSizePct: parseFloat(e.target.value) })}
                 />
-                <div className="text-xs text-slate-500 mt-1">Max % of portfolio per trade</div>
+                <span className="text-[10px] text-slate-500 block">Max portfolio allocation limit per trade</span>
               </div>
-              <div>
+              
+              <div className="space-y-1.5">
                 <label className="label">Max Loss Per Trade (%)</label>
                 <input
                   type="number"
-                  className="input font-mono"
+                  className="input font-mono w-full"
                   min={0.5} max={20} step={0.5}
                   value={riskSettings.maxLossPerTradePct}
                   onChange={(e) => setRiskSettings({ ...riskSettings, maxLossPerTradePct: parseFloat(e.target.value) })}
                 />
-                <div className="text-xs text-slate-500 mt-1">Max loss % from stop loss</div>
+                <span className="text-[10px] text-slate-500 block">Max allowed drawdown risk per trade</span>
               </div>
-              <div>
+
+              <div className="space-y-1.5">
                 <label className="label">Min Risk/Reward Ratio</label>
                 <input
                   type="number"
-                  className="input font-mono"
+                  className="input font-mono w-full"
                   min={1} max={10} step={0.5}
                   value={riskSettings.minRiskReward}
                   onChange={(e) => setRiskSettings({ ...riskSettings, minRiskReward: parseFloat(e.target.value) })}
                 />
-                <div className="text-xs text-slate-500 mt-1">Minimum required R/R</div>
+                <span className="text-[10px] text-slate-500 block">Minimum acceptable reward factor</span>
               </div>
-              <div>
-                <label className="label">Max Daily Orders</label>
+
+              <div className="space-y-1.5">
+                <label className="label">Max Daily Orders Limit</label>
                 <input
                   type="number"
-                  className="input font-mono"
+                  className="input font-mono w-full"
                   min={1} max={100}
                   value={riskSettings.maxDailyOrders}
                   onChange={(e) => setRiskSettings({ ...riskSettings, maxDailyOrders: parseInt(e.target.value) })}
                 />
+                <span className="text-[10px] text-slate-500 block">Cap on daily executed orders</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <label className="flex items-center gap-2 cursor-pointer">
+            <div className="flex items-center gap-3 bg-slate-950/45 p-3 rounded-xl border border-slate-850">
+              <label className="flex items-center gap-2.5 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={riskSettings.requireStopLoss}
                   onChange={(e) => setRiskSettings({ ...riskSettings, requireStopLoss: e.target.checked })}
-                  className="w-4 h-4 accent-brand-500"
+                  className="w-4 h-4 rounded text-brand-500 focus:ring-brand-500 bg-slate-950 border-slate-800"
                 />
-                <span className="text-sm text-slate-300">Require Stop Loss on all orders</span>
+                <span className="text-sm font-semibold text-slate-300">Enforce Hard Stop Loss on all entries</span>
               </label>
             </div>
 
             <button
               onClick={saveRiskSettings}
               disabled={saving}
-              className="btn-primary"
+              className="btn btn-primary px-5 py-2.5 rounded-xl text-xs flex items-center gap-1.5"
             >
-              {saving ? <><LoadingSpinner size="sm" /> Saving…</> : saved ? <><CheckCircle className="w-4 h-4" /> Saved!</> : <><Save className="w-4 h-4" /> Save Risk Settings</>}
+              {saving ? (
+                <>
+                  <LoadingSpinner size="sm" />
+                  <span>Saving Configuration…</span>
+                </>
+              ) : saved ? (
+                <>
+                  <CheckCircle className="w-4 h-4" />
+                  <span>Configuration Saved!</span>
+                </>
+              ) : (
+                <>
+                  <Save className="w-4 h-4" />
+                  <span>Save Risk Variables</span>
+                </>
+              )}
             </button>
           </div>
         </div>
       )}
 
-      {/* Environment Variables Guide */}
-      <div className="card">
-        <h2 className="text-sm font-semibold text-slate-200 mb-3">Required Environment Variables</h2>
-        <div className="space-y-1.5 font-mono text-xs">
+      {/* Env variables list info */}
+      <div className="card bg-surface-900 border-slate-850 p-5 md:p-6 space-y-4">
+        <h2 className="text-base font-bold text-slate-100 border-b border-slate-850 pb-3 flex items-center gap-2">
+          <Key className="w-4.5 h-4.5 text-amber-500" />
+          Environment Setup Reference
+        </h2>
+        <div className="divide-y divide-slate-850/60 font-mono text-[11px] leading-relaxed">
           {[
-            ['OPENAI_API_KEY', 'sk-...', 'OpenAI API key for AI analysis'],
-            ['ALPACA_API_KEY', 'PK...', 'Alpaca API key'],
-            ['ALPACA_SECRET_KEY', 'secret', 'Alpaca secret key'],
-            ['DATABASE_URL', 'postgresql://...', 'PostgreSQL connection string'],
-            ['REDIS_URL', 'redis://...', 'Redis connection URL'],
+            ['OPENAI_API_KEY', 'sk-...', 'AI research generation key'],
+            ['ALPACA_API_KEY', 'PK...', 'Broker client identity key'],
+            ['ALPACA_SECRET_KEY', '••••••••', 'Broker client authentication key'],
+            ['DATABASE_URL', 'postgresql://...', 'PostgreSQL connection URL'],
+            ['REDIS_URL', 'redis://...', 'Task queue message store URL'],
           ].map(([key, example, desc]) => (
-            <div key={key} className="flex items-start gap-3 py-1.5">
-              <span className="text-brand-400 shrink-0">{key}</span>
-              <span className="text-slate-600">=</span>
-              <span className="text-slate-500">{example}</span>
-              <span className="text-slate-600 ml-auto text-right"># {desc}</span>
+            <div key={key} className="flex flex-col sm:flex-row justify-between py-2 sm:items-center gap-1.5">
+              <span className="text-brand-500 font-bold">{key}</span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-slate-450 font-bold bg-slate-950 px-1.5 py-0.5 rounded border border-slate-850">{example}</span>
+                <span className="text-slate-550 italic font-sans"># {desc}</span>
+              </div>
             </div>
           ))}
         </div>
-        <div className="mt-3 text-xs text-slate-500">
-          Copy <code className="bg-slate-800 px-1 rounded">.env.example</code> to <code className="bg-slate-800 px-1 rounded">.env</code> and fill in your values.
-        </div>
       </div>
-    </div>
+    </PageContainer>
   );
 };
 

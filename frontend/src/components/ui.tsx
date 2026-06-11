@@ -311,6 +311,15 @@ const termDefinitions: Record<string, string> = {
   shortinterest: "Percentage of outstanding shares that have been sold short but not yet covered/closed.",
   confidencescore: "The AI's conviction level (0-100%) in its final recommendation (e.g. BUY, WAIT, HOLD). A low score indicates conflicting indicators or highly speculative conditions, while a high score indicates strong alignment across technicals, news, and fundamentals.",
   confidence: "The AI's confidence level in the primary driver of the stock's daily movement. A low score implies multiple speculative factors or mixed news, while a high score indicates a clear, dominant catalyst.",
+  rsi: "Relative Strength Index (RSI): Shows whether the stock is overheated/overbought (above 70) or cheap/oversold (below 30).",
+  macd: "Moving Average Convergence Divergence (MACD): Shows whether price momentum is getting stronger (bullish) or weaker (bearish).",
+  movingaverage: "Shows the average price over a set period. Helps identify if the trend is moving up or down.",
+  volume: "Shows how many shares traded today. Higher volume indicates stronger confirmation of the price direction.",
+  atr: "Average True Range (ATR): Shows how much the stock price swings daily. Higher values mean higher risk/volatility.",
+  adx: "Average Directional Index (ADX): Shows whether a strong trend is active (above 25) or if the stock is range-bound/choppy (below 20).",
+  vwap: "Volume Weighted Average Price (VWAP): The average price weighted by volume, showing the price level that institutions watch.",
+  ema: "Exponential Moving Average (EMA): A moving average that responds faster to recent price moves than a simple average.",
+  sma: "Simple Moving Average (SMA): The average price over a specific number of days, representing standard support and resistance lines.",
 };
 
 export const TermTooltip: React.FC<TermTooltipProps> = ({ term, children, position = 'top' }) => {
@@ -321,6 +330,171 @@ export const TermTooltip: React.FC<TermTooltipProps> = ({ term, children, positi
     <Tooltip content={definition} position={position}>
       {children}
     </Tooltip>
+  );
+};
+
+// ── AppShell ────────────────────────────────────────────────────────
+export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <div className="min-h-full flex flex-col bg-surface-950 text-slate-100 transition-colors duration-200">
+      {children}
+    </div>
+  );
+};
+
+// ── PageContainer ───────────────────────────────────────────────────
+export const PageContainer: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => {
+  return (
+    <div className={`max-w-[1320px] mx-auto w-full px-4 md:px-8 py-6 space-y-6 md:space-y-8 animate-fade-in ${className}`}>
+      {children}
+    </div>
+  );
+};
+
+// ── PageHeader ──────────────────────────────────────────────────────
+export const PageHeader: React.FC<{
+  title: string;
+  subtitle?: string;
+  actions?: React.ReactNode;
+}> = ({ title, subtitle, actions }) => {
+  return (
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-850 pb-5">
+      <div>
+        <h1 className="text-2xl md:text-3xl font-extrabold text-slate-100 tracking-tight">{title}</h1>
+        {subtitle && <p className="text-slate-450 text-sm md:text-base mt-1.5 leading-relaxed">{subtitle}</p>}
+      </div>
+      {actions && <div className="flex items-center gap-3 shrink-0">{actions}</div>}
+    </div>
+  );
+};
+
+// ── SectionHeader ───────────────────────────────────────────────────
+export const SectionHeader: React.FC<{
+  title: string;
+  subtitle?: string;
+  badge?: React.ReactNode;
+}> = ({ title, subtitle, badge }) => {
+  return (
+    <div className="mb-4">
+      <div className="flex items-center gap-3">
+        <h2 className="text-lg md:text-xl font-bold text-slate-100 tracking-tight">{title}</h2>
+        {badge}
+      </div>
+      {subtitle && <p className="text-slate-450 text-xs md:text-sm mt-1 leading-relaxed">{subtitle}</p>}
+    </div>
+  );
+};
+
+// ── ResponsiveGrid ──────────────────────────────────────────────────
+export const ResponsiveGrid: React.FC<{
+  children: React.ReactNode;
+  cols?: 1 | 2 | 3 | 4;
+  className?: string;
+}> = ({ children, cols = 3, className = '' }) => {
+  const colClasses = {
+    1: 'grid-cols-1',
+    2: 'grid-cols-1 md:grid-cols-2',
+    3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+    4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
+  };
+  return (
+    <div className={`grid gap-5 md:gap-6 ${colClasses[cols]} ${className}`}>
+      {children}
+    </div>
+  );
+};
+
+// ── InsightCard ─────────────────────────────────────────────────────
+export const InsightCard: React.FC<{
+  title: string;
+  subtitle?: string;
+  verdict?: React.ReactNode;
+  children?: React.ReactNode;
+  whyItMatters?: string;
+  footer?: React.ReactNode;
+  className?: string;
+}> = ({ title, subtitle, verdict, children, whyItMatters, footer, className = '' }) => {
+  return (
+    <div className={`card flex flex-col gap-4 ${className}`}>
+      <div className="flex items-start justify-between gap-4 border-b border-slate-850/50 pb-3">
+        <div>
+          <h3 className="text-base md:text-lg font-bold text-slate-100">{title}</h3>
+          {subtitle && <p className="text-xs text-slate-450 mt-0.5">{subtitle}</p>}
+        </div>
+        {verdict && <div className="shrink-0">{verdict}</div>}
+      </div>
+      
+      {children && <div className="text-sm text-slate-200 leading-relaxed">{children}</div>}
+      
+      {whyItMatters && (
+        <div className="p-3 rounded-xl bg-slate-950/40 border border-slate-850/60 text-xs text-slate-350 leading-relaxed">
+          <strong className="text-slate-200 font-semibold uppercase tracking-wider text-[10px] block mb-1">Why it matters</strong>
+          {whyItMatters}
+        </div>
+      )}
+
+      {footer && <div className="border-t border-slate-850/50 pt-3 mt-auto flex items-center justify-between">{footer}</div>}
+    </div>
+  );
+};
+
+// ── MetricCard ──────────────────────────────────────────────────────
+export const MetricCard: React.FC<{
+  label: string;
+  value: string | number | React.ReactNode;
+  subValue?: string | React.ReactNode;
+  icon?: React.ReactNode;
+  className?: string;
+}> = ({ label, value, subValue, icon, className = '' }) => {
+  return (
+    <div className={`card flex flex-row items-center justify-between p-5 ${className}`}>
+      <div className="space-y-1.5">
+        <span className="text-[11px] font-semibold text-slate-450 uppercase tracking-wider block">{label}</span>
+        <div className="text-xl md:text-2xl font-extrabold text-slate-100 tracking-tight font-mono leading-none">{value}</div>
+        {subValue && <div className="text-xs text-slate-450 leading-none">{subValue}</div>}
+      </div>
+      {icon && <div className="p-2.5 rounded-xl bg-slate-950/40 border border-slate-850 text-slate-450">{icon}</div>}
+    </div>
+  );
+};
+
+// ── StatusBadge ─────────────────────────────────────────────────────
+export const StatusBadge: React.FC<{
+  status: 'bullish' | 'bearish' | 'mixed' | 'neutral' | 'wait' | 'watch' | 'entry zone' | 'high risk' | 'medium risk' | 'low risk' | string;
+  size?: 'sm' | 'md';
+}> = ({ status, size = 'md' }) => {
+  const statusLower = status.toLowerCase();
+  const baseClass = "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold tracking-wider transition-colors";
+  const sizeClass = size === 'sm' ? 'px-2 py-0.5 text-[10px]' : 'px-2.5 py-0.5 text-xs';
+  
+  let styles = "bg-slate-500/10 text-slate-450 border border-slate-500/20";
+  let dotColor = "bg-slate-400";
+
+  if (statusLower.includes('bullish') || statusLower.includes('buy')) {
+    styles = "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 dark:bg-emerald-500/20 dark:text-emerald-400";
+    dotColor = "bg-emerald-400";
+  } else if (statusLower.includes('bearish') || statusLower.includes('sell')) {
+    styles = "bg-red-500/10 text-red-500 border border-red-500/20 dark:bg-red-500/20 dark:text-red-400";
+    dotColor = "bg-red-400";
+  } else if (statusLower.includes('hold') || statusLower.includes('mixed') || statusLower.includes('warning') || statusLower.includes('medium risk')) {
+    styles = "bg-amber-500/10 text-amber-600 dark:text-amber-500 border border-amber-500/20 dark:bg-amber-500/20";
+    dotColor = "bg-amber-400";
+  } else if (statusLower.includes('watchlist') || statusLower.includes('watch') || statusLower.includes('info') || statusLower.includes('low risk')) {
+    styles = "bg-indigo-500/10 text-indigo-500 border border-indigo-500/20 dark:bg-indigo-500/20 dark:text-indigo-400";
+    dotColor = "bg-indigo-400";
+  } else if (statusLower.includes('entry zone') || statusLower.includes('strong setup')) {
+    styles = "bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 dark:bg-teal-500/20";
+    dotColor = "bg-teal-400";
+  } else if (statusLower.includes('high risk') || statusLower.includes('avoid')) {
+    styles = "bg-rose-500/10 text-rose-500 border border-rose-500/20 dark:bg-rose-500/20 dark:text-rose-400";
+    dotColor = "bg-rose-400";
+  }
+
+  return (
+    <span className={`${baseClass} ${sizeClass} ${styles}`}>
+      <span className={`w-1.5 h-1.5 rounded-full ${dotColor} animate-pulse-slow`} />
+      {status.toUpperCase()}
+    </span>
   );
 };
 
