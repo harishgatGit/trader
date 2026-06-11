@@ -14,6 +14,7 @@ import { DocumentBuilderAgent } from './document-builder.agent';
 import { VideoJobService } from '../modules/video/video-job.service';
 import { VideoGenerationClient } from '../modules/video/video-generation.client';
 import { OrchestratorAgent } from './orchestrator.agent';
+import { SignalCorrelationAgent } from './signal-correlation.agent';
 import * as fs from 'fs';
 
 describe('Video Generation Pipeline Integration', () => {
@@ -108,6 +109,7 @@ describe('Video Generation Pipeline Integration', () => {
 
   const mockDailyTrendAnalystAgent = { run: jest.fn().mockResolvedValue({ trend: 'UPTREND', barCount: 5 }) };
   const mockTrendStoryAgent = { run: jest.fn().mockResolvedValue({ move_classification: { primary_reason: 'Earnings beat', confidence: 0.9 } }) };
+  const mockSignalCorrelationAgent = { run: jest.fn().mockResolvedValue({ finalZone: 'BULLISH', correlationScore: 80 }) };
   const mockDocumentBuilderAgent = { generatePdfReport: jest.fn() };
 
   const mockVideoClient = {
@@ -152,6 +154,7 @@ describe('Video Generation Pipeline Integration', () => {
         { provide: OpenAIAnalystAgent, useValue: mockOpenAIAnalystAgent },
         { provide: DailyTrendAnalystAgent, useValue: mockDailyTrendAnalystAgent },
         { provide: TrendStoryAgent, useValue: mockTrendStoryAgent },
+        { provide: SignalCorrelationAgent, useValue: mockSignalCorrelationAgent },
         { provide: DocumentBuilderAgent, useValue: mockDocumentBuilderAgent },
       ],
     }).compile();

@@ -17,10 +17,10 @@ interface WhatsForTodayScreenProps {
 }
 
 const PHASES = [
-  { num: 1, label: 'Pre-Market', time: '8:00 AM', title: 'What’s Going to Happen?' },
-  { num: 2, label: 'After Open', time: '10:00 AM', title: 'What Is Happening Now?' },
-  { num: 3, label: 'Mid-Market', time: '1:00 PM', title: 'What Is Changing?' },
-  { num: 4, label: 'Market Close', time: '4:30 PM', title: 'What Happened Today?' },
+  { num: 1, label: 'Pre-Market', time: '8:00 AM', title: 'What’s Going to Happen?', unlockHour: 8, unlockMin: 0 },
+  { num: 2, label: 'After Open', time: '10:00 AM', title: 'What Is Happening Now?', unlockHour: 10, unlockMin: 0 },
+  { num: 3, label: 'Mid-Market', time: '1:00 PM', title: 'What Is Changing?', unlockHour: 13, unlockMin: 0 },
+  { num: 4, label: 'Market Close', time: '4:30 PM', title: 'What Happened Today?', unlockHour: 16, unlockMin: 30 },
 ];
 
 export const WhatsForTodayScreen: React.FC<WhatsForTodayScreenProps> = ({ navigation }) => {
@@ -37,6 +37,60 @@ export const WhatsForTodayScreen: React.FC<WhatsForTodayScreenProps> = ({ naviga
       [sectorId]: !prev[sectorId]
     }));
   };
+
+  // ── Live CST clock (ticks every second) ─────────────────────────────────
+  const getCSTNow = () => new Date(
+    new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
+  );
+
+  const [nowCST, setNowCST] = useState<Date>(getCSTNow);
+  const [cstDateStr, setCstDateStr] = useState<string>(
+    `${getCSTNow().getFullYear()}-${getCSTNow().getMonth()}-${getCSTNow().getDate()}`
+  );
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const next = getCSTNow();
+      setNowCST(next);
+
+      // Midnight reset: if CST date rolled over, wipe cached reports
+      const nextDateStr = `${next.getFullYear()}-${next.getMonth()}-${next.getDate()}`;
+      setCstDateStr(prev => {
+        if (prev !== nextDateStr) {
+          setPhaseReports({});
+          setSelectedReport(null);
+          setActivePhase(1);
+          return nextDateStr;
+        }
+        return prev;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const cstTimeStr = nowCST.toLocaleTimeString('en-US', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true,
+  });
+
+  const isPhaseUnlocked = (phase: { unlockHour: number; unlockMin: number }) => {
+    const nowMins = nowCST.getHours() * 60 + nowCST.getMinutes();
+    const unlockMins = phase.unlockHour * 60 + phase.unlockMin;
+    return nowMins >= unlockMins;
+  };
+
+  const nextLockedPhase = PHASES.find(p => !isPhaseUnlocked(p));
+  const countdownStr = (() => {
+    if (!nextLockedPhase) return null;
+    const unlockMins = nextLockedPhase.unlockHour * 60 + nextLockedPhase.unlockMin;
+    const nowMins = nowCST.getHours() * 60 + nowCST.getMinutes();
+    let diffSecs = (unlockMins - nowMins) * 60 - nowCST.getSeconds();
+    if (diffSecs < 0) diffSecs = 0;
+    const hh = Math.floor(diffSecs / 3600);
+    const mm = Math.floor((diffSecs % 3600) / 60);
+    const ss = diffSecs % 60;
+    if (hh > 0) return `${hh}h ${mm}m`;
+    return `${mm}m ${ss.toString().padStart(2, '0')}s`;
+  })();
 
   // Fetch latest report
   const { data: latestReport, isLoading: loadingLatest } = useQuery({
@@ -64,6 +118,27 @@ export const WhatsForTodayScreen: React.FC<WhatsForTodayScreenProps> = ({ naviga
         cache[i + 1] = res;
       });
       setPhaseReports(cache);
+
+      // Select the best unlocked phase with data
+      const nowMins = getCSTNow().getHours() * 60 + getCSTNow().getMinutes();
+      const bestPhase = PHASES
+        .slice()
+        .reverse()
+        .find(p => {
+          const unlockMins = p.unlockHour * 60 + p.unlockMin;
+          return nowMins >= unlockMins && !!cache[p.num];
+        });
+
+      if (bestPhase) {
+        setActivePhase(bestPhase.num);
+        setSelectedReport(cache[bestPhase.num]);
+      } else {
+        const firstWithData = PHASES.find(p => !!cache[p.num]);
+        if (firstWithData) {
+          setActivePhase(firstWithData.num);
+          setSelectedReport(cache[firstWithData.num]);
+        }
+      }
     } catch (err) {
       console.error('Failed to pre-fetch all phases', err);
     } finally {
@@ -74,8 +149,6 @@ export const WhatsForTodayScreen: React.FC<WhatsForTodayScreenProps> = ({ naviga
   // Set initial active phase once latest report is fetched
   useEffect(() => {
     if (latestReport) {
-      setActivePhase(latestReport.runNumber);
-      setSelectedReport(latestReport);
       loadAllPhases(latestReport.date);
     }
   }, [latestReport]);
@@ -89,8 +162,11 @@ export const WhatsForTodayScreen: React.FC<WhatsForTodayScreenProps> = ({ naviga
 
     setLoadingPhase(true);
     try {
-      const today = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
-      const todayStr = new Date(today).toISOString().split('T')[0];
+      const d = getCSTNow();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      const todayStr = `${y}-${m}-${day}`;
 
       const res = await whatsForTodayApi.getByPhase(phaseNum, todayStr);
       if (res) {
@@ -160,6 +236,19 @@ export const WhatsForTodayScreen: React.FC<WhatsForTodayScreenProps> = ({ naviga
             <Text style={styles.headerTitle}>✨ What's For Today</Text>
             <Text style={styles.headerSub}>Layman Daily Market Story</Text>
           </View>
+          <View style={styles.headerClockContainer}>
+            <View style={styles.headerClockRow}>
+              <Text style={styles.headerClockText}>{cstTimeStr}</Text>
+              <Text style={styles.cstBadge}>CST</Text>
+            </View>
+            {nextLockedPhase && countdownStr ? (
+              <Text style={styles.countdownText}>
+                {nextLockedPhase.label} in {countdownStr}
+              </Text>
+            ) : (
+              <Text style={styles.allUnlockedText}>✓ All phases unlocked</Text>
+            )}
+          </View>
         </View>
 
         <>
@@ -169,6 +258,7 @@ export const WhatsForTodayScreen: React.FC<WhatsForTodayScreenProps> = ({ naviga
                 {PHASES.map((phase) => {
                   const isActive = activePhase === phase.num;
                   const isGenerated = !!phaseReports[phase.num];
+                  const unlocked = isPhaseUnlocked(phase);
 
                   return (
                     <Pressable
@@ -176,18 +266,25 @@ export const WhatsForTodayScreen: React.FC<WhatsForTodayScreenProps> = ({ naviga
                       style={({ pressed }) => [
                         styles.phaseCard, 
                         isActive ? styles.phaseCardActive : null,
-                        !isGenerated && !isActive ? styles.phaseCardLocked : null,
                         pressed && styles.pressedOpacity
                       ]}
-                      onPress={() => loadPhase(phase.num)}
+                      onPress={() => { if (unlocked) loadPhase(phase.num); }}
                     >
-                      <View style={styles.phaseHeaderRow}>
+                      {/* Locked Overlay */}
+                      {!unlocked && (
+                        <View style={styles.phaseCardLockedOverlay}>
+                          <Text style={styles.phaseLockedIcon}>🕒</Text>
+                          <Text style={styles.phaseLockedTime}>{phase.time} CST</Text>
+                        </View>
+                      )}
+
+                      <View style={[styles.phaseHeaderRow, !unlocked && styles.disabledOpacity]}>
                         <Text style={[styles.phaseLabel, isActive ? styles.phaseLabelActive : null]}>
                           {phase.label}
                         </Text>
                         <Text style={styles.phaseTime}>{phase.time}</Text>
                       </View>
-                      <Text style={[styles.phaseTitleText, isActive ? styles.phaseTitleTextActive : null]} numberOfLines={1}>
+                      <Text style={[styles.phaseTitleText, isActive ? styles.phaseTitleTextActive : null, !unlocked && styles.disabledOpacity]} numberOfLines={1}>
                         {phase.title}
                       </Text>
                     </Pressable>
@@ -200,9 +297,17 @@ export const WhatsForTodayScreen: React.FC<WhatsForTodayScreenProps> = ({ naviga
               <View style={styles.centerWrapper}>
                 <ActivityIndicator size="large" color={Colors.primary} />
               </View>
+            ) : !isPhaseUnlocked(PHASES.find(p => p.num === activePhase)!) ? (
+              <View style={styles.emptyReport}>
+                <Text style={styles.lockedClockIcon}>🕒</Text>
+                <Text style={styles.emptyTitle}>This Report Available at {PHASES.find(p => p.num === activePhase)?.time} CST</Text>
+                <Text style={styles.emptySub}>
+                  The {PHASES.find(p => p.num === activePhase)?.label} report is scheduled to release at {PHASES.find(p => p.num === activePhase)?.time} CST.
+                </Text>
+              </View>
             ) : !selectedReport ? (
               <View style={styles.emptyReport}>
-                <Text style={styles.emptyTitle}>Report locked or pending</Text>
+                <Text style={styles.emptyTitle}>Awaiting Data Run</Text>
                 <Text style={styles.emptySub}>
                   No intelligence story generated for this daily phase yet.
                 </Text>
@@ -394,6 +499,47 @@ const styles = StyleSheet.create({
     color: Colors.textSecondary,
     marginTop: 1,
   },
+  headerClockContainer: {
+    alignItems: 'flex-end',
+  },
+  headerClockRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: Colors.card,
+    borderRadius: 6,
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+    borderWidth: 1,
+    borderColor: Colors.border,
+  },
+  headerClockText: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: Colors.text,
+    fontFamily: Platform.OS === 'ios' ? 'Courier' : 'monospace',
+  },
+  cstBadge: {
+    fontSize: 8,
+    fontWeight: 'bold',
+    color: Colors.hold,
+    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+    borderRadius: 3,
+    paddingHorizontal: 3,
+    paddingVertical: 1,
+    marginLeft: 4,
+  },
+  countdownText: {
+    fontSize: 9,
+    fontWeight: '600',
+    color: Colors.hold,
+    marginTop: 3,
+  },
+  allUnlockedText: {
+    fontSize: 9,
+    fontWeight: '600',
+    color: Colors.buy,
+    marginTop: 3,
+  },
   tabContainer: {
     flexDirection: 'row',
     backgroundColor: Colors.card,
@@ -436,13 +582,37 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.border,
     padding: 8,
+    position: 'relative',
   },
   phaseCardActive: {
     borderColor: Colors.primary,
     backgroundColor: 'rgba(20, 184, 166, 0.05)',
   },
-  phaseCardLocked: {
-    opacity: 0.5,
+  phaseCardLockedOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(15, 23, 42, 0.94)', // Slate-900 matching colors.ts background
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    zIndex: 10,
+  },
+  phaseLockedIcon: {
+    fontSize: 12,
+    color: Colors.hold,
+    marginBottom: 2,
+  },
+  phaseLockedTime: {
+    fontSize: 8,
+    fontWeight: '800',
+    color: Colors.hold,
+  },
+  disabledOpacity: {
+    opacity: 0.15,
+  },
+  lockedClockIcon: {
+    fontSize: 40,
+    color: Colors.hold,
+    marginBottom: 12,
   },
   phaseHeaderRow: {
     flexDirection: 'row',

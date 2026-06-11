@@ -223,12 +223,6 @@ export const WhatsForTodayStockDetailScreen: React.FC<WhatsForTodayStockDetailSc
             </View>
           </View>
 
-          {/* Safety disclaimer notice */}
-          <View style={styles.noticeCard}>
-            <Text style={styles.noticeText}>
-              All data has been parsed by our semantic text orchestration pipelines. Investingatti does not guarantee real-time quotes. Past performances show no assurance of future returns.
-            </Text>
-          </View>
 
         </ScrollView>
       </View>

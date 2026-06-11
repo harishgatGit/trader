@@ -31,6 +31,7 @@ const StockDetail: React.FC = () => {
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [actionTab, setActionTab] = useState<'swing' | 'short' | 'long'>('swing');
+  const [activeSection, setActiveSection] = useState('summary');
 
   const isWatchlisted = watchlist.some((w) => w.symbol === symbol);
 
@@ -40,16 +41,53 @@ const StockDetail: React.FC = () => {
   }, [symbol]);
 
   useEffect(() => {
+    const mainContainer = document.querySelector('main');
+    if (!mainContainer) return;
+
     const handleScroll = () => {
-      if (window.scrollY > 180) {
+      if (mainContainer.scrollTop > 180) {
         setShowStickyBar(true);
       } else {
         setShowStickyBar(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    mainContainer.addEventListener('scroll', handleScroll);
+    return () => mainContainer.removeEventListener('scroll', handleScroll);
+  }, [loading]);
+
+  useEffect(() => {
+    if (loading || !report) return;
+
+    const sectionIds = ['summary', 'action', 'story', 'trend', 'levels', 'signals', 'risks', 'details'];
+    
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const mainContainer = document.querySelector('main');
+    if (!mainContainer) return;
+
+    const observer = new IntersectionObserver(observerCallback, {
+      root: mainContainer,
+      rootMargin: '-80px 0px -60% 0px',
+      threshold: 0,
+    });
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        observer.observe(el);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [loading, report]);
 
   const loadData = async () => {
     setLoading(true);
@@ -83,17 +121,19 @@ const StockDetail: React.FC = () => {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      const offset = 80; // height of top nav / sticky controls
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
+    const mainContainer = document.querySelector('main');
+    if (element && mainContainer) {
+      const containerRect = mainContainer.getBoundingClientRect();
+      const elementRect = element.getBoundingClientRect();
+      const offset = 60; // offset for the tabs bar
+      const targetScrollTop = mainContainer.scrollTop + (elementRect.top - containerRect.top) - offset;
+      
+      mainContainer.scrollTo({
+        top: targetScrollTop,
         behavior: 'smooth'
       });
+    } else if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -209,6 +249,39 @@ const StockDetail: React.FC = () => {
     return 2; // Default Wait
   };
 
+  const getVolumeTrend = () => {
+    if (candles.length < 21) return 'Normal';
+    const lookback = 20;
+    
+    // Recent relative volume
+    const recentVol = candles[candles.length - 1].volume;
+    const avgVolRecent = candles.slice(candles.length - 1 - lookback, candles.length - 1).reduce((sum, c) => sum + c.volume, 0) / lookback;
+    const relVolumeRecent = avgVolRecent > 0 ? recentVol / avgVolRecent : 1.0;
+    
+    // Previous relative volume
+    const prevVol = candles[candles.length - 2].volume;
+    const avgVolPrev = candles.slice(candles.length - 2 - lookback, candles.length - 2).reduce((sum, c) => sum + c.volume, 0) / lookback;
+    const relVolumePrev = avgVolPrev > 0 ? prevVol / avgVolPrev : 1.0;
+    
+    if (relVolumeRecent > relVolumePrev) {
+      return 'Rising';
+    } else {
+      return 'Fading';
+    }
+  };
+
+  const formatPercent = (val: any) => {
+    if (val == null) return '0.00';
+    const parsed = parseFloat(val.toString());
+    return isNaN(parsed) ? '0.00' : parsed.toFixed(2);
+  };
+
+  const getPercentSign = (val: any) => {
+    if (val == null) return '';
+    const parsed = parseFloat(val.toString());
+    return isNaN(parsed) || parsed < 0 ? '' : '+';
+  };
+
   const meterIndex = getMeterIndex(bias);
 
   return (
@@ -240,7 +313,7 @@ const StockDetail: React.FC = () => {
         </div>
       </div>
 
-      <PageContainer className="py-6 md:py-8 space-y-6">
+      <PageContainer className="pt-6 pb-28 md:py-8 space-y-6">
         
         {/* Header Title Bar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-850 pb-5">
@@ -445,16 +518,13 @@ const StockDetail: React.FC = () => {
                 <p className="text-sm text-slate-300 italic leading-relaxed">"{r.laymanExplanation}"</p>
               </div>
 
-              <div className="text-xs text-slate-500 font-mono italic p-3 border border-slate-850 rounded-xl bg-slate-950/30">
-                Disclaimer: {r.disclaimer || 'This is educational analysis only.'}
-              </div>
             </div>
           ) : (
             /* Stock Overhaul Layout: 2-Column Split + Sticky Sidebar */
             <div className="space-y-6">
               
               {/* Section Anchor navigation */}
-              <div className="sticky top-0 bg-surface-950/90 backdrop-blur border-b border-slate-850 pb-3 z-30 flex items-center gap-1 overflow-x-auto scrollbar-none py-2">
+              <div className="md:sticky static md:top-0 bg-surface-950/90 backdrop-blur border-b border-slate-850/60 pb-2 z-30 flex items-center gap-1 overflow-x-auto scrollbar-none py-2 md:py-2.5">
                 {[
                   { id: 'summary', label: 'Summary' },
                   { id: 'action', label: 'Action Plan' },
@@ -464,15 +534,25 @@ const StockDetail: React.FC = () => {
                   { id: 'signals', label: 'Signals' },
                   { id: 'risks', label: 'Risks' },
                   { id: 'details', label: 'Details' }
-                ].map((sec) => (
-                  <button
-                    key={sec.id}
-                    onClick={() => scrollToSection(sec.id)}
-                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-850 text-slate-450 hover:text-slate-200 hover:bg-slate-850 transition"
-                  >
-                    {sec.label}
-                  </button>
-                ))}
+                ].map((sec) => {
+                  const isActive = activeSection === sec.id;
+                  return (
+                    <button
+                      key={sec.id}
+                      onClick={() => scrollToSection(sec.id)}
+                      className={`px-3 py-1.5 text-xs font-bold transition whitespace-nowrap relative ${
+                        isActive
+                          ? 'text-brand-500 dark:text-brand-400'
+                          : 'text-slate-400 hover:text-slate-200'
+                      }`}
+                    >
+                      {sec.label}
+                      {isActive && (
+                        <span className="absolute bottom-0 inset-x-3 h-0.5 bg-brand-500 rounded-full" />
+                      )}
+                    </button>
+                  );
+                })}
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
@@ -782,32 +862,37 @@ const StockDetail: React.FC = () => {
                   <section id="trend" className="card flex flex-col gap-4">
                     <div>
                       <h2 className="text-lg font-bold text-slate-100">Current Trend Health</h2>
-                      <p className="text-xs text-slate-450 mt-0.5">Analyzing prices, volumes, and directional indices</p>
+                      <p className="text-xs font-semibold text-slate-350 mt-0.5">Analyzing prices, volumes, and directional indices</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {/* Price Trend lane */}
                       <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-2xl space-y-3">
                         <div className="flex items-center justify-between border-b border-slate-900/60 pb-2">
-                          <span className="text-xs font-bold text-slate-350 uppercase tracking-wider">1. Price Trend</span>
-                          <span className={`text-[10px] px-1.5 py-0.5 rounded font-bold uppercase font-mono ${
-                            (th?.dailyTrend?.trend || '').toUpperCase().includes('BULL') || (th?.dailyTrend?.trend || '').toUpperCase().includes('UP') ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-500'
+                          <span className="text-xs font-extrabold text-slate-350 uppercase tracking-wider">1. Price Trend</span>
+                          <span className={`text-[11px] px-2 py-0.5 rounded font-extrabold uppercase font-mono ${
+                            (th?.dailyTrend?.trend || '').toUpperCase().includes('BULL') || (th?.dailyTrend?.trend || '').toUpperCase().includes('UP') ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/10 text-rose-500 border border-rose-500/20'
                           }`}>
                             {th?.dailyTrend?.trend || ts?.evidence?.technical_context?.trend || 'Mixed'}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-400 font-sans leading-relaxed">{th?.dailyTrend?.analysis || 'Price position relative to key 20EMA, 50EMA lines indicates current bias.'}</p>
+                        <p className="text-xs font-semibold text-slate-300 font-sans leading-relaxed">{th?.dailyTrend?.analysis || 'Price position relative to key 20EMA, 50EMA lines indicates current bias.'}</p>
                       </div>
 
                       {/* Volume Strength lane */}
                       <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-2xl space-y-3">
                         <div className="flex items-center justify-between border-b border-slate-900/60 pb-2">
-                          <span className="text-xs font-bold text-slate-350 uppercase tracking-wider">2. Volume Strength</span>
-                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-bold uppercase font-mono">
+                          <span className="text-xs font-extrabold text-slate-350 uppercase tracking-wider">2. Volume Strength</span>
+                          <span className="text-[11px] px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-extrabold uppercase font-mono flex items-center gap-1">
                             {ts?.price_summary?.relative_volume ? `${ts.price_summary.relative_volume.toFixed(1)}x Vol` : 'Normal'}
+                            {candles.length >= 21 && (
+                              <span className="text-[10px] font-bold">
+                                ({getVolumeTrend() === 'Rising' ? 'Rising ▲' : 'Fading ▼'})
+                              </span>
+                            )}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-400 font-sans leading-relaxed">
+                        <p className="text-xs font-semibold text-slate-300 font-sans leading-relaxed">
                           {ts?.evidence?.volume_context?.summary || 'Relative daily volume compares current activity against the 30-day average.'}
                         </p>
                       </div>
@@ -815,12 +900,17 @@ const StockDetail: React.FC = () => {
                       {/* Momentum lane */}
                       <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-2xl space-y-3">
                         <div className="flex items-center justify-between border-b border-slate-900/60 pb-2">
-                          <span className="text-xs font-bold text-slate-350 uppercase tracking-wider">3. Momentum Lane</span>
-                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-bold uppercase font-mono">
+                          <span className="text-xs font-extrabold text-slate-355 uppercase tracking-wider">3. Momentum Lane</span>
+                          <span className="text-[11px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-extrabold uppercase font-mono flex items-center gap-1">
                             RSI {technicals?.rsi14?.toFixed(0) || 'N/A'}
+                            {technicals?.rsi14Prev != null && technicals?.rsi14 != null && (
+                              <span className="text-[10px] font-bold">
+                                ({technicals.rsi14 > technicals.rsi14Prev ? 'Rising ▲' : 'Fading ▼'})
+                              </span>
+                            )}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-400 font-sans leading-relaxed">
+                        <p className="text-xs font-semibold text-slate-300 font-sans leading-relaxed">
                           {technicals?.rsi14Prev ? `RSI momentum is ${technicals.rsi14 > technicals.rsi14Prev ? 'improving' : 'cooling'} (previously ${technicals.rsi14Prev.toFixed(0)}).` : 'MACD lines and RSI readings reflect underlying directional velocity.'}
                         </p>
                       </div>
@@ -1039,7 +1129,7 @@ const StockDetail: React.FC = () => {
                           {[
                             { 
                               name: 'RSI (14)', 
-                              value: technicals?.rsi14 ? technicals.rsi14.toFixed(1) : 'N/A', 
+                              value: technicals?.rsi14 ? `${technicals.rsi14.toFixed(1)}${technicals.rsi14Prev != null ? ` (${technicals.rsi14 > technicals.rsi14Prev ? 'Rising ▲' : 'Fading ▼'})` : ''}` : 'N/A', 
                               term: 'rsi',
                               meaning: technicals?.rsi14 < 30 ? 'Oversold / Rebound candidate' : technicals?.rsi14 > 70 ? 'Overbought / Cooldown candidate' : 'Neutral range' 
                             },
@@ -1072,13 +1162,43 @@ const StockDetail: React.FC = () => {
                               value: technicals?.vwap ? `$${technicals.vwap.toFixed(2)}` : 'N/A', 
                               term: 'vwap',
                               meaning: 'Institution average price weight' 
+                            },
+                            { 
+                              name: 'Short Interest', 
+                              value: ts?.evidence?.short_context?.short_interest_percent != null ? `${parseFloat(ts.evidence.short_context.short_interest_percent).toFixed(1)}%` : 'N/A', 
+                              term: 'shortinterest',
+                              meaning: ts?.evidence?.short_context?.summary || 'Percentage of float shares shorted'
+                            },
+                            { 
+                              name: 'Days to Cover', 
+                              value: ts?.evidence?.short_context?.days_to_cover != null ? `${parseFloat(ts.evidence.short_context.days_to_cover).toFixed(1)} days` : 'N/A', 
+                              term: 'daystocover',
+                              meaning: 'Time required for shorts to cover' 
+                            },
+                            { 
+                              name: 'Short Squeeze Risk', 
+                              value: ts?.evidence?.short_context?.short_squeeze_risk ? ts.evidence.short_context.short_squeeze_risk.toUpperCase() : 'N/A', 
+                              term: 'squeezerisk',
+                              meaning: 'Potential for fast short covering spike' 
+                            },
+                            { 
+                              name: 'Sector Change', 
+                              value: ts?.evidence?.sector_context?.sector_name ? `${ts.evidence.sector_context.sector_name} (${getPercentSign(ts.evidence.sector_context.sector_change_percent)}${formatPercent(ts.evidence.sector_context.sector_change_percent)}%)` : 'N/A', 
+                              term: 'sector',
+                              meaning: 'Daily sector average return' 
+                            },
+                            { 
+                              name: 'Index Change', 
+                              value: ts?.evidence?.sector_context?.index_change_percent != null ? `${getPercentSign(ts.evidence.sector_context.index_change_percent)}${formatPercent(ts.evidence.sector_context.index_change_percent)}%` : 'N/A', 
+                              term: 'index',
+                              meaning: 'Benchmark index daily return' 
                             }
                           ].map((ind) => (
                             <TermTooltip key={ind.name} term={ind.term}>
-                              <div className="p-3 bg-slate-950/45 border border-slate-850 hover:border-slate-800 rounded-xl space-y-1.5 transition-colors">
-                                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">{ind.name}</span>
-                                <span className="text-sm font-bold text-slate-100 font-mono block">{ind.value}</span>
-                                <span className="text-[10px] text-slate-450 block leading-tight">{ind.meaning}</span>
+                              <div className="p-3.5 bg-slate-950/45 border border-slate-850 hover:border-slate-800 rounded-xl space-y-1.5 transition-colors">
+                                <span className="text-xs text-slate-400 font-extrabold uppercase tracking-wider block">{ind.name}</span>
+                                <span className="text-base font-black text-slate-100 font-mono block">{ind.value}</span>
+                                <span className="text-xs font-semibold text-slate-300 block leading-tight">{ind.meaning}</span>
                               </div>
                             </TermTooltip>
                           ))}
@@ -1326,10 +1446,6 @@ const StockDetail: React.FC = () => {
                     </div>
                   </section>
 
-                  {/* SECTION 11: DISCLAIMER */}
-                  <section className="text-[11px] leading-relaxed text-slate-500 italic pt-2 font-mono">
-                    Disclaimer: {r?.disclaimer || 'This analysis is for educational purposes only and is not financial advice. Market conditions can change quickly. Always manage risk and consult standard advisor desks.'}
-                  </section>
 
                 </div>
 
@@ -1394,7 +1510,7 @@ const StockDetail: React.FC = () => {
               </div>
 
               {/* Mobile sticky bottom action bar */}
-              <div className="lg:hidden fixed bottom-11 inset-x-0 bg-surface-900 border-t border-slate-850 px-4 py-3 flex items-center justify-between z-40 shadow-inner">
+              <div className="lg:hidden fixed bottom-0 inset-x-0 bg-surface-900 border-t border-slate-850 px-4 pt-3 pb-[calc(12px+env(safe-area-inset-bottom,0px))] flex items-center justify-between z-40 shadow-inner">
                 <div className="flex flex-col">
                   <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Bias Recommendation</span>
                   <div className="flex items-center gap-2 mt-0.5">

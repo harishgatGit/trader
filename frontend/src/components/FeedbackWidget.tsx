@@ -124,7 +124,7 @@ export const FeedbackWidget: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-sans" ref={widgetRef}>
+    <div className="fixed md:bottom-6 bottom-24 md:right-6 right-4 z-50 font-sans" ref={widgetRef}>
       {/* Floating Animated Prompt Bubble */}
       {showPrompt && (
         <div className="absolute bottom-16 right-0 w-72 p-3 card-glass border border-teal-500/30 rounded-2xl shadow-xl flex items-start gap-2 animate-bounce-in z-50">

@@ -8,6 +8,7 @@ import useLocalCacheStore from '../store/localCacheStore';
 import { useQuery } from '@tanstack/react-query';
 import watchlistApi from '../services/watchlistApi';
 import alertsApi from '../services/alertsApi';
+import GlobalDisclaimer from '../components/ui/GlobalDisclaimer';
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Main'>;
 
@@ -161,6 +162,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             </Text>
           </View>
         ) : null}
+
+        <GlobalDisclaimer />
       </ScrollView>
     </SafeAreaView>
   );

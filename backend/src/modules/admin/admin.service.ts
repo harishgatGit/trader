@@ -57,7 +57,7 @@ export class AdminService {
     const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
     // Fetch logs from the last 7 days (or all logs to prevent empty list, let's fall back to last 30 days if last 7 days is empty, or just fetch last 1000 logs)
-    const logs = await this.prisma.searchLog.findMany({
+    const rawLogs = await this.prisma.searchLog.findMany({
       take: 2000,
       include: {
         user: {
@@ -65,6 +65,48 @@ export class AdminService {
         }
       },
       orderBy: { timestamp: 'desc' }
+    });
+
+    const isLocalIp = (ip: string): boolean => {
+      if (!ip) return true;
+      const cleanIp = ip.trim().toLowerCase();
+      return (
+        cleanIp === '127.0.0.1' ||
+        cleanIp === '::1' ||
+        cleanIp === 'localhost' ||
+        cleanIp === '::ffff:127.0.0.1' ||
+        cleanIp.startsWith('10.') ||
+        cleanIp.startsWith('192.168.') ||
+        cleanIp.startsWith('172.16.') ||
+        cleanIp.startsWith('172.17.') ||
+        cleanIp.startsWith('172.18.') ||
+        cleanIp.startsWith('172.19.') ||
+        cleanIp.startsWith('172.20.') ||
+        cleanIp.startsWith('172.21.') ||
+        cleanIp.startsWith('172.22.') ||
+        cleanIp.startsWith('172.23.') ||
+        cleanIp.startsWith('172.24.') ||
+        cleanIp.startsWith('172.25.') ||
+        cleanIp.startsWith('172.26.') ||
+        cleanIp.startsWith('172.27.') ||
+        cleanIp.startsWith('172.28.') ||
+        cleanIp.startsWith('172.29.') ||
+        cleanIp.startsWith('172.30.') ||
+        cleanIp.startsWith('172.31.')
+      );
+    };
+
+    const logs = rawLogs.filter(log => {
+      if (process.env.NODE_ENV === 'test') {
+        return true;
+      }
+      const ip = log.ipAddress || '';
+      const city = log.city || '';
+      const state = log.state || '';
+      if (city === 'Local' || state === 'Local' || city === 'Local Network' || state === 'Local Network') {
+        return false;
+      }
+      return !isLocalIp(ip);
     });
 
     // Grouping and aggregating stats

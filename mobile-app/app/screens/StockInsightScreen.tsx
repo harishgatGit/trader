@@ -476,12 +476,6 @@ export const StockInsightScreen: React.FC<StockInsightScreenProps> = ({ route, n
             </View>
           )}
 
-          {/* Disclaimer */}
-          <View style={styles.fundDisclaimerBox}>
-            <Text style={styles.fundDisclaimerText}>
-              {r.disclaimer || 'This is educational fund research and analysis only. It is not financial advice.'}
-            </Text>
-          </View>
         </ScrollView>
       </SafeAreaView>
     );

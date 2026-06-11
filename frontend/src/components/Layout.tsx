@@ -10,10 +10,10 @@ import { useAppStore } from '../store/useAppStore';
 import { FeedbackWidget } from './FeedbackWidget';
 
 const pathWeights: Record<string, number> = {
-  '/': 0,
-  '/whats-for-today': 1,
-  '/penny-stocks': 2,
-  '/analyze': 3,
+  '/analyze': 0,
+  '/': 1,
+  '/whats-for-today': 2,
+  '/penny-stocks': 3,
   '/watchlist': 4,
   '/alerts': 5,
   '/reports': 6,
@@ -24,10 +24,10 @@ const pathWeights: Record<string, number> = {
 };
 
 const navItems = [
+  { path: '/analyze', icon: Search, label: 'Analyze' },
   { path: '/', icon: LayoutDashboard, label: 'Dashboard', exact: true },
   { path: '/whats-for-today', icon: TrendingUp, label: "What's for Today?" },
   { path: '/penny-stocks', icon: AlertTriangle, label: 'Micro-Cap Catalysts' },
-  { path: '/analyze', icon: Search, label: 'Analyze' },
   { path: '/watchlist', icon: Star, label: 'Watchlist' },
   { path: '/alerts', icon: Bell, label: 'Alerts' },
   { path: '/reports', icon: FileText, label: 'Reports' },
@@ -217,22 +217,23 @@ const Layout: React.FC = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 overflow-y-auto">
-          <Outlet />
+        <main className="flex-1 overflow-y-auto flex flex-col justify-between">
+          <div className="flex-1">
+            <Outlet />
+          </div>
+          {/* Bottom Disclaimer Banner */}
+          <footer
+            style={{ viewTransitionName: 'site-disclaimer' }}
+            className="bg-slate-950 border-t border-slate-850 py-2.5 px-4 text-center text-[10px] text-slate-500 font-mono flex items-center justify-center gap-2 z-10 shrink-0"
+          >
+            <AlertTriangle className="w-3.5 h-3.5 text-amber-500/80 shrink-0" />
+            <span>
+              <strong>Disclaimer:</strong> This application is for educational and informational purposes only. All data is aggregated and orchestrated from third-party sources; we do not guarantee its accuracy, completeness, or timeliness. There could be delays in the data used for research; while we endeavor to provide real-time information, in some cases it may be near real-time or delayed. We are not registered financial advisors and do not provide investment, financial, or tax advice. Trading stocks involves substantial risk, and you are solely responsible for any financial decisions and losses incurred. Past performance is not indicative of future results.
+            </span>
+          </footer>
         </main>
         <FeedbackWidget />
       </div>
-
-      {/* Bottom Disclaimer Banner */}
-      <footer
-        style={{ viewTransitionName: 'site-disclaimer' }}
-        className="bg-slate-950 border-t border-slate-850 py-2.5 px-4 text-center text-[10px] text-slate-500 font-mono flex items-center justify-center gap-2 z-10 shrink-0"
-      >
-        <AlertTriangle className="w-3.5 h-3.5 text-amber-500/80 shrink-0" />
-        <span>
-          <strong>Disclaimer:</strong> This application is for educational and informational purposes only. All data is aggregated and orchestrated from third-party sources; we do not guarantee its accuracy, completeness, or timeliness. We are not registered financial advisors and do not provide investment, financial, or tax advice. Trading stocks involves substantial risk, and you are solely responsible for any financial decisions and losses incurred. Past performance is not indicative of future results.
-        </span>
-      </footer>
     </div>
   );
 };

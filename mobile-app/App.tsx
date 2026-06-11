@@ -3,6 +3,7 @@ import { View, StyleSheet, ActivityIndicator } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AppNavigator from './app/navigation/AppNavigator';
+import DisclaimerModal from './app/components/ui/DisclaimerModal';
 import { Colors } from './app/theme/colors';
 import useAuthStore from './app/store/authStore';
 import useLocalCacheStore from './app/store/localCacheStore';
@@ -38,6 +39,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
         <AppNavigator />
+        <DisclaimerModal />
       </NavigationContainer>
     </QueryClientProvider>
   );

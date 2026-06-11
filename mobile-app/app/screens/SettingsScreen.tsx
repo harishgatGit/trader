@@ -4,6 +4,7 @@ import { Colors } from '../theme/colors';
 import useAuthStore from '../store/authStore';
 import { useQuery } from '@tanstack/react-query';
 import apiClient from '../services/apiClient';
+import GlobalDisclaimer from '../components/ui/GlobalDisclaimer';
 
 type ReadingPreference = 'COMPACT' | 'BALANCED' | 'DETAILED';
 
@@ -118,6 +119,8 @@ export const SettingsScreen: React.FC = () => {
             </View>
           )}
         </View>
+
+        <GlobalDisclaimer />
 
         <Text style={styles.version}>InvestingAtti Stock Analyst v1.0.0</Text>
       </ScrollView>

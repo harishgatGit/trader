@@ -389,7 +389,6 @@ const WhatsForToday: React.FC = () => {
       {/* Header section */}
       <PageHeader
         title="What's For Today?"
-        subtitle="Layman-friendly storytelling and daily market intelligence running 4 times per trading day."
         actions={
           <div className="flex flex-col items-end gap-1.5 min-w-[200px]">
             <div className="flex items-center gap-2 text-sm font-mono font-bold text-slate-100 bg-slate-905 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2">
@@ -399,8 +398,8 @@ const WhatsForToday: React.FC = () => {
             </div>
             {nextLockedPhase && countdownStr && (
               <div className="text-[11px] text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1">
-                <Lock className="w-3 h-3" />
-                <span>{nextLockedPhase.label} unlocks in {countdownStr}</span>
+                <Clock className="w-3 h-3 text-amber-550 dark:text-amber-400" />
+                <span>{nextLockedPhase.label} available in {countdownStr}</span>
               </div>
             )}
             {!nextLockedPhase && (
@@ -425,13 +424,10 @@ const WhatsForToday: React.FC = () => {
                 role="button"
                 tabIndex={unlocked ? 0 : -1}
                 onKeyDown={(e) => { if (unlocked && e.key === 'Enter') switchPhase(phase.num); }}
-                title={!unlocked ? `Locked — opens at ${phase.time} CST` : undefined}
-                style={!unlocked ? {
-                  background: 'repeating-linear-gradient(-45deg, rgba(100,116,139,0.03) 0px, rgba(100,116,139,0.03) 8px, rgba(100,116,139,0.07) 8px, rgba(100,116,139,0.07) 16px)',
-                } : {}}
+                title={!unlocked ? `This report available at ${phase.time} CST` : undefined}
                 className={`flex flex-col text-left p-3.5 rounded-xl border transition-all relative overflow-hidden select-none ${
                   !unlocked
-                    ? 'border-slate-800/50 cursor-not-allowed opacity-60'
+                    ? 'border-slate-850 bg-slate-900/10 cursor-default'
                     : isActive
                       ? 'border-brand-500 bg-brand-500/5 shadow-md cursor-pointer'
                       : isTriggered
@@ -441,10 +437,10 @@ const WhatsForToday: React.FC = () => {
               >
                 {/* Locked full-card overlay */}
                 {!unlocked && (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 z-10 bg-slate-950/45 dark:bg-slate-950/70 backdrop-blur-[0.5px]">
-                    <Lock className="w-4 h-4 text-slate-400" />
-                    <span className="text-[9px] font-bold text-slate-400 tracking-wider">LOCKED</span>
-                    <span className="text-[9px] text-amber-600 dark:text-amber-400 font-semibold">{phase.time} CST</span>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 z-10 bg-slate-950/80 dark:bg-slate-950/85 backdrop-blur-[0.5px] px-2 text-center animate-fade-in">
+                    <Clock className="w-4 h-4 text-amber-500/80" />
+                    <span className="text-[10px] font-medium text-slate-350">This report available at</span>
+                    <span className="text-[11px] text-amber-500 dark:text-amber-400 font-bold">{phase.time} CST</span>
                   </div>
                 )}
 
@@ -454,7 +450,7 @@ const WhatsForToday: React.FC = () => {
                   </span>
                   <span className="flex items-center gap-1">
                     {!unlocked
-                      ? <Lock className="w-3 h-3 text-slate-400" />
+                      ? <Clock className="w-3 h-3 text-amber-500/70" />
                       : <Clock className="w-3 h-3 text-slate-400" />
                     }
                     <span className={!unlocked ? 'text-slate-500' : 'text-slate-300'}>{phase.time}</span>
@@ -491,27 +487,26 @@ const WhatsForToday: React.FC = () => {
 
       {/* Content area: locked wall or actual report */}
       {!isPhaseUnlocked(phases.find(p => p.num === activePhase)!) ? (
-        <div className="card py-20 flex flex-col items-center justify-center text-center space-y-5"
-          style={{ background: 'repeating-linear-gradient(-45deg, rgba(100,116,139,0.02) 0px, rgba(100,116,139,0.02) 10px, rgba(100,116,139,0.05) 10px, rgba(100,116,139,0.05) 20px)' }}
-        >
+        <div className="card py-20 flex flex-col items-center justify-center text-center space-y-5">
           <div className="w-16 h-16 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center shadow-xl">
-            <Lock className="w-7 h-7 text-slate-400" />
+            <Clock className="w-7 h-7 text-amber-550 dark:text-amber-450 animate-pulse-slow" />
           </div>
           <div className="space-y-1.5">
             <h3 className="text-xl font-bold text-slate-100 tracking-tight">
-              {phases.find(p => p.num === activePhase)?.label} — Phase Locked
+              This Report Available at {phases.find(p => p.num === activePhase)?.time} CST
             </h3>
-            <p className="text-sm text-slate-400 max-w-xs mx-auto">
-              This report becomes available at{' '}
+            <p className="text-sm text-slate-400 max-w-sm mx-auto">
+              The {phases.find(p => p.num === activePhase)?.label} report is scheduled to release at{' '}
               <span className="text-amber-500 dark:text-amber-400 font-bold">
                 {phases.find(p => p.num === activePhase)?.time} CST
               </span>
+              .
             </p>
             {countdownStr && nextLockedPhase?.num === activePhase && (
               <div className="inline-flex items-center gap-2 mt-2 bg-amber-550/10 border border-amber-500/20 rounded-lg px-4 py-2">
                 <Clock className="w-4 h-4 text-amber-550 dark:text-amber-450" />
                 <span className="font-mono text-amber-600 dark:text-amber-400 font-bold text-sm">{countdownStr}</span>
-                <span className="text-slate-450 text-xs">until unlock</span>
+                <span className="text-slate-400 text-xs">until available</span>
               </div>
             )}
           </div>
