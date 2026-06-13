@@ -164,7 +164,7 @@ export class SignalCorrelationAgent {
 
   constructor(private readonly config: ConfigService) {
     this.openai = new OpenAI({
-      apiKey: this.config.get('OPENAI_API_KEY'),
+      apiKey: this.config.get('OPENAI_API_KEY') || 'mock-key-not-configured',
     });
     this.model = this.config.get('OPENAI_MODEL', 'gpt-4o');
   }

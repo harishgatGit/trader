@@ -42,14 +42,24 @@ import { WhatsForTodayModule } from './modules/whats-for-today/whats-for-today.m
 
     // Bull/BullMQ queues
     BullModule.forRoot({
-      redis: {
-        host: process.env.REDIS_URL?.includes('redis://')
-          ? process.env.REDIS_URL.split('://')[1]?.split(':')[0] || 'localhost'
-          : 'localhost',
-        port: parseInt(
-          process.env.REDIS_URL?.split(':').pop() || '6379',
-        ),
-      },
+      redis: (() => {
+        try {
+          const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
+          const parsed = new URL(redisUrl);
+          return {
+            host: parsed.hostname,
+            port: parseInt(parsed.port || '6379', 10),
+            password: parsed.password || undefined,
+            username: parsed.username || undefined,
+            tls: redisUrl.startsWith('rediss://') ? {} : undefined,
+          };
+        } catch {
+          return {
+            host: 'localhost',
+            port: 6379,
+          };
+        }
+      })(),
     }),
 
     // Core modules
