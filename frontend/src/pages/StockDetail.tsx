@@ -27,7 +27,7 @@ const StockDetail: React.FC = () => {
   const [candles, setCandles] = useState<any[]>([]);
   const [technicals, setTechnicals] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'fundamentals' | 'news' | 'analysts' | 'institutional' | 'sector'>('fundamentals');
+  const [activeTab, setActiveTab] = useState<'fundamentals' | 'news' | 'analysts' | 'ecosystem'>('fundamentals');
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [actionTab, setActionTab] = useState<'swing' | 'short' | 'long'>('swing');
@@ -1255,8 +1255,7 @@ const StockDetail: React.FC = () => {
                         { id: 'fundamentals', label: 'Score Cards' },
                         { id: 'news', label: 'Catalyst News' },
                         { id: 'analysts', label: 'Analyst Sentiment' },
-                        { id: 'institutional', label: 'Supply Chain' },
-                        { id: 'sector', label: 'Investment Portfolio' }
+                        { id: 'ecosystem', label: 'Ecosystem Insights' }
                       ].map((tab) => (
                         <button
                           key={tab.id}
@@ -1353,63 +1352,113 @@ const StockDetail: React.FC = () => {
                         </div>
                       )}
 
-                      {activeTab === 'institutional' && (
+                      {activeTab === 'ecosystem' && (
                         <div className="space-y-4 animate-fade-in">
-                          {r?.companyInsights?.dependencies ? (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                              {[
-                                { title: 'Suppliers & Infrastructure', items: r.companyInsights.dependencies.suppliers },
-                                { title: 'Target Customers', items: r.companyInsights.dependencies.customers },
-                                { title: 'Support Partners', items: r.companyInsights.dependencies.outsourcePartners },
-                                { title: 'Marketing Partners', items: r.companyInsights.dependencies.marketingPartners }
-                              ].map((group, idx) => (
-                                <div key={idx} className="p-4 bg-slate-950/30 border border-slate-850 rounded-xl space-y-3">
-                                  <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider border-b border-slate-900 pb-1.5">{group.title}</h4>
-                                  {group.items && group.items.length > 0 ? (
-                                    <div className="space-y-3 font-sans text-xs">
-                                      {group.items.map((partner: any, pIdx: number) => (
-                                        <div key={pIdx} className="space-y-1">
-                                          <div className="flex justify-between font-bold text-slate-200">
-                                            <span>{partner.name}</span>
-                                            <span className="text-[10px] text-slate-500 font-normal italic">{partner.role}</span>
+                          {!r?.companyInsights ? (
+                            <div className="p-6 bg-slate-950/20 border border-slate-850 rounded-xl text-center space-y-3">
+                              <AlertTriangle className="w-8 h-8 text-slate-500 mx-auto" />
+                              <h4 className="text-sm font-bold text-slate-350">Ecosystem Insights Unavailable</h4>
+                              <p className="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
+                                This report is missing strategic business network analysis. Please trigger a re-analysis of the stock to compile fresh ecosystem insights.
+                              </p>
+                            </div>
+                          ) : (
+                            <div className="space-y-4">
+                              {/* Strategic Outlook */}
+                              {r.companyInsights.strategicOutlook && (
+                                <div className="p-4 rounded-xl border border-brand-500/10 bg-brand-500/5 hover:border-brand-500/20 transition-all space-y-2">
+                                  <div className="flex items-center gap-2 border-b border-brand-500/10 pb-2">
+                                    <Globe className="w-4 h-4 text-brand-400 shrink-0" />
+                                    <h4 className="text-xs font-bold text-brand-400 uppercase tracking-wider">Strategic Ecosystem Outlook</h4>
+                                  </div>
+                                  <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed whitespace-pre-line">
+                                    {r.companyInsights.strategicOutlook}
+                                  </p>
+                                </div>
+                              )}
+
+                              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                {/* Strategic Investment Portfolio */}
+                                <div className="p-4 bg-slate-950/30 border border-slate-850 rounded-xl space-y-3 flex flex-col justify-start">
+                                  <div className="flex items-center gap-2 border-b border-slate-900 pb-2">
+                                    <Coins className="w-4 h-4 text-slate-400" />
+                                    <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider">Strategic Investment Portfolio</h4>
+                                  </div>
+                                  {r.companyInsights.investedCompanies && r.companyInsights.investedCompanies.length > 0 ? (
+                                    <div className="space-y-3">
+                                      {r.companyInsights.investedCompanies.map((company: any, idx: number) => (
+                                        <div key={idx} className="p-3 bg-slate-950/45 border border-slate-850 rounded-lg space-y-2 text-xs">
+                                          <div className="flex justify-between items-center">
+                                            <strong className="text-slate-200 text-sm font-sans">{company.name}</strong>
+                                            {company.ownershipPct && (
+                                              <span className="px-2 py-0.5 rounded bg-brand-500/15 text-brand-400 font-mono text-[10px] font-bold">
+                                                {company.ownershipPct} Own
+                                              </span>
+                                            )}
                                           </div>
-                                          <p className="text-slate-400 leading-normal">{partner.description}</p>
+                                          <p className="text-slate-400 font-sans"><strong className="text-slate-350">Performance:</strong> {company.performance}</p>
+                                          {company.upcomingEvents && company.upcomingEvents.length > 0 && (
+                                            <div className="space-y-1 pl-2 border-l border-slate-850">
+                                              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Upcoming Events:</span>
+                                              {company.upcomingEvents.map((evt: string, eIdx: number) => (
+                                                <span key={eIdx} className="text-slate-400 text-[11px] block">• {evt}</span>
+                                              ))}
+                                            </div>
+                                          )}
+                                          <p className="text-slate-455 font-sans"><strong className="text-brand-500/80">Impact Channel:</strong> {company.impactPotential}</p>
                                         </div>
                                       ))}
                                     </div>
                                   ) : (
-                                    <span className="text-[11px] text-slate-500 italic">No supply chain dependencies reported.</span>
+                                    <p className="text-xs text-slate-500 italic py-4">No major strategic investment portfolio reported.</p>
                                   )}
                                 </div>
-                              ))}
-                            </div>
-                          ) : (
-                            <p className="text-xs text-slate-500 italic py-4">Supply chain and supplier networks require re-analysis.</p>
-                          )}
-                        </div>
-                      )}
 
-                      {activeTab === 'sector' && (
-                        <div className="space-y-4 animate-fade-in">
-                          {r?.companyInsights?.investedCompanies?.length > 0 ? (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                              {r.companyInsights.investedCompanies.map((company: any, idx: number) => (
-                                <div key={idx} className="p-4 bg-slate-950/40 border border-slate-850 rounded-xl space-y-2.5 text-xs">
-                                  <div className="flex justify-between items-center">
-                                    <strong className="text-slate-200 text-sm">{company.name}</strong>
-                                    {company.ownershipPct && (
-                                      <span className="px-2 py-0.5 rounded bg-brand-500/15 text-brand-400 font-mono text-[10px] font-bold">
-                                        Ownership: {company.ownershipPct}
-                                      </span>
-                                    )}
-                                  </div>
-                                  <p className="text-slate-400 font-sans"><strong className="text-slate-350">Performance:</strong> {company.performance}</p>
-                                  <p className="text-slate-450 font-sans"><strong className="text-slate-350">Stock Impact Channel:</strong> {company.impactPotential}</p>
+                                {/* Business Dependency Network */}
+                                <div className="space-y-4">
+                                  {[
+                                    { title: 'Suppliers & Infrastructure', items: r.companyInsights.dependencies?.suppliers },
+                                    { title: 'Target Customers', items: r.companyInsights.dependencies?.customers },
+                                    { title: 'Support & Outsourcing Partners', items: r.companyInsights.dependencies?.outsourcePartners },
+                                    { title: 'Marketing Channels & Partners', items: r.companyInsights.dependencies?.marketingPartners }
+                                  ].map((group, idx) => {
+                                    if (!group.items || group.items.length === 0) return null;
+                                    return (
+                                      <div key={idx} className="p-4 bg-slate-950/30 border border-slate-850 rounded-xl space-y-3">
+                                        <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider border-b border-slate-900 pb-1.5">{group.title}</h4>
+                                        <div className="space-y-3 font-sans text-xs">
+                                          {group.items.map((partner: any, pIdx: number) => (
+                                            <div key={pIdx} className="space-y-1">
+                                              <div className="flex justify-between font-bold text-slate-200">
+                                                <span>{partner.name}</span>
+                                                <span className="text-[10px] text-slate-550 font-normal italic">{partner.role}</span>
+                                              </div>
+                                              <p className="text-slate-400 leading-normal">{partner.description}</p>
+                                              {partner.riskExposure && (
+                                                <p className="text-[11px] text-amber-500/80 leading-normal flex items-start gap-1">
+                                                  <span className="shrink-0 mt-0.5">⚠️</span>
+                                                  <span>Risk: {partner.riskExposure}</span>
+                                                </p>
+                                              )}
+                                            </div>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                  {/* If all dependencies lists are empty */}
+                                  {(!r.companyInsights.dependencies || 
+                                    (!r.companyInsights.dependencies.suppliers?.length && 
+                                     !r.companyInsights.dependencies.customers?.length && 
+                                     !r.companyInsights.dependencies.outsourcePartners?.length && 
+                                     !r.companyInsights.dependencies.marketingPartners?.length)) && (
+                                    <div className="p-4 bg-slate-950/30 border border-slate-850 rounded-xl text-center py-6 text-slate-500 italic text-xs">
+                                      No supply chain dependencies reported.
+                                    </div>
+                                  )}
                                 </div>
-                              ))}
+                              </div>
                             </div>
-                          ) : (
-                            <p className="text-xs text-slate-500 italic py-4">No major strategic investment portfolio reported.</p>
                           )}
                         </div>
                       )}

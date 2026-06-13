@@ -46,6 +46,7 @@ services:
     environment:
       DATABASE_URL: postgresql://trader:trader_pass@postgres:5432/trader_db
       REDIS_URL: redis://redis:6379
+      VIDEO_SERVICE_URL: http://video-agents:8090
     depends_on:
       postgres:
         condition: service_healthy
@@ -63,11 +64,25 @@ services:
     container_name: trader_frontend
     restart: unless-stopped
     ports:
-      - '5173:5173'
+      - '5173:80'
     environment:
       VITE_API_URL: http://localhost:3000
     depends_on:
       - backend
+
+  video-agents:
+    build:
+      context: ./video_agents_service
+      dockerfile: Dockerfile
+    container_name: trader_video_agents
+    restart: unless-stopped
+    ports:
+      - '8090:8090'
+    env_file:
+      - .env
+    volumes:
+      - ./video_agents_service/outputs:/outputs
+
 
 volumes:
   postgres_data:

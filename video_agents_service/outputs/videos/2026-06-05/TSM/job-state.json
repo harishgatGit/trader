@@ -1,13 +1,13 @@
 {
-  "jobId": "ad28d91c-34b9-4252-8a99-8dae8882a82b",
+  "jobId": "1b646381-a562-49dc-80f4-592c63b38529",
   "reportId": "cmq19imsl00rpqhj04ozdo4k4",
   "ticker": "TSM",
   "reportDate": "2026-06-05",
   "status": "COMPLETED",
-  "startedAt": "2026-06-05T19:27:49.551318",
-  "completedAt": "2026-06-05T19:33:27.149290",
+  "startedAt": "2026-06-12T23:49:07.089543",
+  "completedAt": "2026-06-12T23:53:40.909031",
   "errorMessage": null,
-  "videoUrl": "/api/video-jobs/ad28d91c-34b9-4252-8a99-8dae8882a82b/video",
+  "videoUrl": "/api/video-jobs/1b646381-a562-49dc-80f4-592c63b38529/video",
   "artifacts": {
     "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-05\\TSM\\source-report.json",
     "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-05\\TSM\\normalized-video-input.json",
