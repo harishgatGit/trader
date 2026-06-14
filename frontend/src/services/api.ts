@@ -1,8 +1,13 @@
 import axios from 'axios';
 
-const API_BASE = import.meta.env.VITE_API_URL
-  ? `${import.meta.env.VITE_API_URL}/api`
-  : '/api';
+const apiUrL = import.meta.env.VITE_API_URL;
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+const API_BASE = isLocal
+  ? '/api'
+  : (apiUrL && !apiUrL.includes('backend') && !apiUrL.includes('localhost') && !apiUrL.includes('127.0.0.1'))
+    ? `${apiUrL}/api`
+    : 'https://investingatti.com/api';
 
 const api = axios.create({
   baseURL: API_BASE,

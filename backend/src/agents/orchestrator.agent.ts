@@ -12,7 +12,6 @@ import { TrendStoryAgent } from './trend-story.agent';
 import { SignalCorrelationAgent } from './signal-correlation.agent';
 import { DocumentBuilderAgent } from './document-builder.agent';
 import { VideoJobService } from '../modules/video/video-job.service';
-import { VideoGenerationClient } from '../modules/video/video-generation.client';
 
 export interface AnalysisProgress {
   step: string;
@@ -61,7 +60,6 @@ export class OrchestratorAgent {
     private readonly signalCorrelationAgent: SignalCorrelationAgent,
     private readonly documentBuilderAgent: DocumentBuilderAgent,
     private readonly videoJobService: VideoJobService,
-    private readonly videoClient: VideoGenerationClient,
   ) {}
 
   async runFullAnalysis(rawSymbol: string): Promise<AnalysisResult> {
@@ -282,35 +280,15 @@ export class OrchestratorAgent {
       this.logger.log(`Analysis complete for ${symbol} in ${processingTime}ms`);
 
       const today = new Date().toISOString().split('T')[0];
-      const videoResult: { status: string; filePath?: string; message?: string; error?: string; jobId?: string } = { status: 'PENDING' };
 
-      try {
-        const uppercaseTicker = symbol.toUpperCase();
-        const existingJob = await this.videoJobService.getJobByTickerAndDate(uppercaseTicker, today);
-
-        if (existingJob && existingJob.status !== 'FAILED') {
-          videoResult.status = existingJob.status;
-          videoResult.jobId = existingJob.jobId || undefined;
-          
-          if (existingJob.status === 'COMPLETED' && existingJob.finalVideoPath) {
-            videoResult.filePath = existingJob.finalVideoPath;
-            videoResult.message = 'Video already generated today for this symbol.';
-          } else {
-            videoResult.message = `Video generation job is currently in state: ${existingJob.status}.`;
-          }
-        } else {
-          // No job exists yet or the existing job has FAILED. Queue/Reset as PENDING!
-          this.logger.log(`Queueing/Resetting video generation job for ${uppercaseTicker} on ${today} (fire-and-forget).`);
-          const queuedJob = await this.videoJobService.createOrResetJob(uppercaseTicker, today, savedReport.id, false);
-          videoResult.status = 'PENDING';
-          videoResult.jobId = queuedJob.id;
-          videoResult.message = 'Video generation job successfully queued in background.';
-        }
-      } catch (videoErr: any) {
-        this.logger.error(`Video queue setup failed for ${symbol}: ${videoErr.message}`);
-        videoResult.status = 'FAILED';
-        videoResult.error = videoErr.message;
-      }
+      // Fire-and-forget to video agent service — backend never blocks or fails here
+      this.videoJobService.fireAndForget(
+        symbol,
+        today,
+        savedReport.id,
+        reportJsonWithCompat,
+        false,
+      );
 
       return {
         symbol,
@@ -346,7 +324,7 @@ export class OrchestratorAgent {
           news,
           institutionalFlow,
         },
-        video: videoResult,
+        video: { status: 'RECEIVED', message: 'Video job submitted to video agent service (fire-and-forget).' },
         processingTimeMs: processingTime,
       };
 

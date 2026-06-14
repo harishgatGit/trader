@@ -17,15 +17,36 @@ async function bootstrap() {
   // Security
   app.use(helmet());
 
-  // CORS - restrict to frontend origin
+  // CORS - restrict to allowed frontend origins, supporting localhost, custom domains, and Cloudflare tunnels
   const allowedOrigins = [
     'http://localhost:5173',
     'http://localhost:3000',
     process.env.FRONTEND_URL,
+    'https://investingatti.com',
+    'https://www.investingatti.com',
   ].filter(Boolean);
 
   app.enableCors({
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, or same-origin)
+      if (!origin) {
+        callback(null, true);
+        return;
+      }
+
+      const isAllowed =
+        allowedOrigins.includes(origin) ||
+        origin.endsWith('.trycloudflare.com') ||
+        /^http:\/\/localhost:\d+$/.test(origin) ||
+        /^http:\/\/127\.0\.0\.1:\d+$/.test(origin);
+
+      if (isAllowed) {
+        callback(null, true);
+      } else {
+        logger.warn(`[CORS] Request from blocked origin: ${origin}`);
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,

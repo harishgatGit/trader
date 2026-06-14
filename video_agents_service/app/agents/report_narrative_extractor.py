@@ -3,14 +3,25 @@ from pathlib import Path
 from typing import Dict, Any
 
 class ReportNarrativeExtractor:
+    """
+    Normalizes the pre-analyzed stock report JSON received from the NestJS backend.
+
+    IMPORTANT: This agent does NOT re-analyze the stock, call OpenAI, or fetch
+    any external data. It only extracts and normalizes fields already present in
+    the report JSON provided by the InvestingAtti analysis engine.
+    Missing fields are marked as 'Unavailable' — never invented.
+    """
+
     def __init__(self):
         pass
 
     def extract(self, report_json: Dict[str, Any], output_path: Path) -> Dict[str, Any]:
         """
-        Extracts and normalizes necessary data fields from the full website report JSON.
+        Extracts and normalizes data fields from the pre-analyzed backend report JSON.
+        Input: pre-scraped and pre-analyzed report from NestJS backend (not re-fetched).
         Does not invent values. Marks missing fields as 'Unavailable'.
         """
+
         # Find ticker
         ticker = report_json.get("ticker") or report_json.get("symbol") or "Unavailable"
         

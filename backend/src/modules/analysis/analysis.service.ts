@@ -282,10 +282,8 @@ export class AnalysisService {
           const regenerateInYMinutes = Math.max(0, Math.ceil(cacheLimitMins - ageInMins));
 
           const todayStr = new Date().toISOString().split('T')[0];
-          // Check file system and DB for video status
-          await this.videoJobService.shouldGenerateVideo(clean, todayStr);
-
-          let videoJob = await this.prisma.videoGenerationJob.findUnique({
+          // Check DB for existing video job status
+          const videoJob = await this.prisma.videoGenerationJob.findUnique({
             where: {
               ticker_reportDate: {
                 ticker: clean,
@@ -299,18 +297,21 @@ export class AnalysisService {
             videoResult = {
               status: videoJob.status,
               jobId: videoJob.jobId || undefined,
-              ...(videoJob.status === 'COMPLETED' ? { filePath: videoJob.finalVideoPath } : {}),
-              ...(videoJob.status === 'FAILED' ? { error: videoJob.errorMessage } : {}),
-              ...(videoJob.status === 'SKIPPED_EXISTING_VIDEO' || videoJob.status === 'COMPLETED' ? { message: `Video already generated today for ${clean}. Skipping video pipeline.` } : {}),
+              ...(videoJob.status === 'GENERATED' || videoJob.status === 'COMPLETED'
+                ? { filePath: videoJob.finalVideoPath, message: `Video already generated today for ${clean}.` }
+                : {}),
+              ...(videoJob.status === 'NOT_ELIGIBLE'
+                ? { message: videoJob.eligibilityNote || 'Not eligible for video generation.' }
+                : {}),
+              ...(videoJob.status === 'ERROR' || videoJob.status === 'FAILED'
+                ? { error: videoJob.errorMessage }
+                : {}),
             };
           } else {
-            this.logger.log(`Cache hit for ${clean} but no video job exists for today. Queueing new job (fire-and-forget).`);
-            const queuedJob = await this.videoJobService.createOrResetJob(clean, todayStr, latestReport.id, false);
-            videoResult = {
-              status: 'PENDING',
-              jobId: queuedJob.id,
-              message: 'Video generation job successfully queued in background.',
-            };
+            // No video job yet — fire-and-forget for the cached report
+            this.logger.log(`Cache hit for ${clean} but no video job for today. Firing video request (fire-and-forget).`);
+            this.videoJobService.fireAndForget(clean, todayStr, latestReport.id, latestReport.reportJson, false);
+            videoResult = { status: 'RECEIVED', message: 'Video job submitted to video agent service (fire-and-forget).' };
           }
 
           const analysisReportObj = {

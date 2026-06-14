@@ -451,7 +451,12 @@ model VideoGenerationJob {
   reportId            String?   @map("report_id")
   ticker              String
   reportDate          String    @map("report_date") // YYYY-MM-DD
-  status              String    // PENDING, REPORT_RECEIVED, SCRIPT_GENERATED, STORYBOARD_GENERATED, VOICEOVER_GENERATED, ANIMATION_RENDERED, MP4_EXPORTED, VALIDATION_PASSED, COMPLETED, FAILED, SKIPPED_EXISTING_VIDEO
+  // Status lifecycle: RECEIVED → QUEUED → NOT_ELIGIBLE | GENERATED | ERROR
+  // Fine-grained pipeline statuses (from Python service callbacks):
+  // RECEIVED, QUEUED, NOT_ELIGIBLE, REPORT_RECEIVED, SCRIPT_GENERATED,
+  // STORYBOARD_GENERATED, VOICEOVER_GENERATED, ANIMATION_RENDERED, GENERATED, ERROR
+  status              String    @default("RECEIVED")
+  eligibilityNote     String?   @map("eligibility_note") // reason if NOT_ELIGIBLE
   videoUrl            String?   @map("video_url")
   sourceReportPath    String?   @map("source_report_path")
   normalizedInputPath String?   @map("normalized_input_path")

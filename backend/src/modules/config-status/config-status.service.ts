@@ -13,9 +13,12 @@ export class ConfigStatusService {
   ) {}
 
   async getStatus() {
-    const [alpacaStatus, openaiStatus] = await Promise.all([
+    const [alpacaStatus, openaiStatus, dbSettings] = await Promise.all([
       this.checkAlpaca(),
       this.checkOpenAI(),
+      this.prisma.riskSetting.findFirst({
+        orderBy: { updatedAt: 'desc' },
+      }),
     ]);
 
     return {
@@ -28,9 +31,9 @@ export class ConfigStatusService {
       config: {
         openaiModel: this.config.get('OPENAI_MODEL', 'gpt-4o'),
         alpacaDataBaseUrl: this.config.get('ALPACA_DATA_BASE_URL'),
-        maxPositionSizePct: this.config.get('MAX_POSITION_SIZE_PERCENT', '5'),
-        maxLossPerTradePct: this.config.get('MAX_LOSS_PER_TRADE_PERCENT', '2'),
-        minRiskReward: this.config.get('MIN_RISK_REWARD', '1.5'),
+        maxPositionSizePct: dbSettings?.maxPositionSizePct ?? parseFloat(this.config.get('MAX_POSITION_SIZE_PERCENT', '5')),
+        maxLossPerTradePct: dbSettings?.maxLossPerTradePct ?? parseFloat(this.config.get('MAX_LOSS_PER_TRADE_PERCENT', '2')),
+        minRiskReward: dbSettings?.minRiskReward ?? parseFloat(this.config.get('MIN_RISK_REWARD', '1.5')),
         emailConfigured: !!this.config.get('EMAIL_USER'),
       },
     };

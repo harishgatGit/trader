@@ -6,7 +6,6 @@ export interface VideoJobPayload {
   reportDate: string;
   reportId: string;
   reportJson: any;
-  outputFolder?: string;
   forceRegenerate?: boolean;
 }
 
@@ -32,29 +31,41 @@ export class VideoGenerationClient {
     this.apiKey = process.env.VIDEO_SERVICE_API_KEY || 'your-key';
   }
 
-  async triggerVideoJob(payload: VideoJobPayload): Promise<VideoJobResponse> {
+  /**
+   * Fires a video job request to the Python video agent service without
+   * blocking the caller. All errors are caught and logged internally.
+   * Backend will never fail or be delayed because of this call.
+   */
+  triggerVideoJobFireAndForget(payload: VideoJobPayload): void {
     const url = `${this.baseUrl}/video-jobs`;
-    this.logger.log(`Triggering video generation job for ${payload.ticker} at ${url}`);
-    
-    try {
-      const response = await axios.post<VideoJobResponse>(url, payload, {
+    this.logger.log(`[fire-and-forget] Triggering video job for ${payload.ticker} at ${url}`);
+
+    axios
+      .post<VideoJobResponse>(url, payload, {
         headers: {
           'Content-Type': 'application/json',
           'x-api-key': this.apiKey,
         },
-        timeout: 10000, // 10s timeout, response is immediate
+        timeout: 10000, // 10s — response is immediate (service just queues)
+      })
+      .then((res) => {
+        this.logger.log(`[fire-and-forget] Video job accepted for ${payload.ticker}: status=${res.data.status}`);
+      })
+      .catch((err: any) => {
+        // Swallow ALL errors — video service down must not impact backend
+        const msg = err?.response?.data?.detail || err?.message || 'Unknown error';
+        this.logger.warn(`[fire-and-forget] Video service call failed for ${payload.ticker} (non-fatal): ${msg}`);
       });
-      return response.data;
-    } catch (err: any) {
-      this.logger.error(`Failed to trigger video generation job for ${payload.ticker}: ${err.message}`);
-      throw err;
-    }
   }
 
+  /**
+   * Retries a failed video job by calling the Python service retry endpoint.
+   * This IS awaited (used from the retry controller endpoint).
+   */
   async retryVideoJob(jobId: string): Promise<VideoJobResponse> {
     const url = `${this.baseUrl}/video-jobs/${jobId}/retry`;
     this.logger.log(`Retrying video generation job ${jobId} at ${url}`);
-    
+
     try {
       const response = await axios.post<VideoJobResponse>(url, {}, {
         headers: {

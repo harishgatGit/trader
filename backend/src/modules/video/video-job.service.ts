@@ -1,108 +1,91 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
-import * as fs from 'fs';
-import * as path from 'path';
+import { VideoGenerationClient } from './video-generation.client';
 
 @Injectable()
 export class VideoJobService {
   private readonly logger = new Logger(VideoJobService.name);
 
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly videoClient: VideoGenerationClient,
+  ) {}
 
   /**
-   * Checks if a completed successful video exists for this symbol and date.
+   * Fire-and-forget: logs the video request to DB (status=RECEIVED) then
+   * calls the Python video agent service without blocking the caller.
+   * Backend analysis result is never delayed or failed by video service issues.
    */
-  async shouldGenerateVideo(ticker: string, dateStr: string, forceRegenerate = false): Promise<boolean> {
+  async fireAndForget(
+    ticker: string,
+    reportDate: string,
+    reportId: string,
+    reportJson: any,
+    forceRegenerate = false,
+  ): Promise<void> {
     if (process.env.DISABLE_VIDEO_PIPELINE === 'true') {
-      this.logger.log(`Video pipeline is disabled via environment configuration (DISABLE_VIDEO_PIPELINE=true). Skipping video generation for ${ticker}.`);
-      return false;
+      this.logger.log(`Video pipeline disabled (DISABLE_VIDEO_PIPELINE=true). Skipping for ${ticker}.`);
+      return;
     }
-    if (forceRegenerate) return true;
 
     const uppercaseTicker = ticker.toUpperCase();
-    const job = await this.prisma.videoGenerationJob.findUnique({
-      where: {
-        ticker_reportDate: {
-          ticker: uppercaseTicker,
-          reportDate: dateStr,
-        },
-      },
-    });
 
-    if (job) {
-      if (job.status === 'COMPLETED' && job.finalVideoPath) {
-        if (fs.existsSync(job.finalVideoPath)) {
-          return false; // Successful video exists
+    // 1. Log to DB with RECEIVED status (upsert: reset if FAILED, otherwise skip)
+    let job: any;
+    try {
+      const existing = await this.prisma.videoGenerationJob.findUnique({
+        where: { ticker_reportDate: { ticker: uppercaseTicker, reportDate } },
+      });
+
+      if (existing) {
+        if (!forceRegenerate && existing.status !== 'ERROR' && existing.status !== 'FAILED') {
+          this.logger.log(`Video job for ${uppercaseTicker}/${reportDate} already in state ${existing.status}. Skipping.`);
+          return;
         }
-      }
-      if (job.status === 'PROCESSING' || job.status === 'PENDING') {
-        return false; // Already working on it
-      }
-    }
-
-    return true;
-  }
-
-  /**
-   * Creates or resets a video job in the database.
-   */
-  async createOrResetJob(ticker: string, dateStr: string, reportId: string, forceRegenerate = false): Promise<any> {
-    const uppercaseTicker = ticker.toUpperCase();
-    
-    // Check if job already exists
-    const existing = await this.prisma.videoGenerationJob.findUnique({
-      where: {
-        ticker_reportDate: {
-          ticker: uppercaseTicker,
-          reportDate: dateStr,
-        },
-      },
-    });
-
-    if (existing) {
-      // If we are force regenerating or if the previous job failed, reset it
-      if (forceRegenerate || existing.status === 'FAILED') {
-        this.logger.log(`Resetting existing video job for ${uppercaseTicker} on ${dateStr} for retry/regeneration.`);
-        return await this.prisma.videoGenerationJob.update({
+        // Reset for retry/force regenerate
+        job = await this.prisma.videoGenerationJob.update({
           where: { id: existing.id },
           data: {
-            status: 'PENDING',
+            status: 'RECEIVED',
             reportId,
+            eligibilityNote: null,
             errorMessage: null,
             completedAt: null,
             forceRegenerate,
             updatedAt: new Date(),
           },
         });
-      }
-      return existing;
-    }
-
-    // Otherwise, create a new one
-    try {
-      return await this.prisma.videoGenerationJob.create({
-        data: {
-          ticker: uppercaseTicker,
-          reportDate: dateStr,
-          reportId,
-          status: 'PENDING',
-          forceRegenerate,
-        },
-      });
-    } catch (err: any) {
-      if (err.code === 'P2002') {
-        // Parallel execution safety
-        return await this.prisma.videoGenerationJob.findUnique({
-          where: {
-            ticker_reportDate: {
-              ticker: uppercaseTicker,
-              reportDate: dateStr,
-            },
+        this.logger.log(`Reset video job for ${uppercaseTicker}/${reportDate} to RECEIVED.`);
+      } else {
+        job = await this.prisma.videoGenerationJob.create({
+          data: {
+            ticker: uppercaseTicker,
+            reportDate,
+            reportId,
+            status: 'RECEIVED',
+            forceRegenerate,
           },
         });
+        this.logger.log(`Created video job for ${uppercaseTicker}/${reportDate} with status RECEIVED.`);
       }
-      throw err;
+    } catch (dbErr: any) {
+      if (dbErr.code === 'P2002') {
+        // Race condition: another process created it — that's fine, skip
+        this.logger.warn(`Video job for ${uppercaseTicker}/${reportDate} already created by parallel process. Skipping.`);
+        return;
+      }
+      this.logger.error(`Failed to log video job to DB for ${uppercaseTicker}: ${dbErr.message}`);
+      return; // Don't let DB error propagate to analysis result
     }
+
+    // 2. Fire-and-forget HTTP call to Python video agent service (do NOT await)
+    this.videoClient.triggerVideoJobFireAndForget({
+      ticker: uppercaseTicker,
+      reportDate,
+      reportId,
+      reportJson,
+      forceRegenerate,
+    });
   }
 
   async getJobById(jobId: string): Promise<any> {
@@ -122,6 +105,9 @@ export class VideoJobService {
     });
   }
 
+  /**
+   * Called by the Python video agent service callback to update job status.
+   */
   async updateJobCallback(payload: {
     jobId: string;
     reportId?: string;
@@ -129,6 +115,7 @@ export class VideoJobService {
     reportDate: string;
     status: string;
     videoUrl?: string;
+    eligibilityNote?: string;
     artifacts: {
       sourceReport?: string;
       normalizedInput?: string;
@@ -142,7 +129,7 @@ export class VideoJobService {
     errorMessage?: string;
   }): Promise<void> {
     const uppercaseTicker = payload.ticker.toUpperCase();
-    
+
     // Find job by jobId first, fallback to ticker + date
     let job = await this.prisma.videoGenerationJob.findUnique({
       where: { jobId: payload.jobId },
@@ -164,13 +151,15 @@ export class VideoJobService {
       return;
     }
 
-    // Update job
+    const isTerminal = ['NOT_ELIGIBLE', 'GENERATED', 'ERROR', 'COMPLETED', 'FAILED'].includes(payload.status);
+
     await this.prisma.videoGenerationJob.update({
       where: { id: job.id },
       data: {
         jobId: payload.jobId,
         status: payload.status,
         videoUrl: payload.videoUrl || null,
+        eligibilityNote: payload.eligibilityNote || null,
         sourceReportPath: payload.artifacts?.sourceReport || null,
         normalizedInputPath: payload.artifacts?.normalizedInput || null,
         scriptPath: payload.artifacts?.script || null,
@@ -179,10 +168,10 @@ export class VideoJobService {
         finalVideoPath: payload.artifacts?.finalVideo || null,
         validationPath: payload.artifacts?.validation || null,
         errorMessage: payload.errorMessage || null,
-        completedAt: payload.status === 'COMPLETED' || payload.status === 'FAILED' ? new Date() : null,
+        completedAt: isTerminal ? new Date() : null,
       },
     });
 
-    this.logger.log(`Successfully updated video job ${job.id} state to ${payload.status}`);
+    this.logger.log(`Updated video job ${job.id} → ${payload.status}`);
   }
 }

@@ -19,6 +19,7 @@ export default defineConfig({
       '.trycloudflare.com'
     ],
     hmr: {
+      protocol: 'ws',
       host: 'localhost',
       port: 5173,
     },

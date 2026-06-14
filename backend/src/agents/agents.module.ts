@@ -12,8 +12,6 @@ import { SignalCorrelationAgent } from './signal-correlation.agent';
 import { AlertAgent } from './alert.agent';
 import { DocumentBuilderAgent } from './document-builder.agent';
 import { OrchestratorAgent } from './orchestrator.agent';
-import { VideoScriptAgent } from './video-script.agent';
-import { StoryboardAgent } from './storyboard.agent';
 import { AlpacaService } from '../services/alpaca.service';
 
 @Global()
@@ -33,8 +31,6 @@ import { AlpacaService } from '../services/alpaca.service';
     AlertAgent,
     DocumentBuilderAgent,
     OrchestratorAgent,
-    VideoScriptAgent,
-    StoryboardAgent,
   ],
   exports: [
     AlpacaService,
@@ -51,8 +47,6 @@ import { AlpacaService } from '../services/alpaca.service';
     AlertAgent,
     DocumentBuilderAgent,
     OrchestratorAgent,
-    VideoScriptAgent,
-    StoryboardAgent,
   ],
 })
 export class AgentsModule {}

@@ -26,7 +26,7 @@ import { WhatsForTodayModule } from './modules/whats-for-today/whats-for-today.m
     // Config
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: ['.env.local', '.env'],
+      envFilePath: ['.env.local', '.env', '../.env.local', '../.env'],
     }),
 
     // Scheduling

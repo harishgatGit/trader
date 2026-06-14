@@ -3,7 +3,6 @@ import { Response } from 'express';
 import { VideoJobService } from './video-job.service';
 import { VideoGenerationClient } from './video-generation.client';
 import { AuthGuard } from '../auth/auth.guard';
-import { RoleGuard } from '../auth/role.guard';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -12,8 +11,8 @@ export class VideoCallbackController {
   constructor(private readonly videoJobService: VideoJobService) {}
 
   /**
-   * Private server-to-server callback from Python microservice.
-   * Secured by x-api-key.
+   * Private server-to-server callback from Python video agent service.
+   * Secured by x-api-key. Updates the local DB mirror with latest job status.
    */
   @Post('video-callback') // Maps to /api/video-callback
   @HttpCode(HttpStatus.OK)
@@ -76,8 +75,9 @@ export class VideoController {
     res.setHeader('Content-Disposition', 'inline; filename="report-video.mp4"');
     res.sendFile(resolvedPath);
   }
+
   /**
-   * Triggers retry for a failed video job.
+   * Triggers a retry for a failed/errored video job via the Python video agent service.
    */
   @Post(':jobId/retry')
   @UseGuards(AuthGuard)
@@ -91,18 +91,15 @@ export class VideoController {
       throw new NotFoundException(`Video job ${jobId} not found`);
     }
 
-    // Set job back to PENDING first in local database
-    await this.videoJobService.createOrResetJob(job.ticker, job.reportDate, job.reportId, true);
-
-    // Call Python microservice retry endpoint
+    // Forward retry to Python video agent service
     const response = await this.videoClient.retryVideoJob(jobId);
 
-    // Save returned jobId back to database if changed
+    // Update local DB with response status
     await this.videoJobService.updateJobCallback({
       jobId: response.jobId || jobId,
       ticker: job.ticker,
       reportDate: job.reportDate,
-      status: response.status || 'PENDING',
+      status: response.status || 'QUEUED',
       artifacts: response.artifacts || {},
     });
 
