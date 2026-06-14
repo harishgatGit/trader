@@ -391,10 +391,10 @@ const WhatsForToday: React.FC = () => {
         title="What's For Today?"
         actions={
           <div className="flex flex-col items-end gap-1.5 min-w-[200px]">
-            <div className="flex items-center gap-2 text-sm font-mono font-bold text-slate-100 bg-slate-905 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2">
-              <Clock className="w-4 h-4 text-brand-500 dark:text-brand-400" />
-              <span className="text-slate-900 dark:text-slate-100">{cstTimeStr}</span>
-              <span className="text-[11px] font-bold text-amber-550 dark:text-amber-400 bg-amber-550/10 dark:bg-amber-500/10 border border-amber-500/20 rounded px-1.5 py-0.5 ml-1">CST</span>
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-100 bg-slate-950 dark:bg-slate-900 rounded-xl px-2.5 py-1.5">
+              <Clock className="w-3.5 h-3.5 text-brand-500 dark:text-brand-400" />
+              <span>{cstTimeStr}</span>
+              <span className="text-amber-600 dark:text-amber-400 ml-1">CST</span>
             </div>
             {nextLockedPhase && countdownStr && (
               <div className="text-[11px] text-amber-600 dark:text-amber-400 font-semibold flex items-center gap-1">
