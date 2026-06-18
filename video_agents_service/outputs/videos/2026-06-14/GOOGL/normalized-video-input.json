@@ -1,0 +1,28 @@
+{
+  "ticker": "GOOGL",
+  "companyName": "GOOGL",
+  "reportDate": "Unavailable",
+  "currentPrice": 359.65,
+  "dayChangePct": 0.5,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "unknown-mixed",
+  "catalystSummary": "SpaceX IPO could influence tech sector sentiment",
+  "volumeSummary": "Below-average volume, indicating lack of strong buying interest.",
+  "trendSummary": "The current trend for GOOGL is bearish. The stock has been under pressure with the price closing at $359.65, which is below key moving averages such as the 20-day EMA of $370.12 and the 50-day EMA of $361.04. The MACD is bearish, indicating negative momentum, and the ADX suggests a strong downtrend. Additionally, the stock is trading below its VWAP, which often signals a lack of buying interest. Institutional flow data indicates distribution, with below-average volume and price holding near support levels, suggesting potential absorption. News sentiment is neutral, with no significant positive catalysts to drive the stock higher.",
+  "supportLevels": [
+    331.46
+  ],
+  "resistanceLevels": [
+    393.76
+  ],
+  "entryZone": "Low: 331.46, High: 358.13",
+  "stopLoss": "Price: 331.46 (Stop loss set below key support level to manage downside risk.)",
+  "targets": [
+    378.69,
+    393.76
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "High valuation; Distribution proxy signal; Mixed technical signals",
+  "finalVerdict": "The current technical setup for GOOGL shows a mixed trend with bearish daily signals and bullish 4-hour signals. The stock is near support but lacks strong momentum confirmation. Institutional flow proxy indicates distribution. Given the medium-high risk tolerance and preference for clear entries, a watchlist status is recommended until a clearer trend emerges.",
+  "executiveSummary": "GOOGL is currently trading at $359.65, showing a mixed technical trend. The daily chart indicates a bearish bias with price below key moving averages and a MACD bearish signal, while the 4-hour chart shows a bullish bias with price above EMA20 and EMA50. Institutional flow proxy suggests distribution, indicating potential selling pressure. Given the mixed signals and distribution proxy, the stock is best placed on a watchlist for now. LAYMAN'S TAKEAWAY: GOOGL's current setup is unclear, with mixed signals and potential selling pressure. It's wise to watch for clearer trends before making a decision."
+}

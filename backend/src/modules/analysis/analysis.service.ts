@@ -4,6 +4,7 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { VideoJobService } from '../video/video-job.service';
 import axios from 'axios';
 import * as crypto from 'crypto';
+import { getNYDateString } from '../../utils/date';
 
 export function isFundSymbol(symbol: string): boolean {
   const clean = symbol.toUpperCase().trim();
@@ -19,6 +20,9 @@ export function isFundSymbol(symbol: string): boolean {
 @Injectable()
 export class AnalysisService {
   private readonly logger = new Logger(AnalysisService.name);
+  // Per-symbol lock to prevent cache-stampede: if N users request the same
+  // symbol simultaneously with no cache, only the first triggers the pipeline.
+  private readonly analysisInFlight = new Map<string, Promise<any>>();
 
   constructor(
     private readonly orchestrator: OrchestratorAgent,
@@ -97,7 +101,7 @@ export class AnalysisService {
             this.logger.log(`Cache hit for fund ${clean}. Age: ${ageInMins.toFixed(1)} mins. Returning cached report.`);
             const generatedXMinutesAgo = Math.round(ageInMins);
             const regenerateInYMinutes = Math.max(0, Math.ceil(cacheLimitMins - ageInMins));
-            const todayStr = new Date().toISOString().split('T')[0];
+            const todayStr = getNYDateString();
 
             return {
               symbol: clean,
@@ -281,7 +285,7 @@ export class AnalysisService {
           const generatedXMinutesAgo = Math.round(ageInMins);
           const regenerateInYMinutes = Math.max(0, Math.ceil(cacheLimitMins - ageInMins));
 
-          const todayStr = new Date().toISOString().split('T')[0];
+          const todayStr = getNYDateString();
           // Check DB for existing video job status
           const videoJob = await this.prisma.videoGenerationJob.findUnique({
             where: {
@@ -358,9 +362,28 @@ export class AnalysisService {
       this.logger.error(`Error checking cache for ${clean}:`, cacheErr?.stack);
     }
 
-    // 4. Cache miss: Run full analysis pipeline
+    // 4. Cache miss: Run full analysis pipeline (with per-symbol deduplication lock)
     this.logger.log(`Cache miss or expired for ${clean}. Running full analysis pipeline.`);
-    const result = await this.orchestrator.runFullAnalysis(clean);
+
+    if (!bypassCache && this.analysisInFlight.has(clean)) {
+      // Another request is already running analysis for this symbol — wait for it
+      this.logger.log(`[Dedup] Waiting for in-flight analysis for ${clean}...`);
+      const result = await this.analysisInFlight.get(clean)!;
+      return {
+        ...result,
+        cache: { cached: true, role, cacheLimitMins, generatedXMinutesAgo: 0, regenerateInYMinutes: cacheLimitMins },
+      };
+    }
+
+    const analysisPromise = this.orchestrator.runFullAnalysis(clean).finally(() => {
+      this.analysisInFlight.delete(clean);
+    });
+
+    if (!bypassCache) {
+      this.analysisInFlight.set(clean, analysisPromise);
+    }
+
+    const result = await analysisPromise;
 
     return {
       ...result,
@@ -370,7 +393,7 @@ export class AnalysisService {
         cacheLimitMins,
         generatedXMinutesAgo: 0,
         regenerateInYMinutes: cacheLimitMins,
-      }
+      },
     };
   }
 

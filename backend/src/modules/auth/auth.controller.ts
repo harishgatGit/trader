@@ -16,7 +16,7 @@ class RegisterDto {
 
   @IsString()
   @IsOptional()
-  role?: string;
+  email?: string;
 }
 
 class LoginDto {
@@ -27,6 +27,26 @@ class LoginDto {
   @IsString()
   @IsNotEmpty()
   password: string;
+}
+
+class SocialLoginDto {
+  // Google: auth code from GSI popup
+  @IsString()
+  @IsOptional()
+  code?: string;
+
+  // Microsoft: ID token from MSAL popup
+  @IsString()
+  @IsOptional()
+  idToken?: string;
+
+  @IsString()
+  @IsNotEmpty()
+  provider: 'google' | 'microsoft';
+
+  @IsString()
+  @IsOptional()
+  deviceInfo?: string;
 }
 
 class UpdatePasswordDto {
@@ -40,13 +60,20 @@ class UpdatePasswordDto {
   newPassword: string;
 }
 
+class UpdateUsernameDto {
+  @IsString()
+  @IsNotEmpty()
+  @MinLength(3)
+  newUsername: string;
+}
+
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('register')
   async register(@Body() dto: RegisterDto) {
-    return this.authService.register(dto.username, dto.password, dto.role);
+    return this.authService.register(dto.username, dto.password, dto.email);
   }
 
   @Post('login')
@@ -57,6 +84,19 @@ export class AuthController {
   ) {
     const info = deviceInfo || userAgent || 'Unknown Device';
     return this.authService.login(dto.username, dto.password, info);
+  }
+
+  @Post('social-login')
+  async socialLogin(
+    @Body() dto: SocialLoginDto,
+    @Headers('user-agent') userAgent: string,
+  ) {
+    const info = dto.deviceInfo || userAgent || 'Social Auth';
+    return this.authService.socialLogin(
+      { code: dto.code, idToken: dto.idToken },
+      dto.provider,
+      info,
+    );
   }
 
   @UseGuards(AuthGuard)
@@ -76,6 +116,12 @@ export class AuthController {
   @Post('update-password')
   async updatePassword(@CurrentUser() user: any, @Body() dto: UpdatePasswordDto) {
     return this.authService.updatePassword(user.id, dto.oldPassword, dto.newPassword);
+  }
+
+  @UseGuards(AuthGuard)
+  @Post('update-username')
+  async updateUsername(@CurrentUser() user: any, @Body() dto: UpdateUsernameDto) {
+    return this.authService.updateUsername(user.id, dto.newUsername);
   }
 
   @UseGuards(AuthGuard)

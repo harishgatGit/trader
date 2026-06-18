@@ -1,0 +1,23 @@
+{
+  "jobId": "53e1a21b-1a07-499a-a3e5-ed6c6154687c",
+  "reportId": "cmqdbk94601k5v83bmsp8s9op",
+  "ticker": "NVDA",
+  "reportDate": "2026-06-14",
+  "status": "GENERATED",
+  "startedAt": "2026-06-14T05:03:51.905235",
+  "completedAt": "2026-06-14T05:12:13.219994",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/53e1a21b-1a07-499a-a3e5-ed6c6154687c/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-14\\NVDA\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-14\\NVDA\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-14\\NVDA\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-14\\NVDA\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-14\\NVDA\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-14\\NVDA\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-14\\NVDA\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-14\\NVDA\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

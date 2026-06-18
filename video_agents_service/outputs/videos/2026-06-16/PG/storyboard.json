@@ -1,0 +1,237 @@
+{
+  "ticker": "PG",
+  "reportDate": "Unavailable",
+  "videoTitle": "PG Stock Report",
+  "durationSeconds": 171.82999999999998,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for PG, Procter & Gamble. Currently rated with a strong bullish outlook, this stock is experiencing upward momentum, but it is nearing a critical resistance level that may limit further gains in the short term.\n\nAs of today, PG is priced at $152.70. The stock has been trending positively, reflecting a daily percentage move that underscores its recent strength. However, as it approaches resistance, investors should be mindful of potential volatility in the near term.\n\nThe current trend for Procter & Gamble is clearly bullish. This upward movement is primarily driven by positive analyst coverage and a favorable market sentiment, contributing to a strong outlook for the stock. \n\nEvidence supporting this trend includes a positive news sentiment, along with technical indicators suggesting upward momentum. However, note that the trading volume remains below average, indicating that the recent price increases may not be strongly supported by institutional buying interest.\n\nAnalyzing the daily trend chart reveals the presence of key support and resistance levels. The stock is testing a resistance zone which, if broken, could lead to further gains; conversely, a rejection at this level may prompt a pullback.\n\nFrom a technical metrics perspective, the Relative Strength Index (RSI) is currently at 65.34, indicating strong momentum but nearing overbought territory. Additionally, the MACD remains bullish and the stock is trading above both the 20-day and 50-day exponential moving averages.\n\nTactically, if you're considering an entry point, the swing entry zone lies between $138.87 and $142.23, with a stop loss set at $140.12 to protect against downside risk. Potential targets for this stock are set at $155.31 and $160.05.\n\nWhen contemplating a short position, caution is advised. The current short interest is moderate, and while the risk of a short squeeze is low, a breakdown below the key levels could prompt a more aggressive downside move.\n\nIn terms of ecosystem insight, the overall market sentiment and sector performance are supportive of PG's current setup. However, any shifts in market dynamics or peer performance could introduce additional volatility.\n\nIn conclusion, while the stock is showing a bullish trend, it's essential to watch the resistance level closely. A prudent approach may be to wait for a pullback or confirmation of a breakout before making any investment decisions, as the risk/reward ratio is currently not optimal.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 17.44,
+      "narration": "Welcome to the Investing Atti stock analysis for PG, Procter & Gamble. Currently rated with a strong bullish outlook, this stock is experiencing upward momentum, but it is nearing a critical resistance level that may limit further gains in the short term.",
+      "pandaAction": "default",
+      "speechBubbleText": "Bullish Outlook for PG!",
+      "visualElements": [
+        "Procter & Gamble logo",
+        "bullish trend graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "slide up"
+      ],
+      "dataFields": {
+        "catchyLine": "PG: Strong Bullish Outlook Nearing Resistance"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 17.64,
+      "narration": "As of today, PG is priced at $152.70. The stock has been trending positively, reflecting a daily percentage move that underscores its recent strength. However, as it approaches resistance, investors should be mindful of potential volatility in the near term.",
+      "pandaAction": "point",
+      "speechBubbleText": "$152.70 Current Price",
+      "visualElements": [
+        "price tag graphic",
+        "upward trend line"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "zoom in",
+        "highlight price"
+      ],
+      "dataFields": {
+        "Current Price": "$152.70"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 14.36,
+      "narration": "The current trend for Procter & Gamble is clearly bullish. This upward movement is primarily driven by positive analyst coverage and a favorable market sentiment, contributing to a strong outlook for the stock.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Bullish Trend Driven by Analysts",
+      "visualElements": [
+        "analyst report graphic",
+        "market sentiment icon"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight key points"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 20.1,
+      "narration": "Evidence supporting this trend includes a positive news sentiment, along with technical indicators suggesting upward momentum. However, note that the trading volume remains below average, indicating that the recent price increases may not be strongly supported by institutional buying interest.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Watch for Volatility!",
+      "visualElements": [
+        "news article graphic",
+        "volume chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight caution"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 16.21,
+      "narration": "Analyzing the daily trend chart reveals the presence of key support and resistance levels. The stock is testing a resistance zone which, if broken, could lead to further gains; conversely, a rejection at this level may prompt a pullback.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Key Support & Resistance Levels",
+      "visualElements": [
+        "daily trend chart",
+        "support and resistance lines"
+      ],
+      "chartElements": [
+        "resistance zone",
+        "support zone"
+      ],
+      "animationInstructions": [
+        "draw lines",
+        "highlight zones"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 19.21,
+      "narration": "From a technical metrics perspective, the Relative Strength Index (RSI) is currently at 65.34, indicating strong momentum but nearing overbought territory. Additionally, the MACD remains bullish and the stock is trading above both the 20-day and 50-day exponential moving averages.",
+      "pandaAction": "default",
+      "speechBubbleText": "RSI at 65.34!",
+      "visualElements": [
+        "RSI chart",
+        "MACD chart"
+      ],
+      "chartElements": [
+        "RSI indicator",
+        "MACD indicator"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "highlight metrics"
+      ],
+      "dataFields": {
+        "RSI": 65.34
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 16.07,
+      "narration": "Tactically, if you're considering an entry point, the swing entry zone lies between $138.87 and $142.23, with a stop loss set at $140.12 to protect against downside risk. Potential targets for this stock are set at $155.31 and $160.05.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $138.87 - $142.23",
+      "visualElements": [
+        "entry zone graphic",
+        "stop loss indicator"
+      ],
+      "chartElements": [
+        "target price markers"
+      ],
+      "animationInstructions": [
+        "highlight entry zone",
+        "fade in targets"
+      ],
+      "dataFields": {
+        "Entry Zone": "$138.87 - $142.23",
+        "Stop Loss": "$140.12",
+        "Targets": [
+          155.31,
+          160.05
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 15.11,
+      "narration": "When contemplating a short position, caution is advised. The current short interest is moderate, and while the risk of a short squeeze is low, a breakdown below the key levels could prompt a more aggressive downside move.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution on Short Positions!",
+      "visualElements": [
+        "short interest graphic",
+        "downward trend line"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight caution"
+      ],
+      "dataFields": {
+        "Short Interest": "Moderate"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 14.91,
+      "narration": "In terms of ecosystem insight, the overall market sentiment and sector performance are supportive of PG's current setup. However, any shifts in market dynamics or peer performance could introduce additional volatility.",
+      "pandaAction": "default",
+      "speechBubbleText": "Market Sentiment Supports PG!",
+      "visualElements": [
+        "market sentiment graphic",
+        "sector performance chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight market"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 20.78,
+      "narration": "In conclusion, while the stock is showing a bullish trend, it's essential to watch the resistance level closely. A prudent approach may be to wait for a pullback or confirmation of a breakout before making any investment decisions, as the risk/reward ratio is currently not optimal.",
+      "pandaAction": "default",
+      "speechBubbleText": "Invest Wisely!",
+      "visualElements": [
+        "conclusion graphic",
+        "investment strategy icon"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {
+        "quote": "Patience is the key to successful investing.",
+        "disclaimer": "This is not financial advice. Please consult a financial advisor."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

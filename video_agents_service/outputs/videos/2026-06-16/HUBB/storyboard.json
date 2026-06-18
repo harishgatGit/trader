@@ -1,0 +1,221 @@
+{
+  "ticker": "HUBB",
+  "reportDate": "Unavailable",
+  "videoTitle": "HUBB Stock Report",
+  "durationSeconds": 182.51,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for HUBB. Currently positioned at a price of $489.85, HUBB's investment rating suggests a cautious approach as the stock showcases a strong upward trend but nears critical resistance levels.\n\nAs we delve into today's price action, HUBB is trending positively, reflecting a daily percentage move that emphasizes its bullish sentiment. However, potential investors should be aware that while the stock shows upward momentum, it is approaching key resistance levels that could challenge further gains.\n\nThe driving force behind HUBB\u2019s positive trend is primarily earnings-driven, accentuated by its recent strategic move to acquire NSI Industries for $3 billion. This acquisition highlights HUBB's commitment to growth within the electrification sector, although the overall market sentiment remains mixed.\n\nEvidence supporting this bullish trend includes stable volume that aligns with price action, reinforcing the current upward momentum. Notably, the stock has experienced a golden cross, with the 50-day moving average surpassing the 200-day moving average, indicating a robust bullish outlook.\n\nIn examining the daily trend chart, HUBB is currently testing resistance levels, with support identified at $458.20. The stock is in a consolidation phase, and investors should be mindful of the volatility as it navigates these key levels.\n\nKey technical metrics reinforce the bullish narrative, with a positive MACD histogram pointing to upward momentum. Additionally, the stock's positioning above the volume-weighted average price and significant moving averages underscores a favorable trend environment.\n\nFrom a tactical perspective, potential entry zones are defined between $453.98 and $464.89, with a stop loss set at $458.20 to safeguard against adverse price movements. The targets for upside potential are positioned at $503.62 and $515.84, providing a clear risk-reward framework.\n\nFor those considering short positions, caution is advised. With data on short interest unavailable, the lower volume combined with a low short squeeze risk indicates that a breakdown could lead to increased volatility rather than a stable shorting opportunity.\n\nFinally, a broader ecosystem insight reveals that HUBB\u2019s performance is influenced by sector dynamics and peer performance within the electrification space. While the long-term outlook remains positive, the current resistance levels merit a cautious approach.\n\nIn summary, while HUBB is experiencing a bullish trend supported by strong technical indicators, the near-term resistance levels present a risk to immediate entry. Investors are advised to monitor for a pullback or confirmed breakout before committing capital.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 15.74,
+      "narration": "Welcome to the Investing Atti stock analysis for HUBB. Currently positioned at a price of $489.85, HUBB's investment rating suggests a cautious approach as the stock showcases a strong upward trend but nears critical resistance levels.",
+      "pandaAction": "default",
+      "speechBubbleText": "HUBB: A Cautious Approach",
+      "visualElements": [
+        "HUBB logo",
+        "current price display"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "slide up"
+      ],
+      "dataFields": {
+        "catchyLine": "HUBB: Strong Trend, Caution Ahead"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 20.5,
+      "narration": "As we delve into today's price action, HUBB is trending positively, reflecting a daily percentage move that emphasizes its bullish sentiment. However, potential investors should be aware that while the stock shows upward momentum, it is approaching key resistance levels that could challenge further gains.",
+      "pandaAction": "point",
+      "speechBubbleText": "Positive Daily Move",
+      "visualElements": [
+        "daily price chart",
+        "bullish sentiment icon"
+      ],
+      "chartElements": [
+        "daily percentage move chart"
+      ],
+      "animationInstructions": [
+        "zoom in",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 20.3,
+      "narration": "The driving force behind HUBB\u2019s positive trend is primarily earnings-driven, accentuated by its recent strategic move to acquire NSI Industries for $3 billion. This acquisition highlights HUBB's commitment to growth within the electrification sector, although the overall market sentiment remains mixed.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Earnings-Driven Growth",
+      "visualElements": [
+        "acquisition graphic",
+        "growth sector icon"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "draw in",
+        "fade out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 19.49,
+      "narration": "Evidence supporting this bullish trend includes stable volume that aligns with price action, reinforcing the current upward momentum. Notably, the stock has experienced a golden cross, with the 50-day moving average surpassing the 200-day moving average, indicating a robust bullish outlook.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Stable Volume & Golden Cross",
+      "visualElements": [
+        "volume chart",
+        "moving averages graphic"
+      ],
+      "chartElements": [
+        "golden cross chart"
+      ],
+      "animationInstructions": [
+        "zoom in",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 16.01,
+      "narration": "In examining the daily trend chart, HUBB is currently testing resistance levels, with support identified at $458.20. The stock is in a consolidation phase, and investors should be mindful of the volatility as it navigates these key levels.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Testing Resistance Levels",
+      "visualElements": [
+        "daily trend chart",
+        "support and resistance markers"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 17.89,
+      "narration": "Key technical metrics reinforce the bullish narrative, with a positive MACD histogram pointing to upward momentum. Additionally, the stock's positioning above the volume-weighted average price and significant moving averages underscores a favorable trend environment.",
+      "pandaAction": "default",
+      "speechBubbleText": "Positive Technical Metrics",
+      "visualElements": [
+        "MACD histogram",
+        "VWAP indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 18.89,
+      "narration": "From a tactical perspective, potential entry zones are defined between $453.98 and $464.89, with a stop loss set at $458.20 to safeguard against adverse price movements. The targets for upside potential are positioned at $503.62 and $515.84, providing a clear risk-reward framework.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Entry Zones & Targets",
+      "visualElements": [
+        "entry zone graphic",
+        "target price markers"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "draw in",
+        "fade out"
+      ],
+      "dataFields": {
+        "Entry Zone": "453.98 - 464.89",
+        "Stop Loss": "458.20",
+        "Targets": "[503.62, 515.84]"
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 17.42,
+      "narration": "For those considering short positions, caution is advised. With data on short interest unavailable, the lower volume combined with a low short squeeze risk indicates that a breakdown could lead to increased volatility rather than a stable shorting opportunity.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution on Short Positions",
+      "visualElements": [
+        "short selling icon",
+        "volatility warning"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 17.35,
+      "narration": "Finally, a broader ecosystem insight reveals that HUBB\u2019s performance is influenced by sector dynamics and peer performance within the electrification space. While the long-term outlook remains positive, the current resistance levels merit a cautious approach.",
+      "pandaAction": "default",
+      "speechBubbleText": "Sector Dynamics Matter",
+      "visualElements": [
+        "sector performance graphic",
+        "peer comparison chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "slide up"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 18.92,
+      "narration": "In summary, while HUBB is experiencing a bullish trend supported by strong technical indicators, the near-term resistance levels present a risk to immediate entry. Investors are advised to monitor for a pullback or confirmed breakout before committing capital.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Monitor for Breakout!",
+      "visualElements": [],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing.",
+        "disclaimer": "This is not financial advice. Please consult a financial advisor."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

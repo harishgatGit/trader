@@ -1,0 +1,28 @@
+{
+  "ticker": "ORCL",
+  "companyName": "ORCL",
+  "reportDate": "Unavailable",
+  "currentPrice": 186.42,
+  "dayChangePct": -2.23,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "news-driven",
+  "catalystSummary": "AI-powered product launch",
+  "volumeSummary": "Volume is below average, suggesting weak buying interest.",
+  "trendSummary": "Oracle's stock is currently in a bearish trend. The price has been declining, as evidenced by the recent close at $186.42, down 2.23% from the previous day. Technical indicators confirm this bearish sentiment: the MACD histogram is negative, a death cross has occurred with EMA(50) falling below EMA(200), and the price is below the VWAP. The ADX indicates a strong downtrend, and the RSI(14) is at 44.71, suggesting that the stock is not yet oversold but is under pressure. Additionally, the news of Microsoft walking away from a $3 billion deal due to security concerns has negatively impacted sentiment. Institutional flow data shows below-average volume and a bearish On-Balance Volume (OBV) trend, indicating potential distribution. Despite some positive news about Oracle's AI initiatives, the overall sentiment remains negative.",
+  "supportLevels": [
+    134.6
+  ],
+  "resistanceLevels": [
+    189.17
+  ],
+  "entryZone": "Low: 134.6, High: 160.36",
+  "stopLoss": "Price: 160.36 (Set stop-loss below recent support.)",
+  "targets": [
+    189.17,
+    200.38
+  ],
+  "shortTradeView": "SI%: Data unavailable, Borrow Fee: Data unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "Technical downtrend; High debt levels; Negative news sentiment",
+  "finalVerdict": "Oracle's stock is currently in a bearish trend with technical indicators suggesting further downside risk. The stock is below key moving averages and near support levels, with a high bid-ask spread indicating potential liquidity issues. Given the recent negative news and high debt levels, it is prudent to watch for a clearer entry signal or a reversal before considering a buy.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: Oracle's stock is currently not a buy due to its bearish trend and negative technical indicators. The stock has been declining and is below key moving averages, indicating a lack of upward momentum. Recent news has been mixed, with some negative sentiment impacting the stock. It is advisable to wait for a clearer signal of reversal or improvement before considering an investment."
+}

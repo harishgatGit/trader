@@ -1,0 +1,253 @@
+{
+  "ticker": "NVDA",
+  "reportDate": "Unavailable",
+  "videoTitle": "NVDA Stock Report",
+  "durationSeconds": 173.72,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for NVDA. With the stock currently in a holding pattern, is now the time to buy, or should investors exercise caution?\n\nNVIDIA's current price stands at $208.95, reflecting a decline of 1.64% from the previous close. This movement indicates that the stock is experiencing downward pressure, closing below its opening price of $211.115 today.\n\nThe current trend for NVIDIA shows mixed signals. While the long-term outlook appears bullish due to a golden cross, short-term indicators are leaning bearish, creating uncertainty for traders.\n\nThese mixed signals are compounded by below-average trading volume, which suggests a lack of strong buying interest. Additionally, despite positive sentiment from recent news articles, it hasn't translated into upward price movement, potentially due to concerns over a recent $25 billion debt deal.\n\nIn terms of technical setup, the stock is currently positioned near resistance levels, with support identified in the range of $194.76 to $199.34. This zone indicates that the stock may be consolidating, but a breakout or breakdown could significantly influence future price action.\n\nExamining the technical indicators, the MACD is currently bearish, while the RSI indicates neutral conditions. The price is also below the volume-weighted average price, which reinforces the short-term bearish outlook.\n\nFor tactical traders, an entry zone would be established between $194.76 and $199.34, with a recommended stop loss set at $199.34, just below the support level. Key target levels are identified at $216.82 and $232.28, providing potential upside if conditions improve.\n\nHowever, caution is advised for those considering short trades. The current setup shows signs of distribution, and while short selling might be tempting, there is a low risk of a squeeze based on the available data.\n\nIn the broader market context, NVIDIA's performance is influenced by sector dynamics and overall market sentiment. While positive news can provide support, the mixed technical signals may limit momentum from peers.\n\nIn conclusion, the final investment rating for NVIDIA is categorized as a watchlist due to the neutral technical setup. Key levels to monitor include the support around $199.34, as any breach could signal further downside risk. Always assess the main risks before making any investment decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 11.86,
+      "narration": "Welcome to the Investing Atti stock analysis for NVDA. With the stock currently in a holding pattern, is now the time to buy, or should investors exercise caution?",
+      "pandaAction": "default",
+      "speechBubbleText": "Is it time to buy NVDA?",
+      "visualElements": [
+        "NVIDIA logo",
+        "stock market background"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in on logo"
+      ],
+      "dataFields": {
+        "catchyLine": "NVDA: Holding Pattern - Buy or Caution?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 16.08,
+      "narration": "NVIDIA's current price stands at $208.95, reflecting a decline of 1.64% from the previous close. This movement indicates that the stock is experiencing downward pressure, closing below its opening price of $211.115 today.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $208.95",
+      "visualElements": [
+        "price tag graphic",
+        "decline arrow"
+      ],
+      "chartElements": [
+        "price chart showing decline"
+      ],
+      "animationInstructions": [
+        "slide in price tag",
+        "animate decline arrow"
+      ],
+      "dataFields": {
+        "Current Price": "$208.95",
+        "Decline": "1.64%",
+        "Opening Price": "$211.115"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 14.04,
+      "narration": "The current trend for NVIDIA shows mixed signals. While the long-term outlook appears bullish due to a golden cross, short-term indicators are leaning bearish, creating uncertainty for traders.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Mixed Signals Ahead",
+      "visualElements": [
+        "bullish and bearish icons",
+        "golden cross illustration"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in mixed signals",
+        "highlight golden cross"
+      ],
+      "dataFields": {
+        "Trend": "Mixed Signals",
+        "Long-term Outlook": "Bullish",
+        "Short-term Indicators": "Bearish"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 21.68,
+      "narration": "These mixed signals are compounded by below-average trading volume, which suggests a lack of strong buying interest. Additionally, despite positive sentiment from recent news articles, it hasn't translated into upward price movement, potentially due to concerns over a recent $25 billion debt deal.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Low Trading Volume",
+      "visualElements": [
+        "volume chart",
+        "news article snippets"
+      ],
+      "chartElements": [
+        "trading volume chart"
+      ],
+      "animationInstructions": [
+        "draw volume chart",
+        "fade in news snippets"
+      ],
+      "dataFields": {
+        "Trading Volume": "Below Average",
+        "Debt Deal": "$25 billion"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 20.52,
+      "narration": "In terms of technical setup, the stock is currently positioned near resistance levels, with support identified in the range of $194.76 to $199.34. This zone indicates that the stock may be consolidating, but a breakout or breakdown could significantly influence future price action.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Resistance & Support Levels",
+      "visualElements": [
+        "support and resistance lines",
+        "consolidation zone"
+      ],
+      "chartElements": [
+        "support and resistance chart"
+      ],
+      "animationInstructions": [
+        "zoom in on support/resistance",
+        "highlight consolidation zone"
+      ],
+      "dataFields": {
+        "Support Range": "$194.76 - $199.34",
+        "Resistance Level": "Current Price"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 15.86,
+      "narration": "Examining the technical indicators, the MACD is currently bearish, while the RSI indicates neutral conditions. The price is also below the volume-weighted average price, which reinforces the short-term bearish outlook.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Technical Indicators",
+      "visualElements": [
+        "MACD chart",
+        "RSI chart"
+      ],
+      "chartElements": [
+        "MACD and RSI comparison"
+      ],
+      "animationInstructions": [
+        "fade in MACD",
+        "highlight RSI"
+      ],
+      "dataFields": {
+        "MACD": "Bearish",
+        "RSI": "Neutral",
+        "VWAP": "Below"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 19.43,
+      "narration": "For tactical traders, an entry zone would be established between $194.76 and $199.34, with a recommended stop loss set at $199.34, just below the support level. Key target levels are identified at $216.82 and $232.28, providing potential upside if conditions improve.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $194.76 - $199.34",
+      "visualElements": [
+        "entry zone graphic",
+        "target levels"
+      ],
+      "chartElements": [
+        "entry and target levels chart"
+      ],
+      "animationInstructions": [
+        "highlight entry zone",
+        "fade in target levels"
+      ],
+      "dataFields": {
+        "Entry Zone": "$194.76 - $199.34",
+        "Stop Loss": "$199.34",
+        "Targets": [
+          216.82,
+          232.28
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 15.64,
+      "narration": "However, caution is advised for those considering short trades. The current setup shows signs of distribution, and while short selling might be tempting, there is a low risk of a squeeze based on the available data.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution on Short Trades",
+      "visualElements": [
+        "distribution chart",
+        "warning sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in distribution chart",
+        "highlight warning sign"
+      ],
+      "dataFields": {
+        "Short Selling Risk": "Low"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 15.57,
+      "narration": "In the broader market context, NVIDIA's performance is influenced by sector dynamics and overall market sentiment. While positive news can provide support, the mixed technical signals may limit momentum from peers.",
+      "pandaAction": "default",
+      "speechBubbleText": "Market Context Matters",
+      "visualElements": [
+        "sector dynamics graphic",
+        "market sentiment indicators"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in sector dynamics",
+        "highlight sentiment indicators"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 23.04,
+      "narration": "In conclusion, the final investment rating for NVIDIA is categorized as a watchlist due to the neutral technical setup. Key levels to monitor include the support around $199.34, as any breach could signal further downside risk. Always assess the main risks before making any investment decisions.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Investment Rating: WATCHLIST",
+      "visualElements": [
+        "watchlist graphic",
+        "risk assessment"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in watchlist graphic",
+        "highlight risk assessment"
+      ],
+      "dataFields": {
+        "quote": "Patience is the key to successful investing.",
+        "disclaimer": "This is not financial advice. Please do your own research."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

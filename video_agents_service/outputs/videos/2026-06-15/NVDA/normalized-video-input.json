@@ -1,0 +1,28 @@
+{
+  "ticker": "NVDA",
+  "companyName": "NVDA",
+  "reportDate": "Unavailable",
+  "currentPrice": 211.98,
+  "dayChangePct": 3.32,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "news-driven",
+  "catalystSummary": "Recent bond sale announcement",
+  "volumeSummary": "Volume is below average, indicating lack of strong buying pressure.",
+  "trendSummary": "NVIDIA's stock is experiencing a mixed trend. The daily technical indicators suggest a bullish bias with the price above key moving averages and a golden cross formation, indicating potential long-term strength. However, the MACD is bearish, and the price is below the VWAP, suggesting short-term weakness. The institutional flow indicates distribution, with price rising on declining volume, which weakens the rally's strength. News about NVIDIA's bond sale is neutral, not providing a strong catalyst for a directional move. Overall, the stock is in a strong uptrend but faces short-term resistance and mixed signals.",
+  "supportLevels": [
+    199.34
+  ],
+  "resistanceLevels": [
+    216.82
+  ],
+  "entryZone": "Low: 194.76, High: 199.34",
+  "stopLoss": "Price: 199.34 (Stop loss set below recent support to manage risk.)",
+  "targets": [
+    216.82,
+    232.28
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "High valuation; Near resistance",
+  "finalVerdict": "NVDA is currently in a bullish trend with strong technical indicators, but the price is near resistance levels, and the risk/reward ratio is not optimal for a buy decision at this moment. The stock should be watched for a potential pullback or breakout confirmation.",
+  "executiveSummary": "NVDA is currently trading at $211.98, showing a bullish trend with strong technical indicators such as a golden cross and price above key moving averages. However, the stock is near resistance levels, and the risk/reward ratio is not favorable for a buy decision at this time. Institutional flow proxy indicates distribution, suggesting caution. Near-term, NVDA may face resistance, while long-term prospects remain positive due to strong fundamentals in the technology sector. LAYMAN'S TAKEAWAY: NVDA is a strong stock in a bullish trend, but it's wise to wait for a better entry point or confirmation of a breakout above resistance before considering a purchase."
+}

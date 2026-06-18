@@ -10,6 +10,7 @@ import { FundamentalResult } from './fundamental.agent';
 import { NewsResult } from './news.agent';
 import { InstitutionalFlowResult } from './institutional-flow.agent';
 import { HistoricalDataResult } from './historical-data.agent';
+import { getNYDateString } from '../utils/date';
 
 export const TrendStoryResultSchema = z.object({
   ticker: z.string(),
@@ -269,7 +270,7 @@ export function mapNewTrendStoryToOld(newStory: any): any {
   };
 
   const ticker = newStory.ticker;
-  const analysisDate = newStory.analysis_date || new Date().toISOString().split('T')[0];
+  const analysisDate = newStory.analysis_date || getNYDateString();
   
   // Primary reason mapping
   let primaryReason = 'unknown-mixed';
@@ -505,7 +506,7 @@ const TREND_STORY_SYSTEM_PROMPT = `You are a senior equity research analyst and 
 
 Specifically, you are analyzing:
 - Price summary (daily change, open, high, low, close, volume)
-- Technical indicators (RSI, MACD, EMA, VWAP, support/resistance)
+- Technical indicators (RSI(14), MACD, EMA(20)/EMA(50)/EMA(200), VWAP, support/resistance)
 - Fundamental profile (description, sector, sector/index returns)
 - News events (headlines, sources, dates)
 - Institutional activity proxy (proxy score, accumulation/distribution signals)
@@ -558,6 +559,8 @@ You must output a single JSON object matching the exact Zod schema rules.
    - Do NOT say "RSI is overbought". Instead say: "Buying has been very aggressive recently, meaning the stock may need a cool-down period before it can go higher."
    - Do NOT say "Price broke resistance". Instead say: "The stock pushed past a price area where sellers usually gather to sell. If it holds above this level, buyers remain in command."
    - Do NOT say "VWAP acts as support". Instead say: "The price remains above the average price paid by traders today, which is a sign of positive short-term momentum."
+
+INDICATOR NAMING CONVENTIONS: Whenever you refer to technical indicator terms in any technical/evidence fields (such as three_day_pattern.explanation, evidence.technical_context.summary, or final_summary.pattern_insight), always write them with their parameter settings, such as RSI(14), EMA(20), EMA(50), EMA(200), or SMA(200) instead of just RSI, EMA, or SMA.
 
 7. Evidence Table & Trading Interpretation:
    - Connect the dots for both Swing Traders (long bias) and Short Sellers (short bias), defining exact validation/invalidation support, resistance, and stop-loss levels.
@@ -797,7 +800,7 @@ export class TrendStoryAgent {
 
     const normalizedData = {
       ticker: symbol,
-      analysis_date: new Date().toISOString().split('T')[0],
+      analysis_date: getNYDateString(),
       data_quality_check: {
         price_available: price > 0,
         historical_candles_count: candleData.length,
@@ -907,7 +910,7 @@ ${JSON.stringify(normalizedData, null, 2)}
 
     return {
       ticker: params.symbol,
-      analysis_date: new Date().toISOString().split('T')[0],
+      analysis_date: getNYDateString(),
       price_summary: {
         current_price: price,
         previous_close: +(price / (1 + change / 100)).toFixed(2),

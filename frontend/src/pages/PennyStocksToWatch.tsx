@@ -192,7 +192,7 @@ const PennyStocksToWatch: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Watch Reason */}
                     <div>
-                      <h4 className="text-xs font-bold text-slate-200 tracking-wider mb-1.5 flex items-center gap-1.5 uppercase">
+                      <h4 className="text-xs font-bold text-slate-200 tracking-wider mb-1.5 flex items-center gap-1.5 ">
                         <HelpCircle className="w-3.5 h-3.5 text-slate-400" />
                         Scanner Trigger
                       </h4>
@@ -203,7 +203,7 @@ const PennyStocksToWatch: React.FC = () => {
 
                     {/* Catalyst */}
                     <div>
-                      <h4 className="text-xs font-bold text-slate-200 tracking-wider mb-1.5 flex items-center gap-1.5 uppercase">
+                      <h4 className="text-xs font-bold text-slate-200 tracking-wider mb-1.5 flex items-center gap-1.5 ">
                         <Newspaper className="w-3.5 h-3.5 text-slate-400" />
                         News Catalyst
                       </h4>

@@ -1,0 +1,217 @@
+{
+  "ticker": "QUALCOMM",
+  "reportDate": "Unavailable",
+  "videoTitle": "QUALCOMM Stock Report",
+  "durationSeconds": 153.85,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for QUALCOMM. With the current uncertainty surrounding its data, what does this mean for potential trading opportunities? Let\u2019s dive deep into the analysis.\n\nCurrently, we do not have an available price for QUALCOMM, which raises concerns about its current market position. Without this critical information, it's challenging to assess recent intraday trends or daily percentage movements, leaving us in a state of uncertainty.\n\nThe analysis indicates that the trend direction for QUALCOMM remains inconclusive. With insufficient data, we cannot identify the primary drivers behind any potential price movements, making it essential to keep this stock on a watchlist for future updates.\n\nExamining the evidence behind the trend is difficult due to the lack of available news sentiment or volume data. The absence of these indicators means we cannot confirm any significant movements or key levels, further complicating our understanding of its current status.\n\nIn terms of the daily trend chart, we can\u2019t analyze support or resistance levels without the necessary price action data. The lack of historical candle information leaves us unable to determine whether the stock is in a consolidation phase or experiencing a breakout.\n\nTurning to technical metrics, we are unable to evaluate indicators such as RSI, MACD, or moving averages. This absence of technical insight limits our ability to gauge market momentum or potential reversals effectively.\n\nFor tactical traders, it is essential to note that we cannot define entry zones, stop loss levels, or target prices due to insufficient information. This lack of clarity underscores the importance of monitoring QUALCOMM closely until more data becomes available.\n\nWhen considering a short trade view, the analysis suggests exercising caution. With no clear breakdown levels or short interest data, the risk of a short squeeze remains low, but uncertainty persists.\n\nIn the broader ecosystem, the lack of concrete data means we cannot assess how QUALCOMM\u2019s sector or market conditions may influence its setup. This absence of context further complicates our position on this stock.\n\nIn conclusion, the final verdict is clear: due to insufficient data across multiple key areas, it is prudent to keep QUALCOMM on your watchlist. As we await more information, be mindful of the inherent risks and limitations in making investment decisions at this time.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 12.61,
+      "narration": "Welcome to the Investing Atti stock analysis for QUALCOMM. With the current uncertainty surrounding its data, what does this mean for potential trading opportunities? Let\u2019s dive deep into the analysis.",
+      "pandaAction": "default",
+      "speechBubbleText": "QUALCOMM: Uncertain Future?",
+      "visualElements": [
+        "QUALCOMM logo",
+        "stock market background"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "QUALCOMM: Uncertain Future?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 16.88,
+      "narration": "Currently, we do not have an available price for QUALCOMM, which raises concerns about its current market position. Without this critical information, it's challenging to assess recent intraday trends or daily percentage movements, leaving us in a state of uncertainty.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Price Unavailable!",
+      "visualElements": [
+        "price data placeholder",
+        "concerned trader"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 16.13,
+      "narration": "The analysis indicates that the trend direction for QUALCOMM remains inconclusive. With insufficient data, we cannot identify the primary drivers behind any potential price movements, making it essential to keep this stock on a watchlist for future updates.",
+      "pandaAction": "point",
+      "speechBubbleText": "Trend: Inconclusive!",
+      "visualElements": [
+        "watchlist icon",
+        "unclear trend line"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight",
+        "fade in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 17.0,
+      "narration": "Examining the evidence behind the trend is difficult due to the lack of available news sentiment or volume data. The absence of these indicators means we cannot confirm any significant movements or key levels, further complicating our understanding of its current status.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Lack of Evidence!",
+      "visualElements": [
+        "news sentiment icon",
+        "volume data placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "zoom in",
+        "fade out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 16.75,
+      "narration": "In terms of the daily trend chart, we can\u2019t analyze support or resistance levels without the necessary price action data. The lack of historical candle information leaves us unable to determine whether the stock is in a consolidation phase or experiencing a breakout.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "No Trend Analysis!",
+      "visualElements": [
+        "daily trend chart placeholder",
+        "consolidation vs breakout"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "draw chart",
+        "fade in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 13.74,
+      "narration": "Turning to technical metrics, we are unable to evaluate indicators such as RSI, MACD, or moving averages. This absence of technical insight limits our ability to gauge market momentum or potential reversals effectively.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Technical Metrics Missing!",
+      "visualElements": [
+        "RSI icon",
+        "MACD icon",
+        "moving averages placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 16.44,
+      "narration": "For tactical traders, it is essential to note that we cannot define entry zones, stop loss levels, or target prices due to insufficient information. This lack of clarity underscores the importance of monitoring QUALCOMM closely until more data becomes available.",
+      "pandaAction": "point",
+      "speechBubbleText": "Tactical Setup Unclear!",
+      "visualElements": [
+        "entry zone placeholder",
+        "stop loss placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight",
+        "fade out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 12.55,
+      "narration": "When considering a short trade view, the analysis suggests exercising caution. With no clear breakdown levels or short interest data, the risk of a short squeeze remains low, but uncertainty persists.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution on Short Trades!",
+      "visualElements": [
+        "short trade icon",
+        "caution sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 13.43,
+      "narration": "In the broader ecosystem, the lack of concrete data means we cannot assess how QUALCOMM\u2019s sector or market conditions may influence its setup. This absence of context further complicates our position on this stock.",
+      "pandaAction": "default",
+      "speechBubbleText": "Ecosystem Context Lacking!",
+      "visualElements": [
+        "sector analysis placeholder",
+        "market conditions icon"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 18.32,
+      "narration": "In conclusion, the final verdict is clear: due to insufficient data across multiple key areas, it is prudent to keep QUALCOMM on your watchlist. As we await more information, be mindful of the inherent risks and limitations in making investment decisions at this time.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Keep QUALCOMM on Watchlist!",
+      "visualElements": [
+        "watchlist icon",
+        "caution sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing; wait for clarity.",
+        "disclaimer": "This analysis is for informational purposes only and should not be considered as financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

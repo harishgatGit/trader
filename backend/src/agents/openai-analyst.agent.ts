@@ -838,13 +838,13 @@ CRITICAL RULES:
     - "shortFilter": Evaluate short-selling pressure including borrow fee rates/availability, short interest percentage, SSR (Short Sale Restriction) status, and squeeze risk (low/medium/high).
     - "horizonDetails": Summarize the tactical outlook in 2-3 sentences.
 15. In "technicalAnalysis.volumeTrendStatus", classify the current volume trend exactly as one of the following: 'GROWING_STRONGER', 'FADING', 'STABLE', 'UNUSUAL_SPIKE', or 'INSUFFICIENT_DATA'.
-16. In "executiveSummary.summary", write a clear, layman-friendly explanation (2-3 paragraphs) of the analysis using the data. You must explicitly address:
-    - The stock's current price and technical trend
-    - Whether the stock shows signs of accumulation (institutional buying) or distribution (selling pressure)
-    - Clear actionable advice (to BUY, HOLD, or SELL) with simple justifications
-    - Return expectations in the near term (days/weeks) and long term (months/years)
-    - A final, distinct paragraph starting exactly with the label "LAYMAN'S TAKEAWAY:" explaining the ultimate simple advice for non-technical users.
-17. MANDATORY — In "executiveSummary", you MUST ALWAYS include ALL THREE arrays: "bullishFactors" (reasons why the stock could go up), "bearishFactors" (reasons why it could go down), and "neutralFactors" (factors that are not clearly bullish or bearish). Each array must have at least 1 string item. NEVER omit these fields.`;
+16. In "executiveSummary.summary", write a clear, layman-friendly, and highly actionable explanation (2-3 paragraphs) using the data.
+    - STRICTLY FORBIDDEN: Do not mention any technical indicator jargon or specific names (such as EMA, RSI, MACD, OBV, ADX, SMA, volume profiles, etc.). Describe trends and data in plain, everyday English (e.g. "price is trending downward over the medium and long term" instead of "price sits below 50/200 EMAs").
+    - Explicitly address: current price trend direction, signs of buying/selling interest, return expectations, and concrete action suggestions (e.g. "wait for price to stabilize before taking action" instead of "wait for close above EMA20").
+    - The first, distinct paragraph must start exactly with the label "LAYMAN'S TAKEAWAY:" explaining the ultimate simple advice and actionable suggestions for non-technical users.
+    - Subsequent paragraphs should provide the supporting qualitative rationale in simple English.
+17. MANDATORY — In "executiveSummary", you MUST ALWAYS include ALL THREE arrays: "bullishFactors" (reasons why the stock could go up), "bearishFactors" (reasons why it could go down), and "neutralFactors" (factors that are not clearly bullish or bearish). Each array must have at least 1 string item. NEVER omit these fields.
+18. INDICATOR NAMING CONVENTIONS: Whenever you refer to technical indicator terms in the analytical modules/fields (e.g. rsiAnalysis, movingAverageAnalysis, macdAnalysis, vwapView, etc.), always write them with their parameter settings, such as RSI(14), EMA(20), EMA(50), EMA(200), or SMA(200) instead of just RSI, EMA, or SMA.`;
 
 const INSIGHTS_SYSTEM_PROMPT = `You are a senior equity research analyst specializing in corporate ecosystem analysis.
 

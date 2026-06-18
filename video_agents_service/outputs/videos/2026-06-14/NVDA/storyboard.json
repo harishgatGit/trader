@@ -1,0 +1,235 @@
+{
+  "ticker": "NVDA",
+  "reportDate": "Unavailable",
+  "videoTitle": "NVDA Stock Report",
+  "durationSeconds": 190.21,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for NVDA. Currently trading at $205.1, NVDA presents a mixed technical outlook that warrants careful consideration. With a bearish daily trend but potential short-term strength, investors should evaluate whether to take action or observe from the sidelines.\n\nAs of now, NVDA is priced at $205.1. The intraday trend reflects a bearish movement, with the stock trading below key moving averages. This suggests there may be potential distribution occurring in the market, making it essential for investors to remain cautious.\n\nThe primary trend direction for NVDA is bearish, driven by a combination of technical indicators and institutional flow. The stock is trading beneath significant moving averages, indicating a prevailing negative sentiment, despite some bullish signals emerging in shorter timeframes.\n\nThe evidence for this trend includes below-average trading volume, which indicates a lack of strong buying interest. Furthermore, the stock's positioning relative to the volume-weighted average price suggests institutional distribution, aligning with the bearish daily trend.\n\nExamining the daily trend, NVDA is near key support levels, which are crucial for potential reversals. The current price action suggests a consolidation phase, though the wide bid-ask spread reflects uncertainty and conflicting signals in the market.\n\nFrom a technical metrics perspective, the MACD is indicating bearish momentum, while shorter-term charts show bullish signs. This divergence points to a complex trading environment, where the stock is experiencing mixed signals that could influence potential trading decisions.\n\nFor tactical traders, the entry zone is identified between $194.76 and $199.34, with a stop loss set below support at $194.76. Target levels for potential gains are positioned at $216.82 and $232.28, but these targets depend on market clarity and momentum.\n\nWhen considering a short trade, caution is advised. The current setup presents risks, particularly if the price breaks below the support level. Additionally, the risk of a short squeeze is low, which may limit the potential for large price movements in the opposite direction.\n\nIn terms of ecosystem insight, positive sentiment in the technology sector could provide a tailwind for NVDA. However, the mixed signals from institutional flows and technical indicators suggest that the broader market context remains uncertain.\n\nIn conclusion, NVDA holds a watchlist rating due to its mixed technical position. Investors should monitor key levels, particularly the support at $194.76, and remain aware of the risks associated with entering this market without clearer signals. Always conduct your own research and consider market conditions before making trading decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 24.12,
+      "narration": "Welcome to the Investing Atti stock analysis for NVDA. Currently trading at $205.1, NVDA presents a mixed technical outlook that warrants careful consideration.",
+      "pandaAction": "default",
+      "speechBubbleText": "Mixed Technical Outlook",
+      "visualElements": [
+        "NVDA logo",
+        "current price display"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "NVDA: Mixed Signals in a Bearish Trend"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 20.2,
+      "narration": "As of now, NVDA is priced at $205.1. The intraday trend reflects a bearish movement, with the stock trading below key moving averages.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Current Price: $205.1",
+      "visualElements": [
+        "price chart",
+        "bearish indicator"
+      ],
+      "chartElements": [
+        "moving averages"
+      ],
+      "animationInstructions": [
+        "slide in",
+        "highlight"
+      ],
+      "dataFields": {
+        "Current Price": "$205.1"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 18.09,
+      "narration": "The primary trend direction for NVDA is bearish, driven by a combination of technical indicators and institutional flow.",
+      "pandaAction": "point",
+      "speechBubbleText": "Bearish Trend Direction",
+      "visualElements": [
+        "trend direction arrow",
+        "institutional flow graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "bounce"
+      ],
+      "dataFields": {
+        "Trend": "Bearish"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 17.48,
+      "narration": "The evidence for this trend includes below-average trading volume, which indicates a lack of strong buying interest.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Below-Average Volume",
+      "visualElements": [
+        "volume chart",
+        "trading volume indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "zoom in",
+        "highlight"
+      ],
+      "dataFields": {
+        "Trading Volume": "Below Average"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 15.37,
+      "narration": "Examining the daily trend, NVDA is near key support levels, which are crucial for potential reversals.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Key Support Levels",
+      "visualElements": [
+        "support level graphic",
+        "price action chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {
+        "Support Levels": "Critical for Reversal"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 18.69,
+      "narration": "From a technical metrics perspective, the MACD is indicating bearish momentum, while shorter-term charts show bullish signs.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Mixed Technical Metrics",
+      "visualElements": [
+        "MACD chart",
+        "bullish signals graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "draw"
+      ],
+      "dataFields": {
+        "MACD": "Bearish Momentum"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 18.99,
+      "narration": "For tactical traders, the entry zone is identified between $194.76 and $199.34, with a stop loss set below support at $194.76.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $194.76 - $199.34",
+      "visualElements": [
+        "entry zone graphic",
+        "stop loss indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {
+        "Entry Zone": "$194.76 - $199.34",
+        "Stop Loss": "$194.76"
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 21.55,
+      "narration": "When considering a short trade, caution is advised. The current setup presents risks, particularly if the price breaks below the support level.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution: Short Trade Risks",
+      "visualElements": [
+        "short trade warning graphic",
+        "risk indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {
+        "Short Trade Risk": "High"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 16.43,
+      "narration": "In terms of ecosystem insight, positive sentiment in the technology sector could provide a tailwind for NVDA.",
+      "pandaAction": "default",
+      "speechBubbleText": "Positive Tech Sentiment",
+      "visualElements": [
+        "technology sector graphic",
+        "sentiment indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "Catalysts": "Positive Sentiment"
+      }
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 19.29,
+      "narration": "In conclusion, NVDA holds a watchlist rating due to its mixed technical position. Investors should monitor key levels.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Watchlist Rating: NVDA",
+      "visualElements": [
+        "watchlist graphic",
+        "key levels indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "celebrate"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in trading; wait for clarity before acting.",
+        "disclaimer": "Always conduct your own research and consider market conditions before making trading decisions."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

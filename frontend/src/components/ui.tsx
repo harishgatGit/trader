@@ -272,7 +272,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ content, children, position = 
     >
       {children}
       {visible && (
-        <div className={`absolute z-[9999] w-52 p-2 text-[11px] leading-relaxed font-normal text-slate-200 bg-slate-950/95 border border-slate-800 rounded-lg shadow-xl backdrop-blur-sm pointer-events-none transition-all duration-200 fade-in ${positionClasses[position]}`}>
+        <div className={`absolute z-[9999] w-72 max-w-[85vw] p-2.5 text-[11px] leading-relaxed font-normal text-slate-200 bg-slate-950/95 border border-slate-800 rounded-lg shadow-xl backdrop-blur-sm pointer-events-none transition-all duration-200 fade-in ${positionClasses[position]}`}>
           {content}
           <div className={`absolute w-1.5 h-1.5 bg-slate-950 border-r border-b border-slate-800 rotate-45 ${
             position === 'top' ? 'top-full left-1/2 -translate-x-1/2 -mt-0.75 border-t-0 border-l-0' :
@@ -312,17 +312,18 @@ const termDefinitions: Record<string, string> = {
   ssrstatus: "Short Sale Restriction (Rule 201) status, restricting short sales to upticks if triggered.",
   borrowfee: "Annualized interest rate charged by brokers to borrow shares for shorting, reflecting share availability.",
   shortinterest: "Percentage of outstanding shares that have been sold short but not yet covered/closed.",
-  confidencescore: "The AI's conviction level (0-100%) in its final recommendation (e.g. BUY, WAIT, HOLD). A low score indicates conflicting indicators or highly speculative conditions, while a high score indicates strong alignment across technicals, news, and fundamentals.",
+  technicalscore: "The strength of the combined technical indicators (moving averages, momentum, volume support) scored from 0 to 100. A high score indicates a strong, well-supported technical setup.",
+  confidencescore: "The AI's conviction level (0-100%) in its final suggestion (e.g. buy, wait, hold). A low score indicates conflicting indicators or highly speculative conditions, while a high score indicates strong alignment across technicals, news, and fundamentals.",
   confidence: "The AI's confidence level in the primary driver of the stock's daily movement. A low score implies multiple speculative factors or mixed news, while a high score indicates a clear, dominant catalyst.",
-  rsi: "Relative Strength Index (RSI): Shows whether the stock is overheated/overbought (above 70) or cheap/oversold (below 30).",
+  rsi: "Relative Strength Index (RSI) / RSI(14): Shows whether the stock is overheated/overbought (above 70) or cheap/oversold (below 30) using a 14-period lookback.",
   macd: "Moving Average Convergence Divergence (MACD): Shows whether price momentum is getting stronger (bullish) or weaker (bearish).",
   movingaverage: "Shows the average price over a set period. Helps identify if the trend is moving up or down.",
   volume: "Shows how many shares traded today. Higher volume indicates stronger confirmation of the price direction.",
   atr: "Average True Range (ATR): Shows how much the stock price swings daily. Higher values mean higher risk/volatility.",
   adx: "Average Directional Index (ADX): Shows whether a strong trend is active (above 25) or if the stock is range-bound/choppy (below 20).",
   vwap: "Volume Weighted Average Price (VWAP): The average price weighted by volume, showing the price level that institutions watch.",
-  ema: "Exponential Moving Average (EMA): A moving average that responds faster to recent price moves than a simple average.",
-  sma: "Simple Moving Average (SMA): The average price over a specific number of days, representing standard support and resistance lines.",
+  ema: "Exponential Moving Average (EMA): A moving average that responds faster to recent price moves than a simple average (e.g. EMA(20) or EMA(50)).",
+  sma: "Simple Moving Average (SMA): The average price over a specific number of days, representing standard support and resistance lines (e.g. SMA(200)).",
 };
 
 export const TermTooltip: React.FC<TermTooltipProps> = ({ term, children, position = 'top' }) => {
@@ -363,7 +364,12 @@ export const PageHeader: React.FC<{
   return (
     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-850 pb-5">
       <div>
-        <h1 className="text-2xl md:text-3xl font-extrabold text-slate-100 tracking-tight">{title}</h1>
+        <div className="flex items-center gap-2.5 flex-wrap">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-slate-100 tracking-tight">{title}</h1>
+          <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-700/40 dark:text-slate-300 border border-slate-300 dark:border-slate-600 shrink-0">
+            🇺🇸 <strong className="font-black">US</strong> Markets Only
+          </span>
+        </div>
         {subtitle && <p className="text-slate-450 text-sm md:text-base mt-1.5 leading-relaxed">{subtitle}</p>}
       </div>
       {actions && <div className="flex items-center gap-3 shrink-0">{actions}</div>}
@@ -431,7 +437,7 @@ export const InsightCard: React.FC<{
       
       {whyItMatters && (
         <div className="p-3 rounded-xl bg-slate-950/40 border border-slate-850/60 text-xs text-slate-350 leading-relaxed">
-          <strong className="text-slate-200 font-semibold uppercase tracking-wider text-[10px] block mb-1">Why it matters</strong>
+          <strong className="text-slate-200 font-semibold  tracking-wider text-[10px] block mb-1">Why it matters</strong>
           {whyItMatters}
         </div>
       )}
@@ -452,7 +458,7 @@ export const MetricCard: React.FC<{
   return (
     <div className={`card flex flex-row items-center justify-between p-5 ${className}`}>
       <div className="space-y-1.5">
-        <span className="text-[11px] font-semibold text-slate-450 uppercase tracking-wider block">{label}</span>
+        <span className="text-[11px] font-semibold text-slate-450  tracking-wider block">{label}</span>
         <div className="text-xl md:text-2xl font-extrabold text-slate-100 tracking-tight font-mono leading-none">{value}</div>
         {subValue && <div className="text-xs text-slate-450 leading-none">{subValue}</div>}
       </div>

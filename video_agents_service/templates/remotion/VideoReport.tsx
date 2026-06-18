@@ -172,7 +172,7 @@ export const VideoReport: React.FC = () => {
       {/* ── Original panda-guide walkthrough ── */}
       <Composition
         id="StockReportVideo"
-        component={MainVideo}
+        component={MainVideo as any}
         durationInFrames={MAX_FRAMES}
         fps={FPS}
         width={720}
@@ -184,7 +184,7 @@ export const VideoReport: React.FC = () => {
       {/* ── New studio avatar presenter walkthrough ── */}
       <Composition
         id="StockReportStudio"
-        component={StudioMainVideo}
+        component={StudioMainVideo as any}
         durationInFrames={MAX_FRAMES}
         fps={FPS}
         width={720}

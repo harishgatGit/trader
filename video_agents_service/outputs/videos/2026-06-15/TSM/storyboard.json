@@ -1,0 +1,225 @@
+{
+  "ticker": "TSM",
+  "reportDate": "Unavailable",
+  "videoTitle": "TSM Stock Report",
+  "durationSeconds": 185.98999999999998,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for TSM. Currently trading at $440.87, TSM shows a strong bullish trend, but with the stock nearing resistance, the question for investors is whether to act now or wait for a more favorable entry.\n\nAs of today, TSM is priced at $440.87, reflecting a bullish intraday movement. The stock has maintained a daily percentage increase, indicating sustained upward momentum despite some caution as it approaches key resistance levels.\n\nThe primary driver of this trend is the robust demand for semiconductors, amplified by positive news sentiment surrounding TSMC\u2019s operational capabilities. This has fostered a strong bullish outlook, although investors should remain vigilant as the stock approaches resistance.\n\nHowever, it's essential to note that volume is currently below average, suggesting potential distribution. This could mean that while the price is rising, the strength of this trend may not be as solid as it seems, indicating a need for careful consideration before entering.\n\nExamining the daily trend chart reveals key support and resistance levels, with the stock showing signs of consolidation as it nears the resistance zone. Investors should be prepared for possible price fluctuations as TSM tests these critical levels in the coming sessions.\n\nFrom a technical perspective, TSM is above both the 20-day and 50-day exponential moving averages, indicating a favorable trend. Additionally, a strong ADX suggests that the current bullish trend is robust, but investors should remain cautious as the Relative Strength Index and Moving Average Convergence Divergence may signal overbought conditions.\n\nIn terms of tactical trading setups, the ideal entry zone is identified between $385.64 and $405.70. A stop-loss should be placed at $405.70 to safeguard against potential downturns, with target levels set at $450.10 and $460.00 for potential profits.\n\nFor those considering short positions, caution is warranted. The current setup indicates a medium risk for a short squeeze, especially as the stock nears resistance levels, which could lead to increased volatility and unexpected moves.\n\nLooking at the broader ecosystem, the semiconductor sector remains strong, and TSMC's performance is supported by favorable market conditions and positive sentiment among peers. However, any shifts in market dynamics could impact TSM's trajectory.\n\nIn conclusion, TSM is currently in a strong uptrend, yet caution is advised as it approaches resistance. The recommendation is to wait for a pullback or a confirmed breakout before taking any new positions, as the risk/reward ratio is not optimal at this level. Keeping an eye on key levels will be crucial in navigating this stock's future movements.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 16.29,
+      "narration": "Welcome to the Investing Atti stock analysis for TSM. Currently trading at $440.87, TSM shows a strong bullish trend, but with the stock nearing resistance, the question for investors is whether to act now or wait for a more favorable entry.",
+      "pandaAction": "default",
+      "speechBubbleText": "TSM Pullback: Buying Opportunity or Value Trap?",
+      "visualElements": [
+        "TSM logo",
+        "bullish trend graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "TSM Pullback: Buying Opportunity or Value Trap?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 15.54,
+      "narration": "As of today, TSM is priced at $440.87, reflecting a bullish intraday movement. The stock has maintained a daily percentage increase, indicating sustained upward momentum despite some caution as it approaches key resistance levels.",
+      "pandaAction": "point",
+      "speechBubbleText": "$440.87 - Strong Bullish Movement",
+      "visualElements": [
+        "price tag",
+        "upward arrow"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "slide in",
+        "highlight"
+      ],
+      "dataFields": {
+        "Current Price": "$440.87"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 18.72,
+      "narration": "The primary driver of this trend is the robust demand for semiconductors, amplified by positive news sentiment surrounding TSMC\u2019s operational capabilities. This has fostered a strong bullish outlook, although investors should remain vigilant as the stock approaches resistance.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Strong Demand for Semiconductors",
+      "visualElements": [
+        "semiconductor graphic",
+        "news headline"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "zoom in",
+        "fade out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 18.58,
+      "narration": "However, it's essential to note that volume is currently below average, suggesting potential distribution. This could mean that while the price is rising, the strength of this trend may not be as solid as it seems, indicating a need for careful consideration before entering.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Volume Below Average - Caution Advised",
+      "visualElements": [
+        "volume chart",
+        "warning sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 18.45,
+      "narration": "Examining the daily trend chart reveals key support and resistance levels, with the stock showing signs of consolidation as it nears the resistance zone. Investors should be prepared for possible price fluctuations as TSM tests these critical levels in the coming sessions.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Key Support & Resistance Levels",
+      "visualElements": [
+        "daily trend chart",
+        "support/resistance lines"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "draw lines",
+        "highlight areas"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 23.65,
+      "narration": "From a technical perspective, TSM is above both the 20-day and 50-day exponential moving averages, indicating a favorable trend. Additionally, a strong ADX suggests that the current bullish trend is robust, but investors should remain cautious as the Relative Strength Index and Moving Average Convergence Divergence may signal overbought conditions.",
+      "pandaAction": "default",
+      "speechBubbleText": "Above Key Moving Averages",
+      "visualElements": [
+        "moving averages chart",
+        "ADX indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 16.96,
+      "narration": "In terms of tactical trading setups, the ideal entry zone is identified between $385.64 and $405.70. A stop-loss should be placed at $405.70 to safeguard against potential downturns, with target levels set at $450.10 and $460.00 for potential profits.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $385.64 - $405.70",
+      "visualElements": [
+        "entry zone graphic",
+        "stop-loss indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight",
+        "fade in"
+      ],
+      "dataFields": {
+        "Entry Zone": "$385.64 - $405.70",
+        "Stop Loss": "$405.70",
+        "Targets": [
+          450.1,
+          460.0
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 15.88,
+      "narration": "For those considering short positions, caution is warranted. The current setup indicates a medium risk for a short squeeze, especially as the stock nears resistance levels, which could lead to increased volatility and unexpected moves.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Medium Risk for Short Squeeze",
+      "visualElements": [
+        "short squeeze graphic",
+        "warning sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 16.69,
+      "narration": "Looking at the broader ecosystem, the semiconductor sector remains strong, and TSMC's performance is supported by favorable market conditions and positive sentiment among peers. However, any shifts in market dynamics could impact TSM's trajectory.",
+      "pandaAction": "default",
+      "speechBubbleText": "Semiconductor Sector Strength",
+      "visualElements": [
+        "sector overview",
+        "market conditions graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 25.23,
+      "narration": "In conclusion, TSM is currently in a strong uptrend, yet caution is advised as it approaches resistance. The recommendation is to wait for a pullback or a confirmed breakout before taking any new positions, as the risk/reward ratio is not optimal at this level. Keeping an eye on key levels will be crucial in navigating this stock's future movements.",
+      "pandaAction": "default",
+      "speechBubbleText": "Stay Cautious and Informed",
+      "visualElements": [
+        "uptrend graphic",
+        "caution sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "quote": "Patience is key to successful investing.",
+        "disclaimer": "This content is for informational purposes only and should not be considered financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

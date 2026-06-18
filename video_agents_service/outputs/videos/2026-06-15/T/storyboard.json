@@ -1,0 +1,230 @@
+{
+  "ticker": "T",
+  "reportDate": "Unavailable",
+  "videoTitle": "T Stock Report",
+  "durationSeconds": 160.38,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for T. Currently trading at $23.355, AT&T is exhibiting a bearish trend, with significant indicators suggesting that a cautious approach is warranted at this time.\n\nAs we delve into the current price action, AT&T's stock has shown a downward trajectory. The intraday movement reflects continued pressure, with the daily percentage change indicating a lack of bullish momentum.\n\nThe prevailing trend is decidedly bearish, primarily driven by technical factors and market sentiment. The stock remains below key moving averages, which highlights the absence of upward momentum and investor confidence.\n\nSupporting this trend, we observe below-average trading volume, signaling a lack of buying interest. Recent articles have generated some positive sentiment, but the overall market environment remains uncertain, as indicated by a bearish On-Balance Volume trend.\n\nExamining the daily trend chart, AT&T is navigating within a zone defined by key support levels. This environment suggests a consolidation phase, with resistance just above the current price, complicating any near-term recovery.\n\nFrom a technical standpoint, the Relative Strength Index is positioned below 40, indicating weak momentum. While the MACD shows a slight positive bias, the presence of a death cross underscores the ongoing bearish sentiment.\n\nFor tactical traders, the ideal entry zone is currently between $22.32 and $23.85. A stop loss should be placed at $22.32, aligning with support levels, while potential targets are set at $25.48 and $26.46.\n\nWhile short selling may seem tempting, caution is advised. The risk of a breakdown below support could amplify losses, and the current squeeze risk is low, indicating limited potential for rapid price movement.\n\nIn assessing the broader ecosystem, AT&T's performance is influenced by sector sympathy and market conditions. Peer performance can impact investor sentiment, making it essential to remain aware of overarching trends in the telecommunications space.\n\nIn conclusion, the final verdict on AT&T is to place it on your watchlist for now. Key levels to monitor include the support at $22.32 and potential reversal signals before considering any entry. Always remember the associated risks and conduct thorough research before making investment decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 14.28,
+      "narration": "Welcome to the Investing Atti stock analysis for T. Currently trading at $23.355, AT&T is exhibiting a bearish trend, with significant indicators suggesting that a cautious approach is warranted at this time.",
+      "pandaAction": "default",
+      "speechBubbleText": "AT&T: Bearish Trend Ahead",
+      "visualElements": [
+        "stock price card",
+        "bearish trend indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "slide up"
+      ],
+      "dataFields": {
+        "catchyLine": "AT&T: Bearish Trend Ahead",
+        "currentPrice": "$23.355",
+        "rating": "WATCHLIST"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 14.48,
+      "narration": "As we delve into the current price action, AT&T's stock has shown a downward trajectory. The intraday movement reflects continued pressure, with the daily percentage change indicating a lack of bullish momentum.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Downward Trajectory",
+      "visualElements": [
+        "intraday movement chart"
+      ],
+      "chartElements": [
+        "daily percentage change"
+      ],
+      "animationInstructions": [
+        "zoom in",
+        "highlight downward trend"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 15.1,
+      "narration": "The prevailing trend is decidedly bearish, primarily driven by technical factors and market sentiment. The stock remains below key moving averages, which highlights the absence of upward momentum and investor confidence.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Bearish Trend Reasons",
+      "visualElements": [
+        "moving averages chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight moving averages"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 17.91,
+      "narration": "Supporting this trend, we observe below-average trading volume, signaling a lack of buying interest. Recent articles have generated some positive sentiment, but the overall market environment remains uncertain, as indicated by a bearish On-Balance Volume trend.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Lack of Buying Interest",
+      "visualElements": [
+        "trading volume chart",
+        "OBV trend"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight volume"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 15.65,
+      "narration": "Examining the daily trend chart, AT&T is navigating within a zone defined by key support levels. This environment suggests a consolidation phase, with resistance just above the current price, complicating any near-term recovery.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Key Support Levels",
+      "visualElements": [
+        "daily trend chart"
+      ],
+      "chartElements": [
+        "support and resistance levels"
+      ],
+      "animationInstructions": [
+        "draw support lines",
+        "highlight resistance"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 15.37,
+      "narration": "From a technical standpoint, the Relative Strength Index is positioned below 40, indicating weak momentum. While the MACD shows a slight positive bias, the presence of a death cross underscores the ongoing bearish sentiment.",
+      "pandaAction": "point",
+      "speechBubbleText": "Weak Momentum Indicators",
+      "visualElements": [
+        "RSI chart",
+        "MACD chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight RSI"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 14.14,
+      "narration": "For tactical traders, the ideal entry zone is currently between $22.32 and $23.85. A stop loss should be placed at $22.32, aligning with support levels, while potential targets are set at $25.48 and $26.46.",
+      "pandaAction": "default",
+      "speechBubbleText": "Tactical Entry Zone",
+      "visualElements": [
+        "entry zone chart"
+      ],
+      "chartElements": [
+        "stop loss",
+        "target levels"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "highlight entry zone"
+      ],
+      "dataFields": {
+        "entryZone": {
+          "low": 22.32,
+          "high": 23.85
+        },
+        "stopLoss": 22.32,
+        "targets": [
+          25.48,
+          26.46
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 14.41,
+      "narration": "While short selling may seem tempting, caution is advised. The risk of a breakdown below support could amplify losses, and the current squeeze risk is low, indicating limited potential for rapid price movement.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution on Short Selling",
+      "visualElements": [
+        "short selling warning"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight caution"
+      ],
+      "dataFields": {
+        "squeezeRisk": "LOW"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 17.09,
+      "narration": "In assessing the broader ecosystem, AT&T's performance is influenced by sector sympathy and market conditions. Peer performance can impact investor sentiment, making it essential to remain aware of overarching trends in the telecommunications space.",
+      "pandaAction": "default",
+      "speechBubbleText": "Sector Influence",
+      "visualElements": [
+        "sector performance chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight sector trends"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 21.95,
+      "narration": "In conclusion, the final verdict on AT&T is to place it on your watchlist for now. Key levels to monitor include the support at $22.32 and potential reversal signals before considering any entry. Always remember the associated risks and conduct thorough research before making investment decisions.",
+      "pandaAction": "default",
+      "speechBubbleText": "Watchlist Recommendation",
+      "visualElements": [
+        "watchlist reminder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight watchlist"
+      ],
+      "dataFields": {
+        "quote": "Stay informed and trade wisely!",
+        "disclaimer": "This is not financial advice. Please conduct your own research."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

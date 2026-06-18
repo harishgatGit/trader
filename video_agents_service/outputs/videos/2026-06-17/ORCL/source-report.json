@@ -1,0 +1,1012 @@
+{
+  "symbol": "ORCL",
+  "analysisDateTime": "2026-06-17T05:20:57.675Z",
+  "currentPrice": 186.42,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data is available and up-to-date for analysis."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 55,
+    "decisionSummary": "Oracle's stock is currently in a bearish trend with technical indicators suggesting further downside risk. The stock is below key moving averages and near support levels, with a high bid-ask spread indicating potential liquidity issues. Given the recent negative news and high debt levels, it is prudent to watch for a clearer entry signal or a reversal before considering a buy.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is in a downtrend with bearish technical signals and negative recent news.",
+    "bestActionNow": "Monitor the stock for a potential reversal or improvement in technical indicators."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": true,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": false,
+    "earningsRisk": false,
+    "newsRiskAcceptable": false,
+    "liquidityAcceptable": false,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: Oracle's stock is currently not a buy due to its bearish trend and negative technical indicators. The stock has been declining and is below key moving averages, indicating a lack of upward momentum. Recent news has been mixed, with some negative sentiment impacting the stock. It is advisable to wait for a clearer signal of reversal or improvement before considering an investment.",
+  "technicalAnalysis": {
+    "overallBias": "BEARISH",
+    "trendStage": "MARKDOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 30,
+    "keySignals": [
+      "Death cross (EMA50 < EMA200)",
+      "Price below VWAP",
+      "Strong downtrend (ADX>25, -DI>+DI)"
+    ],
+    "supportLevels": [
+      134.6,
+      160.36,
+      175.32,
+      178.81,
+      180.94
+    ],
+    "resistanceLevels": [
+      189.17,
+      200.38,
+      250.25
+    ],
+    "vwapAnalysis": "Price is significantly below VWAP, indicating bearish sentiment.",
+    "movingAverageAnalysis": "Price is below EMA20, EMA50, and EMA200, confirming a bearish trend.",
+    "rsiAnalysis": "RSI(14) is at 44.71, indicating bearish momentum but not oversold.",
+    "macdAnalysis": "MACD histogram is negative, reinforcing the bearish trend.",
+    "volumeAnalysis": "Volume is below average, suggesting weak buying interest.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR(14) indicates high volatility, increasing risk.",
+    "adxTrendStrengthAnalysis": "ADX(14) is high, confirming a strong downtrend.",
+    "bollingerBandAnalysis": "Price is near the lower Bollinger Band, indicating potential oversold conditions."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current conditions do not support a buy now decision."
+    },
+    "pullbackEntryZone": {
+      "low": 160.36,
+      "high": 175.32,
+      "description": "Consider entry if price stabilizes and shows reversal signs within this range."
+    },
+    "breakoutEntryLevel": {
+      "price": 200.38,
+      "confirmationRule": "Wait for a confirmed breakout above this level with volume."
+    },
+    "accumulationZone": {
+      "low": 134.6,
+      "high": 160.36,
+      "description": "Potential accumulation zone if price stabilizes and reverses."
+    },
+    "invalidationLevel": {
+      "price": 134.6,
+      "reason": "Break below this level would indicate further downside risk."
+    },
+    "stopLoss": {
+      "price": 160.36,
+      "stopType": "TECHNICAL",
+      "description": "Set stop-loss below recent support to manage risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 189.17,
+        "reason": "First resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 200.38,
+        "reason": "Second resistance level."
+      },
+      {
+        "label": "T3",
+        "price": 250.25,
+        "reason": "Major resistance level."
+      }
+    ],
+    "exitRules": [
+      "Exit if price breaks below 134.6 or if bearish trend strengthens."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 186.42,
+    "riskPerShare": 26.06,
+    "rewardToTarget1": 2.75,
+    "rewardToTarget2": 13.96,
+    "rewardToTarget3": 63.83,
+    "riskRewardToTarget1": "1:0.11",
+    "riskRewardToTarget2": "1:0.54",
+    "riskRewardToTarget3": "1:2.45",
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Consider reducing position size due to high volatility and poor risk/reward."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": 160.36,
+      "high": 175.32,
+      "description": "Wait for stabilization and reversal signs before entry."
+    },
+    "stopLoss": {
+      "price": 160.36,
+      "description": "Set stop-loss below recent support."
+    },
+    "targets": [
+      {
+        "price": 189.17,
+        "label": "T1"
+      },
+      {
+        "price": 200.38,
+        "label": "T2"
+      },
+      {
+        "price": 250.25,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price breaks below 134.6 or if bearish trend strengthens."
+    ],
+    "tradeQuality": "D"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": 160.36,
+      "high": 175.32,
+      "description": "Wait for stabilization and reversal signs before entry."
+    },
+    "stopLoss": {
+      "price": 160.36,
+      "description": "Set stop-loss below recent support."
+    },
+    "targets": [
+      {
+        "price": 189.17,
+        "label": "T1"
+      },
+      {
+        "price": 200.38,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 134.6,
+      "high": 160.36,
+      "description": "Potential accumulation zone if price stabilizes and reverses."
+    },
+    "riskReward": "POOR",
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BEARISH",
+    "swingSetup": {
+      "setup": "NO_SETUP",
+      "analysis": "The stock is in a strong downtrend with no clear reversal signals."
+    },
+    "entryTiming": {
+      "trigger": "NO_TRIGGER",
+      "analysis": "No clear entry trigger due to bearish momentum."
+    },
+    "supportLevels": [
+      {
+        "price": 134.6,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 189.17,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 160.36,
+    "riskMetrics": {
+      "atr": 12.85,
+      "atrAnalysis": "High ATR indicates increased volatility.",
+      "vwap": 189.58,
+      "vwapAnalysis": "Price is below VWAP, indicating bearish sentiment.",
+      "volumeAnalysis": "Volume is below average, suggesting weak buying interest.",
+      "supportResistanceAnalysis": "Price is near support with potential for further downside."
+    },
+    "catalysts": {
+      "news": "Recent negative news regarding security concerns.",
+      "earnings": "Earnings data not provided.",
+      "secFilings": "No recent SEC filings impacting stock."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "MEDIUM"
+    },
+    "horizonDetails": "The stock is in a bearish trend with no clear reversal signals. Monitor for potential stabilization and reversal.",
+    "dailyTrend": {
+      "trend": "BEARISH",
+      "barCount": 252,
+      "analysis": "Oracle's stock is currently in a bearish trend. The price has been declining, as evidenced by the recent close at $186.42, down 2.23% from the previous day. Technical indicators confirm this bearish sentiment: the MACD histogram is negative, a death cross has occurred with EMA(50) falling below EMA(200), and the price is below the VWAP. The ADX indicates a strong downtrend, and the RSI(14) is at 44.71, suggesting that the stock is not yet oversold but is under pressure. Additionally, the news of Microsoft walking away from a $3 billion deal due to security concerns has negatively impacted sentiment. Institutional flow data shows below-average volume and a bearish On-Balance Volume (OBV) trend, indicating potential distribution. Despite some positive news about Oracle's AI initiatives, the overall sentiment remains negative.",
+      "laymanExplanation": "Think of Oracle's stock like a car going downhill. It's losing speed and momentum, and there's a lot of pressure pushing it down. Some bad news about a deal falling through is making things worse, and the technical indicators are like road signs showing a steep decline. It's a tough ride for now, and it might need some good news or strong buying to turn things around.",
+      "ticker": "ORCL",
+      "companyName": "Oracle Corporation",
+      "confidenceScore": 85,
+      "trendSummary": "Oracle Corporation's stock is experiencing a bearish trend, characterized by a decline in price and negative technical indicators.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Negative",
+          "evidence": "MACD histogram is negative, death cross (EMA50 < EMA200), price below VWAP, strong downtrend indicated by ADX."
+        },
+        {
+          "driver": "News",
+          "impact": "Negative",
+          "evidence": "Microsoft walked away from a $3 billion deal with Oracle over security concerns."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Negative",
+          "evidence": "Below-average volume, bearish OBV trend, price declining with decreasing volume."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The stock price has been declining, closing at $186.42, a 2.23% decrease.",
+        "movingAverageView": "Death cross observed with EMA(50) below EMA(200), indicating a bearish trend.",
+        "momentumView": "MACD histogram is negative, and RSI(14) is at 44.71, indicating weak momentum.",
+        "volumeView": "Volume is below average, suggesting a lack of strong buying interest.",
+        "supportResistanceView": "The stock is trading below key moving averages, indicating resistance above.",
+        "volatilityView": "ATR(14) is at 12.85, indicating moderate volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data impacting the current trend.",
+        "newsImpact": "Negative news from Microsoft walking away from a deal due to security concerns.",
+        "institutionalFlowImpact": "Institutional flow is uncertain with bearish OBV and below-average volume.",
+        "sectorMacroImpact": "The technology sector is facing mixed signals, but Oracle's specific news has a negative impact."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Negative news impacting sentiment",
+          "Strong technical indicators pointing to a downtrend",
+          "Uncertain institutional flow"
+        ],
+        "whatNeedsConfirmation": "Confirmation of a reversal would require positive news or a shift in technical indicators."
+      },
+      "watchStatus": "Showing weakness",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "MIXED",
+    "investmentQuality": "MODERATE",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient_data"
+    },
+    "bullCase": "If Oracle can leverage its AI-powered products and improve financial metrics, the stock could see upside.",
+    "baseCase": "Continued mixed performance with potential for moderate growth.",
+    "bearCase": "High debt levels and negative news could lead to further downside.",
+    "longTermVerdict": "WAIT"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 60,
+    "rating": "MIXED",
+    "revenueTrend": "Stable revenue with potential for growth from new products.",
+    "epsTrend": "Improving forward EPS but current EPS is moderate.",
+    "profitability": "Moderate profitability with high P/E ratio.",
+    "debtRisk": "High debt-to-equity ratio poses risk.",
+    "cashFlowQuality": "Cash flow is stable but not exceptional.",
+    "valuationCommentary": "Valuation is high with a P/E ratio of 32.25, indicating potential overvaluation."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "OVERVALUED",
+    "valuationScore": 40,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Oracle's high P/E and P/B ratios suggest it may be overvalued compared to industry peers."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 50,
+    "overallSentiment": "MIXED",
+    "keyCatalysts": [
+      "AI-powered product launch"
+    ],
+    "keyRisksFromNews": [
+      "Security concerns impacting cloud deals"
+    ],
+    "earningsRisk": "Earnings data not provided.",
+    "catalystVerdict": "NEUTRAL"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 24,
+    "interpretation": "NEUTRAL",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests uncertainty with below-average volume and bearish OBV trend. Price is below VWAP, indicating possible distribution.",
+    "signals": [
+      "Below-average volume (0.9x)",
+      "OBV trend bearish",
+      "Price below VWAP (-10.0%)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 20,
+    "reason": "Current technical and fundamental conditions do not support a high probability of multibagger returns.",
+    "requiredConditions": [
+      "Improvement in financial metrics",
+      "Positive news catalysts"
+    ],
+    "majorBlockers": [
+      "High debt levels",
+      "Negative news sentiment"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "HIGH",
+    "technicalRisk": "Bearish technical indicators with high volatility.",
+    "fundamentalRisk": "High debt and moderate profitability.",
+    "valuationRisk": "Overvalued based on P/E and P/B ratios.",
+    "newsRisk": "Negative news impacting sentiment.",
+    "liquidityRisk": "High bid-ask spread indicates potential liquidity issues.",
+    "eventRisk": "Potential for further negative news.",
+    "topRisks": [
+      "Technical downtrend",
+      "High debt levels",
+      "Negative news sentiment"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Improvement in financial metrics and positive news catalysts.",
+      "pricePath": "Potential recovery towards resistance levels.",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Continued bearish trend with mixed news sentiment.",
+      "pricePath": "Potential stabilization near support levels.",
+      "probability": "MEDIUM"
+    },
+    "bearCase": {
+      "condition": "Further negative news and financial deterioration.",
+      "pricePath": "Decline towards lower support levels.",
+      "probability": "HIGH"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor Oracle for potential stabilization and reversal signals.",
+    "Avoid buying until technical indicators improve.",
+    "Consider entry only if price stabilizes and shows reversal signs within the defined entry zone."
+  ],
+  "doNotTradeConditions": [
+    "Avoid entry if price continues to decline below recent support levels.",
+    "Do not buy if negative news sentiment persists."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": 200.38,
+    "stopLossAlert": 160.36,
+    "target1Alert": 189.17,
+    "target2Alert": 200.38,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "NetSuite",
+        "ownershipPct": "100%",
+        "performance": "Strong growth trajectory with increasing adoption of cloud-based ERP solutions.",
+        "upcomingEvents": [
+          "Expansion into new international markets"
+        ],
+        "impactPotential": "Positive impact on Oracle's cloud revenue growth and market share in the ERP space."
+      },
+      {
+        "name": "TikTok (ByteDance)",
+        "ownershipPct": "Minority stake through investment funds",
+        "performance": "Rapid user growth and increasing advertising revenue.",
+        "upcomingEvents": [
+          "Potential IPO"
+        ],
+        "impactPotential": "A successful IPO could increase the valuation of Oracle's stake, positively impacting Oracle's financials."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Intel",
+          "role": "Supplier",
+          "description": "Provides processors for Oracle's server hardware",
+          "riskExposure": "Supply chain disruptions could affect Oracle's hardware product availability."
+        },
+        {
+          "name": "Micron Technology",
+          "role": "Supplier",
+          "description": "Supplies memory and storage solutions",
+          "riskExposure": "Shortages could impact Oracle's ability to deliver hardware solutions."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Infosys",
+          "role": "Outsource Partner",
+          "description": "Provides IT services and support",
+          "riskExposure": "Disruptions could affect Oracle's service delivery and customer satisfaction."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Salesforce",
+          "role": "Marketing Partner",
+          "description": "Collaborative marketing for cloud services",
+          "riskExposure": "Changes in partnership terms could impact Oracle's cloud service reach."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Financial Services Sector",
+          "role": "Customer",
+          "description": "Uses Oracle's database and cloud solutions",
+          "riskExposure": "Economic downturns could reduce IT spending, impacting Oracle's revenue."
+        },
+        {
+          "name": "Government Agencies",
+          "role": "Customer",
+          "description": "Utilizes Oracle's database and cloud infrastructure",
+          "riskExposure": "Policy changes or budget cuts could affect contract renewals and expansions."
+        }
+      ]
+    },
+    "strategicOutlook": "Oracle's ecosystem is robust, with strong growth in cloud services and strategic investments in high-growth companies like NetSuite and TikTok. However, it faces concentration risks in hardware supply chains and dependency on major sectors like financial services and government. Key externalities include the success of international expansions and potential IPOs of invested companies."
+  },
+  "trendStory": {
+    "ticker": "ORCL",
+    "analysis_date": "2026-06-17",
+    "price_summary": {
+      "current_price": 186.42,
+      "previous_close": 190.67,
+      "day_change_percent": -2.23,
+      "day_range": {
+        "high": 195.28,
+        "low": 187.81
+      },
+      "volume": 634161,
+      "average_volume": 728244,
+      "relative_volume": 0.87
+    },
+    "move_classification": {
+      "primary_reason": "news-driven",
+      "secondary_reasons": [
+        "sector-sympathy"
+      ],
+      "confidence": "high",
+      "confidence_score": 85
+    },
+    "story_for_layman": {
+      "headline": "Oracle stock drops amid negative news and sector weakness.",
+      "simple_explanation": "Oracle's stock fell today after news that Microsoft backed out of a major deal with Oracle due to security concerns. This news, combined with a general weakness in the technology sector, contributed to the decline.",
+      "why_it_moved": "The stock moved primarily due to negative news about a lost deal with Microsoft, which raised concerns about Oracle's cloud security.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "yes",
+      "sustainability_reason": "The move is supported by negative news and sector weakness, suggesting it could continue unless new positive catalysts emerge."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "'Microsoft walked away from a $3 billion deal to lease Oracle cloud capacity over security concerns' - Business Insider",
+          "summary": "'Microsoft walked away from a $3 billion deal to lease Oracle cloud capacity over security concerns' - Business Insider",
+          "source": "benzinga",
+          "published_at": "2026-06-16T19:54:14Z",
+          "impact": "negative",
+          "relevance_score": 90
+        },
+        {
+          "headline": "Oracle Launches AI-Powered Oracle OPERA Cloud Assistant Suite",
+          "summary": "Oracle Launches AI-Powered Oracle OPERA Cloud Assistant Suite",
+          "source": "benzinga",
+          "published_at": "2026-06-16T11:47:46Z",
+          "impact": "neutral",
+          "relevance_score": 80
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "eps_surprise": null,
+        "revenue_surprise": null,
+        "guidance_change": "unknown",
+        "summary": "No recent earnings announcement identified in news feeds."
+      },
+      "analyst_actions": [
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "old_target": null,
+          "new_target": null,
+          "summary": "Roku Is Worth More As A Takeover Target \u2014 Here Are The Companies That Might Buy It"
+        }
+      ],
+      "sector_context": {
+        "sector_name": "Technology",
+        "sector_change_percent": -1.78,
+        "index_change_percent": -1.11,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector Technology is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 0.87,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 0.9x. Institutional flow proxy score is 24."
+      },
+      "technical_context": {
+        "trend": "downtrend",
+        "breakout_level": 189.17,
+        "support_level": 134.6,
+        "resistance_level": 189.17,
+        "rsi": 44.714527820461036,
+        "macd_signal": "bearish",
+        "vwap_position": "below",
+        "summary": "Price is BEARISH overall. RSI at 44.714527820461036."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": 2.5,
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 134.6,
+        "high": 189.17
+      },
+      "stop_loss": 134.6,
+      "target_1": 189.17,
+      "target_2": 203.71,
+      "risk_reward": 1.5,
+      "entry_reason": "The stock is in a downtrend and needs to confirm a reversal before considering a long position.",
+      "wait_for_confirmation": "Wait for a break above resistance at 189.17 with strong volume."
+    },
+    "short_trade_view": {
+      "short_bias": "wait_for_breakdown",
+      "short_entry_trigger": 186.42,
+      "short_stop_loss": 189.17,
+      "short_target_1": 180,
+      "short_target_2": 170,
+      "reason": "The stock is in a downtrend with recent negative news, making it a potential short candidate if it breaks below current levels."
+    },
+    "final_summary": {
+      "one_line_story": "Oracle's stock fell due to negative news about a lost deal with Microsoft, amidst a weak technology sector.",
+      "layman_summary": "Oracle's stock dropped today because Microsoft decided not to go through with a big deal over security worries. This, along with a general slump in tech stocks, pushed Oracle's price down.",
+      "trader_action": "Monitor for any new developments or news that could impact Oracle's stock price.",
+      "risk_warning": "The stock is in a downtrend, and further declines are possible if negative sentiment continues."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "ORCL",
+    "analysisDate": "2026-06-17",
+    "currentPrice": 186.42,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 28,
+    "gradientPositionPercent": 28,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "HIGH",
+    "oneLineSummary": "ORCL is in a high-risk zone with bearish trends, weak volume, and price below key levels.",
+    "laymanSummary": "Oracle's stock is currently in a high-risk area. The price is below important levels, and the overall trend is negative, suggesting caution.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 0,
+        "maxScore": 20,
+        "status": "NEGATIVE",
+        "evidence": "Price is below EMA(20), EMA(50), and EMA(200), indicating a bearish trend."
+      },
+      "volumeConfirmation": {
+        "score": 3,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Relative volume is below 1.0, indicating weak volume support for price movements."
+      },
+      "momentumIndicators": {
+        "score": 3,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "RSI(14) is at 44.71, indicating weak momentum; MACD histogram is negative."
+      },
+      "movingAverageStructure": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Death cross observed with EMA(50) below EMA(200)."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP, indicating selling pressure."
+      },
+      "supportResistanceRiskReward": {
+        "score": 5,
+        "maxScore": 10,
+        "status": "MIXED",
+        "evidence": "Price is near support at 180.94 but far from resistance at 189.17."
+      },
+      "sectorIndexAlignment": {
+        "score": 2,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Technology sector performance is mixed; stock is underperforming."
+      },
+      "shortInterestContext": {
+        "score": 2,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Short interest context is unclear; no significant squeeze risk."
+      },
+      "newsCatalystConfirmation": {
+        "score": 1,
+        "maxScore": 3,
+        "status": "MIXED",
+        "evidence": "News sentiment is mixed with some negative headlines."
+      },
+      "institutionalFlowProxy": {
+        "score": 2,
+        "maxScore": 2,
+        "status": "MIXED",
+        "evidence": "Institutional flow proxy indicates possible distribution."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [
+        "Price is near support at 180.94."
+      ],
+      "redSignals": [
+        "Price is below EMA(20), EMA(50), and EMA(200).",
+        "MACD histogram is negative.",
+        "Price is below VWAP.",
+        "Relative volume is below 1.0."
+      ],
+      "strongestPositiveEvidence": "Price is near support at 180.94.",
+      "strongestNegativeEvidence": "Price is below EMA(20), EMA(50), and EMA(200), indicating a bearish trend.",
+      "mixedSignalExplanation": "While the price is near support, overall indicators suggest a bearish trend."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 180.94,
+      "nearestResistance": 189.17,
+      "distanceToSupportPercent": 2.94,
+      "distanceToResistancePercent": 1.47,
+      "riskRewardView": "MIXED",
+      "explanation": "Price is closer to support, but overall trend is bearish, limiting upside potential."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a high-risk zone due to bearish trends and weak volume."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Price needs to move above EMA(20), EMA(50), and EMA(200).",
+        "Volume should increase significantly above average."
+      ],
+      "forYellowToGreenUpgrade": [
+        "Improvement in momentum indicators like RSI(14) and MACD."
+      ],
+      "forRedZoneWarning": [
+        "Continued price decline below support levels."
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 28,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "ORCL is in a high-risk zone with bearish trends.",
+      "supportingPointsBelowBar": [
+        "Price is below key moving averages.",
+        "Weak volume confirmation.",
+        "Negative momentum indicators."
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "HIGH_RISK_CAUTION",
+      "summary": "Oracle's stock is currently in a high-risk zone with bearish trends and weak volume. Caution is advised.",
+      "riskWarning": "The stock is in a high-risk zone with potential for further downside.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "ORCL",
+    "available": true,
+    "price": 186.42,
+    "open": 189.88,
+    "high": 195.28,
+    "low": 187.81,
+    "close": 188.32,
+    "volume": 634161,
+    "vwap": 189.581372,
+    "bid": 181.05,
+    "ask": 200.62,
+    "spread": 19.57,
+    "changePercent": -2.23,
+    "timestamp": "2026-06-16T20:13:21.536761877Z",
+    "raw": {
+      "dailyBar": {
+        "c": 188.32,
+        "h": 195.28,
+        "l": 187.81,
+        "n": 12290,
+        "o": 189.88,
+        "t": "2026-06-16T04:00:00Z",
+        "v": 634161,
+        "vw": 189.581372
+      },
+      "latestQuote": {
+        "ap": 200.62,
+        "as": 100,
+        "ax": "V",
+        "bp": 181.05,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-16T20:00:00.00357089Z",
+        "z": "A"
+      },
+      "latestTrade": {
+        "c": [
+          " ",
+          "T"
+        ],
+        "i": 52983998266446,
+        "p": 186.42,
+        "s": 100,
+        "t": "2026-06-16T20:13:21.536761877Z",
+        "x": "V",
+        "z": "A"
+      },
+      "minuteBar": {
+        "c": 186.42,
+        "h": 186.42,
+        "l": 186.42,
+        "n": 9,
+        "o": 186.42,
+        "t": "2026-06-16T20:13:00Z",
+        "v": 200,
+        "vw": 186.42
+      },
+      "prevDailyBar": {
+        "c": 192.62,
+        "h": 195.23,
+        "l": 186.54,
+        "n": 8225,
+        "o": 187.455,
+        "t": "2026-06-15T04:00:00Z",
+        "v": 469653,
+        "vw": 192.783274
+      },
+      "symbol": "ORCL"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 200.73859038858748,
+      "ema50": 190.57289197753238,
+      "ema200": 206.64870879696142,
+      "sma20": 205.31724999999997,
+      "sma50": 186.77289999999996,
+      "sma200": 205.3688999999999,
+      "rsi14": 44.714527820461036,
+      "rsi14Prev": 46.631878785525295,
+      "macdLine": 1.4393038044972286,
+      "macdSignal": 6.648228959016114,
+      "macdHist": -5.2089251545188855,
+      "bbUpper": 246.58874918224438,
+      "bbMiddle": 205.31724999999997,
+      "bbLower": 164.04575081775556,
+      "bbWidth": 40.20266118141016,
+      "atr14": 12.854675905369492,
+      "obv": -7106754,
+      "relVolume": 0.8708078722742069,
+      "vwap": 207.03852409126443,
+      "adx14": 339.046876476401,
+      "plusDI": 25.397451641881002,
+      "minusDI": 28.11842841328141,
+      "supportLevels": [
+        134.6,
+        160.36,
+        175.32,
+        178.81,
+        180.94
+      ],
+      "resistanceLevels": [
+        189.17,
+        200.38,
+        250.25
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "MACD histogram negative",
+        "Death cross (EMA50 < EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 541645766656,
+    "peRatio": 32.248287,
+    "pbRatio": 16.143494,
+    "epsTrailing": 5.84,
+    "epsForward": 10.91241,
+    "revenue": 67356999680,
+    "debtToEquity": 362.758,
+    "dividendYield": 0.0106,
+    "beta": 1.655,
+    "week52High": 345.72,
+    "week52Low": 134.57,
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "description": "Oracle Corporation offers products and services that address enterprise information technology environments worldwide. Its Oracle cloud software as a service offering include various cloud software applications, including Oracle Fusion cloud enterprise resource planning ERP, Oracle Fusion cloud enterprise performance management EPM, Oracle Fusion cloud supply chain and manufacturing management SCM, Oracle Fusion cloud human capital management HCM, and NetSuite applications suite, Oracle Health a"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "'Microsoft walked away from a $3 billion deal to lease Oracle cloud capacity over security concerns' - Business Insider",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53236688/microsoft-walked-away-from-a-3-billion-deal-to-lease-oracle-cloud-capacity-over-security-concerns-bu",
+        "publishedAt": "2026-06-16T19:54:14Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Oracle Launches AI-Powered Oracle OPERA Cloud Assistant Suite",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53218763/oracle-launches-ai-powered-oracle-opera-cloud-assistant-suite",
+        "publishedAt": "2026-06-16T11:47:46Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Elon Musk Is Now Worth More Than Jeff Bezos, Sergey Brin And Larry Ellison Combined After SPCX Rally",
+        "summary": "Elon Musk&#39;s net worth has surpassed $1 trillion, making him nearly $1 trillion wealthier than Alphabet&#39;s Larry Page.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53217071/elon-musk-nearly-1-trillion-richer-than-the-second-wealthiest-person-in-the-world-following-spcx-rally",
+        "publishedAt": "2026-06-16T10:13:31Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Here's How Much $100 Invested In Oracle 20 Years Ago Would Be Worth Today",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/news/26/06/53213432/heres-how-much-100-invested-in-oracle-20-years-ago-would-be-worth-today",
+        "publishedAt": "2026-06-15T22:15:22Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Why Is Oracle Stock Surging On Monday?",
+        "summary": "Oracle Corp. (ORCL) stock rebounded 5% on Monday following its worst weekly drop since 2002. See why BofA and Goldman Sachs remain bullish on the AI cloud infrastructure giant.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53207745/why-is-oracle-stock-surging-on-monday",
+        "publishedAt": "2026-06-15T18:43:51Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Roku Is Worth More As A Takeover Target \u2014 Here Are The Companies That Might Buy It",
+        "summary": "Roku gets Buy rating, PT raise by Needham analyst on potential sale. Analyst provides long list of potential buyers.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/price-target/26/06/53204539/roku-is-worth-more-as-a-takeover-target-here-are-the-companies-that-might-want-it",
+        "publishedAt": "2026-06-15T17:07:50Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "'Big Short' Investor Steve Eisman Is Hesitant About GOOGL, MSFT, But Bets On These Three Sectors",
+        "summary": "&#34;Big Short&#34; investor Steve Eisman says the AI trade isn&#39;t over, but it is changing. Discover why he&#39;s rotating away from hyperscalers and into these 3 sectors.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/06/53196368/big-short-investor-steve-eisman-is-hesitant-about-googl-msft-but-bets-on-these-three-sectors",
+        "publishedAt": "2026-06-15T14:07:37Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Consumer Tech News (Jun 8-12): SpaceX Debuts On Nasdaq, Big Tech Faces Political Scrutiny & More",
+        "summary": "Global tensions rise as cyber espionage, chip export risks, and AI competition intensify across Meta, Google, NVIDIA, and OpenAI ecosystems.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53185374/consumer-tech-news-jun-8-12-spacex-debuts-on-nasdaq-big-tech-faces-political-scrutiny-more",
+        "publishedAt": "2026-06-14T11:30:28Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "SpaceX IPO Sets the Stage, These Five Tech Companies Could Follow",
+        "summary": "The SpaceX IPO was highly successful as the company raised $75 billion from investors. Other tech companies that may file are OpenAI, Anthropic, and Anduril.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53184847/spacex-ipo-sets-the-stage-these-five-tech-companies-could-follow",
+        "publishedAt": "2026-06-13T23:26:37Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Benzinga Bulls And Bears: Oracle, Apple, Super Micro \u2014 And SpaceX IPO Boosts Market",
+        "summary": "Benzinga examined the prospects for many investors&#39; favorite stocks over the last week \u2014 here&#39;s a look at some of our top stories.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/06/53183478/benzinga-bulls-and-bears-oracle-apple-super-micro-and-spacex-ipo-boosts-market",
+        "publishedAt": "2026-06-13T12:01:19Z",
+        "sentiment": "POSITIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 24,
+    "interpretation": "UNCERTAIN",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 5,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 5
+    },
+    "signals": [
+      "Below-average volume (0.9x)",
+      "OBV trend bearish",
+      "Price below VWAP (-10.0%)",
+      "Price declining with decreasing volume (possible absorption)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 30,
+  "fundamentalScore": 60,
+  "newsCatalystScore": 50,
+  "institutionalFlowProxyScore": 24,
+  "keyCatalysts": [
+    "AI-powered product launch"
+  ],
+  "keyRisks": [
+    "Technical downtrend",
+    "High debt levels",
+    "Negative news sentiment"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests uncertainty with below-average volume and bearish OBV trend. Price is below VWAP, indicating possible distribution."
+}

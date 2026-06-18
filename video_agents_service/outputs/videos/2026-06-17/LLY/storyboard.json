@@ -1,0 +1,239 @@
+{
+  "ticker": "LLY",
+  "reportDate": "Unavailable",
+  "videoTitle": "LLY Stock Report",
+  "durationSeconds": 180.13000000000002,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for LLY, Eli Lilly and Company. Currently, the stock is rated with a cautious outlook, as it shows a strong upward trend on the daily chart, but short-term signals advise caution due to bearish momentum.\n\nEli Lilly's current price stands at $1,112.10, reflecting intraday fluctuations. While the stock has shown resilience, it's essential to note that recent movements indicate short-term instability, with the daily percentage change reflecting a nuanced trading environment.\n\nThe primary driver of this trend seems to stem from mixed market sentiment, compounded by some negative news affecting investor outlook. Although the long-term indicators suggest a bullish trajectory, current short-term signals are presenting a bearish narrative that warrants attention.\n\nThe volume accompanying recent price movements is below average, indicating a lack of strong buying interest. This subdued volume, coupled with the stock hovering near key resistance levels, suggests that any upward movement may face challenges without increased buying support.\n\nOn the daily trend chart, Eli Lilly is testing critical resistance levels, while also exhibiting characteristics of a consolidation phase. This positioning highlights the importance of monitoring how the stock interacts with these levels for potential breakout opportunities.\n\nFrom a technical perspective, the RSI stands at 57.29, which is neutral but leaning bullish. However, other indicators such as the MACD are showing bearish signals, indicating that momentum may be slowing down and reinforcing the need for caution.\n\nFor tactical traders, the recommended entry zone lies between $850.64 and $944.23, with a stop loss set at $1,052.54 to protect capital. Target levels are positioned at $1,148.43 and $1,181.62, but entering the market should be done with careful consideration of current market conditions.\n\nRegarding short selling, caution is advised as the short interest data is unavailable. The potential for a breakdown could create a short squeeze risk, adding to the uncertainty around any short positions in this environment.\n\nIn terms of broader ecosystem insights, the sentiment surrounding the pharmaceutical sector has remained mixed, which could impact Eli Lilly's performance. Investor focus on peers and sector-wide developments will be crucial in shaping the stock's trajectory moving forward.\n\nIn conclusion, while Eli Lilly shows a bullish trend on the daily chart, short-term bearish signals and resistance levels present a mixed outlook. Investors should watch for a clearer buying opportunity or a pullback before making any decisions, keeping in mind the potential risks associated with current volatility.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 16.34,
+      "narration": "Welcome to the Investing Atti stock analysis for LLY, Eli Lilly and Company. Currently, the stock is rated with a cautious outlook, as it shows a strong upward trend on the daily chart, but short-term signals advise caution due to bearish momentum.",
+      "pandaAction": "default",
+      "speechBubbleText": "Cautious Outlook for LLY",
+      "visualElements": [
+        "Eli Lilly logo",
+        "stock market background"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "Eli Lilly: Strong Uptrend Meets Caution"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 17.86,
+      "narration": "Eli Lilly's current price stands at $1,112.10, reflecting intraday fluctuations. While the stock has shown resilience, it's essential to note that recent movements indicate short-term instability, with the daily percentage change reflecting a nuanced trading environment.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $1,112.10",
+      "visualElements": [
+        "price tag",
+        "fluctuation graph"
+      ],
+      "chartElements": [
+        "daily price chart"
+      ],
+      "animationInstructions": [
+        "slide in",
+        "highlight price"
+      ],
+      "dataFields": {
+        "Current Price": 1112.1
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 18.91,
+      "narration": "The primary driver of this trend seems to stem from mixed market sentiment, compounded by some negative news affecting investor outlook. Although the long-term indicators suggest a bullish trajectory, current short-term signals are presenting a bearish narrative that warrants attention.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Mixed Market Sentiment",
+      "visualElements": [
+        "news headlines",
+        "market sentiment icons"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 18.32,
+      "narration": "The volume accompanying recent price movements is below average, indicating a lack of strong buying interest. This subdued volume, coupled with the stock hovering near key resistance levels, suggests that any upward movement may face challenges without increased buying support.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Volume Below Average",
+      "visualElements": [
+        "volume bars",
+        "resistance level markers"
+      ],
+      "chartElements": [
+        "volume chart"
+      ],
+      "animationInstructions": [
+        "draw volume bars",
+        "highlight resistance"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 18.12,
+      "narration": "On the daily trend chart, Eli Lilly is testing critical resistance levels, while also exhibiting characteristics of a consolidation phase. This positioning highlights the importance of monitoring how the stock interacts with these levels for potential breakout opportunities.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Testing Resistance Levels",
+      "visualElements": [
+        "daily trend chart",
+        "consolidation phase indicators"
+      ],
+      "chartElements": [
+        "daily trend chart"
+      ],
+      "animationInstructions": [
+        "zoom in on resistance",
+        "fade in consolidation phase"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 16.28,
+      "narration": "From a technical perspective, the RSI stands at 57.29, which is neutral but leaning bullish. However, other indicators such as the MACD are showing bearish signals, indicating that momentum may be slowing down and reinforcing the need for caution.",
+      "pandaAction": "caution",
+      "speechBubbleText": "RSI: 57.29",
+      "visualElements": [
+        "RSI indicator",
+        "MACD chart"
+      ],
+      "chartElements": [
+        "RSI chart",
+        "MACD chart"
+      ],
+      "animationInstructions": [
+        "highlight RSI",
+        "fade in MACD"
+      ],
+      "dataFields": {
+        "RSI": 57.29
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 19.04,
+      "narration": "For tactical traders, the recommended entry zone lies between $850.64 and $944.23, with a stop loss set at $1,052.54 to protect capital. Target levels are positioned at $1,148.43 and $1,181.62, but entering the market should be done with careful consideration of current market conditions.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $850.64 - $944.23",
+      "visualElements": [
+        "entry zone markers",
+        "stop loss indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight entry zone",
+        "fade in stop loss"
+      ],
+      "dataFields": {
+        "Entry Zone": {
+          "Low": 850.64,
+          "High": 944.23
+        },
+        "Stop Loss": 1052.54
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 14.83,
+      "narration": "Regarding short selling, caution is advised as the short interest data is unavailable. The potential for a breakdown could create a short squeeze risk, adding to the uncertainty around any short positions in this environment.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution on Short Selling",
+      "visualElements": [
+        "short selling icons",
+        "risk indicators"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in caution signs",
+        "shake"
+      ],
+      "dataFields": {
+        "Short Selling": {
+          "Squeeze Risk": "LOW"
+        }
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 18.05,
+      "narration": "In terms of broader ecosystem insights, the sentiment surrounding the pharmaceutical sector has remained mixed, which could impact Eli Lilly's performance. Investor focus on peers and sector-wide developments will be crucial in shaping the stock's trajectory moving forward.",
+      "pandaAction": "default",
+      "speechBubbleText": "Mixed Sentiment in Pharma Sector",
+      "visualElements": [
+        "pharmaceutical sector icons",
+        "peer comparison"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in sector icons",
+        "zoom out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 22.38,
+      "narration": "In conclusion, while Eli Lilly shows a bullish trend on the daily chart, short-term bearish signals and resistance levels present a mixed outlook. Investors should watch for a clearer buying opportunity or a pullback before making any decisions, keeping in mind the potential risks associated with current volatility.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Stay Informed, Trade Wisely!",
+      "visualElements": [
+        "bullish trend chart",
+        "caution signs"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in conclusion",
+        "celebrate"
+      ],
+      "dataFields": {
+        "quote": "Patience is the key to successful investing.",
+        "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

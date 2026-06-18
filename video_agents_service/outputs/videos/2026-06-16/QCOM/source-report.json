@@ -1,0 +1,904 @@
+{
+  "symbol": "QCOM",
+  "analysisDateTime": "2026-06-16T15:34:11.956Z",
+  "currentPrice": 220.465,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data is available and up-to-date for analysis."
+  },
+  "finalDecision": {
+    "finalRating": "WAIT",
+    "decisionType": "TRADE",
+    "confidenceScore": 65,
+    "decisionSummary": "The stock is currently in a bullish trend but is showing signs of being overextended with a recent pullback. The risk/reward ratio is not yet favorable for a BUY decision, especially given the proximity to resistance levels and declining volume. Waiting for a pullback or breakout confirmation would be prudent.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is near resistance with declining volume, suggesting a potential pullback.",
+    "bestActionNow": "Wait for a pullback to a more favorable entry point or confirmation of a breakout above resistance."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": true,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is in a strong uptrend but has recently pulled back from its highs. It might be wise to wait for the price to stabilize and show clear buying interest before scaling in. The recent positive news about potential acquisitions and AI advancements has boosted sentiment, but the stock's current price level is near significant resistance, making it risky to buy immediately. In the near term, expect some volatility as the market digests these developments. Long-term, the stock could benefit from its strategic initiatives in AI and technology licensing, but patience is key for a better entry point.",
+  "technicalAnalysis": {
+    "overallBias": "MIXED",
+    "trendStage": "MARKUP",
+    "setupType": "CHASE_RISK",
+    "technicalScore": 60,
+    "keySignals": [
+      "Price above EMA20 and EMA50",
+      "RSI overbought in shorter timeframes",
+      "MACD bearish divergence in 1Hour timeframe"
+    ],
+    "supportLevels": [
+      132.1,
+      190.15,
+      191.16
+    ],
+    "resistanceLevels": [
+      247.9,
+      259.84
+    ],
+    "vwapAnalysis": "Price is below VWAP, indicating potential weakness.",
+    "movingAverageAnalysis": "Price is above short and medium-term moving averages, indicating a bullish trend.",
+    "rsiAnalysis": "RSI is overbought in shorter timeframes, suggesting caution.",
+    "macdAnalysis": "MACD shows bearish divergence in shorter timeframes.",
+    "volumeAnalysis": "Volume is declining, indicating potential exhaustion.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR indicates high volatility, suggesting caution.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong trend, but caution is advised due to overbought conditions.",
+    "bollingerBandAnalysis": "Price is near the upper Bollinger Band, indicating potential overextension."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current price is near resistance; not ideal for immediate entry."
+    },
+    "pullbackEntryZone": {
+      "low": 190.15,
+      "high": 200,
+      "description": "Wait for a pullback to this zone for a better risk/reward entry."
+    },
+    "breakoutEntryLevel": {
+      "price": 260,
+      "confirmationRule": "Wait for a daily close above 260 with strong volume."
+    },
+    "accumulationZone": {
+      "low": 180,
+      "high": 190,
+      "description": "Consider accumulating if price stabilizes in this range."
+    },
+    "invalidationLevel": {
+      "price": 190,
+      "reason": "A break below this level would invalidate the current bullish setup."
+    },
+    "stopLoss": {
+      "price": 190,
+      "stopType": "TECHNICAL",
+      "description": "Set stop-loss below recent support to manage risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 240,
+        "reason": "First target based on recent resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 260,
+        "reason": "Second target at the next resistance level."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No third target defined due to current market conditions."
+      }
+    ],
+    "exitRules": [
+      "Exit if price closes below 190 on a daily basis."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 220.465,
+    "riskPerShare": 30.465,
+    "rewardToTarget1": 19.535,
+    "rewardToTarget2": 39.535,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": "0.64:1",
+    "riskRewardToTarget2": "1.30:1",
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Consider smaller position size due to poor risk/reward ratio."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "MIXED",
+    "entryZone": {
+      "low": 190,
+      "high": 200,
+      "description": "Monitor for a pullback to this zone for potential entry."
+    },
+    "stopLoss": {
+      "price": 190,
+      "description": "Set stop-loss below 190 to limit downside risk."
+    },
+    "targets": [
+      {
+        "price": 240,
+        "label": "T1"
+      },
+      {
+        "price": 260,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price closes below 190 on a daily basis."
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 190,
+      "high": 200,
+      "description": "Consider entering on a pullback to this zone."
+    },
+    "stopLoss": {
+      "price": 190,
+      "description": "Stop-loss below 190 to protect against downside."
+    },
+    "targets": [
+      {
+        "price": 240,
+        "label": "T1"
+      },
+      {
+        "price": 260,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 180,
+      "high": 190,
+      "description": "Potential accumulation zone if price stabilizes."
+    },
+    "riskReward": "POOR",
+    "swingVerdict": "WAIT"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "MIXED",
+    "swingSetup": {
+      "setup": "PULLBACK",
+      "analysis": "The stock is pulling back from recent highs, suggesting a wait for stabilization."
+    },
+    "entryTiming": {
+      "trigger": "WAIT_FOR_PULLBACK",
+      "analysis": "Monitor for a pullback to 190-200 zone before considering entry."
+    },
+    "supportLevels": [
+      {
+        "price": 132.1,
+        "tests": 3
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 247.9,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 190,
+    "riskMetrics": {
+      "atr": 16.581,
+      "atrAnalysis": "High ATR indicates potential volatility.",
+      "vwap": 225.901,
+      "vwapAnalysis": "Price below VWAP suggests potential weakness.",
+      "volumeAnalysis": "Volume is fading, indicating potential exhaustion.",
+      "supportResistanceAnalysis": "Price is near resistance, suggesting caution."
+    },
+    "catalysts": {
+      "news": "Positive sentiment from AI advancements and potential acquisitions.",
+      "earnings": "No immediate earnings risk.",
+      "secFilings": "No recent filings impacting sentiment."
+    },
+    "shortFilter": {
+      "borrowFee": "Unavailable",
+      "shortInterest": "Unavailable",
+      "ssrStatus": "Unavailable",
+      "squeezeRisk": "MEDIUM"
+    },
+    "horizonDetails": "The stock is in a pullback phase from recent highs, with mixed signals from technical indicators. A wait-and-see approach is recommended until a clearer entry point emerges.",
+    "dailyTrend": {
+      "trend": "MIXED",
+      "barCount": 252,
+      "analysis": "QUALCOMM's stock has experienced a significant rise recently, primarily driven by positive news regarding potential expansion in AI capabilities through a rumored acquisition of Tenstorrent. This news has contributed to a bullish sentiment, as reflected in the stock's price moving above key moving averages like EMA(20) and EMA(50), and the presence of a golden cross (EMA50 > EMA200). The ADX indicates a strong uptrend, supporting the bullish bias. However, the MACD histogram is negative, suggesting some loss of momentum. Additionally, the volume is below average, indicating a weaker rally, and institutional flow suggests distribution rather than accumulation. These conflicting signals create a mixed trend, with bullish technical indicators being offset by weaker volume and institutional distribution.",
+      "laymanExplanation": "Think of QUALCOMM's stock like a car that's been speeding uphill due to exciting news about expanding its AI capabilities. However, the gas tank (volume) is running low, and some passengers (institutional investors) are starting to get off. This means while the car is still moving up, it might slow down unless more fuel (volume) is added or more passengers (investors) get on board.",
+      "ticker": "QCOM",
+      "companyName": "QUALCOMM Incorporated",
+      "confidenceScore": 75,
+      "trendSummary": "QUALCOMM's stock shows a mixed trend with recent bullish momentum driven by positive news and technical indicators, but conflicting signals from volume and institutional distribution.",
+      "keyDrivers": [
+        {
+          "driver": "Rumored Acquisition of Tenstorrent",
+          "impact": "Positive",
+          "evidence": "News articles report Qualcomm is in talks to acquire Tenstorrent to expand AI chip capabilities, boosting investor sentiment."
+        },
+        {
+          "driver": "Technical Indicators",
+          "impact": "Positive",
+          "evidence": "Price is above EMA(20) and EMA(50), with a golden cross present, indicating bullish momentum."
+        },
+        {
+          "driver": "Volume and Institutional Flow",
+          "impact": "Negative",
+          "evidence": "Below-average volume and institutional distribution suggest a weaker rally."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The stock price has risen significantly, currently trading above key moving averages.",
+        "movingAverageView": "Price is above EMA(20) and EMA(50), with a golden cross indicating bullish momentum.",
+        "momentumView": "MACD histogram is negative, suggesting some loss of momentum despite the overall bullish trend.",
+        "volumeView": "Volume is below average, indicating weaker conviction behind the recent price rise.",
+        "supportResistanceView": "Price is above recent support levels, with resistance around the recent highs.",
+        "volatilityView": "ATR(14) indicates high volatility, suggesting increased risk."
+      },
+      "catalystView": {
+        "earningsImpact": "",
+        "newsImpact": "Positive news regarding AI expansion and potential acquisition has driven recent bullish sentiment.",
+        "institutionalFlowImpact": "Institutional flow indicates distribution, suggesting a lack of strong accumulation.",
+        "sectorMacroImpact": ""
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Potential failure of acquisition talks",
+          "Continued institutional distribution"
+        ],
+        "whatNeedsConfirmation": "Confirmation of acquisition details and sustained volume to support the price rise."
+      },
+      "watchStatus": "Needs confirmation",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BULLISH",
+    "investmentQuality": "STRONG",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient_data"
+    },
+    "bullCase": "Continued growth in AI and technology licensing could drive long-term appreciation.",
+    "baseCase": "Steady growth with occasional pullbacks as the market digests new developments.",
+    "bearCase": "Potential regulatory challenges or market saturation could limit upside.",
+    "longTermVerdict": "ACCUMULATE"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 80,
+    "rating": "STRONG",
+    "revenueTrend": "Steady revenue growth with strong market presence.",
+    "epsTrend": "Positive EPS trend with forward growth expectations.",
+    "profitability": "High profitability with strong margins.",
+    "debtRisk": "Moderate debt levels manageable with current cash flow.",
+    "cashFlowQuality": "Strong cash flow supporting operations and growth.",
+    "valuationCommentary": "Valuation appears fair given growth prospects and market position."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "FAIRLY_VALUED",
+    "valuationScore": 70,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "The stock's valuation is in line with its growth prospects and industry position."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 75,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "AI advancements and potential acquisitions"
+    ],
+    "keyRisksFromNews": [
+      "Potential overvaluation concerns"
+    ],
+    "earningsRisk": "No immediate earnings risk.",
+    "catalystVerdict": "SUPPORTIVE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy indicates distribution with price rising on declining volume, suggesting caution.",
+    "signals": [
+      "Below-average volume (0.4x)",
+      "Price rising with declining volume (weaker rally)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "MEDIUM",
+    "probabilityScore": 60,
+    "reason": "Strong fundamentals and positive catalysts support potential for significant gains.",
+    "requiredConditions": [
+      "Continued growth in AI and technology sectors"
+    ],
+    "majorBlockers": [
+      "Regulatory challenges"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "MEDIUM",
+    "technicalRisk": "Price near resistance with declining volume.",
+    "fundamentalRisk": "Moderate debt levels but strong cash flow.",
+    "valuationRisk": "Fairly valued with potential for overvaluation concerns.",
+    "newsRisk": "Positive sentiment but potential for volatility.",
+    "liquidityRisk": "Acceptable liquidity with manageable spread.",
+    "eventRisk": "No immediate earnings or regulatory events.",
+    "topRisks": [
+      "Overbought conditions in shorter timeframes",
+      "Potential pullback from resistance"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Successful expansion in AI and technology licensing.",
+      "pricePath": "Potential upside to 260 and beyond.",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Steady growth with occasional pullbacks.",
+      "pricePath": "Fluctuations between 200 and 240.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Regulatory challenges or market saturation.",
+      "pricePath": "Potential downside to 180.",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for a pullback to 190-200 zone for potential entry.",
+    "Set alerts for breakout above 260 with strong volume.",
+    "Review position if price closes below 190."
+  ],
+  "doNotTradeConditions": [
+    "Avoid entry if price remains near resistance without volume confirmation."
+  ],
+  "alertLevels": {
+    "buyAlert": 200,
+    "breakoutAlert": 260,
+    "stopLossAlert": 190,
+    "target1Alert": 240,
+    "target2Alert": 260,
+    "riskAlert": 180
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "trendStory": {
+    "ticker": "QCOM",
+    "analysis_date": "2026-06-16",
+    "price_summary": {
+      "current_price": 220.465,
+      "previous_close": 220.84,
+      "day_change_percent": -0.17,
+      "day_range": {
+        "high": 230.97,
+        "low": 218.04
+      },
+      "volume": 220183,
+      "average_volume": 608711.15,
+      "relative_volume": 0.36172000463602483
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "QCOM trades down 0.2% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 0.36172000463602483,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 216.0557,
+        "high": 222.66965000000002
+      },
+      "stop_loss": 209.44174999999998,
+      "target_1": 231.48825000000002,
+      "target_2": 242.5115,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 207.2371,
+      "short_stop_loss": 231.48825000000002,
+      "short_target_1": 198.4185,
+      "short_target_2": 187.39525,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "QCOM moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "QCOM",
+    "analysisDate": "2026-06-16",
+    "currentPrice": 220.465,
+    "correlationName": "Signal Correlation",
+    "finalZone": "YELLOW_ZONE",
+    "correlationScore": 58,
+    "gradientPositionPercent": 58,
+    "gradientLabel": "Orange",
+    "confidenceLevel": "MEDIUM",
+    "oneLineSummary": "QCOM shows mixed signals with bullish long-term trends but short-term bearish pressures and low volume.",
+    "laymanSummary": "Qualcomm's stock is in a mixed state. While it has strong long-term trends, short-term indicators and low trading volume suggest caution.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 15,
+        "maxScore": 20,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20) and EMA(50), with a golden cross (EMA(50) > EMA(200))."
+      },
+      "volumeConfirmation": {
+        "score": 5,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Relative volume is low at 0.36x, indicating weak volume support."
+      },
+      "momentumIndicators": {
+        "score": 8,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "RSI(14) is balanced at 53.4, but MACD histogram is negative."
+      },
+      "movingAverageStructure": {
+        "score": 12,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20), EMA(50), and EMA(200), indicating a strong moving average structure."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP, suggesting a bearish intraday bias."
+      },
+      "supportResistanceRiskReward": {
+        "score": 6,
+        "maxScore": 10,
+        "status": "MIXED",
+        "evidence": "Price is closer to support levels but also near resistance, offering mixed risk/reward."
+      },
+      "sectorIndexAlignment": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "POSITIVE",
+        "evidence": "Technology sector is generally strong, supporting the stock."
+      },
+      "shortInterestContext": {
+        "score": 2,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Short interest data is not provided, but no significant squeeze risk is noted."
+      },
+      "newsCatalystConfirmation": {
+        "score": 3,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Positive news sentiment with potential AI expansion and acquisition rumors."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow proxy indicates distribution with below-average volume."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Price above EMA(20), EMA(50), and EMA(200)",
+        "Positive news sentiment"
+      ],
+      "yellowSignals": [
+        "RSI(14) is balanced",
+        "Mixed support/resistance context"
+      ],
+      "redSignals": [
+        "Low relative volume",
+        "Price below VWAP",
+        "Institutional distribution proxy"
+      ],
+      "strongestPositiveEvidence": "Price is above key moving averages with a golden cross.",
+      "strongestNegativeEvidence": "Low relative volume and price below VWAP indicate weak short-term support.",
+      "mixedSignalExplanation": "Long-term trends are positive, but short-term indicators and volume are weak."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 213.6,
+      "nearestResistance": 225.98,
+      "distanceToSupportPercent": 3.11,
+      "distanceToResistancePercent": 2.5,
+      "riskRewardView": "MIXED",
+      "explanation": "Price is closer to support but also near resistance, offering limited upside."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a mixed state with positive long-term trends but short-term bearish pressures and low volume."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Increase in relative volume",
+        "Price moving above VWAP"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Stronger volume support",
+        "Clear breakout above resistance"
+      ],
+      "forRedZoneWarning": [
+        "Further decline in volume",
+        "Price falling below key support levels"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 58,
+      "markerText": "Orange",
+      "displaySummaryBelowBar": "QCOM shows mixed signals with bullish long-term trends but short-term bearish pressures and low volume.",
+      "supportingPointsBelowBar": [
+        "Price above key moving averages",
+        "Positive news sentiment",
+        "Low relative volume"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "WAIT_FOR_CONFIRMATION",
+      "summary": "QCOM is in a mixed state with strong long-term trends but short-term bearish pressures and low volume. Wait for confirmation before making a decision.",
+      "riskWarning": "Low volume and price below VWAP suggest caution in the short term.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "QCOM",
+    "available": true,
+    "price": 220.465,
+    "open": 225.83,
+    "high": 230.97,
+    "low": 218.04,
+    "close": 220.43,
+    "volume": 220183,
+    "vwap": 225.900599,
+    "bid": 219.74,
+    "ask": 225,
+    "spread": 5.26,
+    "changePercent": -0.17,
+    "timestamp": "2026-06-16T15:34:00.741981357Z",
+    "raw": {
+      "dailyBar": {
+        "c": 220.43,
+        "h": 230.97,
+        "l": 218.04,
+        "n": 3527,
+        "o": 225.83,
+        "t": "2026-06-16T04:00:00Z",
+        "v": 220183,
+        "vw": 225.900599
+      },
+      "latestQuote": {
+        "ap": 225,
+        "as": 100,
+        "ax": "V",
+        "bp": 219.74,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-16T15:34:10.1065853Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@"
+        ],
+        "i": 3529,
+        "p": 220.465,
+        "s": 100,
+        "t": "2026-06-16T15:34:00.741981357Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 220.43,
+        "h": 220.43,
+        "l": 220.04,
+        "n": 18,
+        "o": 220.04,
+        "t": "2026-06-16T15:33:00Z",
+        "v": 855,
+        "vw": 220.199021
+      },
+      "prevDailyBar": {
+        "c": 220.8,
+        "h": 226.42,
+        "l": 216.73,
+        "n": 9638,
+        "o": 219.76,
+        "t": "2026-06-15T04:00:00Z",
+        "v": 564936,
+        "vw": 222.283391
+      },
+      "symbol": "QCOM"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 215.76202333374405,
+      "ema50": 196.2750951765536,
+      "ema200": 171.73692370604408,
+      "sma20": 223.73850000000002,
+      "sma50": 187.81289999999993,
+      "sma200": 166.24374999999998,
+      "rsi14": 53.40842765041416,
+      "rsi14Prev": 53.548464527133724,
+      "macdLine": 5.332294053331623,
+      "macdSignal": 9.643129239057386,
+      "macdHist": -4.310835185725763,
+      "bbUpper": 260.8118750958825,
+      "bbMiddle": 223.73850000000002,
+      "bbLower": 186.66512490411753,
+      "bbWidth": 33.13991565678905,
+      "atr14": 16.581412453915895,
+      "obv": 13058548,
+      "relVolume": 0.36172000463602483,
+      "vwap": 221.8689670858501,
+      "adx14": 354.69770142027215,
+      "plusDI": 30.541236166129064,
+      "minusDI": 22.684819702012042,
+      "supportLevels": [
+        132.1,
+        190.15,
+        191.16
+      ],
+      "resistanceLevels": [
+        138.47,
+        247.9,
+        259.84
+      ],
+      "overallBias": "BULLISH",
+      "signals": [
+        "MACD histogram negative",
+        "Price above EMA20 > EMA50",
+        "Golden cross (EMA50 > EMA200)",
+        "Price below VWAP",
+        "Strong uptrend (ADX>25, +DI>-DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 232248901632,
+    "peRatio": 23.693548,
+    "pbRatio": 8.554625,
+    "epsTrailing": 9.3,
+    "epsForward": 10.66716,
+    "revenue": 44486000640,
+    "debtToEquity": 55.979,
+    "dividendYield": 0.0167,
+    "beta": 1.596,
+    "week52High": 259.92,
+    "week52Low": 121.99,
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "description": "QUALCOMM Incorporated engages in the development and commercialization of foundational technologies for the wireless industry worldwide. It operates through three segments: Qualcomm CDMA Technologies (QCT); Qualcomm Technology Licensing (QTL); and Qualcomm Strategic Initiatives (QSI). The QCT segment develops and supplies integrated circuits and system software with connectivity and computing technologies for use in mobile devices; automotive systems for connectivity, digital cockpit, and ADAS/A"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Qualcomm's CEO Reveals 40+ AI Devices For A Post-App Future \u2014 Stock Gains 4% As $10 Billion Tenstorrent Deal Rumours Swirl",
+        "summary": "Qualcomm details 40+ AI device designs and reportedly explores a $10 billion Tenstorrent deal to power future AI hardware.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53216208/qualcomms-ceo-reveals-40-ai-devices-for-a-post-app-future-stock-gains-4-as-10-billion-tenstorrent-deal-rumours-swirl",
+        "publishedAt": "2026-06-16T09:12:21Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "'Qualcomm in Talks to Buy Tenstorrent to Expand AI Chip Capabilities; Qualcomm And Tenstorrent Have Discussed A Potential Price Of $8 Billion To $10 Billion' - The Information",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/m-a/26/06/53211809/qualcomm-in-talks-to-buy-tenstorrent-to-expand-ai-chip-capabilities-qualcomm-and-tenstorrent-have-di",
+        "publishedAt": "2026-06-15T20:41:23Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "5 Stocks In The Spotlight From Wall Street's Most Accurate Analysts Last Week",
+        "summary": "Dow Jones surges over 350 points, S&amp;P 500 and Nasdaq also rise during Friday&#39;s session. Benzinga&#39;s Analyst Ratings API can help traders make informed decisions with data from top analysts.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/dividends/26/06/53188539/5-stocks-in-the-spotlight-from-wall-streets-most-accurate-analysts-last-week-11",
+        "publishedAt": "2026-06-15T10:02:09Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Wells Fargo Maintains Equal-Weight on Qualcomm, Raises Price Target to $230",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53165136/wells-fargo-maintains-equal-weight-on-qualcomm-raises-price-target-to-230",
+        "publishedAt": "2026-06-12T13:43:58Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "NVIDIA Obliterates The Boring PC Era",
+        "summary": "NVIDIA unveils the RTX Spark Superchip, aiming to transform traditional PCs into high-performance local AI inference machines.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/06/53163096/nvidia-obliterates-the-boring-pc-era",
+        "publishedAt": "2026-06-12T12:13:39Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Trump Phone Promised 'Made In America' \u2014 Teardown Shows It Was Designed In China",
+        "summary": "A teardown of the new phone from Trump Mobile shows the phone may have parts from China and be assembled in China.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/politics/26/06/53158074/trump-phone-promised-made-in-america-teardown-shows-it-was-designed-in-china",
+        "publishedAt": "2026-06-11T22:15:42Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "A Good Idea? Retail Traders Are Selling Micron, Qualcomm, Broadcom To Rotate Into The Space X IPO",
+        "summary": "Elon Musk\u2019s SpaceX hasn\u2019t started trading yet, and it is already pulling cash out of the chip stocks retail traders spent the spring chasing.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/06/53156292/a-good-idea-retail-traders-are-selling-micron-qualcomm-broadcom-to-rotate-into-the-space-x-ipo",
+        "publishedAt": "2026-06-11T20:29:45Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Smith Micro Software Added To Qualcomm Partner Network Directory",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53154779/smith-micro-software-added-to-qualcomm-partner-network-directory",
+        "publishedAt": "2026-06-11T19:50:34Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Congresswoman Who Bought No Stocks In 2025 Is Back With More 2026 Trades: Here's The Shopping List",
+        "summary": "Congresswoman Maria Elvira Salazar is buying stocks once again in 2026. Here&#39;s the new stocks she bought.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/politics/26/06/53132114/congresswoman-who-bought-no-stocks-in-2025-is-back-with-more-2026-trades-heres-the-shopping-list",
+        "publishedAt": "2026-06-10T22:46:27Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Qualcomm Slips, Shorter-Term Momentum Cools From Roller Coaster AI Highs",
+        "summary": "Qualcomm (QCOM) stock dips as near-term chip profit-taking clashes with a bullish JPMorgan target aiming for a $69B non-handset revenue boom.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53122093/qualcomm-slips-shorter-term-momentum-cools-from-roller-coaster-ai-highs",
+        "publishedAt": "2026-06-10T16:18:56Z",
+        "sentiment": "POSITIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 8,
+      "priceVwapScore": 8,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 5
+    },
+    "signals": [
+      "Below-average volume (0.4x)",
+      "Price rising with declining volume (weaker rally)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WAIT",
+  "technicalScore": 60,
+  "fundamentalScore": 80,
+  "newsCatalystScore": 75,
+  "institutionalFlowProxyScore": 35,
+  "keyCatalysts": [
+    "AI advancements and potential acquisitions"
+  ],
+  "keyRisks": [
+    "Overbought conditions in shorter timeframes",
+    "Potential pullback from resistance"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy indicates distribution with price rising on declining volume, suggesting caution."
+}

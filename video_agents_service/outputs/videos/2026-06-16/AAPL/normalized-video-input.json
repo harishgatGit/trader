@@ -1,0 +1,28 @@
+{
+  "ticker": "AAPL",
+  "companyName": "AAPL",
+  "reportDate": "Unavailable",
+  "currentPrice": 298.06,
+  "dayChangePct": 0.55,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "unknown-mixed",
+  "catalystSummary": "Positive sentiment from recent news articles.",
+  "volumeSummary": "Volume is below average, indicating weak buying interest.",
+  "trendSummary": "The current trend for Apple Inc. is mixed due to conflicting signals across various timeframes. On the daily chart, the overall bias is neutral, with indicators like the MACD histogram being negative and the price trading below the VWAP, suggesting weakness. However, the presence of a golden cross (EMA(50) > EMA(200)) indicates a longer-term bullish trend. The ADX value is high, indicating a strong trend, but the -DI being greater than +DI suggests the trend is downward. In contrast, the 4-hour chart shows a bullish bias with the price above both EMA(20) and EMA(50), and a positive MACD histogram. The 1-hour and 15-minute charts, however, show bearish signals with prices below key moving averages and a strong downtrend. The news sentiment is generally positive, but institutional flow suggests distribution, with price rising on declining volume, indicating a weaker rally. This mixed picture is further complicated by the ongoing investigation by the Italian Competition Authority, which could pose regulatory risks.",
+  "supportLevels": [
+    265.1
+  ],
+  "resistanceLevels": [
+    303.19
+  ],
+  "entryZone": "Low: 265.1, High: 287.38",
+  "stopLoss": "Price: 265.1 (Stop-loss set below key support level.)",
+  "targets": [
+    303.19,
+    317.38
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "High valuation; Regulatory challenges",
+  "finalVerdict": "AAPL is currently in a mixed technical setup with bullish long-term indicators but short-term bearish signals. The stock is near resistance levels, and the risk/reward ratio is not favorable for immediate entry. Monitoring for a clearer entry signal is advised.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: AAPL is currently not a buy due to mixed signals and proximity to resistance. The stock has shown strong long-term growth but is facing short-term challenges. It's best to wait for a clearer signal before making a move. The stock has been on a strong upward trend over the past year, but recent price action suggests a potential pullback or consolidation phase. Volume has been declining, indicating a lack of strong buying interest at current levels. Although the fundamentals remain strong, with positive news sentiment, the technical setup suggests caution. Near-term, the stock may face resistance around $303, and a pullback to support levels could offer a better entry point."
+}

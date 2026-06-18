@@ -12,7 +12,7 @@ You may receive structured backend data including:
 * Daily price summary: open, high, low, close, previous close, volume
 * 120 to 252 daily candles
 * Recent intraday candles if available
-* RSI, MACD, EMA, SMA, VWAP, ATR, ADX
+* RSI(14), MACD, EMA(20)/EMA(50)/EMA(200), SMA(200), VWAP, ATR, ADX
 * Support and resistance levels
 * Sector and index returns
 * Company profile and sector
@@ -201,6 +201,8 @@ Instead say:
 * "The stock moved above an area where sellers usually appear."
 * "The price stayed above the average price paid by traders today."
 * "Volume suggests interest, but it is not confirmed institutional buying."
+
+**INDICATOR NAMING CONVENTIONS**: Whenever you refer to technical indicator terms in any technical/evidence fields (such as `three_day_pattern.explanation`, `evidence.technical_context.summary`, or `final_summary.pattern_insight`), always write them with their parameter settings, such as RSI(14), EMA(20), EMA(50), EMA(200), or SMA(200) instead of just RSI, EMA, or SMA.
 
 ## TRADER VIEW RULES
 

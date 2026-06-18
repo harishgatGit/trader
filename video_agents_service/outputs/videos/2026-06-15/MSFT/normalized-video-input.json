@@ -1,0 +1,28 @@
+{
+  "ticker": "MSFT",
+  "companyName": "MSFT",
+  "reportDate": "Unavailable",
+  "currentPrice": 399.75,
+  "dayChangePct": 2.4,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "unknown-mixed",
+  "catalystSummary": "Positive news sentiment from recent articles",
+  "volumeSummary": "Volume is below average, suggesting lack of strong buying interest.",
+  "trendSummary": "Microsoft's stock is currently in a bearish trend. The price is trading below the EMA(20), EMA(50), and EMA(200), indicating a sustained downtrend. The MACD is bearish, and the ADX suggests a strong downtrend, reinforcing the negative momentum. The recent price action shows a decline, with the stock closing at $400.05 after opening at $396.64. Despite a positive news sentiment, the stock's technical indicators and institutional flow suggest distribution, with below-average volume and a price below VWAP. This indicates that the stock is under selling pressure, possibly due to broader market conditions or sector-specific challenges.",
+  "supportLevels": [
+    398.01
+  ],
+  "resistanceLevels": [
+    428.91
+  ],
+  "entryZone": "Low: 398.01, High: 405.17",
+  "stopLoss": "Price: 398.01 (Stop loss below key support.)",
+  "targets": [
+    428.91,
+    433.0
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: LOW",
+  "riskWarnings": "Bearish technical trend; Distribution proxy signals",
+  "finalVerdict": "The current technical setup for MSFT indicates a bearish trend on the daily chart with price below key moving averages and a bearish MACD signal. Although there is positive news sentiment, the stock is near support levels with a bearish institutional flow proxy. Given the medium-high risk profile and preference for clear entry signals, it is advisable to watch for a more favorable setup before considering entry.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: Microsoft is currently in a downward trend, with its price below important moving averages and showing bearish momentum on the daily chart. Despite some positive news sentiment, the stock is not showing signs of a reversal yet. It's best to wait for clearer signs of a trend change or a more attractive entry point before considering a buy. In the short term, the stock may continue to face downward pressure, but long-term prospects remain tied to its strong fundamentals."
+}

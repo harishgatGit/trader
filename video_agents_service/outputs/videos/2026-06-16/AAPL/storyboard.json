@@ -1,0 +1,226 @@
+{
+  "ticker": "AAPL",
+  "reportDate": "Unavailable",
+  "videoTitle": "AAPL Stock Report",
+  "durationSeconds": 177.61,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for AAPL. Currently rated as a watchlist stock, AAPL presents a compelling narrative with its strong long-term growth, yet it faces short-term challenges that warrant careful consideration before entering a position.\n\nAAPL's current price stands at $298.06. In recent trading, the stock has shown a mixed intraday trend, reflecting a daily percentage move that suggests uncertainty in investor sentiment.\n\nThe trend direction for AAPL is mixed, influenced by conflicting signals across various timeframes. While the recent price action indicates potential resistance ahead, the underlying strength of the stock has kept it in focus for investors.\n\nKey evidence behind this trend includes a decline in trading volume, which indicates weak buying interest at current levels. Despite positive sentiment in recent news articles, the lack of robust volume raises questions about the sustainability of any upward movement.\n\nLooking at the daily trend chart, AAPL is navigating near a resistance level around $303. The stock appears to be in a consolidation phase, suggesting that a pullback could be imminent before it makes another upward attempt.\n\nFrom a technical perspective, indicators like the MACD histogram are currently negative, and the price is trading below the VWAP, suggesting underlying weakness. However, the presence of a golden cross indicates a potential long-term bullish trend, though caution is advised.\n\nFor tactical traders, the swing entry zone for AAPL ranges from $265.1 to $287.38, with a stop loss set at $265.1 to protect against significant downturns. Target levels are positioned at $303.19 and $317.38, but the risk/reward ratio currently does not favor immediate entry.\n\nConsidering a short trade, it's important to exercise caution as the stock is near critical resistance. The mixed signals raise the possibility of a short squeeze, especially given the ongoing investigation by the Italian Competition Authority, which could introduce further volatility.\n\nExamining AAPL's ecosystem, the overall sector performance and market conditions can influence the stock's trajectory. As regulatory risks loom, the sentiment in the broader market may either support or undermine AAPL's current setup.\n\nIn conclusion, AAPL's mixed technical indicators suggest a wait-and-see approach is prudent. Key levels to watch include the resistance at $303 and the support at $265.1, with the main risk stemming from potential regulatory challenges. Always remember to conduct your own research before making investment decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 17.91,
+      "narration": "Welcome to the Investing Atti stock analysis for AAPL. Currently rated as a watchlist stock, AAPL presents a compelling narrative with its strong long-term growth, yet it faces short-term challenges that warrant careful consideration before entering a position.",
+      "pandaAction": "default",
+      "speechBubbleText": "AAPL: Watchlist Stock",
+      "visualElements": [
+        "AAPL logo",
+        "watchlist graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "AAPL: Strong Growth, Short-Term Challenges Ahead"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 12.76,
+      "narration": "AAPL's current price stands at $298.06. In recent trading, the stock has shown a mixed intraday trend, reflecting a daily percentage move that suggests uncertainty in investor sentiment.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $298.06",
+      "visualElements": [
+        "price tag graphic"
+      ],
+      "chartElements": [
+        "intraday trend chart"
+      ],
+      "animationInstructions": [
+        "slide in",
+        "highlight price"
+      ],
+      "dataFields": {
+        "currentPrice": 298.06
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 16.47,
+      "narration": "The trend direction for AAPL is mixed, influenced by conflicting signals across various timeframes. While the recent price action indicates potential resistance ahead, the underlying strength of the stock has kept it in focus for investors.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Mixed Trend Direction",
+      "visualElements": [
+        "trend direction graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 18.39,
+      "narration": "Key evidence behind this trend includes a decline in trading volume, which indicates weak buying interest at current levels. Despite positive sentiment in recent news articles, the lack of robust volume raises questions about the sustainability of any upward movement.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Declining Trading Volume",
+      "visualElements": [
+        "volume chart"
+      ],
+      "chartElements": [
+        "trading volume chart"
+      ],
+      "animationInstructions": [
+        "zoom in",
+        "highlight decline"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 15.37,
+      "narration": "Looking at the daily trend chart, AAPL is navigating near a resistance level around $303. The stock appears to be in a consolidation phase, suggesting that a pullback could be imminent before it makes another upward attempt.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Resistance at $303",
+      "visualElements": [
+        "daily trend chart"
+      ],
+      "chartElements": [
+        "resistance level marker"
+      ],
+      "animationInstructions": [
+        "draw resistance line",
+        "fade in"
+      ],
+      "dataFields": {
+        "resistanceLevel": 303
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 18.87,
+      "narration": "From a technical perspective, indicators like the MACD histogram are currently negative, and the price is trading below the VWAP, suggesting underlying weakness. However, the presence of a golden cross indicates a potential long-term bullish trend, though caution is advised.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Technical Indicators Mixed",
+      "visualElements": [
+        "MACD chart",
+        "VWAP indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight indicators",
+        "fade in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 18.94,
+      "narration": "For tactical traders, the swing entry zone for AAPL ranges from $265.1 to $287.38, with a stop loss set at $265.1 to protect against significant downturns. Target levels are positioned at $303.19 and $317.38, but the risk/reward ratio currently does not favor immediate entry.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $265.1 - $287.38",
+      "visualElements": [
+        "entry zone graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight entry zone",
+        "fade in"
+      ],
+      "dataFields": {
+        "entryZoneLow": 265.1,
+        "entryZoneHigh": 287.38,
+        "stopLoss": 265.1,
+        "targets": [
+          303.19,
+          317.38
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 19.62,
+      "narration": "Considering a short trade, it's important to exercise caution as the stock is near critical resistance. The mixed signals raise the possibility of a short squeeze, especially given the ongoing investigation by the Italian Competition Authority, which could introduce further volatility.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution: Short Trade Risks",
+      "visualElements": [
+        "short trade graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 16.05,
+      "narration": "Examining AAPL's ecosystem, the overall sector performance and market conditions can influence the stock's trajectory. As regulatory risks loom, the sentiment in the broader market may either support or undermine AAPL's current setup.",
+      "pandaAction": "default",
+      "speechBubbleText": "Sector Performance Matters",
+      "visualElements": [
+        "sector performance graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 23.23,
+      "narration": "In conclusion, AAPL's mixed technical indicators suggest a wait-and-see approach is prudent. Key levels to watch include the resistance at $303 and the support at $265.1, with the main risk stemming from potential regulatory challenges. Always remember to conduct your own research before making investment decisions.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Wait and See Approach",
+      "visualElements": [
+        "final verdict graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing.",
+        "disclaimer": "This content is for informational purposes only and does not constitute financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

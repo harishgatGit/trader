@@ -1,0 +1,28 @@
+{
+  "ticker": "QCOM",
+  "companyName": "QCOM",
+  "reportDate": "Unavailable",
+  "currentPrice": 220.465,
+  "dayChangePct": -0.17,
+  "overallSignal": "WAIT",
+  "whyStockMoved": "unknown-mixed",
+  "catalystSummary": "AI advancements and potential acquisitions",
+  "volumeSummary": "Volume is declining, indicating potential exhaustion.",
+  "trendSummary": "QUALCOMM's stock has experienced a significant rise recently, primarily driven by positive news regarding potential expansion in AI capabilities through a rumored acquisition of Tenstorrent. This news has contributed to a bullish sentiment, as reflected in the stock's price moving above key moving averages like EMA(20) and EMA(50), and the presence of a golden cross (EMA50 > EMA200). The ADX indicates a strong uptrend, supporting the bullish bias. However, the MACD histogram is negative, suggesting some loss of momentum. Additionally, the volume is below average, indicating a weaker rally, and institutional flow suggests distribution rather than accumulation. These conflicting signals create a mixed trend, with bullish technical indicators being offset by weaker volume and institutional distribution.",
+  "supportLevels": [
+    132.1
+  ],
+  "resistanceLevels": [
+    247.9
+  ],
+  "entryZone": "Low: 180, High: 190",
+  "stopLoss": "Price: 190 (Stop-loss below 190 to protect against downside.)",
+  "targets": [
+    240.0,
+    260.0
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "Overbought conditions in shorter timeframes; Potential pullback from resistance",
+  "finalVerdict": "The stock is currently in a bullish trend but is showing signs of being overextended with a recent pullback. The risk/reward ratio is not yet favorable for a BUY decision, especially given the proximity to resistance levels and declining volume. Waiting for a pullback or breakout confirmation would be prudent.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is in a strong uptrend but has recently pulled back from its highs. It might be wise to wait for the price to stabilize and show clear buying interest before scaling in. The recent positive news about potential acquisitions and AI advancements has boosted sentiment, but the stock's current price level is near significant resistance, making it risky to buy immediately. In the near term, expect some volatility as the market digests these developments. Long-term, the stock could benefit from its strategic initiatives in AI and technology licensing, but patience is key for a better entry point."
+}

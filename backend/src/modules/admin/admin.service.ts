@@ -18,7 +18,10 @@ export class AdminService {
       select: {
         id: true,
         username: true,
+        email: true,
         role: true,
+        subscriptionPlan: true,
+        isActive: true,
         createdAt: true,
         _count: {
           select: { searchLogs: true },
@@ -231,5 +234,34 @@ export class AdminService {
       },
       orderBy: { createdAt: 'desc' },
     });
+  }
+
+  async toggleUserStatus(id: string, isActive: boolean) {
+    const user = await this.prisma.user.update({
+      where: { id },
+      data: { isActive },
+      select: {
+        id: true,
+        username: true,
+        role: true,
+        isActive: true,
+      },
+    });
+
+    if (!isActive) {
+      await this.prisma.userSession.updateMany({
+        where: { userId: id, isActive: true },
+        data: { isActive: false },
+      });
+    }
+
+    return user;
+  }
+
+  async deleteUser(id: string) {
+    await this.prisma.user.delete({
+      where: { id },
+    });
+    return { success: true };
   }
 }

@@ -106,7 +106,7 @@ const Settings: React.FC = () => {
                   <span className="text-sm font-semibold text-slate-200 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
                 </div>
                 <div className="text-right flex items-center gap-2">
-                  <span className={`text-xs font-bold uppercase ${
+                  <span className={`text-xs font-bold  ${
                     svc.status === 'connected' ? 'text-emerald-500' : svc.status === 'unconfigured' ? 'text-amber-500' : 'text-rose-500'
                   }`}>
                     {svc.status}

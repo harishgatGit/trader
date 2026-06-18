@@ -1,0 +1,1029 @@
+{
+  "symbol": "TSLA",
+  "analysisDateTime": "2026-06-15T23:35:13.736Z",
+  "currentPrice": 410.25,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All required data is available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "TRADE",
+    "confidenceScore": 65,
+    "decisionSummary": "TSLA is currently in a mixed technical setup with conflicting signals. While the 4-hour and 1-hour charts show bullish momentum, the daily chart indicates potential distribution. The stock is near resistance levels, and the risk/reward ratio is not clearly favorable. It is advisable to watch for a clearer entry signal or confirmation of a breakout before considering a buy.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is near resistance with mixed technical signals and a distribution proxy score.",
+    "bestActionNow": "Monitor for a breakout above resistance or a pullback to support levels for a better entry."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": true,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: TSLA is currently showing mixed signals. The stock has been fluctuating with some bullish momentum on shorter timeframes, but the overall trend on the daily chart suggests caution. The price is near resistance levels, making it a risky buy at this moment. It's best to wait for a clearer signal or a pullback to more favorable levels before considering a purchase. In the near term, expect some volatility as the stock tests key resistance levels. Long-term, the stock's fundamentals and sector position remain strong, but current valuation is high.",
+  "technicalAnalysis": {
+    "overallBias": "MIXED",
+    "trendStage": "DISTRIBUTION",
+    "setupType": "NO_SETUP",
+    "technicalScore": 55,
+    "keySignals": [
+      "MACD bearish on daily",
+      "Price above EMA20 and EMA50 on 4-hour",
+      "Strong uptrend on 1-hour"
+    ],
+    "supportLevels": [
+      337.27,
+      364.04,
+      380.16,
+      393.7
+    ],
+    "resistanceLevels": [
+      409.28,
+      445.56,
+      453.39
+    ],
+    "vwapAnalysis": "Price is below VWAP on daily, indicating potential weakness.",
+    "movingAverageAnalysis": "Price is above EMA20 and EMA50 on shorter timeframes, but mixed signals on daily.",
+    "rsiAnalysis": "RSI is neutral on daily, indicating no clear overbought or oversold condition.",
+    "macdAnalysis": "MACD is bearish on daily, but bullish on shorter timeframes.",
+    "volumeAnalysis": "Volume is below average, indicating lack of strong buying interest.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR indicates moderate volatility, suitable for swing trading.",
+    "adxTrendStrengthAnalysis": "ADX indicates strong trend strength on shorter timeframes.",
+    "bollingerBandAnalysis": "Bollinger Bands suggest low volatility on shorter timeframes."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Not advisable to buy now due to proximity to resistance and mixed signals."
+    },
+    "pullbackEntryZone": {
+      "low": 380.16,
+      "high": 393.7,
+      "description": "Consider buying if price pulls back to support levels."
+    },
+    "breakoutEntryLevel": {
+      "price": 453.39,
+      "confirmationRule": "Wait for a daily close above this level with strong volume."
+    },
+    "accumulationZone": {
+      "low": 337.27,
+      "high": 364.04,
+      "description": "Long-term accumulation zone if price drops significantly."
+    },
+    "invalidationLevel": {
+      "price": 364.04,
+      "reason": "A break below this level would invalidate the current setup."
+    },
+    "stopLoss": {
+      "price": 380.16,
+      "stopType": "SUPPORT_BREAK",
+      "description": "Place stop-loss just below key support level."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 445.56,
+        "reason": "First resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 453.39,
+        "reason": "Second resistance level."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "Not defined due to current market conditions."
+      }
+    ],
+    "exitRules": [
+      "Exit at T1 if resistance holds",
+      "Consider partial exit at T2 for profit-taking"
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 410.25,
+    "riskPerShare": 30.09,
+    "rewardToTarget1": 35.31,
+    "rewardToTarget2": 43.14,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": "1.17",
+    "riskRewardToTarget2": "1.43",
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Consider smaller position size due to poor risk/reward ratio."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "MIXED",
+    "entryZone": {
+      "low": 380.16,
+      "high": 393.7,
+      "description": "Wait for a pullback to this zone for a better entry."
+    },
+    "stopLoss": {
+      "price": 380.16,
+      "description": "Stop-loss below key support level."
+    },
+    "targets": [
+      {
+        "price": 445.56,
+        "label": "T1"
+      },
+      {
+        "price": 453.39,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit at T1 if resistance holds",
+      "Consider partial exit at T2 for profit-taking"
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "MIXED",
+    "entryZone": {
+      "low": 380.16,
+      "high": 393.7,
+      "description": "Consider entry on pullback to support levels."
+    },
+    "stopLoss": {
+      "price": 380.16,
+      "description": "Stop-loss below key support level."
+    },
+    "targets": [
+      {
+        "price": 445.56,
+        "label": "T1"
+      },
+      {
+        "price": 453.39,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 337.27,
+      "high": 364.04,
+      "description": "Long-term accumulation zone if price drops significantly."
+    },
+    "riskReward": "POOR",
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "MIXED",
+    "swingSetup": {
+      "setup": "NO_SETUP",
+      "analysis": "Mixed signals with potential distribution on daily chart."
+    },
+    "entryTiming": {
+      "trigger": "WAIT_FOR_PULLBACK",
+      "analysis": "Entry timing not ideal due to proximity to resistance."
+    },
+    "supportLevels": [
+      {
+        "price": 337.27,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 409.28,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": 445.56,
+    "stopLossPrice": 380.16,
+    "riskMetrics": {
+      "atr": 17.38807671605884,
+      "atrAnalysis": "Moderate volatility suitable for swing trading.",
+      "vwap": 410.342554,
+      "vwapAnalysis": "Price is below VWAP, indicating potential weakness.",
+      "volumeAnalysis": "Below average volume, indicating lack of strong buying interest.",
+      "supportResistanceAnalysis": "Price is near resistance with mixed signals."
+    },
+    "catalysts": {
+      "news": "Positive sentiment from recent news articles.",
+      "earnings": "Not provided by backend.",
+      "secFilings": "Not provided by backend."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "Data unavailable"
+    },
+    "horizonDetails": "TSLA shows mixed signals with potential distribution on daily chart. Watch for a pullback to support levels for a better entry.",
+    "dailyTrend": {
+      "trend": "MIXED",
+      "barCount": 252,
+      "analysis": "Tesla's stock trend is currently mixed due to conflicting signals. The price is above the EMA(20) and EMA(50), showing some bullish tendencies. However, the MACD is bearish, and the ADX indicates a strong downtrend, suggesting underlying bearish momentum. The news sentiment is positive, with headlines highlighting optimism around Elon Musk's activities and broader market enthusiasm. Despite this, institutional flow shows distribution, with below-average volume and a rising price, indicating a weaker rally. The RSI(14) is neutral at 50.59, showing no extreme momentum. Overall, the mixed signals from technical indicators and institutional activity create uncertainty in the trend.",
+      "laymanExplanation": "Think of Tesla's stock like a car that's trying to climb a hill. It's moving up, but the engine is sputtering a bit. The price is above some important lines that usually mean it's going up, but other signals are showing it might be losing power. There's good news about Elon Musk and the market, but big investors aren't buying as much as you'd expect. So, it's a bit uncertain right now whether the stock will keep climbing or start rolling back down.",
+      "ticker": "TSLA",
+      "companyName": "Tesla, Inc.",
+      "confidenceScore": 70,
+      "trendSummary": "The trend for Tesla, Inc. is mixed. While the price is above key moving averages, indicating some bullish momentum, the MACD is bearish and institutional flow suggests distribution. News sentiment is positive, but volume is below average, indicating a weaker rally.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Mixed",
+          "evidence": "Price above EMA(20) and EMA(50), but MACD bearish and ADX indicates strong downtrend."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Positive",
+          "evidence": "Positive headlines about Elon Musk and market enthusiasm."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Negative",
+          "evidence": "Distribution with below-average volume and rising price."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "Price closed at $411.22, above EMA(20) and EMA(50), indicating some bullish momentum.",
+        "movingAverageView": "Price is above EMA(20) at $410.11 and EMA(50) at $406.50, indicating bullish momentum.",
+        "momentumView": "MACD is bearish with a negative histogram, indicating potential bearish momentum.",
+        "volumeView": "Volume is below average, suggesting a weaker rally.",
+        "supportResistanceView": "Current price is near resistance levels indicated by the Bollinger Bands.",
+        "volatilityView": "ATR(14) at 17.39 indicates moderate volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data impacting today's trend.",
+        "newsImpact": "Positive news sentiment, particularly around Elon Musk's activities and market optimism.",
+        "institutionalFlowImpact": "Institutional flow suggests distribution, with below-average volume and rising price.",
+        "sectorMacroImpact": "Positive sentiment in the consumer cyclical sector, but broader market conditions remain uncertain."
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Bearish MACD and strong downtrend indicated by ADX.",
+          "Institutional distribution with below-average volume."
+        ],
+        "whatNeedsConfirmation": "Confirmation of bullish momentum through increased volume and positive MACD crossover."
+      },
+      "watchStatus": "Needs confirmation",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "MIXED",
+    "investmentQuality": "MODERATE",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "INSUFFICIENT_DATA"
+    },
+    "bullCase": "Continued growth in EV market and strong brand presence.",
+    "baseCase": "Moderate growth with potential valuation pressure.",
+    "bearCase": "Increased competition and regulatory challenges.",
+    "longTermVerdict": "HOLD"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 70,
+    "rating": "MIXED",
+    "revenueTrend": "Strong revenue growth but high valuation.",
+    "epsTrend": "Improving EPS but high P/E ratio.",
+    "profitability": "Moderate profitability with high market expectations.",
+    "debtRisk": "Low debt-to-equity ratio.",
+    "cashFlowQuality": "Positive cash flow but high valuation.",
+    "valuationCommentary": "High P/E and P/B ratios indicate overvaluation."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "OVERVALUED",
+    "valuationScore": 40,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Current valuation is high compared to earnings and book value."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 80,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Positive sentiment from recent news articles."
+    ],
+    "keyRisksFromNews": [
+      "None identified"
+    ],
+    "earningsRisk": "Not provided by backend.",
+    "catalystVerdict": "SUPPORTIVE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates distribution with price rising on declining volume, suggesting a weaker rally.",
+    "signals": [
+      "Below-average volume (0.9x)",
+      "Price rising with declining volume (weaker rally)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "MEDIUM",
+    "probabilityScore": 50,
+    "reason": "Strong brand and growth potential but high valuation.",
+    "requiredConditions": [
+      "Sustained revenue and EPS growth",
+      "Market expansion"
+    ],
+    "majorBlockers": [
+      "High valuation",
+      "Regulatory challenges"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "MEDIUM",
+    "technicalRisk": "Mixed signals with potential distribution.",
+    "fundamentalRisk": "High valuation with moderate profitability.",
+    "valuationRisk": "Overvalued compared to earnings and book value.",
+    "newsRisk": "Positive sentiment but requires confirmation.",
+    "liquidityRisk": "Acceptable liquidity.",
+    "eventRisk": "No immediate events identified.",
+    "topRisks": [
+      "High valuation",
+      "Near resistance levels"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Continued growth in EV market and strong brand presence.",
+      "pricePath": "Potential upside if growth continues.",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Moderate growth with potential valuation pressure.",
+      "pricePath": "Likely stable with moderate growth.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Increased competition and regulatory challenges.",
+      "pricePath": "Potential downside if challenges arise.",
+      "probability": "MEDIUM"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for a breakout above resistance.",
+    "Consider entry on pullback to support levels.",
+    "Avoid buying near current resistance."
+  ],
+  "doNotTradeConditions": [
+    "Avoid entry if price remains near resistance without breakout confirmation."
+  ],
+  "alertLevels": {
+    "buyAlert": 380.16,
+    "breakoutAlert": 453.39,
+    "stopLossAlert": 380.16,
+    "target1Alert": 445.56,
+    "target2Alert": 453.39,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "SpaceX",
+        "ownershipPct": "unknown",
+        "performance": "Strong growth trajectory with successful launches and contracts",
+        "upcomingEvents": [
+          "Potential IPO",
+          "New satellite launches"
+        ],
+        "impactPotential": "A successful IPO could increase Tesla's valuation due to shared leadership and potential synergies in technology and innovation."
+      },
+      {
+        "name": "SolarCity",
+        "ownershipPct": "100%",
+        "performance": "Integrated into Tesla Energy, focusing on solar products",
+        "upcomingEvents": [
+          "New product launches",
+          "Expansion into new markets"
+        ],
+        "impactPotential": "Successful market expansion and product launches could enhance Tesla's energy division revenues and market perception."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Panasonic",
+          "role": "Supplier",
+          "description": "Battery cells",
+          "riskExposure": "Disruptions could impact Tesla's battery production and vehicle output."
+        },
+        {
+          "name": "LG Chem",
+          "role": "Supplier",
+          "description": "Battery cells",
+          "riskExposure": "Supply chain issues could affect Tesla's ability to meet production targets."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Foxconn",
+          "role": "Outsource Partner",
+          "description": "Manufacturing of certain components",
+          "riskExposure": "Production delays could affect Tesla's delivery timelines."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Google",
+          "role": "Marketing Partner",
+          "description": "Advertising and digital marketing",
+          "riskExposure": "Changes in digital marketing strategies could impact Tesla's brand visibility."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Consumer EV Market",
+          "role": "Customer",
+          "description": "Electric vehicles",
+          "riskExposure": "A shift in consumer preferences or economic downturns could reduce demand for Tesla vehicles."
+        },
+        {
+          "name": "Commercial Energy Sector",
+          "role": "Customer",
+          "description": "Energy storage solutions",
+          "riskExposure": "Increased adoption of renewable energy could boost demand for Tesla's energy products."
+        }
+      ]
+    },
+    "strategicOutlook": "Tesla's ecosystem is robust with strong growth potential in both automotive and energy sectors. However, it faces concentration risks with key suppliers like Panasonic and LG Chem. Externalities such as regulatory changes in EV incentives and advancements in battery technology are critical to watch."
+  },
+  "trendStory": {
+    "ticker": "TSLA",
+    "analysis_date": "2026-06-15",
+    "price_summary": {
+      "current_price": 410.25,
+      "previous_close": 405.59,
+      "day_change_percent": 1.15,
+      "day_range": {
+        "high": 416,
+        "low": 407.15
+      },
+      "volume": 764609,
+      "average_volume": 820123,
+      "relative_volume": 0.93
+    },
+    "move_classification": {
+      "primary_reason": "news-driven",
+      "secondary_reasons": [
+        "sector-sympathy"
+      ],
+      "confidence": "medium",
+      "confidence_score": 70
+    },
+    "story_for_layman": {
+      "headline": "Tesla's Stock Moves Slightly Up Amid Market Excitement",
+      "simple_explanation": "Tesla's stock price increased slightly today, likely due to positive news about SpaceX and general market excitement.",
+      "why_it_moved": "The stock moved due to positive news about SpaceX's trading volume and overall market optimism.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The move was supported by normal volume and positive news, but the sideways trend suggests uncertainty."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "SpaceX Trading Volume Exceeds Apple, Microsoft, Tesla, Meta And Google Stocks Combined",
+          "summary": "SpaceX's debut set new records for retail investor demand, with over 522 million shares traded and generating $33 billion in dollar volume.",
+          "source": "benzinga",
+          "published_at": "2026-06-15T19:16:50Z",
+          "impact": "positive",
+          "relevance_score": 90
+        },
+        {
+          "headline": "Stock Market Euphoric Over New Musk Post And Iran Deal",
+          "summary": "Euphoric Stock Market",
+          "source": "benzinga",
+          "published_at": "2026-06-15T20:19:00Z",
+          "impact": "positive",
+          "relevance_score": 80
+        },
+        {
+          "headline": "The Magnificent 7 Just Got Too Small For The AI Boom \u2014 Meet The FAB 10",
+          "summary": "The Mag 7 may need an upgrade as investors turn their attention to the FAB 10, including frontier AI giants like OpenAI and SpaceX.",
+          "source": "benzinga",
+          "published_at": "2026-06-15T20:01:04Z",
+          "impact": "positive",
+          "relevance_score": 70
+        },
+        {
+          "headline": "Mike Novogratz Is Bullish On Bitcoin But Nervous About SpaceX",
+          "summary": "Galaxy Digital (NASDAQ:GLXY) CEO Mike Novogratz says Bitcoin",
+          "source": "benzinga",
+          "published_at": "2026-06-15T19:52:26Z",
+          "impact": "positive",
+          "relevance_score": 60
+        },
+        {
+          "headline": "10 Consumer Discretionary Stocks Whale Activity In Today's Session",
+          "summary": " ",
+          "source": "benzinga",
+          "published_at": "2026-06-15T17:35:37Z",
+          "impact": "neutral",
+          "relevance_score": 50
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "eps_surprise": null,
+        "revenue_surprise": null,
+        "guidance_change": "unknown",
+        "summary": "No recent earnings announcement identified in news feeds."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Consumer Cyclical",
+        "sector_change_percent": 0.92,
+        "index_change_percent": 0.57,
+        "is_stock_outperforming_sector": true,
+        "summary": "Sector Consumer Cyclical is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 0.93,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 0.9x. Institutional flow proxy score is 35."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": 409.28,
+        "support_level": 337.27,
+        "resistance_level": 409.28,
+        "rsi": 50.58766932152635,
+        "macd_signal": "bearish",
+        "vwap_position": "below",
+        "summary": "Price is NEUTRAL overall. RSI at 50.58766932152635."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": 2.5,
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 337.27,
+        "high": 409.28
+      },
+      "stop_loss": 337.27,
+      "target_1": 416,
+      "target_2": 430,
+      "risk_reward": 1.5,
+      "entry_reason": "The stock is in a sideways consolidation phase, waiting for a breakout or breakdown.",
+      "wait_for_confirmation": "Wait for a breakout above resistance or a breakdown below support to confirm a new trend."
+    },
+    "short_trade_view": {
+      "short_bias": "wait_for_breakdown",
+      "short_entry_trigger": 337.27,
+      "short_stop_loss": 409.28,
+      "short_target_1": 320,
+      "short_target_2": 300,
+      "reason": "The stock is in a consolidation phase, and a breakdown below support could trigger a short opportunity."
+    },
+    "final_summary": {
+      "one_line_story": "Tesla's stock rose slightly amid positive news and market excitement, but remains in a sideways trend.",
+      "layman_summary": "Tesla's stock price went up a bit today because of good news about SpaceX and general market excitement, but it's still moving sideways without a clear trend.",
+      "trader_action": "Monitor for a breakout above resistance or a breakdown below support to confirm a new trend.",
+      "risk_warning": "The sideways trend increases uncertainty, and a clear direction is needed for a more reliable trade setup."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "TSLA",
+    "analysisDate": "2026-06-15",
+    "currentPrice": 410.25,
+    "correlationName": "Signal Correlation",
+    "finalZone": "YELLOW_ZONE",
+    "correlationScore": 58,
+    "gradientPositionPercent": 58,
+    "gradientLabel": "Orange",
+    "confidenceLevel": "MEDIUM",
+    "oneLineSummary": "TSLA shows mixed signals with price above key EMAs but below VWAP, and a bearish MACD on the daily chart.",
+    "laymanSummary": "Tesla's stock is in a mixed state. It's above some important averages, but not all indicators are positive. It's a time to watch and wait for clearer signals.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 12,
+        "maxScore": 20,
+        "status": "MIXED",
+        "evidence": "Price is above EMA(20) and EMA(50), but below VWAP and facing resistance."
+      },
+      "volumeConfirmation": {
+        "score": 8,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "Relative volume is below average, indicating weak volume support for the current price move."
+      },
+      "momentumIndicators": {
+        "score": 8,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "RSI(14) is neutral at 50.6, and MACD is bearish on the daily chart."
+      },
+      "movingAverageStructure": {
+        "score": 12,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20), EMA(50), and EMA(200) with a golden cross (EMA50 > EMA200)."
+      },
+      "vwapPosition": {
+        "score": 4,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP, indicating potential selling pressure."
+      },
+      "supportResistanceRiskReward": {
+        "score": 6,
+        "maxScore": 10,
+        "status": "MIXED",
+        "evidence": "Price is near resistance at 409.28 with support at 380.16, offering limited upside."
+      },
+      "sectorIndexAlignment": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "POSITIVE",
+        "evidence": "Positive sentiment in the Consumer Cyclical sector."
+      },
+      "shortInterestContext": {
+        "score": 2,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No specific short interest data provided."
+      },
+      "newsCatalystConfirmation": {
+        "score": 2,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Positive news sentiment with recent articles highlighting optimism."
+      },
+      "institutionalFlowProxy": {
+        "score": 1,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow proxy indicates distribution with below-average volume."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Price above EMA(20), EMA(50), and EMA(200)",
+        "Positive news sentiment"
+      ],
+      "yellowSignals": [
+        "RSI(14) neutral",
+        "Mixed volume confirmation"
+      ],
+      "redSignals": [
+        "Price below VWAP",
+        "Bearish MACD on daily chart",
+        "Institutional distribution proxy"
+      ],
+      "strongestPositiveEvidence": "Price is above key moving averages with a golden cross.",
+      "strongestNegativeEvidence": "Price is below VWAP and MACD is bearish on the daily chart.",
+      "mixedSignalExplanation": "While the price is above key moving averages, the bearish MACD and price below VWAP create uncertainty."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 380.16,
+      "nearestResistance": 409.28,
+      "distanceToSupportPercent": 7.34,
+      "distanceToResistancePercent": -0.24,
+      "riskRewardView": "MIXED",
+      "explanation": "Price is close to resistance with limited upside potential, but support is relatively far, indicating a mixed risk/reward scenario."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a mixed state with both positive and negative signals, suggesting a wait-and-see approach."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Price moving above VWAP",
+        "Improvement in MACD"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Increase in relative volume",
+        "Clear breakout above resistance"
+      ],
+      "forRedZoneWarning": [
+        "Further decline below key support levels",
+        "Increase in bearish momentum indicators"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 58,
+      "markerText": "Orange",
+      "displaySummaryBelowBar": "TSLA is in a mixed state; watch for clearer signals.",
+      "supportingPointsBelowBar": [
+        "Price above key EMAs",
+        "Bearish MACD on daily chart",
+        "Positive news sentiment"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "WAIT_FOR_CONFIRMATION",
+      "summary": "Tesla's stock shows mixed signals with price above key EMAs but below VWAP and a bearish MACD on the daily chart. It's advisable to wait for clearer signals before making any decisions.",
+      "riskWarning": "The current setup presents mixed signals, indicating potential volatility and uncertainty.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "TSLA",
+    "available": true,
+    "price": 410.25,
+    "open": 411.93,
+    "high": 416,
+    "low": 407.15,
+    "close": 411.22,
+    "volume": 764609,
+    "vwap": 410.342554,
+    "bid": 391.4,
+    "ask": 410.95,
+    "spread": 19.55,
+    "changePercent": 1.15,
+    "timestamp": "2026-06-15T20:36:49.437108211Z",
+    "raw": {
+      "dailyBar": {
+        "c": 411.22,
+        "h": 416,
+        "l": 407.15,
+        "n": 20030,
+        "o": 411.93,
+        "t": "2026-06-15T04:00:00Z",
+        "v": 764609,
+        "vw": 410.342554
+      },
+      "latestQuote": {
+        "ap": 410.95,
+        "as": 80,
+        "ax": "V",
+        "bp": 391.4,
+        "bs": 40,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-15T20:00:01.780013824Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@",
+          "T"
+        ],
+        "i": 20007,
+        "p": 410.25,
+        "s": 40,
+        "t": "2026-06-15T20:36:49.437108211Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 410.25,
+        "h": 410.25,
+        "l": 410.25,
+        "n": 1,
+        "o": 410.25,
+        "t": "2026-06-15T20:36:00Z",
+        "v": 40,
+        "vw": 410.25
+      },
+      "prevDailyBar": {
+        "c": 406.54,
+        "h": 406.66,
+        "l": 386.81,
+        "n": 33879,
+        "o": 398.94,
+        "t": "2026-06-12T04:00:00Z",
+        "v": 1669312,
+        "vw": 398.375424
+      },
+      "symbol": "TSLA"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 410.1067314634304,
+      "ema50": 406.4984469991963,
+      "ema200": 398.55034700572065,
+      "sma20": 415.15625,
+      "sma50": 399.2826000000002,
+      "sma200": 415.9729749999996,
+      "rsi14": 50.58766932152635,
+      "rsi14Prev": 48.939509593178094,
+      "macdLine": -1.7023708911679591,
+      "macdSignal": 1.4145112498364405,
+      "macdHist": -3.1168821410043996,
+      "bbUpper": 446.7797233821255,
+      "bbMiddle": 415.15625,
+      "bbLower": 383.5327766178745,
+      "bbWidth": 15.234492257854962,
+      "atr14": 17.38807671605884,
+      "obv": 17178938,
+      "relVolume": 0.9323106650341464,
+      "vwap": 412.19352831009337,
+      "adx14": 240.32139982751707,
+      "plusDI": 21.56692494720339,
+      "minusDI": 23.520887422217275,
+      "supportLevels": [
+        337.27,
+        364.04,
+        380.16,
+        393.7
+      ],
+      "resistanceLevels": [
+        409.28,
+        445.56,
+        453.39
+      ],
+      "overallBias": "NEUTRAL",
+      "signals": [
+        "MACD bearish",
+        "Price above EMA20 > EMA50",
+        "Golden cross (EMA50 > EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 1544165785600,
+    "peRatio": 373.7727,
+    "pbRatio": 18.776545,
+    "epsTrailing": 1.1,
+    "epsForward": 2.49995,
+    "revenue": 97878999040,
+    "debtToEquity": 18.738,
+    "dividendYield": null,
+    "beta": 1.798,
+    "week52High": 498.83,
+    "week52Low": 288.77,
+    "sector": "Consumer Cyclical",
+    "industry": "Auto Manufacturers",
+    "description": "Tesla, Inc. designs, develops, manufactures, leases, and sells electric vehicles, and energy generation and storage systems in the United States, China, and internationally. The company operates in two segments, Automotive; and Energy Generation and Storage. The company offers electric vehicles, as well as sells automotive regulatory credits; and non-warranty maintenance services and collision, automotive insurance services, as well as part sales and retail merchandise sale. It also provides sed"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "SpaceX Trading Volume Exceeds Apple, Microsoft, Tesla, Meta And Google Stocks Combined",
+        "summary": "SpaceX&#39;s debut set new records for retail investor demand, with over 522 million shares traded and generating $33 billion in dollar volume.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53208741/spacex-stock-ipo-traded-more-than-apple-microsoft-tesla-meta-google-combined",
+        "publishedAt": "2026-06-15T19:16:50Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Stock Market Euphoric Over New Musk Post And Iran Deal",
+        "summary": "\n\n\n\nEuphoric Stock Market\n\n\n",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/Opinion/26/06/53211089/stock-market-euphoric-over-new-musk-post-and-iran-deal",
+        "publishedAt": "2026-06-15T20:19:00Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "The Magnificent 7 Just Got Too Small For The AI Boom \u2014 Meet The FAB 10",
+        "summary": "The Mag 7 may need an upgrade as investors turn their attention to the FAB 10, including frontier AI giants like OpenAI and SpaceX.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53210159/the-magnificent-7-just-got-too-small-for-the-ai-boom-meet-the-fab-10",
+        "publishedAt": "2026-06-15T20:01:04Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Mike Novogratz Is Bullish On Bitcoin But Nervous About SpaceX",
+        "summary": "Galaxy Digital (NASDAQ:GLXY) CEO Mike Novogratz says Bitcoin ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/06/53209834/mike-novogratz-is-bullish-on-bitcoin-but-nervous-about-spacex",
+        "publishedAt": "2026-06-15T19:52:26Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "10 Consumer Discretionary Stocks Whale Activity In Today's Session",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/options/26/06/53205499/10-consumer-discretionary-stocks-whale-activity-in-todays-session",
+        "publishedAt": "2026-06-15T17:35:37Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Why Is Tesla Stock Surging On Monday?",
+        "summary": "SpaceX propelled Tesla stock higher as chatter about a potential merger gets louder. But don&#39;t expect one this year, analysts say.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53199510/tesla-stock-pushes-higher-following-a-historic-19-first-day-surge-for-spacex-spcx-discover-how-the-muskonomy-and-optimus-hopes-drive-mondays-rally",
+        "publishedAt": "2026-06-15T15:04:43Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "EXCLUSIVE: Tesla Traders Have A New Obsession: SpaceX And The 'All Things Elon' Trade",
+        "summary": "Direxion CEO Douglas Yones says investor demand for Elon Musk-linked investments is expanding from Tesla to SpaceX as retail and institutional investors seek exposure.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53198058/tesla-traders-have-a-new-obsession-spacex-and-the-all-things-elon-trade",
+        "publishedAt": "2026-06-15T14:37:52Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Tesla's Full Self-Driving Push In Europe Faces Scrutiny After Report Flags 'Inflated' Safety Claims",
+        "summary": "Tesla safety data is based on uneven crash comparisons, raising questions over how FSD performance is measured and reported.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/travel/26/06/53194188/teslas-full-self-driving-push-in-europe-faces-scrutiny-after-report-flags-inflated-safety-claims",
+        "publishedAt": "2026-06-15T13:39:21Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "SpaceX ETF Race Heats Up, Direxion Among First To Roll Out 2X Bull Fund",
+        "summary": "Direxion launches LOFF, a leveraged ETF seeking 2X the daily performance of SPCX stock, adding to the lineup of funds tied to the SpaceX IPO.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/etfs/new-etfs/26/06/53192823/spacex-etf-race-heats-up-direxion-among-the-first-to-roll-out-2x-bull-fund",
+        "publishedAt": "2026-06-15T13:02:04Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "When SpaceX Rockets And Bulls Can Aim For 2X The Ride With Direxion's LOFF",
+        "summary": "Direxion launched the LOFF ETF, offering traders 2X daily leveraged exposure to SpaceX stock just a day after the company&#39;s historic IPO.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/etfs/specialty-etfs/26/06/53192806/when-spacex-rockets-bulls-can-aim-for-2x-the-ride-with-direxions-loff",
+        "publishedAt": "2026-06-15T13:01:39Z",
+        "sentiment": "NEUTRAL"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 8,
+      "priceVwapScore": 8,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 5
+    },
+    "signals": [
+      "Below-average volume (0.9x)",
+      "Price rising with declining volume (weaker rally)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 55,
+  "fundamentalScore": 70,
+  "newsCatalystScore": 80,
+  "institutionalFlowProxyScore": 35,
+  "keyCatalysts": [
+    "Positive sentiment from recent news articles."
+  ],
+  "keyRisks": [
+    "High valuation",
+    "Near resistance levels"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates distribution with price rising on declining volume, suggesting a weaker rally."
+}

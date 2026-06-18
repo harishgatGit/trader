@@ -1,0 +1,248 @@
+{
+  "ticker": "NVDA",
+  "reportDate": "Unavailable",
+  "videoTitle": "NVDA Stock Report",
+  "durationSeconds": 174.37,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for NVIDIA, ticker NVDA. Currently trading at $211.98, this stock is exhibiting a bullish trend. However, with resistance levels approaching, let's explore whether this is the right moment to consider a position.\n\nNVIDIA's current price stands at $211.98, reflecting a strong performance in its recent trading session. The stock is showing a daily percentage move that indicates positive momentum, but it's essential to analyze the context further to understand the full picture.\n\nThe bullish trend in NVDA's price action is primarily driven by recent news, particularly a bond sale announcement. This news has provided some upward momentum, but the stock\u2019s price is approaching key resistance levels, which warrants caution for potential investors.\n\nLooking at the evidence behind this trend, we see that trading volume is below average. This lack of strong buying pressure suggests that while the stock is advancing, the rally may not have the conviction needed for sustained growth.\n\nIn terms of daily trends, NVDA is navigating near important support and resistance levels. The stock is currently in a mixed trend, with signs of consolidation as it tests the upper bounds of this range, indicating a potential breakout or pullback scenario.\n\nTechnical indicators such as the golden cross signify long-term bullish potential. However, the MACD is currently bearish, and the price is positioned below the VWAP, suggesting some short-term weakness that could influence trading decisions.\n\nFor tactical traders, the ideal entry zone is between $194.76 and $199.34, with a stop loss set just below recent support at $199.34. Target levels are identified at $216.82 and $232.28, providing structured levels to monitor for potential profit-taking.\n\nFrom a short-selling perspective, caution is advised. The breakdown level remains critical, and while the short squeeze risk is medium, the current distribution signals indicate that a defensive approach may be warranted.\n\nSector dynamics also play a role in this analysis. NVIDIA operates within a robust technology ecosystem, and while the overall market sentiment is supportive, any shifts in the broader tech landscape could impact NVDA's setup.\n\nIn conclusion, NVDA is rated as a watchlist stock, reflecting its bullish trend tempered by resistance and mixed signals. Investors should be vigilant of key levels and consider waiting for a clearer entry point before making any commitments, as the risk/reward profile is not currently favorable for new purchases.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 17.5,
+      "narration": "Welcome to the Investing Atti stock analysis for NVIDIA, ticker NVDA. Currently trading at $211.98, this stock is exhibiting a bullish trend. However, with resistance levels approaching, let's explore whether this is the right moment to consider a position.",
+      "pandaAction": "default",
+      "speechBubbleText": "Is NVDA a buy or a wait?",
+      "visualElements": [
+        "NVIDIA logo",
+        "current price display",
+        "bullish trend graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "slide up"
+      ],
+      "dataFields": {
+        "catchyLine": "NVIDIA: Bullish Trend Meets Resistance!"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 18.04,
+      "narration": "NVIDIA's current price stands at $211.98, reflecting a strong performance in its recent trading session. The stock is showing a daily percentage move that indicates positive momentum, but it's essential to analyze the context further to understand the full picture.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $211.98",
+      "visualElements": [
+        "price chart",
+        "performance summary card"
+      ],
+      "chartElements": [
+        "daily price movement chart"
+      ],
+      "animationInstructions": [
+        "highlight price",
+        "zoom in"
+      ],
+      "dataFields": {
+        "currentPrice": 211.98
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 18.25,
+      "narration": "The bullish trend in NVDA's price action is primarily driven by recent news, particularly a bond sale announcement. This news has provided some upward momentum, but the stock\u2019s price is approaching key resistance levels, which warrants caution for potential investors.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Watch for resistance levels!",
+      "visualElements": [
+        "news headline graphic",
+        "bond sale announcement"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in news",
+        "shake for caution"
+      ],
+      "dataFields": {
+        "catalysts": "Recent bond sale announcement"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 15.93,
+      "narration": "Looking at the evidence behind this trend, we see that trading volume is below average. This lack of strong buying pressure suggests that while the stock is advancing, the rally may not have the conviction needed for sustained growth.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Volume: Below Average",
+      "visualElements": [
+        "volume chart",
+        "buying pressure graphic"
+      ],
+      "chartElements": [
+        "trading volume chart"
+      ],
+      "animationInstructions": [
+        "zoom in on volume",
+        "highlight low volume"
+      ],
+      "dataFields": {
+        "tradingVolume": "Below Average"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 17.5,
+      "narration": "In terms of daily trends, NVDA is navigating near important support and resistance levels. The stock is currently in a mixed trend, with signs of consolidation as it tests the upper bounds of this range, indicating a potential breakout or pullback scenario.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Mixed Trend: Breakout or Pullback?",
+      "visualElements": [
+        "support and resistance levels graphic",
+        "consolidation pattern"
+      ],
+      "chartElements": [
+        "support and resistance chart"
+      ],
+      "animationInstructions": [
+        "draw support/resistance lines",
+        "fade in consolidation"
+      ],
+      "dataFields": {
+        "trend": "Mixed Trend"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 16.48,
+      "narration": "Technical indicators such as the golden cross signify long-term bullish potential. However, the MACD is currently bearish, and the price is positioned below the VWAP, suggesting some short-term weakness that could influence trading decisions.",
+      "pandaAction": "default",
+      "speechBubbleText": "Golden Cross vs. MACD",
+      "visualElements": [
+        "technical indicators graphic",
+        "golden cross illustration"
+      ],
+      "chartElements": [
+        "MACD chart",
+        "VWAP chart"
+      ],
+      "animationInstructions": [
+        "highlight golden cross",
+        "fade in MACD"
+      ],
+      "dataFields": {
+        "technicalIndicators": "Golden Cross, MACD Bearish"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 17.29,
+      "narration": "For tactical traders, the ideal entry zone is between $194.76 and $199.34, with a stop loss set just below recent support at $199.34. Target levels are identified at $216.82 and $232.28, providing structured levels to monitor for potential profit-taking.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $194.76 - $199.34",
+      "visualElements": [
+        "entry zone graphic",
+        "target levels display"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight entry zone",
+        "fade in target levels"
+      ],
+      "dataFields": {
+        "entryZone": {
+          "low": 194.76,
+          "high": 199.34
+        },
+        "stopLoss": 199.34,
+        "targets": [
+          216.82,
+          232.28
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 15.05,
+      "narration": "From a short-selling perspective, caution is advised. The breakdown level remains critical, and while the short squeeze risk is medium, the current distribution signals indicate that a defensive approach may be warranted.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Short Selling: Exercise Caution",
+      "visualElements": [
+        "short selling graphic",
+        "risk assessment"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in caution sign",
+        "shake for emphasis"
+      ],
+      "dataFields": {
+        "shortSqueezeRisk": "Medium"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 15.39,
+      "narration": "Sector dynamics also play a role in this analysis. NVIDIA operates within a robust technology ecosystem, and while the overall market sentiment is supportive, any shifts in the broader tech landscape could impact NVDA's setup.",
+      "pandaAction": "default",
+      "speechBubbleText": "Tech Sector Impact",
+      "visualElements": [
+        "technology sector graphic",
+        "market sentiment overview"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in sector graphic",
+        "zoom out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 22.94,
+      "narration": "In conclusion, NVDA is rated as a watchlist stock, reflecting its bullish trend tempered by resistance and mixed signals. Investors should be vigilant of key levels and consider waiting for a clearer entry point before making any commitments, as the risk/reward profile is not currently favorable for new purchases.",
+      "pandaAction": "default",
+      "speechBubbleText": "Watchlist Stock: Stay Alert!",
+      "visualElements": [
+        "watchlist graphic",
+        "key levels summary"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in watchlist",
+        "highlight key levels"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing.",
+        "disclaimer": "This is not financial advice. Please do your own research."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

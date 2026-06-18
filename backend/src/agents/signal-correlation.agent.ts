@@ -10,6 +10,7 @@ import { FundamentalResult } from './fundamental.agent';
 import { NewsResult } from './news.agent';
 import { InstitutionalFlowResult } from './institutional-flow.agent';
 import { HistoricalDataResult } from './historical-data.agent';
+import { getNYDateString } from '../utils/date';
 
 export const SignalCorrelationResultSchema = z.object({
   ticker: z.string(),
@@ -154,6 +155,8 @@ SCORING LOGIC:
 - 31 to 65 = YELLOW_ZONE
 - 66 to 100 = GREEN_ZONE
 
+INDICATOR NAMING CONVENTIONS: Whenever you refer to technical indicator terms in the textual/evidence fields, always write them with their parameter settings, such as RSI(14), EMA(20), EMA(50), EMA(200), or SMA(200) instead of just RSI, EMA, or SMA.
+
 Return ONLY valid JSON matching the schema format. Do not use markdown backticks or explanation outside JSON.`;
 
 @Injectable()
@@ -236,7 +239,7 @@ export class SignalCorrelationAgent {
   private getFallbackResult(symbol: string, price: number | null): SignalCorrelationResult {
     return {
       ticker: symbol,
-      analysisDate: new Date().toISOString().split('T')[0],
+      analysisDate: getNYDateString(),
       currentPrice: price,
       correlationName: "Signal Correlation",
       finalZone: "YELLOW_ZONE",

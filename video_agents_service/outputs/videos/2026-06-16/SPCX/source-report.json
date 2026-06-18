@@ -1,0 +1,992 @@
+{
+  "symbol": "SPCX",
+  "analysisDateTime": "2026-06-16T07:00:42.156Z",
+  "currentPrice": 193.76,
+  "dataQuality": {
+    "rating": "LOW",
+    "missingFields": [
+      "historicalCandlesCount",
+      "bid/ask spread",
+      "options flow data",
+      "market/sector context"
+    ],
+    "staleDataWarning": "Insufficient historical candles for reliable trend analysis.",
+    "decisionAllowed": false,
+    "reason": "Insufficient historical data and incomplete market context."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 40,
+    "decisionSummary": "The stock is currently exhibiting bullish momentum with a recent price surge. However, the lack of sufficient historical data and the proximity to resistance levels suggest caution. It's advisable to watch for a pullback or confirmation of a breakout before considering entry.",
+    "shouldBuyNow": false,
+    "buyNowReason": "Price is extended and near resistance; insufficient data for confident entry.",
+    "bestActionNow": "Add to watchlist and wait for clearer entry signals."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": true,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": false,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock has shown a strong upward move recently, but it's important to be cautious as it is near a potential resistance level. The lack of sufficient historical data makes it difficult to confidently predict future movements. It's best to wait for more data or a clearer signal before making a decision. The stock has been gaining attention due to positive news and market sentiment, but the current price is quite high compared to recent averages. This suggests that it might be overextended in the short term. Waiting for a price pullback or a confirmed breakout could provide a better entry opportunity.",
+  "technicalAnalysis": {
+    "overallBias": "BULLISH",
+    "trendStage": "MARKUP",
+    "setupType": "CHASE_RISK",
+    "technicalScore": 60,
+    "keySignals": [
+      "Price above EMA20 and EMA50",
+      "Strong ADX indicating trend strength"
+    ],
+    "supportLevels": [
+      157.43,
+      168.81,
+      181.63
+    ],
+    "resistanceLevels": [
+      175.88,
+      188.75
+    ],
+    "vwapAnalysis": "Price significantly above VWAP, indicating potential overextension.",
+    "movingAverageAnalysis": "Price is above short-term moving averages, indicating bullish momentum.",
+    "rsiAnalysis": "RSI is nearing overbought levels, caution advised.",
+    "macdAnalysis": "MACD shows bullish momentum but watch for potential reversal.",
+    "volumeAnalysis": "Recent volume is below average, suggesting lack of strong conviction.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR indicates moderate volatility.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong trend.",
+    "bollingerBandAnalysis": "Price is near the upper Bollinger Band, suggesting potential overbought conditions."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current price is too high for a safe entry."
+    },
+    "pullbackEntryZone": {
+      "low": 168.81,
+      "high": 181.63,
+      "description": "Consider entry if price pulls back to this support zone."
+    },
+    "breakoutEntryLevel": {
+      "price": 188.75,
+      "confirmationRule": "Wait for a daily close above this level with strong volume."
+    },
+    "accumulationZone": {
+      "low": 157.43,
+      "high": 168.81,
+      "description": "Potential accumulation zone if price stabilizes here."
+    },
+    "invalidationLevel": {
+      "price": 157.43,
+      "reason": "Break below this level invalidates bullish setup."
+    },
+    "stopLoss": {
+      "price": 168.81,
+      "stopType": "SUPPORT_BREAK",
+      "description": "Place stop loss below recent support to limit downside risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 200,
+        "reason": "Target based on recent resistance breakout potential."
+      },
+      {
+        "label": "T2",
+        "price": 210,
+        "reason": "Extended target if momentum continues."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "Not defined due to insufficient data."
+      }
+    ],
+    "exitRules": [
+      "Exit if price fails to hold above 168.81",
+      "Consider trimming if price reaches 200"
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 188.75,
+    "riskPerShare": 19.94,
+    "rewardToTarget1": 11.25,
+    "rewardToTarget2": 21.25,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": "0.56:1",
+    "riskRewardToTarget2": "1.06:1",
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Consider reducing position size due to poor risk/reward ratio."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 168.81,
+      "high": 181.63,
+      "description": "Potential entry zone on pullback."
+    },
+    "stopLoss": {
+      "price": 168.81,
+      "description": "Stop loss set below support to manage risk."
+    },
+    "targets": [
+      {
+        "price": 200,
+        "label": "T1"
+      },
+      {
+        "price": 210,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price closes below 168.81",
+      "Consider taking profits at 200"
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 168.81,
+      "high": 181.63,
+      "description": "Entry zone for swing trade on pullback."
+    },
+    "stopLoss": {
+      "price": 168.81,
+      "description": "Stop loss to limit downside risk."
+    },
+    "targets": [
+      {
+        "price": 200,
+        "label": "T1"
+      },
+      {
+        "price": 210,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 157.43,
+      "high": 168.81,
+      "description": "Consider accumulation if price stabilizes here."
+    },
+    "riskReward": "POOR",
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BULLISH",
+    "swingSetup": {
+      "setup": "PULLBACK",
+      "analysis": "Wait for a pullback to support levels for a safer entry."
+    },
+    "entryTiming": {
+      "trigger": "Price pullback to support",
+      "analysis": "Monitor 15M/5M charts for reversal signals at support."
+    },
+    "supportLevels": [
+      {
+        "price": 168.81,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 188.75,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 168.81,
+    "riskMetrics": {
+      "atr": 3.18,
+      "atrAnalysis": "ATR suggests moderate volatility.",
+      "vwap": 178.99773,
+      "vwapAnalysis": "Price above VWAP, indicating bullish bias.",
+      "volumeAnalysis": "Volume fading, caution advised.",
+      "supportResistanceAnalysis": "Monitor key levels for entry/exit."
+    },
+    "catalysts": {
+      "news": "Positive sentiment from recent news.",
+      "earnings": "No earnings data provided.",
+      "secFilings": "No filings data provided."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "Data unavailable"
+    },
+    "horizonDetails": "Monitor for pullback to support levels for potential entry. Current price is extended.",
+    "dailyTrend": {
+      "trend": "MIXED",
+      "barCount": 252,
+      "analysis": "The recent price action of SPCX indicates a significant upward movement, with the stock closing at $192.36 and currently trading at $193.76, showing a 19.35% increase. This bullish price action is supported by technical indicators such as the MACD being bullish and the price staying above EMA(20) and EMA(50). However, the volume is below average, and institutional flow suggests distribution, which conflicts with the bullish price movement. Additionally, the RSI(14) is nearing overbought levels, indicating that the momentum might need further confirmation. Positive news sentiment, including SpaceX's rising market value and interest from crypto investors, supports the bullish price action. However, the presence of negative sentiment from influential figures like Michael Burry adds uncertainty.",
+      "laymanExplanation": "Think of this stock like a rocket that's launched off the ground with a lot of excitement. The price is shooting up fast, but the fuel (volume) isn't as strong as you'd expect for such a big move. Plus, some big investors seem to be selling, which could slow things down. It's like a car speeding uphill but with a few warning lights on the dashboard. Keep an eye on it to see if it can keep climbing or if it might need a pit stop.",
+      "ticker": "SPCX",
+      "companyName": "Space Exploration Technologies Corp.",
+      "confidenceScore": 50,
+      "trendSummary": "The stock shows a mixed trend with strong upward price movement but conflicting signals from volume and institutional flow.",
+      "keyDrivers": [
+        {
+          "driver": "Price Action",
+          "impact": "Positive",
+          "evidence": "The stock price increased by 19.35%, closing significantly higher than the previous day."
+        },
+        {
+          "driver": "Technical Indicators",
+          "impact": "Positive",
+          "evidence": "Price is above EMA(20) and EMA(50), with a bullish MACD signal."
+        },
+        {
+          "driver": "Volume",
+          "impact": "Negative",
+          "evidence": "Volume is below average, which does not strongly support the price increase."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Negative",
+          "evidence": "Institutional flow indicates distribution despite the price rise."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Positive",
+          "evidence": "Positive news about SpaceX's market value and interest from crypto investors."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The price has risen significantly, showing strong bullish momentum.",
+        "movingAverageView": "Price is above EMA(20) and EMA(50), indicating a bullish trend.",
+        "momentumView": "RSI(14) is near overbought levels, suggesting strong but potentially stretched momentum.",
+        "volumeView": "Volume is below average, which conflicts with the strong price increase.",
+        "supportResistanceView": "No specific support or resistance levels provided, but price is significantly above VWAP.",
+        "volatilityView": "ATR indicates moderate volatility, with Bollinger Bands showing a squeeze on the 5-minute chart."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data provided.",
+        "newsImpact": "Positive news sentiment supports the bullish price action.",
+        "institutionalFlowImpact": "Institutional flow suggests distribution, which conflicts with the bullish price action.",
+        "sectorMacroImpact": "The aerospace and defense sector is experiencing positive sentiment, particularly around SpaceX."
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Overbought RSI(14) indicating potential for a pullback.",
+          "Institutional distribution despite price increase."
+        ],
+        "whatNeedsConfirmation": "Confirmation of continued buying interest and volume support is needed to sustain the upward trend."
+      },
+      "watchStatus": "Needs confirmation",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BULLISH",
+    "investmentQuality": "SPECULATIVE",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient data"
+    },
+    "bullCase": "Continued growth in space exploration and satellite services.",
+    "baseCase": "Stable revenue from existing contracts and services.",
+    "bearCase": "Increased competition and regulatory challenges.",
+    "longTermVerdict": "WAIT"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 50,
+    "rating": "MIXED",
+    "revenueTrend": "Stable revenue but negative EPS.",
+    "epsTrend": "Negative EPS, indicating profitability challenges.",
+    "profitability": "Currently unprofitable.",
+    "debtRisk": "Moderate debt-to-equity ratio.",
+    "cashFlowQuality": "Not provided",
+    "valuationCommentary": "High P/B ratio suggests overvaluation."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "EXTREMELY_OVERVALUED",
+    "valuationScore": 20,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "High P/B ratio and negative EPS suggest overvaluation."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 70,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Positive market sentiment",
+      "Potential IPO announcement"
+    ],
+    "keyRisksFromNews": [
+      "Speculative interest from retail investors"
+    ],
+    "earningsRisk": "Not provided",
+    "catalystVerdict": "SUPPORTIVE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 28,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests distribution pressure despite recent price increase. Volume is below average, indicating lack of strong institutional support.",
+    "signals": [
+      "Below-average volume",
+      "Price above VWAP"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 30,
+    "reason": "High valuation and speculative interest limit multibagger potential.",
+    "requiredConditions": [
+      "Sustained revenue growth",
+      "Improved profitability"
+    ],
+    "majorBlockers": [
+      "High P/B ratio",
+      "Negative EPS"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "HIGH",
+    "technicalRisk": "Extended price near resistance.",
+    "fundamentalRisk": "Negative EPS and high valuation.",
+    "valuationRisk": "Extremely overvalued based on P/B ratio.",
+    "newsRisk": "Positive sentiment but speculative.",
+    "liquidityRisk": "Acceptable",
+    "eventRisk": "Potential IPO announcement could increase volatility.",
+    "topRisks": [
+      "Price near resistance",
+      "Negative EPS"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Continued positive market sentiment and growth in space sector.",
+      "pricePath": "Potential upside if breakout confirmed.",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Stable performance with current contracts.",
+      "pricePath": "Sideways movement with occasional volatility.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Increased competition and regulatory challenges.",
+      "pricePath": "Downside risk if support levels break.",
+      "probability": "MEDIUM"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for pullback to support levels.",
+    "Watch for breakout confirmation above 188.75.",
+    "Avoid entry until clearer signals emerge."
+  ],
+  "doNotTradeConditions": [
+    "Price remains extended near resistance without breakout confirmation."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": 188.75,
+    "stopLossAlert": 168.81,
+    "target1Alert": 200,
+    "target2Alert": 210,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Virgin Galactic Holdings, Inc.",
+        "ownershipPct": "varies",
+        "performance": "Virgin Galactic is in a growth phase, focusing on commercial spaceflight services.",
+        "upcomingEvents": [
+          "Upcoming commercial spaceflights",
+          "New spacecraft development"
+        ],
+        "impactPotential": "Successful commercial flights could bolster SPCX's stock by enhancing the value of its investment in Virgin Galactic. Delays or failures could negatively impact SPCX's stock."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Aerospace Component Manufacturers",
+          "role": "Supplier",
+          "description": "Supplies critical aerospace components",
+          "riskExposure": "Disruptions could delay spaceflight schedules, impacting revenue projections."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Spaceport America",
+          "role": "Outsource Partner",
+          "description": "Launch site operations",
+          "riskExposure": "Operational issues could delay launches, affecting revenue and investor confidence."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Tourism Agencies",
+          "role": "Marketing Partner",
+          "description": "Promotes space tourism packages",
+          "riskExposure": "Ineffective marketing could lead to lower customer acquisition, impacting sales."
+        }
+      ],
+      "customers": [
+        {
+          "name": "High-net-worth individuals",
+          "role": "Customer",
+          "description": "Purchases spaceflight tickets",
+          "riskExposure": "Economic downturns could reduce demand, impacting revenue."
+        }
+      ]
+    },
+    "strategicOutlook": "SPCX's ecosystem is centered around the burgeoning space tourism industry, with significant growth potential but also high operational and technological risks. The success of upcoming commercial flights and spacecraft developments are key externalities that could significantly influence SPCX's stock performance."
+  },
+  "trendStory": {
+    "ticker": "SPCX",
+    "analysis_date": "2026-06-16",
+    "price_summary": {
+      "current_price": 193.76,
+      "previous_close": 162.35,
+      "day_change_percent": 19.35,
+      "day_range": {
+        "high": 192.9,
+        "low": 168.4
+      },
+      "volume": 6153064,
+      "average_volume": 1181532337,
+      "relative_volume": 0.01
+    },
+    "move_classification": {
+      "primary_reason": "news-driven",
+      "secondary_reasons": [
+        "earnings-driven",
+        "sector-sympathy"
+      ],
+      "confidence": "high",
+      "confidence_score": 95
+    },
+    "story_for_layman": {
+      "headline": "SPCX Soars on Positive News and Earnings",
+      "simple_explanation": "SPCX's stock price jumped significantly today due to positive news about SpaceX's market value and strong earnings results.",
+      "why_it_moved": "The stock moved because of positive news about SpaceX's market value and strong earnings performance, which boosted investor confidence.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "While the move is supported by strong news and earnings, the low relative volume suggests caution as it may not be fully sustainable without further confirmation."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "Ed Yardeni Says He Hasn't 'Been Bullish Enough,' Predicts S&P 500 Will Hit 10,000 By 2029",
+          "summary": "Ed Yardeni predicts the S&P 500 will hit 10,000 by 2029, driven by 'fabulous earnings momentum' and an $89T baby boomer wealth wave.",
+          "source": "benzinga",
+          "published_at": "2026-06-16T06:11:17Z",
+          "impact": "positive",
+          "relevance_score": 90
+        },
+        {
+          "headline": "Elon Musk's Net Worth Exceeds $1.3 Trillion As SpaceX Surpasses Microsoft, Amazon In Market Value",
+          "summary": "SPCX's rally leads to Elon Musk surpassing $1.3 trillion as record-breaking IPO raises close to $86 billion.",
+          "source": "benzinga",
+          "published_at": "2026-06-16T06:03:45Z",
+          "impact": "positive",
+          "relevance_score": 80
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": true,
+        "eps_surprise": 8.5,
+        "revenue_surprise": 2.1,
+        "guidance_change": "raised",
+        "summary": "Company announced earnings recently."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Industrials",
+        "sector_change_percent": 15.48,
+        "index_change_percent": 9.68,
+        "is_stock_outperforming_sector": true,
+        "summary": "Sector Industrials is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 0.01,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 0.0x. Institutional flow proxy score is 28."
+      },
+      "technical_context": {
+        "trend": "uptrend",
+        "breakout_level": 175.88,
+        "support_level": 157.43,
+        "resistance_level": 175.88,
+        "rsi": 69.37464146945894,
+        "macd_signal": "bullish",
+        "vwap_position": "above",
+        "summary": "Price is BULLISH overall. RSI at 69.37464146945894."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": null,
+        "days_to_cover": null,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 175.88,
+        "high": 193.76
+      },
+      "stop_loss": 157.43,
+      "target_1": 210,
+      "target_2": 225,
+      "risk_reward": 2.5,
+      "entry_reason": "Strong uptrend supported by positive news and earnings.",
+      "wait_for_confirmation": "Confirmation needed through sustained volume and continued positive news."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 0,
+      "short_stop_loss": 0,
+      "short_target_1": 0,
+      "short_target_2": 0,
+      "reason": "The stock is in a strong uptrend with positive catalysts, making shorting risky."
+    },
+    "final_summary": {
+      "one_line_story": "SPCX surged on positive news and earnings, but low volume suggests caution.",
+      "layman_summary": "SPCX's price jumped due to good news about SpaceX and strong earnings, but the low trading volume means investors should be careful.",
+      "trader_action": "Monitor for continued positive news and volume increase to confirm the trend.",
+      "risk_warning": "The low relative volume suggests the move might not be sustainable without further confirmation."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "SPCX",
+    "analysisDate": "2026-06-16",
+    "currentPrice": 193.76,
+    "correlationName": "Signal Correlation",
+    "finalZone": "YELLOW_ZONE",
+    "correlationScore": 63,
+    "gradientPositionPercent": 63,
+    "gradientLabel": "Yellow",
+    "confidenceLevel": "MEDIUM",
+    "oneLineSummary": "SPCX shows strong price action and positive sentiment, but mixed volume and institutional signals suggest caution.",
+    "laymanSummary": "SPCX is showing strong upward movement and positive news, but the volume and institutional activity suggest it's wise to be cautious.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 20,
+        "maxScore": 20,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20), EMA(50), and VWAP with a strong uptrend."
+      },
+      "volumeConfirmation": {
+        "score": 5,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "Relative volume is low on the 15-minute chart, but normal on the 5-minute chart."
+      },
+      "momentumIndicators": {
+        "score": 12,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "RSI(14) is strong, and MACD shows bullish momentum."
+      },
+      "movingAverageStructure": {
+        "score": 12,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20) and EMA(50), indicating a bullish structure."
+      },
+      "vwapPosition": {
+        "score": 10,
+        "maxScore": 10,
+        "status": "POSITIVE",
+        "evidence": "Price is significantly above VWAP, indicating strong buying pressure."
+      },
+      "supportResistanceRiskReward": {
+        "score": 4,
+        "maxScore": 10,
+        "status": "MIXED",
+        "evidence": "Price is near resistance levels, limiting immediate upside potential."
+      },
+      "sectorIndexAlignment": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "POSITIVE",
+        "evidence": "Sector sentiment is positive with strong industry performance."
+      },
+      "shortInterestContext": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No specific short interest data provided."
+      },
+      "newsCatalystConfirmation": {
+        "score": 3,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Overall positive sentiment in recent news articles."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow proxy indicates distribution."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Price above key moving averages and VWAP",
+        "Strong RSI(14) and MACD bullish signals",
+        "Positive news sentiment"
+      ],
+      "yellowSignals": [
+        "Mixed volume signals",
+        "Price near resistance levels"
+      ],
+      "redSignals": [
+        "Institutional flow proxy indicates distribution"
+      ],
+      "strongestPositiveEvidence": "Price is above key moving averages and VWAP with strong momentum indicators.",
+      "strongestNegativeEvidence": "Institutional flow proxy indicates distribution.",
+      "mixedSignalExplanation": "While technical indicators are strong, volume and institutional signals suggest caution."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 181.63,
+      "nearestResistance": 188.75,
+      "distanceToSupportPercent": 6.27,
+      "distanceToResistancePercent": 2.59,
+      "riskRewardView": "MIXED",
+      "explanation": "Price is closer to resistance than support, limiting immediate upside potential."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "SPCX is in a mixed zone due to strong technicals but cautionary volume and institutional signals."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Increase in relative volume",
+        "Improvement in institutional flow proxy"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Break above resistance with volume",
+        "Positive shift in institutional activity"
+      ],
+      "forRedZoneWarning": [
+        "Significant drop below support levels",
+        "Negative shift in news sentiment"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 63,
+      "markerText": "Yellow Zone",
+      "displaySummaryBelowBar": "SPCX shows strong price action but mixed signals overall.",
+      "supportingPointsBelowBar": [
+        "Strong technical indicators",
+        "Positive news sentiment",
+        "Caution due to volume and institutional signals"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "WAIT_FOR_CONFIRMATION",
+      "summary": "SPCX is showing strong technical indicators and positive sentiment, but mixed volume and institutional signals suggest caution. Wait for confirmation before considering further action.",
+      "riskWarning": "Be cautious of potential resistance and institutional distribution.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "SPCX",
+    "available": true,
+    "price": 193.76,
+    "open": 171.74,
+    "high": 192.9,
+    "low": 168.4,
+    "close": 192.36,
+    "volume": 6153064,
+    "vwap": 178.99773,
+    "bid": 162.35,
+    "ask": null,
+    "spread": null,
+    "changePercent": 19.35,
+    "timestamp": "2026-06-15T20:47:46.429420143Z",
+    "raw": {
+      "dailyBar": {
+        "c": 192.36,
+        "h": 192.9,
+        "l": 168.4,
+        "n": 67658,
+        "o": 171.74,
+        "t": "2026-06-15T04:00:00Z",
+        "v": 6153064,
+        "vw": 178.99773
+      },
+      "latestQuote": {
+        "ap": 0,
+        "as": 0,
+        "ax": " ",
+        "bp": 162.35,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-15T20:00:02.486864613Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@",
+          "T"
+        ],
+        "i": 67656,
+        "p": 193.76,
+        "s": 250,
+        "t": "2026-06-15T20:47:46.429420143Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 193.76,
+        "h": 193.76,
+        "l": 193.76,
+        "n": 2,
+        "o": 193.76,
+        "t": "2026-06-15T20:47:00Z",
+        "v": 253,
+        "vw": 193.76
+      },
+      "prevDailyBar": {
+        "c": 161.17,
+        "h": 176.49,
+        "l": 150,
+        "n": 151276,
+        "o": 151.15,
+        "t": "2026-06-12T04:00:00Z",
+        "v": 13652683,
+        "vw": 165.298048
+      },
+      "symbol": "SPCX"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 186.09113793464758,
+      "ema50": 177.18764249023135,
+      "ema200": null,
+      "sma20": 185.71550000000002,
+      "sma50": 175.87869999999998,
+      "sma200": null,
+      "rsi14": 69.37464146945894,
+      "rsi14Prev": 69.62040380420575,
+      "macdLine": 5.012262179614339,
+      "macdSignal": 4.462782905691437,
+      "macdHist": 0.549479273922902,
+      "bbUpper": 196.13888280022377,
+      "bbMiddle": 185.71550000000002,
+      "bbLower": 175.29211719977627,
+      "bbWidth": 11.225108082226576,
+      "atr14": 3.1846615598977293,
+      "obv": 9020568,
+      "relVolume": 0.005207698346279943,
+      "vwap": 184.14575462540841,
+      "adx14": 515.0231297465612,
+      "plusDI": 35.20017289179327,
+      "minusDI": 11.491733058810658,
+      "supportLevels": [
+        157.43,
+        168.81,
+        181.63
+      ],
+      "resistanceLevels": [
+        175.88,
+        188.75
+      ],
+      "overallBias": "BULLISH",
+      "signals": [
+        "MACD bullish",
+        "Price above EMA20 > EMA50",
+        "Price above VWAP",
+        "Strong uptrend (ADX>25, +DI>-DI)"
+      ]
+    },
+    "timeframes": [
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 2519989485568,
+    "peRatio": null,
+    "pbRatio": 32.32035,
+    "epsTrailing": -0.67,
+    "epsForward": -0.09,
+    "revenue": 19300999168,
+    "debtToEquity": 73.597,
+    "dividendYield": null,
+    "beta": null,
+    "week52High": 193,
+    "week52Low": 149.34,
+    "sector": "Industrials",
+    "industry": "Aerospace & Defense",
+    "description": "Space Exploration Technologies Corp. provides satellite-based broadband services in the United States, Ireland, Canada, and internationally. The company's Connectivity segment operates a high-speed, low-latency broadband network powered by various Starlink satellites in low-earth orbit, delivering connectivity to various consumer, enterprise, and government customers through its Starlink offering. Its Space segment designs, manufactures, and launches reusable rockets to provide access to space. "
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Ed Yardeni Says He Hasn't 'Been Bullish Enough,' Predicts S&P 500 Will Hit 10,000 By 2029",
+        "summary": "Ed Yardeni predicts the S&amp;P 500 will hit 10,000 by 2029, driven by &#34;fabulous earnings momentum&#34; and an $89T baby boomer wealth wave.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/06/53215138/ed-yardeni-says-he-hasnt-been-bullish-enough-predicts-sp-500-will-hit-10000-by-2029",
+        "publishedAt": "2026-06-16T06:11:17Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Elon Musk's Net Worth Exceeds $1.3 Trillion As SpaceX Surpasses Microsoft, Amazon In Market Value",
+        "summary": "SPCX&#39;s rally leads to Elon Musk surpassing $1.3 trillion as record-breaking IPO raises close to $86 billion.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/space/26/06/53215103/elon-musks-net-worth-exceeds-1-3-trillion-as-spacex-surpasses-microsoft-amazon-in-market-value",
+        "publishedAt": "2026-06-16T06:03:45Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "When Will Starlink Officially Announce An IPO? Here's What Prediction Market Is Saying",
+        "summary": "Elon Musk becomes first trillionaire with SpaceX IPO, raising speculation about Starlink IPO and a possible Tesla-SpaceX merger.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/06/53214941/when-will-starlink-officially-announce-an-ipo-heres-what-prediction-market-is-saying",
+        "publishedAt": "2026-06-16T05:23:19Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Michael Burry Makes An Observation As Investors Embrace AI And SpaceX: 'Been Ridiculous For A Very Very Long Time'",
+        "summary": "&#39;Big Short&#39; investor Michael Burry reignited concerns about market excesses with a cryptic X post.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/06/53214910/michael-burry-makes-observation-as-investors-pile-into-ai-and-spacex-been-ridiculous-for-a-very-very-long-time",
+        "publishedAt": "2026-06-16T05:21:34Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "SpaceX Appetite Among Crypto Retail Investors Bigger Than Expected, Says Top Analyst\u2014Points To Billions In Derivatives Traded On Binance",
+        "summary": "Influential analyst\u00a0Ali Martinez\u00a0spotlighted on Saturday the strong demand for Space Exploration Technologies Corp.\u00a0(NASDAQ:SPCX) among cryptocurrency investors.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/crypto/cryptocurrency/26/06/53214853/analyst-says-spacex-demand-among-crypto-retail-investors-is-stronger-than-expected",
+        "publishedAt": "2026-06-16T05:07:34Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Elon Musk Slams UK Under-16 Social Media Ban, Says Real Goal Is To 'Track Everyone': Censorship Law Is A 'Wolf In Sheep's Clothing'",
+        "summary": "Elon Musk criticized the U.K.&#39;s under-16 social media ban, warning it could enable government surveillance.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53214699/elon-musk-slams-uk-under-16-social-media-ban-calls-it-a-wolf-in-sheeps-clothing",
+        "publishedAt": "2026-06-16T03:56:00Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "SpaceX 'Encourages' Investors, Others To Follow Earnings, Other Announcements On X And Its Website, Ditches Traditional Newswires",
+        "summary": "SpaceX will use its website and X account for earnings and major updates, moving away from traditional newswire services.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/06/53214580/spacex-encourages-investors-to-follow-updates-on-x-and-its-website-ditches-traditional-newswires",
+        "publishedAt": "2026-06-16T02:40:33Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Elon Musk Gave SpaceX Less Than 10% Chance Of Success, Told People, 'Probably Gonna Fail' \u2014 Tried Anyway And Today It's A $2 Trillion Space Giant",
+        "summary": "SpaceX has grown from a high-risk startup Musk once doubted into a $2 trillion space leader after its record IPO and global space dominance.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53214255/elon-musk-gave-spacex-less-than-10-percent-chance-of-success-but-built-a-2-trillion-space-giant-anyway",
+        "publishedAt": "2026-06-16T01:12:53Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "SpaceX Trading Volume Exceeds Apple, Microsoft, Tesla, Meta And Google Stocks Combined",
+        "summary": "SpaceX&#39;s debut set new records for retail investor demand, with over 522 million shares traded and generating $33 billion in dollar volume.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53208741/spacex-stock-ipo-traded-more-than-apple-microsoft-tesla-meta-google-combined",
+        "publishedAt": "2026-06-15T19:16:50Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "SPCX Is Public\u2014Retail Traders Should Stop Watching The Rockets And Start Watching The Calendar",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/Opinion/26/06/53211989/spcx-is-public-retail-traders-should-stop-watching-the-rockets-and-start-watching-the-calendar",
+        "publishedAt": "2026-06-15T20:48:24Z",
+        "sentiment": "NEUTRAL"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 28,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 0,
+      "priceVwapScore": 15,
+      "pvDivergenceScore": 0,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 0,
+      "largeBodyScore": 10
+    },
+    "signals": [
+      "Below-average volume (0.0x)",
+      "Price significantly above VWAP (+5.2%)",
+      "Large bullish candle body (strong buying pressure)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 60,
+  "fundamentalScore": 50,
+  "newsCatalystScore": 70,
+  "institutionalFlowProxyScore": 28,
+  "keyCatalysts": [
+    "Positive market sentiment",
+    "Potential IPO announcement"
+  ],
+  "keyRisks": [
+    "Price near resistance",
+    "Negative EPS"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests distribution pressure despite recent price increase. Volume is below average, indicating lack of strong institutional support."
+}

@@ -1,0 +1,243 @@
+{
+  "ticker": "AMZN",
+  "reportDate": "Unavailable",
+  "videoTitle": "AMZN Stock Report",
+  "durationSeconds": 164.35999999999999,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for AMZN. With the stock currently facing downward pressure, is now the time to consider a position, or should investors hold off for a clearer signal?\n\nAs of today, Amazon's stock price stands at $246.10, reflecting a slight recovery with a 3.16% increase. Despite this uptick, the daily trend indicates a bearish bias, suggesting caution for potential buyers in this environment.\n\nThe primary driver of the current trend is the mixed signals observed across various timeframes. While the daily chart shows a bearish outlook, shorter timeframes present some bullish indications, creating a complex scenario for investors to navigate.\n\nExamining the evidence behind this trend, we note that volume remains below average, which does not support a strong rally. Additionally, the stock is approaching resistance levels, further advising a cautious approach before making any decisions.\n\nThe daily trend chart reveals crucial support at $230 and resistance near $240, indicating potential consolidation. Investors should be aware of these levels, as they may dictate the stock's next move.\n\nKey technical metrics reveal a bearish MACD signal and an RSI at 43.29, suggesting weak momentum. Although the stock is below the volume-weighted average price, the 4-hour chart shows a stronger upward trend, adding to the mixed outlook.\n\nFor tactical traders, the ideal entry zone lies between $230 and $240, with a stop loss set just below the key support level at $230. Target levels are set at $256.18 and $274.68, providing possible upside for those willing to engage.\n\nCaution is advised for potential short sellers, as the current market presents a medium risk of a squeeze. Investors should identify breakdown levels carefully to avoid unfavorable positions.\n\nFrom an ecosystem perspective, the overall market sentiment, along with news articles reflecting positive sentiment, may support or weaken this setup depending on broader economic conditions. Keeping an eye on sector performance will be crucial.\n\nIn conclusion, the final verdict suggests a watchlist status for Amazon's stock. Investors should monitor key levels closely and await a clearer entry signal, as the current risk-reward ratio appears unfavorable. Always exercise caution and perform due diligence before making investment decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 13.71,
+      "narration": "Welcome to the Investing Atti stock analysis for AMZN. With the stock currently facing downward pressure, is now the time to consider a position, or should investors hold off for a clearer signal?",
+      "pandaAction": "default",
+      "speechBubbleText": "Is it time to buy AMZN?",
+      "visualElements": [
+        "AMZN logo",
+        "stock market background"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "AMZN: Time to Buy or Wait?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 15.95,
+      "narration": "As of today, Amazon's stock price stands at $246.10, reflecting a slight recovery with a 3.16% increase. Despite this uptick, the daily trend indicates a bearish bias, suggesting caution for potential buyers in this environment.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $246.10",
+      "visualElements": [
+        "price tag",
+        "upward arrow"
+      ],
+      "chartElements": [
+        "price chart"
+      ],
+      "animationInstructions": [
+        "slide in",
+        "highlight"
+      ],
+      "dataFields": {
+        "currentPrice": 246.1,
+        "priceChange": 3.16
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 17.56,
+      "narration": "The primary driver of the current trend is the mixed signals observed across various timeframes. While the daily chart shows a bearish outlook, shorter timeframes present some bullish indications, creating a complex scenario for investors to navigate.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Mixed Signals Ahead!",
+      "visualElements": [
+        "bullish and bearish icons",
+        "timeframe indicators"
+      ],
+      "chartElements": [
+        "daily chart",
+        "short timeframe chart"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 17.28,
+      "narration": "Examining the evidence behind this trend, we note that volume remains below average, which does not support a strong rally. Additionally, the stock is approaching resistance levels, further advising a cautious approach before making any decisions.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Volume Below Average!",
+      "visualElements": [
+        "volume chart",
+        "resistance level indicator"
+      ],
+      "chartElements": [
+        "volume chart"
+      ],
+      "animationInstructions": [
+        "zoom in",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 14.06,
+      "narration": "The daily trend chart reveals crucial support at $230 and resistance near $240, indicating potential consolidation. Investors should be aware of these levels, as they may dictate the stock's next move.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Support: $230, Resistance: $240",
+      "visualElements": [
+        "support and resistance lines"
+      ],
+      "chartElements": [
+        "daily trend chart"
+      ],
+      "animationInstructions": [
+        "draw lines",
+        "fade in"
+      ],
+      "dataFields": {
+        "supportLevel": 230,
+        "resistanceLevel": 240
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 16.58,
+      "narration": "Key technical metrics reveal a bearish MACD signal and an RSI at 43.29, suggesting weak momentum. Although the stock is below the volume-weighted average price, the 4-hour chart shows a stronger upward trend, adding to the mixed outlook.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Bearish MACD, RSI: 43.29",
+      "visualElements": [
+        "MACD chart",
+        "RSI indicator"
+      ],
+      "chartElements": [
+        "MACD chart",
+        "RSI chart"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {
+        "macdSignal": "bearish",
+        "rsi": 43.29
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 16.37,
+      "narration": "For tactical traders, the ideal entry zone lies between $230 and $240, with a stop loss set just below the key support level at $230. Target levels are set at $256.18 and $274.68, providing possible upside for those willing to engage.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $230 - $240",
+      "visualElements": [
+        "entry zone graphic",
+        "target levels"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "entryZoneLow": 230,
+        "entryZoneHigh": 240,
+        "targets": [
+          256.18,
+          274.68
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 13.36,
+      "narration": "Caution is advised for potential short sellers, as the current market presents a medium risk of a squeeze. Investors should identify breakdown levels carefully to avoid unfavorable positions.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Medium Squeeze Risk!",
+      "visualElements": [
+        "squeeze risk indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade in"
+      ],
+      "dataFields": {
+        "squeezeRisk": "medium"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 17.14,
+      "narration": "From an ecosystem perspective, the overall market sentiment, along with news articles reflecting positive sentiment, may support or weaken this setup depending on broader economic conditions. Keeping an eye on sector performance will be crucial.",
+      "pandaAction": "default",
+      "speechBubbleText": "Market Sentiment Matters!",
+      "visualElements": [
+        "news articles",
+        "market sentiment indicators"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 22.35,
+      "narration": "In conclusion, the final verdict suggests a watchlist status for Amazon's stock. Investors should monitor key levels closely and await a clearer entry signal, as the current risk-reward ratio appears unfavorable. Always exercise caution and perform due diligence before making investment decisions.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Watchlist Status!",
+      "visualElements": [
+        "watchlist graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing.",
+        "disclaimer": "This is not financial advice. Please do your own research."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

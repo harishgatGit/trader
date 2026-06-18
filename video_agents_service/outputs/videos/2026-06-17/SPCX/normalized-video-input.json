@@ -1,0 +1,25 @@
+{
+  "ticker": "SPCX",
+  "companyName": "SPCX",
+  "reportDate": "Unavailable",
+  "currentPrice": 192.77,
+  "dayChangePct": -4.41,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "technical-breakdown",
+  "catalystSummary": "Positive sentiment from recent news articles.",
+  "volumeSummary": "Volume is below average, indicating lack of strong buying interest.",
+  "trendSummary": "The stock SPCX shows a mixed trend due to conflicting signals from different timeframes and technical indicators. On a daily basis, the stock has experienced a decline, closing at $192.98, down from an opening of $209.76, indicating a bearish move for the day. The 15-minute technical indicators show a bearish bias with the MACD indicating a bearish momentum and the price below the VWAP, suggesting selling pressure. The RSI(14) is at 32.69, which is close to the oversold territory, indicating potential for a reversal if buying interest increases. However, on a 5-minute timeframe, the indicators show a bullish bias with the price above EMA(20) and EMA(50), and a strong uptrend indicated by ADX. The news sentiment is positive, but the institutional flow is uncertain with below-average volume and strong selling pressure. This mixed scenario suggests that while there is potential for upward movement, the current selling pressure and uncertain institutional activity create a challenging environment.",
+  "supportLevels": [
+    195.16
+  ],
+  "resistanceLevels": [
+    203.77
+  ],
+  "entryZone": "Low: None, High: None",
+  "stopLoss": "Price: None (Stop-loss not defined due to lack of clear entry.)",
+  "targets": [],
+  "shortTradeView": "SI%: Data unavailable, Borrow Fee: Data unavailable, Squeeze Risk: LOW",
+  "riskWarnings": "Technical signals are mixed; Negative EPS; High P/B ratio",
+  "finalVerdict": "The data quality is low due to insufficient historical candles, making it difficult to confirm a reliable trend or momentum. The stock is currently near resistance levels with mixed technical signals across timeframes.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently not a buy due to insufficient data and mixed signals. It's best to watch and wait for clearer trends and more data. The stock has shown some volatility and is near resistance levels, which could pose a risk for new entries. The recent news sentiment is positive, but the technical indicators are not aligned to support a confident buy decision. In the near term, expect potential sideways movement unless new data or catalysts emerge. Long-term prospects are unclear without more data."
+}

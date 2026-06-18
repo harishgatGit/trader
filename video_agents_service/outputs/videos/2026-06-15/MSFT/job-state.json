@@ -1,0 +1,23 @@
+{
+  "jobId": "5db02ce0-4852-417f-96b7-c60954bb8353",
+  "reportId": "cmqfuviqe01jtn3zp1hwlxlnu",
+  "ticker": "MSFT",
+  "reportDate": "2026-06-15",
+  "status": "GENERATED",
+  "startedAt": "2026-06-15T23:40:04.190700",
+  "completedAt": "2026-06-15T23:50:03.102984",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/5db02ce0-4852-417f-96b7-c60954bb8353/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-15\\MSFT\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-15\\MSFT\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-15\\MSFT\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-15\\MSFT\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-15\\MSFT\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-15\\MSFT\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-15\\MSFT\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-15\\MSFT\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

@@ -112,7 +112,7 @@ const FeedBadge: React.FC<{ feed: string }> = ({ feed }) => {
     none: 'bg-red-500/10 text-red-600 dark:text-red-450 border-red-500/20',
   }[feed] || 'bg-slate-500/10 text-slate-400 border-slate-500/20';
   return (
-    <span className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-bold border uppercase ${cfg}`}>{feed}</span>
+    <span className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-bold border  ${cfg}`}>{feed}</span>
   );
 };
 
@@ -435,7 +435,7 @@ const Admin: React.FC = () => {
               <div className="overflow-x-auto border border-slate-800/60 rounded-xl">
                 <table className="w-full text-xs text-left border-collapse">
                   <thead>
-                    <tr className="bg-slate-950 text-slate-450 border-b border-slate-800/80 font-bold uppercase tracking-wider text-[10px]">
+                    <tr className="bg-slate-950 text-slate-450 border-b border-slate-800/80 font-bold  tracking-wider text-[10px]">
                       <th className="py-3 px-4">Username</th>
                       <th className="py-3 px-4">Role</th>
                       <th className="py-3 px-4">Created Date</th>
@@ -721,7 +721,7 @@ const Admin: React.FC = () => {
                   <div className="overflow-x-auto max-h-96 border border-slate-800/60 rounded-xl">
                     <table className="w-full text-xs text-left border-collapse">
                       <thead>
-                        <tr className="bg-slate-950 text-slate-450 border-b border-slate-800/80 font-bold uppercase tracking-wider text-[10px] sticky top-0 z-10">
+                        <tr className="bg-slate-950 text-slate-450 border-b border-slate-800/80 font-bold  tracking-wider text-[10px] sticky top-0 z-10">
                           <th className="py-3 px-4">Username</th>
                           <th className="py-3 px-4">Ticker</th>
                           <th className="py-3 px-4">Sector</th>
@@ -787,7 +787,7 @@ const Admin: React.FC = () => {
                     { label: 'No Historical Bars', value: `${consistency.noBarsPct}%`, sub: `${consistency.noBarsCount} incidents`, color: consistency.noBarsPct > 10 ? 'text-amber-600' : 'text-emerald-600 dark:text-emerald-400', bg: consistency.noBarsPct > 10 ? 'bg-amber-500/5 border-amber-500/15' : 'bg-emerald-500/5 border-emerald-500/15' },
                   ].map((m, idx) => (
                     <div key={idx} className={`rounded-xl border p-4 flex flex-col gap-1.5 ${m.bg}`}>
-                      <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{m.label}</div>
+                      <div className="text-[10px] font-bold text-slate-500  tracking-wider">{m.label}</div>
                       <div className={`text-2xl font-extrabold font-mono leading-none ${m.color}`}>{m.value}</div>
                       <div className="text-[10px] text-slate-450">{m.sub}</div>
                     </div>
@@ -814,7 +814,7 @@ const Admin: React.FC = () => {
                 {/* Top failing symbols */}
                 {consistency.topFailingSymbols.length > 0 && (
                   <div className="border-t border-slate-800/40 pt-4">
-                    <div className="text-xs font-bold text-slate-400 mb-3 flex items-center gap-1.5 uppercase tracking-wider">
+                    <div className="text-xs font-bold text-slate-400 mb-3 flex items-center gap-1.5  tracking-wider">
                       <AlertTriangle className="w-3.5 h-3.5 text-amber-500" />
                       Symbols with High Failure Rates
                     </div>
@@ -854,7 +854,7 @@ const Admin: React.FC = () => {
                 placeholder="e.g. SPY, AAPL, MSFT"
                 value={dqProbeSymbol}
                 onChange={(e) => setDqProbeSymbol(e.target.value.toUpperCase())}
-                className="input text-xs flex-1 font-mono font-bold tracking-widest uppercase"
+                className="input text-xs flex-1 font-mono font-bold tracking-widest "
               />
               <button 
                 type="submit" 
@@ -903,7 +903,7 @@ const Admin: React.FC = () => {
                   {/* Snapshot fields */}
                   <div className="bg-slate-950/30 border border-slate-850 rounded-xl p-4 flex flex-col">
                     <div className="flex items-center justify-between mb-3 border-b border-slate-850 pb-2">
-                      <span className="text-xs font-bold text-slate-300 flex items-center gap-1.5 uppercase tracking-wider">
+                      <span className="text-xs font-bold text-slate-300 flex items-center gap-1.5  tracking-wider">
                         {probeResult.snapshot.available ? <Wifi className="w-3.5 h-3.5 text-emerald-500" /> : <WifiOff className="w-3.5 h-3.5 text-red-500" />}
                         Snapshot Endpoint Data
                       </span>
@@ -935,7 +935,7 @@ const Admin: React.FC = () => {
                   {/* Bars per timeframe */}
                   <div className="bg-slate-950/30 border border-slate-850 rounded-xl p-4 flex flex-col justify-between">
                     <div>
-                      <div className="text-xs font-bold text-slate-300 border-b border-slate-850 pb-2 mb-3 uppercase tracking-wider">
+                      <div className="text-xs font-bold text-slate-300 border-b border-slate-850 pb-2 mb-3  tracking-wider">
                         Historical Bars & News Completeness
                       </div>
                       <div className="space-y-3.5">
@@ -961,7 +961,7 @@ const Admin: React.FC = () => {
                     </div>
                     {/* News row */}
                     <div className="flex items-center justify-between pt-3 mt-4 border-t border-slate-850">
-                      <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">News Catalyst Feed</span>
+                      <span className="text-xs font-bold text-slate-300  tracking-wider">News Catalyst Feed</span>
                       <div className="flex items-center gap-2.5">
                         <span className={`text-xs font-mono font-bold ${probeResult.news.available ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-600 dark:text-amber-500'}`}>
                           {probeResult.news.articleCount} articles fetched
@@ -988,7 +988,7 @@ const Admin: React.FC = () => {
               <div className="overflow-x-auto border border-slate-800/60 rounded-xl max-h-[480px]">
                 <table className="w-full text-xs text-left border-collapse">
                   <thead>
-                    <tr className="bg-slate-950 text-slate-450 border-b border-slate-800/80 font-bold uppercase tracking-wider text-[10px] sticky top-0 z-10">
+                    <tr className="bg-slate-950 text-slate-450 border-b border-slate-800/80 font-bold  tracking-wider text-[10px] sticky top-0 z-10">
                       <th className="py-3 px-4">Symbol</th>
                       <th className="py-3 px-4 text-center">Quality Rating</th>
                       <th className="py-3 px-4 text-center">Price</th>
@@ -1125,7 +1125,7 @@ const Admin: React.FC = () => {
                         <div className="flex items-center gap-2">
                           <span className="font-bold text-slate-200">{item.user?.username || 'Anonymous User'}</span>
                           {item.user?.role && (
-                            <span className="text-[9px] font-bold px-1.5 py-0.25 rounded bg-slate-900 border border-slate-800 text-slate-500 tracking-wide uppercase">
+                            <span className="text-[9px] font-bold px-1.5 py-0.25 rounded bg-slate-900 border border-slate-800 text-slate-500 tracking-wide ">
                               {item.user.role}
                             </span>
                           )}
@@ -1269,7 +1269,7 @@ const Admin: React.FC = () => {
                       >
                         <div className="flex flex-wrap items-center justify-between gap-3 text-[11px]">
                           <div className="flex items-center gap-2">
-                            <span className={`px-2 py-0.5 rounded font-bold uppercase border text-[9px] ${levelColors}`}>
+                            <span className={`px-2 py-0.5 rounded font-bold  border text-[9px] ${levelColors}`}>
                               {log.level}
                             </span>
                             <span className="text-slate-450 font-mono text-[10px] truncate max-w-[200px]" title={log.url}>
@@ -1290,7 +1290,7 @@ const Admin: React.FC = () => {
                                 onClick={() =>
                                   setExpandedLogs((prev) => ({ ...prev, [log.id]: !prev[log.id] }))
                                 }
-                                className="text-brand-600 dark:text-brand-400 hover:text-brand-500 font-bold transition-colors text-[10px] uppercase tracking-wider"
+                                className="text-brand-600 dark:text-brand-400 hover:text-brand-500 font-bold transition-colors text-[10px]  tracking-wider"
                               >
                                 {isExpanded ? 'Hide Stack' : 'View Stack'}
                               </button>

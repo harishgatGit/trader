@@ -3,6 +3,7 @@ import { WhatsForTodayService } from './whats-for-today.service';
 import { AuthGuard, CurrentUser } from '../auth/auth.guard';
 import { RoleGuard, Roles } from '../auth/role.guard';
 import { IsString, IsNotEmpty, IsOptional } from 'class-validator';
+import { getNYDateString } from '../../utils/date';
 
 class InteractDto {
   @IsString()
@@ -36,8 +37,7 @@ export class WhatsForTodayController {
     if (isNaN(runNum) || runNum < 1 || runNum > 4) {
       throw new Error('Invalid run number. Must be between 1 and 4.');
     }
-    const today = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
-    const todayStr = date || new Date(today).toISOString().split('T')[0];
+    const todayStr = date || getNYDateString();
     
     return this.service.getReportByPhaseAndDate(runNum, todayStr);
   }

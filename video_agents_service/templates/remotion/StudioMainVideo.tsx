@@ -430,22 +430,18 @@ export const StudioMainVideo: React.FC<StudioMainVideoProps> = ({
               backgroundColor: '#14b8a6',
               borderRadius: '2px',
             }} />
-            <img 
-              src={staticFile('website_banner_dark_1440x360.png')} 
-              style={{ width: '100%', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)', border: '1px solid rgba(20, 184, 166, 0.2)' }} 
-            />
             <div style={{
               fontSize: '18px',
               fontWeight: 800,
               color: '#ffffff',
-              letterSpacing: '2px',
-              textTransform: 'uppercase',
+              letterSpacing: '1px',
               marginTop: '10px',
               backgroundImage: 'linear-gradient(to right, #ffffff, #14b8a6)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
+              lineHeight: '1.4',
             }}>
-              STOCK ANALYSIS WALKTHROUGH
+              Visit us www.investingatti.com to do your own analysis of the stock you wish
             </div>
             <div style={{
               fontSize: '12px',

@@ -10,9 +10,11 @@ interface AppState {
   authLoading: boolean;
   login: (username: string, password: string) => Promise<void>;
   register: (username: string, password: string) => Promise<void>;
+  socialLogin: (payload: { code?: string; idToken?: string }, provider: 'google' | 'microsoft') => Promise<void>;
   logout: () => Promise<void>;
   fetchMe: () => Promise<void>;
   updatePassword: (oldPassword: string, newPassword: string) => Promise<void>;
+  updateUsername: (newUsername: string) => Promise<void>;
   fetchSessions: () => Promise<void>;
 
   // Watchlist
@@ -48,9 +50,9 @@ interface AppState {
   addToast: (type: 'success' | 'error' | 'info' | 'warning', message: string) => void;
   removeToast: (id: string) => void;
 
-  // API health
-  apiHealth: 'ok' | 'degraded' | 'unknown';
-  checkHealth: () => Promise<void>;
+  // Feedback widget
+  feedbackOpen: boolean;
+  setFeedbackOpen: (v: boolean) => void;
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
@@ -82,6 +84,21 @@ export const useAppStore = create<AppState>((set, get) => ({
       get().addToast('success', 'Registration successful! Please log in.');
     } catch (e) {
       get().addToast('error', `Registration failed: ${e.message}`);
+      throw e;
+    } finally {
+      set({ authLoading: false });
+    }
+  },
+
+  socialLogin: async (payload, provider) => {
+    set({ authLoading: true });
+    try {
+      const response = await authApi.socialLogin({ ...payload, provider });
+      localStorage.setItem('trader_auth_token', response.token);
+      set({ user: response.user, token: response.token });
+      get().addToast('success', `Welcome, ${response.user.username}! Signed in via ${provider === 'google' ? 'Google' : 'Microsoft'}`);
+    } catch (e: any) {
+      get().addToast('error', `OAuth login failed: ${e.message}`);
       throw e;
     } finally {
       set({ authLoading: false });
@@ -124,6 +141,20 @@ export const useAppStore = create<AppState>((set, get) => ({
       set({ user: null, token: null, sessions: [] });
     } catch (e) {
       get().addToast('error', `Password update failed: ${e.message}`);
+      throw e;
+    } finally {
+      set({ authLoading: false });
+    }
+  },
+
+  updateUsername: async (newUsername) => {
+    set({ authLoading: true });
+    try {
+      const updatedUser = await authApi.updateUsername({ newUsername });
+      set({ user: updatedUser });
+      get().addToast('success', `Username updated to "${updatedUser.username}" ✓`);
+    } catch (e) {
+      get().addToast('error', `Username update failed: ${e.message}`);
       throw e;
     } finally {
       set({ authLoading: false });
@@ -284,15 +315,7 @@ export const useAppStore = create<AppState>((set, get) => ({
     set((state) => ({ toasts: state.toasts.filter((t) => t.id !== id) }));
   },
 
-  // ── Health ────────────────────────────────────────────────────────
-  apiHealth: 'unknown',
-
-  checkHealth: async () => {
-    try {
-      const health = await healthApi.check();
-      set({ apiHealth: (health as any).status === 'ok' ? 'ok' : 'degraded' });
-    } catch {
-      set({ apiHealth: 'degraded' });
-    }
-  },
+  // ── Feedback Widget ───────────────────────────────────────────────
+  feedbackOpen: false,
+  setFeedbackOpen: (v) => set({ feedbackOpen: v }),
 }));

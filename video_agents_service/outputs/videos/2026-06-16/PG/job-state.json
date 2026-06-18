@@ -1,0 +1,23 @@
+{
+  "jobId": "628147e4-2b2d-47ab-919a-aeb85bb18dc0",
+  "reportId": "cmqgtdu4z07vi70corcdfc2w9",
+  "ticker": "PG",
+  "reportDate": "2026-06-16",
+  "status": "GENERATED",
+  "startedAt": "2026-06-16T15:46:04.184593",
+  "completedAt": "2026-06-16T15:53:22.989506",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/628147e4-2b2d-47ab-919a-aeb85bb18dc0/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\PG\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\PG\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\PG\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\PG\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\PG\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\PG\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\PG\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\PG\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

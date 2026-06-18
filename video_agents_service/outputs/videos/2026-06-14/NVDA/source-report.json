@@ -1,0 +1,977 @@
+{
+  "symbol": "NVDA",
+  "analysisDateTime": "2026-06-14T05:02:48.578Z",
+  "currentPrice": 205.1,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data fields are available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "TRADE",
+    "confidenceScore": 60,
+    "decisionSummary": "NVDA is currently in a mixed technical position with bearish daily indicators but bullish short-term signals. The stock is near support but lacks a clear entry signal due to conflicting trends and a wide bid-ask spread. Risk/reward is not optimal for immediate entry.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is near support but lacks confirmation for a bullish reversal. Risk/reward is not favorable.",
+    "bestActionNow": "Monitor for a clearer trend reversal or breakout confirmation before considering entry."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": true,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "NVDA is currently trading at $205.1 with a mixed technical outlook. The daily trend is bearish with price below key moving averages and VWAP, indicating potential distribution. However, shorter timeframes show bullish signals, suggesting possible short-term strength. The stock is near support levels, but the wide bid-ask spread and conflicting signals make it a candidate for the watchlist rather than immediate action. LAYMAN'S TAKEAWAY: NVDA is showing mixed signals with potential for short-term gains, but the current setup is not ideal for a buy. It's best to wait for clearer signals or a confirmed breakout before considering entry.",
+  "technicalAnalysis": {
+    "overallBias": "MIXED",
+    "trendStage": "SIDEWAYS",
+    "setupType": "NO_SETUP",
+    "technicalScore": 50,
+    "keySignals": [
+      "Daily MACD bearish",
+      "Price below daily VWAP",
+      "4H and 1H show bullish bias"
+    ],
+    "supportLevels": [
+      194.76,
+      197.25,
+      199.34,
+      208.79
+    ],
+    "resistanceLevels": [
+      216.82,
+      232.28,
+      236.54
+    ],
+    "vwapAnalysis": "Price is below VWAP, indicating potential bearish pressure.",
+    "movingAverageAnalysis": "Price is below daily EMA20, EMA50, and EMA200, indicating bearish trend.",
+    "rsiAnalysis": "RSI is neutral at 45, not indicating overbought or oversold conditions.",
+    "macdAnalysis": "MACD is bearish on the daily chart.",
+    "volumeAnalysis": "Volume is below average, indicating lack of strong buying interest.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR suggests moderate volatility.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong trend, but direction is mixed.",
+    "bollingerBandAnalysis": "Price is near the lower Bollinger Band, suggesting potential support."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "No immediate buy zone due to mixed signals."
+    },
+    "pullbackEntryZone": {
+      "low": 194.76,
+      "high": 199.34,
+      "description": "Potential entry zone near support levels."
+    },
+    "breakoutEntryLevel": {
+      "price": 216.82,
+      "confirmationRule": "Wait for breakout above resistance with volume confirmation."
+    },
+    "accumulationZone": {
+      "low": 194.76,
+      "high": 199.34,
+      "description": "Accumulation zone near key support levels."
+    },
+    "invalidationLevel": {
+      "price": 194.76,
+      "reason": "Break below this level may indicate further downside."
+    },
+    "stopLoss": {
+      "price": 194.76,
+      "stopType": "SUPPORT_BREAK",
+      "description": "Stop-loss set below key support level."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 216.82,
+        "reason": "First target at resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 232.28,
+        "reason": "Second target at next resistance level."
+      },
+      {
+        "label": "T3",
+        "price": 236.54,
+        "reason": "Third target at 52-week high resistance."
+      }
+    ],
+    "exitRules": [
+      "Exit if price breaks below 194.76 support level."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 205.1,
+    "riskPerShare": 10.34,
+    "rewardToTarget1": 11.72,
+    "rewardToTarget2": 27.18,
+    "rewardToTarget3": 31.44,
+    "riskRewardToTarget1": "1.13",
+    "riskRewardToTarget2": "2.63",
+    "riskRewardToTarget3": "3.04",
+    "riskRewardVerdict": "ACCEPTABLE",
+    "positionSizingNote": "Consider smaller position size due to mixed signals and wide spread."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "NEUTRAL",
+    "entryZone": {
+      "low": 194.76,
+      "high": 199.34,
+      "description": "Watch for potential entry near support."
+    },
+    "stopLoss": {
+      "price": 194.76,
+      "description": "Stop-loss below key support."
+    },
+    "targets": [
+      {
+        "price": 216.82,
+        "label": "T1"
+      },
+      {
+        "price": 232.28,
+        "label": "T2"
+      },
+      {
+        "price": 236.54,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price breaks below 194.76 support."
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "NEUTRAL",
+    "entryZone": {
+      "low": 194.76,
+      "high": 199.34,
+      "description": "Potential entry on pullback to support."
+    },
+    "stopLoss": {
+      "price": 194.76,
+      "description": "Stop-loss below support."
+    },
+    "targets": [
+      {
+        "price": 216.82,
+        "label": "T1"
+      },
+      {
+        "price": 232.28,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 194.76,
+      "high": 199.34,
+      "description": "Accumulation near support."
+    },
+    "riskReward": "ACCEPTABLE",
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "NEUTRAL",
+    "swingSetup": {
+      "setup": "Potential pullback",
+      "analysis": "Mixed signals with potential for short-term strength on lower timeframes."
+    },
+    "entryTiming": {
+      "trigger": "Wait for confirmation",
+      "analysis": "Mixed signals on 15M and 5M charts suggest waiting for clearer entry."
+    },
+    "supportLevels": [
+      {
+        "price": 194.76,
+        "tests": 2
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 216.82,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 194.76,
+    "riskMetrics": {
+      "atr": 7.98,
+      "atrAnalysis": "Moderate volatility",
+      "vwap": 205.02,
+      "vwapAnalysis": "Price below VWAP, indicating bearish pressure.",
+      "volumeAnalysis": "Below average volume suggests lack of conviction.",
+      "supportResistanceAnalysis": "Support at 194.76, resistance at 216.82."
+    },
+    "catalysts": {
+      "news": "Positive sentiment overall.",
+      "earnings": "No immediate earnings risk.",
+      "secFilings": "No significant filings reported."
+    },
+    "shortFilter": {
+      "borrowFee": "Unavailable",
+      "shortInterest": "Unavailable",
+      "ssrStatus": "Unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "Mixed technical signals with potential for short-term strength, but overall trend remains unclear.",
+    "dailyTrend": {
+      "trend": "MIXED",
+      "barCount": 252,
+      "analysis": "NVIDIA's stock is currently showing mixed signals. The daily technical indicators suggest a bearish trend, with the MACD indicating bearish momentum and the price trading below key moving averages like the EMA20 and SMA20. However, shorter timeframes such as the 4-hour and 1-hour charts show bullish signals, with prices above their respective moving averages and a positive MACD histogram. This discrepancy suggests that while the overall trend is bearish, there is some bullish momentum in the shorter term. The institutional flow indicates distribution, which aligns with the bearish daily trend, as the stock is trading below the VWAP with below-average volume. Despite positive news sentiment, the stock's technicals and institutional flow are not fully supportive of a bullish trend.",
+      "laymanExplanation": "Think of NVIDIA's stock like a car that's trying to go uphill but is struggling. The engine (or momentum) is not strong enough on the daily chart, showing signs of slowing down. However, on shorter trips (or timeframes), it seems to pick up speed a bit. The road (or market) is a bit mixed, with some positive news, but the big players (institutions) seem to be selling more than buying. It's worth keeping an eye on, but it needs more power to really climb the hill confidently.",
+      "ticker": "NVDA",
+      "companyName": "NVIDIA Corporation",
+      "confidenceScore": 0.7,
+      "trendSummary": "The stock is experiencing mixed signals with a short-term bearish bias but some bullish momentum in shorter timeframes.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Mixed",
+          "evidence": "Daily MACD is bearish, but shorter timeframes like 4-hour and 1-hour show bullish signals."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Negative",
+          "evidence": "Distribution with below-average volume and price below VWAP."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Positive",
+          "evidence": "Overall positive sentiment from recent news articles."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The stock is trading below key moving averages on the daily chart, indicating a bearish trend.",
+        "movingAverageView": "Price is below the daily EMA20 and SMA20, but above the EMA20 and SMA20 on shorter timeframes like 4-hour and 1-hour.",
+        "momentumView": "Daily MACD is bearish, but shorter timeframes show some bullish momentum.",
+        "volumeView": "Volume is below average, indicating a lack of strong buying interest.",
+        "supportResistanceView": "Price is below the VWAP, suggesting resistance at higher levels.",
+        "volatilityView": "ATR indicates moderate volatility, with Bollinger Bands showing a squeeze in shorter timeframes."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data provided.",
+        "newsImpact": "Positive sentiment from news articles, but not strongly impacting the stock's technicals.",
+        "institutionalFlowImpact": "Distribution suggests selling pressure from institutional investors.",
+        "sectorMacroImpact": "Tech sector sentiment is generally positive, but NVIDIA's specific technicals are not fully aligned."
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Bearish daily technical indicators",
+          "Institutional distribution"
+        ],
+        "whatNeedsConfirmation": "Confirmation of bullish momentum in shorter timeframes or reversal of bearish daily indicators."
+      },
+      "watchStatus": "Needs confirmation",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BULLISH",
+    "investmentQuality": "STRONG",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient data"
+    },
+    "bullCase": "Continued growth in AI and data center sectors.",
+    "baseCase": "Stable growth with moderate volatility.",
+    "bearCase": "Market correction or sector-specific downturn.",
+    "longTermVerdict": "ACCUMULATE"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 85,
+    "rating": "STRONG",
+    "revenueTrend": "Strong revenue growth in technology sector.",
+    "epsTrend": "EPS growth is positive with strong forward guidance.",
+    "profitability": "High profitability with strong margins.",
+    "debtRisk": "Low debt-to-equity ratio indicates manageable debt.",
+    "cashFlowQuality": "Strong cash flow supporting operations.",
+    "valuationCommentary": "Valuation is high but justified by growth prospects."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "FAIRLY_VALUED",
+    "valuationScore": 70,
+    "peerComparisonAvailable": true,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": 194.76,
+      "high": 199.34
+    },
+    "commentary": "Valuation is high but supported by strong growth and profitability."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 70,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Positive sentiment in technology sector"
+    ],
+    "keyRisksFromNews": [
+      "None reported"
+    ],
+    "earningsRisk": "None imminent",
+    "catalystVerdict": "SUPPORTIVE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 30,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests distribution with price below VWAP and decreasing volume, indicating possible absorption.",
+    "signals": [
+      "Below-average volume",
+      "Price below VWAP",
+      "Decreasing volume"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "MEDIUM",
+    "probabilityScore": 60,
+    "reason": "Strong growth potential in AI and data center markets.",
+    "requiredConditions": [
+      "Continued sector growth",
+      "Stable macroeconomic conditions"
+    ],
+    "majorBlockers": [
+      "Market correction",
+      "Regulatory changes"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "MEDIUM",
+    "technicalRisk": "Mixed signals with potential for downside.",
+    "fundamentalRisk": "Low due to strong fundamentals.",
+    "valuationRisk": "High valuation could pose risk if growth slows.",
+    "newsRisk": "Low with positive sentiment.",
+    "liquidityRisk": "Low due to high trading volume.",
+    "eventRisk": "Moderate with potential sector volatility.",
+    "topRisks": [
+      "High valuation",
+      "Mixed technical signals"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Continued growth in AI and data center sectors.",
+      "pricePath": "Potential upside to new highs.",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Stable growth with moderate volatility.",
+      "pricePath": "Gradual increase with fluctuations.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Market correction or sector-specific downturn.",
+      "pricePath": "Potential decline to support levels.",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for breakout above resistance at 216.82.",
+    "Consider entry on pullback to support near 194.76.",
+    "Avoid chasing extended moves without confirmation."
+  ],
+  "doNotTradeConditions": [
+    "Price remains below VWAP with bearish daily signals."
+  ],
+  "alertLevels": {
+    "buyAlert": 194.76,
+    "breakoutAlert": 216.82,
+    "stopLossAlert": 194.76,
+    "target1Alert": 216.82,
+    "target2Alert": 232.28,
+    "riskAlert": 205.1
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Arm Holdings",
+        "ownershipPct": "null",
+        "performance": "Arm Holdings is a leading semiconductor IP company with a strong market position in mobile and IoT sectors.",
+        "upcomingEvents": [
+          "Potential IPO",
+          "New architecture launches"
+        ],
+        "impactPotential": "An IPO could increase Arm's market visibility and valuation, benefiting NVIDIA's strategic collaborations. New architectures could enhance NVIDIA's product offerings."
+      },
+      {
+        "name": "Mellanox Technologies",
+        "ownershipPct": "100%",
+        "performance": "Mellanox has been integrated into NVIDIA, enhancing its data center offerings.",
+        "upcomingEvents": [
+          "Expansion of data center solutions"
+        ],
+        "impactPotential": "Continued integration and expansion in data center solutions could drive revenue growth for NVIDIA."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "TSMC",
+          "role": "Supplier",
+          "description": "Provides semiconductor manufacturing services",
+          "riskExposure": "Disruption in TSMC's operations could delay NVIDIA's product launches and impact revenue."
+        },
+        {
+          "name": "Samsung Electronics",
+          "role": "Supplier",
+          "description": "Provides semiconductor manufacturing services",
+          "riskExposure": "Any production issues could affect NVIDIA's ability to meet demand."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Foxconn",
+          "role": "Outsource Partner",
+          "description": "Manufactures hardware components",
+          "riskExposure": "Disruptions could delay product availability and affect sales."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Amazon Web Services",
+          "role": "Marketing Partner",
+          "description": "Cloud service provider and distribution channel",
+          "riskExposure": "Strong partnership enhances NVIDIA's reach in cloud computing; any partnership changes could impact market penetration."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Data Centers",
+          "role": "Customer",
+          "description": "Purchase GPUs for AI and machine learning applications",
+          "riskExposure": "Growth in AI applications drives demand; any slowdown could impact NVIDIA's revenue."
+        },
+        {
+          "name": "Gaming Industry",
+          "role": "Customer",
+          "description": "Purchase GPUs for gaming consoles and PCs",
+          "riskExposure": "Demand fluctuations in gaming can significantly impact NVIDIA's sales."
+        }
+      ]
+    },
+    "strategicOutlook": "NVIDIA's ecosystem is robust, with strong positions in AI, gaming, and data centers. The company faces concentration risks with key suppliers like TSMC and Samsung. Upcoming events such as Arm's potential IPO and advancements in AI technology are critical externalities to monitor for potential impacts on NVIDIA's stock performance."
+  },
+  "trendStory": {
+    "ticker": "NVDA",
+    "analysis_date": "2026-06-14",
+    "price_summary": {
+      "current_price": 205.1,
+      "previous_close": 204.79,
+      "day_change_percent": 0.15,
+      "day_range": {
+        "high": 207.06,
+        "low": 203.46
+      },
+      "volume": 3923011,
+      "average_volume": 5168399.65,
+      "relative_volume": 0.7590378580727595
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "NVDA trades up 0.1% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 0.7590378580727595,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 200.998,
+        "high": 207.15099999999998
+      },
+      "stop_loss": 194.845,
+      "target_1": 215.355,
+      "target_2": 225.61,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 192.79399999999998,
+      "short_stop_loss": 215.355,
+      "short_target_1": 184.59,
+      "short_target_2": 174.33499999999998,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "NVDA moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "NVDA",
+    "analysisDate": "2026-06-14",
+    "currentPrice": 205.1,
+    "correlationName": "Signal Correlation",
+    "finalZone": "YELLOW_ZONE",
+    "correlationScore": 48,
+    "gradientPositionPercent": 48,
+    "gradientLabel": "Orange",
+    "confidenceLevel": "MEDIUM",
+    "oneLineSummary": "NVDA shows mixed signals with bearish daily trend but bullish short-term momentum.",
+    "laymanSummary": "NVIDIA's stock is currently in a mixed state. While there are some positive short-term signals, the overall daily trend is bearish. It's a time to watch and wait for clearer signals.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 8,
+        "maxScore": 20,
+        "status": "MIXED",
+        "evidence": "Price is below EMA20 and VWAP, but above EMA200. Mixed signals across different timeframes."
+      },
+      "volumeConfirmation": {
+        "score": 5,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Relative volume is below 0.8x, indicating weak volume support for price moves."
+      },
+      "momentumIndicators": {
+        "score": 8,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "RSI is balanced at 45, MACD is bearish on daily but bullish on shorter timeframes."
+      },
+      "movingAverageStructure": {
+        "score": 10,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "Golden cross present (EMA50 > EMA200), but price is below EMA20."
+      },
+      "vwapPosition": {
+        "score": 4,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP, indicating selling pressure."
+      },
+      "supportResistanceRiskReward": {
+        "score": 5,
+        "maxScore": 10,
+        "status": "MIXED",
+        "evidence": "Price is near support at 199.34 but far from resistance at 216.82."
+      },
+      "sectorIndexAlignment": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "POSITIVE",
+        "evidence": "Technology sector is generally strong, supporting NVDA."
+      },
+      "shortInterestContext": {
+        "score": 2,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "No significant short interest data provided."
+      },
+      "newsCatalystConfirmation": {
+        "score": 2,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Overall positive sentiment in recent news articles."
+      },
+      "institutionalFlowProxy": {
+        "score": 1,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Distribution signals with below-average volume and price below VWAP."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Golden cross (EMA50 > EMA200)",
+        "Positive news sentiment"
+      ],
+      "yellowSignals": [
+        "Mixed RSI and MACD signals",
+        "Price near support but below VWAP"
+      ],
+      "redSignals": [
+        "Price below EMA20 and VWAP",
+        "Weak volume confirmation"
+      ],
+      "strongestPositiveEvidence": "Golden cross (EMA50 > EMA200) indicates potential long-term strength.",
+      "strongestNegativeEvidence": "Price below EMA20 and VWAP suggests short-term bearish pressure.",
+      "mixedSignalExplanation": "Short-term bullish signals contrast with bearish daily trend."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 199.34,
+      "nearestResistance": 216.82,
+      "distanceToSupportPercent": 2.81,
+      "distanceToResistancePercent": 5.71,
+      "riskRewardView": "MIXED",
+      "explanation": "Price is closer to support than resistance, offering potential upside if support holds."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a mixed state with conflicting signals across different timeframes."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Price needs to move above EMA20 and VWAP with strong volume."
+      ],
+      "forYellowToGreenUpgrade": [
+        "Clear bullish momentum on daily timeframe."
+      ],
+      "forRedZoneWarning": [
+        "Break below key support levels with increasing volume."
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 48,
+      "markerText": "Current Zone: Orange",
+      "displaySummaryBelowBar": "NVDA is in a mixed state with short-term bullish signals but overall bearish daily trend.",
+      "supportingPointsBelowBar": [
+        "Golden cross present",
+        "Positive news sentiment",
+        "Price below EMA20 and VWAP"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "WAIT_FOR_CONFIRMATION",
+      "summary": "NVDA is currently in a mixed state with conflicting signals. It's advisable to wait for clearer trends before making any decisions.",
+      "riskWarning": "Price is below key moving averages and VWAP, indicating potential downside risk.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "NVDA",
+    "available": true,
+    "price": 205.1,
+    "open": 204.5,
+    "high": 207.06,
+    "low": 203.46,
+    "close": 205.17,
+    "volume": 3923011,
+    "vwap": 205.019018,
+    "bid": 194.58,
+    "ask": 215.13,
+    "spread": 20.55,
+    "changePercent": 0.15,
+    "timestamp": "2026-06-12T20:07:52.141471965Z",
+    "raw": {
+      "dailyBar": {
+        "c": 205.17,
+        "h": 207.06,
+        "l": 203.46,
+        "n": 42536,
+        "o": 204.5,
+        "t": "2026-06-12T04:00:00Z",
+        "v": 3923011,
+        "vw": 205.019018
+      },
+      "latestQuote": {
+        "ap": 215.13,
+        "as": 100,
+        "ax": "V",
+        "bp": 194.58,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-12T20:00:02.593056206Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@",
+          "T"
+        ],
+        "i": 42525,
+        "p": 205.1,
+        "s": 100,
+        "t": "2026-06-12T20:07:52.141471965Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 205.1,
+        "h": 205.1,
+        "l": 205.1,
+        "n": 12,
+        "o": 205.1,
+        "t": "2026-06-12T20:07:00Z",
+        "v": 917,
+        "vw": 205.1
+      },
+      "prevDailyBar": {
+        "c": 204.86,
+        "h": 205.64,
+        "l": 199.54,
+        "n": 56454,
+        "o": 201.33,
+        "t": "2026-06-11T04:00:00Z",
+        "v": 5648208,
+        "vw": 202.430373
+      },
+      "symbol": "NVDA"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 211.16011469634208,
+      "ema50": 206.59752825698644,
+      "ema200": 190.85220924632253,
+      "sma20": 214.62925,
+      "sma50": 206.90860000000004,
+      "sma200": 189.2552249999999,
+      "rsi14": 45.207334452179175,
+      "rsi14Prev": 44.93552434948296,
+      "macdLine": -1.101096732607374,
+      "macdSignal": 1.2621658193226413,
+      "macdHist": -2.363262551930015,
+      "bbUpper": 229.19717513537876,
+      "bbMiddle": 214.62925,
+      "bbLower": 200.06132486462127,
+      "bbWidth": 13.574967191451066,
+      "atr14": 7.984814611117865,
+      "obv": 48227878,
+      "relVolume": 0.7590378580727595,
+      "vwap": 215.15704561206502,
+      "adx14": 250.3572303845256,
+      "plusDI": 18.45024098450911,
+      "minusDI": 23.630378224401028,
+      "supportLevels": [
+        194.76,
+        197.25,
+        199.34,
+        208.79
+      ],
+      "resistanceLevels": [
+        216.82,
+        232.28,
+        236.54
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "MACD bearish",
+        "Golden cross (EMA50 > EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 4969906831360,
+    "peRatio": 31.422665,
+    "pbRatio": 25.426271,
+    "epsTrailing": 6.53,
+    "epsForward": 12.72715,
+    "revenue": 253491003392,
+    "debtToEquity": 6.555,
+    "dividendYield": 0.0049,
+    "beta": 2.202,
+    "week52High": 236.54,
+    "week52Low": 142.03,
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "description": "NVIDIA Corporation operates as a data center scale AI infrastructure company. The company operates through two segments, Compute & Networking, and Graphics segments. The Compute & Networking segment provides data center accelerated computing and networking platforms and artificial intelligence solutions and software, and automotive platforms and autonomous and electric vehicle solutions, including software. The Graphics segment offers GeForce GPUs for gaming and PCs; Quadro/NVIDIA RTX GPUs for e"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "SpaceX IPO Sets the Stage, These Five Tech Companies Could Follow",
+        "summary": "The SpaceX IPO was highly successful as the company raised $75 billion from investors. Other tech companies that may file are OpenAI, Anthropic, and Anduril.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53184847/spacex-ipo-sets-the-stage-these-five-tech-companies-could-follow",
+        "publishedAt": "2026-06-13T23:26:37Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Micron Stock Has Become Volatile, But Key Metric Hints at Further Gains",
+        "summary": "Micron stock price has become highly volatile this month, but key valuation metrics suggest it has more gains to go.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/06/53184727/micron-stock-has-become-volatile-but-key-metric-hints-at-further-gains",
+        "publishedAt": "2026-06-13T20:11:17Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Arthur Hayes: Bitcoin Got 'Thrown Out With The AI Bathwater,' But Three Factors Could Pop The Bubble",
+        "summary": "Arthur Hayes made his name posting his own trades, but the BitMEX co-founder is now denying that he used his followers as exit liquidity, dumping altcoins on them after hyping the tokens.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/06/53178985/arthur-hayes-bitcoin-got-thrown-out-with-the-ai-bathwater-but-three-factors-could-pop-the-bubble",
+        "publishedAt": "2026-06-12T19:59:29Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Amazon Takes On $17.5 Billion In AI Debt: Are Traders Betting On A Capex Bubble?",
+        "summary": "Amazon secured a $17.5B loan as a $200B AI capex bill eats into its cash flow. See why prediction markets still aren&#39;t betting on an AI bubble burst.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/prediction-markets/26/06/53176493/amazon-takes-on-17-5-billion-in-ai-debt-are-traders-betting-on-a-capex-bubble",
+        "publishedAt": "2026-06-12T18:25:00Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "10 Information Technology Stocks With Whale Alerts In Today's Session",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/options/26/06/53174857/10-information-technology-stocks-with-whale-alerts-in-todays-session",
+        "publishedAt": "2026-06-12T17:35:24Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "SharonAI Gains On NVIDIA AI Factory Deal",
+        "summary": "SharonAI shares rise after announcing a partnership with NVIDIA to deploy a 72MW AI factory and up to 40,000 GB300 GPUs in Australia.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53167610/sharonai-gains-on-nvidia-ai-factory-deal",
+        "publishedAt": "2026-06-12T14:27:14Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Adobe's CFO Jumps Ship To Marvell For 'Once-In-A-Generation' AI Expansion",
+        "summary": "Marvell ($MRVL) stock dips 3% amid tech profit-taking. Shares hold strong uptrend near $273 despite market pressure.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53165646/adobes-cfo-jumps-ship-to-marvell-for-once-in-a-generation-ai-expansion",
+        "publishedAt": "2026-06-12T13:53:16Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Why Is AMD Stock Gaining Friday?",
+        "summary": "AMD stock continues to rally in premarket trading as Citi and BofA lift price targets on massive AI growth. Get the technical layout.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/06/53164121/why-is-amd-stock-gaining-friday",
+        "publishedAt": "2026-06-12T13:07:21Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "What's Going On With Intel Stock Friday?",
+        "summary": "Intel ($INTC) edges lower in premarket despite a bullish tech backdrop. Is the rally pausing, or is a breakout ahead? Read our analysis.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53163195/whats-going-on-with-intel-stock-friday-3",
+        "publishedAt": "2026-06-12T12:23:14Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "NVIDIA Obliterates The Boring PC Era",
+        "summary": "NVIDIA unveils the RTX Spark Superchip, aiming to transform traditional PCs into high-performance local AI inference machines.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/06/53163096/nvidia-obliterates-the-boring-pc-era",
+        "publishedAt": "2026-06-12T12:13:39Z",
+        "sentiment": "POSITIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 30,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 8,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 6,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 5
+    },
+    "signals": [
+      "Below-average volume (0.8x)",
+      "Price below VWAP (-4.7%)",
+      "Price declining with decreasing volume (possible absorption)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 50,
+  "fundamentalScore": 85,
+  "newsCatalystScore": 70,
+  "institutionalFlowProxyScore": 30,
+  "keyCatalysts": [
+    "Positive sentiment in technology sector"
+  ],
+  "keyRisks": [
+    "High valuation",
+    "Mixed technical signals"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests distribution with price below VWAP and decreasing volume, indicating possible absorption."
+}

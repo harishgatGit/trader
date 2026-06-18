@@ -1,0 +1,984 @@
+{
+  "symbol": "GOOGL",
+  "analysisDateTime": "2026-06-16T15:15:21.185Z",
+  "currentPrice": 374.72,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data is available and current."
+  },
+  "finalDecision": {
+    "finalRating": "WAIT",
+    "decisionType": "TRADE",
+    "confidenceScore": 70,
+    "decisionSummary": "The stock is currently in a bullish trend with strong technical indicators, but it is near resistance levels and the risk/reward ratio is not yet favorable for a new entry. Waiting for a pullback or breakout confirmation is advised.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is near resistance and the risk/reward ratio is not optimal.",
+    "bestActionNow": "Wait for a pullback to a lower support level or a confirmed breakout above resistance."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": true,
+    "momentumConfirmed": true,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock has been on a strong upward trend, but it's currently close to a resistance level, which could limit further gains in the short term. It's advisable to wait for a clearer entry point, either through a pullback to a lower price or a confirmed breakout above the current resistance.\nThe stock has shown strong momentum recently, supported by positive news sentiment and solid fundamentals. However, the current price is near a resistance level, and the volume is not confirming a strong breakout. This suggests that while the stock is in a good position, it may not be the best time to enter a new position just yet.\nIn the near term, the stock is expected to continue its upward trend, but potential resistance could slow down its progress. Over the long term, the fundamentals remain strong, suggesting a positive outlook if the stock can break through its current resistance levels.",
+  "technicalAnalysis": {
+    "overallBias": "BULLISH",
+    "trendStage": "MARKUP",
+    "setupType": "CONTINUATION",
+    "technicalScore": 75,
+    "keySignals": [
+      "Price above EMA20 > EMA50",
+      "Golden cross (EMA50 > EMA200)",
+      "Strong uptrend (ADX>25, +DI>-DI)"
+    ],
+    "supportLevels": [
+      331.46,
+      346.37,
+      358.13
+    ],
+    "resistanceLevels": [
+      393.76,
+      408.57
+    ],
+    "vwapAnalysis": "Price is above VWAP, indicating bullish intraday sentiment.",
+    "movingAverageAnalysis": "Price is above key moving averages, confirming a bullish trend.",
+    "rsiAnalysis": "RSI is neutral, suggesting no immediate overbought or oversold conditions.",
+    "macdAnalysis": "MACD is bearish, indicating potential for a pullback.",
+    "volumeAnalysis": "Volume is below average, not confirming a strong breakout.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR indicates moderate volatility, suitable for swing trading.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong trend.",
+    "bollingerBandAnalysis": "Price is near the upper Bollinger Band, suggesting potential resistance."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current price is near resistance; not ideal for immediate entry."
+    },
+    "pullbackEntryZone": {
+      "low": 358.13,
+      "high": 369.22,
+      "description": "Consider entering if price pulls back to this support zone."
+    },
+    "breakoutEntryLevel": {
+      "price": 393.76,
+      "confirmationRule": "Enter on confirmed breakout above resistance with volume."
+    },
+    "accumulationZone": {
+      "low": 331.46,
+      "high": 346.37,
+      "description": "Long-term accumulation zone for potential lower-risk entry."
+    },
+    "invalidationLevel": {
+      "price": 346.37,
+      "reason": "Below this level, the bullish trend may be invalidated."
+    },
+    "stopLoss": {
+      "price": 358.13,
+      "stopType": "SUPPORT_BREAK",
+      "description": "Set stop-loss below recent support to limit downside risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 393.76,
+        "reason": "First resistance level; potential profit-taking point."
+      },
+      {
+        "label": "T2",
+        "price": 408.57,
+        "reason": "Second resistance level; further profit-taking point."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No third target defined due to lack of data."
+      }
+    ],
+    "exitRules": [
+      "Take profit at resistance levels",
+      "Adjust stop-loss to breakeven once T1 is reached"
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 374.72,
+    "riskPerShare": 16.59,
+    "rewardToTarget1": 19.04,
+    "rewardToTarget2": 33.85,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": "1.15",
+    "riskRewardToTarget2": "2.04",
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "ACCEPTABLE",
+    "positionSizingNote": "Position size should be adjusted to maintain risk within acceptable limits, considering the user's risk tolerance."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 358.13,
+      "high": 369.22,
+      "description": "Short-term pullback entry zone."
+    },
+    "stopLoss": {
+      "price": 358.13,
+      "description": "Stop-loss set below support to protect against downside."
+    },
+    "targets": [
+      {
+        "price": 393.76,
+        "label": "T1"
+      },
+      {
+        "price": 408.57,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit at resistance levels or if stop-loss is hit"
+    ],
+    "tradeQuality": "B"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 358.13,
+      "high": 369.22,
+      "description": "Swing trade entry zone on pullback."
+    },
+    "stopLoss": {
+      "price": 358.13,
+      "description": "Swing trade stop-loss below support."
+    },
+    "targets": [
+      {
+        "price": 393.76,
+        "label": "T1"
+      },
+      {
+        "price": 408.57,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 331.46,
+      "high": 346.37,
+      "description": "Longer-term accumulation zone for swing traders."
+    },
+    "riskReward": "2.04",
+    "swingVerdict": "WAIT"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BULLISH",
+    "swingSetup": {
+      "setup": "CONTINUATION",
+      "analysis": "The stock is in a continuation pattern, with potential for further gains if resistance is broken."
+    },
+    "entryTiming": {
+      "trigger": "WAIT_FOR_PULLBACK",
+      "analysis": "Entry timing is optimal on a pullback to support levels."
+    },
+    "supportLevels": [
+      {
+        "price": 358.13,
+        "tests": 3
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 393.76,
+        "tests": 2
+      }
+    ],
+    "suggestedEntryPrice": 369.22,
+    "suggestedExitPrice": 393.76,
+    "stopLossPrice": 358.13,
+    "riskMetrics": {
+      "atr": 10.66,
+      "atrAnalysis": "ATR indicates moderate volatility, suitable for tactical trading.",
+      "vwap": 371.14,
+      "vwapAnalysis": "Price is above VWAP, supporting bullish bias.",
+      "volumeAnalysis": "Volume is fading, suggesting caution near resistance.",
+      "supportResistanceAnalysis": "Strong support at 358.13, resistance at 393.76."
+    },
+    "catalysts": {
+      "news": "Positive news sentiment supports bullish outlook.",
+      "earnings": "No immediate earnings risk.",
+      "secFilings": "No significant SEC filings impacting the stock."
+    },
+    "shortFilter": {
+      "borrowFee": "Low",
+      "shortInterest": "Moderate",
+      "ssrStatus": "Inactive",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "The stock is in a bullish continuation pattern, but caution is advised near resistance levels. A pullback entry offers a better risk/reward profile.",
+    "dailyTrend": {
+      "trend": "MIXED",
+      "barCount": 252,
+      "analysis": "Alphabet Inc.'s stock is currently in a mixed trend. The price has been rising, supported by technical indicators such as the price being above EMA(20) and EMA(50), and a golden cross indicating a bullish trend. The ADX(14) is very high, suggesting a strong trend, but the MACD is bearish, indicating potential momentum weakness. The RSI(14) is neutral, not indicating overbought or oversold conditions. Despite the price increase, the volume is below average, suggesting a weaker rally. News sentiment is overall positive, but institutional flow indicates distribution, which means large investors might be selling. This mixed picture suggests that while the price is moving up, the strength of this move is questionable due to low volume and institutional selling.",
+      "laymanExplanation": "Think of Alphabet's stock like a car that looks shiny and fast on the outside, but its engine might not be as strong as it seems. The stock price is going up, which is good, but it's not backed by a lot of trading activity, and big investors might be selling. This means the rise might not be as solid as it looks. It's like the car is speeding up a hill, but with a light foot on the gas pedal. Keep an eye on it to see if more people start buying or if it starts to slow down.",
+      "ticker": "GOOGL",
+      "companyName": "Alphabet Inc.",
+      "confidenceScore": 70,
+      "trendSummary": "The stock shows a mixed trend with bullish price action but conflicting volume and momentum signals.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Mixed",
+          "evidence": "Price above EMA(20) and EMA(50), golden cross, but MACD is bearish and volume is below average."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Positive",
+          "evidence": "Overall positive news sentiment with articles highlighting market interest in AI and tech stocks."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Negative",
+          "evidence": "Institutional flow indicates distribution with below-average volume."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "Price increased by 1.48% today, closing above EMA(20) and EMA(50).",
+        "movingAverageView": "Price is above EMA(20) and EMA(50), indicating a bullish trend.",
+        "momentumView": "MACD is bearish, suggesting weak momentum despite price rise.",
+        "volumeView": "Volume is below average, indicating a lack of strong buying interest.",
+        "supportResistanceView": "Price is above VWAP, suggesting short-term support.",
+        "volatilityView": "ATR(14) indicates moderate volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data impacting the current trend.",
+        "newsImpact": "Positive news sentiment, but no major news driving the trend.",
+        "institutionalFlowImpact": "Institutional distribution suggests selling pressure.",
+        "sectorMacroImpact": "Positive sentiment in the tech sector, especially around AI."
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Low volume suggests weak buying interest.",
+          "Institutional distribution indicates potential selling pressure."
+        ],
+        "whatNeedsConfirmation": "Confirmation of trend strength through increased volume or positive institutional flow."
+      },
+      "watchStatus": "Needs confirmation",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BULLISH",
+    "investmentQuality": "STRONG",
+    "fairValueRange": {
+      "low": 350,
+      "high": 400,
+      "method": "Peer comparison and historical valuation"
+    },
+    "bullCase": "Continued revenue growth and market leadership in digital advertising.",
+    "baseCase": "Stable growth with potential for moderate price appreciation.",
+    "bearCase": "Increased competition and regulatory challenges could impact growth.",
+    "longTermVerdict": "ACCUMULATE"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 85,
+    "rating": "STRONG",
+    "revenueTrend": "Consistent revenue growth with strong market position.",
+    "epsTrend": "Positive EPS trend with robust profitability.",
+    "profitability": "High margins and efficient operations.",
+    "debtRisk": "Low debt levels with manageable risk.",
+    "cashFlowQuality": "Strong cash flow generation.",
+    "valuationCommentary": "Valuation is high but justified by growth prospects."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "FAIRLY_VALUED",
+    "valuationScore": 70,
+    "peerComparisonAvailable": true,
+    "fairValueRange": {
+      "low": 350,
+      "high": 400
+    },
+    "marginOfSafetyBuyZone": {
+      "low": 330,
+      "high": 350
+    },
+    "commentary": "Valuation is in line with industry peers, supported by strong fundamentals."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 75,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Strong market position",
+      "Positive news sentiment"
+    ],
+    "keyRisksFromNews": [
+      "Potential regulatory challenges"
+    ],
+    "earningsRisk": "Low",
+    "catalystVerdict": "SUPPORTIVE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 40,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests distribution with below-average volume, but the overall trend remains bullish.",
+    "signals": [
+      "Below-average volume",
+      "OBV trend bullish",
+      "Price rising with declining volume"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "MEDIUM",
+    "probabilityScore": 60,
+    "reason": "Strong fundamentals and market position, but high valuation limits upside.",
+    "requiredConditions": [
+      "Sustained revenue growth",
+      "Market expansion"
+    ],
+    "majorBlockers": [
+      "Regulatory challenges",
+      "Increased competition"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "MEDIUM",
+    "technicalRisk": "Near resistance with fading volume.",
+    "fundamentalRisk": "Low due to strong fundamentals.",
+    "valuationRisk": "Moderate due to high valuation.",
+    "newsRisk": "Low with positive sentiment.",
+    "liquidityRisk": "Low with high market cap.",
+    "eventRisk": "Low with no immediate earnings risk.",
+    "topRisks": [
+      "Resistance level",
+      "Volume not confirming breakout"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Breakout above resistance with volume",
+      "pricePath": "Potential to reach new highs",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Continued trend with moderate growth",
+      "pricePath": "Gradual appreciation",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Failure to break resistance",
+      "pricePath": "Potential pullback to support",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for pullback to support levels",
+    "Wait for breakout confirmation above resistance",
+    "Adjust position size based on risk tolerance"
+  ],
+  "doNotTradeConditions": [
+    "Entering near resistance without confirmation",
+    "Volume remains below average"
+  ],
+  "alertLevels": {
+    "buyAlert": 369.22,
+    "breakoutAlert": 393.76,
+    "stopLossAlert": 358.13,
+    "target1Alert": 393.76,
+    "target2Alert": 408.57,
+    "riskAlert": 346.37
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Waymo",
+        "ownershipPct": "100%",
+        "performance": "Waymo is a leader in autonomous vehicle technology, with ongoing testing and limited commercial deployments.",
+        "upcomingEvents": [
+          "Expansion of autonomous ride-hailing services",
+          "Potential partnerships with automotive manufacturers"
+        ],
+        "impactPotential": "Successful expansion or partnerships could enhance Alphabet's position in the autonomous vehicle market, potentially boosting GOOGL's stock."
+      },
+      {
+        "name": "Verily",
+        "ownershipPct": "100%",
+        "performance": "Verily focuses on life sciences and healthcare solutions, with various projects in development.",
+        "upcomingEvents": [
+          "New healthcare partnerships",
+          "Product launches in digital health"
+        ],
+        "impactPotential": "Successful product launches or partnerships could diversify Alphabet's revenue streams and positively impact GOOGL's stock."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Intel",
+          "role": "Supplier",
+          "description": "Supplies processors for data centers",
+          "riskExposure": "Disruptions could impact Google's cloud services and data processing capabilities."
+        },
+        {
+          "name": "Samsung",
+          "role": "Supplier",
+          "description": "Provides hardware components for Pixel devices",
+          "riskExposure": "Supply chain issues could affect Pixel production and sales."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Foxconn",
+          "role": "Outsource Partner",
+          "description": "Manufactures Pixel smartphones",
+          "riskExposure": "Manufacturing disruptions could delay product launches and affect sales."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "WPP",
+          "role": "Marketing Partner",
+          "description": "Provides advertising and marketing services",
+          "riskExposure": "Changes in marketing effectiveness could impact Google's ad revenue."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Advertisers",
+          "role": "Customer",
+          "description": "Purchase advertising space on Google's platforms",
+          "riskExposure": "A decline in advertising budgets could significantly impact Google's revenue."
+        },
+        {
+          "name": "Cloud Services Clients",
+          "role": "Customer",
+          "description": "Use Google Cloud for computing and storage solutions",
+          "riskExposure": "Growth or contraction in cloud services demand could affect Google's market share and revenue."
+        }
+      ]
+    },
+    "strategicOutlook": "Alphabet's ecosystem is robust with diverse investments and partnerships, reducing concentration risk. Key externalities to watch include advancements in autonomous vehicles, healthcare technology, and shifts in advertising and cloud service demands, all of which could significantly influence GOOGL's stock performance."
+  },
+  "trendStory": {
+    "ticker": "GOOGL",
+    "analysis_date": "2026-06-16",
+    "price_summary": {
+      "current_price": 374.72,
+      "previous_close": 369.26,
+      "day_change_percent": 1.48,
+      "day_range": {
+        "high": 375.74,
+        "low": 367.075
+      },
+      "volume": 388498,
+      "average_volume": 1062860.05,
+      "relative_volume": 0.3655213120485618
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "GOOGL trades up 1.5% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 0.3655213120485618,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 367.22560000000004,
+        "high": 378.46720000000005
+      },
+      "stop_loss": 355.98400000000004,
+      "target_1": 393.456,
+      "target_2": 412.19200000000006,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 352.2368,
+      "short_stop_loss": 393.456,
+      "short_target_1": 337.24800000000005,
+      "short_target_2": 318.512,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "GOOGL moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "GOOGL",
+    "analysisDate": "2026-06-16T15:15:21.196Z",
+    "currentPrice": 374.72,
+    "correlationName": "Signal Correlation",
+    "finalZone": "YELLOW_ZONE",
+    "correlationScore": 58,
+    "gradientPositionPercent": 58,
+    "gradientLabel": "Orange",
+    "confidenceLevel": "MEDIUM",
+    "oneLineSummary": "GOOGL shows mixed signals with positive price action but weak volume and momentum indicators.",
+    "laymanSummary": "GOOGL's stock is showing some positive signs, like being above key moving averages, but the low trading volume and mixed momentum indicators suggest caution.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 18,
+        "maxScore": 20,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20), EMA(50), and EMA(200), indicating a strong uptrend."
+      },
+      "volumeConfirmation": {
+        "score": 5,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Relative volume is below 1.0, indicating weak volume support for the price move."
+      },
+      "momentumIndicators": {
+        "score": 8,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "RSI(14) is at 53.46, showing balanced momentum, but MACD is bearish."
+      },
+      "movingAverageStructure": {
+        "score": 15,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "Golden cross observed with EMA(50) above EMA(200)."
+      },
+      "vwapPosition": {
+        "score": 10,
+        "maxScore": 10,
+        "status": "POSITIVE",
+        "evidence": "Price is above VWAP, indicating positive intraday sentiment."
+      },
+      "supportResistanceRiskReward": {
+        "score": 2,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is close to resistance at 378.69, limiting upside potential."
+      },
+      "sectorIndexAlignment": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Sector performance is not clearly outperforming the index."
+      },
+      "shortInterestContext": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Short interest data is not provided, limiting analysis."
+      },
+      "newsCatalystConfirmation": {
+        "score": 2,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Overall news sentiment is positive."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow proxy indicates distribution."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Price above EMA(20), EMA(50), and EMA(200)",
+        "Price above VWAP"
+      ],
+      "yellowSignals": [
+        "RSI(14) at 53.46, indicating balanced momentum"
+      ],
+      "redSignals": [
+        "Low relative volume",
+        "MACD bearish",
+        "Institutional flow proxy indicates distribution"
+      ],
+      "strongestPositiveEvidence": "Price is above key moving averages, indicating a strong uptrend.",
+      "strongestNegativeEvidence": "Low relative volume suggests weak support for the price move.",
+      "mixedSignalExplanation": "While the price trend is positive, the low volume and mixed momentum indicators suggest caution."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 364.63,
+      "nearestResistance": 378.69,
+      "distanceToSupportPercent": 2.69,
+      "distanceToResistancePercent": 1.06,
+      "riskRewardView": "UNFAVORABLE",
+      "explanation": "The price is closer to resistance than support, indicating limited upside potential."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "GOOGL is in a YELLOW_ZONE due to mixed signals with strong price action but weak volume and momentum."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Increase in relative volume",
+        "Improvement in MACD"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Stronger volume support",
+        "Clearer positive momentum indicators"
+      ],
+      "forRedZoneWarning": [
+        "Further decline in volume",
+        "Price falling below key moving averages"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 58,
+      "markerText": "Orange",
+      "displaySummaryBelowBar": "GOOGL shows mixed signals with positive price action but weak volume and momentum indicators.",
+      "supportingPointsBelowBar": [
+        "Price above key moving averages",
+        "Low relative volume",
+        "Mixed momentum indicators"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "WAIT_FOR_CONFIRMATION",
+      "summary": "GOOGL is currently in a mixed signal zone. While the price trend is positive, the low volume and mixed momentum indicators suggest waiting for stronger confirmation.",
+      "riskWarning": "The proximity to resistance and low volume pose risks to the current price level.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "GOOGL",
+    "available": true,
+    "price": 374.72,
+    "open": 369.6,
+    "high": 375.74,
+    "low": 367.075,
+    "close": 374.7,
+    "volume": 388498,
+    "vwap": 371.140152,
+    "bid": 374.69,
+    "ask": 374.75,
+    "spread": 0.06,
+    "changePercent": 1.48,
+    "timestamp": "2026-06-16T15:15:18.523978181Z",
+    "raw": {
+      "dailyBar": {
+        "c": 374.7,
+        "h": 375.74,
+        "l": 367.075,
+        "n": 7815,
+        "o": 369.6,
+        "t": "2026-06-16T04:00:00Z",
+        "v": 388498,
+        "vw": 371.140152
+      },
+      "latestQuote": {
+        "ap": 374.75,
+        "as": 80,
+        "ax": "V",
+        "bp": 374.69,
+        "bs": 40,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-16T15:15:18.53445572Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@"
+        ],
+        "i": 7829,
+        "p": 374.72,
+        "s": 40,
+        "t": "2026-06-16T15:15:18.523978181Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 374.7,
+        "h": 374.725,
+        "l": 374.54,
+        "n": 76,
+        "o": 374.67,
+        "t": "2026-06-16T15:14:00Z",
+        "v": 3317,
+        "vw": 374.590477
+      },
+      "prevDailyBar": {
+        "c": 369.22,
+        "h": 372.98,
+        "l": 366.635,
+        "n": 18404,
+        "o": 367.765,
+        "t": "2026-06-15T04:00:00Z",
+        "v": 847700,
+        "vw": 369.936291
+      },
+      "symbol": "GOOGL"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 370.48059535116363,
+      "ema50": 361.88577880242957,
+      "ema200": 305.453421735865,
+      "sma20": 373.97450000000003,
+      "sma50": 365.2384000000001,
+      "sma200": 309.57842500000004,
+      "rsi14": 53.46125655496152,
+      "rsi14Prev": 49.72880984059039,
+      "macdLine": -1.7195878260253608,
+      "macdSignal": -0.024180544732237463,
+      "macdHist": -1.6954072812931233,
+      "bbUpper": 397.7459530266873,
+      "bbMiddle": 373.97450000000003,
+      "bbLower": 350.2030469733128,
+      "bbWidth": 12.71287375298971,
+      "atr14": 10.661582075587663,
+      "obv": 26546620,
+      "relVolume": 0.3655213120485618,
+      "vwap": 372.8342648697726,
+      "adx14": 292.8471824274101,
+      "plusDI": 25.67127907724109,
+      "minusDI": 20.69354775705237,
+      "supportLevels": [
+        331.46,
+        346.37,
+        358.13,
+        382.29
+      ],
+      "resistanceLevels": [
+        342.31,
+        393.76,
+        408.57
+      ],
+      "overallBias": "BULLISH",
+      "signals": [
+        "MACD bearish",
+        "Price above EMA20 > EMA50",
+        "Golden cross (EMA50 > EMA200)",
+        "Price above VWAP",
+        "Strong uptrend (ADX>25, +DI>-DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 4572853043200,
+    "peRatio": 28.58467,
+    "pbRatio": 9.483853,
+    "epsTrailing": 13.11,
+    "epsForward": 14.48061,
+    "revenue": 422498009088,
+    "debtToEquity": 20.026,
+    "dividendYield": 0.0023999999,
+    "beta": 1.237,
+    "week52High": 408.61,
+    "week52Low": 162,
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "description": "Alphabet Inc. offers various products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google Services, Google Cloud, and Other Bets segments. The Google Services segment provides products and services, including ads, Android, Chrome, devices, Gmail, Google Drive, Google Maps, Google Photos, Google Play, Search, and YouTube. It is also involved in the sale of apps and in-app purchases and digital content in Goog"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Alphabet, Lam Research And A Financial Stock On CNBC's 'Final Trades'",
+        "summary": "Rob Sechan, CEO of NewEdge Wealth, picked Lam Research as his final trade while Stephen Weiss recommended Alphabet Inc.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/06/53217546/alphabet-lam-research-and-a-financial-stock-on-cnbcs-final-trades",
+        "publishedAt": "2026-06-16T10:42:07Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Elon Musk Is Now Worth More Than Jeff Bezos, Sergey Brin And Larry Ellison Combined After SPCX Rally",
+        "summary": "Elon Musk&#39;s net worth has surpassed $1 trillion, making him nearly $1 trillion wealthier than Alphabet&#39;s Larry Page.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53217071/elon-musk-nearly-1-trillion-richer-than-the-second-wealthiest-person-in-the-world-following-spcx-rally",
+        "publishedAt": "2026-06-16T10:13:31Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Meta's New AI Search Could Generate $10 Billion A Year\u2014 And Challenge Google's Dominance",
+        "summary": "Meta launches AI Mode in Facebook Search, powered by Muse Spark, adding AI search and editing tools with major revenue potential.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53215944/metas-new-ai-search-could-generate-10-billion-a-year-and-challenge-googles-dominance",
+        "publishedAt": "2026-06-16T08:41:07Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Vinod Khosla Calls Stanford Students' Walkout During Sundar Pichai's Commencement Speech 'Selfish'",
+        "summary": "Vinod Khosla blasts Stanford students for walking out on Sundar Pichai, calling the protest &#34;idiotic&#34; and &#34;selfish&#34; amid AI debate.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53215888/vinod-khosla-calls-stanford-students-walkout-during-sundar-pichais-commencement-speech-selfish",
+        "publishedAt": "2026-06-16T08:27:24Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Michael Burry Makes An Observation As Investors Embrace AI And SpaceX: 'Been Ridiculous For A Very Very Long Time'",
+        "summary": "&#39;Big Short&#39; investor Michael Burry reignited concerns about market excesses with a cryptic X post.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/06/53214910/michael-burry-makes-observation-as-investors-pile-into-ai-and-spacex-been-ridiculous-for-a-very-very-long-time",
+        "publishedAt": "2026-06-16T05:21:34Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Jim Cramer Wonders If Nvidia's Reported $20 Billion Debt Raise Signals An Apple-Style Buyback Strategy Because Stock Is 'Too Cheap'",
+        "summary": "Jim Cramer suggested Nvidia&#39;s reported $20 billion debt raise could be aimed at funding Apple-style stock buybacks.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53214864/jim-cramer-wonders-if-nvidias-reported-20-billion-debt-raise-could-fund-an-apple-style-buyback",
+        "publishedAt": "2026-06-16T05:13:14Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Elon Musk Slams UK Under-16 Social Media Ban, Says Real Goal Is To 'Track Everyone': Censorship Law Is A 'Wolf In Sheep's Clothing'",
+        "summary": "Elon Musk criticized the U.K.&#39;s under-16 social media ban, warning it could enable government surveillance.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53214699/elon-musk-slams-uk-under-16-social-media-ban-calls-it-a-wolf-in-sheeps-clothing",
+        "publishedAt": "2026-06-16T03:56:00Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "The Magnificent 7 Just Got Too Small For The AI Boom \u2014 Meet The FAB 10",
+        "summary": "The Mag 7 may need an upgrade as investors turn their attention to the FAB 10, including frontier AI giants like OpenAI and SpaceX.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53210159/the-magnificent-7-just-got-too-small-for-the-ai-boom-meet-the-fab-10",
+        "publishedAt": "2026-06-15T20:01:04Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "What's Going On With Alphabet Stock Monday?",
+        "summary": "Alphabet (GOOGL) stock jumps 3%+ amid tech rally, peace deal, and a $1.5B Alabama data center expansion. Check the technical outlook.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53207569/whats-going-on-with-alphabet-stock-monday-2",
+        "publishedAt": "2026-06-15T18:37:29Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Roku Is Worth More As A Takeover Target \u2014 Here Are The Companies That Might Buy It",
+        "summary": "Roku gets Buy rating, PT raise by Needham analyst on potential sale. Analyst provides long list of potential buyers.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/price-target/26/06/53204539/roku-is-worth-more-as-a-takeover-target-here-are-the-companies-that-might-want-it",
+        "publishedAt": "2026-06-15T17:07:50Z",
+        "sentiment": "POSITIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 40,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 10,
+      "priceVwapScore": 10,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 6
+    },
+    "signals": [
+      "Below-average volume (0.4x)",
+      "OBV trend bullish",
+      "Price above VWAP",
+      "Price rising with declining volume (weaker rally)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WAIT",
+  "technicalScore": 75,
+  "fundamentalScore": 85,
+  "newsCatalystScore": 75,
+  "institutionalFlowProxyScore": 40,
+  "keyCatalysts": [
+    "Strong market position",
+    "Positive news sentiment"
+  ],
+  "keyRisks": [
+    "Resistance level",
+    "Volume not confirming breakout"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests distribution with below-average volume, but the overall trend remains bullish."
+}

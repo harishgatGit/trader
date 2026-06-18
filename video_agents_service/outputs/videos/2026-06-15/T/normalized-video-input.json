@@ -1,0 +1,28 @@
+{
+  "ticker": "T",
+  "companyName": "T",
+  "reportDate": "Unavailable",
+  "currentPrice": 23.355,
+  "dayChangePct": -0.83,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "sector-sympathy",
+  "catalystSummary": "Positive sentiment from recent articles; New product offerings",
+  "volumeSummary": "Below-average volume, indicating lack of buying interest.",
+  "trendSummary": "The stock of AT&T has been experiencing a downward trend, as evidenced by the price consistently moving below key moving averages such as the 20-day, 50-day, and 200-day EMAs. This indicates a lack of bullish momentum. The RSI is below 40, suggesting the stock is not yet oversold but is under pressure. The MACD is slightly positive, but the overall trend remains negative with a death cross present, where the 50-day EMA is below the 200-day EMA. The ADX indicates a strong downtrend, reinforcing the bearish sentiment. Despite some positive news sentiment, the institutional flow shows uncertainty with below-average volume and a bearish OBV trend, suggesting weak buying interest.",
+  "supportLevels": [
+    22.32
+  ],
+  "resistanceLevels": [
+    25.48
+  ],
+  "entryZone": "Low: 22.32, High: 23.85",
+  "stopLoss": "Price: 22.32 (Set stop loss at key support level.)",
+  "targets": [
+    25.48,
+    26.46
+  ],
+  "shortTradeView": "SI%: Data unavailable, Borrow Fee: Data unavailable, Squeeze Risk: LOW",
+  "riskWarnings": "Bearish technical trend; High debt levels",
+  "finalVerdict": "AT&T is currently in a bearish trend with the price below key moving averages and VWAP. The technical indicators suggest a strong downtrend, and the stock is near support levels. The risk/reward profile is not attractive for a buy at this moment. It is advisable to watch for a potential reversal or a confirmed breakout before considering entry.",
+  "executiveSummary": "AT&T's stock is currently trading at $23.355, showing a bearish trend with the price below key moving averages such as EMA20, EMA50, and EMA200. The stock is experiencing a strong downtrend as indicated by the ADX, and the RSI is below 40, suggesting weak momentum. The institutional flow proxy indicates uncertainty with a bearish OBV trend. Given the current technical setup and risk/reward profile, it is not advisable to buy at this moment. Near-term expectations are for continued bearish pressure unless a reversal signal emerges. Long-term, the stock may stabilize if fundamentals improve and technicals confirm a trend change. LAYMAN'S TAKEAWAY: AT&T is not a buy right now due to its bearish trend and weak momentum. Keep an eye on it for potential reversal signals or a breakout before considering an entry."
+}

@@ -1,0 +1,28 @@
+{
+  "ticker": "LLY",
+  "companyName": "LLY",
+  "reportDate": "Unavailable",
+  "currentPrice": 1112.1,
+  "dayChangePct": -0.92,
+  "overallSignal": "WAIT",
+  "whyStockMoved": "unknown-mixed",
+  "catalystSummary": "Potential label expansion for leukemia drug",
+  "volumeSummary": "Volume is below average, indicating lack of strong buying interest.",
+  "trendSummary": "Eli Lilly's stock is currently in a mixed trend. The long-term indicators such as the price being above the EMA(20), EMA(50), and EMA(200), along with a golden cross (EMA(50) > EMA(200)), suggest a bullish outlook. The ADX(14) indicates a strong uptrend, and the RSI(14) is at 57.29, which is neutral but leaning towards bullish. However, short-term indicators, particularly on the 1-hour and 15-minute charts, show bearish signals with the price below EMA(20) and EMA(50), and MACD bearish. The recent negative news sentiment, including concerns over drug program impacts and label expansion issues, adds to the uncertainty. Institutional flow indicates distribution with a bearish OBV trend, suggesting potential selling pressure. Despite the positive long-term technicals, the short-term bearish signals and negative news sentiment create a mixed outlook.",
+  "supportLevels": [
+    850.64
+  ],
+  "resistanceLevels": [
+    1148.43
+  ],
+  "entryZone": "Low: 850.64, High: 944.23",
+  "stopLoss": "Price: 1052.54 (Stop loss set below key support to protect capital.)",
+  "targets": [
+    1148.43,
+    1181.62
+  ],
+  "shortTradeView": "SI%: Data unavailable, Borrow Fee: Data unavailable, Squeeze Risk: LOW",
+  "riskWarnings": "Valuation concerns; Negative news sentiment",
+  "finalVerdict": "The stock is currently in a bullish trend on the daily chart, but short-term timeframes indicate bearish momentum. The price is near resistance levels, and the risk/reward ratio is not sufficiently attractive for a buy decision. Waiting for a clearer entry signal or a pullback is advised.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently showing a strong upward trend on the daily chart, but short-term signals suggest caution. The price is hovering near resistance levels, and the momentum in shorter timeframes is bearish. It's advisable to wait for a clearer buying opportunity, such as a pullback or confirmed breakout, before making a move. The overall market sentiment around the stock is mixed, with some negative news impacting the outlook. Near-term, expect some volatility as the stock tests resistance levels. Long-term, the company remains fundamentally strong, but current valuation appears stretched."
+}

@@ -91,7 +91,7 @@ const glossaryData: GlossaryItem[] = [
   {
     term: 'Mixed Bias',
     category: 'Biases',
-    definition: 'Short-term indicators (like the 20 EMA) point one way, while long-term indicators (like the 200 EMA) point the opposite way. A period of transition and high volatility.',
+    definition: 'Short-term indicators (like the EMA(20)) point one way, while long-term indicators (like the EMA(200)) point the opposite way. A period of transition and high volatility.',
     analogy: 'A sunny day with occasional heavy rain showers. It is hard to decide whether to go out or stay inside because conditions keep changing hour-by-hour.',
     badgeText: 'Transitioning',
     badgeColorClass: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
@@ -138,13 +138,22 @@ const glossaryData: GlossaryItem[] = [
 
   // ── Volume & Technical Indicators ────────────────────────────────
   {
-    term: 'RSI (Relative Strength Index)',
+    term: 'RSI(14) (Relative Strength Index)',
     category: 'Indicators',
-    definition: 'A momentum gauge that measures the speed and change of price movements on a scale of 0 to 100. It highlights overbought and oversold conditions.',
+    definition: 'A momentum gauge that measures the speed and change of price movements on a scale of 0 to 100 using a 14-day lookback. It highlights overbought and oversold conditions.',
     analogy: 'An engine RPM gauge. If it is in the "red zone" (above 70), you need to ease off the gas (buying). If it is idling extremely low (below 30), it has plenty of room to rev up.',
     badgeText: 'Momentum Gauge',
     badgeColorClass: 'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20',
     hoverBorderClass: 'hover:border-violet-500/50 dark:hover:border-violet-500/40',
+  },
+  {
+    term: 'EMA(20) / EMA(50) (Exponential Moving Average)',
+    category: 'Indicators',
+    definition: 'A moving average that places a greater weight and significance on the most recent data points, reacting faster to price changes than a simple moving average (SMA). We track EMA(20) for short-term and EMA(50) for medium-term trend direction.',
+    analogy: 'A navigation system that recalculates your route immediately when you take a wrong turn, rather than waiting for you to drive a mile down the road.',
+    badgeText: 'Moving Average',
+    badgeColorClass: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20',
+    hoverBorderClass: 'hover:border-indigo-500/50 dark:hover:border-indigo-500/40',
   },
   {
     term: 'MACD',
@@ -311,7 +320,7 @@ const Glossary: React.FC = () => {
 
               {/* Layman's Analogy section */}
               <div className="pt-3 border-t border-slate-850/60 bg-slate-950/5 dark:bg-slate-950/20 rounded-xl p-3 mt-4">
-                <h4 className="text-[10px] font-bold uppercase tracking-wider text-brand-500 dark:text-brand-400 mb-1 flex items-center gap-1.5">
+                <h4 className="text-[10px] font-bold  tracking-wider text-brand-500 dark:text-brand-400 mb-1 flex items-center gap-1.5">
                   <HelpCircle className="w-3.5 h-3.5" /> Everyday Analogy
                 </h4>
                 <p className="text-[11px] italic text-slate-350 leading-relaxed">

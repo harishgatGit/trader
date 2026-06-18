@@ -1,0 +1,28 @@
+{
+  "ticker": "TSLA",
+  "companyName": "TSLA",
+  "reportDate": "Unavailable",
+  "currentPrice": 410.25,
+  "dayChangePct": 1.15,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "news-driven",
+  "catalystSummary": "Positive sentiment from recent news articles.",
+  "volumeSummary": "Volume is below average, indicating lack of strong buying interest.",
+  "trendSummary": "Tesla's stock trend is currently mixed due to conflicting signals. The price is above the EMA(20) and EMA(50), showing some bullish tendencies. However, the MACD is bearish, and the ADX indicates a strong downtrend, suggesting underlying bearish momentum. The news sentiment is positive, with headlines highlighting optimism around Elon Musk's activities and broader market enthusiasm. Despite this, institutional flow shows distribution, with below-average volume and a rising price, indicating a weaker rally. The RSI(14) is neutral at 50.59, showing no extreme momentum. Overall, the mixed signals from technical indicators and institutional activity create uncertainty in the trend.",
+  "supportLevels": [
+    337.27
+  ],
+  "resistanceLevels": [
+    409.28
+  ],
+  "entryZone": "Low: 337.27, High: 364.04",
+  "stopLoss": "Price: 380.16 (Stop-loss below key support level.)",
+  "targets": [
+    445.56,
+    453.39
+  ],
+  "shortTradeView": "SI%: Data unavailable, Borrow Fee: Data unavailable, Squeeze Risk: Data unavailable",
+  "riskWarnings": "High valuation; Near resistance levels",
+  "finalVerdict": "TSLA is currently in a mixed technical setup with conflicting signals. While the 4-hour and 1-hour charts show bullish momentum, the daily chart indicates potential distribution. The stock is near resistance levels, and the risk/reward ratio is not clearly favorable. It is advisable to watch for a clearer entry signal or confirmation of a breakout before considering a buy.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: TSLA is currently showing mixed signals. The stock has been fluctuating with some bullish momentum on shorter timeframes, but the overall trend on the daily chart suggests caution. The price is near resistance levels, making it a risky buy at this moment. It's best to wait for a clearer signal or a pullback to more favorable levels before considering a purchase. In the near term, expect some volatility as the stock tests key resistance levels. Long-term, the stock's fundamentals and sector position remain strong, but current valuation is high."
+}

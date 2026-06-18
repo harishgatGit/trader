@@ -18,11 +18,6 @@ export default defineConfig({
       'www.investingatti.com',
       '.trycloudflare.com'
     ],
-    hmr: {
-      protocol: 'ws',
-      host: 'localhost',
-      port: 5173,
-    },
     proxy: {
       '/api': {
         target: process.env.VITE_API_URL || 'http://localhost:3000',

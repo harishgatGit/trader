@@ -50,7 +50,7 @@ const Education: React.FC = () => {
           <div className="bg-slate-950/5 dark:bg-slate-950/40 p-4 rounded-xl border border-slate-800 space-y-2">
             <div className="flex items-center gap-2">
               <span className="w-6 h-6 rounded-full bg-brand-500/10 text-brand-500 dark:text-brand-400 border border-brand-500/20 flex items-center justify-center text-xs font-bold font-mono">01</span>
-              <h4 className="text-xs font-bold text-slate-100 uppercase tracking-wider">Multi-Source Gathering</h4>
+              <h4 className="text-xs font-bold text-slate-100  tracking-wider">Multi-Source Gathering</h4>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed font-sans">
               We query Alpaca for live market prices, daily candles, and volume averages. Simultaneously, we fetch corporate financials and scan media publications for recent headlines.
@@ -60,17 +60,17 @@ const Education: React.FC = () => {
           <div className="bg-slate-950/5 dark:bg-slate-950/40 p-4 rounded-xl border border-slate-800 space-y-2">
             <div className="flex items-center gap-2">
               <span className="w-6 h-6 rounded-full bg-indigo-500/10 text-indigo-500 dark:text-indigo-400 border border-indigo-500/20 flex items-center justify-center text-xs font-bold font-mono">02</span>
-              <h4 className="text-xs font-bold text-slate-100 uppercase tracking-wider">Technical & Trend Math</h4>
+              <h4 className="text-xs font-bold text-slate-100  tracking-wider">Technical & Trend Math</h4>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed font-sans">
-              We run technical scripts to compute RSI momentum, search for EMA support grids, evaluate test counts of historical floor/ceiling levels, and calculate average true range (ATR) volatility.
+              We run technical scripts to compute RSI(14) momentum, search for EMA(20) and EMA(50) support grids, evaluate test counts of historical floor/ceiling levels, and calculate average true range (ATR) volatility.
             </p>
           </div>
 
           <div className="bg-slate-950/5 dark:bg-slate-950/40 p-4 rounded-xl border border-slate-800 space-y-2">
             <div className="flex items-center gap-2">
               <span className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-505 dark:text-emerald-400 border border-emerald-500/20 flex items-center justify-center text-xs font-bold font-mono">03</span>
-              <h4 className="text-xs font-bold text-slate-100 uppercase tracking-wider">AI Report Synthesis</h4>
+              <h4 className="text-xs font-bold text-slate-100  tracking-wider">AI Report Synthesis</h4>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed font-sans">
               Our advanced AI Analyst model reads the consolidated quantitative data, detects the Wyckoff market cycle phase (Accumulation, Markup, etc.), and generates a clear layman story, entry zones, exit targets, and a final rating.
@@ -82,7 +82,7 @@ const Education: React.FC = () => {
       {/* Section 2: Buy & Sell Cheat Sheet */}
       <div className="space-y-4">
         <div className="border-l-4 border-brand-500 pl-3">
-          <h3 className="text-base sm:text-lg font-bold text-slate-100 uppercase tracking-tight">2. The Trader's Action Plan: When to Buy & When to Sell</h3>
+          <h3 className="text-base sm:text-lg font-bold text-slate-100  tracking-tight">2. The Trader's Action Plan: When to Buy & When to Sell</h3>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">Your practical cheat sheet guide to translating technical signals into action.</p>
         </div>
 
@@ -91,7 +91,7 @@ const Education: React.FC = () => {
           <div className="card border-emerald-500/20 dark:border-emerald-500/30 hover:shadow-lg transition-all p-5 space-y-4">
             <h4 className="text-base font-bold text-slate-100 flex items-center gap-2 border-b border-slate-800 pb-3">
               <TrendingUp className="w-5 h-5 text-emerald-500 dark:text-emerald-400" />
-              <span className="px-2.5 py-0.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-xs tracking-wider uppercase font-bold">When to BUY</span>
+              <span className="px-2.5 py-0.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-xs tracking-wider  font-bold">When to BUY</span>
             </h4>
             
             <p className="text-xs text-slate-450 leading-relaxed font-sans">
@@ -122,9 +122,9 @@ const Education: React.FC = () => {
               <div className="flex gap-3">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 dark:text-emerald-400 shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
-                  <span className="text-xs font-bold text-slate-100 block">RSI is Oversold (Below 30)</span>
+                  <span className="text-xs font-bold text-slate-100 block">RSI(14) is Oversold (Below 30)</span>
                   <p className="text-[11px] text-slate-450 font-sans leading-relaxed">
-                    An RSI below 30 signals the stock has been sold aggressively and is undervalued. This indicates high probability of a quick, upward correction bounce.
+                    An RSI(14) below 30 signals the stock has been sold aggressively and is undervalued. This indicates high probability of a quick, upward correction bounce.
                   </p>
                 </div>
               </div>
@@ -134,7 +134,7 @@ const Education: React.FC = () => {
                 <div className="space-y-0.5">
                   <span className="text-xs font-bold text-slate-100 block">Markup Phase Consolidation (Stage 2)</span>
                   <p className="text-[11px] text-slate-450 font-sans leading-relaxed">
-                    If the Wyckoff phase is marked as MARKUP, the stock is in a confirmed uptrend. Buy minor pullbacks that find support at short-term EMAs (EMA 20 or 50).
+                    If the Wyckoff phase is marked as MARKUP, the stock is in a confirmed uptrend. Buy minor pullbacks that find support at short-term EMA lines (EMA(20) or EMA(50)).
                   </p>
                 </div>
               </div>
@@ -145,7 +145,7 @@ const Education: React.FC = () => {
           <div className="card border-red-500/20 dark:border-red-500/30 hover:shadow-lg transition-all p-5 space-y-4">
             <h4 className="text-base font-bold text-slate-100 flex items-center gap-2 border-b border-slate-800 pb-3">
               <TrendingDown className="w-5 h-5 text-red-500 dark:text-red-400" />
-              <span className="px-2.5 py-0.5 rounded-lg bg-red-500/10 text-red-655 dark:text-red-400 border border-red-500/20 text-xs tracking-wider uppercase font-bold">When to SELL</span>
+              <span className="px-2.5 py-0.5 rounded-lg bg-red-500/10 text-red-655 dark:text-red-400 border border-red-500/20 text-xs tracking-wider  font-bold">When to SELL</span>
             </h4>
             
             <p className="text-xs text-slate-450 leading-relaxed font-sans">
@@ -176,9 +176,9 @@ const Education: React.FC = () => {
               <div className="flex gap-3">
                 <CheckCircle2 className="w-4 h-4 text-red-500 dark:text-red-400 shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
-                  <span className="text-xs font-bold text-slate-100 block">RSI is Overbought (Above 70)</span>
+                  <span className="text-xs font-bold text-slate-100 block">RSI(14) is Overbought (Above 70)</span>
                   <p className="text-[11px] text-slate-450 font-sans leading-relaxed">
-                    An RSI above 70 means the stock is historically overextended and buying has redlined. Pullovers are common here as early buyers exit. Avoid starting new buy orders.
+                    An RSI(14) above 70 means the stock is historically overextended and buying has redlined. Pullovers are common here as early buyers exit. Avoid starting new buy orders.
                   </p>
                 </div>
               </div>
@@ -208,35 +208,35 @@ const Education: React.FC = () => {
           {/* RSI Analogy */}
           <div className="bg-slate-950/5 dark:bg-slate-950/40 p-4 rounded-xl border border-slate-800 space-y-3 flex flex-col justify-between">
             <div className="space-y-2">
-              <span className="px-2 py-0.5 rounded bg-brand-500/10 text-brand-500 dark:text-brand-400 border border-brand-500/25 text-[10px] font-bold uppercase tracking-wide">RSI Momentum</span>
+              <span className="px-2 py-0.5 rounded bg-brand-500/10 text-brand-500 dark:text-brand-400 border border-brand-500/25 text-[10px] font-bold  tracking-wide">RSI(14) Momentum</span>
               <p className="text-xs text-slate-350 font-sans leading-relaxed">
-                RSI measures momentum speed on a scale of 0 to 100.
+                RSI(14) measures momentum speed on a scale of 0 to 100.
               </p>
             </div>
             <div className="bg-slate-900/10 dark:bg-slate-900/50 p-3 rounded-lg border border-slate-800 text-[11px] text-slate-450 leading-relaxed font-sans italic">
               <strong className="text-slate-300 dark:text-slate-200 font-bold not-italic block mb-0.5">Everyday Analogy:</strong>
-              Think of it like a rubber band. Stretch it too far to the right (RSI &gt; 70) and it will snap back. Pull it too far left (RSI &lt; 30) and it recoils.
+              Think of it like a rubber band. Stretch it too far to the right (RSI(14) &gt; 70) and it will snap back. Pull it too far left (RSI(14) &lt; 30) and it recoils.
             </div>
           </div>
 
           {/* EMA Analogy */}
           <div className="bg-slate-950/5 dark:bg-slate-950/40 p-4 rounded-xl border border-slate-800 space-y-3 flex flex-col justify-between">
             <div className="space-y-2">
-              <span className="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-550 dark:text-indigo-400 border border-indigo-500/25 text-[10px] font-bold uppercase tracking-wide">Exponential Moving Average</span>
+              <span className="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-550 dark:text-indigo-400 border border-indigo-500/25 text-[10px] font-bold  tracking-wide">Exponential Moving Average (EMA)</span>
               <p className="text-xs text-slate-350 font-sans leading-relaxed">
-                EMA smooths prices to trace short and long-term directions.
+                EMA(20) and EMA(50) smooth prices to trace short and long-term directions.
               </p>
             </div>
             <div className="bg-slate-900/10 dark:bg-slate-900/50 p-3 rounded-lg border border-slate-800 text-[11px] text-slate-450 leading-relaxed font-sans italic">
               <strong className="text-slate-300 dark:text-slate-200 font-bold not-italic block mb-0.5">Everyday Analogy:</strong>
-              Think of EMA 200 as a giant magnet. Prices pull away from it during booms, but historically return to it. A stock trading above it is in clear health.
+              Think of EMA(200) as a giant magnet. Prices pull away from it during booms, but historically return to it. A stock trading above it is in clear health.
             </div>
           </div>
 
           {/* Volume Analogy */}
           <div className="bg-slate-950/5 dark:bg-slate-950/40 p-4 rounded-xl border border-slate-800 space-y-3 flex flex-col justify-between">
             <div className="space-y-2">
-              <span className="px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-450 border border-amber-500/25 text-[10px] font-bold uppercase tracking-wide">Volume Sentiment</span>
+              <span className="px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-450 border border-amber-500/25 text-[10px] font-bold  tracking-wide">Volume Sentiment</span>
               <p className="text-xs text-slate-350 font-sans leading-relaxed">
                 Volume shows the total share quantities traded per day.
               </p>
@@ -283,7 +283,7 @@ const Education: React.FC = () => {
           {[
             { text: "Evaluate the AI Rating and decision metrics (BUY, HOLD, WATCHLIST, SELL, AVOID).", tip: "Read the layman explanation first to understand the context of the move." },
             { text: "Check that the current price is within or near the suggested Entry Zone.", tip: "Do not chase stocks that have run up far past the entry limits." },
-            { text: "Verify that RSI is not redlining (keep it below 70 for buying).", tip: "Overbought RSI triggers pullbacks." },
+            { text: "Verify that RSI(14) is not redlining (keep it below 70 for buying).", tip: "Overbought RSI(14) triggers pullbacks." },
             { text: "Make sure volume trend is growing or stable (never buy on fading fuel).", tip: "Check that volume validates momentum." },
             { text: "Pre-set your automatic stop-loss price in your brokerage dashboard.", tip: "Plan your exits before you enter." },
             { text: "Verify that your position size conforms to your risk settings (maximum 5%).", tip: "Ensure long-term portfolio stability." }

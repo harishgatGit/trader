@@ -1,0 +1,950 @@
+{
+  "symbol": "AMZN",
+  "analysisDateTime": "2026-06-16T07:01:31.689Z",
+  "currentPrice": 246.1,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All required data fields are available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "TRADE",
+    "confidenceScore": 60,
+    "decisionSummary": "Amazon's stock is currently in a mixed technical position with a bearish daily trend but bullish signals on the 4-hour chart. The stock is near resistance levels, and the risk/reward ratio is not clearly favorable. It is advisable to watch for a clearer entry point or confirmation of a breakout before considering a buy.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is near resistance and the daily trend is bearish, suggesting potential downside risk.",
+    "bestActionNow": "Monitor for a breakout above resistance or a pullback to a more favorable entry point."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: Amazon's stock is currently not in an ideal position to buy. The daily trend shows a downward bias, and the stock is close to resistance levels, which could limit upside potential. It's better to wait for a clearer signal or a pullback to a more attractive entry point. The stock has shown mixed signals across different timeframes, with some bullish signs on shorter timeframes but overall bearish on the daily chart. Volume trends do not strongly support a bullish move, and the stock is near resistance, suggesting caution. In the near term, the stock might face resistance, and it's advisable to watch for a breakout or a pullback for a better entry.",
+  "technicalAnalysis": {
+    "overallBias": "MIXED",
+    "trendStage": "SIDEWAYS",
+    "setupType": "NO_SETUP",
+    "technicalScore": 50,
+    "keySignals": [
+      "MACD bearish on daily",
+      "Bullish signals on 4-hour chart"
+    ],
+    "supportLevels": [
+      245.78,
+      247.72
+    ],
+    "resistanceLevels": [
+      256.18,
+      274.68
+    ],
+    "vwapAnalysis": "Price below VWAP on daily, indicating potential weakness.",
+    "movingAverageAnalysis": "Mixed signals with price below EMA20 and EMA50 on daily, but above on 4-hour.",
+    "rsiAnalysis": "RSI near neutral, not indicating overbought or oversold conditions.",
+    "macdAnalysis": "Bearish MACD on daily, indicating downward momentum.",
+    "volumeAnalysis": "Volume is below average, not confirming a strong move.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR suggests moderate volatility.",
+    "adxTrendStrengthAnalysis": "Strong ADX on daily indicates a strong trend, but it's bearish.",
+    "bollingerBandAnalysis": "Price near lower Bollinger Band on daily, indicating potential support."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current conditions do not support an immediate buy."
+    },
+    "pullbackEntryZone": {
+      "low": 240,
+      "high": 245,
+      "description": "Consider buying if the price pulls back to this range and shows support."
+    },
+    "breakoutEntryLevel": {
+      "price": 256.18,
+      "confirmationRule": "Wait for a daily close above this level with volume confirmation."
+    },
+    "accumulationZone": {
+      "low": 230,
+      "high": 240,
+      "description": "Potential accumulation zone if price stabilizes."
+    },
+    "invalidationLevel": {
+      "price": 230,
+      "reason": "A break below this level would invalidate the bullish setup."
+    },
+    "stopLoss": {
+      "price": 240,
+      "stopType": "TECHNICAL",
+      "description": "Set stop-loss below recent support to manage risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 256.18,
+        "reason": "First target at resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 274.68,
+        "reason": "Second target at higher resistance."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No third target defined."
+      }
+    ],
+    "exitRules": [
+      "Exit if price closes below 230."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 246.1,
+    "riskPerShare": 6.1,
+    "rewardToTarget1": 10.08,
+    "rewardToTarget2": 28.58,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": "1.65",
+    "riskRewardToTarget2": "4.68",
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "ACCEPTABLE",
+    "positionSizingNote": "Consider smaller position size due to mixed technical signals."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "NEUTRAL",
+    "entryZone": {
+      "low": 240,
+      "high": 245,
+      "description": "Watch for entry in this zone if support holds."
+    },
+    "stopLoss": {
+      "price": 240,
+      "description": "Stop-loss set below recent support."
+    },
+    "targets": [
+      {
+        "price": 256.18,
+        "label": "T1"
+      },
+      {
+        "price": 274.68,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price closes below 230."
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "MIXED",
+    "entryZone": {
+      "low": 240,
+      "high": 245,
+      "description": "Potential entry zone if price stabilizes."
+    },
+    "stopLoss": {
+      "price": 230,
+      "description": "Stop-loss set below key support level."
+    },
+    "targets": [
+      {
+        "price": 256.18,
+        "label": "T1"
+      },
+      {
+        "price": 274.68,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 230,
+      "high": 240,
+      "description": "Consider accumulating if price stabilizes in this range."
+    },
+    "riskReward": "ACCEPTABLE",
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "MIXED",
+    "swingSetup": {
+      "setup": "Mixed signals",
+      "analysis": "The 4-hour chart shows bullish signals, but the daily chart remains bearish."
+    },
+    "entryTiming": {
+      "trigger": "Wait for breakout confirmation",
+      "analysis": "Monitor for a breakout above 256.18 with volume confirmation."
+    },
+    "supportLevels": [
+      {
+        "price": 245.78,
+        "tests": 2
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 256.18,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 240,
+    "riskMetrics": {
+      "atr": 7.5,
+      "atrAnalysis": "Moderate volatility as indicated by ATR.",
+      "vwap": 246.28,
+      "vwapAnalysis": "Price below VWAP suggests potential weakness.",
+      "volumeAnalysis": "Volume is below average, not confirming a strong move.",
+      "supportResistanceAnalysis": "Price is near resistance, suggesting caution."
+    },
+    "catalysts": {
+      "news": "Positive sentiment from recent news.",
+      "earnings": "Not provided",
+      "secFilings": "Not provided"
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "MEDIUM"
+    },
+    "horizonDetails": "The stock is showing mixed signals with potential resistance at 256.18. Watch for a breakout or pullback for a clearer entry.",
+    "dailyTrend": {
+      "trend": "MIXED",
+      "barCount": 252,
+      "analysis": "Amazon's stock is currently experiencing a mixed trend. On the daily chart, the overall bias is bearish, indicated by a MACD bearish signal and the price being below the VWAP. The ADX suggests a strong downtrend, and the RSI(14) is at 43.29, which is not in the oversold territory but indicates weak momentum. However, the 4-hour chart shows bullish signals, with the price above both the EMA(20) and EMA(50), and a strong uptrend according to the ADX. This conflict between the daily and shorter timeframes creates a mixed outlook.\n\nThe recent price action shows a slight recovery with a 3.16% increase, but it is accompanied by below-average volume, suggesting a weaker rally. The news sentiment is generally positive, which might have contributed to the recent price increase. However, the institutional flow remains uncertain, with signals of a bearish OBV trend and price rising with declining volume.\n\nOverall, the mixed signals from different timeframes and the uncertain institutional flow suggest that the stock's direction is not clearly defined, and further confirmation is needed to establish a clear trend.",
+      "laymanExplanation": "Think of Amazon's stock like a car trying to decide whether to go uphill or downhill. On the daily chart, it looks like it's facing a downhill slope, but on shorter timeframes, it seems to be climbing uphill. The car (stock) is moving, but it's not clear which direction it will ultimately take. The news is like a gentle push uphill, but the engine (volume) isn't revving hard enough to make a strong climb. We need to see more consistent signals to know for sure which way it's going.",
+      "ticker": "AMZN",
+      "companyName": "Amazon.com, Inc.",
+      "confidenceScore": 70,
+      "trendSummary": "Amazon's stock shows a mixed trend with conflicting signals across different timeframes. While the daily indicators suggest a bearish outlook, shorter timeframes like the 4-hour chart indicate bullish tendencies.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Mixed",
+          "evidence": "Daily MACD bearish, price below VWAP, but 4-hour chart shows bullish signals with price above EMA(20) and EMA(50)."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Positive",
+          "evidence": "Recent articles have a positive sentiment, potentially supporting the recent price increase."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Uncertain",
+          "evidence": "Below-average volume, bearish OBV trend, and price rising with declining volume."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The price increased by 3.16% but remains below the VWAP, indicating a weaker rally.",
+        "movingAverageView": "Price is below the EMA(20) and EMA(50) on the daily chart, but above them on the 4-hour chart.",
+        "momentumView": "RSI(14) at 43.29 on the daily chart suggests weak momentum.",
+        "volumeView": "Volume is below average, indicating a lack of strong buying interest.",
+        "supportResistanceView": "Price is moving within a range, with no clear breakout above resistance levels.",
+        "volatilityView": "ATR(14) at 7.50 indicates moderate volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data impacting the current trend.",
+        "newsImpact": "Positive news sentiment may have supported the recent price increase.",
+        "institutionalFlowImpact": "Uncertain, with signals of a bearish OBV trend and price rising with declining volume.",
+        "sectorMacroImpact": "No significant sector or macroeconomic impacts noted."
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Conflicting technical signals across timeframes.",
+          "Uncertain institutional flow and volume trends."
+        ],
+        "whatNeedsConfirmation": "A clear trend direction needs confirmation from consistent signals across multiple timeframes and stronger volume support."
+      },
+      "watchStatus": "Needs confirmation",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "MIXED",
+    "investmentQuality": "MODERATE",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "Insufficient data for fair value estimation"
+    },
+    "bullCase": "Continued growth in AWS and retail segments.",
+    "baseCase": "Steady growth with potential market volatility.",
+    "bearCase": "Increased competition and regulatory challenges.",
+    "longTermVerdict": "HOLD"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 75,
+    "rating": "STRONG",
+    "revenueTrend": "Strong revenue growth with a large market cap.",
+    "epsTrend": "Positive EPS trend with forward growth expectations.",
+    "profitability": "High profitability with a strong market position.",
+    "debtRisk": "Moderate debt levels with manageable risk.",
+    "cashFlowQuality": "Strong cash flow from operations.",
+    "valuationCommentary": "Valuation appears high with a PE ratio of 31.66, but justified by growth prospects."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "FAIRLY_VALUED",
+    "valuationScore": 70,
+    "peerComparisonAvailable": true,
+    "fairValueRange": {
+      "low": 240,
+      "high": 260
+    },
+    "marginOfSafetyBuyZone": {
+      "low": 230,
+      "high": 240
+    },
+    "commentary": "The stock is trading within a fair value range considering its growth potential and market position."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 80,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Positive sentiment from recent news articles"
+    ],
+    "keyRisksFromNews": [
+      "Potential market volatility"
+    ],
+    "earningsRisk": "Not provided",
+    "catalystVerdict": "SUPPORTIVE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 50,
+    "interpretation": "NEUTRAL",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates uncertainty with below-average volume and a bearish OBV trend.",
+    "signals": [
+      "Below-average volume",
+      "Bearish OBV trend"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "MEDIUM",
+    "probabilityScore": 60,
+    "reason": "Strong fundamentals and market position, but high valuation limits upside potential.",
+    "requiredConditions": [
+      "Continued growth in AWS and retail segments"
+    ],
+    "majorBlockers": [
+      "High valuation",
+      "Market volatility"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "MEDIUM",
+    "technicalRisk": "Mixed signals with potential resistance",
+    "fundamentalRisk": "Moderate due to strong fundamentals",
+    "valuationRisk": "High valuation may limit upside",
+    "newsRisk": "Positive sentiment but potential volatility",
+    "liquidityRisk": "Low liquidity risk",
+    "eventRisk": "Potential market volatility",
+    "topRisks": [
+      "High valuation",
+      "Mixed technical signals"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Strong growth in AWS and retail segments",
+      "pricePath": "Potential upside to 280",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Steady growth with market fluctuations",
+      "pricePath": "Likely to trade between 240 and 260",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Increased competition and regulatory challenges",
+      "pricePath": "Downside risk to 230",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for a breakout above 256.18 with volume confirmation.",
+    "Consider buying on a pullback to 240-245 if support holds.",
+    "Set stop-loss below 230 to manage risk."
+  ],
+  "doNotTradeConditions": [
+    "Avoid buying if price remains below 256.18 without volume confirmation."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": 256.18,
+    "stopLossAlert": 230,
+    "target1Alert": 256.18,
+    "target2Alert": 274.68,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Rivian Automotive",
+        "ownershipPct": "approximately 20%",
+        "performance": "Rivian has been focused on ramping up production and deliveries of its electric vehicles.",
+        "upcomingEvents": [
+          "Potential IPO",
+          "New vehicle model launch"
+        ],
+        "impactPotential": "A successful IPO or new vehicle launch could increase the value of Amazon's investment, positively impacting its stock. Conversely, production delays or market reception issues could negatively affect Amazon's investment value."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Intel",
+          "role": "Supplier",
+          "description": "Provides processors and other semiconductor components for Amazon Web Services (AWS) and hardware devices.",
+          "riskExposure": "Disruptions in Intel's supply could impact AWS performance and Amazon's hardware product line, affecting revenue."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Foxconn",
+          "role": "Outsource Partner",
+          "description": "Manufactures Amazon's Kindle and other electronic devices.",
+          "riskExposure": "Manufacturing delays or disruptions could impact product availability and sales, affecting revenue."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Google",
+          "role": "Marketing Partner",
+          "description": "Collaborates on advertising and cloud services.",
+          "riskExposure": "Changes in partnership terms or competitive dynamics could impact Amazon's advertising reach and cloud service competitiveness."
+        }
+      ],
+      "customers": [
+        {
+          "name": "AWS Enterprise Clients",
+          "role": "Customer",
+          "description": "Utilize AWS for cloud infrastructure and services.",
+          "riskExposure": "Growth or reduction in enterprise cloud spending directly impacts AWS revenue, a significant portion of Amazon's profitability."
+        }
+      ]
+    },
+    "strategicOutlook": "Amazon's ecosystem is robust, with significant diversification across e-commerce, cloud computing, and investments in emerging technologies like electric vehicles. The company faces concentration risks in its reliance on AWS for profitability and potential supply chain disruptions. Key externalities include technological advancements in cloud computing, regulatory changes, and the competitive landscape in e-commerce and logistics."
+  },
+  "trendStory": {
+    "ticker": "AMZN",
+    "analysis_date": "2026-06-16",
+    "price_summary": {
+      "current_price": 246.1,
+      "previous_close": 238.56,
+      "day_change_percent": 3.16,
+      "day_range": {
+        "high": 247.695,
+        "low": 244.75
+      },
+      "volume": 1867641,
+      "average_volume": 1911998.85,
+      "relative_volume": 0.9768002737030934
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "AMZN trades up 3.2% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 0.9768002737030934,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 241.178,
+        "high": 248.561
+      },
+      "stop_loss": 233.795,
+      "target_1": 258.40500000000003,
+      "target_2": 270.71000000000004,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 231.33399999999997,
+      "short_stop_loss": 258.40500000000003,
+      "short_target_1": 221.49,
+      "short_target_2": 209.185,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "AMZN moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "AMZN",
+    "analysisDate": "2026-06-16",
+    "currentPrice": 246.1,
+    "correlationName": "Signal Correlation",
+    "finalZone": "YELLOW_ZONE",
+    "correlationScore": 48,
+    "gradientPositionPercent": 48,
+    "gradientLabel": "Orange",
+    "confidenceLevel": "MEDIUM",
+    "oneLineSummary": "AMZN shows mixed signals with bearish daily bias but some bullish short-term indicators.",
+    "laymanSummary": "Amazon's stock is currently showing mixed signals. While there are some positive short-term trends, the overall daily trend is bearish. It's a situation where caution is advised, and further confirmation is needed before making decisions.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 8,
+        "maxScore": 20,
+        "status": "MIXED",
+        "evidence": "Price is below EMA(20) and EMA(50) on the daily chart but above EMA(20) on the 4-hour chart."
+      },
+      "volumeConfirmation": {
+        "score": 5,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "Relative volume is slightly below average on the daily chart, but high on the 15-minute chart."
+      },
+      "momentumIndicators": {
+        "score": 6,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "RSI(14) is weak on the daily chart but strong on the 4-hour chart."
+      },
+      "movingAverageStructure": {
+        "score": 7,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "Golden cross on the daily chart but price below key EMAs."
+      },
+      "vwapPosition": {
+        "score": 3,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP on the daily chart."
+      },
+      "supportResistanceRiskReward": {
+        "score": 5,
+        "maxScore": 10,
+        "status": "MIXED",
+        "evidence": "Price is near support at 245.78 but faces resistance at 250.41."
+      },
+      "sectorIndexAlignment": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "POSITIVE",
+        "evidence": "Sector sentiment is positive, aligning with overall market sentiment."
+      },
+      "shortInterestContext": {
+        "score": 2,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Short interest data not provided, but no significant squeeze risk indicated."
+      },
+      "newsCatalystConfirmation": {
+        "score": 2,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Overall positive sentiment from recent news articles."
+      },
+      "institutionalFlowProxy": {
+        "score": 1,
+        "maxScore": 2,
+        "status": "MIXED",
+        "evidence": "Institutional flow proxy is uncertain with below-average volume."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Positive sector sentiment",
+        "Short-term bullish signals on 4-hour chart"
+      ],
+      "yellowSignals": [
+        "Mixed RSI(14) and MACD signals",
+        "Price near support but facing resistance"
+      ],
+      "redSignals": [
+        "Bearish daily trend",
+        "Price below VWAP on daily chart"
+      ],
+      "strongestPositiveEvidence": "Positive sector sentiment and short-term bullish signals on the 4-hour chart.",
+      "strongestNegativeEvidence": "Bearish daily trend with price below VWAP.",
+      "mixedSignalExplanation": "The stock has conflicting signals across different timeframes, with short-term bullishness but a bearish daily trend."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 245.78,
+      "nearestResistance": 250.41,
+      "distanceToSupportPercent": 0.13,
+      "distanceToResistancePercent": 1.75,
+      "riskRewardView": "MIXED",
+      "explanation": "Price is close to support but also near resistance, indicating a tight trading range."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a yellow zone due to mixed signals, suggesting a wait-and-see approach."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Price needs to move above EMA(20) and VWAP on the daily chart",
+        "Stronger volume confirmation"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Improvement in daily trend indicators",
+        "Clear breakout above resistance levels"
+      ],
+      "forRedZoneWarning": [
+        "Further decline below support levels",
+        "Increase in bearish volume"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 48,
+      "markerText": "Current Position: Orange",
+      "displaySummaryBelowBar": "AMZN is in a mixed signal zone, requiring further confirmation.",
+      "supportingPointsBelowBar": [
+        "Mixed technical indicators",
+        "Positive sector sentiment",
+        "Bearish daily trend"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "WAIT_FOR_CONFIRMATION",
+      "summary": "AMZN is currently in a mixed signal zone with a bearish daily trend but some short-term bullish indicators. It's advisable to wait for clearer signals before making any decisions.",
+      "riskWarning": "The stock is showing mixed signals, indicating potential volatility and uncertainty.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "AMZN",
+    "available": true,
+    "price": 246.1,
+    "open": 244.92,
+    "high": 247.695,
+    "low": 244.75,
+    "close": 246.1,
+    "volume": 1867641,
+    "vwap": 246.283182,
+    "bid": 232.59,
+    "ask": 257.55,
+    "spread": 24.96,
+    "changePercent": 3.16,
+    "timestamp": "2026-06-15T19:59:59.802756405Z",
+    "raw": {
+      "dailyBar": {
+        "c": 246.1,
+        "h": 247.695,
+        "l": 244.75,
+        "n": 25576,
+        "o": 244.92,
+        "t": "2026-06-15T04:00:00Z",
+        "v": 1867641,
+        "vw": 246.283182
+      },
+      "latestQuote": {
+        "ap": 257.55,
+        "as": 100,
+        "ax": "V",
+        "bp": 232.59,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-15T20:00:00.003199232Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@"
+        ],
+        "i": 25571,
+        "p": 246.1,
+        "s": 100,
+        "t": "2026-06-15T19:59:59.802756405Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 246.1,
+        "h": 246.17,
+        "l": 245.955,
+        "n": 660,
+        "o": 245.96,
+        "t": "2026-06-15T19:59:00Z",
+        "v": 40158,
+        "vw": 246.019959
+      },
+      "prevDailyBar": {
+        "c": 238.56,
+        "h": 243.16,
+        "l": 233.66,
+        "n": 28791,
+        "o": 243.16,
+        "t": "2026-06-12T04:00:00Z",
+        "v": 2122615,
+        "vw": 236.908846
+      },
+      "symbol": "AMZN"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 252.26671164678996,
+      "ema50": 250.4288945937635,
+      "ema200": 236.9271310403807,
+      "sma20": 256.33925000000005,
+      "sma50": 255.4969,
+      "sma200": 232.58944999999989,
+      "rsi14": 43.289767122547744,
+      "rsi14Prev": 34.74091785026505,
+      "macdLine": -4.753399534086071,
+      "macdSignal": -2.135682666577636,
+      "macdHist": -2.6177168675084355,
+      "bbUpper": 279.4244032970869,
+      "bbMiddle": 256.33925000000005,
+      "bbLower": 233.2540967029132,
+      "bbWidth": 18.011407380716644,
+      "atr14": 7.498401124280401,
+      "obv": 9214839,
+      "relVolume": 0.9768002737030934,
+      "vwap": 255.41151344423258,
+      "adx14": 438.67496438530156,
+      "plusDI": 15.07398366888038,
+      "minusDI": 30.88185183209206,
+      "supportLevels": [
+        255.69
+      ],
+      "resistanceLevels": [
+        256.18,
+        274.68,
+        278.53
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "MACD bearish",
+        "Golden cross (EMA50 > EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 2646464266240,
+    "peRatio": 31.662806,
+    "pbRatio": 5.986908,
+    "epsTrailing": 7.77,
+    "epsForward": 9.85996,
+    "revenue": 742775980032,
+    "debtToEquity": 53.3,
+    "dividendYield": null,
+    "beta": 1.444,
+    "week52High": 278.56,
+    "week52Low": 196,
+    "sector": "Consumer Cyclical",
+    "industry": "Internet Retail",
+    "description": "Amazon.com, Inc. engages in the retail sale of consumer products, advertising, and subscriptions service through online and physical stores in North America and internationally. The company operates through three segments: North America, International, and Amazon Web Services (AWS). It also manufactures and sells electronic devices, including Kindle, fire tablets, fire TVs, echo, ring, blink, and eero; and develops and produces media content. In addition, the company offers programs that enable "
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Elon Musk's Net Worth Exceeds $1.3 Trillion As SpaceX Surpasses Microsoft, Amazon In Market Value",
+        "summary": "SPCX&#39;s rally leads to Elon Musk surpassing $1.3 trillion as record-breaking IPO raises close to $86 billion.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/space/26/06/53215103/elon-musks-net-worth-exceeds-1-3-trillion-as-spacex-surpasses-microsoft-amazon-in-market-value",
+        "publishedAt": "2026-06-16T06:03:45Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Elizabeth Warren Says Your Wages Are Stalled, But Trump's Net Worth Is Up $1.4 Billion: President 'Doesn't Care' About Your Financial Situation",
+        "summary": "Elizabeth Warren says Trump&#39;s net worth rose $1.4 billion this year even as wage growth slowed for many Americans.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/politics/26/06/53214685/elizabeth-warren-says-trumps-net-worth-is-up-1-4-billion-while-workers-wages-remain-stalled",
+        "publishedAt": "2026-06-16T03:50:04Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Cathie Wood Dumps Millions Worth Of Tesla, Palantir, Roku, AMD And More Even As TSLA Stock Pops On SpaceX Merger Buzz",
+        "summary": "Cathie Wood-led\u00a0Ark Invest\u00a0executed significant trades on Monday, selling shares of major tech companies. These trades occurred during a broader market rally driven by geopolitical developments and investor optimism.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53214653/cathie-wood-dumps-millions-worth-of-tesla-palantir-roku-amd-and-more-even-as-tsla-stock-pops-on-spacex-merger-buzz",
+        "publishedAt": "2026-06-16T03:28:43Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Stock Market Euphoric Over New Musk Post And Iran Deal",
+        "summary": "\n\n\n\nEuphoric Stock Market\n\n\n",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/Opinion/26/06/53211089/stock-market-euphoric-over-new-musk-post-and-iran-deal",
+        "publishedAt": "2026-06-15T20:19:00Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "The Magnificent 7 Just Got Too Small For The AI Boom \u2014 Meet The FAB 10",
+        "summary": "The Mag 7 may need an upgrade as investors turn their attention to the FAB 10, including frontier AI giants like OpenAI and SpaceX.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53210159/the-magnificent-7-just-got-too-small-for-the-ai-boom-meet-the-fab-10",
+        "publishedAt": "2026-06-15T20:01:04Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "What Is Going On With Meta Stock On Monday?",
+        "summary": "Meta (META) stock surges 4.47% premarket to $580.50 as a landmark U.S.-Iran peace deal sparks a massive tech rally ahead of its projected $60B earnings print.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53203350/what-is-going-on-with-meta-stock-on-monday-2",
+        "publishedAt": "2026-06-15T16:35:37Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "What's Going On With Amazon Stock Monday?",
+        "summary": "Amazon stock climbs to $246.30 amid falling oil prices and easing geopolitical tensions. Get the full market update here.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53205353/whats-going-on-with-amazon-stock-monday-3",
+        "publishedAt": "2026-06-15T17:30:52Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "10 Consumer Discretionary Stocks Whale Activity In Today's Session",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/options/26/06/53205499/10-consumer-discretionary-stocks-whale-activity-in-todays-session",
+        "publishedAt": "2026-06-15T17:35:37Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Roku Is Worth More As A Takeover Target \u2014 Here Are The Companies That Might Buy It",
+        "summary": "Roku gets Buy rating, PT raise by Needham analyst on potential sale. Analyst provides long list of potential buyers.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/price-target/26/06/53204539/roku-is-worth-more-as-a-takeover-target-here-are-the-companies-that-might-want-it",
+        "publishedAt": "2026-06-15T17:07:50Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Amazon Plans To Invest Several Billion Dollars In Missouri; New Data Center Campus In Montgomery County Will Include Over $7M In Community Contributions From Amazon; Project Is Expected To Reduce Water Use By 100M Gallons Annually Within The Local Watershed; Partnering With Arable Labs To Improve Irrigation Efficiency For Farmers In Northeastern Missouri; Project Expected To Create Over 400 Full-Time Data Center Jobs And Thousands Of Construction Jobs",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53203756/amazon-plans-to-invest-several-billion-dollars-in-missouri-new-data-center-campus-in-montgomery-coun",
+        "publishedAt": "2026-06-15T16:45:49Z",
+        "sentiment": "NEGATIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 21,
+    "interpretation": "UNCERTAIN",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 5,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 0,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 5
+    },
+    "signals": [
+      "Below-average volume (1.0x)",
+      "OBV trend bearish",
+      "Price below VWAP (-3.6%)",
+      "Price rising with declining volume (weaker rally)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 50,
+  "fundamentalScore": 75,
+  "newsCatalystScore": 80,
+  "institutionalFlowProxyScore": 50,
+  "keyCatalysts": [
+    "Positive sentiment from recent news articles"
+  ],
+  "keyRisks": [
+    "High valuation",
+    "Mixed technical signals"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates uncertainty with below-average volume and a bearish OBV trend."
+}

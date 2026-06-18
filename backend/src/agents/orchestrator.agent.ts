@@ -12,6 +12,7 @@ import { TrendStoryAgent } from './trend-story.agent';
 import { SignalCorrelationAgent } from './signal-correlation.agent';
 import { DocumentBuilderAgent } from './document-builder.agent';
 import { VideoJobService } from '../modules/video/video-job.service';
+import { getNYDateString } from '../utils/date';
 
 export interface AnalysisProgress {
   step: string;
@@ -279,7 +280,7 @@ export class OrchestratorAgent {
 
       this.logger.log(`Analysis complete for ${symbol} in ${processingTime}ms`);
 
-      const today = new Date().toISOString().split('T')[0];
+      const today = getNYDateString();
 
       // Fire-and-forget to video agent service — backend never blocks or fails here
       this.videoJobService.fireAndForget(
@@ -400,7 +401,7 @@ export class OrchestratorAgent {
         step.message = `Generated fund review for ${report.fundName}`;
       }
 
-      const today = new Date().toISOString().split('T')[0];
+      const today = getNYDateString();
 
       return {
         symbol,

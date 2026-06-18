@@ -1,0 +1,244 @@
+{
+  "ticker": "AMD",
+  "reportDate": "Unavailable",
+  "videoTitle": "AMD Stock Report",
+  "durationSeconds": 165.59,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for AMD. Currently trading at $511.74, this stock is on a strong bullish trajectory, but is it nearing a critical juncture that could impact your investment decisions?\n\nAMD's current price reflects a robust intraday trend, showing significant market interest. With a daily percentage move indicating a strong upward push, investors are keenly watching this stock as it approaches key resistance levels.\n\nThe bullish trend is primarily driven by an analyst upgrade from Citigroup, which has raised its price target. This positive sentiment is further supported by the stock's performance, consistently trading above its crucial moving averages.\n\nThe strength of this trend is bolstered by slightly above-average trading volume, which confirms the market's enthusiasm. Additionally, a golden cross has occurred, with the EMA50 surpassing the EMA200, signaling long-term bullish momentum.\n\nOn the daily trend chart, we can see that AMD is navigating near critical resistance levels, with a clear swing entry zone established between $437.71 and $486.96. This area is key for potential consolidation or breakout scenarios as the stock approaches its limits.\n\nTechnical metrics reveal that the RSI is nearing overbought territory, suggesting caution for new entries. The MACD also indicates bullish momentum, but traders should be aware of potential shifts in momentum as the stock nears resistance.\n\nFor tactical traders, the entry zone is well-defined, with a stop-loss positioned just below key support at $486.96. Target levels to watch include $526.97 and $546.18, providing a roadmap for potential gains.\n\nFrom a short-selling perspective, caution is advised as the stock is currently in an uptrend. The risk of a short squeeze is medium, and traders should monitor breakdown levels closely to manage potential losses.\n\nIn terms of ecosystem insight, the broader technology sector remains positive, which supports AMD's upward movement. However, any shifts in market sentiment could impact the stock's performance.\n\nIn conclusion, AMD remains in a strong uptrend, but with the stock nearing resistance and displaying overbought conditions, vigilance is essential. Key levels to watch include the stop-loss at $486.96, and investors should be prepared for possible pullbacks to optimize their entry strategies.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 14.89,
+      "narration": "Welcome to the Investing Atti stock analysis for AMD. Currently trading at $511.74, this stock is on a strong bullish trajectory, but is it nearing a critical juncture that could impact your investment decisions?",
+      "pandaAction": "default",
+      "speechBubbleText": "AMD: Strong Bullish Trajectory?",
+      "visualElements": [
+        "AMD logo",
+        "current price display"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "AMD: Strong Bullish Trajectory?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 16.36,
+      "narration": "AMD's current price reflects a robust intraday trend, showing significant market interest. With a daily percentage move indicating a strong upward push, investors are keenly watching this stock as it approaches key resistance levels.",
+      "pandaAction": "point",
+      "speechBubbleText": "Robust Intraday Trend",
+      "visualElements": [
+        "price trend chart",
+        "market interest indicators"
+      ],
+      "chartElements": [
+        "daily percentage move chart"
+      ],
+      "animationInstructions": [
+        "slide in",
+        "highlight"
+      ],
+      "dataFields": {
+        "currentPrice": 511.74,
+        "marketInterest": "High"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 16.78,
+      "narration": "The bullish trend is primarily driven by an analyst upgrade from Citigroup, which has raised its price target. This positive sentiment is further supported by the stock's performance, consistently trading above its crucial moving averages.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Driven by Analyst Upgrade",
+      "visualElements": [
+        "Citigroup logo",
+        "analyst upgrade announcement"
+      ],
+      "chartElements": [
+        "moving averages chart"
+      ],
+      "animationInstructions": [
+        "zoom in",
+        "highlight"
+      ],
+      "dataFields": {
+        "catalysts": "Analyst upgrade with increased price target"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 16.85,
+      "narration": "The strength of this trend is bolstered by slightly above-average trading volume, which confirms the market's enthusiasm. Additionally, a golden cross has occurred, with the EMA50 surpassing the EMA200, signaling long-term bullish momentum.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Above-Average Trading Volume",
+      "visualElements": [
+        "trading volume indicators",
+        "golden cross illustration"
+      ],
+      "chartElements": [
+        "EMA50 vs EMA200 chart"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "pulse"
+      ],
+      "dataFields": {
+        "tradingVolume": "Above average",
+        "goldenCross": "EMA50 above EMA200"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 18.68,
+      "narration": "On the daily trend chart, we can see that AMD is navigating near critical resistance levels, with a clear swing entry zone established between $437.71 and $486.96. This area is key for potential consolidation or breakout scenarios as the stock approaches its limits.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Critical Resistance Levels",
+      "visualElements": [
+        "daily trend chart",
+        "swing entry zone highlighted"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "draw in",
+        "highlight"
+      ],
+      "dataFields": {
+        "entryZoneLow": 437.71,
+        "entryZoneHigh": 486.96
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 16.78,
+      "narration": "Technical metrics reveal that the RSI is nearing overbought territory, suggesting caution for new entries. The MACD also indicates bullish momentum, but traders should be aware of potential shifts in momentum as the stock nears resistance.",
+      "pandaAction": "caution",
+      "speechBubbleText": "RSI Nearing Overbought",
+      "visualElements": [
+        "RSI chart",
+        "MACD chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {
+        "RSI": "Near overbought",
+        "MACD": "Bullish momentum"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 14.67,
+      "narration": "For tactical traders, the entry zone is well-defined, with a stop-loss positioned just below key support at $486.96. Target levels to watch include $526.97 and $546.18, providing a roadmap for potential gains.",
+      "pandaAction": "point",
+      "speechBubbleText": "Defined Entry Zone",
+      "visualElements": [
+        "entry zone graphic",
+        "stop-loss and target levels"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "slide in",
+        "highlight"
+      ],
+      "dataFields": {
+        "stopLoss": 486.96,
+        "targets": [
+          526.97,
+          546.18
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 14.89,
+      "narration": "From a short-selling perspective, caution is advised as the stock is currently in an uptrend. The risk of a short squeeze is medium, and traders should monitor breakdown levels closely to manage potential losses.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution for Short Selling",
+      "visualElements": [
+        "short selling indicators",
+        "squeeze risk graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {
+        "squeezeRisk": "Medium"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 13.62,
+      "narration": "In terms of ecosystem insight, the broader technology sector remains positive, which supports AMD's upward movement. However, any shifts in market sentiment could impact the stock's performance.",
+      "pandaAction": "default",
+      "speechBubbleText": "Positive Tech Sector",
+      "visualElements": [
+        "technology sector overview",
+        "market sentiment indicators"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 22.07,
+      "narration": "In conclusion, AMD remains in a strong uptrend, but with the stock nearing resistance and displaying overbought conditions, vigilance is essential. Key levels to watch include the stop-loss at $486.96, and investors should be prepared for possible pullbacks to optimize their entry strategies.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Stay Vigilant!",
+      "visualElements": [
+        "final summary graphic",
+        "key levels display"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "quote": "Success is where preparation and opportunity meet.",
+        "disclaimer": "This content is for informational purposes only and should not be considered investment advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

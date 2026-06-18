@@ -103,9 +103,9 @@ export class DocumentBuilderAgent {
       }
       doc.moveDown(0.5);
 
-      // Recommendation Box
+      // Suggestion Box
       const finalRating = reportData.finalRating || reportData.finalDecision?.finalRating || 'HOLD';
-      const decisionSummary = reportData.finalDecision?.decisionSummary || 'Hold recommendation based on mixed signals.';
+      const decisionSummary = reportData.finalDecision?.decisionSummary || 'Hold suggestion based on mixed signals.';
       let bg = '#F3F4F6';
       let textCol = '#374151';
       if (finalRating === 'BUY') { bg = '#E6F4EA'; textCol = '#065F46'; }
@@ -117,7 +117,7 @@ export class DocumentBuilderAgent {
       const recBoxY = doc.y;
       doc.rect(50, recBoxY, 495, 50).fill(bg);
       doc.fillColor(textCol);
-      doc.font('Helvetica-Bold').fontSize(12).text(`RECOMMENDATION: ${finalRating}`, 65, recBoxY + 12);
+      doc.font('Helvetica-Bold').fontSize(12).text(`SUGGESTION: ${finalRating}`, 65, recBoxY + 12);
       doc.font('Helvetica').fontSize(9).text(decisionSummary, 65, recBoxY + 28, { width: 465, height: 16, ellipsis: true });
       doc.y = recBoxY + 60;
 

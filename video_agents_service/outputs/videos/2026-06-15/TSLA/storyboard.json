@@ -1,0 +1,225 @@
+{
+  "ticker": "TSLA",
+  "reportDate": "Unavailable",
+  "videoTitle": "TSLA Stock Report",
+  "durationSeconds": 180.82999999999998,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for TSLA. Currently priced at $410.25, this stock exhibits mixed signals that warrant a cautious approach. With current market dynamics in play, let's dive into the details to better understand what this means for potential investors.\n\nAs of today, TSLA's intraday trend has shown fluctuations, with the stock currently trading at $410.25. Over the past day, it has experienced a modest percentage move, indicating some degree of volatility as it tests key price levels.\n\nThe current trend for TSLA is mixed. While shorter timeframes reflect some bullish momentum, the overall daily chart suggests a degree of caution. This movement is largely news-driven, influenced by recent positive sentiment surrounding Elon Musk and market enthusiasm.\n\nSupporting this trend is a lack of strong buying interest, as evidenced by below-average trading volume. The stock's price is currently near resistance levels, which adds to the risk of entering a position at this moment.\n\nAnalyzing the daily trend chart, we observe that TSLA is positioned close to critical resistance zones. The presence of both support and resistance levels indicates a potential consolidation phase, where the stock may struggle to break through these barriers.\n\nExamining key technical metrics, we find that the RSI is neutral at 50.59, indicating that there is no extreme momentum in either direction. The MACD, however, is bearish, and the ADX suggests a strong downtrend, reflecting underlying bearish momentum that investors should be aware of.\n\nFor those considering tactical entries, the suggested swing entry zone ranges from a low of $337.27 to a high of $364.04. A prudent stop-loss has been set at $380.16, just below a key support level, while the potential targets are identified at $445.56 and $453.39.\n\nRegarding short selling, it is advisable to approach this with caution. Current data on short interest is unavailable, but the lack of strong buying could indicate a risk of a breakdown should the stock fail to maintain its current price levels.\n\nIn terms of market context, TSLA's position within the broader sector remains strong, yet the current valuation is high. This could pose challenges, as broader market dynamics and competitor performances may influence TSLA's potential for growth.\n\nIn conclusion, TSLA is currently rated as a watchlist stock, reflecting a mixed technical setup with conflicting signals. Investors should closely monitor for clearer entry signals or potential breakouts before considering a purchase, especially given the risks associated with current market conditions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 19.18,
+      "narration": "Welcome to the Investing Atti stock analysis for TSLA. Currently priced at $410.25, this stock exhibits mixed signals that warrant a cautious approach. With current market dynamics in play, let's dive into the details to better understand what this means for potential investors.",
+      "pandaAction": "default",
+      "speechBubbleText": "TSLA: Mixed Signals Ahead",
+      "visualElements": [
+        "TSLA logo",
+        "current price display"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "TSLA: Mixed Signals Ahead"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 16.09,
+      "narration": "As of today, TSLA's intraday trend has shown fluctuations, with the stock currently trading at $410.25. Over the past day, it has experienced a modest percentage move, indicating some degree of volatility as it tests key price levels.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $410.25",
+      "visualElements": [
+        "intraday price chart"
+      ],
+      "chartElements": [
+        "intraday trend chart"
+      ],
+      "animationInstructions": [
+        "slide in",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 18.5,
+      "narration": "The current trend for TSLA is mixed. While shorter timeframes reflect some bullish momentum, the overall daily chart suggests a degree of caution. This movement is largely news-driven, influenced by recent positive sentiment surrounding Elon Musk and market enthusiasm.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Mixed Trend Signals",
+      "visualElements": [
+        "news headlines",
+        "Elon Musk image"
+      ],
+      "chartElements": [
+        "daily trend chart"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 15.2,
+      "narration": "Supporting this trend is a lack of strong buying interest, as evidenced by below-average trading volume. The stock's price is currently near resistance levels, which adds to the risk of entering a position at this moment.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Below Average Volume",
+      "visualElements": [
+        "volume chart",
+        "resistance level indicator"
+      ],
+      "chartElements": [
+        "volume analysis chart"
+      ],
+      "animationInstructions": [
+        "highlight",
+        "fade out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 17.81,
+      "narration": "Analyzing the daily trend chart, we observe that TSLA is positioned close to critical resistance zones. The presence of both support and resistance levels indicates a potential consolidation phase, where the stock may struggle to break through these barriers.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Critical Resistance Zones",
+      "visualElements": [
+        "daily trend chart"
+      ],
+      "chartElements": [
+        "support and resistance levels"
+      ],
+      "animationInstructions": [
+        "zoom in",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 19.67,
+      "narration": "Examining key technical metrics, we find that the RSI is neutral at 50.59, indicating that there is no extreme momentum in either direction. The MACD, however, is bearish, and the ADX suggests a strong downtrend, reflecting underlying bearish momentum that investors should be aware of.",
+      "pandaAction": "default",
+      "speechBubbleText": "RSI: 50.59, MACD: Bearish",
+      "visualElements": [
+        "RSI chart",
+        "MACD chart"
+      ],
+      "chartElements": [
+        "technical indicators"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 18.22,
+      "narration": "For those considering tactical entries, the suggested swing entry zone ranges from a low of $337.27 to a high of $364.04. A prudent stop-loss has been set at $380.16, just below a key support level, while the potential targets are identified at $445.56 and $453.39.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Entry Zone: $337.27 - $364.04",
+      "visualElements": [
+        "entry zone chart",
+        "stop-loss indicator"
+      ],
+      "chartElements": [
+        "target price levels"
+      ],
+      "animationInstructions": [
+        "draw in",
+        "fade out"
+      ],
+      "dataFields": {
+        "Entry Zone": "Low: 337.27, High: 364.04",
+        "Stop Loss": "380.16",
+        "Targets": "[445.56, 453.39]"
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 16.85,
+      "narration": "Regarding short selling, it is advisable to approach this with caution. Current data on short interest is unavailable, but the lack of strong buying could indicate a risk of a breakdown should the stock fail to maintain its current price levels.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution on Short Selling",
+      "visualElements": [
+        "short selling warning"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 16.92,
+      "narration": "In terms of market context, TSLA's position within the broader sector remains strong, yet the current valuation is high. This could pose challenges, as broader market dynamics and competitor performances may influence TSLA's potential for growth.",
+      "pandaAction": "default",
+      "speechBubbleText": "Sector Position: Strong",
+      "visualElements": [
+        "sector performance chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 22.39,
+      "narration": "In conclusion, TSLA is currently rated as a watchlist stock, reflecting a mixed technical setup with conflicting signals. Investors should closely monitor for clearer entry signals or potential breakouts before considering a purchase, especially given the risks associated with current market conditions.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Watchlist Stock",
+      "visualElements": [],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "celebrate"
+      ],
+      "dataFields": {
+        "quote": "Patience is the key to successful investing.",
+        "disclaimer": "This content is for informational purposes only and should not be considered financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

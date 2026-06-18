@@ -1,0 +1,251 @@
+{
+  "ticker": "SPCX",
+  "reportDate": "Unavailable",
+  "videoTitle": "SPCX Stock Report",
+  "durationSeconds": 161.98999999999998,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for SPCX. With the stock currently facing mixed signals and volatility, is it time to reassess your strategy or hold your position? \n\nSPCX is currently priced at $192.77, reflecting a notable decline from its intraday high. The stock opened at $209.76, closing down approximately 6% for the day, signaling a bearish trend that investors should be aware of.\n\nThe primary driver of this trend is a technical breakdown, which has led to bearish momentum in the stock. This has created a challenging environment for new entries, as the stock nears critical resistance levels.\n\nRecent news sentiment surrounding SPCX has been positive; however, this has not translated into strong buying interest, as indicated by below-average trading volume. The lack of robust volume suggests that investor confidence may be wavering, limiting the stock's potential upside.\n\nWhen examining the daily trend, SPCX appears to be in a consolidation phase, with resistance levels posing a risk for new investors. The stock's current movement highlights the need for caution, as it has shown volatility while approaching these key levels.\n\nTechnical metrics present a mixed picture. The RSI is nearing oversold territory at 32.69, indicating potential for a reversal if buying interest picks up. Meanwhile, the MACD points to a bearish momentum, with the price trading below the volume-weighted average price.\n\nFor tactical traders, there are currently no defined entry zones or stop-loss levels due to the absence of clear signals. Given the lack of available targets, this stock remains on the watchlist for potential future opportunities.\n\nFrom a short-selling perspective, caution is advised due to the current selling pressure. With no defined short interest data, the risk of a short squeeze remains low, but the overall market conditions may still weigh on performance.\n\nLooking at the broader ecosystem, mixed sector performance could influence SPCX's trajectory. As the market remains uncertain, the potential for upward movement may be hindered by external factors affecting overall investor sentiment.\n\nIn conclusion, the final verdict for SPCX is to remain on the watchlist. The key level to monitor is the resistance near current price levels, while the main risk lies in the ongoing volatility and mixed technical signals. Always conduct thorough research and consider potential risks before making investment decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 11.6,
+      "narration": "Welcome to the Investing Atti stock analysis for SPCX. With the stock currently facing mixed signals and volatility, is it time to reassess your strategy or hold your position?",
+      "pandaAction": "default",
+      "speechBubbleText": "SPCX: Mixed Signals Ahead",
+      "visualElements": [
+        "SPCX logo",
+        "stock market background"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "SPCX: Time to Reassess or Hold?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 14.63,
+      "narration": "SPCX is currently priced at $192.77, reflecting a notable decline from its intraday high. The stock opened at $209.76, closing down approximately 6% for the day, signaling a bearish trend that investors should be aware of.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $192.77",
+      "visualElements": [
+        "price tag graphic",
+        "bear market icon"
+      ],
+      "chartElements": [
+        "price chart showing decline"
+      ],
+      "animationInstructions": [
+        "slide in",
+        "highlight drop"
+      ],
+      "dataFields": {
+        "Current Price": "$192.77",
+        "Open Price": "$209.76",
+        "Close Change": "-6%"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 14.04,
+      "narration": "The primary driver of this trend is a technical breakdown, which has led to bearish momentum in the stock. This has created a challenging environment for new entries, as the stock nears critical resistance levels.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Technical Breakdown Alert!",
+      "visualElements": [
+        "technical analysis graphic",
+        "resistance level line"
+      ],
+      "chartElements": [
+        "bearish momentum chart"
+      ],
+      "animationInstructions": [
+        "shake",
+        "highlight resistance"
+      ],
+      "dataFields": {
+        "Trend Driver": "Technical Breakdown",
+        "Resistance Levels": "Critical"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 18.52,
+      "narration": "Recent news sentiment surrounding SPCX has been positive; however, this has not translated into strong buying interest, as indicated by below-average trading volume. The lack of robust volume suggests that investor confidence may be wavering, limiting the stock's potential upside.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Positive News, Low Volume",
+      "visualElements": [
+        "news articles",
+        "volume chart"
+      ],
+      "chartElements": [
+        "trading volume graph"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "highlight volume drop"
+      ],
+      "dataFields": {
+        "News Sentiment": "Positive",
+        "Trading Volume": "Below Average"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 16.94,
+      "narration": "When examining the daily trend, SPCX appears to be in a consolidation phase, with resistance levels posing a risk for new investors. The stock's current movement highlights the need for caution, as it has shown volatility while approaching these key levels.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Consolidation Phase",
+      "visualElements": [
+        "consolidation chart",
+        "warning sign"
+      ],
+      "chartElements": [
+        "daily trend chart"
+      ],
+      "animationInstructions": [
+        "zoom in",
+        "highlight volatility"
+      ],
+      "dataFields": {
+        "Trend Phase": "Consolidation",
+        "Risk Level": "High"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 17.73,
+      "narration": "Technical metrics present a mixed picture. The RSI is nearing oversold territory at 32.69, indicating potential for a reversal if buying interest picks up. Meanwhile, the MACD points to a bearish momentum, with the price trading below the volume-weighted average price.",
+      "pandaAction": "default",
+      "speechBubbleText": "RSI: 32.69",
+      "visualElements": [
+        "RSI chart",
+        "MACD indicator"
+      ],
+      "chartElements": [
+        "technical metrics overview"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "highlight RSI"
+      ],
+      "dataFields": {
+        "RSI": "32.69",
+        "MACD": "Bearish"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 15.16,
+      "narration": "For tactical traders, there are currently no defined entry zones or stop-loss levels due to the absence of clear signals. Given the lack of available targets, this stock remains on the watchlist for potential future opportunities.",
+      "pandaAction": "default",
+      "speechBubbleText": "Watchlist: No Clear Signals",
+      "visualElements": [
+        "watchlist graphic",
+        "no entry sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "slide in",
+        "fade out"
+      ],
+      "dataFields": {
+        "Entry Zone": "None",
+        "Stop Loss": "None"
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 15.36,
+      "narration": "From a short-selling perspective, caution is advised due to the current selling pressure. With no defined short interest data, the risk of a short squeeze remains low, but the overall market conditions may still weigh on performance.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Short Selling: Caution Advised",
+      "visualElements": [
+        "short selling graphic",
+        "caution sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "highlight caution"
+      ],
+      "dataFields": {
+        "Short Interest Data": "Unavailable",
+        "Squeeze Risk": "Low"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 15.42,
+      "narration": "Looking at the broader ecosystem, mixed sector performance could influence SPCX's trajectory. As the market remains uncertain, the potential for upward movement may be hindered by external factors affecting overall investor sentiment.",
+      "pandaAction": "default",
+      "speechBubbleText": "Mixed Sector Performance",
+      "visualElements": [
+        "sector performance chart",
+        "market uncertainty graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {
+        "Sector Performance": "Mixed",
+        "Market Sentiment": "Uncertain"
+      }
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 22.59,
+      "narration": "In conclusion, the final verdict for SPCX is to remain on the watchlist. The key level to monitor is the resistance near current price levels, while the main risk lies in the ongoing volatility and mixed technical signals. Always conduct thorough research and consider potential risks before making investment decisions.",
+      "pandaAction": "default",
+      "speechBubbleText": "Final Verdict: Watchlist",
+      "visualElements": [
+        "watchlist graphic",
+        "resistance level indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight resistance"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing; wait for clarity before acting.",
+        "disclaimer": "This content is for informational purposes only and should not be considered as financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

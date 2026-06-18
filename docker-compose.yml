@@ -59,7 +59,9 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        - VITE_API_URL=${VITE_API_URL:-http://localhost:3000}
+        - VITE_API_URL=${VITE_API_URL:-https://investingatti.com}
+        - VITE_GOOGLE_CLIENT_ID=${VITE_GOOGLE_CLIENT_ID}
+        - VITE_MICROSOFT_CLIENT_ID=${VITE_MICROSOFT_CLIENT_ID}
     container_name: trader_frontend
     restart: unless-stopped
     ports:

@@ -1,0 +1,23 @@
+{
+  "jobId": "fcd443d9-3c07-4d0c-8165-81bc6805fc96",
+  "reportId": "cmqi6y9vx01a96ucvewfp4sva",
+  "ticker": "SPCX",
+  "reportDate": "2026-06-17",
+  "status": "GENERATED",
+  "startedAt": "2026-06-17T14:53:38.973242",
+  "completedAt": "2026-06-17T15:00:42.894602",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/fcd443d9-3c07-4d0c-8165-81bc6805fc96/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-17\\SPCX\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-17\\SPCX\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-17\\SPCX\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-17\\SPCX\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-17\\SPCX\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-17\\SPCX\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-17\\SPCX\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-17\\SPCX\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

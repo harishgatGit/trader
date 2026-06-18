@@ -1,0 +1,1023 @@
+{
+  "symbol": "T",
+  "analysisDateTime": "2026-06-15T17:34:20.182Z",
+  "currentPrice": 23.355,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All required data fields are available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "TRADE",
+    "confidenceScore": 60,
+    "decisionSummary": "AT&T is currently in a bearish trend with the price below key moving averages and VWAP. The technical indicators suggest a strong downtrend, and the stock is near support levels. The risk/reward profile is not attractive for a buy at this moment. It is advisable to watch for a potential reversal or a confirmed breakout before considering entry.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is in a bearish trend with no clear reversal signal. Risk/reward is not favorable.",
+    "bestActionNow": "Watch for a reversal or breakout confirmation."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": true,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": false,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "AT&T's stock is currently trading at $23.355, showing a bearish trend with the price below key moving averages such as EMA20, EMA50, and EMA200. The stock is experiencing a strong downtrend as indicated by the ADX, and the RSI is below 40, suggesting weak momentum. The institutional flow proxy indicates uncertainty with a bearish OBV trend. Given the current technical setup and risk/reward profile, it is not advisable to buy at this moment. Near-term expectations are for continued bearish pressure unless a reversal signal emerges. Long-term, the stock may stabilize if fundamentals improve and technicals confirm a trend change. LAYMAN'S TAKEAWAY: AT&T is not a buy right now due to its bearish trend and weak momentum. Keep an eye on it for potential reversal signals or a breakout before considering an entry.",
+  "technicalAnalysis": {
+    "overallBias": "BEARISH",
+    "trendStage": "MARKDOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 40,
+    "keySignals": [
+      "Price below EMA20, EMA50, EMA200",
+      "Strong downtrend (ADX>25, -DI>+DI)",
+      "Price below VWAP"
+    ],
+    "supportLevels": [
+      22.32,
+      23.85,
+      24.95
+    ],
+    "resistanceLevels": [
+      25.48,
+      26.46,
+      26.75
+    ],
+    "vwapAnalysis": "Price is below VWAP, indicating bearish pressure.",
+    "movingAverageAnalysis": "Bearish alignment with price below EMA20, EMA50, and EMA200.",
+    "rsiAnalysis": "RSI below 40, indicating weak momentum.",
+    "macdAnalysis": "MACD histogram is positive but overall trend remains bearish.",
+    "volumeAnalysis": "Below-average volume, indicating lack of buying interest.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR indicates moderate volatility.",
+    "adxTrendStrengthAnalysis": "Strong downtrend confirmed by high ADX.",
+    "bollingerBandAnalysis": "Price near lower Bollinger Band, indicating potential oversold conditions."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "No valid buy zone due to bearish trend."
+    },
+    "pullbackEntryZone": {
+      "low": 22.32,
+      "high": 23.85,
+      "description": "Watch for potential reversal signals in this zone."
+    },
+    "breakoutEntryLevel": {
+      "price": 25.48,
+      "confirmationRule": "Wait for breakout above resistance with volume confirmation."
+    },
+    "accumulationZone": {
+      "low": 22.32,
+      "high": 23.85,
+      "description": "Potential accumulation zone if support holds."
+    },
+    "invalidationLevel": {
+      "price": 22.32,
+      "reason": "Break below this level would invalidate bullish reversal potential."
+    },
+    "stopLoss": {
+      "price": 22.32,
+      "stopType": "SUPPORT_BREAK",
+      "description": "Stop loss set at key support level."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 25.48,
+        "reason": "First resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 26.46,
+        "reason": "Second resistance level."
+      },
+      {
+        "label": "T3",
+        "price": 26.75,
+        "reason": "Third resistance level."
+      }
+    ],
+    "exitRules": [
+      "Exit if price breaks below 22.32 support level."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 23.355,
+    "riskPerShare": 1.035,
+    "rewardToTarget1": 2.125,
+    "rewardToTarget2": 3.105,
+    "rewardToTarget3": 3.395,
+    "riskRewardToTarget1": "2.05:1",
+    "riskRewardToTarget2": "3.00:1",
+    "riskRewardToTarget3": "3.28:1",
+    "riskRewardVerdict": "GOOD",
+    "positionSizingNote": "Consider smaller position size due to high volatility and bearish trend."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": 22.32,
+      "high": 23.85,
+      "description": "Monitor for reversal signals."
+    },
+    "stopLoss": {
+      "price": 22.32,
+      "description": "Set stop loss at key support level."
+    },
+    "targets": [
+      {
+        "price": 25.48,
+        "label": "T1"
+      },
+      {
+        "price": 26.46,
+        "label": "T2"
+      },
+      {
+        "price": 26.75,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price breaks below 22.32 support level."
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": 22.32,
+      "high": 23.85,
+      "description": "Monitor for reversal signals."
+    },
+    "stopLoss": {
+      "price": 22.32,
+      "description": "Set stop loss at key support level."
+    },
+    "targets": [
+      {
+        "price": 25.48,
+        "label": "T1"
+      },
+      {
+        "price": 26.46,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 22.32,
+      "high": 23.85,
+      "description": "Potential accumulation zone if support holds."
+    },
+    "riskReward": "GOOD",
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BEARISH",
+    "swingSetup": {
+      "setup": "NO_SETUP",
+      "analysis": "The stock is in a downtrend with no clear reversal setup."
+    },
+    "entryTiming": {
+      "trigger": "WAIT_FOR_REVERSAL",
+      "analysis": "Monitor for potential reversal signals on 15M/5M charts."
+    },
+    "supportLevels": [
+      {
+        "price": 22.32,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 25.48,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 22.32,
+    "riskMetrics": {
+      "atr": 0.576,
+      "atrAnalysis": "Moderate volatility based on ATR.",
+      "vwap": 23.371563,
+      "vwapAnalysis": "Price is below VWAP, indicating bearish pressure.",
+      "volumeAnalysis": "Below-average volume, indicating lack of buying interest.",
+      "supportResistanceAnalysis": "Key support at 22.32, resistance at 25.48."
+    },
+    "catalysts": {
+      "news": "Positive overall sentiment, but mixed news articles.",
+      "earnings": "Not provided by backend.",
+      "secFilings": "Not provided by backend."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "The stock is in a bearish trend with potential support at 22.32. Monitor for reversal signals before considering entry.",
+    "dailyTrend": {
+      "trend": "BEARISH",
+      "barCount": 252,
+      "analysis": "The stock of AT&T has been experiencing a downward trend, as evidenced by the price consistently moving below key moving averages such as the 20-day, 50-day, and 200-day EMAs. This indicates a lack of bullish momentum. The RSI is below 40, suggesting the stock is not yet oversold but is under pressure. The MACD is slightly positive, but the overall trend remains negative with a death cross present, where the 50-day EMA is below the 200-day EMA. The ADX indicates a strong downtrend, reinforcing the bearish sentiment. Despite some positive news sentiment, the institutional flow shows uncertainty with below-average volume and a bearish OBV trend, suggesting weak buying interest.",
+      "laymanExplanation": "Think of AT&T's stock like a car stuck in a slow lane with a flat tire. It's struggling to gain speed because the engine (or in this case, the stock's momentum) is weak, and there's not enough fuel (volume) to push it forward. Even though some people are saying good things about the car (positive news), it's not enough to get it moving faster. Until the car gets fixed (technical indicators improve), it's likely to stay in the slow lane.",
+      "ticker": "T",
+      "companyName": "AT&T Inc.",
+      "confidenceScore": 0.85,
+      "trendSummary": "AT&T's stock is currently in a bearish trend, characterized by a series of lower highs and lower lows, supported by technical indicators and volume patterns.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Negative",
+          "evidence": "Price below EMA20, EMA50, and EMA200; death cross; strong downtrend indicated by ADX."
+        },
+        {
+          "driver": "Volume",
+          "impact": "Negative",
+          "evidence": "Below-average volume; price rising with declining volume suggests a weaker rally."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Mixed",
+          "evidence": "Overall positive news sentiment but not strong enough to counteract technical bearish signals."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Negative",
+          "evidence": "Uncertain institutional flow with bearish OBV trend and below-average volume."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The stock price is consistently below key moving averages, indicating a bearish trend.",
+        "movingAverageView": "The presence of a death cross (EMA50 < EMA200) confirms the bearish trend.",
+        "momentumView": "RSI below 40 suggests weak momentum, with MACD slightly positive but overshadowed by bearish signals.",
+        "volumeView": "Volume is below average, indicating a lack of strong buying interest.",
+        "supportResistanceView": "The stock is trading below major resistance levels, with no clear support in the immediate vicinity.",
+        "volatilityView": "ATR indicates moderate volatility, but the trend strength is high as per ADX."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data provided to influence the current trend.",
+        "newsImpact": "Positive sentiment from recent articles, but not enough to shift the bearish technical outlook.",
+        "institutionalFlowImpact": "Institutional flow is uncertain, with signals pointing towards a bearish trend.",
+        "sectorMacroImpact": "No specific sector or macroeconomic impacts noted in the data provided."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Continued bearish trend with strong technical indicators.",
+          "Uncertain institutional flow and weak volume support."
+        ],
+        "whatNeedsConfirmation": "A reversal in technical indicators or a significant increase in volume could signal a potential change in trend."
+      },
+      "watchStatus": "High risk",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "NEUTRAL",
+    "investmentQuality": "MIXED",
+    "fairValueRange": {
+      "low": 22,
+      "high": 28,
+      "method": "Peer comparison and historical valuation"
+    },
+    "bullCase": "Improved fundamentals and confirmed technical reversal.",
+    "baseCase": "Continued sideways movement with occasional volatility.",
+    "bearCase": "Further decline if support levels break.",
+    "longTermVerdict": "HOLD"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 65,
+    "rating": "MIXED",
+    "revenueTrend": "Stable revenue but high debt levels.",
+    "epsTrend": "Trailing EPS is higher than forward EPS, indicating potential earnings pressure.",
+    "profitability": "Moderate profitability with a PE ratio of 7.68.",
+    "debtRisk": "High debt-to-equity ratio of 125.175.",
+    "cashFlowQuality": "Adequate cash flow but high debt levels.",
+    "valuationCommentary": "Valuation appears fair with a PE ratio of 7.68 and PB ratio of 1.48."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "FAIRLY_VALUED",
+    "valuationScore": 70,
+    "peerComparisonAvailable": true,
+    "fairValueRange": {
+      "low": 22,
+      "high": 28
+    },
+    "marginOfSafetyBuyZone": {
+      "low": 22,
+      "high": 23
+    },
+    "commentary": "Valuation is fair relative to peers, with potential upside if fundamentals improve."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 60,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Positive sentiment from recent articles",
+      "New product offerings"
+    ],
+    "keyRisksFromNews": [
+      "Negative sentiment from industry-related news"
+    ],
+    "earningsRisk": "Not provided by backend.",
+    "catalystVerdict": "NEUTRAL"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 40,
+    "interpretation": "NEUTRAL",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests uncertainty with below-average volume and a bearish OBV trend. Price is below VWAP, indicating weaker rally strength.",
+    "signals": [
+      "Below-average volume (0.7x)",
+      "OBV trend bearish",
+      "Price below VWAP (-1.7%)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 30,
+    "reason": "Current bearish trend and mixed fundamentals limit multibagger potential.",
+    "requiredConditions": [
+      "Reversal of bearish trend",
+      "Improvement in fundamentals"
+    ],
+    "majorBlockers": [
+      "High debt levels",
+      "Weak technical trend"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "HIGH",
+    "technicalRisk": "Strong downtrend with price below key moving averages.",
+    "fundamentalRisk": "High debt levels and mixed profitability.",
+    "valuationRisk": "Fairly valued but not undervalued.",
+    "newsRisk": "Mixed news sentiment with no strong catalysts.",
+    "liquidityRisk": "Adequate liquidity but low relative volume.",
+    "eventRisk": "No major upcoming events noted.",
+    "topRisks": [
+      "Bearish technical trend",
+      "High debt levels"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Reversal of bearish trend with improved fundamentals.",
+      "pricePath": "Potential upside to resistance levels at 25.48 and 26.46.",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Continued bearish trend with support holding at 22.32.",
+      "pricePath": "Sideways movement between 22.32 and 25.48.",
+      "probability": "MEDIUM"
+    },
+    "bearCase": {
+      "condition": "Breakdown below key support levels.",
+      "pricePath": "Downside risk to new lows below 22.32.",
+      "probability": "MEDIUM"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for potential reversal signals around support levels.",
+    "Avoid buying until a confirmed breakout or reversal is observed.",
+    "Consider adding to watchlist for future opportunities."
+  ],
+  "doNotTradeConditions": [
+    "Avoid entry if price remains below key moving averages.",
+    "Do not buy if volume remains below average."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": 25.48,
+    "stopLossAlert": 22.32,
+    "target1Alert": 25.48,
+    "target2Alert": 26.46,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "WarnerMedia",
+        "ownershipPct": "100",
+        "performance": "WarnerMedia has been focusing on streaming services, with HBO Max showing growth in subscribers.",
+        "upcomingEvents": [
+          "Continued expansion of HBO Max",
+          "Potential content partnerships"
+        ],
+        "impactPotential": "Positive impact on AT&T's stock if subscriber growth continues and content partnerships enhance service offerings."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Ericsson",
+          "role": "Supplier",
+          "description": "Provides telecommunications equipment",
+          "riskExposure": "Disruptions could delay network upgrades, affecting service quality."
+        },
+        {
+          "name": "Nokia",
+          "role": "Supplier",
+          "description": "Supplies network infrastructure components",
+          "riskExposure": "Supply chain issues could impact network expansion plans."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Accenture",
+          "role": "Outsource Partner",
+          "description": "Provides IT and business process outsourcing",
+          "riskExposure": "Disruptions could affect operational efficiency and customer service."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Apple",
+          "role": "Marketing Partner",
+          "description": "Distribution of HBO Max via Apple devices",
+          "riskExposure": "Changes in partnership terms could affect subscriber growth."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Enterprise Businesses",
+          "role": "Customer",
+          "description": "Purchases telecommunications services",
+          "riskExposure": "A downturn in enterprise spending could reduce revenue."
+        },
+        {
+          "name": "Consumers",
+          "role": "Customer",
+          "description": "Uses wireless and broadband services",
+          "riskExposure": "Shifts in consumer preferences or economic conditions could impact service subscriptions."
+        }
+      ]
+    },
+    "strategicOutlook": "AT&T's ecosystem is robust with a strong media and telecommunications presence. However, there is concentration risk in the telecommunications infrastructure supply chain. Key externalities include the competitive landscape in streaming services and potential regulatory changes in telecommunications."
+  },
+  "trendStory": {
+    "ticker": "T",
+    "analysis_date": "2026-06-15",
+    "price_summary": {
+      "current_price": 23.355,
+      "previous_close": 23.55,
+      "day_change_percent": -0.83,
+      "day_range": {
+        "high": 23.51,
+        "low": 23.19
+      },
+      "volume": 1761250,
+      "average_volume": 2613153,
+      "relative_volume": 0.67
+    },
+    "move_classification": {
+      "primary_reason": "sector-sympathy",
+      "secondary_reasons": [
+        "news-driven"
+      ],
+      "confidence": "medium",
+      "confidence_score": 60
+    },
+    "story_for_layman": {
+      "headline": "AT&T Stock Faces Pressure Amid Sector Weakness",
+      "simple_explanation": "AT&T's stock price fell slightly today, continuing a recent downward trend. The overall communication services sector is also under pressure, which is affecting AT&T.",
+      "why_it_moved": "The stock moved due to general weakness in the communication services sector and some mixed news about the company.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The move is part of a broader sector trend, but the stock is near support levels which could lead to a bounce."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "Apple's iPhone Could Hold A Clue To America's Declining Birth Rate",
+          "summary": "New study links iPhone adoption to falling U.S. birth rates, raising concerns over loneliness and long-term economic risks.",
+          "source": "benzinga",
+          "published_at": "2026-06-13T13:01:07Z",
+          "impact": "negative",
+          "relevance_score": 90
+        },
+        {
+          "headline": "AT&T And Verizon: The Higher Yield Has The Thinner Cushion.",
+          "summary": " ",
+          "source": "benzinga",
+          "published_at": "2026-06-10T15:17:42Z",
+          "impact": "neutral",
+          "relevance_score": 80
+        },
+        {
+          "headline": "AT&T Rolls Out 24-Hour Unlimited Day Pass Wireless Data Connection For Eligible iPad Users In U.S. For A Daily $3 Flat Rate",
+          "summary": "AT&T Rolls Out 24-Hour Unlimited Day Pass Wireless Data Connection For Eligible iPad Users In U.S. For A Daily $3 Flat Rate",
+          "source": "benzinga",
+          "published_at": "2026-06-10T14:02:50Z",
+          "impact": "neutral",
+          "relevance_score": 70
+        },
+        {
+          "headline": "AST SpaceMobile Sets June 17 Launch Date For BlueBird Satellites",
+          "summary": "ASTS stock dips 2.5% amid market sell-off despite upcoming satellite launch. Discover key AST SpaceMobile support and resistance levels.",
+          "source": "benzinga",
+          "published_at": "2026-06-09T18:06:56Z",
+          "impact": "neutral",
+          "relevance_score": 60
+        },
+        {
+          "headline": "Stock Of The Day: Is AT&T About To Rally?",
+          "summary": "AT&amp;T (T) shares are oversold and at a support level. These can be bullish dynamics that set the stage for a move higher.",
+          "source": "benzinga",
+          "published_at": "2026-06-08T18:32:19Z",
+          "impact": "positive",
+          "relevance_score": 50
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "eps_surprise": null,
+        "revenue_surprise": null,
+        "guidance_change": "unknown",
+        "summary": "No recent earnings announcement identified in news feeds."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Communication Services",
+        "sector_change_percent": -0.66,
+        "index_change_percent": -0.41,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector Communication Services is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 0.67,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 0.7x. Institutional flow proxy score is 24."
+      },
+      "technical_context": {
+        "trend": "downtrend",
+        "breakout_level": 25.48,
+        "support_level": 22.32,
+        "resistance_level": 25.48,
+        "rsi": 39.83892056316289,
+        "macd_signal": "bullish",
+        "vwap_position": "below",
+        "summary": "Price is BEARISH overall. RSI at 39.83892056316289."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": 2.5,
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 22.32,
+        "high": 23.37
+      },
+      "stop_loss": 22,
+      "target_1": 24,
+      "target_2": 25,
+      "risk_reward": 2.5,
+      "entry_reason": "The stock is near support levels but in a downtrend.",
+      "wait_for_confirmation": "Look for a bounce with increased volume."
+    },
+    "short_trade_view": {
+      "short_bias": "wait_for_breakdown",
+      "short_entry_trigger": 22.3,
+      "short_stop_loss": 23.5,
+      "short_target_1": 21.5,
+      "short_target_2": 20.5,
+      "reason": "The stock is in a downtrend but near support, wait for a clear breakdown."
+    },
+    "final_summary": {
+      "one_line_story": "AT&T's stock is under pressure due to sector weakness, with mixed news influences.",
+      "layman_summary": "AT&T's stock price is slightly down today, mainly because the whole communication sector is struggling. Some news about the company is also affecting the stock, but nothing major.",
+      "trader_action": "Monitor for a bounce from support with increased volume.",
+      "risk_warning": "The stock may continue to decline if support levels do not hold."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "T",
+    "analysisDate": "2026-06-15",
+    "currentPrice": 23.355,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 28,
+    "gradientPositionPercent": 28,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "HIGH",
+    "oneLineSummary": "AT&T is in a high-risk zone with bearish trends and weak volume.",
+    "laymanSummary": "The stock is showing a lot of negative signals, such as being below key moving averages and having low trading volume. It's a high-risk situation right now.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 2,
+        "maxScore": 20,
+        "status": "NEGATIVE",
+        "evidence": "Price is below EMA20, EMA50, and EMA200, indicating a strong downtrend."
+      },
+      "volumeConfirmation": {
+        "score": 3,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Relative volume is below 0.8x, indicating weak volume support."
+      },
+      "momentumIndicators": {
+        "score": 5,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "RSI is at 39.8, indicating weak momentum, but MACD histogram is slightly positive."
+      },
+      "movingAverageStructure": {
+        "score": 2,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Death cross observed with EMA50 below EMA200."
+      },
+      "vwapPosition": {
+        "score": 2,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP, indicating bearish intraday sentiment."
+      },
+      "supportResistanceRiskReward": {
+        "score": 5,
+        "maxScore": 10,
+        "status": "MIXED",
+        "evidence": "Price is closer to support at 22.32, but resistance is at 25.48, offering mixed risk/reward."
+      },
+      "sectorIndexAlignment": {
+        "score": 2,
+        "maxScore": 5,
+        "status": "NEGATIVE",
+        "evidence": "Sector performance is not strong enough to support the stock."
+      },
+      "shortInterestContext": {
+        "score": 2,
+        "maxScore": 5,
+        "status": "NEGATIVE",
+        "evidence": "High debt-to-equity ratio and weak price action suggest bearish pressure."
+      },
+      "newsCatalystConfirmation": {
+        "score": 1,
+        "maxScore": 3,
+        "status": "MIXED",
+        "evidence": "Mixed news sentiment with some positive articles."
+      },
+      "institutionalFlowProxy": {
+        "score": 1,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow proxy indicates possible distribution with below-average volume."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [
+        "MACD histogram slightly positive",
+        "Price closer to support than resistance"
+      ],
+      "redSignals": [
+        "Price below EMA20, EMA50, and EMA200",
+        "Relative volume below 0.8x",
+        "Price below VWAP",
+        "Death cross observed"
+      ],
+      "strongestPositiveEvidence": "MACD histogram slightly positive.",
+      "strongestNegativeEvidence": "Price is below key moving averages and VWAP.",
+      "mixedSignalExplanation": "While MACD shows slight positivity, overall trend and volume are bearish."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 22.32,
+      "nearestResistance": 25.48,
+      "distanceToSupportPercent": 4.43,
+      "distanceToResistancePercent": 9.1,
+      "riskRewardView": "MIXED",
+      "explanation": "Price is closer to support, but significant resistance is not far above."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a high-risk zone due to bearish trends and weak volume."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Price needs to move above EMA20 and VWAP",
+        "Volume should increase above average"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Improvement in sector performance",
+        "Stronger positive news catalysts"
+      ],
+      "forRedZoneWarning": [
+        "Continued price decline below support",
+        "Further decrease in volume"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 28,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "AT&T is in a high-risk zone with bearish trends and weak volume.",
+      "supportingPointsBelowBar": [
+        "Price below key moving averages",
+        "Weak volume support",
+        "Bearish institutional flow proxy"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "HIGH_RISK_CAUTION",
+      "summary": "AT&T is currently in a high-risk zone with bearish trends and weak volume. Caution is advised.",
+      "riskWarning": "The stock is showing significant bearish signals with weak volume support, indicating high risk.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "T",
+    "available": true,
+    "price": 23.355,
+    "open": 23.305,
+    "high": 23.51,
+    "low": 23.19,
+    "close": 23.37,
+    "volume": 1761250,
+    "vwap": 23.371563,
+    "bid": 23.35,
+    "ask": 23.36,
+    "spread": 0.01,
+    "changePercent": -0.83,
+    "timestamp": "2026-06-15T17:34:15.022829852Z",
+    "raw": {
+      "dailyBar": {
+        "c": 23.37,
+        "h": 23.51,
+        "l": 23.19,
+        "n": 6516,
+        "o": 23.305,
+        "t": "2026-06-15T04:00:00Z",
+        "v": 1761250,
+        "vw": 23.371563
+      },
+      "latestQuote": {
+        "ap": 23.36,
+        "as": 5600,
+        "ax": "V",
+        "bp": 23.35,
+        "bs": 5300,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-15T17:34:16.994512638Z",
+        "z": "A"
+      },
+      "latestTrade": {
+        "c": [
+          " "
+        ],
+        "i": 52983797273458,
+        "p": 23.355,
+        "s": 299,
+        "t": "2026-06-15T17:34:15.022829852Z",
+        "x": "V",
+        "z": "A"
+      },
+      "minuteBar": {
+        "c": 23.37,
+        "h": 23.37,
+        "l": 23.37,
+        "n": 22,
+        "o": 23.37,
+        "t": "2026-06-15T17:33:00Z",
+        "v": 5633,
+        "vw": 23.37
+      },
+      "prevDailyBar": {
+        "c": 23.565,
+        "h": 23.605,
+        "l": 23.08,
+        "n": 11972,
+        "o": 23.1,
+        "t": "2026-06-12T04:00:00Z",
+        "v": 3142629,
+        "vw": 23.468186
+      },
+      "symbol": "T"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 23.89687582759811,
+      "ema50": 24.953722339156847,
+      "ema200": 26.16032857063757,
+      "sma20": 24.058749999999996,
+      "sma50": 25.19789999999999,
+      "sma200": 26.170499999999993,
+      "rsi14": 39.83892056316289,
+      "rsi14Prev": 41.670191014267,
+      "macdLine": -0.6562607236239266,
+      "macdSignal": -0.6583689566427186,
+      "macdHist": 0.0021082330187919274,
+      "bbUpper": 25.989930662185696,
+      "bbMiddle": 24.058749999999996,
+      "bbLower": 22.127569337814297,
+      "bbWidth": 16.053873640032833,
+      "atr14": 0.5763661544710452,
+      "obv": 927044,
+      "relVolume": 0.6739942647058373,
+      "vwap": 23.76818482538127,
+      "adx14": 635.9102202541098,
+      "plusDI": 13.492625723273244,
+      "minusDI": 29.641427674344328,
+      "supportLevels": [
+        22.32,
+        23.85,
+        24.95
+      ],
+      "resistanceLevels": [
+        25.48,
+        26.46,
+        26.75
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "MACD histogram positive",
+        "Price below EMA20 < EMA50",
+        "Death cross (EMA50 < EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 162278440960,
+    "peRatio": 7.6825657,
+    "pbRatio": 1.483328,
+    "epsTrailing": 3.04,
+    "epsForward": 2.54846,
+    "revenue": 126527995904,
+    "debtToEquity": 125.175,
+    "dividendYield": 0.0471,
+    "beta": 0.395,
+    "week52High": 29.79,
+    "week52Low": 22.32,
+    "sector": "Communication Services",
+    "industry": "Telecom Services",
+    "description": "AT&T Inc. provides telecommunications and technology services worldwide. It operates through two segments, Communications and Latin America. The Communications segment offers wireless voice and data communications services; and sells handsets, wireless data cards, wireless computing devices, carrying cases/protective covers, and wireless chargers through its own company-owned stores, agents, and third-party retail stores. It also provides AT&T Dedicated Internet, fiber ethernet and broadband, fi"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Apple's iPhone Could Hold A Clue To America's Declining Birth Rate",
+        "summary": "New study links iPhone adoption to falling U.S. birth rates, raising concerns over loneliness and long-term economic risks.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/macro-economic-events/26/06/53183544/apples-iphone-could-hold-a-clue-to-americas-declining-birth-rate",
+        "publishedAt": "2026-06-13T13:01:07Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "AT&T And Verizon: The Higher Yield Has The Thinner Cushion.",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/Opinion/26/06/53119480/att-and-verizon-the-higher-yield-has-the-thinner-cushion",
+        "publishedAt": "2026-06-10T15:17:42Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "AT&T Rolls Out 24-Hour Unlimited Day Pass Wireless Data Connection For Eligible iPad Users In U.S. For A Daily $3 Flat Rate",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53115712/at-t-rolls-out-24-hour-unlimited-day-pass-wireless-data-connection-for-eligible-ipad-users-in-u-s-fo",
+        "publishedAt": "2026-06-10T14:02:50Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "AST SpaceMobile Sets June 17 Launch Date For BlueBird Satellites",
+        "summary": "ASTS stock dips 2.5% amid market sell-off despite upcoming satellite launch. Discover key AST SpaceMobile support and resistance levels.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/large-cap/26/06/53098851/ast-spacemobile-sets-june-17-launch-date-for-bluebird-satellites",
+        "publishedAt": "2026-06-09T18:06:56Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Stock Of The Day: Is AT&T About To Rally?",
+        "summary": "AT&amp;T (T) shares are oversold and at a support level. These can be bullish dynamics that set the stage for a move higher.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/technicals/26/06/53070363/stock-of-the-day-is-att-about-to-rally",
+        "publishedAt": "2026-06-08T18:32:19Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "AT&T Stock Pauses Following Thursday Headwinds",
+        "summary": "AT&amp;T Inc (NYSE:T) shares are edging up Friday after a steep drawdown, as investors digest analyst downgrade and competitive concerns.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53028781/att-stock-pauses-following-thursday-headwinds",
+        "publishedAt": "2026-06-05T14:06:55Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "'IBM, AT&T Accused By Whistleblower of Covering Up Foreign Hacks' - Bloomberg",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53017570/ibm-at-t-accused-by-whistleblower-of-covering-up-foreign-hacks-bloomberg",
+        "publishedAt": "2026-06-04T20:25:09Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "AT&T Shares Are Sliding: What's Driving The Action?",
+        "summary": "AT&amp;T Inc (NYSE:T) shares are trading lower Thursday afternoon as competitive concerns resurface following an analyst downgrade.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53009697/att-shares-are-sliding-whats-driving-the-action",
+        "publishedAt": "2026-06-04T16:54:29Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "'Supreme Court Says Quick Jury Trial Not Required on FCC Fines' - Bloomberg",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53003006/supreme-court-says-quick-jury-trial-not-required-on-fcc-fines-bloomberg",
+        "publishedAt": "2026-06-04T14:25:58Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Wall Street's Most Accurate Analysts Give Their Take On 3 Communication Services Stocks Delivering High-Dividend Yields",
+        "summary": "In uncertain markets, investors seek high dividend-yielding stocks with strong cash flow. See latest analyst ratings for VZ, T, and NXST.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/analyst-color/26/06/52997871/wall-streets-most-accurate-analysts-give-their-take-on-3-communication-services-stocks-delivering-high-dividend-yields",
+        "publishedAt": "2026-06-04T12:54:17Z",
+        "sentiment": "POSITIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 24,
+    "interpretation": "UNCERTAIN",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 5,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 5
+    },
+    "signals": [
+      "Below-average volume (0.7x)",
+      "OBV trend bearish",
+      "Price below VWAP (-1.7%)",
+      "Price rising with declining volume (weaker rally)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 40,
+  "fundamentalScore": 65,
+  "newsCatalystScore": 60,
+  "institutionalFlowProxyScore": 40,
+  "keyCatalysts": [
+    "Positive sentiment from recent articles",
+    "New product offerings"
+  ],
+  "keyRisks": [
+    "Bearish technical trend",
+    "High debt levels"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests uncertainty with below-average volume and a bearish OBV trend. Price is below VWAP, indicating weaker rally strength."
+}

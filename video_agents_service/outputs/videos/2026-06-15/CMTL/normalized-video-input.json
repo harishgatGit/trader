@@ -1,0 +1,25 @@
+{
+  "ticker": "CMTL",
+  "companyName": "CMTL",
+  "reportDate": "Unavailable",
+  "currentPrice": 2.77,
+  "dayChangePct": -42.47,
+  "overallSignal": "AVOID",
+  "whyStockMoved": "unknown-mixed",
+  "catalystSummary": "Sale of satellite unit to Gilat",
+  "volumeSummary": "High relative volume suggests strong selling pressure.",
+  "trendSummary": "Comtech Telecommunications Corp.'s stock experienced a sharp decline of 42.47% in a single day, closing at $2.77. This dramatic drop is supported by high trading volume, more than three times the average, which suggests strong selling pressure. The bearish trend is confirmed by several technical indicators: the MACD is bearish, the RSI is approaching oversold levels, and the price is significantly below key moving averages and VWAP. The ADX indicates a strong downtrend, reinforcing the bearish sentiment. The catalyst for this move appears to be the announcement of the sale of its Satellite and Space Communications segment to Gilat for $157.5 million, which might have been perceived negatively by investors, as indicated by the negative sentiment in the news. Additionally, institutional flow data shows distribution, further confirming the bearish outlook.",
+  "supportLevels": [
+    3.43
+  ],
+  "resistanceLevels": [
+    3.97
+  ],
+  "entryZone": "Low: None, High: None",
+  "stopLoss": "Price: None (Stop-loss not applicable due to no trade recommendation.)",
+  "targets": [],
+  "shortTradeView": "SI%: Data unavailable, Borrow Fee: Data unavailable, Squeeze Risk: LOW",
+  "riskWarnings": "Strong downtrend; High debt levels; Negative EPS",
+  "finalVerdict": "The stock is currently in a strong downtrend with bearish technical indicators across multiple timeframes. High relative volume suggests distribution rather than accumulation. The risk/reward profile is not favorable given the current price action and technical setup.",
+  "executiveSummary": "Comtech Telecommunications Corp. (CMTL) is currently trading at $2.77, experiencing a significant decline of over 42% in recent trading. The technical indicators show a strong bearish bias with the stock trading below key moving averages and VWAP, indicating a downtrend. The high relative volume suggests distribution rather than accumulation, and the RSI indicates an oversold condition, but without a reversal confirmation. The stock is best avoided at this time due to unfavorable risk/reward and technical setup. LAYMAN'S TAKEAWAY: Given the current bearish trend and high selling pressure, it's advisable to avoid buying CMTL until a more favorable setup emerges."
+}

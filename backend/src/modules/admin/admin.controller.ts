@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Query, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Delete, Body, Query, Param, UseGuards } from '@nestjs/common';
 import { AdminService } from './admin.service';
 import { DataQualityService } from './data-quality.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -50,5 +50,18 @@ export class AdminController {
   @Get('feedback')
   async getFeedback() {
     return this.adminService.getFeedback();
+  }
+
+  @Patch('users/:id/status')
+  async toggleUserStatus(
+    @Param('id') id: string,
+    @Body('isActive') isActive: boolean,
+  ) {
+    return this.adminService.toggleUserStatus(id, isActive);
+  }
+
+  @Delete('users/:id')
+  async deleteUser(@Param('id') id: string) {
+    return this.adminService.deleteUser(id);
   }
 }

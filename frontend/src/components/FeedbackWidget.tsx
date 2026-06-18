@@ -158,8 +158,10 @@ export const FeedbackWidget: React.FC = () => {
       {/* Floating Action Button (FAB) */}
       <button
         onClick={handleToggle}
-        className={`w-12 h-12 rounded-full bg-teal-600 hover:bg-teal-500 text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer glow-brand ${
-          isOpen ? 'rotate-90 bg-slate-700 hover:bg-slate-600' : ''
+        className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer ${
+          isOpen
+            ? 'rotate-90 bg-slate-800 dark:bg-slate-800 hover:bg-slate-900 dark:hover:bg-slate-700 border-slate-700/50 text-white shadow-[0_4px_16px_rgba(15,23,42,0.25)]'
+            : 'bg-teal-600 dark:bg-teal-600 hover:bg-teal-500 dark:hover:bg-teal-500 border-teal-500/40 text-white shadow-[0_4px_16px_rgba(13,148,136,0.4)] glow-brand'
         }`}
         title="Write to Us"
         aria-label="Write to Us"
@@ -174,7 +176,7 @@ export const FeedbackWidget: React.FC = () => {
           <div className="flex items-center justify-between border-b border-slate-700/50 pb-2">
             <div className="flex items-center gap-2">
               <MessageCircle className="w-5 h-5 text-teal-400" />
-              <span className="text-sm font-semibold text-slate-100 uppercase tracking-wider">
+              <span className="text-sm font-semibold text-slate-100  tracking-wider">
                 Write to Us
               </span>
             </div>

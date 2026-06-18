@@ -1,0 +1,23 @@
+{
+  "jobId": "fa854ea0-f3d8-4c72-98e7-cb16c5dcf3f6",
+  "reportId": "cmqgt1jiw074e70conxcbmiwd",
+  "ticker": "QCOM",
+  "reportDate": "2026-06-16",
+  "status": "GENERATED",
+  "startedAt": "2026-06-16T15:36:30.563607",
+  "completedAt": "2026-06-16T15:44:04.214278",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/fa854ea0-f3d8-4c72-98e7-cb16c5dcf3f6/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QCOM\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QCOM\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QCOM\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QCOM\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QCOM\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QCOM\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QCOM\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QCOM\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

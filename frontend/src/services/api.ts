@@ -1,17 +1,32 @@
 import axios from 'axios';
 
 const apiUrL = import.meta.env.VITE_API_URL;
-const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const hostname = window.location.hostname;
 
-const API_BASE = isLocal
+// Determine if we should use relative API path (local development, tunnels, local networks, or same-domain production proxy)
+const isRelative =
+  hostname === 'localhost' ||
+  hostname === '127.0.0.1' ||
+  hostname.endsWith('.trycloudflare.com') ||
+  hostname === 'investingatti.com' ||
+  hostname === 'www.investingatti.com' ||
+  // Check for local network IP ranges (192.168.x.x, 10.x.x.x, 172.16.x.x-172.31.x.x)
+  /^192\.168\./.test(hostname) ||
+  /^10\./.test(hostname) ||
+  /^172\.(1[6-9]|2[0-9]|3[0-1])\./.test(hostname) ||
+  // Check for local domains
+  hostname.endsWith('.local') ||
+  hostname.endsWith('.lan');
+
+const API_BASE = isRelative
   ? '/api'
   : (apiUrL && !apiUrL.includes('backend') && !apiUrL.includes('localhost') && !apiUrL.includes('127.0.0.1'))
     ? `${apiUrL}/api`
-    : 'https://investingatti.com/api';
+    : '/api';
 
 const api = axios.create({
   baseURL: API_BASE,
-  timeout: 90000, // 90s for AI analysis
+  timeout: 210000, // 210s — AI analysis pipelines can take up to ~180s (avg 95s today)
   headers: { 'Content-Type': 'application/json' },
 }) as any;
 
@@ -45,48 +60,7 @@ api.interceptors.response.use(
       message: error.message,
     });
 
-    // Handle session expiry (401 Unauthorized) with silent renewal and retry
-    if (
-      status === 401 &&
-      error.config &&
-      !error.config._retry &&
-      !error.config.url?.includes('/auth/login') &&
-      !error.config.url?.includes('/auth/register')
-    ) {
-      error.config._retry = true;
-      console.warn(`[Auth] 401 Unauthorized detected. Attempting silent session renewal...`);
-
-      try {
-        const loginResponse = await axios.post(`${API_BASE}/auth/login`, {
-          username: 'tail',
-          password: 'trail123',
-        });
-
-        const newToken = loginResponse.data?.token;
-        const newUser = loginResponse.data?.user;
-
-        if (newToken) {
-          localStorage.setItem('trader_auth_token', newToken);
-
-          // Dynamically import useAppStore to update state without circular imports
-          const { useAppStore } = await import('../store/useAppStore');
-          useAppStore.setState({ token: newToken, user: newUser });
-
-          console.log(`[Auth] Silent session renewal succeeded. Retrying original request to ${url}...`);
-
-          // Update headers and retry the original request
-          error.config.headers = error.config.headers || {};
-          error.config.headers['Authorization'] = `Bearer ${newToken}`;
-
-          // Execute request again and return the data directly
-          return api(error.config);
-        }
-      } catch (renewalError: any) {
-        console.error(`[Auth] Silent session renewal failed:`, renewalError.message);
-      }
-    }
-
-    // Default 401 behavior (clearing token and redirecting) if silent renewal is not applicable or fails
+    // Default 401 behavior (clearing token and redirecting)
     if (status === 401) {
       console.warn(`[Auth] Clearing token and redirecting to login page.`);
       localStorage.removeItem('trader_auth_token');
@@ -118,9 +92,11 @@ export const healthApi = {
 export const authApi = {
   register: (data: any) => api.post('/auth/register', data),
   login: (data: any) => api.post('/auth/login', data),
+  socialLogin: (data: any) => api.post('/auth/social-login', data),
   logout: () => api.post('/auth/logout'),
   me: () => api.get('/auth/me'),
   updatePassword: (data: any) => api.post('/auth/update-password', data),
+  updateUsername: (data: any) => api.post('/auth/update-username', data),
   sessions: () => api.get('/auth/sessions'),
 };
 
@@ -185,6 +161,8 @@ export const adminApi = {
   getUsers: () => api.get('/admin/users'),
   createUser: (data: any) => api.post('/admin/users', data),
   getAnalytics: () => api.get('/admin/analytics'),
+  toggleUserStatus: (id: string, isActive: boolean) => api.patch(`/admin/users/${id}/status`, { isActive }),
+  deleteUser: (id: string) => api.delete(`/admin/users/${id}`),
   // Data Quality Monitor
   probeSymbol: (symbol: string) => api.get(`/admin/data-quality/probe?symbol=${encodeURIComponent(symbol)}`),
   getConsistency: () => api.get('/admin/data-quality/consistency'),

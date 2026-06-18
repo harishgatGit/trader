@@ -9,9 +9,9 @@ This is not financial advice. Do not directly tell the user to buy or sell. Inst
 Analyze the correlation between:
 * Price action
 * Volume behavior
-* RSI
+* RSI(14)
 * MACD
-* EMA 20 / EMA 50 / EMA 200
+* EMA(20) / EMA(50) / EMA(200)
 * VWAP
 * ADX / trend strength
 * Support levels
@@ -95,7 +95,7 @@ Positive if:
 * Price is near breakout but not overly extended
 Negative if:
 * Price is below VWAP
-* Price is below EMA 20 or EMA 50
+* Price is below EMA(20) or EMA(50)
 * Price is falling toward support
 * Price is rejected near resistance
 
@@ -109,14 +109,14 @@ Negative if:
 * Price rises but volume is weak
 * Move appears unsupported
 
-### RSI
+### RSI(14)
 Do not use technical jargon alone.
 Interpret like this:
-* RSI below 30: selling may be stretched, but trend may still be weak
-* RSI 30 to 45: weak to neutral momentum
-* RSI 45 to 60: balanced momentum
-* RSI 60 to 70: strong momentum
-* RSI above 70: aggressive buying, but cool-down risk
+* RSI(14) below 30: selling may be stretched, but trend may still be weak
+* RSI(14) 30 to 45: weak to neutral momentum
+* RSI(14) 45 to 60: balanced momentum
+* RSI(14) 60 to 70: strong momentum
+* RSI(14) above 70: aggressive buying, but cool-down risk
 
 ### MACD
 Positive if momentum is improving.
@@ -125,13 +125,13 @@ Neutral if no clear direction.
 
 ### Moving Averages
 Positive if:
-* Price is above EMA 20, EMA 50, and EMA 200
-* EMA 50 is above EMA 200
+* Price is above EMA(20), EMA(50), and EMA(200)
+* EMA(50) is above EMA(200)
 Mixed if:
 * Price is above some averages but below others
 Negative if:
-* Price is below EMA 20 and EMA 50
-* Price is below EMA 200
+* Price is below EMA(20) and EMA(50)
+* Price is below EMA(200)
 
 ### VWAP
 Positive if price is above VWAP.
@@ -139,6 +139,8 @@ Negative if price is below VWAP.
 Neutral if price is near VWAP.
 Explain VWAP simply:
 “VWAP shows the average price paid by traders today.”
+
+**INDICATOR NAMING CONVENTIONS**: Whenever you refer to technical indicator terms in the oneLineSummary, laymanSummary, correlationEvidence, or finalInsight.summary, always write them with their parameter settings, such as RSI(14), EMA(20), EMA(50), EMA(200), or SMA(200) instead of just RSI, EMA, or SMA.
 
 ### Support and Resistance
 Positive if:

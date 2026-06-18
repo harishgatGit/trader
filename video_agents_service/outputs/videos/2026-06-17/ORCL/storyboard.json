@@ -1,0 +1,233 @@
+{
+  "ticker": "ORCL",
+  "reportDate": "Unavailable",
+  "videoTitle": "ORCL Stock Report",
+  "durationSeconds": 170.63,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for ORCL, Oracle Corporation. With the stock currently in a bearish trend and facing various challenges, we\u2019ll explore whether this is a moment to watch or an opportunity to pass.\n\nAt present, Oracle's stock is trading at $186.42, reflecting a decline of 2.23% from the previous day. This negative movement indicates that the stock has been struggling to maintain upward momentum amid prevailing market conditions.\n\nThe primary driver behind this trend is a mix of negative sentiment stemming from recent news, particularly Microsoft walking away from a significant $3 billion deal due to security concerns. This has contributed to a bearish outlook for Oracle, suggesting that the stock is currently under pressure.\n\nSupporting this bearish trend, we observe below-average trading volume, which reveals weak buying interest. Additionally, technical indicators reflect a lack of upward momentum, further confirming the negative sentiment around the stock.\n\nAnalyzing the daily trend chart, we can identify key levels of support and resistance. The stock is currently positioned below major moving averages, suggesting a consolidation phase rather than a breakout. This setup raises concerns about potential further declines if the bearish trend continues.\n\nFrom a technical standpoint, key indicators like the MACD histogram are negative, and the RSI is currently at 44.71. This implies that while the stock is not yet oversold, it is under considerable pressure, reinforcing the bearish outlook.\n\nFor tactical traders, the recommended entry zone lies between $134.60 and $160.36, with a stop loss set at $160.36 to manage risk. Target levels to watch for potential recovery are $189.17 and $200.38, though these may require confirmation of a trend reversal.\n\nWhen considering short trades, caution is warranted due to the medium risk of a short squeeze. Traders should be mindful of the breakdown level, as any further deterioration could amplify selling pressure.\n\nIn the broader context, Oracle operates within a challenging technology sector, which may amplify the effects of negative sentiment. Peer performance and overall market conditions could either support or undermine Oracle's recovery potential.\n\nIn conclusion, Oracle's stock is currently rated as a watchlist candidate, given its bearish trend and negative technical indicators. Investors should focus on key support levels and remain vigilant for clearer signals of a reversal before making any investment decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 15.09,
+      "narration": "Welcome to the Investing Atti stock analysis for ORCL, Oracle Corporation. With the stock currently in a bearish trend and facing various challenges, we\u2019ll explore whether this is a moment to watch or an opportunity to pass.",
+      "pandaAction": "default",
+      "speechBubbleText": "Is ORCL a watch or a pass?",
+      "visualElements": [
+        "Oracle logo",
+        "stock market background"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "slide up"
+      ],
+      "dataFields": {
+        "catchyLine": "Oracle's Bearish Trend: Watch or Pass?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 15.7,
+      "narration": "At present, Oracle's stock is trading at $186.42, reflecting a decline of 2.23% from the previous day. This negative movement indicates that the stock has been struggling to maintain upward momentum amid prevailing market conditions.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $186.42",
+      "visualElements": [
+        "current price card",
+        "decline graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight price",
+        "bounce effect"
+      ],
+      "dataFields": {
+        "Current Price": "$186.42",
+        "Price Change": "-2.23%"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 20.21,
+      "narration": "The primary driver behind this trend is a mix of negative sentiment stemming from recent news, particularly Microsoft walking away from a significant $3 billion deal due to security concerns. This has contributed to a bearish outlook for Oracle, suggesting that the stock is currently under pressure.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Negative Sentiment Impact",
+      "visualElements": [
+        "news headline",
+        "Microsoft logo"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake effect",
+        "fade out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 15.97,
+      "narration": "Supporting this bearish trend, we observe below-average trading volume, which reveals weak buying interest. Additionally, technical indicators reflect a lack of upward momentum, further confirming the negative sentiment around the stock.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Weak Buying Interest",
+      "visualElements": [
+        "trading volume chart",
+        "technical indicators"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "zoom in",
+        "fade in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 20.08,
+      "narration": "Analyzing the daily trend chart, we can identify key levels of support and resistance. The stock is currently positioned below major moving averages, suggesting a consolidation phase rather than a breakout. This setup raises concerns about potential further declines if the bearish trend continues.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Key Support & Resistance Levels",
+      "visualElements": [
+        "daily trend chart"
+      ],
+      "chartElements": [
+        "moving averages"
+      ],
+      "animationInstructions": [
+        "draw lines",
+        "highlight areas"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 16.1,
+      "narration": "From a technical standpoint, key indicators like the MACD histogram are negative, and the RSI is currently at 44.71. This implies that while the stock is not yet oversold, it is under considerable pressure, reinforcing the bearish outlook.",
+      "pandaAction": "default",
+      "speechBubbleText": "MACD & RSI Insights",
+      "visualElements": [
+        "MACD chart",
+        "RSI chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {
+        "MACD": "Negative",
+        "RSI": "44.71"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 17.52,
+      "narration": "For tactical traders, the recommended entry zone lies between $134.60 and $160.36, with a stop loss set at $160.36 to manage risk. Target levels to watch for potential recovery are $189.17 and $200.38, though these may require confirmation of a trend reversal.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $134.60 - $160.36",
+      "visualElements": [
+        "entry zone graphic",
+        "stop loss indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight entry zone",
+        "fade in"
+      ],
+      "dataFields": {
+        "Entry Zone Low": "$134.60",
+        "Entry Zone High": "$160.36",
+        "Stop Loss": "$160.36",
+        "Targets": [
+          189.17,
+          200.38
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 13.81,
+      "narration": "When considering short trades, caution is warranted due to the medium risk of a short squeeze. Traders should be mindful of the breakdown level, as any further deterioration could amplify selling pressure.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution: Short Squeeze Risk",
+      "visualElements": [
+        "short trade graphic",
+        "risk indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake effect",
+        "fade out"
+      ],
+      "dataFields": {
+        "Squeeze Risk": "MEDIUM"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 16.31,
+      "narration": "In the broader context, Oracle operates within a challenging technology sector, which may amplify the effects of negative sentiment. Peer performance and overall market conditions could either support or undermine Oracle's recovery potential.",
+      "pandaAction": "default",
+      "speechBubbleText": "Challenging Tech Sector",
+      "visualElements": [
+        "technology sector graphic",
+        "peer comparison"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "slide up"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 19.84,
+      "narration": "In conclusion, Oracle's stock is currently rated as a watchlist candidate, given its bearish trend and negative technical indicators. Investors should focus on key support levels and remain vigilant for clearer signals of a reversal before making any investment decisions.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Watchlist Candidate",
+      "visualElements": [
+        "watchlist graphic",
+        "final thoughts"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "celebrate"
+      ],
+      "dataFields": {
+        "quote": "Patience is the key to success in investing.",
+        "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

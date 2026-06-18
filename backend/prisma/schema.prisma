@@ -340,15 +340,18 @@ model ApiConnectionStatus {
 // USER MANAGEMENT
 // ─────────────────────────────────────────────────────────────────
 model User {
-  id           String          @id @default(cuid())
-  username     String          @unique
-  passwordHash String
-  role         String          @default("BASIC") // BASIC, SUPERUSER
-  createdAt    DateTime        @default(now())
-  updatedAt    DateTime        @updatedAt
-  sessions     UserSession[]
-  problemReports ProblemReport[]
-  searchLogs   SearchLog[]
+  id               String          @id @default(cuid())
+  username         String          @unique
+  email            String?         @unique
+  passwordHash     String?
+  role             String          @default("BASIC") // BASIC, SUPERUSER
+  subscriptionPlan String          @default("FREE")
+  isActive         Boolean         @default(true)
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  sessions         UserSession[]
+  problemReports   ProblemReport[]
+  searchLogs       SearchLog[]
 
   @@map("users")
 }
@@ -470,6 +473,15 @@ model VideoGenerationJob {
   updatedAt           DateTime  @updatedAt @map("updated_at")
   completedAt         DateTime? @map("completed_at")
   forceRegenerate     Boolean   @default(false) @map("force_regenerate")
+  // ── YouTube Upload ────────────────────────────────────────────────
+  youtubeVideoId      String?   @map("youtube_video_id")
+  youtubeUrl          String?   @map("youtube_url")
+  youtubeTitle        String?   @map("youtube_title")
+  youtubeDescription  String?   @map("youtube_description") @db.Text
+  // PENDING | UPLOADING | UPLOADED | FAILED | SKIPPED
+  youtubeUploadStatus String?   @map("youtube_upload_status")
+  youtubeUploadedAt   DateTime? @map("youtube_uploaded_at")
+  youtubeUploadError  String?   @map("youtube_upload_error")
 
   @@unique([ticker, reportDate])
   @@map("video_generation_jobs")

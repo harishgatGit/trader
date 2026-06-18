@@ -1,0 +1,734 @@
+{
+  "symbol": "QUALCOMM",
+  "analysisDateTime": "2026-06-16T15:31:16.202Z",
+  "currentPrice": null,
+  "dataQuality": {
+    "rating": "INSUFFICIENT",
+    "missingFields": [
+      "price",
+      "historicalCandles",
+      "technicals",
+      "fundamentals",
+      "news",
+      "valuation"
+    ],
+    "staleDataWarning": "Data unavailable",
+    "decisionAllowed": false,
+    "reason": "Insufficient data to make a reliable decision."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 0,
+    "decisionSummary": "Due to insufficient data across multiple key areas such as price, technical indicators, fundamentals, and news, it is not possible to make a well-informed decision. The stock should be placed on a watchlist until more data becomes available.",
+    "shouldBuyNow": false,
+    "buyNowReason": "Insufficient data to support a buy decision.",
+    "bestActionNow": "Add to watchlist and wait for more data."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": false,
+    "nearResistanceRisk": false,
+    "earningsRisk": false,
+    "newsRiskAcceptable": false,
+    "liquidityAcceptable": false,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: Due to a lack of sufficient data, it is not advisable to make any trading or investment decisions regarding QUALCOMM at this time. The stock should be monitored for future opportunities. QUALCOMM currently lacks the necessary price, technical, and fundamental data to provide a clear trading or investment strategy. Without this information, it is difficult to assess the stock's current position or potential future movements.",
+  "technicalAnalysis": {
+    "overallBias": "INSUFFICIENT_DATA",
+    "trendStage": "UNKNOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 0,
+    "keySignals": [],
+    "supportLevels": [],
+    "resistanceLevels": [],
+    "vwapAnalysis": "Insufficient data to calculate",
+    "movingAverageAnalysis": "Insufficient data to calculate",
+    "rsiAnalysis": "Insufficient data to calculate",
+    "macdAnalysis": "Insufficient data to calculate",
+    "volumeAnalysis": "Insufficient data to calculate",
+    "volumeTrendStatus": "INSUFFICIENT_DATA",
+    "atrVolatilityAnalysis": "Insufficient data to calculate",
+    "adxTrendStrengthAnalysis": "Insufficient data to calculate",
+    "bollingerBandAnalysis": "Insufficient data to calculate"
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "NO_TRADE",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Insufficient data to define"
+    },
+    "pullbackEntryZone": {
+      "low": null,
+      "high": null,
+      "description": "Insufficient data to define"
+    },
+    "breakoutEntryLevel": {
+      "price": null,
+      "confirmationRule": "Insufficient data to define"
+    },
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "Insufficient data to define"
+    },
+    "invalidationLevel": {
+      "price": null,
+      "reason": "Insufficient data to define"
+    },
+    "stopLoss": {
+      "price": null,
+      "stopType": "NOT_AVAILABLE",
+      "description": "Insufficient data to define"
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": null,
+        "reason": "Insufficient data to define"
+      },
+      {
+        "label": "T2",
+        "price": null,
+        "reason": "Insufficient data to define"
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "Insufficient data to define"
+      }
+    ],
+    "exitRules": []
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": null,
+    "riskPerShare": null,
+    "rewardToTarget1": null,
+    "rewardToTarget2": null,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": null,
+    "riskRewardToTarget2": null,
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "UNAVAILABLE",
+    "positionSizingNote": "Insufficient data to determine position sizing."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "NEUTRAL",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "Insufficient data to define"
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "Insufficient data to define"
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [],
+    "tradeQuality": "F"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "NEUTRAL",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "Insufficient data to define"
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "Insufficient data to define"
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "Insufficient data to define"
+    },
+    "riskReward": null,
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "NEUTRAL",
+    "swingSetup": {
+      "setup": "No setup due to insufficient data",
+      "analysis": "Insufficient data to analyze"
+    },
+    "entryTiming": {
+      "trigger": "No trigger due to insufficient data",
+      "analysis": "Insufficient data to analyze"
+    },
+    "supportLevels": [],
+    "resistanceLevels": [],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": null,
+    "riskMetrics": {
+      "atr": null,
+      "atrAnalysis": "Insufficient data to calculate",
+      "vwap": null,
+      "vwapAnalysis": "Insufficient data to calculate",
+      "volumeAnalysis": "Insufficient data to calculate",
+      "supportResistanceAnalysis": "Insufficient data to calculate"
+    },
+    "catalysts": {
+      "news": "No news data available",
+      "earnings": "No earnings data available",
+      "secFilings": "No SEC filings data available"
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "Insufficient data to provide detailed analysis.",
+    "dailyTrend": {
+      "trend": "NEUTRAL",
+      "barCount": 252,
+      "analysis": "The analysis for QUALCOMM's stock trend is inconclusive because there is no available price data, historical candle information, technical indicators, or fundamental data. Without these, it's impossible to determine the direction or strength of the trend. The institutional flow data is also uncertain, adding to the lack of clarity.",
+      "laymanExplanation": "Right now, it's like trying to figure out the weather without looking outside or checking a forecast. We don't have any data to tell us if QUALCOMM's stock is going up, down, or staying the same. It's a mystery until more information is available.",
+      "ticker": "QUALCOMM",
+      "companyName": "QUALCOMM Incorporated",
+      "confidenceScore": 0,
+      "trendSummary": "The trend for QUALCOMM is currently neutral due to insufficient data.",
+      "keyDrivers": [
+        {
+          "driver": "Data Availability",
+          "impact": "Neutral",
+          "evidence": "No price, technical, or fundamental data is available to assess the stock's trend."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "No data available to assess price action.",
+        "movingAverageView": "No data available to assess moving averages.",
+        "momentumView": "No data available to assess momentum.",
+        "volumeView": "No data available to assess volume.",
+        "supportResistanceView": "No data available to assess support or resistance.",
+        "volatilityView": "No data available to assess volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "No earnings data available.",
+        "newsImpact": "No news data available.",
+        "institutionalFlowImpact": "Institutional flow data is uncertain.",
+        "sectorMacroImpact": "No sector or macro data available."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Lack of data availability",
+          "Uncertain institutional flow"
+        ],
+        "whatNeedsConfirmation": "Availability of comprehensive market data and technical indicators."
+      },
+      "watchStatus": "Neutral watch",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "INSUFFICIENT_DATA",
+    "investmentQuality": "INSUFFICIENT_DATA",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient_data"
+    },
+    "bullCase": "Insufficient data to define",
+    "baseCase": "Insufficient data to define",
+    "bearCase": "Insufficient data to define",
+    "longTermVerdict": "INSUFFICIENT_DATA"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": null,
+    "rating": "INSUFFICIENT_DATA",
+    "revenueTrend": "Insufficient data to define",
+    "epsTrend": "Insufficient data to define",
+    "profitability": "Insufficient data to define",
+    "debtRisk": "Insufficient data to define",
+    "cashFlowQuality": "Insufficient data to define",
+    "valuationCommentary": "Insufficient data to define"
+  },
+  "valuationAnalysis": {
+    "valuationRating": "INSUFFICIENT_DATA",
+    "valuationScore": null,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Insufficient data to provide valuation analysis."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": null,
+    "overallSentiment": "UNAVAILABLE",
+    "keyCatalysts": [],
+    "keyRisksFromNews": [],
+    "earningsRisk": "Insufficient data to assess",
+    "catalystVerdict": "UNAVAILABLE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": null,
+    "interpretation": "UNAVAILABLE",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. Due to the lack of sufficient data, the institutional flow proxy is uncertain and does not provide a clear signal. This should not be treated as confirmed institutional activity.",
+    "signals": [],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "INSUFFICIENT_DATA",
+    "probabilityScore": null,
+    "reason": "Insufficient data to assess multibagger potential.",
+    "requiredConditions": [],
+    "majorBlockers": []
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "VERY_HIGH",
+    "technicalRisk": "Insufficient data to assess",
+    "fundamentalRisk": "Insufficient data to assess",
+    "valuationRisk": "Insufficient data to assess",
+    "newsRisk": "Insufficient data to assess",
+    "liquidityRisk": "Insufficient data to assess",
+    "eventRisk": "Insufficient data to assess",
+    "topRisks": [
+      "Insufficient data across all areas"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Insufficient data to define",
+      "pricePath": "Insufficient data to define",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Insufficient data to define",
+      "pricePath": "Insufficient data to define",
+      "probability": "LOW"
+    },
+    "bearCase": {
+      "condition": "Insufficient data to define",
+      "pricePath": "Insufficient data to define",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for data updates",
+    "Re-evaluate when more data is available",
+    "Avoid trading until clarity improves"
+  ],
+  "doNotTradeConditions": [
+    "Insufficient data to support any trading decision"
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": null,
+    "stopLossAlert": null,
+    "target1Alert": null,
+    "target2Alert": null,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Veoneer",
+        "ownershipPct": "null",
+        "performance": "Veoneer is focused on automotive safety electronics, with a trajectory towards growth as the demand for advanced driver-assistance systems (ADAS) increases.",
+        "upcomingEvents": [
+          "Potential new partnerships with automotive manufacturers",
+          "Advancements in ADAS technology"
+        ],
+        "impactPotential": "Positive impact on Qualcomm if Veoneer secures major contracts or technological breakthroughs, enhancing Qualcomm's position in automotive markets."
+      },
+      {
+        "name": "Nuvia",
+        "ownershipPct": "null",
+        "performance": "Nuvia is developing high-performance processors, with a trajectory towards integration into Qualcomm's product lines.",
+        "upcomingEvents": [
+          "Integration of Nuvia technology into Qualcomm's Snapdragon processors"
+        ],
+        "impactPotential": "Positive impact as successful integration could enhance Qualcomm's competitive edge in mobile and computing markets."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "TSMC",
+          "role": "Supplier",
+          "description": "Semiconductor manufacturing",
+          "riskExposure": "High impact if disrupted, as Qualcomm relies on TSMC for advanced chip production."
+        },
+        {
+          "name": "Samsung Electronics",
+          "role": "Supplier",
+          "description": "Semiconductor manufacturing",
+          "riskExposure": "High impact if disrupted, as Samsung is a key supplier for certain Qualcomm chips."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Foxconn",
+          "role": "Outsource Partner",
+          "description": "Assembly and manufacturing of devices",
+          "riskExposure": "Moderate impact if disrupted, affecting the supply chain and delivery timelines."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Google",
+          "role": "Marketing Partner",
+          "description": "Collaborations on Android platform",
+          "riskExposure": "Moderate impact if partnership weakens, as Android is a major platform for Qualcomm's mobile processors."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Apple",
+          "role": "Customer",
+          "description": "Purchases modem chips for iPhones",
+          "riskExposure": "High impact if Apple reduces orders or switches suppliers, affecting Qualcomm's revenue."
+        },
+        {
+          "name": "Samsung",
+          "role": "Customer",
+          "description": "Uses Qualcomm processors in some of its smartphones",
+          "riskExposure": "Moderate impact if Samsung shifts to more in-house solutions or alternative suppliers."
+        }
+      ]
+    },
+    "strategicOutlook": "Qualcomm's ecosystem is robust, with significant exposure to the semiconductor supply chain and major tech companies as customers. The concentration risk lies in its dependency on key suppliers like TSMC and customers like Apple. Upcoming technological integrations and partnerships in automotive and high-performance computing are critical externalities to watch."
+  },
+  "trendStory": {
+    "ticker": "QUALCOMM",
+    "analysis_date": "2026-06-16",
+    "price_summary": {
+      "current_price": 0,
+      "previous_close": 0,
+      "day_change_percent": 0,
+      "day_range": {
+        "high": 0,
+        "low": 0
+      },
+      "volume": 0,
+      "average_volume": 0,
+      "relative_volume": 1
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "QUALCOMM trades up 0.0% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 1,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 0,
+        "high": 0
+      },
+      "stop_loss": 0,
+      "target_1": 0,
+      "target_2": 0,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 0,
+      "short_stop_loss": 0,
+      "short_target_1": 0,
+      "short_target_2": 0,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "QUALCOMM moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "QUALCOMM",
+    "analysisDate": "2026-06-16",
+    "currentPrice": null,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 0,
+    "gradientPositionPercent": 0,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "LOW",
+    "oneLineSummary": "Insufficient data to determine QUALCOMM's stock signal correlation.",
+    "laymanSummary": "We don't have enough information to analyze QUALCOMM's stock signals right now.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 0,
+        "maxScore": 20,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No price data available."
+      },
+      "volumeConfirmation": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No volume data available."
+      },
+      "momentumIndicators": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No momentum indicator data available."
+      },
+      "movingAverageStructure": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No moving average data available."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No VWAP data available."
+      },
+      "supportResistanceRiskReward": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No support/resistance data available."
+      },
+      "sectorIndexAlignment": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No sector/index performance data available."
+      },
+      "shortInterestContext": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No short interest data available."
+      },
+      "newsCatalystConfirmation": {
+        "score": 0,
+        "maxScore": 3,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No news or catalyst data available."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "Institutional flow proxy is uncertain."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [],
+      "redSignals": [],
+      "strongestPositiveEvidence": "None due to lack of data.",
+      "strongestNegativeEvidence": "None due to lack of data.",
+      "mixedSignalExplanation": "No data available to analyze."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": null,
+      "nearestResistance": null,
+      "distanceToSupportPercent": null,
+      "distanceToResistancePercent": null,
+      "riskRewardView": "INSUFFICIENT_DATA",
+      "explanation": "No support or resistance data available."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "Due to insufficient data, the stock is classified in the RED_ZONE."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Complete market data",
+        "Technical indicators"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Complete market data",
+        "Technical indicators"
+      ],
+      "forRedZoneWarning": [
+        "Complete market data",
+        "Technical indicators"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 0,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "Insufficient data to analyze.",
+      "supportingPointsBelowBar": [
+        "No data available for analysis."
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "INSUFFICIENT_DATA",
+      "summary": "There is not enough data to provide a meaningful analysis of QUALCOMM's stock signals.",
+      "riskWarning": "Due to lack of data, any investment decision should be approached with caution.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "QUALCOMM",
+    "available": false,
+    "price": null,
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "vwap": null,
+    "bid": null,
+    "ask": null,
+    "spread": null,
+    "changePercent": null,
+    "timestamp": null,
+    "raw": null
+  },
+  "technicals": {
+    "primary": null,
+    "timeframes": []
+  },
+  "fundamentals": {
+    "available": false,
+    "source": "unavailable",
+    "marketCap": null,
+    "peRatio": null,
+    "pbRatio": null,
+    "epsTrailing": null,
+    "epsForward": null,
+    "revenue": null,
+    "debtToEquity": null,
+    "dividendYield": null,
+    "beta": null,
+    "week52High": null,
+    "week52Low": null,
+    "sector": null,
+    "industry": null,
+    "description": null,
+    "unavailableReason": "Fundamental data not available from free sources for this symbol."
+  },
+  "news": {
+    "available": false,
+    "source": "alpaca_news",
+    "items": [],
+    "sentiment": null,
+    "unavailableReason": "No recent news available for this symbol."
+  },
+  "institutionalFlow": {
+    "proxyScore": 0,
+    "interpretation": "UNCERTAIN",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 0,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 0,
+      "supportHoldScore": 0,
+      "breakoutVolScore": 0,
+      "largeBodyScore": 0
+    },
+    "signals": [],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 0,
+  "fundamentalScore": null,
+  "newsCatalystScore": null,
+  "institutionalFlowProxyScore": null,
+  "keyCatalysts": [],
+  "keyRisks": [
+    "Insufficient data across all areas"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. Due to the lack of sufficient data, the institutional flow proxy is uncertain and does not provide a clear signal. This should not be treated as confirmed institutional activity."
+}

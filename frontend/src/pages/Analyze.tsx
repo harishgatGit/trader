@@ -143,13 +143,35 @@ const AnalyzePage: React.FC = () => {
     if (sym) runAnalysis(sym);
   };
 
+  const getPreviewSummary = () => {
+    if (!report) return '';
+    const text = report.executiveSummary?.summary || 
+                 (typeof report.executiveSummary === 'string' ? report.executiveSummary : '') || 
+                 report.finalDecision?.decisionSummary || 
+                 '';
+                 
+    if (!text) return '';
+    
+    const marker = "LAYMAN'S TAKEAWAY:";
+    const index = text.toUpperCase().indexOf(marker.toUpperCase());
+    if (index !== -1) {
+      const afterText = text.substring(index + marker.length).trim();
+      if (index === 0) {
+        return afterText.split(/\n+/)[0]?.trim() || '';
+      } else {
+        return afterText;
+      }
+    }
+    return text.length > 260 ? `${text.substring(0, 260)}…` : text;
+  };
+
   return (
     <PageContainer className="max-w-3xl py-8 space-y-8">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">Run Stock Analysis</h1>
+        <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">Run Your Analysis</h1>
         <p className="text-slate-450 text-sm max-w-md mx-auto leading-relaxed">
-          Input any ticker symbol. The AI agent compiles real-time order books, indicators, and catalysts.
+          Input any ticker symbol. We compile real-time order books, indicators, and catalysts.
         </p>
       </div>
 
@@ -201,7 +223,7 @@ const AnalyzePage: React.FC = () => {
                         </span>
                         <span className="text-xs font-semibold font-sans">{item.name}</span>
                       </div>
-                      <span className="text-[10px] text-slate-500 uppercase font-bold font-sans tracking-wide">
+                      <span className="text-[10px] text-slate-500  font-bold font-sans tracking-wide">
                         {item.exchange || item.sector || ''}
                       </span>
                     </div>
@@ -221,14 +243,14 @@ const AnalyzePage: React.FC = () => {
                 Analyzing…
               </>
             ) : (
-              'Run AI Review'
+              'Analyze'
             )}
           </button>
         </form>
 
         {/* Popular chips */}
         <div className="flex flex-wrap gap-2.5 items-center mt-1 border-t border-slate-850/60 pt-4">
-          <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">Quick Picks:</span>
+          <span className="text-xs text-slate-500 font-bold  tracking-wider">Quick Picks:</span>
           {POPULAR.map((s) => (
             <button
               key={s}
@@ -245,7 +267,7 @@ const AnalyzePage: React.FC = () => {
       {/* Progress logs */}
       {analyzing && analysisProgress.length > 0 && (
         <div className="card space-y-4 animate-pulse-slow">
-          <h2 className="text-sm font-bold text-slate-200 uppercase tracking-wider">Research Pipeline Status</h2>
+          <h2 className="text-sm font-bold text-slate-200  tracking-wider">Research Pipeline Status</h2>
           <div className="divide-y divide-slate-850">
             {analysisProgress.map((step, i) => (
               <div key={i} className="flex items-start gap-3.5 py-3 first:pt-0 last:pb-0">
@@ -255,7 +277,7 @@ const AnalyzePage: React.FC = () => {
                     <span className={`text-sm font-semibold ${step.status === 'running' ? 'text-brand-500 font-bold' : step.status === 'done' ? 'text-slate-200' : step.status === 'error' ? 'text-rose-500' : 'text-slate-500'}`}>
                       {step.step}
                     </span>
-                    <span className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-lg border ${
+                    <span className={`text-[10px]  font-bold px-2 py-0.5 rounded-lg border ${
                       step.status === 'done' ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20' :
                       step.status === 'error' ? 'bg-rose-500/10 text-rose-500 border-rose-500/20' :
                       step.status === 'running' ? 'bg-brand-500/10 text-brand-500 border-brand-500/20' :
@@ -299,7 +321,7 @@ const AnalyzePage: React.FC = () => {
                 </span>
               </div>
               {(currentAnalysis as any).cache.cached && (
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-lg bg-brand-500/10 border border-brand-500/20 text-brand-400 uppercase tracking-wider font-mono">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-lg bg-brand-500/10 border border-brand-500/20 text-brand-400  tracking-wider font-mono">
                   Cached
                 </span>
               )}
@@ -318,12 +340,12 @@ const AnalyzePage: React.FC = () => {
                     <RatingBadge rating={report.finalDecision?.finalRating} size="md" />
                   </div>
                   <h2 className="text-sm font-semibold text-slate-300 mt-1">{report.fundName}</h2>
-                  <span className="text-[10px] text-brand-400 font-bold uppercase tracking-wider font-mono block">
+                  <span className="text-[10px] text-brand-400 font-bold  tracking-wider font-mono block">
                     {report.issuer} · ETF Overview
                   </span>
                 </div>
                 <div className="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl shrink-0 text-center">
-                  <span className="text-[9px] text-slate-500 font-bold block uppercase">CONFIDENCE</span>
+                  <span className="text-[9px] text-slate-500 font-bold block ">CONFIDENCE</span>
                   <span className="text-base font-bold font-mono text-brand-400">{report.finalDecision?.confidenceScore}%</span>
                 </div>
               </div>
@@ -351,7 +373,7 @@ const AnalyzePage: React.FC = () => {
                     <RatingBadge rating={report.finalRating} size="md" />
                   </div>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans max-w-2xl">
-                    {report.executiveSummary?.substring(0, 260)}…
+                    {getPreviewSummary()}
                   </p>
                 </div>
               </div>

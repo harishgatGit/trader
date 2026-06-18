@@ -1,0 +1,23 @@
+{
+  "jobId": "36ddee53-08ab-4e92-8ba6-8dfc10bcf7df",
+  "reportId": "cmqgap4u401qt70co20zicdqj",
+  "ticker": "AMZN",
+  "reportDate": "2026-06-16",
+  "status": "GENERATED",
+  "startedAt": "2026-06-16T07:02:58.539371",
+  "completedAt": "2026-06-16T07:19:39.211974",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/36ddee53-08ab-4e92-8ba6-8dfc10bcf7df/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\AMZN\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\AMZN\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\AMZN\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\AMZN\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\AMZN\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\AMZN\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\AMZN\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\AMZN\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

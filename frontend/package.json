@@ -9,6 +9,7 @@
     "lint": "eslint src --ext ts,tsx"
   },
   "dependencies": {
+    "@azure/msal-browser": "^5.13.0",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-switch": "^1.0.3",

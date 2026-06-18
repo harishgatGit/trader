@@ -10,16 +10,15 @@ import Reports from './pages/Reports';
 import Settings from './pages/Settings';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import LandingPage from './pages/LandingPage';
 import Profile from './pages/Profile';
 import Education from './pages/Education';
 import Glossary from './pages/Glossary';
 import Admin from './pages/Admin';
-import AdminLogin from './pages/AdminLogin';
 import WhatsForToday from './pages/WhatsForToday';
 import PennyStocksToWatch from './pages/PennyStocksToWatch';
 import { ToastContainer, LoadingSpinner } from './components/ui';
 import { useAppStore } from './store/useAppStore';
-import { authApi } from './services/api';
 import DirectionalTransition from './components/DirectionalTransition';
 
 // ── Silent auto-login splash ────────────────────────────────────────────────
@@ -76,12 +75,12 @@ const ProtectedRoute: React.FC<{ children: React.ReactElement; requireSuper?: bo
 }) => {
   const { user, token } = useAppStore();
 
-  // Still loading user profile — show nothing (App-level loader covers this)
-  if (!token || !user) return null;
+  // Not authenticated — redirect to landing page
+  if (!token || !user) return <Navigate to="/landing" replace />;
 
-  // If superuser is required but user role is BASIC, redirect to admin login
+  // If superuser is required but user role is BASIC, redirect to home
   if (requireSuper && user.role !== 'SUPERUSER') {
-    return <Navigate to="/admin-login" replace />;
+    return <Navigate to="/analyze" replace />;
   }
 
   return children;
@@ -104,23 +103,11 @@ const App: React.FC = () => {
   useEffect(() => {
     const boot = async () => {
       // If token already stored, validate it
-      if (localStorage.getItem('trader_auth_token')) {
+      const storedToken = localStorage.getItem('trader_auth_token');
+      if (storedToken) {
         await fetchMe();
-        setBooting(false);
-        return;
       }
-
-      // No token → silently log in as default user (no toast, no redirect)
-      try {
-        const response = await authApi.login({ username: 'tail', password: 'trail123' });
-        localStorage.setItem('trader_auth_token', response.token);
-        // Manually set store without triggering the toast from store.login()
-        useAppStore.setState({ user: response.user, token: response.token });
-      } catch {
-        // If silent login fails, just continue — protected routes will handle it
-      } finally {
-        setBooting(false);
-      }
+      setBooting(false);
     };
 
     boot();
@@ -132,9 +119,9 @@ const App: React.FC = () => {
   return (
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Routes>
-        {/* Auth pages — kept for admin use */}
+        {/* Public pages */}
+        <Route path="/landing" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/register" element={<Register />} />
 
         <Route
@@ -228,7 +215,7 @@ const App: React.FC = () => {
         </Route>
 
         {/* Catch-all Fallback */}
-        <Route path="*" element={<Navigate to="/analyze" replace />} />
+        <Route path="*" element={<Navigate to="/landing" replace />} />
       </Routes>
       <ToastContainer />
     </BrowserRouter>

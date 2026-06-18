@@ -1,0 +1,975 @@
+{
+  "symbol": "CMTL",
+  "analysisDateTime": "2026-06-15T16:56:12.432Z",
+  "currentPrice": 2.77,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data is available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "AVOID",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 60,
+    "decisionSummary": "The stock is currently in a strong downtrend with bearish technical indicators across multiple timeframes. High relative volume suggests distribution rather than accumulation. The risk/reward profile is not favorable given the current price action and technical setup.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is experiencing a significant decline with bearish momentum and high selling pressure.",
+    "bestActionNow": "Avoid entering a position until a more stable technical setup emerges."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": true,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": false,
+    "nearResistanceRisk": false,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "Comtech Telecommunications Corp. (CMTL) is currently trading at $2.77, experiencing a significant decline of over 42% in recent trading. The technical indicators show a strong bearish bias with the stock trading below key moving averages and VWAP, indicating a downtrend. The high relative volume suggests distribution rather than accumulation, and the RSI indicates an oversold condition, but without a reversal confirmation. The stock is best avoided at this time due to unfavorable risk/reward and technical setup. LAYMAN'S TAKEAWAY: Given the current bearish trend and high selling pressure, it's advisable to avoid buying CMTL until a more favorable setup emerges.",
+  "technicalAnalysis": {
+    "overallBias": "BEARISH",
+    "trendStage": "MARKDOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 30,
+    "keySignals": [
+      "MACD bearish",
+      "Price below VWAP",
+      "Strong downtrend (ADX>25, -DI>+DI)",
+      "High relative volume (>2x avg)"
+    ],
+    "supportLevels": [
+      3.43,
+      3.52,
+      3.55,
+      3.63,
+      3.99
+    ],
+    "resistanceLevels": [
+      3.97,
+      4.2,
+      5.83,
+      6.19
+    ],
+    "vwapAnalysis": "Price significantly below VWAP, indicating bearish sentiment.",
+    "movingAverageAnalysis": "Price below EMA20, EMA50, and EMA200, indicating a bearish trend.",
+    "rsiAnalysis": "RSI is oversold, but without a reversal signal.",
+    "macdAnalysis": "MACD is bearish across multiple timeframes.",
+    "volumeAnalysis": "High relative volume suggests strong selling pressure.",
+    "volumeTrendStatus": "UNUSUAL_SPIKE",
+    "atrVolatilityAnalysis": "ATR indicates high volatility, increasing risk.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong downtrend.",
+    "bollingerBandAnalysis": "Price near lower Bollinger Band, indicating potential oversold conditions but no reversal confirmation."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "NO_TRADE",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current conditions do not support a buy entry."
+    },
+    "pullbackEntryZone": {
+      "low": null,
+      "high": null,
+      "description": "No pullback entry recommended due to strong downtrend."
+    },
+    "breakoutEntryLevel": {
+      "price": null,
+      "confirmationRule": "No breakout entry recommended."
+    },
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone identified due to bearish trend."
+    },
+    "invalidationLevel": {
+      "price": 3.99,
+      "reason": "Price needs to reclaim this level to invalidate the bearish trend."
+    },
+    "stopLoss": {
+      "price": null,
+      "stopType": "NOT_AVAILABLE",
+      "description": "Stop-loss not defined due to no trade recommendation."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": null,
+        "reason": "No target due to bearish setup."
+      },
+      {
+        "label": "T2",
+        "price": null,
+        "reason": "No target due to bearish setup."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No target due to bearish setup."
+      }
+    ],
+    "exitRules": [
+      "Avoid entering a position until a more favorable setup emerges."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": null,
+    "riskPerShare": null,
+    "rewardToTarget1": null,
+    "rewardToTarget2": null,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": null,
+    "riskRewardToTarget2": null,
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "UNAVAILABLE",
+    "positionSizingNote": "Position sizing not applicable due to no trade recommendation."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to bearish conditions."
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "Stop-loss not applicable due to no trade recommendation."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Avoid entering a position until a more favorable setup emerges."
+    ],
+    "tradeQuality": "D"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to bearish conditions."
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "Stop-loss not applicable due to no trade recommendation."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone identified due to bearish trend."
+    },
+    "riskReward": null,
+    "swingVerdict": "AVOID"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BEARISH",
+    "swingSetup": {
+      "setup": "NO_SETUP",
+      "analysis": "The stock is in a strong downtrend with no clear reversal or accumulation signals."
+    },
+    "entryTiming": {
+      "trigger": "NO_TRIGGER",
+      "analysis": "Entry timing is not favorable due to bearish momentum and lack of reversal signals."
+    },
+    "supportLevels": [
+      {
+        "price": 3.43,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 3.97,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": null,
+    "riskMetrics": {
+      "atr": 0.4957296260066127,
+      "atrAnalysis": "High ATR indicates increased volatility and risk.",
+      "vwap": 3.257633,
+      "vwapAnalysis": "Price significantly below VWAP, indicating bearish sentiment.",
+      "volumeAnalysis": "High relative volume suggests strong selling pressure.",
+      "supportResistanceAnalysis": "Price is below key support levels, indicating further downside risk."
+    },
+    "catalysts": {
+      "news": "Recent news is neutral to negative, with no strong positive catalysts.",
+      "earnings": "Earnings risk is not immediate but should be monitored.",
+      "secFilings": "No significant SEC filings impacting the stock."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "The stock is in a strong downtrend with high selling pressure. No clear entry or reversal signals are present.",
+    "dailyTrend": {
+      "trend": "BEARISH",
+      "barCount": 252,
+      "analysis": "Comtech Telecommunications Corp.'s stock experienced a sharp decline of 42.47% in a single day, closing at $2.77. This dramatic drop is supported by high trading volume, more than three times the average, which suggests strong selling pressure. The bearish trend is confirmed by several technical indicators: the MACD is bearish, the RSI is approaching oversold levels, and the price is significantly below key moving averages and VWAP. The ADX indicates a strong downtrend, reinforcing the bearish sentiment. The catalyst for this move appears to be the announcement of the sale of its Satellite and Space Communications segment to Gilat for $157.5 million, which might have been perceived negatively by investors, as indicated by the negative sentiment in the news. Additionally, institutional flow data shows distribution, further confirming the bearish outlook.",
+      "laymanExplanation": "Imagine a car suddenly losing control and skidding downhill. Comtech's stock dropped sharply because the company announced it was selling a big part of its business, which investors didn't like. The high number of shares traded shows that many people were selling. This means the stock is in a rough spot right now, and it might take some time to see if it can recover or if it will keep sliding.",
+      "ticker": "CMTL",
+      "companyName": "Comtech Telecommunications Corp.",
+      "confidenceScore": 95,
+      "trendSummary": "The stock is experiencing a strong bearish trend, characterized by a significant price drop with high volume, indicating strong selling pressure.",
+      "keyDrivers": [
+        {
+          "driver": "Sale of Satellite Unit",
+          "impact": "Negative",
+          "evidence": "The sale of the Satellite and Space Communications segment to Gilat for $157.5 million was perceived negatively, contributing to the stock's decline."
+        },
+        {
+          "driver": "High Trading Volume",
+          "impact": "Negative",
+          "evidence": "The trading volume was over three times the average, indicating strong selling pressure and confirming the bearish trend."
+        },
+        {
+          "driver": "Technical Indicators",
+          "impact": "Negative",
+          "evidence": "MACD is bearish, RSI is near oversold, and the price is below key moving averages and VWAP, all indicating a strong bearish trend."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The stock dropped 42.47% in a single day, closing significantly lower.",
+        "movingAverageView": "Price is below all major moving averages, indicating a bearish trend.",
+        "momentumView": "MACD is bearish and RSI is near oversold, suggesting strong downward momentum.",
+        "volumeView": "Volume was significantly higher than average, confirming strong selling pressure.",
+        "supportResistanceView": "The price broke below recent support levels, with no immediate support visible.",
+        "volatilityView": "High ATR indicates increased volatility, adding to the risk."
+      },
+      "catalystView": {
+        "earningsImpact": "Neutral, as earnings were not a direct catalyst for the day's move.",
+        "newsImpact": "Negative, due to the sale of a business unit perceived unfavorably.",
+        "institutionalFlowImpact": "Negative, with distribution signals indicating institutional selling.",
+        "sectorMacroImpact": "Neutral, as no specific sector or macro events were highlighted."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Continued selling pressure",
+          "Further negative reactions to strategic changes"
+        ],
+        "whatNeedsConfirmation": "Whether the company can stabilize after the asset sale and if any strategic plans can positively influence investor sentiment."
+      },
+      "watchStatus": "High risk",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BEARISH",
+    "investmentQuality": "WEAK",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "INSUFFICIENT_DATA"
+    },
+    "bullCase": "A reversal in trend with strong accumulation and positive earnings could improve the outlook.",
+    "baseCase": "Continued bearish trend with high volatility and risk.",
+    "bearCase": "Further decline due to weak fundamentals and bearish technicals.",
+    "longTermVerdict": "AVOID"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 30,
+    "rating": "WEAK",
+    "revenueTrend": "Revenue is stable but not growing significantly.",
+    "epsTrend": "Negative EPS indicates unprofitability.",
+    "profitability": "Company is currently unprofitable.",
+    "debtRisk": "High debt-to-equity ratio indicates financial risk.",
+    "cashFlowQuality": "Cash flow quality is not strong due to negative EPS.",
+    "valuationCommentary": "Valuation is not attractive given the current financial metrics."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "INSUFFICIENT_DATA",
+    "valuationScore": null,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Insufficient data to determine a clear valuation range."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 40,
+    "overallSentiment": "MIXED",
+    "keyCatalysts": [
+      "Sale of satellite unit to Gilat"
+    ],
+    "keyRisksFromNews": [
+      "Negative sentiment from asset sale"
+    ],
+    "earningsRisk": "Earnings risk is not immediate but should be monitored.",
+    "catalystVerdict": "RISKY"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates distribution with high relative volume and bearish OBV trend. This suggests strong selling pressure rather than accumulation.",
+    "signals": [
+      "Very high relative volume (3.6x)",
+      "OBV trend bearish",
+      "Price below VWAP (-40.6%)",
+      "Price falling with rising volume (bearish distribution)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 20,
+    "reason": "Current bearish trend and weak fundamentals reduce the likelihood of a multibagger outcome.",
+    "requiredConditions": [
+      "Reversal in trend",
+      "Improvement in fundamentals"
+    ],
+    "majorBlockers": [
+      "Strong downtrend",
+      "High debt levels"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "HIGH",
+    "technicalRisk": "Strong downtrend with no reversal signals.",
+    "fundamentalRisk": "High debt and negative EPS.",
+    "valuationRisk": "Insufficient data to determine valuation.",
+    "newsRisk": "Recent news is mixed with potential negative impact.",
+    "liquidityRisk": "High relative volume but in a negative context.",
+    "eventRisk": "Potential for further downside due to weak fundamentals.",
+    "topRisks": [
+      "Strong downtrend",
+      "High debt levels",
+      "Negative EPS"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Reversal in trend with strong accumulation and positive earnings.",
+      "pricePath": "Possible recovery towards previous highs.",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Continued bearish trend with high volatility and risk.",
+      "pricePath": "Further decline with potential temporary rebounds.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Further decline due to weak fundamentals and bearish technicals.",
+      "pricePath": "Significant drop below current support levels.",
+      "probability": "MEDIUM"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for any signs of reversal or accumulation.",
+    "Avoid entering a position until technicals improve.",
+    "Reassess if fundamentals show significant improvement."
+  ],
+  "doNotTradeConditions": [
+    "Strong downtrend with no reversal signals.",
+    "High debt and negative EPS."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": null,
+    "stopLossAlert": null,
+    "target1Alert": null,
+    "target2Alert": null,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "TeleCommunication Systems, Inc.",
+        "ownershipPct": "unknown",
+        "performance": "Steady growth in secure and reliable communication solutions",
+        "upcomingEvents": [
+          "Potential government contract awards"
+        ],
+        "impactPotential": "Positive impact if contracts are secured, enhancing revenue and market position."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Intel Corporation",
+          "role": "Supplier",
+          "description": "Microprocessors and semiconductor components",
+          "riskExposure": "High impact due to reliance on advanced technology components; supply chain disruptions could delay product delivery."
+        },
+        {
+          "name": "Micron Technology",
+          "role": "Supplier",
+          "description": "Memory and storage solutions",
+          "riskExposure": "Moderate impact; disruptions could affect product performance and cost structure."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Flex Ltd.",
+          "role": "Outsource Partner",
+          "description": "Manufacturing and assembly of communication equipment",
+          "riskExposure": "High impact; any disruption could delay product availability and increase costs."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "AT&T",
+          "role": "Marketing Partner",
+          "description": "Distribution and co-marketing of communication services",
+          "riskExposure": "Moderate impact; strong partnership enhances market reach, but dependency could affect pricing and terms."
+        }
+      ],
+      "customers": [
+        {
+          "name": "U.S. Department of Defense",
+          "role": "Customer",
+          "description": "Secure communication systems and services",
+          "riskExposure": "High impact; significant revenue source, any budget cuts or policy changes could affect demand."
+        },
+        {
+          "name": "Commercial Enterprises",
+          "role": "Customer",
+          "description": "Satellite and wireless communication solutions",
+          "riskExposure": "Moderate impact; growth in commercial sector could drive demand, but economic downturns could reduce spending."
+        }
+      ]
+    },
+    "strategicOutlook": "Comtech Telecommunications Corp. operates in a robust ecosystem with significant reliance on government contracts and advanced technology suppliers. The health of the ecosystem is stable, but concentration risks exist with key customers and suppliers. Upcoming government contracts and technological advancements are critical externalities to monitor for potential stock movement."
+  },
+  "trendStory": {
+    "ticker": "CMTL",
+    "analysis_date": "2026-06-15",
+    "price_summary": {
+      "current_price": 2.77,
+      "previous_close": 4.81,
+      "day_change_percent": -42.47,
+      "day_range": {
+        "high": 4.365,
+        "low": 2.63
+      },
+      "volume": 62701,
+      "average_volume": 17652.1,
+      "relative_volume": 3.552041966678186
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "CMTL trades down 42.5% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 3.552041966678186,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 2.7146,
+        "high": 2.7977
+      },
+      "stop_loss": 2.6315,
+      "target_1": 2.9085,
+      "target_2": 3.047,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 2.6037999999999997,
+      "short_stop_loss": 2.9085,
+      "short_target_1": 2.493,
+      "short_target_2": 2.3545,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "CMTL moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "CMTL",
+    "analysisDate": "2026-06-15",
+    "currentPrice": 2.77,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 18,
+    "gradientPositionPercent": 18,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "HIGH",
+    "oneLineSummary": "CMTL is in a high-risk zone with strong bearish signals and significant downside pressure.",
+    "laymanSummary": "The stock is currently in a high-risk zone due to strong selling pressure, price below key levels, and negative momentum indicators. It's advisable to be cautious.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 0,
+        "maxScore": 20,
+        "status": "NEGATIVE",
+        "evidence": "Price is significantly below EMA20, EMA50, and VWAP, indicating a strong downtrend."
+      },
+      "volumeConfirmation": {
+        "score": 10,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "High relative volume (>3.5x) suggests strong selling pressure."
+      },
+      "momentumIndicators": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "RSI is near oversold levels, MACD is bearish, indicating negative momentum."
+      },
+      "movingAverageStructure": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Price is below all key moving averages, indicating a bearish trend."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP, indicating selling pressure."
+      },
+      "supportResistanceRiskReward": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is far below support levels, indicating high downside risk."
+      },
+      "sectorIndexAlignment": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No sector or index performance data provided."
+      },
+      "shortInterestContext": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No short interest data provided."
+      },
+      "newsCatalystConfirmation": {
+        "score": 1,
+        "maxScore": 3,
+        "status": "MIXED",
+        "evidence": "News sentiment is mixed with some negative catalysts."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow indicates distribution with bearish signals."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [],
+      "redSignals": [
+        "Price significantly below EMA20, EMA50, and VWAP",
+        "High relative volume with strong selling pressure",
+        "RSI near oversold levels",
+        "MACD bearish",
+        "Institutional distribution signals"
+      ],
+      "strongestPositiveEvidence": "High relative volume indicates strong market activity.",
+      "strongestNegativeEvidence": "Price significantly below key moving averages and VWAP, indicating strong bearish trend.",
+      "mixedSignalExplanation": "News sentiment is mixed, but overall technical indicators are strongly bearish."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 3.43,
+      "nearestResistance": 3.97,
+      "distanceToSupportPercent": -23.32,
+      "distanceToResistancePercent": 43.32,
+      "riskRewardView": "UNFAVORABLE",
+      "explanation": "Price is significantly below support levels, indicating high downside risk with limited upside potential."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a high-risk zone due to strong bearish signals and significant downside pressure."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Price recovery above EMA20 and VWAP",
+        "Improvement in RSI and MACD indicators"
+      ],
+      "forYellowToGreenUpgrade": [],
+      "forRedZoneWarning": [
+        "Continued price decline below support levels",
+        "Sustained high relative volume with bearish pressure"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 18,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "CMTL is in a high-risk zone with strong bearish signals.",
+      "supportingPointsBelowBar": [
+        "Price significantly below key moving averages",
+        "High relative volume with strong selling pressure",
+        "RSI near oversold levels"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "HIGH_RISK_CAUTION",
+      "summary": "CMTL is experiencing strong bearish pressure with price significantly below key levels and high relative volume indicating strong selling. Caution is advised.",
+      "riskWarning": "The stock is in a high-risk zone with significant downside potential.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "CMTL",
+    "available": true,
+    "price": 2.77,
+    "open": 4.35,
+    "high": 4.365,
+    "low": 2.63,
+    "close": 2.77,
+    "volume": 62701,
+    "vwap": 3.257633,
+    "bid": 2.72,
+    "ask": 2.76,
+    "spread": 0.04,
+    "changePercent": -42.47,
+    "timestamp": "2026-06-15T16:53:24.811606752Z",
+    "raw": {
+      "dailyBar": {
+        "c": 2.77,
+        "h": 4.365,
+        "l": 2.63,
+        "n": 829,
+        "o": 4.35,
+        "t": "2026-06-15T04:00:00Z",
+        "v": 62701,
+        "vw": 3.257633
+      },
+      "latestQuote": {
+        "ap": 2.76,
+        "as": 200,
+        "ax": "V",
+        "bp": 2.72,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-15T16:56:07.966134292Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@"
+        ],
+        "i": 827,
+        "p": 2.77,
+        "s": 100,
+        "t": "2026-06-15T16:53:24.811606752Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 2.77,
+        "h": 2.77,
+        "l": 2.77,
+        "n": 2,
+        "o": 2.77,
+        "t": "2026-06-15T16:53:00Z",
+        "v": 170,
+        "vw": 2.77
+      },
+      "prevDailyBar": {
+        "c": 4.815,
+        "h": 4.85,
+        "l": 4.635,
+        "n": 262,
+        "o": 4.775,
+        "t": "2026-06-12T04:00:00Z",
+        "v": 14155,
+        "vw": 4.770861
+      },
+      "symbol": "CMTL"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 4.4956401798914065,
+      "ema50": 4.372302352841611,
+      "ema200": 3.7677298347909685,
+      "sma20": 4.702250000000001,
+      "sma50": 4.1638,
+      "sma200": 3.954399999999999,
+      "rsi14": 31.791519872052575,
+      "rsi14Prev": 53.81747736829129,
+      "macdLine": -0.016966374864736622,
+      "macdSignal": 0.1992479585159479,
+      "macdHist": -0.21621433338068452,
+      "bbUpper": 6.340091491109565,
+      "bbMiddle": 4.702250000000001,
+      "bbLower": 3.0644085088904376,
+      "bbWidth": 69.66203375446067,
+      "atr14": 0.4957296260066127,
+      "obv": -42170,
+      "relVolume": 3.552041966678186,
+      "vwap": 4.667123341332465,
+      "adx14": 366.975140785182,
+      "plusDI": 21.862189251437673,
+      "minusDI": 47.84810429449473,
+      "supportLevels": [
+        3.43,
+        3.52,
+        3.55,
+        3.63,
+        3.99
+      ],
+      "resistanceLevels": [
+        3.97,
+        4.2,
+        5.83,
+        6.19
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "MACD bearish",
+        "Golden cross (EMA50 > EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)",
+        "High relative volume (>2x avg)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 81322816,
+    "peRatio": null,
+    "pbRatio": 1.2369968,
+    "epsTrailing": -2.23,
+    "epsForward": -0.85,
+    "revenue": 474947008,
+    "debtToEquity": 95.122,
+    "dividendYield": null,
+    "beta": 1.395,
+    "week52High": 6.21,
+    "week52Low": 1.8,
+    "sector": "Technology",
+    "industry": "Communication Equipment",
+    "description": "Comtech Telecommunications Corp., together with its subsidiaries, provides critical communications technology and solutions in the United States and internationally. It operates through Satellite and Space Communications; and Allerium segments. The Satellite and Space Communications segment offers satellite ground infrastructure technologies, services, and system integration that facilitates the transmission of voice, video, and data over GEO, MEO and LEO satellite constellations, including trav"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Comtech Telecom Reports Q3 2026 Results: Full Earnings Call Transcript",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/news/26/06/53193299/comtech-telecom-reports-q3-2026-results-full-earnings-call-transcript",
+        "publishedAt": "2026-06-15T13:19:34Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Comtech Sells Satellite Unit To Gilat: What Happens Next?",
+        "summary": "Comtech Telecommunications to sell its satellite &amp; space unit to Gilat for $157.5M, shifting focus to public safety tech. CMTL up.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53192867/comtech-sells-satellite-unit-to-gilat-what-happens-next",
+        "publishedAt": "2026-06-15T13:03:08Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "11 Information Technology Stocks Moving In Monday's Pre-Market Session",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/movers/26/06/53191228/11-information-technology-stocks-moving-in-mondays-pre-market-session",
+        "publishedAt": "2026-06-15T12:05:46Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Earnings Scheduled For June 15, 2026",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/earnings/26/06/53190015/earnings-scheduled-for-june-15-2026",
+        "publishedAt": "2026-06-15T11:11:13Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Comtech To Sell Most Of Its Satellite And Space Communications Segment To Gilat For $157.5M, With Net Cash Proceeds Of $143M-$145M",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53188686/comtech-to-sell-most-of-its-satellite-and-space-communications-segment-to-gilat-for-157-5m-with-net",
+        "publishedAt": "2026-06-15T10:07:17Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Comtech Telecom Q3 Adj. EPS $(0.22) Beats $(0.27) Estimate, Sales $106.004M Miss $110.205M Estimate",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/CMTL",
+        "publishedAt": "2026-06-15T10:05:56Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Dow Gains 350 Points As SpaceX Jumps In Debut: Investor Sentiment Improves, Greed Index Remains In 'Fear' Zone",
+        "summary": "CNN Business Fear &amp; Greed Index measures market sentiment based on the premise that fear exerts pressure on stocks.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/06/53187354/dow-gains-350-points-as-spacex-jumps-in-debut-investor-sentiment-improves-greed-index-remains-in-fear-zone",
+        "publishedAt": "2026-06-15T07:05:01Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Dave and Buster's, SpaceX And 3 Stocks To Watch Heading Into Monday",
+        "summary": "Stocks to watch: CMTL, PLCE, PLAY, SPCX, DOMO. All expected to report earnings. SpaceX&#39;s historic IPO raises $75B. Check out premarket coverage.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/06/53187257/dave-and-busters-spacex-and-3-stocks-to-watch-heading-into-monday",
+        "publishedAt": "2026-06-15T06:59:01Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Comtech Files Prospectus For Offering Up To $125M Securities",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/03/51419803/comtech-files-prospectus-for-offering-up-to-125m-securities",
+        "publishedAt": "2026-03-23T20:25:23Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "TMY Technology Unveils Advanced User Terminal Solutions For Next-Gen Satellite Communications In Collaboration With Comtech Telecommunications",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/03/51375583/tmy-technology-unveils-advanced-user-terminal-solutions-for-next-gen-satellite-communications-in-col",
+        "publishedAt": "2026-03-20T12:04:46Z",
+        "sentiment": "NEUTRAL"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 20,
+      "obvTrendScore": 5,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 2,
+      "supportHoldScore": 0,
+      "breakoutVolScore": 8,
+      "largeBodyScore": 0
+    },
+    "signals": [
+      "Very high relative volume (3.6x)",
+      "OBV trend bearish",
+      "Price below VWAP (-40.6%)",
+      "Price falling with rising volume (bearish distribution)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "AVOID",
+  "technicalScore": 30,
+  "fundamentalScore": 30,
+  "newsCatalystScore": 40,
+  "institutionalFlowProxyScore": 35,
+  "keyCatalysts": [
+    "Sale of satellite unit to Gilat"
+  ],
+  "keyRisks": [
+    "Strong downtrend",
+    "High debt levels",
+    "Negative EPS"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates distribution with high relative volume and bearish OBV trend. This suggests strong selling pressure rather than accumulation."
+}

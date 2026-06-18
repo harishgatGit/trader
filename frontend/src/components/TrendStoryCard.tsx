@@ -115,7 +115,7 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
         {/* Badges container */}
         <div className="flex flex-wrap items-center gap-2">
           {/* Reason Badge */}
-          <span className={`px-2.5 py-0.5 rounded-lg border text-xs font-bold font-sans tracking-wide uppercase ${primaryReasonColors[classification.primary_reason] || primaryReasonColors['unknown-mixed']}`}>
+          <span className={`px-2.5 py-0.5 rounded-lg border text-xs font-bold font-sans tracking-wide  ${primaryReasonColors[classification.primary_reason] || primaryReasonColors['unknown-mixed']}`}>
             {primaryReasonLabels[classification.primary_reason] || classification.primary_reason}
           </span>
         </div>
@@ -138,9 +138,9 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
           <div className="p-4 bg-slate-900/40 border border-slate-850 rounded-2xl flex items-start gap-3.5 hover:border-slate-700/40 transition-colors">
             <HelpCircle className="w-4.5 h-4.5 text-brand-400 shrink-0 mt-0.5" />
             <div>
-              <div className="text-[11px] text-slate-500 font-bold uppercase tracking-wider">Is this move sustainable?</div>
+              <div className="text-[11px] text-slate-500 font-bold  tracking-wider">Is this move sustainable?</div>
               <div className="mt-1 flex items-center gap-2">
-                <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase ${sustainColors[story.is_move_sustainable]}`}>
+                <span className={`px-2 py-0.5 rounded text-[10px] font-bold  ${sustainColors[story.is_move_sustainable]}`}>
                   {story.is_move_sustainable}
                 </span>
               </div>
@@ -151,7 +151,7 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
           <div className="p-4 bg-slate-900/40 border border-slate-850 rounded-2xl flex items-start gap-3.5 hover:border-slate-700/40 transition-colors">
             <Activity className="w-4.5 h-4.5 text-indigo-400 shrink-0 mt-0.5" />
             <div>
-              <div className="text-[11px] text-slate-500 font-bold uppercase tracking-wider">Who is driving today's action?</div>
+              <div className="text-[11px] text-slate-500 font-bold  tracking-wider">Who is driving today's action?</div>
               <div className="mt-1 font-semibold text-slate-200 capitalize text-sm">
                 {story.who_may_be_buying_or_selling === 'shorts covering' ? 'Short Sellers Covering' : `${story.who_may_be_buying_or_selling} Participation`}
               </div>
@@ -201,10 +201,10 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-950/25 p-4 rounded-xl border border-slate-850">
                 <div>
-                  <span className="text-[11px] text-slate-500 font-bold uppercase tracking-wider block">Bias Action Plan</span>
+                  <span className="text-[11px] text-slate-500 font-bold  tracking-wider block">Bias Action Plan</span>
                   <p className="text-xs sm:text-sm text-slate-200 font-sans mt-1 leading-relaxed">{swing.entry_reason}</p>
                 </div>
-                <span className={`px-3 py-1 rounded-xl border text-[11px] font-bold uppercase tracking-wider shrink-0 self-start sm:self-center ${biasColors[swing.trade_bias] || 'bg-slate-700 text-slate-200'}`}>
+                <span className={`px-3 py-1 rounded-xl border text-[11px] font-bold  tracking-wider shrink-0 self-start sm:self-center ${biasColors[swing.trade_bias] || 'bg-slate-700 text-slate-200'}`}>
                   {swing.trade_bias.replace('_', ' ')}
                 </span>
               </div>
@@ -212,25 +212,25 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
               {/* Levels Grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div className="bg-slate-900/50 p-3 rounded-xl border border-slate-850 text-center hover:border-slate-700/40 transition-colors">
-                  <span className="text-[10px] sm:text-xs text-slate-500 block uppercase font-bold tracking-wider">Entry Zone</span>
+                  <span className="text-[10px] sm:text-xs text-slate-500 block  font-bold tracking-wider">Entry Zone</span>
                   <span className="font-mono text-indigo-400 font-bold text-sm sm:text-base block mt-1">
                     ${swing.entry_zone.low.toFixed(2)} - ${swing.entry_zone.high.toFixed(2)}
                   </span>
                 </div>
                 <div className="bg-slate-900/50 p-3 rounded-xl border border-slate-850 text-center hover:border-slate-700/40 transition-colors">
-                  <span className="text-[10px] sm:text-xs text-slate-500 block uppercase font-bold tracking-wider">Target 1 & 2</span>
+                  <span className="text-[10px] sm:text-xs text-slate-500 block  font-bold tracking-wider">Target 1 & 2</span>
                   <span className="font-mono text-emerald-400 font-bold text-sm sm:text-base block mt-1">
                     ${swing.target_1.toFixed(2)} / ${swing.target_2.toFixed(2)}
                   </span>
                 </div>
                 <div className="bg-slate-900/50 p-3 rounded-xl border border-slate-850 text-center hover:border-slate-700/40 transition-colors">
-                  <span className="text-[10px] sm:text-xs text-slate-500 block uppercase font-bold tracking-wider">Stop Loss</span>
+                  <span className="text-[10px] sm:text-xs text-slate-500 block  font-bold tracking-wider">Stop Loss</span>
                   <span className="font-mono text-red-400 font-bold text-sm sm:text-base block mt-1">
                     ${swing.stop_loss.toFixed(2)}
                   </span>
                 </div>
                 <div className="bg-slate-900/50 p-3 rounded-xl border border-slate-850 text-center hover:border-slate-700/40 transition-colors">
-                  <span className="text-[10px] sm:text-xs text-slate-500 block uppercase font-bold tracking-wider">Current Price</span>
+                  <span className="text-[10px] sm:text-xs text-slate-500 block  font-bold tracking-wider">Current Price</span>
                   <span className="font-mono text-slate-200 font-bold text-sm sm:text-base block mt-1">
                     ${price.current_price.toFixed(2)}
                   </span>
@@ -252,10 +252,10 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-950/25 p-4 rounded-xl border border-slate-850">
                 <div>
-                  <span className="text-[11px] text-slate-500 font-bold uppercase tracking-wider block">Short Safety Comment</span>
+                  <span className="text-[11px] text-slate-500 font-bold  tracking-wider block">Short Safety Comment</span>
                   <p className="text-xs sm:text-sm text-slate-200 font-sans mt-1 leading-relaxed">{short.reason}</p>
                 </div>
-                <span className={`px-3 py-1 rounded-xl border text-[11px] font-bold uppercase tracking-wider shrink-0 self-start sm:self-center ${shortBiasColors[short.short_bias] || 'bg-slate-700 text-slate-200'}`}>
+                <span className={`px-3 py-1 rounded-xl border text-[11px] font-bold  tracking-wider shrink-0 self-start sm:self-center ${shortBiasColors[short.short_bias] || 'bg-slate-700 text-slate-200'}`}>
                   {short.short_bias.replace(/_/g, ' ')}
                 </span>
               </div>
@@ -263,25 +263,25 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
               {/* Levels Grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div className="bg-slate-900/50 p-3 rounded-xl border border-slate-850 text-center hover:border-slate-700/40 transition-colors">
-                  <span className="text-[10px] sm:text-xs text-slate-500 block uppercase font-bold tracking-wider">Entry Trigger</span>
+                  <span className="text-[10px] sm:text-xs text-slate-500 block  font-bold tracking-wider">Entry Trigger</span>
                   <span className="font-mono text-purple-400 font-bold text-sm sm:text-base block mt-1">
                     {short.short_entry_trigger > 0 ? `$${short.short_entry_trigger.toFixed(2)}` : 'N/A'}
                   </span>
                 </div>
                 <div className="bg-slate-900/50 p-3 rounded-xl border border-slate-850 text-center hover:border-slate-700/40 transition-colors">
-                  <span className="text-[10px] sm:text-xs text-slate-500 block uppercase font-bold tracking-wider">Short Targets</span>
+                  <span className="text-[10px] sm:text-xs text-slate-500 block  font-bold tracking-wider">Short Targets</span>
                   <span className="font-mono text-emerald-400 font-bold text-sm sm:text-base block mt-1">
                     ${short.short_target_1.toFixed(2)} / ${short.short_target_2.toFixed(2)}
                   </span>
                 </div>
                 <div className="bg-slate-900/50 p-3 rounded-xl border border-slate-850 text-center hover:border-slate-700/40 transition-colors">
-                  <span className="text-[10px] sm:text-xs text-slate-500 block uppercase font-bold tracking-wider">Short Stop Loss</span>
+                  <span className="text-[10px] sm:text-xs text-slate-500 block  font-bold tracking-wider">Short Stop Loss</span>
                   <span className="font-mono text-red-400 font-bold text-sm sm:text-base block mt-1">
                     ${short.short_stop_loss.toFixed(2)}
                   </span>
                 </div>
                 <div className="bg-slate-900/50 p-3 rounded-xl border border-slate-850 text-center flex flex-col justify-center items-center hover:border-slate-700/40 transition-colors">
-                  <span className="text-[10px] sm:text-xs text-slate-500 block uppercase font-bold tracking-wider">Squeeze Risk</span>
+                  <span className="text-[10px] sm:text-xs text-slate-500 block  font-bold tracking-wider">Squeeze Risk</span>
                   <span className={`text-[10px] font-bold mt-1 px-2.5 py-0.5 rounded-lg ${
                     evidence.short_context.short_squeeze_risk === 'high' ? 'bg-red-500/20 text-red-400 border border-red-500/20' :
                     evidence.short_context.short_squeeze_risk === 'medium' ? 'bg-amber-500/20 text-amber-400 border border-amber-500/20' : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/20'
@@ -328,7 +328,7 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
               <div className="space-y-4">
                 {/* Price & Vol summary */}
                 <div>
-                  <h5 className="font-bold text-slate-300 mb-1 flex items-center gap-1.5 uppercase text-[10px] tracking-wider">
+                  <h5 className="font-bold text-slate-300 mb-1 flex items-center gap-1.5  text-[10px] tracking-wider">
                     <DollarSign className="w-3.5 h-3.5 text-emerald-400" /> Price & Volume Metrics
                   </h5>
                   <table className="w-full text-slate-405">
@@ -344,7 +344,7 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
 
                 {/* Sector / Index Context */}
                 <div>
-                  <h5 className="font-bold text-slate-300 mb-1 flex items-center gap-1.5 uppercase text-[10px] tracking-wider">
+                  <h5 className="font-bold text-slate-300 mb-1 flex items-center gap-1.5  text-[10px] tracking-wider">
                     <Activity className="w-3.5 h-3.5 text-indigo-400" /> Sector & Index Performance
                   </h5>
                   <table className="w-full text-slate-405">
@@ -363,7 +363,7 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
               <div className="space-y-4">
                 {/* Technical Context */}
                 <div>
-                  <h5 className="font-bold text-slate-300 mb-1 flex items-center gap-1.5 uppercase text-[10px] tracking-wider">
+                  <h5 className="font-bold text-slate-300 mb-1 flex items-center gap-1.5  text-[10px] tracking-wider">
                     <Zap className="w-3.5 h-3.5 text-amber-400" /> Technical Indicator Phrasings
                   </h5>
                   <table className="w-full text-slate-405 font-sans">
@@ -405,7 +405,7 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
 
                 {/* Squeeze context */}
                 <div>
-                  <h5 className="font-bold text-slate-300 mb-1 flex items-center gap-1.5 uppercase text-[10px] tracking-wider">
+                  <h5 className="font-bold text-slate-300 mb-1 flex items-center gap-1.5  text-[10px] tracking-wider">
                     <ShieldAlert className="w-3.5 h-3.5 text-pink-400" /> Short Interest Metrics
                   </h5>
                   <table className="w-full text-slate-405">
@@ -422,13 +422,13 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
             {/* News Catalysts */}
             {evidence.news_catalysts && evidence.news_catalysts.length > 0 && (
               <div className="pt-3">
-                <h5 className="font-bold text-slate-300 mb-2 uppercase text-[10px] tracking-wider">News Catalyst Timeline</h5>
+                <h5 className="font-bold text-slate-300 mb-2  text-[10px] tracking-wider">News Catalyst Timeline</h5>
                 <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
                   {evidence.news_catalysts.map((n, idx) => (
                     <div key={idx} className="bg-slate-900/40 p-2.5 rounded-lg border border-slate-900/60 flex flex-col gap-1">
                       <div className="flex items-center justify-between">
                         <span className="text-[10px] text-slate-500 font-medium">{n.source} · {new Date(n.published_at).toLocaleDateString()}</span>
-                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded uppercase ${
+                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded  ${
                           n.impact === 'positive' ? 'bg-emerald-500/10 text-emerald-400' :
                           n.impact === 'negative' ? 'bg-red-500/10 text-red-400' : 'bg-slate-800 text-slate-400'
                         }`}>
@@ -446,7 +446,7 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
             {/* Earnings context details */}
             {evidence.earnings_catalyst && evidence.earnings_catalyst.has_recent_earnings && (
               <div className="pt-3">
-                <h5 className="font-bold text-slate-300 mb-1.5 uppercase text-[10px] tracking-wider">Earnings Catalyst Report</h5>
+                <h5 className="font-bold text-slate-300 mb-1.5  text-[10px] tracking-wider">Earnings Catalyst Report</h5>
                 <div className="bg-purple-950/10 border border-purple-500/15 p-3 rounded-lg flex flex-col gap-1 text-[11px]">
                   <div className="flex items-center justify-between border-b border-purple-500/10 pb-1.5 mb-1.5">
                     <span className="font-bold text-purple-400 text-xs flex items-center gap-1.5">
@@ -483,7 +483,7 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
             {/* Analyst Actions */}
             {evidence.analyst_actions && evidence.analyst_actions.length > 0 && (
               <div className="pt-3">
-                <h5 className="font-bold text-slate-300 mb-2 uppercase text-[10px] tracking-wider">Recent Analyst Upgrades / Downgrades</h5>
+                <h5 className="font-bold text-slate-300 mb-2  text-[10px] tracking-wider">Recent Analyst Upgrades / Downgrades</h5>
                 <div className="space-y-1.5">
                   {evidence.analyst_actions.map((act, idx) => (
                     <div key={idx} className="bg-slate-900/30 p-2.5 rounded-lg border border-slate-900/60 flex items-start justify-between gap-3 text-[11px]">
@@ -492,7 +492,7 @@ export const TrendStoryCard: React.FC<TrendStoryCardProps> = ({ trendStory }) =>
                         <p className="text-slate-450 mt-0.5 leading-normal font-sans">{act.summary}</p>
                       </div>
                       <div className="text-right shrink-0">
-                        <span className={`inline-block px-1.5 py-0.25 rounded font-bold uppercase text-[9px] ${
+                        <span className={`inline-block px-1.5 py-0.25 rounded font-bold  text-[9px] ${
                           act.action === 'upgrade' ? 'bg-emerald-500/10 text-emerald-400' :
                           act.action === 'downgrade' ? 'bg-red-500/10 text-red-400' : 'bg-slate-800 text-slate-450'
                         }`}>

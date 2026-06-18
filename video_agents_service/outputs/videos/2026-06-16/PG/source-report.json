@@ -1,0 +1,952 @@
+{
+  "symbol": "PG",
+  "analysisDateTime": "2026-06-16T15:44:37.109Z",
+  "currentPrice": 152.7,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data is available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "WAIT",
+    "decisionType": "TRADE",
+    "confidenceScore": 75,
+    "decisionSummary": "The stock is showing a bullish trend with strong technical indicators, but it is near resistance levels. The risk/reward ratio is not optimal for immediate entry, suggesting a wait for a pullback or breakout confirmation.",
+    "shouldBuyNow": false,
+    "buyNowReason": "Price is near resistance and risk/reward is not optimal.",
+    "bestActionNow": "Wait for a pullback to a lower support level or a confirmed breakout above resistance."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": true,
+    "momentumConfirmed": true,
+    "volumeConfirmed": true,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently in a strong upward trend, but it is approaching a resistance level, which could limit further gains in the short term. It's advisable to wait for the price to either pull back to a more attractive entry point or break through the resistance with strong volume before considering a purchase. The overall market sentiment is positive, and the stock's fundamentals are solid, but caution is warranted due to the current technical setup. In the near term, expect some volatility as the stock tests resistance. Long-term prospects remain favorable given the company's strong market position and financial health.",
+  "technicalAnalysis": {
+    "overallBias": "BULLISH",
+    "trendStage": "MARKUP",
+    "setupType": "CONTINUATION",
+    "technicalScore": 80,
+    "keySignals": [
+      "Price above EMA20 and EMA50",
+      "Strong uptrend confirmed by ADX"
+    ],
+    "supportLevels": [
+      138.87,
+      140.12,
+      142.23
+    ],
+    "resistanceLevels": [
+      147.59,
+      148.53,
+      152.04
+    ],
+    "vwapAnalysis": "Price is above VWAP, indicating bullish intraday sentiment.",
+    "movingAverageAnalysis": "Price is above short-term moving averages, supporting a bullish outlook.",
+    "rsiAnalysis": "RSI is in the bullish zone but not overbought.",
+    "macdAnalysis": "MACD is bullish, supporting upward momentum.",
+    "volumeAnalysis": "Volume is below average, which may indicate a lack of strong buying interest.",
+    "volumeTrendStatus": "STABLE",
+    "atrVolatilityAnalysis": "ATR suggests moderate volatility.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong trend.",
+    "bollingerBandAnalysis": "Price is near the upper Bollinger Band, indicating potential overextension."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Not advisable to buy now due to proximity to resistance."
+    },
+    "pullbackEntryZone": {
+      "low": 142.23,
+      "high": 145.56,
+      "description": "Consider buying if the price pulls back to this range."
+    },
+    "breakoutEntryLevel": {
+      "price": 152.04,
+      "confirmationRule": "Buy on breakout with strong volume above this level."
+    },
+    "accumulationZone": {
+      "low": 138.87,
+      "high": 142.23,
+      "description": "Ideal zone for accumulation if price retraces."
+    },
+    "invalidationLevel": {
+      "price": 140.12,
+      "reason": "Break below this level would invalidate the bullish setup."
+    },
+    "stopLoss": {
+      "price": 140.12,
+      "stopType": "TECHNICAL",
+      "description": "Stop loss set below key support level."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 152.04,
+        "reason": "First resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 155.31,
+        "reason": "Next resistance level based on historical highs."
+      },
+      {
+        "label": "T3",
+        "price": 160.05,
+        "reason": "Extended target if bullish momentum continues."
+      }
+    ],
+    "exitRules": [
+      "Exit if price closes below 140.12 on a daily basis."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 145.56,
+    "riskPerShare": 5.44,
+    "rewardToTarget1": 6.48,
+    "rewardToTarget2": 9.75,
+    "rewardToTarget3": 14.49,
+    "riskRewardToTarget1": "1.19",
+    "riskRewardToTarget2": "1.79",
+    "riskRewardToTarget3": "2.66",
+    "riskRewardVerdict": "ACCEPTABLE",
+    "positionSizingNote": "Consider smaller position size due to proximity to resistance."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 142.23,
+      "high": 145.56,
+      "description": "Look for entry on pullback to this zone."
+    },
+    "stopLoss": {
+      "price": 140.12,
+      "description": "Stop loss below key support."
+    },
+    "targets": [
+      {
+        "price": 152.04,
+        "label": "T1"
+      },
+      {
+        "price": 155.31,
+        "label": "T2"
+      },
+      {
+        "price": 160.05,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price closes below 140.12 on a daily basis."
+    ],
+    "tradeQuality": "B"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 142.23,
+      "high": 145.56,
+      "description": "Consider entry on pullback to this zone."
+    },
+    "stopLoss": {
+      "price": 140.12,
+      "description": "Stop loss below key support."
+    },
+    "targets": [
+      {
+        "price": 155.31,
+        "label": "T1"
+      },
+      {
+        "price": 160.05,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 138.87,
+      "high": 142.23,
+      "description": "Ideal for accumulation if price retraces."
+    },
+    "riskReward": "ACCEPTABLE",
+    "swingVerdict": "WAIT"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BULLISH",
+    "swingSetup": {
+      "setup": "CONTINUATION",
+      "analysis": "Strong uptrend on 1H and 4H charts with bullish signals."
+    },
+    "entryTiming": {
+      "trigger": "PULLBACK",
+      "analysis": "Wait for price to pull back to support levels before entering."
+    },
+    "supportLevels": [
+      {
+        "price": 142.23,
+        "tests": 2
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 152.04,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": 145.56,
+    "suggestedExitPrice": 155.31,
+    "stopLossPrice": 140.12,
+    "riskMetrics": {
+      "atr": 2.89,
+      "atrAnalysis": "Moderate volatility with ATR indicating potential price swings.",
+      "vwap": 151.999633,
+      "vwapAnalysis": "Price above VWAP suggests bullish intraday bias.",
+      "volumeAnalysis": "Volume below average, indicating potential lack of conviction.",
+      "supportResistanceAnalysis": "Price near resistance, caution advised."
+    },
+    "catalysts": {
+      "news": "Positive sentiment from recent coverage.",
+      "earnings": "No immediate earnings risk identified.",
+      "secFilings": "No significant filings impacting sentiment."
+    },
+    "shortFilter": {
+      "borrowFee": "Low",
+      "shortInterest": "Moderate",
+      "ssrStatus": "Inactive",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "The stock is in a bullish continuation setup, but caution is advised due to proximity to resistance. Wait for a pullback or breakout confirmation.",
+    "dailyTrend": {
+      "trend": "BULLISH",
+      "barCount": 252,
+      "analysis": "Procter & Gamble's stock is currently in a bullish trend. The stock's price has been rising, supported by technical indicators such as the MACD being bullish and the price trading above both the EMA(20) and EMA(50). The ADX indicates a strong uptrend, and the price is above the VWAP, suggesting that the upward momentum is well-supported. Despite a 'death cross' where the EMA(50) is below the EMA(200), the short-term moving averages and other indicators point to a bullish sentiment. The RSI(14) is at 65.34, which is approaching overbought territory, indicating strong momentum but also suggesting caution as it nears potential overextension. News sentiment is positive, and the stock has been mentioned favorably in recent articles, which may contribute to investor optimism. However, the institutional flow is neutral, with below-average volume, indicating that while the price is rising, it may not be strongly supported by institutional buying. This could pose a risk if volume does not pick up to support the price increases.",
+      "laymanExplanation": "Think of Procter & Gamble's stock like a car accelerating uphill. It's gaining speed, but the engine (volume) isn't roaring as loudly as it could be. The stock is climbing, supported by good news and strong technical signals, but it might need more fuel (volume) to keep going strong. Keep an eye on it to see if it continues to climb or if it starts to slow down.",
+      "ticker": "PG",
+      "companyName": "Procter & Gamble",
+      "confidenceScore": 85,
+      "trendSummary": "Procter & Gamble is experiencing a bullish trend, supported by strong technical indicators and positive news sentiment.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Positive",
+          "evidence": "MACD is bullish, price is above EMA(20) and EMA(50), and ADX indicates a strong uptrend."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Positive",
+          "evidence": "Recent articles have a positive sentiment towards Procter & Gamble."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Neutral",
+          "evidence": "Below-average volume and neutral institutional flow proxy score."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The stock price is currently rising with a 1.48% increase today.",
+        "movingAverageView": "Price is above EMA(20) and EMA(50), indicating a short-term bullish trend, but a death cross is present with EMA(50) below EMA(200).",
+        "momentumView": "RSI(14) is at 65.34, indicating strong momentum but nearing overbought levels.",
+        "volumeView": "Volume is below average, which may indicate a weaker rally.",
+        "supportResistanceView": "Price is above key moving averages, suggesting support at these levels.",
+        "volatilityView": "ATR(14) is 2.89, indicating moderate volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "",
+        "newsImpact": "Positive news sentiment supports the bullish trend.",
+        "institutionalFlowImpact": "Neutral, with below-average volume and a neutral proxy score.",
+        "sectorMacroImpact": "Consumer Defensive sector is generally stable, which supports the stock's defensive characteristics."
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Potential overbought conditions as indicated by RSI(14).",
+          "Below-average volume could undermine the strength of the rally."
+        ],
+        "whatNeedsConfirmation": "Increased volume to confirm the strength of the bullish trend."
+      },
+      "watchStatus": "Worth watching",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BULLISH",
+    "investmentQuality": "STRONG",
+    "fairValueRange": {
+      "low": 140,
+      "high": 160,
+      "method": "PE and PB ratio analysis"
+    },
+    "bullCase": "Continued market leadership and strong financial performance.",
+    "baseCase": "Steady growth with consistent dividend payouts.",
+    "bearCase": "Market saturation and increased competition."
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 85,
+    "rating": "STRONG",
+    "revenueTrend": "Stable with consistent growth.",
+    "epsTrend": "Positive with forward EPS expected to increase.",
+    "profitability": "High with strong margins.",
+    "debtRisk": "Manageable with moderate debt-to-equity ratio.",
+    "cashFlowQuality": "Strong with consistent free cash flow.",
+    "valuationCommentary": "Fairly valued based on current PE ratio."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "FAIRLY_VALUED",
+    "valuationScore": 70,
+    "peerComparisonAvailable": true,
+    "fairValueRange": {
+      "low": 140,
+      "high": 160
+    },
+    "marginOfSafetyBuyZone": {
+      "low": 138,
+      "high": 142
+    },
+    "commentary": "The stock is trading within its fair value range, offering a reasonable entry point on pullbacks."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 70,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Positive analyst coverage",
+      "Strong market sentiment"
+    ],
+    "keyRisksFromNews": [
+      "None significant"
+    ],
+    "earningsRisk": "Low",
+    "catalystVerdict": "SUPPORTIVE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 50,
+    "interpretation": "NEUTRAL",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock shows a neutral institutional flow proxy with a strong OBV trend but declining volume, suggesting a weaker rally.",
+    "signals": [
+      "Below-average volume",
+      "Strong OBV trend"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 30,
+    "reason": "The stock is a large-cap with stable growth, unlikely to provide multibagger returns.",
+    "requiredConditions": [
+      "Significant innovation or market expansion"
+    ],
+    "majorBlockers": [
+      "Market saturation"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "MEDIUM",
+    "technicalRisk": "Proximity to resistance increases risk.",
+    "fundamentalRisk": "Low due to strong financials.",
+    "valuationRisk": "Moderate as stock is fairly valued.",
+    "newsRisk": "Low with positive sentiment.",
+    "liquidityRisk": "Low with high market cap and volume.",
+    "eventRisk": "Low with no immediate catalysts.",
+    "topRisks": [
+      "Technical resistance",
+      "Market competition"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Continued strong financial performance and market leadership.",
+      "pricePath": "Gradual increase towards upper valuation range.",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Stable growth with consistent dividends.",
+      "pricePath": "Fluctuates within fair value range.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Increased competition and market saturation.",
+      "pricePath": "Potential decline towards lower valuation range.",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for pullback to support levels.",
+    "Wait for breakout confirmation above resistance.",
+    "Consider entry on confirmed breakout with strong volume."
+  ],
+  "doNotTradeConditions": [
+    "Price remains near resistance without breakout confirmation."
+  ],
+  "alertLevels": {
+    "buyAlert": 145.56,
+    "breakoutAlert": 152.04,
+    "stopLossAlert": 140.12,
+    "target1Alert": 152.04,
+    "target2Alert": 155.31,
+    "riskAlert": 140.12
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Billie Inc.",
+        "ownershipPct": "Unknown",
+        "performance": "Billie has been growing steadily in the direct-to-consumer personal care market, gaining traction with its subscription model.",
+        "upcomingEvents": [
+          "Potential expansion into new product lines"
+        ],
+        "impactPotential": "Expansion could positively impact PG by enhancing its portfolio in the personal care segment, tapping into a younger demographic."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "International Flavors & Fragrances Inc.",
+          "role": "Supplier",
+          "description": "Supplies fragrances and flavors for PG's products.",
+          "riskExposure": "Disruption could affect PG's ability to produce consistent product lines, impacting sales."
+        },
+        {
+          "name": "Dow Chemical Company",
+          "role": "Supplier",
+          "description": "Provides chemicals and raw materials for PG's manufacturing processes.",
+          "riskExposure": "Supply chain issues could lead to increased costs or production delays for PG."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Jabil Inc.",
+          "role": "Outsource Partner",
+          "description": "Handles manufacturing for certain PG products.",
+          "riskExposure": "Disruptions at Jabil could lead to production delays and inventory shortages for PG."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Walmart",
+          "role": "Marketing Partner",
+          "description": "Major retail distribution channel for PG products.",
+          "riskExposure": "Changes in Walmart's retail strategy could affect PG's market reach and sales volume."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Mass Retailers",
+          "role": "Customer",
+          "description": "Purchase a wide range of PG's consumer goods for resale.",
+          "riskExposure": "A downturn in retail sales or shifts towards private labels could negatively impact PG's revenue."
+        }
+      ]
+    },
+    "strategicOutlook": "PG's ecosystem is robust, with a diverse range of suppliers and partners that support its global operations. However, it faces concentration risks with key suppliers and retailers. Externalities such as supply chain disruptions and changes in consumer preferences are critical to monitor, as they could significantly impact PG's performance."
+  },
+  "trendStory": {
+    "ticker": "PG",
+    "analysis_date": "2026-06-16",
+    "price_summary": {
+      "current_price": 152.7,
+      "previous_close": 150.47,
+      "day_change_percent": 1.48,
+      "day_range": {
+        "high": 153.02,
+        "low": 150.575
+      },
+      "volume": 277562,
+      "average_volume": 408048.8,
+      "relative_volume": 0.6802176602406379
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "PG trades up 1.5% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 0.6802176602406379,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 149.646,
+        "high": 154.227
+      },
+      "stop_loss": 145.06499999999997,
+      "target_1": 160.335,
+      "target_2": 167.97,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 143.53799999999998,
+      "short_stop_loss": 160.335,
+      "short_target_1": 137.43,
+      "short_target_2": 129.795,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "PG moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "PG",
+    "analysisDate": "2026-06-16",
+    "currentPrice": 152.7,
+    "correlationName": "Signal Correlation",
+    "finalZone": "GREEN_ZONE",
+    "correlationScore": 78,
+    "gradientPositionPercent": 78,
+    "gradientLabel": "Light Green",
+    "confidenceLevel": "HIGH",
+    "oneLineSummary": "Procter & Gamble shows strong bullish signals with price above key averages and positive momentum indicators.",
+    "laymanSummary": "Procter & Gamble is currently in a favorable research zone with strong upward trends and positive market signals. It's a good time to consider further research.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 18,
+        "maxScore": 20,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20), EMA(50), and EMA(200) with a strong uptrend."
+      },
+      "volumeConfirmation": {
+        "score": 10,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "Relative volume is below 1x, but recent price rise is supported by high relative volume on shorter timeframes."
+      },
+      "momentumIndicators": {
+        "score": 13,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "RSI(14) is at 65, indicating strong momentum, and MACD is bullish."
+      },
+      "movingAverageStructure": {
+        "score": 12,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20) and EMA(50), but a death cross (EMA(50) < EMA(200)) is present."
+      },
+      "vwapPosition": {
+        "score": 10,
+        "maxScore": 10,
+        "status": "POSITIVE",
+        "evidence": "Price is above VWAP, indicating strong buying interest."
+      },
+      "supportResistanceRiskReward": {
+        "score": 8,
+        "maxScore": 10,
+        "status": "POSITIVE",
+        "evidence": "Current price is near resistance but has broken above previous levels, showing potential for further gains."
+      },
+      "sectorIndexAlignment": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Sector performance is stable, but no significant outperformance noted."
+      },
+      "shortInterestContext": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "No significant short interest impact observed."
+      },
+      "newsCatalystConfirmation": {
+        "score": 2,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Overall positive sentiment in recent news articles."
+      },
+      "institutionalFlowProxy": {
+        "score": 1,
+        "maxScore": 2,
+        "status": "MIXED",
+        "evidence": "Neutral institutional flow proxy with below-average volume."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Price above EMA(20), EMA(50), and EMA(200)",
+        "Strong RSI(14) and MACD bullish",
+        "Price above VWAP"
+      ],
+      "yellowSignals": [
+        "Relative volume below 1x",
+        "Death cross present"
+      ],
+      "redSignals": [],
+      "strongestPositiveEvidence": "Price is above key moving averages with strong momentum indicators.",
+      "strongestNegativeEvidence": "Relative volume is below average, indicating potential lack of strong buying support.",
+      "mixedSignalExplanation": "While the overall trend is positive, the lower relative volume suggests caution."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 148.53,
+      "nearestResistance": 152.04,
+      "distanceToSupportPercent": 2.73,
+      "distanceToResistancePercent": -0.43,
+      "riskRewardView": "FAVORABLE",
+      "explanation": "The price has recently broken above resistance, indicating potential for further gains."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a favorable research zone with strong bullish signals and positive momentum."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Sustained high relative volume",
+        "Continued price strength above resistance"
+      ],
+      "forYellowToGreenUpgrade": [],
+      "forRedZoneWarning": []
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 78,
+      "markerText": "Light Green",
+      "displaySummaryBelowBar": "Procter & Gamble is in a favorable research zone.",
+      "supportingPointsBelowBar": [
+        "Price above key moving averages",
+        "Strong RSI(14) and MACD signals",
+        "Positive news sentiment"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "FAVORABLE_WATCH",
+      "summary": "Procter & Gamble is showing strong bullish signals with price above key averages and positive momentum indicators. It's a favorable time for further research.",
+      "riskWarning": "Monitor for sustained volume to confirm breakout strength.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "PG",
+    "available": true,
+    "price": 152.7,
+    "open": 151.5,
+    "high": 153.02,
+    "low": 150.575,
+    "close": 152.71,
+    "volume": 277562,
+    "vwap": 151.999633,
+    "bid": 152.67,
+    "ask": 152.74,
+    "spread": 0.07,
+    "changePercent": 1.48,
+    "timestamp": "2026-06-16T15:44:32.076740453Z",
+    "raw": {
+      "dailyBar": {
+        "c": 152.71,
+        "h": 153.02,
+        "l": 150.575,
+        "n": 3164,
+        "o": 151.5,
+        "t": "2026-06-16T04:00:00Z",
+        "v": 277562,
+        "vw": 151.999633
+      },
+      "latestQuote": {
+        "ap": 152.74,
+        "as": 100,
+        "ax": "V",
+        "bp": 152.67,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-16T15:44:35.488064118Z",
+        "z": "A"
+      },
+      "latestTrade": {
+        "c": [
+          " "
+        ],
+        "i": 52983677931336,
+        "p": 152.7,
+        "s": 100,
+        "t": "2026-06-16T15:44:32.076740453Z",
+        "x": "V",
+        "z": "A"
+      },
+      "minuteBar": {
+        "c": 152.71,
+        "h": 152.71,
+        "l": 152.63,
+        "n": 43,
+        "o": 152.65,
+        "t": "2026-06-16T15:43:00Z",
+        "v": 5253,
+        "vw": 152.661278
+      },
+      "prevDailyBar": {
+        "c": 150.48,
+        "h": 151.44,
+        "l": 149.06,
+        "n": 8172,
+        "o": 149.06,
+        "t": "2026-06-15T04:00:00Z",
+        "v": 546578,
+        "vw": 150.425849
+      },
+      "symbol": "PG"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 146.48876264516562,
+      "ema50": 146.05110386044274,
+      "ema200": 149.2230994466606,
+      "sma20": 145.21475,
+      "sma50": 145.01409999999993,
+      "sma200": 149.03329999999997,
+      "rsi14": 65.34437418594783,
+      "rsi14Prev": 61.68474906404223,
+      "macdLine": 1.5837576938346842,
+      "macdSignal": 0.5418542922743659,
+      "macdHist": 1.0419034015603184,
+      "bbUpper": 152.50898503528643,
+      "bbMiddle": 145.21475,
+      "bbLower": 137.9205149647136,
+      "bbWidth": 10.046135169170375,
+      "atr14": 2.887696457664235,
+      "obv": 401073,
+      "relVolume": 0.6802176602406379,
+      "vwap": 145.1703336947749,
+      "adx14": 281.01702142034304,
+      "plusDI": 33.3393627786433,
+      "minusDI": 15.567342223521813,
+      "supportLevels": [
+        138.87,
+        140.12,
+        142.23
+      ],
+      "resistanceLevels": [
+        147.59,
+        148.53,
+        152.04
+      ],
+      "overallBias": "BULLISH",
+      "signals": [
+        "MACD bullish",
+        "Price above EMA20 > EMA50",
+        "Death cross (EMA50 < EMA200)",
+        "Price above VWAP",
+        "Strong uptrend (ADX>25, +DI>-DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 355553804288,
+    "peRatio": 22.290512,
+    "pbRatio": 6.6153984,
+    "epsTrailing": 6.85,
+    "epsForward": 7.08656,
+    "revenue": 86716997632,
+    "debtToEquity": 67.651,
+    "dividendYield": 0.028299998,
+    "beta": 0.385,
+    "week52High": 167.25,
+    "week52Low": 137.62,
+    "sector": "Consumer Defensive",
+    "industry": "Household & Personal Products",
+    "description": "The Procter & Gamble Company provides branded consumer packaged goods worldwide. It operates through Beauty; Grooming; Health Care; Fabric & Home Care; and Baby, Feminine & Family Care segments. The company offers conditioners, shampoos, styling aids, and treatments under the Head & Shoulders, Herbal Essences, Pantene, and Rejoice brands; antiperspirants, deodorants, and personal cleansing products under the Native, Old Spice, Safeguard, and Secret brands; and facial moisturizers, cleaners, and "
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Bernstein Initiates Coverage On Procter & Gamble with Market Perform Rating, Announces Price Target of $156",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53168794/bernstein-initiates-coverage-on-procter-gamble-with-market-perform-rating-announces-price-target-of",
+        "publishedAt": "2026-06-12T14:55:15Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "The Four Horsemen Of The S&P 500 Are Arriving All At Once",
+        "summary": "Multiple market risks are resurfacing as inflation, liquidity stress, tech speculation, and credit concerns converge, creating a setup that echoes past crises and may revive demand for quality stocks.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/06/53038390/sp-500-stock-market-outlook-crash-risk",
+        "publishedAt": "2026-06-05T18:02:13Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Dow Jones Hit Records Above 50,600 As Oil Sinks Below $90: Stock Market Today",
+        "summary": "Dow notches fresh all-time high while Nasdaq 100 drops 0.7% as chip stocks unwind. Oil sinks nearly 4% after Iran-US peace draft headlines clash with White House denial.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/05/52818706/dow-record-high-chip-stocks-tumble-oil-slides-iran-deal-whiplash-markets-wednesday",
+        "publishedAt": "2026-05-27T17:29:57Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Congressman A Big Fan Of Dividend Reinvestments: Here's His Core Blue Chip Stocks",
+        "summary": "One member of Congress buys the same stocks every year. Here&#39;s how dividends are involved.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/dividends/26/05/52611908/congressman-a-big-fan-of-dividend-reinvestments-heres-his-core-blue-chip-stocks",
+        "publishedAt": "2026-05-15T18:46:09Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Trump's Trading Disclosure Shows Activity In Nvidia, AMD, Microsoft, Oracle And Other Major Stocks",
+        "summary": "Whether the transactions reflected direct trading activity by Trump or activity conducted through managed accounts is not clear.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/politics/26/05/52576337/trump-q1-2026-trade-disclosure-nvidia-amd-palantir-microsoft-oracle",
+        "publishedAt": "2026-05-14T18:48:16Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "FedEx Stock Rebounds After Drop As Amazon Push Raises Competition Concerns",
+        "summary": "Shares of FedEx (NYSE: FDX) rose on Tuesday after Monday&#39;s plunge due to Amazon&#39;s logistics platform launch, intensifying pressure on FedEx&#39;s core business.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/05/52286250/fedex-stock-rebounds-after-drop-as-amazon-push-raises-competition-concerns",
+        "publishedAt": "2026-05-05T14:25:49Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Amazon's Logistics Bombshell Just Crashed Dow Transports Into A Bear Market",
+        "summary": "Dow Transports plunge into bear market as Amazon Supply Chain Services hammers FedEx, UPS and CHRW. Is this a &#34;watershed moment?&#34;",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/05/52262858/amazon-supply-chain-services-dow-transports-bear-market-fedex-ups-gxo-chrw-may-2026",
+        "publishedAt": "2026-05-04T19:33:16Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Palantir Earnings Loom; GameStop's eBay Ambitions; China's Defiance Of US Sanctions",
+        "summary": "\n\n\n\nTempered Rally\n\n\n",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/Opinion/26/05/52259168/palantir-earnings-loom-gamestops-ebay-ambitions-chinas-defiance-of-us-sanctions",
+        "publishedAt": "2026-05-04T17:43:12Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Warren Buffett Praises Greg Abel's Leadership at Berkshire, Says 'He's Doing Everything I Did, And Doing It Better'",
+        "summary": "On Saturday Warren Buffett used Berkshire Hathaway Inc. (NYSE: BRK-A) (NYSE: BRK-B) annual meeting stage to highlight the leadership handoff that executives described as a clean win, with the board&#39;s succession choice approved without dissent and Greg Abel already running the playbook.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/earnings/26/05/52237732/warren-buffett-praises-greg-abels-leadership-at-berkshire-says-hes-doing-everything-i-did-and-doing-it-better",
+        "publishedAt": "2026-05-02T20:50:59Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "UBS Maintains Buy on Procter & Gamble, Raises Price Target to $172",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/04/52076438/ubs-maintains-buy-on-procter-gamble-raises-price-target-to-172",
+        "publishedAt": "2026-04-27T19:11:20Z",
+        "sentiment": "POSITIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 49,
+    "interpretation": "NEUTRAL",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 15,
+      "priceVwapScore": 15,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 5
+    },
+    "signals": [
+      "Below-average volume (0.7x)",
+      "OBV trend strongly bullish",
+      "Price significantly above VWAP (+5.2%)",
+      "Price rising with declining volume (weaker rally)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WAIT",
+  "technicalScore": 80,
+  "fundamentalScore": 85,
+  "newsCatalystScore": 70,
+  "institutionalFlowProxyScore": 50,
+  "keyCatalysts": [
+    "Positive analyst coverage",
+    "Strong market sentiment"
+  ],
+  "keyRisks": [
+    "Technical resistance",
+    "Market competition"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock shows a neutral institutional flow proxy with a strong OBV trend but declining volume, suggesting a weaker rally."
+}

@@ -75,7 +75,7 @@ const AlertsPage: React.FC = () => {
               <div className="space-y-1.5">
                 <label className="label">Stock Symbol</label>
                 <input
-                  className="input font-mono font-bold w-full uppercase"
+                  className="input font-mono font-bold w-full "
                   value={form.symbol}
                   onChange={(e) => setForm({ ...form, symbol: e.target.value.toUpperCase() })}
                   placeholder="AAPL"

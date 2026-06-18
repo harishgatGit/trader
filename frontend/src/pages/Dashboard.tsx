@@ -77,7 +77,7 @@ const Dashboard: React.FC = () => {
               </div>
               <div>
                 <div className="text-2xl font-black font-mono leading-none">{item.count}</div>
-                <div className="text-xs text-slate-500 mt-1 uppercase font-bold tracking-wider">{item.label}</div>
+                <div className="text-xs text-slate-500 mt-1  font-bold tracking-wider">{item.label}</div>
               </div>
             </div>
           </div>
@@ -126,7 +126,7 @@ const Dashboard: React.FC = () => {
                       <ViewTransition name={`stock-symbol-watchlist-${item.symbol}`} share="text-morph" default="none">
                         <div className="font-bold text-slate-100 text-sm">{item.symbol}</div>
                       </ViewTransition>
-                      <div className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold mt-0.5">
+                      <div className="text-[10px] text-slate-500  tracking-wider font-semibold mt-0.5">
                         {item.lastAnalyzedAt
                           ? `Analyzed ${new Date(item.lastAnalyzedAt).toLocaleDateString()}`
                           : 'Not analyzed yet'}
@@ -227,7 +227,7 @@ const Dashboard: React.FC = () => {
                     <span className={`w-2.5 h-2.5 rounded-full ${alert.enabled ? 'bg-emerald-500 animate-pulse' : 'bg-slate-600'}`} />
                     <div>
                       <div className="text-xs font-bold text-slate-200">{alert.name || alert.type.replace(/_/g, ' ')}</div>
-                      <div className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold mt-0.5">{alert.symbol} · {alert.type}</div>
+                      <div className="text-[10px] text-slate-500  tracking-wider font-semibold mt-0.5">{alert.symbol} · {alert.type}</div>
                     </div>
                   </div>
                   {alert.value && (

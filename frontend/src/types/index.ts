@@ -386,6 +386,9 @@ export type UserRole = 'BASIC' | 'SUPERUSER';
 export interface User {
   id: string;
   username: string;
+  email?: string | null;
+  subscriptionPlan?: string;
+  isActive?: boolean;
   role: UserRole;
   createdAt?: string;
   updatedAt?: string;

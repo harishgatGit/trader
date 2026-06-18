@@ -30,6 +30,8 @@ You must output a JSON object containing:
 3. "analysis": Write a detailed, specific explanation of WHY this trend happened. You MUST connect the dots for the user. Explain how recent corporate earnings results (including exact revenue/EPS figures and what they mean), high-volume institutional block transactions, macro shifts, or specific corporate/news/filing events drove the stock price direction. WARNING: Generic or boilerplate explanations (e.g., "climbing due to positive market sentiment or general demand") are strictly forbidden. Ground your explanation strictly in the provided data.
 4. "laymanExplanation": Write a 1-2 sentence layman-friendly takeaway translating technical terms (like higher highs/higher lows) into simple everyday analogies, and detail your specific assumption or outlook for the stock in layman terms. Do not use complex trading jargon.
 
+5. INDICATOR NAMING CONVENTIONS: Whenever you refer to technical indicator terms in the analysis (such as RSI or EMA), always write them with their parameter settings, such as RSI(14), EMA(20), EMA(50), EMA(200), or SMA(200) instead of just RSI, EMA, or SMA.
+
 Your response must be a single, valid JSON object matching this schema:
 {
   "trend": "BULLISH | BEARISH | NEUTRAL | MIXED",

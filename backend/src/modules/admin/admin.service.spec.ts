@@ -12,6 +12,11 @@ describe('AdminService', () => {
       findMany: jest.fn(),
       findUnique: jest.fn(),
       create: jest.fn(),
+      update: jest.fn(),
+      delete: jest.fn(),
+    },
+    userSession: {
+      updateMany: jest.fn(),
     },
     searchLog: {
       findMany: jest.fn(),
@@ -55,7 +60,10 @@ describe('AdminService', () => {
         select: {
           id: true,
           username: true,
+          email: true,
           role: true,
+          subscriptionPlan: true,
+          isActive: true,
           createdAt: true,
           _count: {
             select: { searchLogs: true },
@@ -174,6 +182,43 @@ describe('AdminService', () => {
 
       // Daily stats check
       expect(result.dailyStats.length).toBe(7); // Last 7 days
+    });
+  });
+
+  describe('toggleUserStatus', () => {
+    it('should update user status and deactivate sessions if set to inactive', async () => {
+      mockPrismaService.user.update.mockResolvedValue({ id: '1', username: 'admin', role: 'SUPERUSER', isActive: false });
+      mockPrismaService.userSession.updateMany.mockResolvedValue({ count: 2 });
+
+      const result = await service.toggleUserStatus('1', false);
+      expect(result).toBeDefined();
+      expect(result.isActive).toBe(false);
+      expect(mockPrismaService.user.update).toHaveBeenCalledWith({
+        where: { id: '1' },
+        data: { isActive: false },
+        select: {
+          id: true,
+          username: true,
+          role: true,
+          isActive: true,
+        },
+      });
+      expect(mockPrismaService.userSession.updateMany).toHaveBeenCalledWith({
+        where: { userId: '1', isActive: true },
+        data: { isActive: false },
+      });
+    });
+  });
+
+  describe('deleteUser', () => {
+    it('should delete the user from database', async () => {
+      mockPrismaService.user.delete.mockResolvedValue({ id: '1' });
+
+      const result = await service.deleteUser('1');
+      expect(result).toEqual({ success: true });
+      expect(mockPrismaService.user.delete).toHaveBeenCalledWith({
+        where: { id: '1' },
+      });
     });
   });
 });

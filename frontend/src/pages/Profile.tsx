@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Key, Laptop, Clock, AlertTriangle } from 'lucide-react';
+import { Shield, Key, Laptop, Clock, AlertTriangle, Pencil, Check, X } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { LoadingSpinner, PageContainer, PageHeader, SectionHeader, ResponsiveGrid, InsightCard } from '../components/ui';
 
 const Profile: React.FC = () => {
-  const { user, sessions, fetchSessions, updatePassword, authLoading } = useAppStore();
+  const { user, sessions, fetchSessions, updatePassword, updateUsername, authLoading } = useAppStore();
 
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passError, setPassError] = useState<string | null>(null);
   const [passSuccess, setPassSuccess] = useState(false);
+
+  // ── Username editing ──────────────────────────────────────────────
+  const [editingUsername, setEditingUsername] = useState(false);
+  const [newUsername, setNewUsername] = useState('');
+  const [usernameError, setUsernameError] = useState<string | null>(null);
+  const [usernameSuccess, setUsernameSuccess] = useState(false);
+  const [usernameLoading, setUsernameLoading] = useState(false);
 
   useEffect(() => {
     fetchSessions();
@@ -44,6 +51,39 @@ const Profile: React.FC = () => {
       setConfirmPassword('');
     } catch (err: any) {
       setPassError(err.message || 'Failed to update password. Verify old password.');
+    }
+  };
+
+  const startEditUsername = () => {
+    setNewUsername(user?.username || '');
+    setUsernameError(null);
+    setUsernameSuccess(false);
+    setEditingUsername(true);
+  };
+
+  const cancelEditUsername = () => {
+    setEditingUsername(false);
+    setUsernameError(null);
+  };
+
+  const handleSaveUsername = async () => {
+    const trimmed = newUsername.trim();
+    if (!trimmed || trimmed.length < 3) {
+      setUsernameError('Must be at least 3 characters');
+      return;
+    }
+    if (trimmed === user?.username) { setEditingUsername(false); return; }
+    setUsernameError(null);
+    setUsernameLoading(true);
+    try {
+      await updateUsername(trimmed);
+      setUsernameSuccess(true);
+      setEditingUsername(false);
+      setTimeout(() => setUsernameSuccess(false), 3000);
+    } catch (err: any) {
+      setUsernameError(err.message || 'Failed to update username');
+    } finally {
+      setUsernameLoading(false);
     }
   };
 
@@ -93,10 +133,67 @@ const Profile: React.FC = () => {
                 </span>
               }
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
               <div>
-                <span className="block text-xs font-bold text-slate-450 uppercase tracking-wider">Username</span>
-                <span className="text-lg font-bold text-slate-100 font-mono mt-0.5 block">{user?.username || '—'}</span>
+                <span className="block text-xs font-bold text-slate-450 tracking-wider mb-1">Username</span>
+                {editingUsername ? (
+                  <div className="flex flex-col gap-1.5">
+                    <div className="flex items-center gap-1">
+                      <input
+                        autoFocus
+                        type="text"
+                        value={newUsername}
+                        onChange={(e) => { setNewUsername(e.target.value); setUsernameError(null); }}
+                        onKeyDown={(e) => { if (e.key === 'Enter') handleSaveUsername(); if (e.key === 'Escape') cancelEditUsername(); }}
+                        className="input flex-1 text-sm py-1 px-2"
+                        placeholder="New username"
+                        maxLength={32}
+                        disabled={usernameLoading}
+                      />
+                      <button
+                        onClick={handleSaveUsername}
+                        disabled={usernameLoading}
+                        title="Save"
+                        className="p-1.5 rounded-lg bg-emerald-500/15 text-emerald-500 hover:bg-emerald-500/25 transition-colors disabled:opacity-50"
+                      >
+                        {usernameLoading ? <LoadingSpinner size="sm" /> : <Check className="w-3.5 h-3.5" />}
+                      </button>
+                      <button
+                        onClick={cancelEditUsername}
+                        disabled={usernameLoading}
+                        title="Cancel"
+                        className="p-1.5 rounded-lg bg-slate-500/10 text-slate-400 hover:bg-slate-500/20 transition-colors"
+                      >
+                        <X className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                    {usernameError && <p className="text-[11px] text-red-400 mt-0.5">{usernameError}</p>}
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2 mt-0.5 group">
+                    <span className={`text-sm font-bold font-mono ${usernameSuccess ? 'text-emerald-500' : 'text-slate-100'}`}>
+                      {user?.username || '—'}
+                    </span>
+                    {usernameSuccess && (
+                      <span className="text-[10px] text-emerald-500 font-semibold">Updated ✓</span>
+                    )}
+                    <button
+                      onClick={startEditUsername}
+                      title="Edit username"
+                      className="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-slate-850/60 text-slate-500 hover:text-slate-300 transition-all"
+                    >
+                      <Pencil className="w-3 h-3" />
+                    </button>
+                  </div>
+                )}
+              </div>
+              <div>
+                <span className="block text-xs font-bold text-slate-450  tracking-wider">Email Address</span>
+                <span className="text-sm font-bold text-slate-100 font-mono mt-0.5 block">{user?.email || 'Not Provided (Local Account)'}</span>
+              </div>
+              <div>
+                <span className="block text-xs font-bold text-slate-450  tracking-wider">Subscription Plan</span>
+                <span className="text-sm font-bold text-brand-500 font-mono mt-0.5 block uppercase">{user?.subscriptionPlan || 'FREE'} PLAN</span>
               </div>
             </div>
             {user?.role === 'BASIC' && (
@@ -131,7 +228,7 @@ const Profile: React.FC = () => {
 
             <form onSubmit={handlePasswordUpdate} className="space-y-4 mt-4">
               <div>
-                <label className="block text-xs font-bold text-slate-450 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-slate-450  tracking-wider mb-2">
                   Old Password
                 </label>
                 <input
@@ -147,7 +244,7 @@ const Profile: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-455 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-slate-455  tracking-wider mb-2">
                     New Password
                   </label>
                   <input
@@ -162,7 +259,7 @@ const Profile: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-455 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-slate-455  tracking-wider mb-2">
                     Confirm New Password
                   </label>
                   <input

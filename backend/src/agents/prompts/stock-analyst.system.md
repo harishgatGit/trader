@@ -160,6 +160,8 @@ Analyze the following when available:
 * Breakout or breakdown structure
 * Overbought or oversold condition
 
+**INDICATOR NAMING CONVENTIONS**: Whenever you refer to technical indicator terms in the analytical modules/fields (e.g. `rsiAnalysis`, `movingAverageAnalysis`, `macdAnalysis`, `vwapView`, etc.), always write them with their parameter settings, such as `RSI(14)`, `EMA(20)`, `EMA(50)`, `EMA(200)`, or `SMA(200)` instead of just `RSI`, `EMA`, or `SMA`.
+
 In `technicalAnalysis.volumeTrendStatus`, classify volume exactly as one of:
 
 * GROWING_STRONGER
@@ -224,20 +226,15 @@ If no catalyst is provided, say:
 
 In `executiveSummary.summary`, write 2–3 layman-friendly paragraphs using only provided data.
 
-You must clearly explain:
+CRITICAL CONTENT CONSTRAINTS:
+1. **NO TECHNICAL INDICATOR JARGON**: You are strictly forbidden from using technical indicators or abbreviations (such as *EMA*, *RSI*, *MACD*, *OBV*, *ADX*, *SMA*, *Stochastics*, *Fibonacci*, etc.) in this summary. Describe trend directions, momentum, and volume qualitatively using everyday terms (e.g. say *"the stock has been consistently declining over the medium and long term"* instead of *"price sits below the 50/200 EMAs"*).
+2. **ACTIONABLE SUGGESTIONS**: Provide concrete, practical suggestions of what the investor should do (e.g., *"wait for the price to stabilize and show clear buying interest before scaling in"* instead of technical triggers like *"wait for daily close above EMA20"*).
 
-1. Current stock price and technical trend
-2. Whether the stock shows possible accumulation or distribution
-3. Final decision-support label: BUY, WAIT, HOLD, SELL, AVOID, or WATCHLIST
-4. Near-term expectation: days/weeks
-5. Long-term expectation: months/years
-6. Main reason behind the decision label
-
-The final paragraph must start exactly with:
-
-"LAYMAN'S TAKEAWAY:"
-
-Use simple language. Avoid heavy trading jargon.
+ORDER & FORMAT REQUIREMENTS:
+- The **first paragraph** must start exactly with:
+  "LAYMAN'S TAKEAWAY:"
+  followed by the ultimate, simple advice and suggestions for a non-technical user.
+- The **subsequent paragraphs** should provide the supporting qualitative rationale (trend, volume/demand, news/catalysts, and near-term/long-term expectations) using simple, plain English. Avoid heavy trading jargon.
 
 ## EXECUTIVE SUMMARY FACTORS
 

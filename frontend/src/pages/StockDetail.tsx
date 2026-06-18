@@ -228,6 +228,46 @@ const StockDetail: React.FC = () => {
 
   const probabilities = getProbabilities();
 
+  const summaryText = r?.executiveSummary?.summary || 
+                      (typeof r?.executiveSummary === 'string' ? r.executiveSummary : '') || 
+                      r?.finalDecision?.decisionSummary || 
+                      finalSummary?.one_line_story || 
+                      '';
+
+  let laymanTakeawayText = '';
+  let analyticalSummaryText = summaryText;
+
+  if (summaryText) {
+    const marker = "LAYMAN'S TAKEAWAY:";
+    const index = summaryText.toUpperCase().indexOf(marker.toUpperCase());
+    
+    if (index !== -1) {
+      const beforeText = summaryText.substring(0, index).trim();
+      const afterText = summaryText.substring(index + marker.length).trim();
+      
+      if (index === 0) {
+        // New format: Layman's Takeaway is at the start
+        const parts = afterText.split(/\n+/);
+        laymanTakeawayText = parts[0]?.trim() || '';
+        analyticalSummaryText = parts.slice(1).join('\n\n').trim() || '';
+      } else {
+        // Old format: Layman's Takeaway is at the end
+        laymanTakeawayText = afterText;
+        analyticalSummaryText = beforeText;
+      }
+    }
+  }
+
+  const renderExecutiveSummary = () => {
+    if (!analyticalSummaryText) return null;
+    
+    return (
+      <p className="text-sm text-slate-200 leading-relaxed font-sans bg-brand-500/5 p-4 rounded-xl border border-brand-500/10 whitespace-pre-line">
+        {analyticalSummaryText}
+      </p>
+    );
+  };
+
   // Decision meter options
   const meterOptions = [
     { label: 'Strong Risk', color: 'bg-rose-500 border-rose-500/25 text-rose-500' },
@@ -302,7 +342,7 @@ const StockDetail: React.FC = () => {
           )}
         </div>
         <div className="flex items-center gap-3">
-          <span className="text-xs text-slate-450 font-semibold uppercase hidden md:inline">Outlook:</span>
+          <span className="text-xs text-slate-450 font-semibold  hidden md:inline">Outlook:</span>
           <StatusBadge status={bias} size="sm" />
           <button 
             onClick={() => scrollToSection('action')}
@@ -387,7 +427,7 @@ const StockDetail: React.FC = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
-                    <span className="text-xs text-brand-400 font-bold uppercase tracking-wider font-mono">
+                    <span className="text-xs text-brand-400 font-bold  tracking-wider font-mono">
                       {r.issuer} · Mutual Fund & Index Review
                     </span>
                     <h2 className="text-2xl font-bold text-slate-100 mt-1">{r.fundName}</h2>
@@ -397,12 +437,12 @@ const StockDetail: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-3 bg-slate-950/40 p-4 rounded-xl border border-slate-850 shrink-0">
                     <div className="text-right">
-                      <span className="text-[10px] text-slate-500 font-bold uppercase block">CONFIDENCE</span>
+                      <span className="text-[10px] text-slate-500 font-bold block">Confidence</span>
                       <span className="text-xl font-bold font-mono text-brand-400">{r.finalDecision?.confidenceScore}%</span>
                     </div>
                     <div className="h-8 w-px bg-slate-800" />
                     <div className="text-center">
-                      <span className="text-[10px] text-slate-500 font-bold uppercase block">RATING</span>
+                      <span className="text-[10px] text-slate-500 font-bold block">Rating</span>
                       <RatingBadge rating={r.finalDecision?.finalRating} size="lg" />
                     </div>
                   </div>
@@ -418,7 +458,7 @@ const StockDetail: React.FC = () => {
                   { label: 'Inception Date', value: r.fundOverview?.inceptionDate, color: 'text-amber-400' },
                 ].map((m) => (
                   <div key={m.label} className="card p-4 flex flex-col gap-1">
-                    <span className="text-[10px] text-slate-450 uppercase font-bold tracking-wider">{m.label}</span>
+                    <span className="text-[10px] text-slate-450  font-bold tracking-wider">{m.label}</span>
                     <span className={`text-lg sm:text-xl font-mono font-bold ${m.color}`}>
                       {m.value || 'N/A'}
                     </span>
@@ -428,14 +468,14 @@ const StockDetail: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="card p-5 space-y-3">
-                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Investment Strategy</h3>
+                  <h3 className="text-xs font-bold text-slate-300  tracking-wider">Investment Strategy</h3>
                   <p className="text-sm text-slate-300 leading-relaxed">{r.fundOverview?.objective}</p>
                 </div>
                 <div className="card p-5 space-y-3">
-                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Analyst Assessment</h3>
+                  <h3 className="text-xs font-bold text-slate-300  tracking-wider">Analyst Assessment</h3>
                   <p className="text-sm text-slate-350 leading-relaxed">{r.finalDecision?.bestActionNow}</p>
                   <div className="p-3 bg-slate-950/40 border border-slate-850 rounded-xl">
-                    <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Decision Summary</span>
+                    <span className="text-[10px] text-slate-500 font-bold  block tracking-wider">Decision Summary</span>
                     <p className="text-xs text-slate-300 mt-1 leading-relaxed">{r.finalDecision?.decisionSummary}</p>
                   </div>
                 </div>
@@ -443,7 +483,7 @@ const StockDetail: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="card p-5 border-emerald-500/10">
-                  <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <h3 className="text-sm font-bold text-emerald-400  tracking-wider mb-3 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Key Pros / Advantages
                   </h3>
                   <ul className="space-y-2.5">
@@ -457,7 +497,7 @@ const StockDetail: React.FC = () => {
                 </div>
 
                 <div className="card p-5 border-red-500/10">
-                  <h3 className="text-sm font-bold text-red-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                  <h3 className="text-sm font-bold text-red-400  tracking-wider mb-3 flex items-center gap-2">
                     <ShieldAlert className="w-4 h-4 text-red-400" /> Potential Drawbacks / Risks
                   </h3>
                   <ul className="space-y-2.5">
@@ -473,7 +513,7 @@ const StockDetail: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="card p-5">
-                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-4">Sector Exposure</h3>
+                  <h3 className="text-xs font-bold text-slate-300  tracking-wider mb-4">Sector Exposure</h3>
                   <div className="space-y-3.5">
                     {r.topSectors?.map((sec: any, idx: number) => {
                       const pctFloat = parseFloat(sec.percentage?.replace(/[^0-9.]/g, '')) || 0;
@@ -496,7 +536,7 @@ const StockDetail: React.FC = () => {
                 </div>
 
                 <div className="card p-5">
-                  <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-4">Top Holding Weightings</h3>
+                  <h3 className="text-xs font-bold text-slate-300  tracking-wider mb-4">Top Holding Weightings</h3>
                   <div className="divide-y divide-slate-850 max-h-72 overflow-y-auto pr-1">
                     {r.topHoldings?.map((h: any, idx: number) => (
                       <div key={idx} className="flex justify-between items-center py-2.5 text-xs sm:text-sm">
@@ -512,7 +552,7 @@ const StockDetail: React.FC = () => {
               </div>
 
               <div className="card p-5 bg-slate-950/20">
-                <h3 className="text-xs font-bold text-slate-450 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                <h3 className="text-xs font-bold text-slate-450  tracking-wider mb-2.5 flex items-center gap-1.5">
                   <Sparkles className="w-4 h-4 text-indigo-400" /> Analogy Explanation
                 </h3>
                 <p className="text-sm text-slate-300 italic leading-relaxed">"{r.laymanExplanation}"</p>
@@ -560,8 +600,15 @@ const StockDetail: React.FC = () => {
                 {/* Left Main Story Panel */}
                 <div className="lg:col-span-8 space-y-6 md:space-y-8">
                   
+                  {/* Layman's Takeaway above Executive Summary */}
+                  {laymanTakeawayText && (
+                    <div className="text-base md:text-lg italic font-medium text-slate-200 pl-5 border-l-4 border-l-brand-400 py-2 leading-relaxed">
+                      “{laymanTakeawayText}”
+                    </div>
+                  )}
+                  
                   {/* SECTION 1: EXECUTIVE SUMMARY */}
-                  <section id="summary" className="card relative overflow-hidden flex flex-col gap-5 border-l-4 border-l-brand-500">
+                  <section id="summary" className="card relative flex flex-col gap-5 border-l-4 border-l-brand-500">
                     <div className="flex items-center justify-between border-b border-slate-850/50 pb-3">
                       <div>
                         <h2 className="text-lg font-bold text-slate-100">Executive Summary</h2>
@@ -570,26 +617,133 @@ const StockDetail: React.FC = () => {
                       <RatingBadge rating={bias} size="md" />
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-slate-950/35 p-4 rounded-2xl border border-slate-850/50">
-                      <div>
-                        <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Score</span>
-                        <span className="text-xl font-extrabold font-mono text-slate-100">
-                          {r?.technicalScore != null ? r.technicalScore.toFixed(0) : 'N/A'}
-                          <span className="text-xs text-slate-500">/100</span>
-                        </span>
-                      </div>
-                      <div>
-                        <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Action</span>
-                        <span className="text-sm font-bold text-brand-400 capitalize">{r?.finalDecision?.bestActionNow || swing?.trade_bias || 'Watch'}</span>
-                      </div>
-                      <div>
-                        <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Timeframe</span>
-                        <span className="text-sm font-bold text-indigo-400">{r?.shortTermView?.horizon || swing?.horizon || 'Short-term'}</span>
-                      </div>
-                      <div>
-                        <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Confidence</span>
-                        <span className="text-sm font-bold text-emerald-400">{confidence}% Match</span>
-                      </div>
+                    {/* Row 1: Chart Strength & AI Confidence circular gauges side-by-side */}
+                    <div className="flex justify-around items-center bg-slate-950/35 p-6 rounded-2xl">
+                      
+                      {/* Chart Strength Gauge */}
+                      <TermTooltip term="technicalscore">
+                        <div className="flex flex-col items-center gap-2 cursor-help group">
+                          <span className="text-[10px] text-slate-500 font-bold block tracking-wider underline decoration-dotted group-hover:text-slate-350 transition-colors ">
+                            Chart Strength
+                          </span>
+                          <div className="relative w-20 h-20 flex items-center justify-center">
+                            <svg className="w-full h-full transform -rotate-90">
+                              <circle
+                                cx="40"
+                                cy="40"
+                                r="28"
+                                className="fill-transparent stroke-slate-850"
+                                strokeWidth="5"
+                              />
+                              <circle
+                                cx="40"
+                                cy="40"
+                                r="28"
+                                className="fill-transparent stroke-brand-500 transition-all duration-700 ease-out"
+                                strokeWidth="5"
+                                strokeDasharray={175.93}
+                                strokeDashoffset={175.93 - (Math.min(100, Math.max(0, r?.technicalScore || 0)) / 100) * 175.93}
+                                strokeLinecap="round"
+                              />
+                            </svg>
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <span className="text-xl font-black font-mono text-slate-100">
+                                {r?.technicalScore != null ? r.technicalScore.toFixed(0) : 'N/A'}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </TermTooltip>
+                      
+                      {/* AI Confidence Gauge */}
+                      <TermTooltip term="confidencescore">
+                        <div className="flex flex-col items-center gap-2 cursor-help group">
+                          <span className="text-[10px] text-slate-500 font-bold block tracking-wider underline decoration-dotted group-hover:text-slate-350 transition-colors ">
+                            AI Confidence
+                          </span>
+                          <div className="relative w-20 h-20 flex items-center justify-center">
+                            <svg className="w-full h-full transform -rotate-90">
+                              <circle
+                                cx="40"
+                                cy="40"
+                                r="28"
+                                className="fill-transparent stroke-slate-850"
+                                strokeWidth="5"
+                              />
+                              <circle
+                                cx="40"
+                                cy="40"
+                                r="28"
+                                className="fill-transparent stroke-emerald-500 transition-all duration-700 ease-out"
+                                strokeWidth="5"
+                                strokeDasharray={175.93}
+                                strokeDashoffset={175.93 - (Math.min(100, Math.max(0, confidence)) / 100) * 175.93}
+                                strokeLinecap="round"
+                              />
+                            </svg>
+                            <div className="absolute inset-0 flex items-center justify-center font-mono">
+                              <span className="text-xl font-black text-emerald-400">
+                                {confidence}%
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </TermTooltip>
+
+                    </div>
+
+                    {/* Row 2: Suggested Action taking full width */}
+                    <div className="bg-slate-950/35 p-4 rounded-2xl space-y-1">
+                      <span className="text-[10px] text-slate-500 font-bold block tracking-wider ">Suggested Action</span>
+                      <p className="text-sm font-bold text-brand-400 leading-relaxed font-sans">
+                        {r?.finalDecision?.bestActionNow || swing?.trade_bias || 'Watch'}
+                      </p>
+                    </div>
+
+                    {/* Guide to Metrics */}
+                    <div className="bg-slate-950/25 border border-slate-850/60 rounded-xl text-xs overflow-hidden">
+                      <button
+                        onClick={() => toggleSection('guideToMetrics')}
+                        className="w-full flex items-center justify-between p-3.5 text-left text-slate-300 hover:text-slate-200 focus:outline-none transition-colors"
+                      >
+                        <div className="font-bold flex items-center gap-1.5">
+                          <Info className="w-3.5 h-3.5 text-brand-400" />
+                          <span>Guide to Metrics</span>
+                        </div>
+                        {expanded['guideToMetrics'] ? (
+                          <ChevronUp className="w-4 h-4 text-slate-500" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4 text-slate-500" />
+                        )}
+                      </button>
+
+                      {expanded['guideToMetrics'] && (
+                        <div className="p-3.5 pt-0 border-t border-slate-850/60 space-y-3.5 animate-fade-in">
+                          {/* Chart Strength and AI Confidence as Titles */}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-1">
+                              <h4 className="font-bold text-slate-300">Chart Strength (0-100)</h4>
+                              <p className="text-slate-400 leading-relaxed font-sans">
+                                Shows how strong the stock's trend is. Above 70 means a strong upward trend, while below 40 means a weak or declining trend.
+                              </p>
+                            </div>
+                            <div className="space-y-1">
+                              <h4 className="font-bold text-slate-300">AI Confidence</h4>
+                              <p className="text-slate-400 leading-relaxed font-sans">
+                                How well all chart, news, and market signals agree. A higher percentage means stronger alignment.
+                              </p>
+                            </div>
+                          </div>
+                          
+                          {/* Suggested Action written below both */}
+                          <div className="pt-3 border-t border-slate-900 space-y-1">
+                            <h4 className="font-bold text-slate-300">Suggested Action</h4>
+                            <p className="text-slate-400 leading-relaxed font-sans">
+                              The AI's tactical advice right now—whether to buy immediately, wait for a pull-back to support, or hold.
+                            </p>
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Decision Meter */}
@@ -607,21 +761,21 @@ const StockDetail: React.FC = () => {
                             }`}
                           >
                             {i === meterIndex && (
-                              <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-100 rounded-full border border-slate-900 animate-ping" />
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="w-1.5 h-1.5 bg-slate-100 rounded-full shadow-sm" />
+                              </div>
                             )}
                           </div>
                         ))}
                       </div>
-                      <div className="flex justify-between text-[9px] text-slate-500 px-1 font-mono uppercase">
+                      <div className="flex justify-between text-[9px] text-slate-500 px-1 font-mono ">
                         <span>Risk</span>
                         <span>Consolidation</span>
                         <span>Setup</span>
                       </div>
                     </div>
 
-                    <p className="text-sm text-slate-200 leading-relaxed font-sans bg-brand-500/5 p-4 rounded-xl border border-brand-500/10">
-                      {r?.executiveSummary || r?.finalDecision?.decisionSummary || finalSummary?.one_line_story}
-                    </p>
+                    {renderExecutiveSummary()}
                   </section>
 
                   {/* SECTION 2: ACTION PLAN */}
@@ -634,7 +788,7 @@ const StockDetail: React.FC = () => {
                     <div className="flex border-b border-slate-850 overflow-x-auto scrollbar-none">
                       <button
                         onClick={() => setActionTab('swing')}
-                        className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+                        className={`px-4 py-2.5 text-xs font-bold  tracking-wider border-b-2 transition ${
                           actionTab === 'swing' ? 'border-brand-500 text-brand-400' : 'border-transparent text-slate-500 hover:text-slate-350'
                         }`}
                       >
@@ -642,7 +796,7 @@ const StockDetail: React.FC = () => {
                       </button>
                       <button
                         onClick={() => setActionTab('short')}
-                        className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+                        className={`px-4 py-2.5 text-xs font-bold  tracking-wider border-b-2 transition ${
                           actionTab === 'short' ? 'border-brand-500 text-brand-400' : 'border-transparent text-slate-500 hover:text-slate-350'
                         }`}
                       >
@@ -650,7 +804,7 @@ const StockDetail: React.FC = () => {
                       </button>
                       <button
                         onClick={() => setActionTab('long')}
-                        className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+                        className={`px-4 py-2.5 text-xs font-bold  tracking-wider border-b-2 transition ${
                           actionTab === 'long' ? 'border-brand-500 text-brand-400' : 'border-transparent text-slate-500 hover:text-slate-350'
                         }`}
                       >
@@ -662,28 +816,28 @@ const StockDetail: React.FC = () => {
                       <div className="space-y-4 animate-fade-in">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Accumulation Zone</span>
+                            <span className="text-[10px] text-slate-500 font-bold  block tracking-wider">Accumulation Zone</span>
                             <span className="font-mono text-sm sm:text-base font-extrabold text-indigo-400 mt-1 block">
                               {swing?.entry_zone ? `$${swing.entry_zone.low?.toFixed(2)} – $${swing.entry_zone.high?.toFixed(2)}` : th?.suggestedEntryPrice ? `$${th.suggestedEntryPrice.toFixed(2)}` : 'N/A'}
                             </span>
                             <span className="text-[10px] text-slate-500 font-sans block mt-1">Where buying may make sense</span>
                           </div>
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Targets</span>
+                            <span className="text-[10px] text-slate-500 font-bold  block tracking-wider">Targets</span>
                             <span className="font-mono text-sm sm:text-base font-extrabold text-emerald-400 mt-1 block">
                               {swing?.target_1 ? `$${swing.target_1?.toFixed(2)} / $${swing.target_2?.toFixed(2)}` : th?.suggestedExitPrice ? `$${th.suggestedExitPrice.toFixed(2)}` : 'N/A'}
                             </span>
                             <span className="text-[10px] text-slate-500 font-sans block mt-1">Possible profit zones</span>
                           </div>
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Stop Loss</span>
+                            <span className="text-[10px] text-slate-500 font-bold  block tracking-wider">Stop Loss</span>
                             <span className="font-mono text-sm sm:text-base font-extrabold text-rose-400 mt-1 block">
                               {swing?.stop_loss ? `$${swing.stop_loss?.toFixed(2)}` : th?.stopLossPrice ? `$${th.stopLossPrice.toFixed(2)}` : 'N/A'}
                             </span>
                             <span className="text-[10px] text-slate-500 font-sans block mt-1">Where this idea becomes wrong</span>
                           </div>
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Risk / Reward</span>
+                            <span className="text-[10px] text-slate-500 font-bold  block tracking-wider">Risk / Reward</span>
                             <span className="font-mono text-sm sm:text-base font-extrabold text-slate-100 mt-1 block">
                               {swing?.risk_reward || r?.swingTradeView?.riskReward || 'N/A'}
                             </span>
@@ -695,7 +849,7 @@ const StockDetail: React.FC = () => {
                           <div className="p-3 bg-indigo-500/5 border border-indigo-500/15 rounded-xl text-xs flex items-start gap-2">
                             <Info className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                             <div>
-                              <strong className="text-indigo-300 font-bold uppercase text-[10px] tracking-wider block mb-0.5">What must happen first</strong>
+                              <strong className="text-indigo-300 font-bold  text-[10px] tracking-wider block mb-0.5">What must happen first</strong>
                               <span className="text-slate-300 leading-relaxed font-sans">{swing.wait_for_confirmation}</span>
                             </div>
                           </div>
@@ -704,7 +858,7 @@ const StockDetail: React.FC = () => {
                           <div className="p-3 bg-slate-950/40 border border-slate-850 rounded-xl text-xs flex items-start gap-2">
                             <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                             <div>
-                              <strong className="text-slate-400 font-semibold uppercase text-[10px] tracking-wider block mb-0.5">Confirmation Summary</strong>
+                              <strong className="text-slate-400 font-semibold  text-[10px] tracking-wider block mb-0.5">Confirmation Summary</strong>
                               <span className="text-slate-300 font-sans">{swing.entry_reason}</span>
                             </div>
                           </div>
@@ -716,30 +870,30 @@ const StockDetail: React.FC = () => {
                       <div className="space-y-4 animate-fade-in">
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Short Trigger</span>
+                            <span className="text-[10px] text-slate-500 font-bold  block tracking-wider">Short Trigger</span>
                             <span className="font-mono text-sm sm:text-base font-extrabold text-purple-400 mt-1 block">
                               {short?.short_entry_trigger ? `$${short.short_entry_trigger.toFixed(2)}` : 'N/A'}
                             </span>
                             <span className="text-[10px] text-slate-500 font-sans block mt-1">Breakdown Entry Point</span>
                           </div>
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Short Targets</span>
+                            <span className="text-[10px] text-slate-500 font-bold  block tracking-wider">Short Targets</span>
                             <span className="font-mono text-sm sm:text-base font-extrabold text-emerald-400 mt-1 block">
                               {short?.short_target_1 ? `$${short.short_target_1.toFixed(2)} / $${short.short_target_2.toFixed(2)}` : 'N/A'}
                             </span>
                             <span className="text-[10px] text-slate-500 font-sans block mt-1">Downward profit zones</span>
                           </div>
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Short Stop Loss</span>
+                            <span className="text-[10px] text-slate-500 font-bold  block tracking-wider">Short Stop Loss</span>
                             <span className="font-mono text-sm sm:text-base font-extrabold text-rose-400 mt-1 block">
                               {short?.short_stop_loss ? `$${short.short_stop_loss.toFixed(2)}` : 'N/A'}
                             </span>
                             <span className="text-[10px] text-slate-500 font-sans block mt-1">Exit if buyers push back</span>
                           </div>
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/60 hover:border-slate-800 transition-colors">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider">Squeeze Risk</span>
+                            <span className="text-[10px] text-slate-500 font-bold  block tracking-wider">Squeeze Risk</span>
                             <span className="mt-1 block">
-                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase font-mono border ${
+                              <span className={`px-2 py-0.5 rounded text-[10px] font-bold  font-mono border ${
                                 ts?.evidence?.short_context?.short_squeeze_risk === 'high' ? 'bg-red-500/10 text-red-500 border-red-500/20' : 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20'
                               }`}>
                                 {ts?.evidence?.short_context?.short_squeeze_risk || 'LOW'}
@@ -753,7 +907,7 @@ const StockDetail: React.FC = () => {
                           <div className="p-3 bg-red-500/5 border border-red-500/15 rounded-xl text-xs flex items-start gap-2">
                             <AlertTriangle className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
                             <div>
-                              <strong className="text-red-300 font-bold uppercase text-[10px] tracking-wider block mb-0.5">Short Warning Context</strong>
+                              <strong className="text-red-300 font-bold  text-[10px] tracking-wider block mb-0.5">Short Warning Context</strong>
                               <span className="text-slate-300 leading-relaxed font-sans">{ts.evidence.short_context.summary}</span>
                             </div>
                           </div>
@@ -762,7 +916,7 @@ const StockDetail: React.FC = () => {
                           <div className="p-3 bg-slate-950/40 border border-slate-850 rounded-xl text-xs flex items-start gap-2">
                             <Info className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
                             <div>
-                              <strong className="text-slate-400 font-semibold uppercase text-[10px] tracking-wider block mb-0.5">Tactical Setup commentary</strong>
+                              <strong className="text-slate-400 font-semibold  text-[10px] tracking-wider block mb-0.5">Tactical Setup commentary</strong>
                               <span className="text-slate-300 font-sans">{short.reason}</span>
                             </div>
                           </div>
@@ -774,7 +928,7 @@ const StockDetail: React.FC = () => {
                       <div className="space-y-4 animate-fade-in">
                         <div className="p-4 bg-slate-950/45 border border-slate-850 rounded-xl space-y-3">
                           <div className="flex items-center justify-between">
-                            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Multibagger Potential Assessment</span>
+                            <span className="text-xs font-bold text-slate-400  tracking-wider">Multibagger Potential Assessment</span>
                             {r?.multibaggerProbability?.rating && (
                               <span className={`px-2 py-0.5 rounded text-[10px] font-bold border ${
                                 r.multibaggerProbability.rating === 'VERY_HIGH' || r.multibaggerProbability.rating === 'HIGH' ? 'bg-emerald-500/15 border-emerald-500/20 text-emerald-400' : 'bg-slate-800 border-slate-700 text-slate-300'
@@ -790,7 +944,7 @@ const StockDetail: React.FC = () => {
 
                           {r?.multibaggerProbability?.requiredConditions?.length > 0 && (
                             <div className="pt-3 border-t border-slate-850 space-y-2">
-                              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Required Catalyst Conditions:</span>
+                              <span className="text-[10px] font-bold text-slate-500  tracking-wider block">Required Catalyst Conditions:</span>
                               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                 {r.multibaggerProbability.requiredConditions.map((cond: string, idx: number) => (
                                   <div key={idx} className="text-xs text-slate-300 bg-slate-950/60 p-2.5 rounded-lg border border-slate-850 flex items-start gap-1.5">
@@ -814,7 +968,7 @@ const StockDetail: React.FC = () => {
                         <p className="text-xs text-slate-450 mt-0.5">Analyses on recent events, earnings, and news catalysts</p>
                       </div>
                       {ts?.classification?.primary_reason && (
-                        <span className="px-2.5 py-0.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-bold font-sans uppercase">
+                        <span className="px-2.5 py-0.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-bold font-sans ">
                           {ts.classification.primary_reason.replace('-', ' ')}
                         </span>
                       )}
@@ -829,9 +983,9 @@ const StockDetail: React.FC = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="p-4 bg-slate-950/20 border border-slate-850 rounded-xl space-y-1.5">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">Sustainability</span>
+                            <span className="text-[10px] text-slate-500 font-bold  tracking-wider block">Sustainability</span>
                             <div className="flex items-center gap-2">
-                              <span className={`px-2 py-0.25 rounded text-[9px] font-bold uppercase ${
+                              <span className={`px-2 py-0.25 rounded text-[9px] font-bold  ${
                                 layman.is_move_sustainable === 'yes' ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/10 text-rose-500 border border-rose-500/20'
                               }`}>
                                 Sustainable: {layman.is_move_sustainable}
@@ -841,7 +995,7 @@ const StockDetail: React.FC = () => {
                           </div>
 
                           <div className="p-4 bg-slate-950/20 border border-slate-850 rounded-xl space-y-1.5">
-                            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">Participation / Driver</span>
+                            <span className="text-[10px] text-slate-500 font-bold  tracking-wider block">Participation / Driver</span>
                             <div className="text-xs font-semibold text-slate-200 capitalize">{layman.who_may_be_buying_or_selling} participation</div>
                             <p className="text-xs text-slate-400 font-sans mt-2">
                               {layman.who_may_be_buying_or_selling === 'institution' && 'Unusually high volume indicates institutional position scaling.'}
@@ -869,21 +1023,21 @@ const StockDetail: React.FC = () => {
                       {/* Price Trend lane */}
                       <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-2xl space-y-3">
                         <div className="flex items-center justify-between border-b border-slate-900/60 pb-2">
-                          <span className="text-xs font-extrabold text-slate-350 uppercase tracking-wider">1. Price Trend</span>
-                          <span className={`text-[11px] px-2 py-0.5 rounded font-extrabold uppercase font-mono ${
+                          <span className="text-xs font-extrabold text-slate-350  tracking-wider">1. Price Trend</span>
+                          <span className={`text-[11px] px-2 py-0.5 rounded font-extrabold  font-mono ${
                             (th?.dailyTrend?.trend || '').toUpperCase().includes('BULL') || (th?.dailyTrend?.trend || '').toUpperCase().includes('UP') ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/10 text-rose-500 border border-rose-500/20'
                           }`}>
                             {th?.dailyTrend?.trend || ts?.evidence?.technical_context?.trend || 'Mixed'}
                           </span>
                         </div>
-                        <p className="text-xs font-semibold text-slate-300 font-sans leading-relaxed">{th?.dailyTrend?.analysis || 'Price position relative to key 20EMA, 50EMA lines indicates current bias.'}</p>
+                        <p className="text-xs font-semibold text-slate-300 font-sans leading-relaxed">{th?.dailyTrend?.analysis || 'Price position relative to key EMA(20) and EMA(50) lines indicates current bias.'}</p>
                       </div>
 
                       {/* Volume Strength lane */}
                       <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-2xl space-y-3">
                         <div className="flex items-center justify-between border-b border-slate-900/60 pb-2">
-                          <span className="text-xs font-extrabold text-slate-350 uppercase tracking-wider">2. Volume Strength</span>
-                          <span className="text-[11px] px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-extrabold uppercase font-mono flex items-center gap-1">
+                          <span className="text-xs font-extrabold text-slate-350  tracking-wider">2. Volume Strength</span>
+                          <span className="text-[11px] px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-extrabold  font-mono flex items-center gap-1">
                             {ts?.price_summary?.relative_volume ? `${ts.price_summary.relative_volume.toFixed(1)}x Vol` : 'Normal'}
                             {candles.length >= 21 && (
                               <span className="text-[10px] font-bold">
@@ -900,9 +1054,9 @@ const StockDetail: React.FC = () => {
                       {/* Momentum lane */}
                       <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-2xl space-y-3">
                         <div className="flex items-center justify-between border-b border-slate-900/60 pb-2">
-                          <span className="text-xs font-extrabold text-slate-355 uppercase tracking-wider">3. Momentum Lane</span>
-                          <span className="text-[11px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-extrabold uppercase font-mono flex items-center gap-1">
-                            RSI {technicals?.rsi14?.toFixed(0) || 'N/A'}
+                          <span className="text-xs font-extrabold text-slate-355  tracking-wider">3. Momentum Lane</span>
+                          <span className="text-[11px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-extrabold  font-mono flex items-center gap-1">
+                            RSI(14) {technicals?.rsi14?.toFixed(0) || 'N/A'}
                             {technicals?.rsi14Prev != null && technicals?.rsi14 != null && (
                               <span className="text-[10px] font-bold">
                                 ({technicals.rsi14 > technicals.rsi14Prev ? 'Rising ▲' : 'Fading ▼'})
@@ -911,7 +1065,7 @@ const StockDetail: React.FC = () => {
                           </span>
                         </div>
                         <p className="text-xs font-semibold text-slate-300 font-sans leading-relaxed">
-                          {technicals?.rsi14Prev ? `RSI momentum is ${technicals.rsi14 > technicals.rsi14Prev ? 'improving' : 'cooling'} (previously ${technicals.rsi14Prev.toFixed(0)}).` : 'MACD lines and RSI readings reflect underlying directional velocity.'}
+                          {technicals?.rsi14Prev ? `RSI(14) momentum is ${technicals.rsi14 > technicals.rsi14Prev ? 'improving' : 'cooling'} (previously ${technicals.rsi14Prev.toFixed(0)}).` : 'MACD lines and RSI(14) readings reflect underlying directional velocity.'}
                         </p>
                       </div>
                     </div>
@@ -929,7 +1083,7 @@ const StockDetail: React.FC = () => {
                       <div className="p-4 rounded-xl border border-emerald-500/10 bg-emerald-500/5 hover:bg-emerald-500/8 transition-colors flex flex-col justify-between space-y-4">
                         <div className="space-y-1">
                           <div className="flex justify-between items-center">
-                            <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">A: Holds Support</span>
+                            <span className="text-xs font-bold text-slate-300  tracking-wider">A: Holds Support</span>
                             <span className="text-lg font-extrabold text-emerald-400 font-mono">{probabilities.hold}%</span>
                           </div>
                           <span className="text-[10px] text-slate-500 block">Trigger: Defends S1 level (${th?.supportLevels?.[0]?.price?.toFixed(2) || 'Nearest Support'})</span>
@@ -944,7 +1098,7 @@ const StockDetail: React.FC = () => {
                       <div className="p-4 rounded-xl border border-red-500/10 bg-red-500/5 hover:bg-red-500/8 transition-colors flex flex-col justify-between space-y-4">
                         <div className="space-y-1">
                           <div className="flex justify-between items-center">
-                            <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">B: Support Breaks</span>
+                            <span className="text-xs font-bold text-slate-300  tracking-wider">B: Support Breaks</span>
                             <span className="text-lg font-extrabold text-red-400 font-mono">{probabilities.breakProb}%</span>
                           </div>
                           <span className="text-[10px] text-slate-500 block">Trigger: Drops below Stop Loss (${th?.stopLossPrice?.toFixed(2) || 'Stop Price'})</span>
@@ -959,7 +1113,7 @@ const StockDetail: React.FC = () => {
                       <div className="p-4 rounded-xl border border-indigo-500/10 bg-indigo-500/5 hover:bg-indigo-500/8 transition-colors flex flex-col justify-between space-y-4">
                         <div className="space-y-1">
                           <div className="flex justify-between items-center">
-                            <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">C: Sideways</span>
+                            <span className="text-xs font-bold text-slate-300  tracking-wider">C: Sideways</span>
                             <span className="text-lg font-extrabold text-indigo-400 font-mono">{probabilities.sideways}%</span>
                           </div>
                           <span className="text-[10px] text-slate-500 block">Trigger: Stays in S1-R1 Range</span>
@@ -993,27 +1147,36 @@ const StockDetail: React.FC = () => {
                           </span>?
                         </h4>
                         <p className="text-xs text-slate-400 font-sans leading-relaxed">
-                          {bias === 'BULLISH' && 'The daily trend is positive, price is holding above the 20EMA, and relative volume/momentum confirms buying interest.'}
-                          {bias === 'BEARISH' && 'Sellers have control. Price trades below key EMA lines, and MACD/RSI structures indicate continuing selling pressure.'}
+                          {bias === 'BULLISH' && 'The daily trend is positive, price is holding above the EMA(20), and relative volume/momentum confirms buying interest.'}
+                          {bias === 'BEARISH' && 'Sellers have control. Price trades below key EMA(20) and EMA(50) lines, and MACD/RSI(14) structures indicate continuing selling pressure.'}
                           {bias === 'HOLD' && 'Signals are mixed. The stock is near major support levels, but volume and momentum have not confirmed a bounce yet.'}
                         </p>
                       </div>
                       <div className="flex items-center gap-3 bg-slate-900 border border-slate-800 p-3.5 rounded-xl shrink-0">
                         <div className="text-right">
-                          <span className="text-[10px] text-slate-500 font-bold block">CONFIDENCE</span>
-                          <span className="text-lg font-extrabold text-brand-400 font-mono">{confidence}%</span>
+                          <span className="text-[10px] text-slate-500 font-bold block">Confidence</span>
+                          <span className="text-lg font-extrabold text-brand-400 font-mono block leading-tight">{confidence}%</span>
                         </div>
                         <div className="h-8 w-px bg-slate-800" />
                         <div>
-                          <span className="text-[10px] text-slate-500 font-bold block">SIGNAL STATUS</span>
-                          <RatingBadge rating={bias} size="sm" />
+                          <span className="text-[10px] text-slate-500 font-bold block">Signal Status</span>
+                          <span className={`text-lg font-extrabold font-mono block leading-tight ${
+                            bias === 'BUY' || bias === 'BULLISH' ? 'text-emerald-400' :
+                            bias === 'SELL' || bias === 'BEARISH' ? 'text-red-400' :
+                            bias === 'WATCHLIST' ? 'text-indigo-400' :
+                            bias === 'HOLD' ? 'text-amber-400' :
+                            bias === 'AVOID' ? 'text-slate-400' :
+                            'text-slate-400'
+                          }`}>
+                            {bias}
+                          </span>
                         </div>
                       </div>
                     </div>
 
                     {/* Breakdown of Bullish / Bearish evidence list */}
                     <div className="space-y-3">
-                      <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider">Active Signals Correlation</h4>
+                      <h4 className="text-xs font-bold text-slate-350  tracking-wider">Active Signals Correlation</h4>
                       <div className="space-y-2 bg-slate-950/20 p-3.5 rounded-xl border border-slate-850">
                         {technicals?.signals && technicals.signals.length > 0 ? (
                           technicals.signals.map((sig: string, idx: number) => {
@@ -1044,7 +1207,7 @@ const StockDetail: React.FC = () => {
                   <section id="risks" className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Catalyst card */}
                     <div className="card border border-emerald-500/10 flex flex-col gap-3.5">
-                      <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-2">
+                      <h3 className="text-sm font-bold text-emerald-400  tracking-wider flex items-center gap-2">
                         <CheckCircle2 className="w-4.5 h-4.5 text-emerald-400" /> What can push the stock up?
                       </h3>
                       <ul className="space-y-3">
@@ -1063,7 +1226,7 @@ const StockDetail: React.FC = () => {
 
                     {/* Risks card */}
                     <div className="card border border-red-500/10 flex flex-col gap-3.5">
-                      <h3 className="text-sm font-bold text-red-400 uppercase tracking-wider flex items-center gap-2">
+                      <h3 className="text-sm font-bold text-red-400  tracking-wider flex items-center gap-2">
                         <AlertCircle className="w-4.5 h-4.5 text-red-400" /> What can push the stock down?
                       </h3>
                       <ul className="space-y-3">
@@ -1100,7 +1263,7 @@ const StockDetail: React.FC = () => {
                         {/* Price Area Chart */}
                         {candles.length > 0 && (
                           <div className="space-y-2">
-                            <h4 className="text-xs font-bold text-slate-450 uppercase tracking-wider font-mono">Price History (60 Days)</h4>
+                            <h4 className="text-xs font-bold text-slate-450  tracking-wider font-mono">Price History (60 Days)</h4>
                             <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/50">
                               <ResponsiveContainer width="100%" height={220}>
                                 <AreaChart data={candles.slice(-60)}>
@@ -1196,7 +1359,7 @@ const StockDetail: React.FC = () => {
                           ].map((ind) => (
                             <TermTooltip key={ind.name} term={ind.term}>
                               <div className="p-3.5 bg-slate-950/45 border border-slate-850 hover:border-slate-800 rounded-xl space-y-1.5 transition-colors">
-                                <span className="text-xs text-slate-400 font-extrabold uppercase tracking-wider block">{ind.name}</span>
+                                <span className="text-xs text-slate-400 font-extrabold  tracking-wider block">{ind.name}</span>
                                 <span className="text-base font-black text-slate-100 font-mono block">{ind.value}</span>
                                 <span className="text-xs font-semibold text-slate-300 block leading-tight">{ind.meaning}</span>
                               </div>
@@ -1207,7 +1370,7 @@ const StockDetail: React.FC = () => {
                         {/* Support & Resistance pivot details */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/50">
-                            <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-2">Support Levels (S1 - S3)</span>
+                            <span className="text-xs font-bold text-emerald-400  tracking-wider block mb-2">Support Levels (S1 - S3)</span>
                             <div className="space-y-1.5 font-mono text-xs">
                               {technicals?.supportLevels?.length > 0 ? (
                                 technicals.supportLevels.slice(0, 3).map((lvl: number, i: number) => (
@@ -1223,7 +1386,7 @@ const StockDetail: React.FC = () => {
                           </div>
 
                           <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-850/50">
-                            <span className="text-xs font-bold text-red-400 uppercase tracking-wider block mb-2">Resistance Levels (R1 - R3)</span>
+                            <span className="text-xs font-bold text-red-400  tracking-wider block mb-2">Resistance Levels (R1 - R3)</span>
                             <div className="space-y-1.5 font-mono text-xs">
                               {technicals?.resistanceLevels?.length > 0 ? (
                                 technicals.resistanceLevels.slice(0, 3).map((lvl: number, i: number) => (
@@ -1260,7 +1423,7 @@ const StockDetail: React.FC = () => {
                         <button
                           key={tab.id}
                           onClick={() => setActiveTab(tab.id as any)}
-                          className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-b-2 transition shrink-0 ${
+                          className={`px-4 py-2.5 text-xs font-bold  tracking-wider border-b-2 transition shrink-0 ${
                             activeTab === tab.id ? 'border-brand-500 text-brand-400' : 'border-transparent text-slate-500 hover:text-slate-350'
                           }`}
                         >
@@ -1274,17 +1437,17 @@ const StockDetail: React.FC = () => {
                         <div className="space-y-4 animate-fade-in">
                           <div className="grid grid-cols-2 gap-4">
                             <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-xl">
-                              <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider mb-2">Fundamental Rating</span>
+                              <span className="text-[10px] text-slate-500 font-bold  block tracking-wider mb-2">Fundamental Rating</span>
                               <ScoreBar label="Corporate Score" value={r?.fundamentalScore} />
                             </div>
                             <div className="p-4 bg-slate-950/40 border border-slate-850 rounded-xl">
-                              <span className="text-[10px] text-slate-500 font-bold uppercase block tracking-wider mb-2">News Rating</span>
+                              <span className="text-[10px] text-slate-500 font-bold  block tracking-wider mb-2">News Rating</span>
                               <ScoreBar label="News Sentiment" value={r?.newsCatalystScore} />
                             </div>
                           </div>
                           {th?.shortFilter && (
                             <div className="p-4 bg-slate-950/20 border border-slate-850 rounded-xl space-y-3">
-                              <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider">Short Selling parameters</h4>
+                              <h4 className="text-xs font-bold text-slate-300  tracking-wider">Short Selling parameters</h4>
                               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-xs font-mono">
                                 <div>
                                   <span className="text-slate-500 block">Short Interest:</span>
@@ -1311,7 +1474,7 @@ const StockDetail: React.FC = () => {
                               <div key={idx} className="p-3.5 bg-slate-950/40 border border-slate-850 rounded-xl flex flex-col gap-1.5">
                                 <div className="flex items-center justify-between text-[10px] text-slate-550">
                                   <span>{news.source} · {new Date(news.published_at).toLocaleDateString()}</span>
-                                  <span className={`px-1.5 py-0.25 rounded uppercase font-bold text-[9px] ${
+                                  <span className={`px-1.5 py-0.25 rounded  font-bold text-[9px] ${
                                     news.impact === 'positive' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-500'
                                   }`}>
                                     {news.impact}
@@ -1337,7 +1500,7 @@ const StockDetail: React.FC = () => {
                                   <p className="text-slate-400 font-normal leading-relaxed">{act.summary}</p>
                                 </div>
                                 <div className="text-right shrink-0">
-                                  <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase ${
+                                  <span className={`px-2 py-0.5 rounded text-[9px] font-bold  ${
                                     act.action === 'upgrade' ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/15 text-rose-400 border border-rose-500/20'
                                   }`}>
                                     {act.action}
@@ -1369,7 +1532,7 @@ const StockDetail: React.FC = () => {
                                 <div className="p-4 rounded-xl border border-brand-500/10 bg-brand-500/5 hover:border-brand-500/20 transition-all space-y-2">
                                   <div className="flex items-center gap-2 border-b border-brand-500/10 pb-2">
                                     <Globe className="w-4 h-4 text-brand-400 shrink-0" />
-                                    <h4 className="text-xs font-bold text-brand-400 uppercase tracking-wider">Strategic Ecosystem Outlook</h4>
+                                    <h4 className="text-xs font-bold text-brand-400  tracking-wider">Strategic Ecosystem Outlook</h4>
                                   </div>
                                   <p className="text-xs sm:text-sm text-slate-300 font-sans leading-relaxed whitespace-pre-line">
                                     {r.companyInsights.strategicOutlook}
@@ -1382,7 +1545,7 @@ const StockDetail: React.FC = () => {
                                 <div className="p-4 bg-slate-950/30 border border-slate-850 rounded-xl space-y-3 flex flex-col justify-start">
                                   <div className="flex items-center gap-2 border-b border-slate-900 pb-2">
                                     <Coins className="w-4 h-4 text-slate-400" />
-                                    <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider">Strategic Investment Portfolio</h4>
+                                    <h4 className="text-xs font-bold text-slate-350  tracking-wider">Strategic Investment Portfolio</h4>
                                   </div>
                                   {r.companyInsights.investedCompanies && r.companyInsights.investedCompanies.length > 0 ? (
                                     <div className="space-y-3">
@@ -1399,7 +1562,7 @@ const StockDetail: React.FC = () => {
                                           <p className="text-slate-400 font-sans"><strong className="text-slate-350">Performance:</strong> {company.performance}</p>
                                           {company.upcomingEvents && company.upcomingEvents.length > 0 && (
                                             <div className="space-y-1 pl-2 border-l border-slate-850">
-                                              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Upcoming Events:</span>
+                                              <span className="text-[10px] font-bold text-slate-500  tracking-wider block">Upcoming Events:</span>
                                               {company.upcomingEvents.map((evt: string, eIdx: number) => (
                                                 <span key={eIdx} className="text-slate-400 text-[11px] block">• {evt}</span>
                                               ))}
@@ -1425,7 +1588,7 @@ const StockDetail: React.FC = () => {
                                     if (!group.items || group.items.length === 0) return null;
                                     return (
                                       <div key={idx} className="p-4 bg-slate-950/30 border border-slate-850 rounded-xl space-y-3">
-                                        <h4 className="text-xs font-bold text-slate-350 uppercase tracking-wider border-b border-slate-900 pb-1.5">{group.title}</h4>
+                                        <h4 className="text-xs font-bold text-slate-350  tracking-wider border-b border-slate-900 pb-1.5">{group.title}</h4>
                                         <div className="space-y-3 font-sans text-xs">
                                           {group.items.map((partner: any, pIdx: number) => (
                                             <div key={pIdx} className="space-y-1">
@@ -1467,7 +1630,7 @@ const StockDetail: React.FC = () => {
 
                   {/* SECTION 10: FINAL ANALYST VIEW */}
                   <section className="card border border-brand-500/15 bg-brand-500/5 p-5 md:p-6 space-y-3.5">
-                    <h3 className="text-sm font-bold text-brand-400 uppercase tracking-wider flex items-center gap-1.5">
+                    <h3 className="text-sm font-bold text-brand-400  tracking-wider flex items-center gap-1.5">
                       <Sparkles className="w-4.5 h-4.5 text-brand-400" />
                       Final Analyst View
                     </h3>
@@ -1479,17 +1642,17 @@ const StockDetail: React.FC = () => {
                       
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-slate-850/60 text-xs">
                         <div className="space-y-1">
-                          <strong className="text-slate-350 uppercase tracking-wider text-[10px] block">Best-Case Scenario</strong>
+                          <strong className="text-slate-350  tracking-wider text-[10px] block">Best-Case Scenario</strong>
                           <span className="text-slate-300 leading-normal block">Defends key support pivot, holds S1 levels, and rallies on volume breakout confirmation to Target 1.</span>
                         </div>
                         <div className="space-y-1">
-                          <strong className="text-slate-350 uppercase tracking-wider text-[10px] block">Worst-Case / Breakdown Risk</strong>
+                          <strong className="text-slate-350  tracking-wider text-[10px] block">Worst-Case / Breakdown Risk</strong>
                           <span className="text-rose-400/90 leading-normal block">{finalSummary?.risk_warning || 'Breaks below Stop Loss, invalidating trade setup. Keep stops tight.'}</span>
                         </div>
                       </div>
 
                       <div className="p-3.5 bg-slate-950/40 border border-slate-850 rounded-xl text-xs space-y-1 font-sans">
-                        <strong className="text-slate-300 font-bold block mb-0.5">Safer Action Recommendation</strong>
+                        <strong className="text-slate-300 font-bold block mb-0.5">Safer Action Suggestion</strong>
                         <p className="text-slate-350">{swing?.wait_for_confirmation ? `Wait for confirmation: ${swing.wait_for_confirmation}` : 'Wait for volume breakout before entering positions near the accumulation zone.'}</p>
                       </div>
                     </div>
@@ -1502,7 +1665,7 @@ const StockDetail: React.FC = () => {
                 <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-6 hidden lg:block">
                   <div className="card border-slate-850 space-y-4">
                     <div className="border-b border-slate-850/50 pb-3 flex justify-between items-center">
-                      <span className="text-xs text-slate-500 uppercase font-black tracking-wider">Quick Action Plan</span>
+                      <span className="text-xs text-slate-500  font-black tracking-wider">Quick Action Plan</span>
                       <StatusBadge status={bias} size="sm" />
                     </div>
                     
@@ -1532,7 +1695,7 @@ const StockDetail: React.FC = () => {
                     </div>
 
                     <div className="border-t border-slate-850/50 pt-3 space-y-2.5">
-                      <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block">Estimated Scenarios</span>
+                      <span className="text-[10px] text-slate-500  font-bold tracking-wider block">Estimated Scenarios</span>
                       <div className="space-y-1.5 text-xs font-semibold">
                         <div className="flex justify-between text-emerald-400">
                           <span>Support Holds Probability</span>
@@ -1561,7 +1724,7 @@ const StockDetail: React.FC = () => {
               {/* Mobile sticky bottom action bar */}
               <div className="lg:hidden fixed bottom-0 inset-x-0 bg-surface-900 border-t border-slate-850 px-4 pt-3 pb-[calc(12px+env(safe-area-inset-bottom,0px))] flex items-center justify-between z-40 shadow-inner">
                 <div className="flex flex-col">
-                  <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Bias Recommendation</span>
+                  <span className="text-[10px] text-slate-500 font-bold tracking-wider">Bias Suggestion</span>
                   <div className="flex items-center gap-2 mt-0.5">
                     <RatingBadge rating={bias} size="sm" />
                     <span className="text-xs font-mono font-bold text-slate-300">Confidence: {confidence}%</span>

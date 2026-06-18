@@ -1,0 +1,28 @@
+{
+  "ticker": "NVDA",
+  "companyName": "NVDA",
+  "reportDate": "Unavailable",
+  "currentPrice": 205.1,
+  "dayChangePct": 0.15,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "unknown-mixed",
+  "catalystSummary": "Positive sentiment in technology sector",
+  "volumeSummary": "Volume is below average, indicating lack of strong buying interest.",
+  "trendSummary": "NVIDIA's stock is currently showing mixed signals. The daily technical indicators suggest a bearish trend, with the MACD indicating bearish momentum and the price trading below key moving averages like the EMA20 and SMA20. However, shorter timeframes such as the 4-hour and 1-hour charts show bullish signals, with prices above their respective moving averages and a positive MACD histogram. This discrepancy suggests that while the overall trend is bearish, there is some bullish momentum in the shorter term. The institutional flow indicates distribution, which aligns with the bearish daily trend, as the stock is trading below the VWAP with below-average volume. Despite positive news sentiment, the stock's technicals and institutional flow are not fully supportive of a bullish trend.",
+  "supportLevels": [
+    194.76
+  ],
+  "resistanceLevels": [
+    216.82
+  ],
+  "entryZone": "Low: 194.76, High: 199.34",
+  "stopLoss": "Price: 194.76 (Stop-loss below support.)",
+  "targets": [
+    216.82,
+    232.28
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: LOW",
+  "riskWarnings": "High valuation; Mixed technical signals",
+  "finalVerdict": "NVDA is currently in a mixed technical position with bearish daily indicators but bullish short-term signals. The stock is near support but lacks a clear entry signal due to conflicting trends and a wide bid-ask spread. Risk/reward is not optimal for immediate entry.",
+  "executiveSummary": "NVDA is currently trading at $205.1 with a mixed technical outlook. The daily trend is bearish with price below key moving averages and VWAP, indicating potential distribution. However, shorter timeframes show bullish signals, suggesting possible short-term strength. The stock is near support levels, but the wide bid-ask spread and conflicting signals make it a candidate for the watchlist rather than immediate action. LAYMAN'S TAKEAWAY: NVDA is showing mixed signals with potential for short-term gains, but the current setup is not ideal for a buy. It's best to wait for clearer signals or a confirmed breakout before considering entry."
+}

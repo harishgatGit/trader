@@ -1,0 +1,257 @@
+{
+  "ticker": "GOOGL",
+  "reportDate": "Unavailable",
+  "videoTitle": "GOOGL Stock Report",
+  "durationSeconds": 180.3,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for GOOGL. With the stock currently trading at $359.65, we see mixed technical signals that prompt a closer examination of this tech giant\u2019s performance and market position.\n\nGOOGL is positioned at $359.65, reflecting a bearish sentiment as it has closed below key moving averages. This translates to a daily percentage move that indicates a lack of strong buying momentum, suggesting investors may be cautious at this price point.\n\nThe current trend for GOOGL is bearish, primarily driven by the stock trading below both the 20-day and 50-day exponential moving averages. This downward pressure indicates that the market sentiment is currently unfavorable, contributing to an overall negative outlook.\n\nEvidence supporting this trend includes below-average trading volume, which often suggests a lack of conviction among buyers. Additionally, institutional flow data indicates distribution, implying potential selling pressure as the stock approaches critical support levels.\n\nAnalyzing the daily trend chart, GOOGL appears to be in a consolidation phase, hovering near support around $331.46. The key resistance level is identified at $370.12, which needs to be monitored closely for any breakout potential.\n\nFrom a technical metrics perspective, the MACD shows a bearish signal, indicating negative momentum, while the ADX suggests a strong downtrend. The stock's position relative to its VWAP further indicates a lack of buying interest, reinforcing the bearish outlook.\n\nFor tactical traders, the swing entry zone is identified between $331.46 and $358.13, with a stop loss set below the key support level at $331.46. Target levels are established at $378.69 and $393.76, providing a framework for potential trades if the market dynamics shift.\n\nWhen considering a short trade view, caution is warranted due to the medium risk of a potential short squeeze. Breakdown levels should be watched closely, as any significant movement could trigger volatility in the stock.\n\nIn terms of ecosystem insight, the upcoming SpaceX IPO could influence sentiment across the tech sector, potentially impacting GOOGL's performance. However, the lack of strong positive catalysts in the current news sentiment underscores the need for careful monitoring.\n\nIn conclusion, GOOGL is placed on a watchlist status due to its mixed technical indicators and distribution signals. Key levels to watch include the support at $331.46 and the overall risk remains elevated until clearer trends emerge in the stock\u2019s performance.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 15.39,
+      "narration": "Welcome to the Investing Atti stock analysis for GOOGL. With the stock currently trading at $359.65, we see mixed technical signals that prompt a closer examination of this tech giant\u2019s performance and market position.",
+      "pandaAction": "default",
+      "speechBubbleText": "GOOGL: Mixed Signals Ahead",
+      "visualElements": [
+        "GOOGL logo",
+        "stock price display"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "GOOGL: Mixed Signals Ahead"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 18.07,
+      "narration": "GOOGL is positioned at $359.65, reflecting a bearish sentiment as it has closed below key moving averages. This translates to a daily percentage move that indicates a lack of strong buying momentum, suggesting investors may be cautious at this price point.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Current Price: $359.65",
+      "visualElements": [
+        "price chart",
+        "bearish sentiment icon"
+      ],
+      "chartElements": [
+        "daily percentage move"
+      ],
+      "animationInstructions": [
+        "slide in",
+        "highlight"
+      ],
+      "dataFields": {
+        "currentPrice": "$359.65"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 18.99,
+      "narration": "The current trend for GOOGL is bearish, primarily driven by the stock trading below both the 20-day and 50-day exponential moving averages. This downward pressure indicates that the market sentiment is currently unfavorable, contributing to an overall negative outlook.",
+      "pandaAction": "point",
+      "speechBubbleText": "Bearish Trend Detected",
+      "visualElements": [
+        "trend chart",
+        "moving averages"
+      ],
+      "chartElements": [
+        "20-day EMA",
+        "50-day EMA"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "draw line"
+      ],
+      "dataFields": {
+        "trend": "Bearish"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 19.2,
+      "narration": "Evidence supporting this trend includes below-average trading volume, which often suggests a lack of conviction among buyers. Additionally, institutional flow data indicates distribution, implying potential selling pressure as the stock approaches critical support levels.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Evidence of Selling Pressure",
+      "visualElements": [
+        "volume chart",
+        "institutional flow data"
+      ],
+      "chartElements": [
+        "below-average volume"
+      ],
+      "animationInstructions": [
+        "zoom in",
+        "highlight"
+      ],
+      "dataFields": {
+        "tradingVolume": "Below Average"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 16.31,
+      "narration": "Analyzing the daily trend chart, GOOGL appears to be in a consolidation phase, hovering near support around $331.46. The key resistance level is identified at $370.12, which needs to be monitored closely for any breakout potential.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Support: $331.46, Resistance: $370.12",
+      "visualElements": [
+        "consolidation chart",
+        "support and resistance levels"
+      ],
+      "chartElements": [
+        "support level",
+        "resistance level"
+      ],
+      "animationInstructions": [
+        "draw support line",
+        "draw resistance line"
+      ],
+      "dataFields": {
+        "supportLevel": "$331.46",
+        "resistanceLevel": "$370.12"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 18.56,
+      "narration": "From a technical metrics perspective, the MACD shows a bearish signal, indicating negative momentum, while the ADX suggests a strong downtrend. The stock's position relative to its VWAP further indicates a lack of buying interest, reinforcing the bearish outlook.",
+      "pandaAction": "default",
+      "speechBubbleText": "MACD: Bearish Signal",
+      "visualElements": [
+        "MACD chart",
+        "ADX indicator"
+      ],
+      "chartElements": [
+        "MACD",
+        "ADX"
+      ],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {
+        "MACD": "Bearish",
+        "ADX": "Strong Downtrend"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 19.27,
+      "narration": "For tactical traders, the swing entry zone is identified between $331.46 and $358.13, with a stop loss set below the key support level at $331.46. Target levels are established at $378.69 and $393.76, providing a framework for potential trades if the market dynamics shift.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Entry Zone: $331.46 - $358.13",
+      "visualElements": [
+        "entry zone chart",
+        "target levels"
+      ],
+      "chartElements": [
+        "entry zone",
+        "target levels"
+      ],
+      "animationInstructions": [
+        "highlight entry zone",
+        "fade in targets"
+      ],
+      "dataFields": {
+        "entryZone": "$331.46 - $358.13",
+        "stopLoss": "$331.46",
+        "targets": [
+          378.69,
+          393.76
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 15.6,
+      "narration": "When considering a short trade view, caution is warranted due to the medium risk of a potential short squeeze. Breakdown levels should be watched closely, as any significant movement could trigger volatility in the stock.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution: Medium Short Squeeze Risk",
+      "visualElements": [
+        "short trade chart",
+        "breakdown levels"
+      ],
+      "chartElements": [
+        "breakdown levels"
+      ],
+      "animationInstructions": [
+        "highlight breakdown levels",
+        "fade in warning"
+      ],
+      "dataFields": {
+        "shortSqueezeRisk": "Medium"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 18.99,
+      "narration": "In terms of ecosystem insight, the upcoming SpaceX IPO could influence sentiment across the tech sector, potentially impacting GOOGL's performance. However, the lack of strong positive catalysts in the current news sentiment underscores the need for careful monitoring.",
+      "pandaAction": "default",
+      "speechBubbleText": "Watch for SpaceX IPO Impact",
+      "visualElements": [
+        "SpaceX logo",
+        "tech sector overview"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {
+        "catalysts": "SpaceX IPO"
+      }
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 19.92,
+      "narration": "In conclusion, GOOGL is placed on a watchlist status due to its mixed technical indicators and distribution signals. Key levels to watch include the support at $331.46 and the overall risk remains elevated until clearer trends emerge in the stock\u2019s performance.",
+      "pandaAction": "default",
+      "speechBubbleText": "GOOGL: Watchlist Status",
+      "visualElements": [
+        "watchlist icon",
+        "key levels"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {
+        "quote": "Patience is the key to successful trading.",
+        "disclaimer": "This analysis is for informational purposes only and should not be considered as financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "ticker": "CMTL",
+  "reportDate": "Unavailable",
+  "videoTitle": "CMTL Stock Report",
+  "durationSeconds": 165.97,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for CMTL, Comtech Telecommunications Corp. With the stock currently experiencing a sharp decline, we need to assess whether this presents a buying opportunity or a cause for concern.\n\nCMTL is currently trading at $2.77, reflecting a significant drop of over 42% in the most recent trading session. This dramatic price movement indicates strong selling pressure, which merits a closer examination of the underlying factors.\n\nThe bearish trend in CMTL's stock price can primarily be attributed to the recent announcement regarding the sale of its Satellite and Space Communications segment to Gilat for $157.5 million. This news appears to have negatively impacted investor sentiment, leading to a high volume of sell orders.\n\nEvidence supporting this trend is seen through high relative volume, which exceeds three times the average. Such a volume spike typically signals distribution rather than accumulation, reinforcing the bearish outlook for the stock.\n\nAnalyzing the daily trend chart, CMTL shows a significant lack of support near its current price level, with resistance forming above key moving averages. The absence of a defined support zone indicates potential further declines if selling pressure continues.\n\nFrom a technical perspective, the stock's Relative Strength Index (RSI) is approaching oversold conditions, while the MACD remains firmly in bearish territory. These indicators suggest that while the stock may be oversold, a reversal has not yet been confirmed.\n\nGiven the current setup, there are no recommended entry zones or stop-loss levels, as the overall risk/reward profile is unfavorable. A prudent approach would be to avoid any new positions in CMTL until a more favorable technical setup presents itself.\n\nCaution is advised for those considering short trades, as the current market dynamics do not indicate a strong short squeeze risk. However, be vigilant for breakdown levels that could suggest further downward movement.\n\nIn the broader ecosystem, the telecommunications sector is experiencing a range of pressures, which can further complicate CMTL's recovery potential. Peer performance and overall market sentiment will play pivotal roles in shaping the stock's trajectory moving forward.\n\nIn conclusion, the final investment rating for CMTL is to avoid buying at this time. Key levels to watch include the stock\u2019s current price and any potential support that may emerge. As always, be aware of the inherent risks associated with trading in a volatile environment.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 14.76,
+      "narration": "Welcome to the Investing Atti stock analysis for CMTL, Comtech Telecommunications Corp. With the stock currently experiencing a sharp decline, we need to assess whether this presents a buying opportunity or a cause for concern.",
+      "pandaAction": "default",
+      "speechBubbleText": "CMTL: A Stock in Decline",
+      "visualElements": [
+        "CMTL logo",
+        "stock market background"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "CMTL: Buying Opportunity or Cause for Concern?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 15.48,
+      "narration": "CMTL is currently trading at $2.77, reflecting a significant drop of over 42% in the most recent trading session. This dramatic price movement indicates strong selling pressure, which merits a closer examination of the underlying factors.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $2.77",
+      "visualElements": [
+        "price tag",
+        "declining graph"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "slide in",
+        "highlight"
+      ],
+      "dataFields": {
+        "currentPrice": "$2.77",
+        "priceDrop": "42%"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 19.45,
+      "narration": "The bearish trend in CMTL's stock price can primarily be attributed to the recent announcement regarding the sale of its Satellite and Space Communications segment to Gilat for $157.5 million. This news appears to have negatively impacted investor sentiment, leading to a high volume of sell orders.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Catalyst: Sale to Gilat",
+      "visualElements": [
+        "Gilat logo",
+        "satellite imagery"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {
+        "catalyst": "Sale of satellite unit to Gilat for $157.5 million"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 15.02,
+      "narration": "Evidence supporting this trend is seen through high relative volume, which exceeds three times the average. Such a volume spike typically signals distribution rather than accumulation, reinforcing the bearish outlook for the stock.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "High Volume: 3x Average",
+      "visualElements": [
+        "volume bars",
+        "bearish indicators"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "zoom in",
+        "highlight"
+      ],
+      "dataFields": {
+        "relativeVolume": "3x average"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 16.91,
+      "narration": "Analyzing the daily trend chart, CMTL shows a significant lack of support near its current price level, with resistance forming above key moving averages. The absence of a defined support zone indicates potential further declines if selling pressure continues.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Lack of Support",
+      "visualElements": [
+        "trend chart",
+        "support/resistance lines"
+      ],
+      "chartElements": [
+        "daily trend chart"
+      ],
+      "animationInstructions": [
+        "draw lines",
+        "fade in"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 16.97,
+      "narration": "From a technical perspective, the stock's Relative Strength Index (RSI) is approaching oversold conditions, while the MACD remains firmly in bearish territory. These indicators suggest that while the stock may be oversold, a reversal has not yet been confirmed.",
+      "pandaAction": "default",
+      "speechBubbleText": "RSI: Oversold",
+      "visualElements": [
+        "RSI chart",
+        "MACD chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 16.39,
+      "narration": "Given the current setup, there are no recommended entry zones or stop-loss levels, as the overall risk/reward profile is unfavorable. A prudent approach would be to avoid any new positions in CMTL until a more favorable technical setup presents itself.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Avoid New Positions",
+      "visualElements": [
+        "warning sign",
+        "risk/reward chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade out",
+        "highlight"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 14.18,
+      "narration": "Caution is advised for those considering short trades, as the current market dynamics do not indicate a strong short squeeze risk. However, be vigilant for breakdown levels that could suggest further downward movement.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Short Trade Caution",
+      "visualElements": [
+        "bear symbol",
+        "downward arrows"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade in"
+      ],
+      "dataFields": {
+        "squeezeRisk": "LOW"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 17.49,
+      "narration": "In the broader ecosystem, the telecommunications sector is experiencing a range of pressures, which can further complicate CMTL's recovery potential. Peer performance and overall market sentiment will play pivotal roles in shaping the stock's trajectory moving forward.",
+      "pandaAction": "default",
+      "speechBubbleText": "Sector Pressures",
+      "visualElements": [
+        "telecommunications imagery",
+        "market sentiment"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 19.32,
+      "narration": "In conclusion, the final investment rating for CMTL is to avoid buying at this time. Key levels to watch include the stock\u2019s current price and any potential support that may emerge. As always, be aware of the inherent risks associated with trading in a volatile environment.",
+      "pandaAction": "default",
+      "speechBubbleText": "Investment Rating: AVOID",
+      "visualElements": [
+        "warning sign",
+        "investment rating card"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight"
+      ],
+      "dataFields": {
+        "quote": "Patience is the key to successful investing.",
+        "disclaimer": "This analysis is for informational purposes only and does not constitute investment advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

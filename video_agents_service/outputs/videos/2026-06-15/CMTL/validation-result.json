@@ -1,0 +1,11 @@
+{
+  "ffprobe_valid": true,
+  "has_video_stream": true,
+  "has_audio_stream": true,
+  "duration": 165.995,
+  "file_size_mb": 9.076144218444824,
+  "audio_mean_volume_db": -27.8,
+  "frame_differences_passed": true,
+  "passed": true,
+  "errors": []
+}

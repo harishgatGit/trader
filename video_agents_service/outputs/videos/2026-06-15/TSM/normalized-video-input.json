@@ -1,0 +1,28 @@
+{
+  "ticker": "TSM",
+  "companyName": "TSM",
+  "reportDate": "Unavailable",
+  "currentPrice": 440.865,
+  "dayChangePct": 4.04,
+  "overallSignal": "WAIT",
+  "whyStockMoved": "news-driven",
+  "catalystSummary": "Positive sentiment from recent news; Strong demand for semiconductors",
+  "volumeSummary": "Volume is below average, indicating potential distribution.",
+  "trendSummary": "The stock of Taiwan Semiconductor Manufacturing Company (TSMC) is currently in a bullish trend. The price has been consistently rising, supported by technical indicators such as the price being above the 20-day and 50-day exponential moving averages, and a strong ADX indicating a robust uptrend. The recent news of a deal involving the U.S. and Iran, along with positive sentiment around TSMC's chip production and potential price hikes, have contributed to the upward momentum. However, the volume is below average, suggesting that the rally might not be as strong as it appears, and institutional activity indicates distribution, which could pose a risk to the sustainability of the trend.",
+  "supportLevels": [
+    405.7
+  ],
+  "resistanceLevels": [
+    450.1
+  ],
+  "entryZone": "Low: 385.64, High: 405.7",
+  "stopLoss": "Price: 405.7 (Stop loss below support level.)",
+  "targets": [
+    450.1,
+    460.0
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "High valuation; Near resistance; Distribution signals",
+  "finalVerdict": "TSM is currently in a strong uptrend with bullish technical indicators, but the stock is near resistance levels and shows signs of distribution. The risk/reward ratio is not optimal for a new entry at this level. Waiting for a pullback or breakout confirmation is advised.",
+  "executiveSummary": "TSM is trading at $440.87, showing a strong bullish trend supported by technical indicators like the price being above key moving averages and a strong ADX. However, the stock is near resistance, and volume analysis indicates potential distribution. While the fundamentals are strong, the current price level suggests waiting for a pullback or a confirmed breakout before considering entry. LAYMAN'S TAKEAWAY: TSM is in a strong uptrend, but it's best to wait for a better entry point as the stock is near resistance and shows signs of distribution."
+}

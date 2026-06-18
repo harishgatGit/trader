@@ -16,6 +16,7 @@ import { VideoGenerationClient } from '../modules/video/video-generation.client'
 import { OrchestratorAgent } from './orchestrator.agent';
 import { SignalCorrelationAgent } from './signal-correlation.agent';
 import * as fs from 'fs';
+import * as dateUtils from '../utils/date';
 
 describe('Video Generation Pipeline Integration', () => {
   let orchestrator: OrchestratorAgent;
@@ -36,7 +37,6 @@ describe('Video Generation Pipeline Integration', () => {
       findUnique: jest.fn().mockImplementation(async (args) => {
         const uppercaseTicker = args.where.ticker_reportDate?.ticker;
         const reportDate = args.where.ticker_reportDate?.reportDate;
-        
         if (args.where.jobId) {
           return jobsStore.find(j => j.jobId === args.where.jobId) || null;
         }
@@ -123,6 +123,9 @@ describe('Video Generation Pipeline Integration', () => {
         artifacts: {},
       };
     }),
+    triggerVideoJobFireAndForget: jest.fn().mockImplementation((payload) => {
+      // fire and forget, non-blocking
+    }),
     retryVideoJob: jest.fn(),
   };
 
@@ -165,10 +168,12 @@ describe('Video Generation Pipeline Integration', () => {
   });
 
   it('should trigger a video job on the first analysis of a ticker', async () => {
+    const fireAndForgetSpy = jest.spyOn(videoJobService, 'fireAndForget');
     const result = await orchestrator.runFullAnalysis('AMD');
+    await fireAndForgetSpy.mock.results[0].value;
+
     expect(result.video).toBeDefined();
-    expect(result.video.status).toBe('PENDING');
-    expect(result.video.jobId).toBeDefined();
+    expect(result.video.status).toBe('RECEIVED');
 
     // Verify it did NOT call the microservice trigger synchronously
     expect(mockVideoClient.triggerVideoJob).not.toHaveBeenCalled();
@@ -176,23 +181,33 @@ describe('Video Generation Pipeline Integration', () => {
     // Verify it created a job record in local db
     const job = jobsStore.find(j => j.ticker === 'AMD');
     expect(job).toBeDefined();
-    expect(job.status).toBe('PENDING');
+    expect(job.status).toBe('RECEIVED');
   });
 
   it('should skip video generation on subsequent analyses of the same ticker on the same day if one exists', async () => {
+    const fireAndForgetSpy = jest.spyOn(videoJobService, 'fireAndForget');
+
     // First run
     const result1 = await orchestrator.runFullAnalysis('AMD');
-    expect(result1.video.status).toBe('PENDING');
+    await fireAndForgetSpy.mock.results[0].value;
+    expect(result1.video.status).toBe('RECEIVED');
 
-    // Simulate callback marking it completed
+    // Simulate callback marking it completed (GENERATED status in decoupled setup)
     const job = jobsStore.find(j => j.ticker === 'AMD');
-    job.status = 'COMPLETED';
+    job.status = 'GENERATED';
     job.finalVideoPath = 'path/to/video.mp4';
+
+    (videoClient.triggerVideoJobFireAndForget as jest.Mock).mockClear();
+    (mockVideoClient.triggerVideoJobFireAndForget as jest.Mock).mockClear();
 
     // Second run
     const result2 = await orchestrator.runFullAnalysis('AMD');
-    expect(result2.video.status).toBe('COMPLETED');
-    expect(result2.video.message).toContain('Video already generated today');
+    await fireAndForgetSpy.mock.results[1].value;
+    expect(result2.video.status).toBe('RECEIVED');
+
+    // Verify it did NOT call the microservice trigger because it was skipped
+    expect(videoClient.triggerVideoJobFireAndForget).not.toHaveBeenCalled();
+    expect(mockVideoClient.triggerVideoJobFireAndForget).not.toHaveBeenCalled();
 
     // Verify only one job created in store
     const jobs = jobsStore.filter(j => j.ticker === 'AMD');
@@ -200,24 +215,27 @@ describe('Video Generation Pipeline Integration', () => {
   });
 
   it('should generate a new video for the same ticker on the next day', async () => {
-    // First run (Day 1)
-    const originalToISOString = Date.prototype.toISOString;
-    Date.prototype.toISOString = () => '2026-06-04T12:00:00.000Z';
+    const fireAndForgetSpy = jest.spyOn(videoJobService, 'fireAndForget');
+
+    // Mock getNYDateString for Day 1
+    const dateSpy = jest.spyOn(dateUtils, 'getNYDateString').mockReturnValue('2026-06-04');
 
     const result1 = await orchestrator.runFullAnalysis('AMD');
-    expect(result1.video.status).toBe('PENDING');
+    await fireAndForgetSpy.mock.results[0].value;
+    expect(result1.video.status).toBe('RECEIVED');
     
     // Simulate callback completion
     const job1 = jobsStore.find(j => j.ticker === 'AMD');
-    job1.status = 'COMPLETED';
+    job1.status = 'GENERATED';
     job1.finalVideoPath = 'path/to/video1.mp4';
 
-    // Second run (Day 2)
-    Date.prototype.toISOString = () => '2026-06-05T12:00:00.000Z';
+    // Mock getNYDateString for Day 2
+    dateSpy.mockReturnValue('2026-06-05');
     const result2 = await orchestrator.runFullAnalysis('AMD');
-    expect(result2.video.status).toBe('PENDING');
+    await fireAndForgetSpy.mock.results[1].value;
+    expect(result2.video.status).toBe('RECEIVED');
 
-    Date.prototype.toISOString = originalToISOString; // restore
+    dateSpy.mockRestore(); // restore
 
     const jobs = jobsStore.filter(j => j.ticker === 'AMD');
     expect(jobs.length).toBe(2);

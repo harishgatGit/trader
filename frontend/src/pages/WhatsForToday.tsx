@@ -622,7 +622,7 @@ const WhatsForToday: React.FC = () => {
                 {/* Beginner take-home explanation */}
                 <div className="card p-5 bg-brand-500/3 border border-brand-500/10 space-y-3">
                   <div className="flex items-center justify-between border-b border-brand-500/10 pb-2">
-                    <h3 className="text-xs font-bold text-brand-500 dark:text-brand-400 tracking-wider flex items-center gap-1.5 uppercase">
+                    <h3 className="text-xs font-bold text-brand-500 dark:text-brand-400 tracking-wider flex items-center gap-1.5 ">
                       <Info className="w-4 h-4" />
                       Beginner Education Column
                     </h3>
@@ -642,7 +642,7 @@ const WhatsForToday: React.FC = () => {
 
                 {/* Market Catalysts card */}
                 <div className="card p-5 space-y-3">
-                  <h3 className="text-xs font-bold text-slate-400 tracking-wider uppercase border-b border-slate-800 pb-2">
+                  <h3 className="text-xs font-bold text-slate-400 tracking-wider  border-b border-slate-800 pb-2">
                     Market Catalysts
                   </h3>
                   <p className="text-xs text-slate-350 leading-relaxed font-sans font-light">
@@ -656,7 +656,7 @@ const WhatsForToday: React.FC = () => {
             <div className="space-y-6">
               {/* Economic Events Calendar card */}
               <div className="card p-5 space-y-3">
-                <h3 className="text-xs font-bold text-slate-400 tracking-wider uppercase border-b border-slate-800 pb-2">
+                <h3 className="text-xs font-bold text-slate-400 tracking-wider  border-b border-slate-800 pb-2">
                   Economic Events Calendar
                 </h3>
                 {report.economicEvents && report.economicEvents.length > 0 ? (
@@ -722,10 +722,9 @@ const WhatsForToday: React.FC = () => {
 
                         {/* Top Stocks list */}
                         <div className="space-y-1.5">
-                          <span className="text-[10px] text-slate-400 tracking-wider uppercase font-bold block">Top Stocks to Watch</span>
+                          <span className="text-[10px] text-slate-400 tracking-wider  font-bold block">Top Stocks to Watch</span>
                           <div className="space-y-1.5">
                             {sec.topStocks && sec.topStocks.map((st) => {
-                              const isUp = st.changePercent >= 0;
                               return (
                                 <div
                                   key={st.symbol}
@@ -741,10 +740,7 @@ const WhatsForToday: React.FC = () => {
                                     </span>
                                   </div>
                                   <div className="text-right">
-                                    <span className={`font-mono text-[10px] font-bold ${isUp ? 'text-emerald-500 dark:text-emerald-450' : 'text-rose-500 dark:text-rose-455'}`}>
-                                      {isUp ? '+' : ''}{st.changePercent.toFixed(2)}%
-                                    </span>
-                                    <span className="text-[10px] text-slate-400 font-medium ml-1.5 block">
+                                    <span className="text-[10px] text-slate-400 font-medium block">
                                       {st.technicalSetup}
                                     </span>
                                   </div>
@@ -821,7 +817,7 @@ const WhatsForToday: React.FC = () => {
 
             {/* Beginner explanation */}
             <div className="bg-brand-500/3 border border-brand-500/10 p-4 rounded-xl space-y-1.5">
-              <span className="text-[10px] text-brand-500 dark:text-brand-400 font-bold tracking-wider uppercase block">Layperson Context</span>
+              <span className="text-[10px] text-brand-500 dark:text-brand-400 font-bold tracking-wider  block">Layperson Context</span>
               <p className="text-xs text-slate-300 font-sans italic leading-relaxed">
                 {selectedStock.explanation}
               </p>
@@ -849,13 +845,13 @@ const WhatsForToday: React.FC = () => {
 
             {/* Heat map blocks section */}
             <div className="space-y-2.5">
-              <h4 className="text-xs font-bold text-slate-400 tracking-wider uppercase border-b border-slate-850 pb-1.5">
+              <h4 className="text-xs font-bold text-slate-400 tracking-wider  border-b border-slate-850 pb-1.5">
                 Technical & Sentiment Heatmap Metrics
               </h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-[11px]">
                 <TermTooltip term="RSI">
                   <div className="bg-slate-950/20 dark:bg-slate-950/40 p-2.5 rounded-lg border border-slate-850 flex justify-between items-center w-full">
-                    <span className="text-slate-450">Price Momentum (RSI)</span>
+                    <span className="text-slate-450">Price Momentum (RSI(14))</span>
                     <span className={`px-2 py-0.5 rounded font-bold text-[10px] ${getHeatmapColor(selectedStock.heatmap.priceMomentum)}`}>
                       {selectedStock.heatmap.priceMomentum}
                     </span>

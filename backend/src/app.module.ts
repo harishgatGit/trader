@@ -20,6 +20,7 @@ import { AdminModule } from './modules/admin/admin.module';
 import { ClientLogsModule } from './modules/client-logs/client-logs.module';
 import { VideoModule } from './modules/video/video.module';
 import { WhatsForTodayModule } from './modules/whats-for-today/whats-for-today.module';
+import { YoutubeModule } from './modules/youtube/youtube.module';
 
 @Module({
   imports: [
@@ -83,6 +84,7 @@ import { WhatsForTodayModule } from './modules/whats-for-today/whats-for-today.m
     ClientLogsModule,
     VideoModule,
     WhatsForTodayModule,
+    YoutubeModule,
   ],
 })
 export class AppModule {}

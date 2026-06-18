@@ -12,118 +12,36 @@ function hashPassword(password: string): string {
 async function main() {
   console.log('Seeding database...');
 
-  // Seed default superusers
+  // 1. Clear existing users to clean database as requested
+  console.log('Clearing existing users...');
+  await prisma.user.deleteMany({});
+
+  // 2. Seed new admin & superadmin accounts
   const adminPasswordHash = hashPassword('admin123');
-  await prisma.user.upsert({
-    where: { username: 'admin' },
-    update: {
-      passwordHash: adminPasswordHash,
-      role: 'SUPERUSER',
-    },
-    create: {
+  await prisma.user.create({
+    data: {
       username: 'admin',
+      email: 'admin@investingatti.com',
       passwordHash: adminPasswordHash,
       role: 'SUPERUSER',
+      subscriptionPlan: 'FREE',
+      isActive: true,
     },
   });
+  console.log('Created user: admin | role: SUPERUSER');
 
-  const harishPasswordHash = hashPassword('260519');
-  await prisma.user.upsert({
-    where: { username: 'harish' },
-    update: {
-      passwordHash: harishPasswordHash,
+  const superadminPasswordHash = hashPassword('superadmin123');
+  await prisma.user.create({
+    data: {
+      username: 'superadmin',
+      email: 'superadmin@investingatti.com',
+      passwordHash: superadminPasswordHash,
       role: 'SUPERUSER',
-    },
-    create: {
-      username: 'harish',
-      passwordHash: harishPasswordHash,
-      role: 'SUPERUSER',
+      subscriptionPlan: 'FREE',
+      isActive: true,
     },
   });
-
-  const sidPasswordHash = hashPassword('sid123');
-  await prisma.user.upsert({
-    where: { username: 'sid' },
-    update: {
-      passwordHash: sidPasswordHash,
-      role: 'BASIC',
-    },
-    create: {
-      username: 'sid',
-      passwordHash: sidPasswordHash,
-      role: 'BASIC',
-    },
-  });
-
-  const sriniPasswordHash = hashPassword('srini123');
-  await prisma.user.upsert({
-    where: { username: 'srini' },
-    update: {
-      passwordHash: sriniPasswordHash,
-      role: 'BASIC',
-    },
-    create: {
-      username: 'srini',
-      passwordHash: sriniPasswordHash,
-      role: 'BASIC',
-    },
-  });
-
-  const navinaPasswordHash = hashPassword('navina123');
-  await prisma.user.upsert({
-    where: { username: 'navina' },
-    update: {
-      passwordHash: navinaPasswordHash,
-      role: 'BASIC',
-    },
-    create: {
-      username: 'navina',
-      passwordHash: navinaPasswordHash,
-      role: 'BASIC',
-    },
-  });
-
-  const arulPasswordHash = hashPassword('arul123');
-  await prisma.user.upsert({
-    where: { username: 'arul' },
-    update: {
-      passwordHash: arulPasswordHash,
-      role: 'BASIC',
-    },
-    create: {
-      username: 'arul',
-      passwordHash: arulPasswordHash,
-      role: 'BASIC',
-    },
-  });
-
-  const sundarPasswordHash = hashPassword('sundar123');
-  await prisma.user.upsert({
-    where: { username: 'sundar' },
-    update: {
-      passwordHash: sundarPasswordHash,
-      role: 'BASIC',
-    },
-    create: {
-      username: 'sundar',
-      passwordHash: sundarPasswordHash,
-      role: 'BASIC',
-    },
-  });
-
-  const tailPasswordHash = hashPassword('trail123');
-  await prisma.user.upsert({
-    where: { username: 'tail' },
-    update: {
-      passwordHash: tailPasswordHash,
-      role: 'BASIC',
-    },
-    create: {
-      username: 'tail',
-      passwordHash: tailPasswordHash,
-      role: 'BASIC',
-    },
-  });
+  console.log('Created user: superadmin | role: SUPERUSER');
 
   // Default risk settings
   await prisma.riskSetting.upsert({

@@ -1,0 +1,23 @@
+{
+  "jobId": "84e7358a-b3de-4658-a021-5498a3779616",
+  "reportId": "cmqgswhhb05lq70coaztchgcc",
+  "ticker": "QUALCOMM",
+  "reportDate": "2026-06-16",
+  "status": "ERROR",
+  "startedAt": "2026-06-16T15:32:34.629236",
+  "completedAt": "2026-06-16T15:33:50.404610",
+  "errorMessage": "Remotion render failed (exit 1).\nCheck render-log.txt for details.\nLast stderr: ndle.js (2930)\u001b[39m\n\u001b[31m[0616/103350.106:INFO:CONSOLE:464] \"Uncaught TypeError: dayChangePct.toFixed is not a function\", source: http://localhost:3001/bundle.js (464)\u001b[39m\n\u001b[31m[0616/103350.106:INFO:CONSOLE:4523] \"Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) \"Setting the current frame to 380\" handle was cleared after 30ms\", source: http://localhost:3001/bundle.js (4523)\u001b[39m\n\u001b[31m\u001b[41m\u001b[37m TypeError \u001b[39m\u001b[31m\u001b[49m\u001b[39m \u001b[31mdayChangePct.toFixed is not a function\u001b[39m\n",
+  "eligibilityNote": null,
+  "videoUrl": null,
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QUALCOMM\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QUALCOMM\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QUALCOMM\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QUALCOMM\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-16\\QUALCOMM\\narration-audio.mp3",
+    "ffprobe": null,
+    "validation": null,
+    "finalVideo": null
+  },
+  "forceRegenerate": false
+}
