@@ -1,0 +1,23 @@
+{
+  "jobId": "b48d7dff-9c8a-426e-87e5-b0f28e7e180c",
+  "reportId": "cmqk2qsol00s1k5s0zhl7hm9i",
+  "ticker": "AMD",
+  "reportDate": "2026-06-18",
+  "status": "GENERATED",
+  "startedAt": "2026-06-18T22:31:24.227359",
+  "completedAt": "2026-06-18T22:39:39.951790",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/b48d7dff-9c8a-426e-87e5-b0f28e7e180c/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\AMD\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\AMD\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\AMD\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\AMD\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\AMD\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\AMD\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\AMD\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\AMD\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

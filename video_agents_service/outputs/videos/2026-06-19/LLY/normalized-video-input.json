@@ -1,0 +1,28 @@
+{
+  "ticker": "LLY",
+  "companyName": "LLY",
+  "reportDate": "Unavailable",
+  "currentPrice": 1098.76,
+  "dayChangePct": -1.2,
+  "overallSignal": "WAIT",
+  "whyStockMoved": "news-driven",
+  "catalystSummary": "Acquisition of 4E Therapeutics; Label expansion for leukemia drug",
+  "volumeSummary": "Volume is below average, indicating lack of strong buying interest.",
+  "trendSummary": "Eli Lilly's stock shows a mixed trend due to conflicting signals. The daily technical indicators suggest a bullish bias with the price above EMA(20) and EMA(50), and a strong uptrend indicated by ADX(14). However, the MACD histogram is negative, and the price is below the VWAP, suggesting some bearish pressure. The recent news sentiment is negative, with concerns about the company's drug programs and acquisitions, which might be weighing on investor sentiment. Additionally, institutional flow shows uncertainty with below-average volume and a bearish OBV trend. These conflicting signals contribute to the mixed trend observed.",
+  "supportLevels": [
+    1052.54
+  ],
+  "resistanceLevels": [
+    1148.43
+  ],
+  "entryZone": "Low: 944.23, High: 979.16",
+  "stopLoss": "Price: 1052.54 (Set stop-loss below recent support to limit downside risk.)",
+  "targets": [
+    1148.43,
+    1181.62
+  ],
+  "shortTradeView": "SI%: 2.2%, Borrow Fee: 1.5%, Squeeze Risk: LOW",
+  "riskWarnings": "High valuation; Negative news sentiment; Near resistance",
+  "finalVerdict": "The stock is currently in a bullish trend but is near resistance levels with mixed momentum signals. The risk/reward ratio is not optimal for immediate entry, and recent news sentiment is negative. Waiting for a clearer entry signal or a pullback would be prudent.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is in a strong uptrend but currently faces resistance and negative news sentiment. It's wise to wait for a clearer buying opportunity or a pullback before considering entry. The stock has shown strong upward momentum over the past months, but recent price action suggests caution due to mixed technical signals and potential resistance around current levels. The recent news has been somewhat negative, which could impact short-term price movements. In the near term, expect some volatility as the stock approaches key resistance levels. Long-term prospects remain positive if the company continues its growth trajectory, but short-term caution is advised."
+}

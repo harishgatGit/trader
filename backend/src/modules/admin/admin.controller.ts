@@ -52,6 +52,11 @@ export class AdminController {
     return this.adminService.getFeedback();
   }
 
+  @Get('report-quality')
+  async getReportQuality() {
+    return this.adminService.getReportQuality();
+  }
+
   @Patch('users/:id/status')
   async toggleUserStatus(
     @Param('id') id: string,

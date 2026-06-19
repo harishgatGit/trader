@@ -1,0 +1,244 @@
+{
+  "ticker": "ACN",
+  "reportDate": "Unavailable",
+  "videoTitle": "ACN Stock Report",
+  "durationSeconds": 146.63,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for ACN, or Accenture. With the stock experiencing a significant downturn, is now the time to watch for potential recovery, or should investors remain cautious?\n\nCurrently, ACN is priced at $128.29, reflecting a sharp decline of 17.83% for the day. This drop has pushed the stock to a new 52-week low, indicating substantial selling pressure and market weakness.\n\nThe primary trend for Accenture is downward, driven by a weak earnings outlook and negative news sentiment. These factors have created a bearish environment for the stock, making it an unfavorable time for new purchases.\n\nEvidence of this trend can be seen in the high relative trading volume, which is over seven times the average. This volume confirms strong selling activity, exacerbated by institutional distribution and significant declines in key price levels.\n\nIn examining the daily trend chart, ACN is facing strong resistance, with no clear support levels currently established. The market appears to be in a bearish phase, characterized by a lack of consolidation or breakout zones.\n\nTechnical metrics like the RSI and MACD reinforce this negative sentiment, with the RSI reading at a deeply oversold 21.08. The MACD also indicates bearish momentum, suggesting continued downward pressure on the stock.\n\nFor tactical traders, there are currently no identified entry zones. A stop loss is recommended at $155.88 to manage downside risk, but without clear target levels, caution is warranted for potential buyers.\n\nShort sellers may find this stock appealing; however, it's crucial to watch for breakdown levels and the absence of squeeze risks, as the market remains volatile.\n\nFrom an ecosystem perspective, the overall market sentiment is bearish, impacting not only ACN but potentially influencing its peers and sector performance. This environment underscores the importance of careful monitoring.\n\nIn conclusion, the final investment rating for ACN is to keep it on your watchlist. Watch for key levels that could indicate stabilization, but be aware of the risks associated with further declines and negative market conditions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 13.94,
+      "narration": "Welcome to the Investing Atti stock analysis for ACN, or Accenture. With the stock experiencing a significant downturn, is now the time to watch for potential recovery, or should investors remain cautious?",
+      "pandaAction": "default",
+      "speechBubbleText": "Is it time to buy ACN?",
+      "visualElements": [
+        "ACN logo",
+        "downward trend graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "slide up"
+      ],
+      "dataFields": {
+        "catchyLine": "ACN: Watch for Recovery or Stay Cautious?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 13.6,
+      "narration": "Currently, ACN is priced at $128.29, reflecting a sharp decline of 17.83% for the day. This drop has pushed the stock to a new 52-week low, indicating substantial selling pressure and market weakness.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Current Price: $128.29",
+      "visualElements": [
+        "price tag graphic",
+        "52-week low indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight price",
+        "shake effect"
+      ],
+      "dataFields": {
+        "currentPrice": 128.29,
+        "dailyChange": -17.83,
+        "new52WeekLow": true
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 14.96,
+      "narration": "The primary trend for Accenture is downward, driven by a weak earnings outlook and negative news sentiment. These factors have created a bearish environment for the stock, making it an unfavorable time for new purchases.",
+      "pandaAction": "point",
+      "speechBubbleText": "Bearish Environment",
+      "visualElements": [
+        "bear graphic",
+        "news headlines"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {
+        "trend": "downward",
+        "catalysts": [
+          "Weak earnings outlook",
+          "Negative sentiment from recent news"
+        ]
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 16.59,
+      "narration": "Evidence of this trend can be seen in the high relative trading volume, which is over seven times the average. This volume confirms strong selling activity, exacerbated by institutional distribution and significant declines in key price levels.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Volume: 7x Average",
+      "visualElements": [
+        "volume bars",
+        "institutional flow graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "pulse effect",
+        "highlight volume"
+      ],
+      "dataFields": {
+        "relativeVolume": "over 7 times average"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 15.3,
+      "narration": "In examining the daily trend chart, ACN is facing strong resistance, with no clear support levels currently established. The market appears to be in a bearish phase, characterized by a lack of consolidation or breakout zones.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "No Clear Support",
+      "visualElements": [
+        "daily trend chart",
+        "resistance line"
+      ],
+      "chartElements": [
+        "daily trend chart"
+      ],
+      "animationInstructions": [
+        "draw resistance line",
+        "fade in chart"
+      ],
+      "dataFields": {
+        "supportLevels": "none",
+        "marketPhase": "bearish"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 14.83,
+      "narration": "Technical metrics like the RSI and MACD reinforce this negative sentiment, with the RSI reading at a deeply oversold 21.08. The MACD also indicates bearish momentum, suggesting continued downward pressure on the stock.",
+      "pandaAction": "caution",
+      "speechBubbleText": "RSI: 21.08",
+      "visualElements": [
+        "RSI graphic",
+        "MACD graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight RSI",
+        "fade in MACD"
+      ],
+      "dataFields": {
+        "RSI": 21.08,
+        "MACD": "bearish"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 14.08,
+      "narration": "For tactical traders, there are currently no identified entry zones. A stop loss is recommended at $155.88 to manage downside risk, but without clear target levels, caution is warranted for potential buyers.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Stop Loss: $155.88",
+      "visualElements": [
+        "stop loss indicator",
+        "caution sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight stop loss",
+        "shake effect"
+      ],
+      "dataFields": {
+        "stopLoss": 155.88,
+        "entryZone": "none"
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 11.02,
+      "narration": "Short sellers may find this stock appealing; however, it's crucial to watch for breakdown levels and the absence of squeeze risks, as the market remains volatile.",
+      "pandaAction": "point",
+      "speechBubbleText": "Watch for Breakdown Levels",
+      "visualElements": [
+        "short selling graphic",
+        "volatility indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {
+        "shortSelling": "appealing",
+        "squeezeRisk": "absent"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 15.17,
+      "narration": "From an ecosystem perspective, the overall market sentiment is bearish, impacting not only ACN but potentially influencing its peers and sector performance. This environment underscores the importance of careful monitoring.",
+      "pandaAction": "default",
+      "speechBubbleText": "Bearish Market Sentiment",
+      "visualElements": [
+        "market overview graphic",
+        "sector performance chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "slide up"
+      ],
+      "dataFields": {
+        "marketSentiment": "bearish"
+      }
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 17.14,
+      "narration": "In conclusion, the final investment rating for ACN is to keep it on your watchlist. Watch for key levels that could indicate stabilization, but be aware of the risks associated with further declines and negative market conditions.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Keep ACN on Your Watchlist!",
+      "visualElements": [
+        "watchlist graphic",
+        "caution sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing.",
+        "disclaimer": "This is not financial advice. Please do your own research."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

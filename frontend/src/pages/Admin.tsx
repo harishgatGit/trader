@@ -4,6 +4,7 @@ import {
   LoadingSpinner, PageContainer, PageHeader, SectionHeader, 
   MetricCard, EmptyState 
 } from '../components/ui';
+import { useSEO } from '../utils/useSEO';
 import { 
   Users, BarChart3, UserPlus, Search, Building2, Calendar, 
   Shield, CheckCircle, AlertCircle, RefreshCw, TrendingUp,
@@ -139,7 +140,13 @@ const QualityBadge: React.FC<{ rating: string }> = ({ rating }) => {
 // ── Main Component ─────────────────────────────────────────────────────────
 
 const Admin: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'users' | 'analytics' | 'data-quality' | 'feedback' | 'client-logs'>('users');
+  useSEO({
+    title: 'Admin Panel | Investing Atti',
+    description: 'System diagnostics, user management, and AI research monitoring controls.',
+    robots: 'noindex, nofollow',
+  });
+
+  const [activeTab, setActiveTab] = useState<'users' | 'analytics' | 'data-quality' | 'feedback' | 'client-logs' | 'report-quality'>('users');
   const [users, setUsers] = useState<any[]>([]);
   const [analytics, setAnalytics] = useState<any>(null);
   const [feedback, setFeedback] = useState<any[]>([]);
@@ -152,6 +159,10 @@ const Admin: React.FC = () => {
   const [clientLogLevelFilter, setClientLogLevelFilter] = useState<string>('All');
   const [clientLogSearch, setClientLogSearch] = useState<string>('');
   const [expandedLogs, setExpandedLogs] = useState<Record<string, boolean>>({});
+
+  // Report Quality state
+  const [reportQuality, setReportQuality] = useState<any>(null);
+  const [loadingReportQuality, setLoadingReportQuality] = useState(false);
 
   const fetchClientLogs = async () => {
     setLoadingClientLogs(true);
@@ -206,6 +217,9 @@ const Admin: React.FC = () => {
     if (activeTab === 'client-logs') {
       fetchClientLogs();
     }
+    if (activeTab === 'report-quality' && !reportQuality) {
+      fetchReportQuality();
+    }
   }, [activeTab, clientLogLevelFilter]);
 
   const fetchFeedback = async () => {
@@ -217,6 +231,18 @@ const Admin: React.FC = () => {
       console.error('Failed to fetch feedback', e);
     } finally {
       setLoadingFeedback(false);
+    }
+  };
+
+  const fetchReportQuality = async () => {
+    setLoadingReportQuality(true);
+    try {
+      const data = await adminApi.getReportQuality();
+      setReportQuality(data);
+    } catch (e: any) {
+      console.error('Failed to fetch report quality', e);
+    } finally {
+      setLoadingReportQuality(false);
     }
   };
 
@@ -325,6 +351,7 @@ const Admin: React.FC = () => {
     { id: 'users', label: 'User Manager', icon: Users },
     { id: 'analytics', label: 'Search Analytics', icon: BarChart3 },
     { id: 'data-quality', label: 'Data Quality', icon: Activity },
+    { id: 'report-quality', label: 'Report Quality', icon: TrendingUp },
     { id: 'feedback', label: 'User Feedback', icon: MessageSquare },
     { id: 'client-logs', label: 'UI System Logs', icon: Database },
   ] as const;
@@ -750,6 +777,168 @@ const Admin: React.FC = () => {
               <div className="text-center py-12 text-slate-500 text-xs italic">No audit logs available.</div>
             )}
           </div>
+        </div>
+      )}
+
+      {/* ── Report Quality Tab ─────────────────────────────────────── */}
+      {activeTab === 'report-quality' && (
+        <div className="space-y-6">
+          {loadingReportQuality ? (
+            <div className="flex items-center justify-center py-32"><LoadingSpinner size="lg" /></div>
+          ) : !reportQuality ? (
+            <EmptyState title="No data" description="Could not load report quality data." />
+          ) : (
+            <>
+              {/* ── Health Cards ── */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { label: 'Total Reports', value: reportQuality.summary.totalReports, sub: `${reportQuality.summary.reportsLast30d} in last 30 days`, color: 'text-brand-500', bg: 'bg-brand-500/5 border-brand-500/15' },
+                  { label: 'Data Quality Score', value: `${reportQuality.summary.dataQualityScore}%`, sub: 'avg of price · conf · tech fill', color: reportQuality.summary.dataQualityScore >= 80 ? 'text-emerald-500' : reportQuality.summary.dataQualityScore >= 60 ? 'text-amber-500' : 'text-red-500', bg: reportQuality.summary.dataQualityScore >= 80 ? 'bg-emerald-500/5 border-emerald-500/15' : 'bg-amber-500/5 border-amber-500/15' },
+                  { label: 'Price Fill Rate', value: `${reportQuality.summary.priceOkPct}%`, sub: `${reportQuality.summary.nullPriceCount} null prices`, color: reportQuality.summary.priceOkPct >= 90 ? 'text-emerald-500' : 'text-amber-500', bg: 'bg-slate-800/40 border-slate-700/40' },
+                  { label: 'Confidence Fill Rate', value: `${reportQuality.summary.confidenceOkPct}%`, sub: `${reportQuality.summary.zeroConfCount} zero scores`, color: reportQuality.summary.confidenceOkPct >= 90 ? 'text-emerald-500' : 'text-amber-500', bg: 'bg-slate-800/40 border-slate-700/40' },
+                ].map((m, i) => (
+                  <div key={i} className={`rounded-xl border p-4 flex flex-col gap-1.5 ${m.bg}`}>
+                    <div className="text-[10px] font-bold text-slate-500 tracking-wider">{m.label}</div>
+                    <div className={`text-2xl font-extrabold font-mono leading-none ${m.color}`}>{m.value}</div>
+                    <div className="text-[10px] text-slate-450">{m.sub}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* ── Rating Distribution ── */}
+              <div className="card space-y-4">
+                <SectionHeader title="Rating Distribution" subtitle="How often each rating is issued (all time vs last 30 days)" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                  {(['all', 'recent'] as const).map(period => (
+                    <div key={period} className="space-y-3">
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                        {period === 'all' ? 'All Time' : 'Last 30 Days'}
+                      </p>
+                      {(reportQuality.ratingDistribution[period] as any[])
+                        .sort((a, b) => b.count - a.count)
+                        .map((r: any) => {
+                          const COLOR: Record<string, string> = {
+                            BUY: 'bg-emerald-500', SELL: 'bg-red-500', WAIT: 'bg-sky-500',
+                            HOLD: 'bg-blue-500', WATCHLIST: 'bg-amber-500', AVOID: 'bg-red-400', TRIM: 'bg-orange-500',
+                          };
+                          return (
+                            <div key={r.rating} className="space-y-1">
+                              <div className="flex justify-between text-xs font-mono">
+                                <span className="font-bold text-slate-200">{r.rating}</span>
+                                <span className="text-slate-400">{r.count} reports ({r.pct}%)</span>
+                              </div>
+                              <div className="w-full bg-slate-950 h-2 rounded-full border border-slate-800/50">
+                                <div className={`${COLOR[r.rating] || 'bg-slate-500'} h-full rounded-full transition-all`} style={{ width: `${r.pct}%` }} />
+                              </div>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* ── Confidence Calibration ── */}
+              <div className="card space-y-4">
+                <SectionHeader title="Confidence Calibration" subtitle="Does our confidence score match actual win rates? (requires evaluated outcomes)" />
+                <div className="overflow-x-auto border border-slate-800/60 rounded-xl">
+                  <table className="w-full text-xs text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-950 text-slate-450 border-b border-slate-800/80 font-bold tracking-wider text-[10px]">
+                        <th className="py-3 px-4">Confidence Band</th>
+                        <th className="py-3 px-4 text-right">Reports Evaluated</th>
+                        <th className="py-3 px-4 text-right">Win Rate</th>
+                        <th className="py-3 px-4">Calibration</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-800/40">
+                      {reportQuality.calibration.map((b: any) => (
+                        <tr key={b.band} className="hover:bg-slate-900/30">
+                          <td className="py-2.5 px-4 font-mono font-bold text-slate-200">{b.band}</td>
+                          <td className="py-2.5 px-4 text-right text-slate-400">{b.total}</td>
+                          <td className="py-2.5 px-4 text-right font-mono font-bold text-slate-100">
+                            {b.winRate != null ? `${b.winRate}%` : <span className="text-slate-600 text-[10px]">insufficient data</span>}
+                          </td>
+                          <td className="py-2.5 px-4">
+                            {b.total === 0 ? (
+                              <span className="text-[10px] text-slate-600 italic">waiting for outcomes</span>
+                            ) : b.winRate != null ? (
+                              <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${b.winRate >= 55 ? 'text-emerald-400 border-emerald-500/30 bg-emerald-500/8' : b.winRate >= 40 ? 'text-amber-400 border-amber-500/30 bg-amber-500/8' : 'text-red-400 border-red-500/30 bg-red-500/8'}`}>
+                                {b.winRate >= 55 ? '✓ Good' : b.winRate >= 40 ? '⚠ Marginal' : '✕ Below random'}
+                              </span>
+                            ) : null}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* ── Per-Symbol Outcome Table ── */}
+              <div className="card space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-800/60 pb-3">
+                  <SectionHeader title="Per-Symbol Outcome Table" subtitle="Last 60 days · verdict populated after 5 trading days" />
+                  <button onClick={fetchReportQuality} className="btn btn-secondary text-xs p-2" title="Refresh">
+                    <RefreshCw className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+                <div className="overflow-x-auto border border-slate-800/60 rounded-xl">
+                  <table className="w-full text-xs text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-950 text-slate-450 border-b border-slate-800/80 font-bold tracking-wider text-[10px]">
+                        <th className="py-3 px-4">Symbol</th>
+                        <th className="py-3 px-4">Rating</th>
+                        <th className="py-3 px-4 text-right">Price at Report</th>
+                        <th className="py-3 px-4 text-right">Return 5d</th>
+                        <th className="py-3 px-4 text-right">Return 10d</th>
+                        <th className="py-3 px-4">Verdict</th>
+                        <th className="py-3 px-4">Date</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-800/40">
+                      {reportQuality.outcomeTable.map((row: any, i: number) => {
+                        const RATING_COLOR: Record<string, string> = {
+                          BUY: 'text-emerald-400', SELL: 'text-red-400', WAIT: 'text-sky-400',
+                          HOLD: 'text-blue-400', WATCHLIST: 'text-amber-400', AVOID: 'text-red-400',
+                        };
+                        const VERDICT_STYLE: Record<string, string> = {
+                          WIN: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/8',
+                          LOSS: 'text-red-400 border-red-500/30 bg-red-500/8',
+                          NEUTRAL: 'text-slate-400 border-slate-600/30 bg-slate-800/20',
+                          PENDING: 'text-amber-400 border-amber-500/30 bg-amber-500/8',
+                        };
+                        const verdict = row.overallVerdict || 'PENDING';
+                        return (
+                          <tr key={i} className="hover:bg-slate-900/30">
+                            <td className="py-2.5 px-4 font-mono font-bold text-slate-100">{row.symbol}</td>
+                            <td className="py-2.5 px-4 font-bold">
+                              <span className={RATING_COLOR[row.ratingAtTime] || 'text-slate-400'}>{row.ratingAtTime}</span>
+                            </td>
+                            <td className="py-2.5 px-4 text-right font-mono text-slate-300">
+                              {row.priceAtReport ? `$${row.priceAtReport.toFixed(2)}` : <span className="text-slate-600">—</span>}
+                            </td>
+                            <td className={`py-2.5 px-4 text-right font-mono font-bold ${row.return5d != null ? (row.return5d >= 0 ? 'text-emerald-400' : 'text-red-400') : 'text-slate-600'}`}>
+                              {row.return5d != null ? `${row.return5d >= 0 ? '+' : ''}${row.return5d.toFixed(1)}%` : '—'}
+                            </td>
+                            <td className={`py-2.5 px-4 text-right font-mono font-bold ${row.return10d != null ? (row.return10d >= 0 ? 'text-emerald-400' : 'text-red-400') : 'text-slate-600'}`}>
+                              {row.return10d != null ? `${row.return10d >= 0 ? '+' : ''}${row.return10d.toFixed(1)}%` : '—'}
+                            </td>
+                            <td className="py-2.5 px-4">
+                              <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${VERDICT_STYLE[verdict]}`}>{verdict}</span>
+                            </td>
+                            <td className="py-2.5 px-4 text-slate-500 font-mono text-[10px]">
+                              {new Date(row.reportCreatedAt).toLocaleDateString()}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       )}
 

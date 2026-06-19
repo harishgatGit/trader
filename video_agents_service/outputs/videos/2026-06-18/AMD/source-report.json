@@ -1,0 +1,1018 @@
+{
+  "symbol": "AMD",
+  "analysisDateTime": "2026-06-18T22:30:21.823Z",
+  "currentPrice": 536.59,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data fields are available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "WAIT",
+    "decisionType": "TRADE",
+    "confidenceScore": 70,
+    "decisionSummary": "AMD is in a strong uptrend but currently extended and near resistance levels. The risk/reward ratio is not ideal for immediate entry. Wait for a pullback or breakout confirmation.",
+    "shouldBuyNow": false,
+    "buyNowReason": "Price is extended and near resistance; better entry opportunities may arise on a pullback.",
+    "bestActionNow": "Wait for a pullback to support levels or confirmation of a breakout above resistance."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": true,
+    "momentumConfirmed": true,
+    "volumeConfirmed": true,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: AMD is currently in a strong upward trend, but the stock price is quite high and close to resistance levels. It might be better to wait for the price to come down a bit or to see if it can break through the resistance before buying. The stock has been gaining due to positive sentiment around its performance, but buying now could be risky due to the high price. In the short term, expect some volatility as the stock tests these high levels. Long-term, AMD remains a strong player in the semiconductor industry, but entering at a lower price would be more prudent.",
+  "technicalAnalysis": {
+    "overallBias": "BULLISH",
+    "trendStage": "MARKUP",
+    "setupType": "CHASE_RISK",
+    "technicalScore": 80,
+    "keySignals": [
+      "Price above EMA20 > EMA50",
+      "Golden cross (EMA50 > EMA200)",
+      "Strong uptrend (ADX>25, +DI>-DI)"
+    ],
+    "supportLevels": [
+      393.52,
+      437.71,
+      486.96
+    ],
+    "resistanceLevels": [
+      526.97,
+      546.18,
+      558.22
+    ],
+    "vwapAnalysis": "Price is above VWAP, indicating bullish momentum.",
+    "movingAverageAnalysis": "Price is above EMA20, EMA50, and EMA200, confirming a bullish trend.",
+    "rsiAnalysis": "RSI(14) is at 61, indicating bullish momentum without being overbought.",
+    "macdAnalysis": "MACD histogram is negative, suggesting a potential pullback.",
+    "volumeAnalysis": "Volume is stable, supporting the current price levels.",
+    "volumeTrendStatus": "STABLE",
+    "atrVolatilityAnalysis": "ATR indicates moderate volatility.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong trend.",
+    "bollingerBandAnalysis": "Price is near the upper Bollinger Band, suggesting potential overextension."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current price is too high for a safe entry."
+    },
+    "pullbackEntryZone": {
+      "low": 486.96,
+      "high": 507.28,
+      "description": "Consider entering if price pulls back to this support zone."
+    },
+    "breakoutEntryLevel": {
+      "price": 558.22,
+      "confirmationRule": "Enter on confirmed breakout above resistance with volume."
+    },
+    "accumulationZone": {
+      "low": 437.71,
+      "high": 486.96,
+      "description": "Ideal accumulation zone for long-term positions."
+    },
+    "invalidationLevel": {
+      "price": 486.96,
+      "reason": "Break below this level would invalidate the bullish setup."
+    },
+    "stopLoss": {
+      "price": 486.96,
+      "stopType": "TECHNICAL",
+      "description": "Set stop-loss below recent support to manage risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 558.22,
+        "reason": "Near-term resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 580,
+        "reason": "Projected extension based on current trend."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "Not defined due to lack of data."
+      }
+    ],
+    "exitRules": [
+      "Exit if price closes below 486.96",
+      "Take profit at resistance levels"
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 536.59,
+    "riskPerShare": 49.63,
+    "rewardToTarget1": 21.63,
+    "rewardToTarget2": 43.41,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": "0.44",
+    "riskRewardToTarget2": "0.87",
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Consider smaller position size due to high risk and poor risk/reward ratio."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 486.96,
+      "high": 507.28,
+      "description": "Wait for a pullback to enter within this range."
+    },
+    "stopLoss": {
+      "price": 486.96,
+      "description": "Stop-loss set below support to limit downside risk."
+    },
+    "targets": [
+      {
+        "price": 558.22,
+        "label": "T1"
+      },
+      {
+        "price": 580,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price closes below 486.96",
+      "Take profit at resistance levels"
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 486.96,
+      "high": 507.28,
+      "description": "Look for entry on pullback to this zone."
+    },
+    "stopLoss": {
+      "price": 486.96,
+      "description": "Stop-loss below support to protect against downside."
+    },
+    "targets": [
+      {
+        "price": 558.22,
+        "label": "T1"
+      },
+      {
+        "price": 580,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 437.71,
+      "high": 486.96,
+      "description": "Ideal for accumulating positions for a swing trade."
+    },
+    "riskReward": "POOR",
+    "swingVerdict": "WAIT"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BULLISH",
+    "swingSetup": {
+      "setup": "PULLBACK",
+      "analysis": "The stock is in a strong uptrend but currently extended. Look for a pullback to support levels for a better entry."
+    },
+    "entryTiming": {
+      "trigger": "WAIT_FOR_PULLBACK",
+      "analysis": "Entry timing is not ideal; wait for price to pull back to support levels."
+    },
+    "supportLevels": [
+      {
+        "price": 486.96,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 558.22,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 486.96,
+    "riskMetrics": {
+      "atr": 32.67,
+      "atrAnalysis": "ATR indicates moderate volatility.",
+      "vwap": 533.02,
+      "vwapAnalysis": "Price is above VWAP, indicating bullish momentum.",
+      "volumeAnalysis": "Volume is stable, supporting current price levels.",
+      "supportResistanceAnalysis": "Price is near resistance; wait for pullback."
+    },
+    "catalysts": {
+      "news": "Neutral sentiment with mixed news.",
+      "earnings": "Earnings risk not provided.",
+      "secFilings": "No significant filings noted."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "AMD is in a strong uptrend but currently extended. Wait for a pullback to support levels for a safer entry.",
+    "dailyTrend": {
+      "trend": "BULLISH",
+      "barCount": 252,
+      "analysis": "AMD's stock is in a bullish trend, as evidenced by its price consistently moving above key moving averages, such as the EMA(20) and EMA(50), and a recent golden cross where the EMA(50) crossed above the EMA(200). The ADX(14) indicates a strong trend, and the RSI(14) is at 61.18, suggesting that the stock is not yet overbought. Despite a negative MACD histogram, the price is above the VWAP and continues to rise, supported by increasing volume. The recent positive news sentiment and bullish institutional flow further support this upward movement.",
+      "laymanExplanation": "Think of AMD's stock like a car speeding up on a highway. It's moving fast and steadily, with the engine (momentum) running strong and the road (market conditions) clear ahead. However, keep an eye on the fuel gauge (volume and technical indicators) to ensure it can keep going without running out of steam.",
+      "ticker": "AMD",
+      "companyName": "Advanced Micro Devices, Inc.",
+      "confidenceScore": 90,
+      "trendSummary": "AMD is experiencing a bullish trend with strong upward momentum, supported by technical indicators and recent price action.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Positive",
+          "evidence": "Price above EMA(20) and EMA(50), golden cross, strong ADX(14), and RSI(14) at 61.18."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Positive",
+          "evidence": "Positive news articles about AMD's stock performance and market position."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Positive",
+          "evidence": "Price rising with increasing volume and above VWAP, OBV trend bullish."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "Price is above EMA(20) and EMA(50), indicating a strong upward trend.",
+        "movingAverageView": "Golden cross with EMA(50) above EMA(200), supporting bullish momentum.",
+        "momentumView": "RSI(14) at 61.18, indicating healthy momentum without being overbought.",
+        "volumeView": "Volume is increasing, supporting the price rise.",
+        "supportResistanceView": "Price is well above support levels, with no immediate resistance in sight.",
+        "volatilityView": "ATR(14) at 32.67, indicating moderate volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "",
+        "newsImpact": "Positive news sentiment supports the bullish trend.",
+        "institutionalFlowImpact": "Bullish institutional flow with price rising on increasing volume.",
+        "sectorMacroImpact": "Neutral overall sentiment in the technology sector, but specific positive sentiment for AMD."
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Potential reversal if MACD histogram remains negative.",
+          "Sector-wide risks due to macroeconomic factors."
+        ],
+        "whatNeedsConfirmation": "Sustained volume and price action to confirm the continuation of the bullish trend."
+      },
+      "watchStatus": "Momentum building",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BULLISH",
+    "investmentQuality": "STRONG",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient data"
+    },
+    "bullCase": "Continued growth in semiconductor demand and successful product launches.",
+    "baseCase": "Steady growth with market fluctuations.",
+    "bearCase": "Increased competition and market saturation.",
+    "longTermVerdict": "ACCUMULATE"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 85,
+    "rating": "STRONG",
+    "revenueTrend": "Strong revenue growth in the semiconductor sector.",
+    "epsTrend": "Positive EPS trend with forward growth expectations.",
+    "profitability": "High profitability with strong market position.",
+    "debtRisk": "Low debt-to-equity ratio indicates manageable debt levels.",
+    "cashFlowQuality": "Strong cash flow supporting operations.",
+    "valuationCommentary": "Valuation is high but supported by strong growth prospects."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "OVERVALUED",
+    "valuationScore": 40,
+    "peerComparisonAvailable": true,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "High P/E and P/B ratios suggest overvaluation relative to earnings."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 60,
+    "overallSentiment": "NEUTRAL",
+    "keyCatalysts": [
+      "Positive sentiment around recent performance"
+    ],
+    "keyRisksFromNews": [
+      "UBS warns about AI trade turning"
+    ],
+    "earningsRisk": "Earnings risk not provided.",
+    "catalystVerdict": "NEUTRAL"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 51,
+    "interpretation": "NEUTRAL",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests neutral institutional activity with price significantly above VWAP and stable volume.",
+    "signals": [
+      "Below-average volume (1.0x)",
+      "OBV trend bullish",
+      "Price significantly above VWAP (+7.4%)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "MEDIUM",
+    "probabilityScore": 60,
+    "reason": "Strong growth potential in the semiconductor sector.",
+    "requiredConditions": [
+      "Sustained revenue and EPS growth"
+    ],
+    "majorBlockers": [
+      "High valuation metrics"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "HIGH",
+    "technicalRisk": "Price is extended and near resistance.",
+    "fundamentalRisk": "High valuation metrics.",
+    "valuationRisk": "Overvalued based on P/E and P/B ratios.",
+    "newsRisk": "Mixed news sentiment.",
+    "liquidityRisk": "Acceptable liquidity with stable volume.",
+    "eventRisk": "Potential volatility due to sector dynamics.",
+    "topRisks": [
+      "High valuation",
+      "Price near resistance"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Continued strong demand for semiconductors and successful product launches.",
+      "pricePath": "Potential to reach new highs if growth continues.",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Steady growth with market fluctuations.",
+      "pricePath": "Moderate growth with some volatility.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Increased competition and market saturation.",
+      "pricePath": "Potential pullback to support levels.",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Wait for a pullback to support levels for a safer entry.",
+    "Monitor for breakout confirmation above resistance.",
+    "Set stop-loss below recent support to manage risk."
+  ],
+  "doNotTradeConditions": [
+    "Avoid entry if price remains extended near resistance without pullback."
+  ],
+  "alertLevels": {
+    "buyAlert": 486.96,
+    "breakoutAlert": 558.22,
+    "stopLossAlert": 486.96,
+    "target1Alert": 558.22,
+    "target2Alert": 580,
+    "riskAlert": 536.59
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Pensando Systems",
+        "ownershipPct": "unknown",
+        "performance": "Pensando Systems is focused on cloud and enterprise data center solutions, experiencing growth due to increasing demand for cloud services.",
+        "upcomingEvents": [
+          "Potential product launches in cloud infrastructure"
+        ],
+        "impactPotential": "Successful product launches could enhance AMD's position in the data center market, positively impacting stock value."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "TSMC",
+          "role": "Supplier",
+          "description": "Manufactures AMD's semiconductor chips",
+          "riskExposure": "High impact if disrupted due to dependency on advanced chip manufacturing processes."
+        },
+        {
+          "name": "GlobalFoundries",
+          "role": "Supplier",
+          "description": "Provides additional semiconductor manufacturing capacity",
+          "riskExposure": "Moderate impact if disrupted, as AMD has diversified its manufacturing sources."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Flex",
+          "role": "Outsource Partner",
+          "description": "Handles assembly and testing of AMD products",
+          "riskExposure": "Moderate impact if disrupted, affecting product delivery timelines."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Microsoft",
+          "role": "Marketing Partner",
+          "description": "Collaborates on gaming and cloud solutions",
+          "riskExposure": "Positive impact through co-marketing efforts, enhancing AMD's visibility in key markets."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Data Center Operators",
+          "role": "Customer",
+          "description": "Purchase EPYC processors for server infrastructure",
+          "riskExposure": "Significant impact if demand fluctuates, as data center growth drives AMD's revenue."
+        },
+        {
+          "name": "PC Manufacturers",
+          "role": "Customer",
+          "description": "Use Ryzen processors in consumer and business PCs",
+          "riskExposure": "Fluctuations in PC demand can significantly affect AMD's sales and market share."
+        }
+      ]
+    },
+    "strategicOutlook": "AMD's ecosystem is robust with a strong presence in both consumer and enterprise markets. The company's reliance on TSMC for chip manufacturing presents a concentration risk, but diversification efforts are underway. Key externalities include the semiconductor supply chain stability and demand trends in data centers and PCs, which could significantly influence AMD's stock performance."
+  },
+  "trendStory": {
+    "ticker": "AMD",
+    "analysis_date": "2026-06-18",
+    "price_summary": {
+      "current_price": 536.59,
+      "previous_close": 511.67,
+      "day_change_percent": 4.87,
+      "day_range": {
+        "high": 539.595,
+        "low": 526.35
+      },
+      "volume": 672629,
+      "average_volume": 676076,
+      "relative_volume": 0.99
+    },
+    "move_classification": {
+      "primary_reason": "analyst-driven",
+      "secondary_reasons": [
+        "sector-sympathy",
+        "news-driven"
+      ],
+      "confidence": "high",
+      "confidence_score": 85
+    },
+    "story_for_layman": {
+      "headline": "AMD Stock Surges on Analyst Upgrade and Strong Sector Performance",
+      "simple_explanation": "AMD's stock price jumped nearly 5% today after an analyst raised the price target, citing strong demand in AI and server markets. The technology sector also performed well, boosting AMD's momentum.",
+      "why_it_moved": "An analyst raised AMD's price target, and the technology sector is performing strongly, which helped push the stock higher.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "yes",
+      "sustainability_reason": "The move is supported by strong sector performance and an analyst upgrade, indicating potential for continued upward movement."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "Nasdaq 100 Rallies, Oil Sinks To $75 On Iran Peace Deal: Stock Market Today",
+          "summary": "Stocks staged a broad rebound Thursday as a signed U.S.-Iran peace deal sank oil and an Intel-Apple chip pact powered semis.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T16:33:55Z",
+          "impact": "neutral",
+          "relevance_score": 90
+        },
+        {
+          "headline": "Take Chips Off The Table Before AI Trade Turns, UBS Warns",
+          "summary": "UBS warns investors to reduce risk in tech stocks as AI trade becomes crowded and macro conditions are uncertain.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T16:00:19Z",
+          "impact": "negative",
+          "relevance_score": 80
+        },
+        {
+          "headline": "Why Is AMD Stock Gaining Thursday?",
+          "summary": "AMD stock rises premarket as Bernstein lifts its price target to $600, citing strong AI infrastructure and server market demand.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T10:28:13Z",
+          "impact": "positive",
+          "relevance_score": 70
+        },
+        {
+          "headline": "If You Invested $1000 In Advanced Micro Devices Stock 20 Years Ago, You Would Have This Much Today",
+          "summary": " ",
+          "source": "benzinga",
+          "published_at": "2026-06-17T23:15:41Z",
+          "impact": "neutral",
+          "relevance_score": 60
+        },
+        {
+          "headline": "What's Going On With AMD Stock Wednesday?",
+          "summary": "AMD stock rebounds in premarket as tech gains and a massive 30 MW AI compute deal with Rackspace shifts focus back to recent highs.",
+          "source": "benzinga",
+          "published_at": "2026-06-17T12:20:42Z",
+          "impact": "positive",
+          "relevance_score": 50
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "eps_surprise": null,
+        "revenue_surprise": null,
+        "guidance_change": "unknown",
+        "summary": "No recent earnings announcement identified in news feeds."
+      },
+      "analyst_actions": [
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "old_target": null,
+          "new_target": null,
+          "summary": "Cathie Wood Keeps Selling AMD: This Time Ark Dumps Another $12 Millions In Shares"
+        }
+      ],
+      "sector_context": {
+        "sector_name": "Technology",
+        "sector_change_percent": 3.9,
+        "index_change_percent": 2.44,
+        "is_stock_outperforming_sector": true,
+        "summary": "Sector Technology is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 0.99,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "moderate",
+        "summary": "Relative volume is 1.0x. Institutional flow proxy score is 51."
+      },
+      "technical_context": {
+        "trend": "uptrend",
+        "breakout_level": 352.86,
+        "support_level": 393.52,
+        "resistance_level": 352.86,
+        "rsi": 61.18260466205493,
+        "macd_signal": "bearish",
+        "vwap_position": "above",
+        "summary": "Price is BULLISH overall. RSI at 61.18260466205493."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": 2.5,
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 526.35,
+        "high": 539.595
+      },
+      "stop_loss": 507.32,
+      "target_1": 550,
+      "target_2": 600,
+      "risk_reward": 2.5,
+      "entry_reason": "Strong uptrend supported by analyst upgrade and sector performance.",
+      "wait_for_confirmation": "Watch for increased volume to confirm sustained buying interest."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 0,
+      "short_stop_loss": 0,
+      "short_target_1": 0,
+      "short_target_2": 0,
+      "reason": "The stock is in a strong uptrend with low short squeeze risk."
+    },
+    "final_summary": {
+      "one_line_story": "AMD surges on analyst upgrade and strong tech sector performance.",
+      "layman_summary": "AMD's stock price jumped nearly 5% today after an analyst raised the price target, citing strong demand in AI and server markets. The technology sector also performed well, boosting AMD's momentum.",
+      "trader_action": "Monitor for sustained buying interest and increased volume.",
+      "risk_warning": "The move may need confirmation if volume does not increase."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "AMD",
+    "analysisDate": "2026-06-18T22:30:21.838Z",
+    "currentPrice": 536.59,
+    "correlationName": "Signal Correlation",
+    "finalZone": "GREEN_ZONE",
+    "correlationScore": 78,
+    "gradientPositionPercent": 78,
+    "gradientLabel": "Light Green",
+    "confidenceLevel": "HIGH",
+    "oneLineSummary": "AMD shows strong bullish alignment with price above key moving averages and VWAP, supported by a strong uptrend and positive sector performance.",
+    "laymanSummary": "AMD is currently in a favorable research zone with strong upward trends and positive signals from the market. It's a good time to consider further research.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 18,
+        "maxScore": 20,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20), EMA(50), and EMA(200), indicating a strong upward trend."
+      },
+      "volumeConfirmation": {
+        "score": 10,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "Relative volume is close to average, but price rises with increasing volume."
+      },
+      "momentumIndicators": {
+        "score": 12,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "RSI(14) is at 61.18, indicating strong momentum; MACD histogram is negative but overall bias is bullish."
+      },
+      "movingAverageStructure": {
+        "score": 15,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "Golden cross with EMA(50) above EMA(200) and price above all key EMAs."
+      },
+      "vwapPosition": {
+        "score": 10,
+        "maxScore": 10,
+        "status": "POSITIVE",
+        "evidence": "Price is above VWAP, indicating strong buying interest."
+      },
+      "supportResistanceRiskReward": {
+        "score": 8,
+        "maxScore": 10,
+        "status": "POSITIVE",
+        "evidence": "Price is near support with room to resistance, offering favorable risk/reward."
+      },
+      "sectorIndexAlignment": {
+        "score": 4,
+        "maxScore": 5,
+        "status": "POSITIVE",
+        "evidence": "Technology sector is performing well, supporting AMD's bullish trend."
+      },
+      "shortInterestContext": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Short interest data not provided, but no significant squeeze risk indicated."
+      },
+      "newsCatalystConfirmation": {
+        "score": 2,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Recent news sentiment is mixed but includes positive articles supporting AMD's rise."
+      },
+      "institutionalFlowProxy": {
+        "score": 1,
+        "maxScore": 2,
+        "status": "MIXED",
+        "evidence": "Institutional flow proxy is neutral, with bullish OBV trend."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Price above EMA(20), EMA(50), and EMA(200)",
+        "Strong uptrend with ADX > 25",
+        "Price above VWAP"
+      ],
+      "yellowSignals": [
+        "MACD histogram negative"
+      ],
+      "redSignals": [],
+      "strongestPositiveEvidence": "Price is above all key moving averages and VWAP, indicating strong bullish momentum.",
+      "strongestNegativeEvidence": "MACD histogram is negative, suggesting some caution.",
+      "mixedSignalExplanation": "While MACD histogram is negative, other indicators show strong bullish trends."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 526.97,
+      "nearestResistance": 546.18,
+      "distanceToSupportPercent": 1.8,
+      "distanceToResistancePercent": 1.8,
+      "riskRewardView": "FAVORABLE",
+      "explanation": "Current price is closer to support with room to resistance, offering a favorable risk/reward setup."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "AMD is in a GREEN_ZONE due to strong bullish alignment across multiple indicators and favorable sector performance."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Sustained price above VWAP and key moving averages",
+        "Continued positive sector performance"
+      ],
+      "forYellowToGreenUpgrade": [],
+      "forRedZoneWarning": []
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 78,
+      "markerText": "Light Green",
+      "displaySummaryBelowBar": "AMD is in a favorable research zone with strong bullish signals.",
+      "supportingPointsBelowBar": [
+        "Price above key moving averages",
+        "Strong uptrend with ADX > 25",
+        "Positive sector performance"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "FAVORABLE_WATCH",
+      "summary": "AMD is currently in a favorable research zone with strong bullish signals across price, volume, and trend indicators. It's a good time to consider further research.",
+      "riskWarning": "Monitor MACD histogram for potential momentum shifts.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "AMD",
+    "available": true,
+    "price": 536.59,
+    "open": 532.05,
+    "high": 539.595,
+    "low": 526.35,
+    "close": 537.13,
+    "volume": 672629,
+    "vwap": 533.022599,
+    "bid": 506.11,
+    "ask": 559.65,
+    "spread": 53.54,
+    "changePercent": 4.87,
+    "timestamp": "2026-06-18T20:47:16.892951778Z",
+    "raw": {
+      "dailyBar": {
+        "c": 537.13,
+        "h": 539.595,
+        "l": 526.35,
+        "n": 15847,
+        "o": 532.05,
+        "t": "2026-06-18T04:00:00Z",
+        "v": 672629,
+        "vw": 533.022599
+      },
+      "latestQuote": {
+        "ap": 559.65,
+        "as": 100,
+        "ax": "V",
+        "bp": 506.11,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-18T20:00:00.674965686Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@",
+          "T"
+        ],
+        "i": 15842,
+        "p": 536.59,
+        "s": 129,
+        "t": "2026-06-18T20:47:16.892951778Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 536.59,
+        "h": 536.59,
+        "l": 536.59,
+        "n": 4,
+        "o": 536.59,
+        "t": "2026-06-18T20:47:00Z",
+        "v": 200,
+        "vw": 536.59
+      },
+      "prevDailyBar": {
+        "c": 512.19,
+        "h": 532.37,
+        "l": 507.33,
+        "n": 9298,
+        "o": 529.03,
+        "t": "2026-06-17T04:00:00Z",
+        "v": 507063,
+        "vw": 519.544508
+      },
+      "symbol": "AMD"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 491.12478568416753,
+      "ema50": 423.2236000495583,
+      "ema200": 286.8937109348142,
+      "sma20": 501.79949999999997,
+      "sma50": 411.00759999999985,
+      "sma200": 261.1328000000001,
+      "rsi14": 61.18260466205493,
+      "rsi14Prev": 57.65752402038868,
+      "macdLine": 29.224803211872313,
+      "macdSignal": 32.38336807558633,
+      "macdHist": -3.1585648637140196,
+      "bbUpper": 557.0151837230147,
+      "bbMiddle": 501.79949999999997,
+      "bbLower": 446.58381627698515,
+      "bbWidth": 22.007070044117143,
+      "atr14": 32.669906495345934,
+      "obv": 23390393,
+      "relVolume": 0.9949008721499523,
+      "vwap": 499.4150042148059,
+      "adx14": 392.811088774916,
+      "plusDI": 28.85899554754606,
+      "minusDI": 21.068955964555908,
+      "supportLevels": [
+        393.52,
+        437.71,
+        486.96
+      ],
+      "resistanceLevels": [
+        352.86,
+        469.15,
+        526.97,
+        546.18,
+        558.22
+      ],
+      "overallBias": "BULLISH",
+      "signals": [
+        "MACD histogram negative",
+        "Price above EMA20 > EMA50",
+        "Golden cross (EMA50 > EMA200)",
+        "Price above VWAP",
+        "Strong uptrend (ADX>25, +DI>-DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 876235849728,
+    "peRatio": 179.72241,
+    "pbRatio": 13.588135,
+    "epsTrailing": 2.99,
+    "epsForward": 13.1035,
+    "revenue": 37454000128,
+    "debtToEquity": 6.005,
+    "dividendYield": null,
+    "beta": 2.492,
+    "week52High": 558.37,
+    "week52Low": 126.82,
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "description": "Advanced Micro Devices, Inc. operates as a semiconductor company internationally. It operates in three segments: Data Center, Client and Gaming, and Embedded. The company offers artificial intelligence (AI) accelerators, microprocessors, and graphics processing units (GPUs) as standalone devices or as incorporated into accelerated processing units, chipsets, and data center and professional GPUs; and embedded processors and semi-custom system-on-chip (SoC) products, microprocessor and SoC develo"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Nasdaq 100 Rallies, Oil Sinks To $75 On Iran Peace Deal: Stock Market Today",
+        "summary": "Stocks staged a broad rebound Thursday as a signed U.S.-Iran peace deal sank oil and an Intel-Apple chip pact powered semis.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/06/53283834/nasdaq-100-rallied-intel-apple-deal-oil-sinks-on-iran-peace-deal",
+        "publishedAt": "2026-06-18T16:33:55Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Take Chips Off The Table Before AI Trade Turns, UBS Warns",
+        "summary": "UBS warns investors to reduce risk in tech stocks as AI trade becomes crowded and macro conditions are uncertain.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53282704/take-chips-off-the-table-before-ai-trade-turns-ubs-warns",
+        "publishedAt": "2026-06-18T16:00:19Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Why Is AMD Stock Gaining Thursday?",
+        "summary": "AMD stock rises premarket as Bernstein lifts its price target to $600, citing strong AI infrastructure and server market demand.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53270136/why-is-amd-stock-gaining-thursday",
+        "publishedAt": "2026-06-18T10:28:13Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "If You Invested $1000 In Advanced Micro Devices Stock 20 Years Ago, You Would Have This Much Today",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/news/26/06/53266461/if-you-invested-1000-in-advanced-micro-devices-stock-20-years-ago-you-would-have-this-much-today",
+        "publishedAt": "2026-06-17T23:15:41Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "What's Going On With AMD Stock Wednesday?",
+        "summary": "AMD stock rebounds in premarket as tech gains and a massive 30 MW AI compute deal with Rackspace shifts focus back to recent highs.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53246451/whats-going-on-with-amd-stock-wednesday-5",
+        "publishedAt": "2026-06-17T12:20:42Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "SpaceX Stock Is Buzzing And Asset Managers Are Rushing To Launch 'MANGOS' ETFs Built Around The Elon Musk-Led Company, OpenAI And Anthropic",
+        "summary": "Two asset managers plan to launch investment funds tied to the new &#34;MANGOS&#34; basket of AI-focused companies. ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/etfs/new-etfs/26/06/53240999/asset-managers-rush-to-launch-mangos-etfs-as-spacex-openai-and-anthropic-buzz-grows",
+        "publishedAt": "2026-06-17T02:50:17Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Cathie Wood Keeps Selling AMD: This Time Ark Dumps Another $12 Millions In Shares",
+        "summary": "Ark Invest sold over 23,000 AMD shares worth roughly $12M through its ARKF and ARKX ETFs on Tuesday, June 16, 2026.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/etfs/broad-u-s-equity-etfs/26/06/53240874/cathie-wood-keeps-selling-amd-this-time-ark-dumps-another-12-millions-in-shares",
+        "publishedAt": "2026-06-17T02:25:24Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Why Is Rackspace Stock Surging Today?",
+        "summary": "Rackspace shares jump after signing a deal with AMD to deploy 30MW of AI compute infrastructure, boosting enterprise AI cloud capabilities.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53226214/why-is-rackspace-stock-surging-today",
+        "publishedAt": "2026-06-16T14:41:20Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "AMD And Rackspace Enter Agreement For Phased Deployment Of Initial 30MW Footprint For AMD-Based Compute Deployments Across RXT's Global Data Centers From Late 2026 Through 2028",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53217959/amd-and-rackspace-enter-agreement-for-phased-deployment-of-initial-30mw-footprint-for-amd-based-comp",
+        "publishedAt": "2026-06-16T11:03:29Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "AMD's Latest Acquisition Tackles One Of AI's Biggest Bottlenecks",
+        "summary": "AMD acquires MEXT to tackle critical data center memory bottlenecks. Get the latest on AMD stock price action and AI strategy.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/m-a/26/06/53216484/amds-latest-acquisition-tackles-one-of-ais-biggest-bottlenecks",
+        "publishedAt": "2026-06-16T09:44:15Z",
+        "sentiment": "NEUTRAL"
+      }
+    ],
+    "sentiment": "NEUTRAL"
+  },
+  "institutionalFlow": {
+    "proxyScore": 51,
+    "interpretation": "NEUTRAL",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 10,
+      "priceVwapScore": 15,
+      "pvDivergenceScore": 15,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 5
+    },
+    "signals": [
+      "Below-average volume (1.0x)",
+      "OBV trend bullish",
+      "Price significantly above VWAP (+7.4%)",
+      "Price rising with increasing volume (bullish)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WAIT",
+  "technicalScore": 80,
+  "fundamentalScore": 85,
+  "newsCatalystScore": 60,
+  "institutionalFlowProxyScore": 51,
+  "keyCatalysts": [
+    "Positive sentiment around recent performance"
+  ],
+  "keyRisks": [
+    "High valuation",
+    "Price near resistance"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score suggests neutral institutional activity with price significantly above VWAP and stable volume."
+}

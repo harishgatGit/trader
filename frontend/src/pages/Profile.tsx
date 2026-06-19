@@ -2,9 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Shield, Key, Laptop, Clock, AlertTriangle, Pencil, Check, X } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { LoadingSpinner, PageContainer, PageHeader, SectionHeader, ResponsiveGrid, InsightCard } from '../components/ui';
+import { useSEO } from '../utils/useSEO';
 
 const Profile: React.FC = () => {
   const { user, sessions, fetchSessions, updatePassword, updateUsername, authLoading } = useAppStore();
+
+  useSEO({
+    title: 'User Profile | Investing Atti',
+    description: 'Manage your Investing Atti user profile, active login sessions, and account credentials.',
+    robots: 'noindex, nofollow',
+  });
 
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');

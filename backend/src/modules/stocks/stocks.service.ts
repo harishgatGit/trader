@@ -48,6 +48,54 @@ export class StocksService implements OnApplicationBootstrap {
     private readonly alpaca: AlpacaService,
   ) {}
 
+  // ─────────────────────────────────────────────────────────────────────────
+  // TOP MOVERS — cached in-memory for 1 hour
+  // ─────────────────────────────────────────────────────────────────────────
+  private moversCache: { symbols: string[]; fetchedAt: number } | null = null;
+  private readonly MOVERS_UNIVERSE = [
+    'AAPL','MSFT','NVDA','AMZN','GOOGL','META','TSLA','AVGO','LLY','JPM',
+    'V','UNH','XOM','JNJ','PG','HD','MA','BAC','ABBV','MRK',
+    'COST','ORCL','AMD','QCOM','NFLX','TMO','IBM','GS','ADBE','INTU',
+    'CRM','NOW','PANW','AMAT','MRVL','KLAC','LRCX','TXN','INTC','MU',
+  ];
+
+  async getTopMovers(): Promise<{ symbol: string; changePercent: number; label: string }[]> {
+    const ONE_HOUR = 60 * 60 * 1000;
+    const now = Date.now();
+
+    // Return cached result if still fresh
+    if (this.moversCache && now - this.moversCache.fetchedAt < ONE_HOUR) {
+      return this.moversCache.symbols.map(s => ({ symbol: s, changePercent: 0, label: 'cached' }));
+    }
+
+    try {
+      const snapshots = await this.alpaca.getSnapshots(this.MOVERS_UNIVERSE);
+      const withChange = Object.entries(snapshots)
+        .filter(([, snap]) => snap?.dailyBar)
+        .map(([symbol, snap]: [string, any]) => {
+          const close = snap.dailyBar?.c ?? snap.latestTrade?.p ?? 0;
+          const open  = snap.dailyBar?.o ?? close;
+          const changePercent = open > 0 ? ((close - open) / open) * 100 : 0;
+          return { symbol, changePercent };
+        })
+        .sort((a, b) => Math.abs(b.changePercent) - Math.abs(a.changePercent))
+        .slice(0, 10)
+        .map(m => ({
+          symbol: m.symbol,
+          changePercent: parseFloat(m.changePercent.toFixed(2)),
+          label: m.changePercent >= 0 ? 'gainer' : 'loser',
+        }));
+
+      this.moversCache = { symbols: withChange.map(m => m.symbol), fetchedAt: now };
+      return withChange;
+    } catch (err: any) {
+      this.logger.warn(`getTopMovers failed: ${err.message}. Returning fallback.`);
+      // Return a shuffled subset of the universe as graceful fallback
+      const fallback = [...this.MOVERS_UNIVERSE].sort(() => Math.random() - 0.5).slice(0, 10);
+      return fallback.map(s => ({ symbol: s, changePercent: 0, label: 'popular' }));
+    }
+  }
+
   async onApplicationBootstrap() {
     // 1. Try to load from local cached file first (immediate availability)
     this.loadCacheFromFile();

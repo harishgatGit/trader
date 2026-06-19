@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /settings
+Disallow: /profile
+Disallow: /watchlist
+Disallow: /alerts
+Disallow: /reports
+
+Sitemap: https://investingatti.com/sitemap.xml

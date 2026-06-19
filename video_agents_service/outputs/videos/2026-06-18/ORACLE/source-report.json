@@ -1,0 +1,739 @@
+{
+  "symbol": "ORACLE",
+  "analysisDateTime": "2026-06-19T01:59:51.479Z",
+  "currentPrice": null,
+  "dataQuality": {
+    "rating": "INSUFFICIENT",
+    "missingFields": [
+      "currentPrice",
+      "historicalCandles",
+      "technicalIndicators",
+      "fundamentalData",
+      "newsAndEvents",
+      "valuationData"
+    ],
+    "staleDataWarning": "Insufficient data to perform a comprehensive analysis.",
+    "decisionAllowed": false,
+    "reason": "Critical data points such as price, volume, technical indicators, and fundamentals are unavailable."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 0,
+    "decisionSummary": "Due to insufficient data across all major categories including price, technical indicators, and fundamentals, it is not possible to make a well-informed trading decision at this time. The stock should be placed on a watchlist until more data becomes available.",
+    "shouldBuyNow": false,
+    "buyNowReason": "Insufficient data to support a buy decision.",
+    "bestActionNow": "Add to watchlist and wait for more data."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": false,
+    "nearResistanceRisk": false,
+    "earningsRisk": false,
+    "newsRiskAcceptable": false,
+    "liquidityAcceptable": false,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: Due to the lack of available data, it's not advisable to make any trading decisions on Oracle at this time. Key information such as current price, historical price trends, and fundamental data are missing, making it impossible to assess the stock's potential accurately. It is best to place Oracle on a watchlist and revisit when more comprehensive data is available.",
+  "technicalAnalysis": {
+    "overallBias": "INSUFFICIENT_DATA",
+    "trendStage": "UNKNOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 0,
+    "keySignals": [],
+    "supportLevels": [],
+    "resistanceLevels": [],
+    "vwapAnalysis": "Insufficient data to analyze VWAP.",
+    "movingAverageAnalysis": "Insufficient data to analyze moving averages.",
+    "rsiAnalysis": "Insufficient data to analyze RSI.",
+    "macdAnalysis": "Insufficient data to analyze MACD.",
+    "volumeAnalysis": "Insufficient data to analyze volume.",
+    "volumeTrendStatus": "INSUFFICIENT_DATA",
+    "atrVolatilityAnalysis": "Insufficient data to analyze ATR volatility.",
+    "adxTrendStrengthAnalysis": "Insufficient data to analyze ADX trend strength.",
+    "bollingerBandAnalysis": "Insufficient data to analyze Bollinger Bands."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "NO_TRADE",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "No valid entry zone due to insufficient data."
+    },
+    "pullbackEntryZone": {
+      "low": null,
+      "high": null,
+      "description": "No pullback entry zone identified due to insufficient data."
+    },
+    "breakoutEntryLevel": {
+      "price": null,
+      "confirmationRule": "No breakout confirmation due to insufficient data."
+    },
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone identified due to insufficient data."
+    },
+    "invalidationLevel": {
+      "price": null,
+      "reason": "No invalidation level due to insufficient data."
+    },
+    "stopLoss": {
+      "price": null,
+      "stopType": "NOT_AVAILABLE",
+      "description": "No stop-loss defined due to insufficient data."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": null,
+        "reason": "No target defined due to insufficient data."
+      },
+      {
+        "label": "T2",
+        "price": null,
+        "reason": "No target defined due to insufficient data."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No target defined due to insufficient data."
+      }
+    ],
+    "exitRules": [
+      "No exit rules defined due to insufficient data."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": null,
+    "riskPerShare": null,
+    "rewardToTarget1": null,
+    "rewardToTarget2": null,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": null,
+    "riskRewardToTarget2": null,
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "UNAVAILABLE",
+    "positionSizingNote": "Position sizing cannot be determined due to insufficient data."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "MIXED",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to insufficient data."
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "No stop-loss due to insufficient data."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "No exit rules due to insufficient data."
+    ],
+    "tradeQuality": "F"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "MIXED",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to insufficient data."
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "No stop-loss due to insufficient data."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone due to insufficient data."
+    },
+    "riskReward": null,
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "MIXED",
+    "swingSetup": {
+      "setup": "No setup due to insufficient data.",
+      "analysis": "Insufficient data for swing analysis."
+    },
+    "entryTiming": {
+      "trigger": "No trigger due to insufficient data.",
+      "analysis": "Insufficient data for entry timing analysis."
+    },
+    "supportLevels": [],
+    "resistanceLevels": [],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": null,
+    "riskMetrics": {
+      "atr": null,
+      "atrAnalysis": "Insufficient data for ATR analysis.",
+      "vwap": null,
+      "vwapAnalysis": "Insufficient data for VWAP analysis.",
+      "volumeAnalysis": "Insufficient data for volume analysis.",
+      "supportResistanceAnalysis": "Insufficient data for support/resistance analysis."
+    },
+    "catalysts": {
+      "news": "No news data available.",
+      "earnings": "No earnings data available.",
+      "secFilings": "No SEC filings data available."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "Insufficient data to provide tactical horizon details.",
+    "dailyTrend": {
+      "trend": "NEUTRAL",
+      "barCount": 252,
+      "analysis": "The analysis for Oracle's stock trend is inconclusive due to a lack of available data. There is no price, volume, or technical indicator information to determine any trend direction. Additionally, there are no fundamental or news data to provide context or catalysts for any movement. The institutional flow data is available but marked as uncertain, which does not provide a clear indication of market sentiment or direction.",
+      "laymanExplanation": "We don't have enough information to say what's happening with Oracle's stock right now. It's like trying to guess the weather without looking outside or checking a forecast. We need more data to understand the trend.",
+      "ticker": "ORACLE",
+      "companyName": "Oracle Corporation",
+      "confidenceScore": 0,
+      "trendSummary": "The trend for Oracle is currently neutral due to insufficient data.",
+      "keyDrivers": [
+        {
+          "driver": "Data Availability",
+          "impact": "Neutral",
+          "evidence": "Price, volume, technical indicators, and fundamental data are unavailable, making trend analysis impossible."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "No data available to assess price action.",
+        "movingAverageView": "No moving average data available.",
+        "momentumView": "No momentum data available.",
+        "volumeView": "No volume data available.",
+        "supportResistanceView": "No support or resistance data available.",
+        "volatilityView": "No volatility data available."
+      },
+      "catalystView": {
+        "earningsImpact": "No earnings data available.",
+        "newsImpact": "No news data available.",
+        "institutionalFlowImpact": "Institutional flow is uncertain with no clear signals.",
+        "sectorMacroImpact": "No sector or macro data available."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Lack of data",
+          "Uncertain institutional flow"
+        ],
+        "whatNeedsConfirmation": "Availability of comprehensive market data and clear institutional signals."
+      },
+      "watchStatus": "Neutral watch",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "INSUFFICIENT_DATA",
+    "investmentQuality": "INSUFFICIENT_DATA",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "Insufficient data"
+    },
+    "bullCase": "Insufficient data to define bull case.",
+    "baseCase": "Insufficient data to define base case.",
+    "bearCase": "Insufficient data to define bear case.",
+    "longTermVerdict": "INSUFFICIENT_DATA"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": null,
+    "rating": "INSUFFICIENT_DATA",
+    "revenueTrend": "Insufficient data",
+    "epsTrend": "Insufficient data",
+    "profitability": "Insufficient data",
+    "debtRisk": "Insufficient data",
+    "cashFlowQuality": "Insufficient data",
+    "valuationCommentary": "Insufficient data"
+  },
+  "valuationAnalysis": {
+    "valuationRating": "INSUFFICIENT_DATA",
+    "valuationScore": null,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Insufficient data to provide valuation analysis."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": null,
+    "overallSentiment": "UNAVAILABLE",
+    "keyCatalysts": [],
+    "keyRisksFromNews": [],
+    "earningsRisk": "No earnings data available.",
+    "catalystVerdict": "UNAVAILABLE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": null,
+    "interpretation": "UNAVAILABLE",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score is uncertain and does not provide a clear signal of accumulation or distribution. This analysis is based on limited public data and should not be treated as confirmed institutional activity.",
+    "signals": [],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "INSUFFICIENT_DATA",
+    "probabilityScore": null,
+    "reason": "Insufficient data to assess multibagger potential.",
+    "requiredConditions": [],
+    "majorBlockers": []
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "VERY_HIGH",
+    "technicalRisk": "Insufficient technical data to assess risk.",
+    "fundamentalRisk": "Insufficient fundamental data to assess risk.",
+    "valuationRisk": "Insufficient valuation data to assess risk.",
+    "newsRisk": "No news data available to assess risk.",
+    "liquidityRisk": "Insufficient data to assess liquidity risk.",
+    "eventRisk": "No event data available to assess risk.",
+    "topRisks": [
+      "Lack of data across all major categories increases uncertainty and risk."
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Insufficient data to define bull case conditions.",
+      "pricePath": "Insufficient data to define bull case price path.",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Insufficient data to define base case conditions.",
+      "pricePath": "Insufficient data to define base case price path.",
+      "probability": "LOW"
+    },
+    "bearCase": {
+      "condition": "Insufficient data to define bear case conditions.",
+      "pricePath": "Insufficient data to define bear case price path.",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for more data availability.",
+    "Reassess when key data points are provided.",
+    "Avoid trading until a clearer picture emerges."
+  ],
+  "doNotTradeConditions": [
+    "Insufficient data across price, volume, technical indicators, and fundamentals."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": null,
+    "stopLossAlert": null,
+    "target1Alert": null,
+    "target2Alert": null,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "NetSuite",
+        "ownershipPct": "100",
+        "performance": "Strong integration with Oracle's cloud offerings, expanding customer base.",
+        "upcomingEvents": [
+          "Continued integration with Oracle Cloud Infrastructure"
+        ],
+        "impactPotential": "Positive impact as deeper integration could lead to increased cross-selling opportunities and customer retention."
+      },
+      {
+        "name": "Cerner Corporation",
+        "ownershipPct": "100",
+        "performance": "Stable with potential growth in healthcare IT solutions.",
+        "upcomingEvents": [
+          "Expansion of healthcare cloud services"
+        ],
+        "impactPotential": "Positive impact as healthcare sector digitization increases demand for cloud solutions."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Intel",
+          "role": "Supplier",
+          "description": "Supplies processors for Oracle's hardware products",
+          "riskExposure": "High impact if supply is disrupted, affecting hardware product lines."
+        },
+        {
+          "name": "Micron Technology",
+          "role": "Supplier",
+          "description": "Provides memory and storage solutions",
+          "riskExposure": "Moderate impact on hardware and cloud services if disrupted."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Infosys",
+          "role": "Outsource Partner",
+          "description": "Provides IT services and support",
+          "riskExposure": "Moderate impact on service delivery and customer support if disrupted."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Accenture",
+          "role": "Marketing Partner",
+          "description": "Collaborates on joint cloud solutions and services",
+          "riskExposure": "Moderate impact on market reach and customer acquisition if partnership weakens."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Financial Services Sector",
+          "role": "Customer",
+          "description": "Uses Oracle's database and cloud solutions",
+          "riskExposure": "High impact if sector faces downturn, reducing IT spending."
+        },
+        {
+          "name": "Retail Sector",
+          "role": "Customer",
+          "description": "Utilizes Oracle's ERP and cloud services",
+          "riskExposure": "Moderate impact if retail sector experiences significant changes in IT investment."
+        }
+      ]
+    },
+    "strategicOutlook": "Oracle's ecosystem is robust with strong integration of acquired companies like NetSuite and Cerner, enhancing its cloud offerings. The concentration risk lies in its dependency on key suppliers like Intel. External factors such as advancements in cloud technology and sector-specific IT spending trends are crucial to watch for potential impacts on Oracle's growth trajectory."
+  },
+  "trendStory": {
+    "ticker": "ORACLE",
+    "analysis_date": "2026-06-18",
+    "price_summary": {
+      "current_price": 0,
+      "previous_close": 0,
+      "day_change_percent": 0,
+      "day_range": {
+        "high": 0,
+        "low": 0
+      },
+      "volume": 0,
+      "average_volume": 0,
+      "relative_volume": 1
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "ORACLE trades up 0.0% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 1,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 0,
+        "high": 0
+      },
+      "stop_loss": 0,
+      "target_1": 0,
+      "target_2": 0,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 0,
+      "short_stop_loss": 0,
+      "short_target_1": 0,
+      "short_target_2": 0,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "ORACLE moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "ORACLE",
+    "analysisDate": "2026-06-19",
+    "currentPrice": null,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 0,
+    "gradientPositionPercent": 0,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "LOW",
+    "oneLineSummary": "Insufficient data to assess Oracle's stock setup; high-risk zone.",
+    "laymanSummary": "There's not enough data to analyze Oracle's stock right now, so it's considered high-risk.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 0,
+        "maxScore": 20,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No price data available."
+      },
+      "volumeConfirmation": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No volume data available."
+      },
+      "momentumIndicators": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No momentum indicator data available."
+      },
+      "movingAverageStructure": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No moving average data available."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No VWAP data available."
+      },
+      "supportResistanceRiskReward": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No support/resistance data available."
+      },
+      "sectorIndexAlignment": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No sector/index performance data available."
+      },
+      "shortInterestContext": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No short interest data available."
+      },
+      "newsCatalystConfirmation": {
+        "score": 0,
+        "maxScore": 3,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No news or catalyst data available."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "Institutional flow proxy is uncertain."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [],
+      "redSignals": [],
+      "strongestPositiveEvidence": "None due to lack of data.",
+      "strongestNegativeEvidence": "Complete lack of data across all categories.",
+      "mixedSignalExplanation": "No data to provide a mixed signal explanation."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": null,
+      "nearestResistance": null,
+      "distanceToSupportPercent": null,
+      "distanceToResistancePercent": null,
+      "riskRewardView": "INSUFFICIENT_DATA",
+      "explanation": "No support or resistance data available."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "Due to the absence of data, the stock is classified as high-risk."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Complete market data",
+        "Technical indicators",
+        "Sector performance"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Price trend data",
+        "Volume confirmation"
+      ],
+      "forRedZoneWarning": [
+        "Any data to assess risk"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 0,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "Insufficient data to assess Oracle's stock.",
+      "supportingPointsBelowBar": [
+        "No price data",
+        "No volume data",
+        "No technical indicators"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "INSUFFICIENT_DATA",
+      "summary": "Currently, there is not enough data to analyze Oracle's stock, placing it in a high-risk zone.",
+      "riskWarning": "Without data, any investment decision is highly speculative.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "ORACLE",
+    "available": false,
+    "price": null,
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "vwap": null,
+    "bid": null,
+    "ask": null,
+    "spread": null,
+    "changePercent": null,
+    "timestamp": null,
+    "raw": null
+  },
+  "technicals": {
+    "primary": null,
+    "timeframes": []
+  },
+  "fundamentals": {
+    "available": false,
+    "source": "unavailable",
+    "marketCap": null,
+    "peRatio": null,
+    "pbRatio": null,
+    "epsTrailing": null,
+    "epsForward": null,
+    "revenue": null,
+    "debtToEquity": null,
+    "dividendYield": null,
+    "beta": null,
+    "week52High": null,
+    "week52Low": null,
+    "sector": null,
+    "industry": null,
+    "description": null,
+    "unavailableReason": "Fundamental data not available from free sources for this symbol."
+  },
+  "news": {
+    "available": false,
+    "source": "alpaca_news",
+    "items": [],
+    "sentiment": null,
+    "unavailableReason": "No recent news available for this symbol."
+  },
+  "institutionalFlow": {
+    "proxyScore": 0,
+    "interpretation": "UNCERTAIN",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 0,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 0,
+      "supportHoldScore": 0,
+      "breakoutVolScore": 0,
+      "largeBodyScore": 0
+    },
+    "signals": [],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 0,
+  "fundamentalScore": null,
+  "newsCatalystScore": null,
+  "institutionalFlowProxyScore": null,
+  "keyCatalysts": [],
+  "keyRisks": [
+    "Lack of data across all major categories increases uncertainty and risk."
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score is uncertain and does not provide a clear signal of accumulation or distribution. This analysis is based on limited public data and should not be treated as confirmed institutional activity."
+}

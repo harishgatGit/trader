@@ -1,0 +1,211 @@
+{
+  "ticker": "ORACLE",
+  "reportDate": "Unavailable",
+  "videoTitle": "ORACLE Stock Report",
+  "durationSeconds": 133.04,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for Oracle. With current data unavailable, is this a signal to watch closely or simply a missed opportunity? \n\nCurrently, we cannot provide the stock's price, intraday trend, or daily movement percentage. The absence of this critical price information limits our ability to assess Oracle's recent performance.\n\nThe trend direction for Oracle remains unclear due to insufficient data. Without concrete information on price movements or catalysts, we cannot determine the primary drivers affecting the stock at this time.\n\nEvidence supporting any trend is also lacking. There are no significant news sources, volume confirmations, or key levels available to substantiate a price movement or trend direction for Oracle.\n\nIn terms of the daily trend chart story, we see no defined support or resistance levels. The lack of data prevents us from categorizing the stock's behavior as either consolidation or breakout.\n\nTechnical metrics such as the Relative Strength Index, Moving Average, or MACD indicators are not available for Oracle. This absence further complicates our understanding of the stock's momentum and potential price action.\n\nFor tactical traders, there are currently no clear entry zones, stop loss levels, or target prices to consider. The lack of actionable data means we cannot propose a strategic setup for trading Oracle.\n\nWhen it comes to short selling, caution is warranted. Without reliable data, we cannot provide insights on breakdown levels or short squeeze risks, which remains uncertain.\n\nAnalyzing Oracle's ecosystem, we find that the absence of sector or market data hinders our ability to gauge how broader economic factors might influence the stock. Peers and market conditions remain a mystery at this point.\n\nIn conclusion, due to the unavailability of vital data across multiple categories, Oracle is best placed on a watchlist. Key levels to monitor will emerge once more comprehensive information is accessible, but proceed with caution as risks remain high in this uncertain environment.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 9.83,
+      "narration": "Welcome to the Investing Atti stock analysis for Oracle. With current data unavailable, is this a signal to watch closely or simply a missed opportunity?",
+      "pandaAction": "default",
+      "speechBubbleText": "Oracle: Watch Closely?",
+      "visualElements": [
+        "Oracle logo",
+        "watchlist icon"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "Oracle: Watch Closely or Missed Opportunity?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 12.72,
+      "narration": "Currently, we cannot provide the stock's price, intraday trend, or daily movement percentage. The absence of this critical price information limits our ability to assess Oracle's recent performance.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Price Data Unavailable",
+      "visualElements": [
+        "price chart placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 13.36,
+      "narration": "The trend direction for Oracle remains unclear due to insufficient data. Without concrete information on price movements or catalysts, we cannot determine the primary drivers affecting the stock at this time.",
+      "pandaAction": "default",
+      "speechBubbleText": "Unclear Trend Direction",
+      "visualElements": [
+        "trend line placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "pulse"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 12.52,
+      "narration": "Evidence supporting any trend is also lacking. There are no significant news sources, volume confirmations, or key levels available to substantiate a price movement or trend direction for Oracle.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Lack of Evidence",
+      "visualElements": [
+        "news icon",
+        "volume chart placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 12.4,
+      "narration": "In terms of the daily trend chart story, we see no defined support or resistance levels. The lack of data prevents us from categorizing the stock's behavior as either consolidation or breakout.",
+      "pandaAction": "default",
+      "speechBubbleText": "No Support or Resistance",
+      "visualElements": [
+        "daily trend chart placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 14.26,
+      "narration": "Technical metrics such as the Relative Strength Index, Moving Average, or MACD indicators are not available for Oracle. This absence further complicates our understanding of the stock's momentum and potential price action.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Technical Metrics Missing",
+      "visualElements": [
+        "RSI chart placeholder",
+        "MACD chart placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 12.91,
+      "narration": "For tactical traders, there are currently no clear entry zones, stop loss levels, or target prices to consider. The lack of actionable data means we cannot propose a strategic setup for trading Oracle.",
+      "pandaAction": "default",
+      "speechBubbleText": "No Tactical Setup",
+      "visualElements": [
+        "entry zone placeholder",
+        "stop loss placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "pulse"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 11.05,
+      "narration": "When it comes to short selling, caution is warranted. Without reliable data, we cannot provide insights on breakdown levels or short squeeze risks, which remains uncertain.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution for Short Selling",
+      "visualElements": [
+        "short selling icon"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 14.39,
+      "narration": "Analyzing Oracle's ecosystem, we find that the absence of sector or market data hinders our ability to gauge how broader economic factors might influence the stock. Peers and market conditions remain a mystery at this point.",
+      "pandaAction": "default",
+      "speechBubbleText": "Ecosystem Data Lacking",
+      "visualElements": [
+        "ecosystem chart placeholder"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom out"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 19.6,
+      "narration": "In conclusion, due to the unavailability of vital data across multiple categories, Oracle is best placed on a watchlist. Key levels to monitor will emerge once more comprehensive information is accessible, but proceed with caution as risks remain high in this uncertain environment.",
+      "pandaAction": "default",
+      "speechBubbleText": "Oracle on Watchlist",
+      "visualElements": [
+        "watchlist icon",
+        "caution icon"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "quote": "In uncertainty lies opportunity.",
+        "disclaimer": "This analysis is for informational purposes only and should not be considered as financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

@@ -2,9 +2,32 @@ import { Injectable, UnauthorizedException, BadRequestException, ConflictExcepti
 import { PrismaService } from '../../prisma/prisma.service';
 import * as crypto from 'crypto';
 
+// ── Session cache ────────────────────────────────────────────────────────────
+// Caches validated sessions in memory to avoid a DB round-trip on every request.
+// TTL: 5 minutes. Evicted on logout or when the DB says the session is gone.
+const SESSION_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+const LAST_ACTIVE_THROTTLE_MS = 5 * 60 * 1000; // update DB at most once per 5 min
+
+interface CachedSession {
+  user: {
+    id: string;
+    username: string;
+    email: string | null;
+    role: string;
+    subscriptionPlan: string;
+    isActive: boolean;
+    sessionId: string;
+  };
+  expiresAt: number;          // epoch ms
+  lastActiveWrittenAt: number; // epoch ms — tracks when we last wrote to DB
+}
+
 @Injectable()
 export class AuthService {
   constructor(private readonly prisma: PrismaService) {}
+
+  /** In-memory session cache: token → CachedSession */
+  private readonly sessionCache = new Map<string, CachedSession>();
 
   private hashPassword(password: string): string {
     const salt = crypto.randomBytes(16).toString('hex');
@@ -344,6 +367,8 @@ export class AuthService {
   }
 
   async logout(token: string) {
+    // Evict from cache immediately so the token stops working without a DB round-trip
+    this.sessionCache.delete(token);
     await this.prisma.userSession.updateMany({
       where: { token, isActive: true },
       data: { isActive: false },
@@ -352,26 +377,36 @@ export class AuthService {
   }
 
   async validateSession(token: string) {
+    const now = Date.now();
+
+    // ── Cache hit ─────────────────────────────────────────────────────────────
+    const cached = this.sessionCache.get(token);
+    if (cached && cached.expiresAt > now) {
+      // Throttle the lastActiveAt write — only write to DB every 5 min
+      if (now - cached.lastActiveWrittenAt >= LAST_ACTIVE_THROTTLE_MS) {
+        cached.lastActiveWrittenAt = now;
+        // Fire-and-forget — don't block the response
+        this.prisma.userSession.update({
+          where: { id: cached.user.sessionId },
+          data: { lastActiveAt: new Date() },
+        }).catch(() => { /* best-effort */ });
+      }
+      return cached.user;
+    }
+
+    // ── Cache miss — hit the DB ───────────────────────────────────────────────
     const session = await this.prisma.userSession.findUnique({
       where: { token },
       include: { user: true },
     });
 
-    if (!session || !session.isActive) {
+    if (!session || !session.isActive || !session.user.isActive) {
+      // Evict stale cache entry if any
+      this.sessionCache.delete(token);
       return null;
     }
 
-    if (!session.user.isActive) {
-      return null;
-    }
-
-    // Update lastActiveAt periodically
-    await this.prisma.userSession.update({
-      where: { id: session.id },
-      data: { lastActiveAt: new Date() },
-    });
-
-    return {
+    const userData = {
       id: session.user.id,
       username: session.user.username,
       email: session.user.email,
@@ -380,6 +415,21 @@ export class AuthService {
       isActive: session.user.isActive,
       sessionId: session.id,
     };
+
+    // Populate cache
+    this.sessionCache.set(token, {
+      user: userData,
+      expiresAt: now + SESSION_CACHE_TTL_MS,
+      lastActiveWrittenAt: now,
+    });
+
+    // Update lastActiveAt in DB (fire-and-forget)
+    this.prisma.userSession.update({
+      where: { id: session.id },
+      data: { lastActiveAt: new Date() },
+    }).catch(() => { /* best-effort */ });
+
+    return userData;
   }
 
   async updatePassword(userId: string, oldPass: string, newPass: string) {
@@ -402,6 +452,13 @@ export class AuthService {
       where: { userId, isActive: true },
       data: { isActive: false },
     });
+
+    // Evict ALL cached sessions for this user
+    for (const [cachedToken, entry] of this.sessionCache.entries()) {
+      if (entry.user.id === userId) {
+        this.sessionCache.delete(cachedToken);
+      }
+    }
 
     return { success: true };
   }

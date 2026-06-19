@@ -119,28 +119,113 @@ interface ToastProps {
   onDismiss: () => void;
 }
 
+const TOAST_CONFIG = {
+  success: {
+    icon: '✓',
+    iconBg: 'bg-emerald-700',
+    border: 'border-slate-200/80',
+    bg: 'bg-white',
+    bar: 'bg-emerald-600',
+    label: 'text-emerald-800',
+    text: 'text-slate-900',
+    badge: 'Success',
+  },
+  error: {
+    icon: '✕',
+    iconBg: 'bg-red-700',
+    border: 'border-slate-200/80',
+    bg: 'bg-white',
+    bar: 'bg-red-600',
+    label: 'text-red-800',
+    text: 'text-slate-900',
+    badge: 'Error',
+  },
+  warning: {
+    icon: '!',
+    iconBg: 'bg-amber-800',
+    border: 'border-slate-200/80',
+    bg: 'bg-white',
+    bar: 'bg-amber-650', // or bg-amber-600
+    label: 'text-amber-900',
+    text: 'text-slate-900',
+    badge: 'Warning',
+  },
+  info: {
+    icon: 'i',
+    iconBg: 'bg-sky-700',
+    border: 'border-slate-200/80',
+    bg: 'bg-white',
+    bar: 'bg-sky-600',
+    label: 'text-sky-800',
+    text: 'text-slate-900',
+    badge: 'Info',
+  },
+} as const;
+
 export const Toast: React.FC<ToastProps> = ({ type, message, onDismiss }) => {
-  const config = {
-    success: 'border-emerald-500/40 bg-emerald-900/30 text-emerald-300',
-    error: 'border-red-500/40 bg-red-900/30 text-red-300',
-    warning: 'border-amber-500/40 bg-amber-900/30 text-amber-300',
-    info: 'border-brand-500/40 bg-brand-900/30 text-brand-300',
-  };
+  const c = TOAST_CONFIG[type] ?? TOAST_CONFIG.info;
+  const [visible, setVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    // Trigger entrance animation on next tick
+    const t = requestAnimationFrame(() => setVisible(true));
+    return () => cancelAnimationFrame(t);
+  }, []);
 
   return (
-    <div className={`flex items-start gap-3 p-3 rounded-lg border backdrop-blur-sm slide-up ${config[type]}`}>
-      <span className="flex-1 text-sm">{message}</span>
-      <button onClick={onDismiss} className="text-slate-500 hover:text-slate-300 text-xs mt-0.5">✕</button>
+    <div
+      style={{ transition: 'opacity 300ms, transform 300ms' }}
+      className={`
+        relative flex items-start gap-3 w-full max-w-md
+        pl-4 pr-3 pt-3.5 pb-4 rounded-xl shadow-2xl
+        border ${c.border} ${c.bg}
+        backdrop-blur-md overflow-hidden
+        ${visible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
+      `}
+    >
+      {/* Colored left accent bar */}
+      <div className={`absolute left-0 top-0 bottom-0 w-1 ${c.iconBg} rounded-l-xl`} />
+
+      {/* Icon badge */}
+      <div className={`shrink-0 w-7 h-7 rounded-lg ${c.iconBg} flex items-center justify-center`}>
+        <span className="text-white text-sm font-black leading-none">{c.icon}</span>
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 min-w-0 space-y-0.5">
+        <p className={`text-[11px] font-bold uppercase tracking-widest ${c.label}`}>{c.badge}</p>
+        <p className={`text-sm leading-snug font-medium ${c.text}`}>{message}</p>
+      </div>
+
+      {/* Dismiss */}
+      <button
+        onClick={onDismiss}
+        className="shrink-0 mt-0.5 w-6 h-6 rounded-md flex items-center justify-center text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors text-xs"
+      >
+        ✕
+      </button>
+
+      {/* Auto-dismiss progress bar */}
+      <div className={`absolute bottom-0 left-0 h-0.5 ${c.bar} opacity-60 rounded-b-xl`}
+        style={{ animation: 'toast-progress 5s linear forwards' }}
+      />
     </div>
   );
 };
 
 export const ToastContainer: React.FC = () => {
   const { toasts, removeToast } = useAppStore();
+  // Show max 3 toasts at once (newest on top)
+  const visible = toasts.slice(-3);
+
+  if (visible.length === 0) return null;
+
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2 max-w-sm">
-      {toasts.map((t: any) => (
-        <Toast key={t.id} type={t.type} message={t.message} onDismiss={() => removeToast(t.id)} />
+    <div className="fixed inset-0 flex flex-col items-center justify-center gap-3.5 z-[9999] pointer-events-none px-4">
+      {visible.map((t: any) => (
+        <div key={t.id} className="pointer-events-auto">
+          <Toast type={t.type} message={t.message} onDismiss={() => removeToast(t.id)} />
+        </div>
       ))}
     </div>
   );
@@ -272,9 +357,9 @@ export const Tooltip: React.FC<TooltipProps> = ({ content, children, position = 
     >
       {children}
       {visible && (
-        <div className={`absolute z-[9999] w-72 max-w-[85vw] p-2.5 text-[11px] leading-relaxed font-normal text-slate-200 bg-slate-950/95 border border-slate-800 rounded-lg shadow-xl backdrop-blur-sm pointer-events-none transition-all duration-200 fade-in ${positionClasses[position]}`}>
+        <div className={`absolute z-[9999] w-72 max-w-[85vw] p-2.5 text-[11px] leading-relaxed font-normal text-slate-800 bg-white border border-slate-200 rounded-lg shadow-xl pointer-events-none transition-all duration-200 fade-in ${positionClasses[position]}`}>
           {content}
-          <div className={`absolute w-1.5 h-1.5 bg-slate-950 border-r border-b border-slate-800 rotate-45 ${
+          <div className={`absolute w-1.5 h-1.5 bg-white border-r border-b border-slate-200 rotate-45 ${
             position === 'top' ? 'top-full left-1/2 -translate-x-1/2 -mt-0.75 border-t-0 border-l-0' :
             position === 'bottom' ? 'bottom-full left-1/2 -translate-x-1/2 -mb-0.75 border-b-0 border-r-0 border-t border-l' :
             position === 'left' ? 'left-full top-1/2 -translate-y-1/2 -ml-0.75 border-b-0 border-l-0 border-t border-r' :

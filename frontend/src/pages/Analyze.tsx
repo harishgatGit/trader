@@ -8,8 +8,10 @@ import { RatingBadge, ScoreBar, DataUnavailable, TermTooltip, StatusBadge, PageC
 import { TrendStoryCard } from '../components/TrendStoryCard';
 import { STOCK_DICTIONARY } from '../utils/stockDictionary';
 import { stocksApi } from '../services/api';
+import { useSEO } from '../utils/useSEO';
 
-const POPULAR = ['AAPL', 'NVDA', 'MSFT', 'TSLA', 'SPY', 'QQQ', 'AMD', 'META', 'GOOGL', 'AMZN'];
+// Static fallback used if API is unavailable
+const FALLBACK_PICKS = ['AAPL', 'NVDA', 'MSFT', 'TSLA', 'SPY', 'QQQ', 'AMD', 'META', 'GOOGL', 'AMZN'];
 
 const statusIcon = (status: string) => {
   switch (status) {
@@ -44,8 +46,34 @@ const AnalyzePage: React.FC = () => {
   const [dailyTrendExpanded, setDailyTrendExpanded] = useState(false);
   const [signalCorrelationExpanded, setSignalCorrelationExpanded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const { analyzing, analysisProgress, currentAnalysis, runAnalysis } = useAppStore();
+
+  // Dynamic quick picks (top movers, refreshed hourly)
+  const [movers, setMovers] = useState<{ symbol: string; changePercent: number; label: string }[]>([]);
+  const [moversLoading, setMoversLoading] = useState(true);
+  const [moversRefreshedAt, setMoversRefreshedAt] = useState<Date | null>(null);
+
+  const { analyzing, activeSymbol, analysisProgress, currentAnalysis, runAnalysis } = useAppStore();
   const navigate = useNavigate();
+
+  const report = currentAnalysis?.report;
+  const activeTicker = report?.symbol || currentAnalysis?.symbol;
+
+  useSEO({
+    title: activeTicker ? `${activeTicker} Stock Analysis | Investing Atti` : 'Stock Research & Analysis | Investing Atti',
+    description: activeTicker 
+      ? `Real-time AI stock analysis for ${activeTicker}. View rating, support/resistance levels, trend bias, and news catalysts.`
+      : 'Analyze technical indicators, support and resistance floors, news catalysts, and volume profiles using our AI analysis system.',
+    robots: 'index, follow',
+  });
+
+  // ── Restore state when returning to page mid-analysis ──────────────────────
+  useEffect(() => {
+    if (analyzing && activeSymbol && !symbol) {
+      setSymbol(activeSymbol);
+    }
+  // Only run on mount (and when analyzing/activeSymbol change from the store)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [analyzing, activeSymbol]);
 
   useEffect(() => {
     const query = symbol.trim();
@@ -79,6 +107,28 @@ const AnalyzePage: React.FC = () => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Fetch top movers on mount, then refresh every hour
+  useEffect(() => {
+    const fetchMovers = async () => {
+      try {
+        setMoversLoading(true);
+        const data = await stocksApi.getMovers();
+        if (Array.isArray(data) && data.length > 0) {
+          setMovers(data);
+          setMoversRefreshedAt(new Date());
+        }
+      } catch {
+        // keep showing whatever we have (or empty — JSX will fall back)
+      } finally {
+        setMoversLoading(false);
+      }
+    };
+
+    fetchMovers();
+    const interval = setInterval(fetchMovers, 60 * 60 * 1000); // every 1 hour
+    return () => clearInterval(interval);
   }, []);
 
   const triggerAnalysis = async (sym: string) => {
@@ -128,8 +178,6 @@ const AnalyzePage: React.FC = () => {
     }
   };
 
-  const report = currentAnalysis?.report;
-
   const dataQualityRating = report?.dataQuality?.rating;
   const hasInsufficientData =
     !report?.isFund && (
@@ -167,6 +215,22 @@ const AnalyzePage: React.FC = () => {
 
   return (
     <PageContainer className="max-w-3xl py-8 space-y-8">
+
+      {/* ── "Returned mid-analysis" sticky banner ── */}
+      {analyzing && activeSymbol && (
+        <div className="flex items-center gap-3 px-4 py-3 rounded-xl border border-brand-500/30 bg-brand-500/8 animate-fade-in">
+          <span className="w-2.5 h-2.5 rounded-full bg-brand-400 animate-pulse shrink-0" />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-bold text-brand-400">
+              Analysis running for <span className="font-mono">{activeSymbol}</span>
+            </p>
+            <p className="text-xs text-slate-400 font-sans mt-0.5">
+              Results will appear below automatically — you don't need to do anything.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <div className="text-center space-y-2">
         <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">Run Your Analysis</h1>
@@ -184,6 +248,7 @@ const AnalyzePage: React.FC = () => {
               id="symbol-input"
               type="text"
               value={symbol}
+              aria-label="Stock ticker symbol search"
               onChange={(e) => {
                 setSymbol(e.target.value);
                 setShowSuggestions(true);
@@ -204,16 +269,19 @@ const AnalyzePage: React.FC = () => {
               spellCheck={false}
             />
 
-            {/* Suggestions Panel */}
-            {showSuggestions && suggestions.length > 0 && !isMobile && (
+            {/* Suggestions Panel — shown on all screen sizes */}
+            {showSuggestions && suggestions.length > 0 && (
               <div className="absolute left-0 right-0 top-full mt-2 bg-surface-900 border border-slate-850 rounded-xl overflow-hidden shadow-2xl z-50 divide-y divide-slate-850 max-h-60 overflow-y-auto animate-fade-in">
                 {suggestions.map((item, idx) => {
                   const isActive = activeSuggestion === idx;
                   return (
                     <div
                       key={item.symbol}
-                      onClick={() => handleSelectSuggestion(item.symbol)}
-                      className={`flex items-center justify-between px-4 py-3 cursor-pointer transition ${
+                      // onMouseDown fires BEFORE onBlur on desktop so the list stays open long enough to register the click
+                      // onTouchStart fires BEFORE onBlur on mobile browsers
+                      onMouseDown={(e) => { e.preventDefault(); handleSelectSuggestion(item.symbol); }}
+                      onTouchStart={(e) => { e.preventDefault(); handleSelectSuggestion(item.symbol); }}
+                      className={`flex items-center justify-between px-4 py-3.5 cursor-pointer transition active:bg-brand-500/20 ${
                         isActive ? 'bg-brand-500/10 text-brand-500 dark:text-brand-400 font-bold' : 'hover:bg-slate-850/50 text-slate-350'
                       }`}
                     >
@@ -223,7 +291,7 @@ const AnalyzePage: React.FC = () => {
                         </span>
                         <span className="text-xs font-semibold font-sans">{item.name}</span>
                       </div>
-                      <span className="text-[10px] text-slate-500  font-bold font-sans tracking-wide">
+                      <span className="text-[10px] text-slate-500 font-bold font-sans tracking-wide">
                         {item.exchange || item.sector || ''}
                       </span>
                     </div>
@@ -231,6 +299,7 @@ const AnalyzePage: React.FC = () => {
                 })}
               </div>
             )}
+
           </div>
           <button
             type="submit"
@@ -248,54 +317,121 @@ const AnalyzePage: React.FC = () => {
           </button>
         </form>
 
-        {/* Popular chips */}
-        <div className="flex flex-wrap gap-2.5 items-center mt-1 border-t border-slate-850/60 pt-4">
-          <span className="text-xs text-slate-500 font-bold  tracking-wider">Quick Picks:</span>
-          {POPULAR.map((s) => (
-            <button
-              key={s}
-              onClick={() => handleQuick(s)}
-              disabled={analyzing}
-              className="text-xs px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-850 hover:border-slate-800 hover:bg-slate-850/50 text-slate-400 hover:text-slate-200 transition-all font-mono font-bold"
-            >
-              {s}
-            </button>
-          ))}
+        {/* ── Quick Picks: Dynamic Top Movers ── */}
+        <div className="flex flex-col gap-3 mt-1 border-t border-slate-850/60 pt-4">
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-slate-500 font-bold tracking-wider flex items-center gap-1.5">
+              🔥 Top Movers Today
+            </span>
+            {moversRefreshedAt && (
+              <span className="text-[10px] text-slate-600 font-mono">
+                Updated {moversRefreshedAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+              </span>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {moversLoading ? (
+              /* Skeleton chips while loading */
+              Array.from({ length: 8 }).map((_, i) => (
+                <div key={i} className="h-7 w-16 rounded-xl bg-slate-850 animate-pulse" />
+              ))
+            ) : (
+              (movers.length > 0 ? movers : FALLBACK_PICKS.map(s => ({ symbol: s, changePercent: 0, label: 'popular' }))).map((m) => {
+                const pct = m.changePercent;
+                const isGainer = pct > 0;
+                const isLoser  = pct < 0;
+                return (
+                  <button
+                    key={m.symbol}
+                    onClick={() => handleQuick(m.symbol)}
+                    disabled={analyzing}
+                    className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-xl bg-slate-950 border border-slate-850 hover:border-slate-700 hover:bg-slate-850/60 text-slate-300 hover:text-slate-100 transition-all font-mono font-bold group"
+                  >
+                    <span>{m.symbol}</span>
+                    {pct !== 0 && (
+                      <span className={`text-[10px] font-bold px-1 py-0.5 rounded ${
+                        isGainer ? 'text-emerald-400 bg-emerald-500/10' : 'text-red-400 bg-red-500/10'
+                      }`}>
+                        {isGainer ? '+' : ''}{pct.toFixed(1)}%
+                      </span>
+                    )}
+                  </button>
+                );
+              })
+            )}
+          </div>
         </div>
       </div>
 
       {/* Progress logs */}
-      {analyzing && analysisProgress.length > 0 && (
-        <div className="card space-y-4 animate-pulse-slow">
-          <h2 className="text-sm font-bold text-slate-200  tracking-wider">Research Pipeline Status</h2>
-          <div className="divide-y divide-slate-850">
-            {analysisProgress.map((step, i) => (
-              <div key={i} className="flex items-start gap-3.5 py-3 first:pt-0 last:pb-0">
-                <div className="mt-0.5">{statusIcon(step.status)}</div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className={`text-sm font-semibold ${step.status === 'running' ? 'text-brand-500 font-bold' : step.status === 'done' ? 'text-slate-200' : step.status === 'error' ? 'text-rose-500' : 'text-slate-500'}`}>
-                      {step.step}
+      {analyzing && analysisProgress.length > 0 && (() => {
+        const isSlowRun = analysisProgress.some(s => s.message?.includes('Deep analysis'));
+        const hasAnyRunning = analysisProgress.some(s => s.status === 'running');
+
+        return (
+          <div className="space-y-3">
+            {/* Slow-run banner — shown once backend marks steps as "deep analysis in progress" */}
+            {isSlowRun && (
+              <div className="flex items-start gap-3 p-4 rounded-xl border border-amber-500/30 bg-amber-500/8 animate-fade-in">
+                <span className="text-xl shrink-0">⏳</span>
+                <div className="space-y-1">
+                  <p className="text-sm font-bold text-amber-400">Report is still generating</p>
+                  <p className="text-xs text-amber-300/70 leading-relaxed font-sans">
+                    Deep AI analysis can take up to <strong>2–3 minutes</strong> for complex stocks.
+                    We're pulling real-time data, running technical indicators, and synthesising a full research deck.
+                    <br />
+                    <span className="text-amber-400/60 mt-1 block">
+                      You can leave this tab open — the report will appear automatically when ready.
                     </span>
-                    <span className={`text-[10px]  font-bold px-2 py-0.5 rounded-lg border ${
-                      step.status === 'done' ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20' :
-                      step.status === 'error' ? 'bg-rose-500/10 text-rose-500 border-rose-500/20' :
-                      step.status === 'running' ? 'bg-brand-500/10 text-brand-500 border-brand-500/20' :
-                      step.status === 'skipped' ? 'bg-slate-850 text-slate-500 border-slate-800' :
-                      'bg-slate-900 text-slate-600 border-slate-850'
-                    }`}>
-                      {step.status}
-                    </span>
-                  </div>
-                  {step.message && (
-                    <div className="text-xs text-slate-500 mt-1 leading-normal font-sans">{step.message}</div>
-                  )}
+                  </p>
                 </div>
               </div>
-            ))}
+            )}
+
+            <div className="card space-y-4">
+              <div className="flex items-center justify-between">
+                <h2 className="text-sm font-bold text-slate-200 tracking-wider">Research Pipeline</h2>
+                {hasAnyRunning && (
+                  <span className="flex items-center gap-1.5 text-[10px] text-brand-400 font-mono font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse" />
+                    LIVE
+                  </span>
+                )}
+              </div>
+              <div className="divide-y divide-slate-850">
+                {analysisProgress.map((step, i) => (
+                  <div key={i} className="flex items-start gap-3.5 py-3 first:pt-0 last:pb-0">
+                    <div className="mt-0.5">{statusIcon(step.status)}</div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-4">
+                        <span className={`text-sm font-semibold ${
+                          step.status === 'running' ? 'text-brand-500 font-bold' :
+                          step.status === 'done'    ? 'text-slate-200' :
+                          step.status === 'error'   ? 'text-rose-500'  : 'text-slate-500'
+                        }`}>
+                          {step.step}
+                        </span>
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-lg border ${
+                          step.status === 'done'    ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20' :
+                          step.status === 'error'   ? 'bg-rose-500/10 text-rose-500 border-rose-500/20' :
+                          step.status === 'running' ? 'bg-brand-500/10 text-brand-500 border-brand-500/20' :
+                          step.status === 'skipped' ? 'bg-slate-850 text-slate-500 border-slate-800' :
+                          'bg-slate-900 text-slate-600 border-slate-850'
+                        }`}>
+                          {step.status}
+                        </span>
+                      </div>
+                      {step.message && (
+                        <div className="text-xs text-slate-500 mt-1 leading-normal font-sans">{step.message}</div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Results Preview Panel */}
       {report && !analyzing && !hasInsufficientData && (
@@ -378,19 +514,219 @@ const AnalyzePage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="space-y-2 border-t border-slate-850/60 pt-4">
-                <ScoreBar label="Technical Score" value={report.technicalScore} />
-                <ScoreBar label="Fundamental Score" value={report.fundamentalScore} />
-                <ScoreBar label="News Catalyst Score" value={report.newsCatalystScore} />
-                <ScoreBar label="Institutional Flow Proxy" value={report.institutionalFlowProxyScore} color="bg-brand-500" />
-              </div>
+            <div className="space-y-2 border-t border-slate-850/60 pt-4">
 
-              <button
-                onClick={() => navigate(`/stocks/${report.symbol || currentAnalysis.symbol}`, { state: { from: 'analyze' } })}
-                className="btn btn-primary w-full py-2.5 font-bold"
-              >
-                Open Research Deck
-              </button>
+              {/* ── CAN I BUY? / CAN I SELL? ── */}
+              {(() => {
+                const fd = report?.finalDecision;
+                const rating = (fd?.finalRating || report?.finalRating || '').toUpperCase();
+                const entryPlan = report?.entryExitPlan;
+
+                // ── BUY answer ──
+                const isBuy       = rating === 'BUY';
+                const isWait      = rating === 'WAIT' || rating === 'WATCHLIST' || rating === 'HOLD';
+                const isAvoid     = rating === 'SELL' || rating === 'TRIM' || rating === 'AVOID';
+
+                const buyAnswer   = isBuy  ? 'YES'  : isAvoid ? 'NO'  : 'WAIT';
+                const buyColor    = isBuy
+                  ? 'border-emerald-500/30 bg-emerald-500/8'
+                  : isAvoid
+                    ? 'border-red-500/30 bg-red-500/8'
+                    : 'border-amber-500/30 bg-amber-500/8';
+                const buyBadge    = isBuy
+                  ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                  : isAvoid
+                    ? 'bg-red-500/15 text-red-400 border-red-500/30'
+                    : 'bg-amber-500/15 text-amber-400 border-amber-500/30';
+                const buyIcon     = isBuy  ? '✅' : isAvoid ? '🚫' : '⏳';
+
+                const buyZone     = entryPlan?.buyNowZone;
+                const pullback    = entryPlan?.pullbackEntryZone;
+                const buyReason   = isBuy
+                  ? (fd?.buyNowReason || fd?.bestActionNow || 'Setup is clear — entry conditions met.')
+                  : isAvoid
+                    ? (fd?.decisionSummary || 'Rating is SELL/AVOID — not a buy candidate now.')
+                    : (fd?.buyNowReason || pullback?.description || fd?.decisionSummary || 'Wait for a better entry or confirmation before buying.');
+
+                const entryHint   = isBuy && buyZone?.valid
+                  ? `Entry zone: $${buyZone.low?.toFixed(2)} – $${buyZone.high?.toFixed(2)}`
+                  : !isBuy && pullback?.low
+                    ? `Potential entry on pullback: $${pullback.low?.toFixed(2)} – $${pullback.high?.toFixed(2)}`
+                    : null;
+
+                // ── SELL answer ──
+                const isSell      = rating === 'SELL' || rating === 'TRIM';
+                const sellAnswer  = isSell ? 'YES'  : isBuy ? 'NO — HOLD' : 'WATCH';
+                const sellColor   = isSell
+                  ? 'border-red-500/30 bg-red-500/8'
+                  : isBuy
+                    ? 'border-emerald-500/30 bg-emerald-500/8'
+                    : 'border-slate-700/40 bg-slate-850/30';
+                const sellBadge   = isSell
+                  ? 'bg-red-500/15 text-red-400 border-red-500/30'
+                  : isBuy
+                    ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                    : 'bg-slate-800 text-slate-400 border-slate-700';
+                const sellIcon    = isSell ? '🔴' : isBuy ? '🟢' : '🔵';
+
+                const stopLoss    = entryPlan?.stopLoss;
+                const targets     = entryPlan?.targets || [];
+                const t1          = targets.find((t: any) => t.label === 'T1');
+                const sellReason  = isSell
+                  ? (fd?.decisionSummary || 'Trend deteriorating — consider reducing or exiting.')
+                  : isBuy
+                    ? (stopLoss?.description || `Hold above stop-loss${stopLoss?.price ? ` ($${stopLoss.price.toFixed(2)})` : ''}. Target: ${t1?.price ? `$${t1.price.toFixed(2)}` : 'see plan'}.`)
+                    : 'No active position signal — monitor the setup.';
+
+                const stopHint    = stopLoss?.price
+                  ? `Stop-loss: $${stopLoss.price.toFixed(2)}${stopLoss.stopType ? ` (${stopLoss.stopType.replace(/_/g,' ')})` : ''}`
+                  : null;
+
+                return (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                    {/* CAN I BUY? */}
+                    <div className={`rounded-2xl border p-4 flex flex-col gap-3 ${buyColor}`}>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-extrabold text-slate-400 tracking-widest">CAN I BUY?</span>
+                        <span className={`text-xs font-black px-2.5 py-1 rounded-lg border tracking-wider ${buyBadge}`}>
+                          {buyIcon} {buyAnswer}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                        {buyReason}
+                      </p>
+                      {entryHint && (
+                        <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-900/60 border border-slate-800 px-2.5 py-1 rounded-lg self-start">
+                          {entryHint}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* CAN I SELL? */}
+                    <div className={`rounded-2xl border p-4 flex flex-col gap-3 ${sellColor}`}>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-extrabold text-slate-400 tracking-widest">CAN I SELL?</span>
+                        <span className={`text-xs font-black px-2.5 py-1 rounded-lg border tracking-wider ${sellBadge}`}>
+                          {sellIcon} {sellAnswer}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                        {sellReason}
+                      </p>
+                      {stopHint && (
+                        <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-900/60 border border-slate-800 px-2.5 py-1 rounded-lg self-start">
+                          {stopHint}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()}
+
+              {/* ── Colour Guide ── */}
+              <details className="group rounded-xl border border-slate-800 bg-slate-950/40 text-xs overflow-hidden">
+                <summary className="flex items-center justify-between px-3.5 py-2.5 cursor-pointer list-none select-none text-slate-400 hover:text-slate-200 transition-colors">
+                  <span className="flex items-center gap-1.5 font-bold tracking-wide">
+                    <span>🎨</span> How to read the colours
+                  </span>
+                  <span className="text-slate-600 group-open:rotate-180 transition-transform duration-200 text-base">▾</span>
+                </summary>
+
+                <div className="px-3.5 pb-4 pt-1 space-y-4 border-t border-slate-850/60">
+
+                  {/* CAN I BUY? row */}
+                  <div>
+                    <p className="font-extrabold text-slate-400 tracking-widest mb-2">CAN I BUY?</p>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-3">
+                        <span className="shrink-0 w-3 h-3 mt-0.5 rounded-full bg-emerald-500 ring-2 ring-emerald-500/30" />
+                        <div>
+                          <span className="font-bold text-emerald-400">Green — ✅ YES</span>
+                          <p className="text-slate-500 leading-relaxed font-sans mt-0.5">
+                            The AI says conditions are met — trend is bullish, risk/reward is acceptable, and an entry zone is defined. You <em>may</em> consider buying now or on a small dip into the entry zone shown.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="shrink-0 w-3 h-3 mt-0.5 rounded-full bg-amber-500 ring-2 ring-amber-500/30" />
+                        <div>
+                          <span className="font-bold text-amber-400">Amber — ⏳ WAIT</span>
+                          <p className="text-slate-500 leading-relaxed font-sans mt-0.5">
+                            Setup is forming but not confirmed — stock may be near resistance, extended, or data is incomplete. <em>Hold off</em> until price pulls back to the suggested zone or breaks out with volume.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="shrink-0 w-3 h-3 mt-0.5 rounded-full bg-red-500 ring-2 ring-red-500/30" />
+                        <div>
+                          <span className="font-bold text-red-400">Red — 🚫 NO</span>
+                          <p className="text-slate-500 leading-relaxed font-sans mt-0.5">
+                            AI rating is SELL / AVOID. Technicals are bearish or risk is too high. <em>Do not buy</em> — wait for the trend to reverse before reconsidering.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="h-px bg-slate-850" />
+
+                  {/* CAN I SELL? row */}
+                  <div>
+                    <p className="font-extrabold text-slate-400 tracking-widest mb-2">CAN I SELL?</p>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-3">
+                        <span className="shrink-0 w-3 h-3 mt-0.5 rounded-full bg-red-500 ring-2 ring-red-500/30" />
+                        <div>
+                          <span className="font-bold text-red-400">Red — 🔴 YES</span>
+                          <p className="text-slate-500 leading-relaxed font-sans mt-0.5">
+                            AI rating is SELL / TRIM. The stock is at or past a key resistance, trend is breaking down, or stop-loss has been hit. <em>Consider reducing or fully exiting</em> your position.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="shrink-0 w-3 h-3 mt-0.5 rounded-full bg-emerald-500 ring-2 ring-emerald-500/30" />
+                        <div>
+                          <span className="font-bold text-emerald-400">Green — 🟢 NO — HOLD</span>
+                          <p className="text-slate-500 leading-relaxed font-sans mt-0.5">
+                            AI says BUY — if you already own it, stay in. The trend is intact. <em>Hold the position</em> above the stop-loss and target the levels shown in the Research Deck.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="shrink-0 w-3 h-3 mt-0.5 rounded-full bg-slate-500 ring-2 ring-slate-500/30" />
+                        <div>
+                          <span className="font-bold text-slate-300">Grey — 🔵 WATCH</span>
+                          <p className="text-slate-500 leading-relaxed font-sans mt-0.5">
+                            No strong signal either way. If you own it, <em>hold but watch the stop-loss</em>. If you don't own it, no urgent sell signal — wait for the next confirmed rating.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="h-px bg-slate-850" />
+
+                  <p className="text-slate-600 font-sans leading-relaxed italic">
+                    ⚠️ These signals are AI-generated for educational purposes only. Always apply your own judgement and risk management before executing any trade.
+                  </p>
+
+                </div>
+              </details>
+
+              <ScoreBar label="Technical Score" value={report.technicalScore} />
+
+              <ScoreBar label="Fundamental Score" value={report.fundamentalScore} />
+              <ScoreBar label="News Catalyst Score" value={report.newsCatalystScore} />
+              <ScoreBar label="Institutional Flow Proxy" value={report.institutionalFlowProxyScore} color="bg-brand-500" />
+            </div>
+
+            <button
+              onClick={() => navigate(`/stocks/${report.symbol || currentAnalysis.symbol}`, { state: { from: 'analyze' } })}
+              className="btn btn-primary w-full py-2.5 font-bold"
+            >
+              Open Research Deck
+            </button>
+
             </div>
           )}
 

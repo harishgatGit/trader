@@ -1,0 +1,231 @@
+{
+  "ticker": "AMD",
+  "reportDate": "Unavailable",
+  "videoTitle": "AMD Stock Report",
+  "durationSeconds": 174.04000000000002,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for AMD. Currently priced at $536.59, AMD is in a strong upward trend, but with its stock price reaching near resistance levels, the big question is whether this is the right time to invest.\n\nAs we look at the current price action, AMD is reflecting a bullish sentiment, although it's important to note that the stock is currently extended. The intraday trend shows stability, and while the daily percentage moves have been positive, caution is warranted given the high price level.\n\nThe primary driver of this upward trend is positive sentiment surrounding AMD's recent performance. Analysts have pointed to this sentiment as a key factor, suggesting that while the stock is performing well, there are risks associated with entering at this elevated price point.\n\nSupporting this bullish trend is stable trading volume, which confirms the current price levels. This volume indicates that there is sufficient interest and participation in AMD\u2019s stock, providing a solid foundation for its upward movement.\n\nIn terms of daily trend analysis, AMD is navigating through a phase of consolidation around its current levels. The stock is testing significant resistance, and the price action suggests that it may need to pull back or break through this resistance for further gains.\n\nFrom a technical perspective, indicators such as the RSI and moving averages provide important insights. The RSI is positioned at 61.18, indicating that the stock is not yet overbought, while the recent golden cross, where the EMA(50) crossed above the EMA(200), reinforces the bullish outlook.\n\nFor tactical traders, the current setup suggests a wait-and-see approach. The swing entry zone lies between $437.71 and $486.96, with a recommended stop loss set just below support at $486.96, while targets are set at $558.22 and $580.00.\n\nRegarding short selling, caution is advised. Although specific short interest data is unavailable, the risk of a short squeeze is considered low, which suggests that the stock may not be an ideal candidate for shorting at this time.\n\nIn the broader ecosystem, AMD operates within a robust semiconductor sector. Market trends and the performance of peers can impact AMD\u2019s stock, but currently, the overall sentiment appears supportive of its growth trajectory.\n\nIn conclusion, AMD is rated as a strong investment, but the current price raises concerns about risk and reward. Investors should watch key levels closely and consider waiting for a pullback or a breakout confirmation before making any entry decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 15.88,
+      "narration": "Welcome to the Investing Atti stock analysis for AMD. Currently priced at $536.59, AMD is in a strong upward trend, but with its stock price reaching near resistance levels, the big question is whether this is the right time to invest.",
+      "pandaAction": "default",
+      "speechBubbleText": "Is now the right time to invest?",
+      "visualElements": [
+        "AMD logo",
+        "current price display"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in on price"
+      ],
+      "dataFields": {
+        "catchyLine": "AMD: Strong Trend, High Price - Time to Invest?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 19.6,
+      "narration": "As we look at the current price action, AMD is reflecting a bullish sentiment, although it's important to note that the stock is currently extended. The intraday trend shows stability, and while the daily percentage moves have been positive, caution is warranted given the high price level.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Bullish sentiment but caution advised!",
+      "visualElements": [
+        "price action chart",
+        "bullish sentiment indicator"
+      ],
+      "chartElements": [
+        "intraday trend chart"
+      ],
+      "animationInstructions": [
+        "highlight bullish trend",
+        "flash caution sign"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 18.86,
+      "narration": "The primary driver of this upward trend is positive sentiment surrounding AMD's recent performance. Analysts have pointed to this sentiment as a key factor, suggesting that while the stock is performing well, there are risks associated with entering at this elevated price point.",
+      "pandaAction": "point",
+      "speechBubbleText": "Positive sentiment driving the trend!",
+      "visualElements": [
+        "analyst quotes",
+        "positive news headlines"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "scroll through analyst quotes",
+        "fade in news headlines"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 16.22,
+      "narration": "Supporting this bullish trend is stable trading volume, which confirms the current price levels. This volume indicates that there is sufficient interest and participation in AMD\u2019s stock, providing a solid foundation for its upward movement.",
+      "pandaAction": "default",
+      "speechBubbleText": "Stable trading volume supports the trend!",
+      "visualElements": [
+        "volume chart",
+        "trading activity graphics"
+      ],
+      "chartElements": [
+        "trading volume chart"
+      ],
+      "animationInstructions": [
+        "animate volume spikes",
+        "highlight stable areas"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 18.11,
+      "narration": "In terms of daily trend analysis, AMD is navigating through a phase of consolidation around its current levels. The stock is testing significant resistance, and the price action suggests that it may need to pull back or break through this resistance for further gains.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Testing significant resistance!",
+      "visualElements": [
+        "consolidation phase chart",
+        "resistance level markers"
+      ],
+      "chartElements": [
+        "daily trend chart"
+      ],
+      "animationInstructions": [
+        "zoom in on resistance levels",
+        "animate price testing"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 19.87,
+      "narration": "From a technical perspective, indicators such as the RSI and moving averages provide important insights. The RSI is positioned at 61.18, indicating that the stock is not yet overbought, while the recent golden cross, where the EMA(50) crossed above the EMA(200), reinforces the bullish outlook.",
+      "pandaAction": "default",
+      "speechBubbleText": "Technical indicators show bullish signs!",
+      "visualElements": [
+        "RSI chart",
+        "moving averages chart"
+      ],
+      "chartElements": [
+        "RSI chart",
+        "EMA crossover chart"
+      ],
+      "animationInstructions": [
+        "highlight RSI value",
+        "animate golden cross"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 16.08,
+      "narration": "For tactical traders, the current setup suggests a wait-and-see approach. The swing entry zone lies between $437.71 and $486.96, with a recommended stop loss set just below support at $486.96, while targets are set at $558.22 and $580.00.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Swing entry zone: $437.71 - $486.96",
+      "visualElements": [
+        "entry zone graphic",
+        "stop loss indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "draw entry zone",
+        "highlight stop loss and targets"
+      ],
+      "dataFields": {
+        "Entry Zone": "Low: 437.71, High: 486.96",
+        "Stop Loss": "486.96",
+        "Targets": "[558.22, 580.00]"
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 15.68,
+      "narration": "Regarding short selling, caution is advised. Although specific short interest data is unavailable, the risk of a short squeeze is considered low, which suggests that the stock may not be an ideal candidate for shorting at this time.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution advised for short selling!",
+      "visualElements": [
+        "short selling graphic",
+        "risk indicators"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "animate caution sign",
+        "fade in risk indicators"
+      ],
+      "dataFields": {
+        "Squeeze Risk": "LOW"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 15.21,
+      "narration": "In the broader ecosystem, AMD operates within a robust semiconductor sector. Market trends and the performance of peers can impact AMD\u2019s stock, but currently, the overall sentiment appears supportive of its growth trajectory.",
+      "pandaAction": "default",
+      "speechBubbleText": "Strong semiconductor sector supports AMD!",
+      "visualElements": [
+        "semiconductor sector overview",
+        "peer performance indicators"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "show sector performance",
+        "highlight AMD's position"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 18.53,
+      "narration": "In conclusion, AMD is rated as a strong investment, but the current price raises concerns about risk and reward. Investors should watch key levels closely and consider waiting for a pullback or a breakout confirmation before making any entry decisions.",
+      "pandaAction": "celebrate",
+      "speechBubbleText": "Strong investment, but watch key levels!",
+      "visualElements": [
+        "investment rating graphic",
+        "risk-reward balance chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "animate investment rating",
+        "fade in risk-reward balance"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing.",
+        "disclaimer": "This content is for informational purposes only and should not be considered financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

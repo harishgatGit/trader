@@ -1,0 +1,216 @@
+{
+  "ticker": "COGNIZANT",
+  "reportDate": "Unavailable",
+  "videoTitle": "COGNIZANT Stock Report",
+  "durationSeconds": 152.87,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for COGNIZANT. With the current lack of data surrounding this stock, is now the time to be cautious, or are we simply awaiting more clarity in the market?\n\nAt this moment, the current price for Cognizant is unavailable, which significantly limits our ability to assess its intraday trend or daily percentage movement. This absence of price data creates a fog around any potential trading strategies, leaving traders in a state of uncertainty.\n\nThe trend for Cognizant remains inconclusive due to the lack of available historical price data. Without clear price movements or defined drivers, we can't establish a reliable trend direction or understand any underlying reasons for its performance.\n\nEvidence supporting any trend is also scant, as we do not have access to institutional flow data or key volume insights. This lack of confirmation makes it difficult to draw meaningful conclusions about the stock's activity or possible future movements.\n\nWhen examining the daily trend chart, we find no clear support or resistance levels to analyze. The absence of price data means we cannot identify if the stock is in a consolidation phase or experiencing a breakout, further complicating our analysis.\n\nTechnical metrics such as the Relative Strength Index, MACD, or moving averages are also unavailable. Therefore, we have no indicators to gauge market momentum or potential reversal points, which are typically crucial for traders.\n\nFor tactical traders, there are currently no defined entry zones, stop-loss levels, or target prices due to insufficient data. This situation leaves traders without a clear path for potential trades, urging caution in decision-making.\n\nFrom a short trade perspective, we must be cautious as well, given the lack of short interest data and potential squeeze risks. Without knowing key breakdown levels, trading against the stock could pose additional risks.\n\nExamining the broader ecosystem, the absence of data on sector performance or peer comparisons further weakens our setup. This lack of contextual insight makes it essential to remain vigilant as we await more information from the market.\n\nIn conclusion, the final verdict for Cognizant is to place it on your watchlist until more comprehensive data becomes available. The main risk lies in making untimely trading decisions based on incomplete information, so exercise caution and monitor for updates closely.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 12.4,
+      "narration": "Welcome to the Investing Atti stock analysis for COGNIZANT. With the current lack of data surrounding this stock, is now the time to be cautious, or are we simply awaiting more clarity in the market?",
+      "pandaAction": "default",
+      "speechBubbleText": "Is it time to be cautious?",
+      "visualElements": [
+        "Cognizant logo",
+        "Stock overview graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fadeIn",
+        "slideUp"
+      ],
+      "dataFields": {
+        "catchyLine": "COGNIZANT: Caution or Clarity?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 17.82,
+      "narration": "At this moment, the current price for Cognizant is unavailable, which significantly limits our ability to assess its intraday trend or daily percentage movement. This absence of price data creates a fog around any potential trading strategies, leaving traders in a state of uncertainty.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Price data unavailable!",
+      "visualElements": [
+        "Price data graphic",
+        "Trader looking confused"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fadeOut"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 15.58,
+      "narration": "The trend for Cognizant remains inconclusive due to the lack of available historical price data. Without clear price movements or defined drivers, we can't establish a reliable trend direction or understand any underlying reasons for its performance.",
+      "pandaAction": "point",
+      "speechBubbleText": "Inconclusive trend!",
+      "visualElements": [
+        "Trend line graphic",
+        "Question marks"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "zoomIn",
+        "fadeIn"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 15.77,
+      "narration": "Evidence supporting any trend is also scant, as we do not have access to institutional flow data or key volume insights. This lack of confirmation makes it difficult to draw meaningful conclusions about the stock's activity or possible future movements.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Lack of evidence!",
+      "visualElements": [
+        "Evidence graphic",
+        "Empty data charts"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fadeIn",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 15.58,
+      "narration": "When examining the daily trend chart, we find no clear support or resistance levels to analyze. The absence of price data means we cannot identify if the stock is in a consolidation phase or experiencing a breakout, further complicating our analysis.",
+      "pandaAction": "default",
+      "speechBubbleText": "No support or resistance!",
+      "visualElements": [
+        "Daily trend chart",
+        "Consolidation graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fadeIn",
+        "slideUp"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 14.33,
+      "narration": "Technical metrics such as the Relative Strength Index, MACD, or moving averages are also unavailable. Therefore, we have no indicators to gauge market momentum or potential reversal points, which are typically crucial for traders.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Technical metrics missing!",
+      "visualElements": [
+        "Technical indicators graphic",
+        "Warning signs"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fadeIn",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 14.58,
+      "narration": "For tactical traders, there are currently no defined entry zones, stop-loss levels, or target prices due to insufficient data. This situation leaves traders without a clear path for potential trades, urging caution in decision-making.",
+      "pandaAction": "point",
+      "speechBubbleText": "No clear path!",
+      "visualElements": [
+        "Tactical setup graphic",
+        "Trader looking uncertain"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fadeIn",
+        "slideUp"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 13.71,
+      "narration": "From a short trade perspective, we must be cautious as well, given the lack of short interest data and potential squeeze risks. Without knowing key breakdown levels, trading against the stock could pose additional risks.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution on short trades!",
+      "visualElements": [
+        "Short trade graphic",
+        "Risk warning"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fadeIn",
+        "shake"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 14.77,
+      "narration": "Examining the broader ecosystem, the absence of data on sector performance or peer comparisons further weakens our setup. This lack of contextual insight makes it essential to remain vigilant as we await more information from the market.",
+      "pandaAction": "default",
+      "speechBubbleText": "Weak ecosystem insight!",
+      "visualElements": [
+        "Ecosystem graphic",
+        "Sector performance chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fadeIn",
+        "slideUp"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 18.33,
+      "narration": "In conclusion, the final verdict for Cognizant is to place it on your watchlist until more comprehensive data becomes available. The main risk lies in making untimely trading decisions based on incomplete information, so exercise caution and monitor for updates closely.",
+      "pandaAction": "default",
+      "speechBubbleText": "Watchlist it!",
+      "visualElements": [
+        "Watchlist graphic",
+        "Caution signs"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fadeIn",
+        "slideUp"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing.",
+        "disclaimer": "This analysis is based on incomplete data and should not be considered as financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Search, Compass, BookOpen, HelpCircle, X } from 'lucide-react';
 import { PageContainer, PageHeader, ResponsiveGrid } from '../components/ui';
+import { useSEO } from '../utils/useSEO';
+import { StructuredData } from '../components/StructuredData';
 
 interface GlossaryItem {
   term: string;
@@ -223,6 +225,31 @@ const glossaryData: GlossaryItem[] = [
 ];
 
 const Glossary: React.FC = () => {
+  useSEO({
+    title: 'Stock Market Glossary & Jargon Buster | Investing Atti',
+    description: 'Learn stock market terminology and jargon, from technical indicators like RSI and EMA to Wyckoff cycle stages, with simple analogies.',
+    robots: 'index, follow',
+  });
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://investingatti.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Glossary",
+        "item": "https://investingatti.com/glossary"
+      }
+    ]
+  };
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<'All' | 'Stages' | 'Biases' | 'Setups' | 'Indicators' | 'Volume'>('All');
 
@@ -247,6 +274,7 @@ const Glossary: React.FC = () => {
 
   return (
     <PageContainer>
+      <StructuredData data={breadcrumbSchema} />
       {/* Header */}
       <PageHeader
         title="Analyst Cheat Sheet"
@@ -264,6 +292,7 @@ const Glossary: React.FC = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="input pl-10 pr-8"
+            aria-label="Search glossary terms"
           />
           {searchTerm && (
             <button

@@ -1,0 +1,1040 @@
+{
+  "symbol": "ACN",
+  "analysisDateTime": "2026-06-18T23:38:14.560Z",
+  "currentPrice": 128.29,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data fields are available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 40,
+    "decisionSummary": "The stock is currently in a strong downtrend with bearish technical indicators and negative news sentiment. It is oversold, but lacks a clear reversal signal. Monitoring for potential stabilization or reversal is advised.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is in a bearish trend with high risk and no clear reversal signal.",
+    "bestActionNow": "Add to watchlist and wait for signs of stabilization or reversal."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": true,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": false,
+    "earningsRisk": false,
+    "newsRiskAcceptable": false,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently in a downward spiral, showing significant weakness and high selling pressure. It's not the right time to buy, but keep an eye on it for any signs of recovery. The stock has been declining sharply, hitting a new 52-week low. Recent news and earnings reports have been negative, contributing to the decline. The overall market sentiment is bearish, and the stock is oversold, indicating potential for a bounce, but caution is advised. In the near term, expect continued volatility and potential further declines unless a reversal pattern emerges. Long-term, the stock may recover if fundamentals improve and market conditions stabilize.",
+  "technicalAnalysis": {
+    "overallBias": "BEARISH",
+    "trendStage": "MARKDOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 20,
+    "keySignals": [
+      "RSI oversold (<30)",
+      "MACD bearish",
+      "Price below EMA20 < EMA50",
+      "Death cross (EMA50 < EMA200)"
+    ],
+    "supportLevels": [
+      125.62,
+      155.88,
+      163.62
+    ],
+    "resistanceLevels": [
+      181.16,
+      183.11,
+      184.66
+    ],
+    "vwapAnalysis": "Price is significantly below VWAP, indicating strong selling pressure.",
+    "movingAverageAnalysis": "All moving averages are aligned bearishly.",
+    "rsiAnalysis": "RSI is oversold, but no reversal signal is present.",
+    "macdAnalysis": "MACD is bearish, confirming downtrend.",
+    "volumeAnalysis": "High relative volume indicates strong market activity.",
+    "volumeTrendStatus": "UNUSUAL_SPIKE",
+    "atrVolatilityAnalysis": "ATR indicates high volatility, increasing risk.",
+    "adxTrendStrengthAnalysis": "ADX shows a strong downtrend.",
+    "bollingerBandAnalysis": "Price is near the lower Bollinger Band, indicating oversold conditions."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "NO_TRADE",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current conditions do not support a buy."
+    },
+    "pullbackEntryZone": {
+      "low": null,
+      "high": null,
+      "description": "Wait for stabilization and reversal signals."
+    },
+    "breakoutEntryLevel": {
+      "price": null,
+      "confirmationRule": "No breakout confirmation due to bearish trend."
+    },
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone identified in current downtrend."
+    },
+    "invalidationLevel": {
+      "price": 155.88,
+      "reason": "Price breaking below this level could indicate further downside."
+    },
+    "stopLoss": {
+      "price": 155.88,
+      "stopType": "SUPPORT_BREAK",
+      "description": "Stop loss set below recent support to manage risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": null,
+        "reason": "No targets due to bearish outlook."
+      },
+      {
+        "label": "T2",
+        "price": null,
+        "reason": "No targets due to bearish outlook."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No targets due to bearish outlook."
+      }
+    ],
+    "exitRules": [
+      "Monitor for potential reversal signals before considering entry."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": null,
+    "riskPerShare": null,
+    "rewardToTarget1": null,
+    "rewardToTarget2": null,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": null,
+    "riskRewardToTarget2": null,
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Current conditions do not support a favorable risk/reward setup."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to bearish conditions."
+    },
+    "stopLoss": {
+      "price": 155.88,
+      "description": "Stop loss set below support to manage downside risk."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Monitor for reversal signals before considering entry."
+    ],
+    "tradeQuality": "D"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to bearish conditions."
+    },
+    "stopLoss": {
+      "price": 155.88,
+      "description": "Stop loss set below support to manage downside risk."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone identified."
+    },
+    "riskReward": null,
+    "swingVerdict": "AVOID"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BEARISH",
+    "swingSetup": {
+      "setup": "NO_SETUP",
+      "analysis": "The stock is in a strong downtrend with no clear reversal setup."
+    },
+    "entryTiming": {
+      "trigger": "NO_TRIGGER",
+      "analysis": "No entry timing due to bearish conditions."
+    },
+    "supportLevels": [
+      {
+        "price": 125.62,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 181.16,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 155.88,
+    "riskMetrics": {
+      "atr": 8.931376575186125,
+      "atrAnalysis": "High ATR indicates increased volatility.",
+      "vwap": 129.173611,
+      "vwapAnalysis": "Price is below VWAP, indicating selling pressure.",
+      "volumeAnalysis": "High volume suggests strong market activity.",
+      "supportResistanceAnalysis": "Price is near support but in a downtrend."
+    },
+    "catalysts": {
+      "news": "Negative sentiment due to weak earnings outlook.",
+      "earnings": "Not provided by backend.",
+      "secFilings": "Not provided by backend."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "Data unavailable"
+    },
+    "horizonDetails": "The stock is in a strong downtrend with bearish technical indicators. High volume suggests significant market interest, but no reversal signals are present.",
+    "dailyTrend": {
+      "trend": "BEARISH",
+      "barCount": 252,
+      "analysis": "Accenture's stock has been under significant pressure, closing at $128.29, down 17.83% for the day. This sharp decline is accompanied by a high relative trading volume, more than 7 times the average, suggesting strong selling pressure. Technically, the stock is in a bearish phase, with the price well below key moving averages such as EMA(20), EMA(50), and EMA(200), indicating a strong downtrend. The RSI(14) is deeply oversold at 21.08, reflecting extreme bearish momentum. The MACD is also bearish, reinforcing the negative sentiment. The news of a weak outlook and concerns over Fed policy have further contributed to the negative sentiment, as reflected in the negative news sentiment. Institutional flow indicates distribution, with price falling alongside rising volume, confirming the bearish trend.",
+      "laymanExplanation": "Imagine a car that's been going downhill fast. Accenture's stock is like that car, with its price dropping sharply and lots of people selling. This is because the company shared a gloomy future outlook, and many investors are worried about it. The stock is now much cheaper than it was, and it's in a rough spot with no clear signs of stopping yet. It's like the brakes aren't working well, and the road is still sloping downwards.",
+      "ticker": "ACN",
+      "companyName": "Accenture plc",
+      "confidenceScore": 95,
+      "trendSummary": "Accenture's stock is experiencing a strong bearish trend, with significant price declines and high trading volume indicating distribution.",
+      "keyDrivers": [
+        {
+          "driver": "Earnings Report",
+          "impact": "Negative",
+          "evidence": "Accenture's Q3 results were followed by a negative outlook, contributing to the stock's decline."
+        },
+        {
+          "driver": "Technical Indicators",
+          "impact": "Negative",
+          "evidence": "Price is below EMA(20), EMA(50), and EMA(200), with RSI(14) oversold and MACD bearish."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Negative",
+          "evidence": "High relative volume and distribution signals indicate strong selling pressure."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Negative",
+          "evidence": "Negative news articles highlight weak outlook and market concerns."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The stock price has dropped significantly, closing at $128.29, well below its recent highs.",
+        "movingAverageView": "Price is below EMA(20) at $168.50, EMA(50) at $179.21, and EMA(200) at $220.92, indicating a strong downtrend.",
+        "momentumView": "RSI(14) is at 21.08, indicating oversold conditions, while MACD is bearish.",
+        "volumeView": "Volume is extremely high at 7 times the average, suggesting strong selling pressure.",
+        "supportResistanceView": "The stock has broken below key support levels, with no immediate support in sight.",
+        "volatilityView": "ATR(14) is at 8.93, indicating high volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "Negative earnings outlook has significantly impacted the stock price.",
+        "newsImpact": "Negative news sentiment, particularly regarding the weak outlook, has driven the stock lower.",
+        "institutionalFlowImpact": "Institutional distribution is evident, with high volume and bearish OBV trend.",
+        "sectorMacroImpact": "Sector-wide pressures and macroeconomic concerns, such as Fed policy, have added to the bearish sentiment."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Continued negative sentiment from earnings outlook",
+          "Further institutional selling pressure",
+          "Broader market volatility affecting technology stocks"
+        ],
+        "whatNeedsConfirmation": "Confirmation of any reversal signals or stabilization in price and volume trends."
+      },
+      "watchStatus": "High risk",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BEARISH",
+    "investmentQuality": "WEAK",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient_data"
+    },
+    "bullCase": "Improvement in fundamentals and market conditions.",
+    "baseCase": "Continued bearish trend unless reversal signals emerge.",
+    "bearCase": "Further declines if negative sentiment persists.",
+    "longTermVerdict": "AVOID"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 40,
+    "rating": "WEAK",
+    "revenueTrend": "Stable revenue but weak outlook.",
+    "epsTrend": "EPS is declining with negative outlook.",
+    "profitability": "Profitability is under pressure.",
+    "debtRisk": "Manageable debt levels.",
+    "cashFlowQuality": "Cash flow is stable but not strong.",
+    "valuationCommentary": "Valuation appears low, but risk remains high."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "UNDERVALUED",
+    "valuationScore": 60,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "The stock appears undervalued based on P/E ratio, but the bearish trend and negative sentiment pose significant risks."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 30,
+    "overallSentiment": "NEGATIVE",
+    "keyCatalysts": [
+      "Weak earnings outlook",
+      "Negative sentiment from recent news"
+    ],
+    "keyRisksFromNews": [
+      "Weak earnings outlook",
+      "Negative sentiment"
+    ],
+    "earningsRisk": "Not provided by backend.",
+    "catalystVerdict": "RISKY"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock is experiencing distribution with high relative volume and a bearish OBV trend. Price is significantly below VWAP, indicating strong selling pressure.",
+    "signals": [
+      "Very high relative volume (7.0x)",
+      "OBV trend strongly bearish",
+      "Price below VWAP (-21.6%)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 20,
+    "reason": "Current bearish trend and negative sentiment reduce multibagger potential.",
+    "requiredConditions": [
+      "Reversal in trend",
+      "Improvement in fundamentals"
+    ],
+    "majorBlockers": [
+      "Strong downtrend",
+      "Negative news sentiment"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "HIGH",
+    "technicalRisk": "Strong downtrend with bearish indicators.",
+    "fundamentalRisk": "Weak earnings outlook and profitability concerns.",
+    "valuationRisk": "Undervalued but with high risk.",
+    "newsRisk": "Negative sentiment from recent news.",
+    "liquidityRisk": "High relative volume indicates liquidity is not an issue.",
+    "eventRisk": "Potential for further declines if negative sentiment persists.",
+    "topRisks": [
+      "Strong downtrend",
+      "Negative news sentiment",
+      "Weak earnings outlook"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Reversal in trend and improvement in fundamentals.",
+      "pricePath": "Recovery towards previous highs.",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Continued bearish trend unless reversal signals emerge.",
+      "pricePath": "Further declines or stabilization at lower levels.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Further declines if negative sentiment persists.",
+      "pricePath": "Continued markdown towards lower support levels.",
+      "probability": "MEDIUM"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for potential stabilization or reversal signals.",
+    "Avoid entry until clear reversal or stabilization is observed.",
+    "Consider adding to watchlist for future opportunities."
+  ],
+  "doNotTradeConditions": [
+    "Strong downtrend with no reversal signals.",
+    "Negative sentiment from recent news."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": null,
+    "stopLossAlert": 155.88,
+    "target1Alert": null,
+    "target2Alert": null,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Avanade",
+        "ownershipPct": "50%",
+        "performance": "Strong growth trajectory with increasing demand for digital transformation services.",
+        "upcomingEvents": [
+          "Potential expansion into new markets",
+          "New service offerings"
+        ],
+        "impactPotential": "Positive impact through increased revenue and market reach for Accenture."
+      },
+      {
+        "name": "Symphony Ventures",
+        "ownershipPct": "Unknown",
+        "performance": "Growing with a focus on robotic process automation (RPA) and intelligent automation.",
+        "upcomingEvents": [
+          "Integration of new AI technologies"
+        ],
+        "impactPotential": "Positive impact as it enhances Accenture's automation capabilities and service offerings."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Microsoft",
+          "role": "Supplier",
+          "description": "Cloud services and software solutions",
+          "riskExposure": "High impact if disrupted, as many of Accenture's solutions rely on Microsoft technology."
+        },
+        {
+          "name": "SAP",
+          "role": "Supplier",
+          "description": "ERP software and solutions",
+          "riskExposure": "Moderate impact, as disruptions could affect service delivery to enterprise clients."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Cognizant",
+          "role": "Outsource Partner",
+          "description": "IT services and consulting",
+          "riskExposure": "Low to moderate impact, as Accenture has diversified outsourcing partnerships."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Google Cloud",
+          "role": "Marketing Partner",
+          "description": "Co-marketing cloud solutions",
+          "riskExposure": "Positive impact through joint marketing efforts that enhance brand visibility and service adoption."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Fortune 500 Companies",
+          "role": "Customer",
+          "description": "Consulting and IT services",
+          "riskExposure": "High impact, as these clients drive significant revenue; growth or contraction in this segment directly affects Accenture's financial performance."
+        }
+      ]
+    },
+    "strategicOutlook": "Accenture's ecosystem is robust, with a diverse portfolio of investments and partnerships that enhance its service offerings. The company faces moderate concentration risk with key technology suppliers like Microsoft and SAP. Upcoming expansions and technology integrations are crucial externalities to monitor, as they could significantly influence Accenture's market position and financial health."
+  },
+  "trendStory": {
+    "ticker": "ACN",
+    "analysis_date": "2026-06-18",
+    "price_summary": {
+      "current_price": 128.29,
+      "previous_close": 156.13,
+      "day_change_percent": -17.83,
+      "day_range": {
+        "high": 134.68,
+        "low": 125.605
+      },
+      "volume": 1625464,
+      "average_volume": 231709,
+      "relative_volume": 7.02
+    },
+    "move_classification": {
+      "primary_reason": "earnings-driven",
+      "secondary_reasons": [
+        "news-driven",
+        "analyst-driven"
+      ],
+      "confidence": "high",
+      "confidence_score": 95
+    },
+    "story_for_layman": {
+      "headline": "Accenture Stock Plummets on Weak Outlook and Earnings Reaction",
+      "simple_explanation": "Accenture's stock dropped significantly today after the company reported earnings. Despite beating earnings expectations, the outlook was weaker than expected, causing concern among investors.",
+      "why_it_moved": "The stock moved due to a combination of disappointing future guidance and a reaction to the earnings report.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The move is driven by a strong reaction to earnings and outlook, but the sustainability depends on future company performance and market conditions."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "Evercore ISI Group Maintains Outperform on Accenture, Lowers Price Target to $180",
+          "summary": "Evercore ISI Group Maintains Outperform on Accenture, Lowers Price Target to $180",
+          "source": "benzinga",
+          "published_at": "2026-06-18T18:00:02Z",
+          "impact": "positive",
+          "relevance_score": 90
+        },
+        {
+          "headline": "12 Information Technology Stocks Moving In Thursday's Intraday Session",
+          "summary": " ",
+          "source": "benzinga",
+          "published_at": "2026-06-18T17:06:36Z",
+          "impact": "neutral",
+          "relevance_score": 80
+        },
+        {
+          "headline": "Crude Oil Down 2%; Accenture Shares Fall After Q3 Results",
+          "summary": "U.S. stocks traded higher on Thursday with the S&P 500 gaining 1% while tech shares surged 2.3%. Accenture stock tumbled 15% after weaker outlook.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T17:02:56Z",
+          "impact": "negative",
+          "relevance_score": 70
+        },
+        {
+          "headline": "Nasdaq 100 Rallies, Oil Sinks To $75 On Iran Peace Deal: Stock Market Today",
+          "summary": "Stocks staged a broad rebound Thursday as a signed U.S.-Iran peace deal sank oil and an Intel-Apple chip pact powered semis.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T16:33:55Z",
+          "impact": "neutral",
+          "relevance_score": 60
+        },
+        {
+          "headline": "Accenture Stock Crashes To 52-Week Low On Weak Outlook, Fed Jitters",
+          "summary": "Why is Accenture (ACN) stock crashing today? Inside the Q3 earnings beat, revenue miss, and weak FY26 outlook that spooked investors.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T14:15:57Z",
+          "impact": "negative",
+          "relevance_score": 50
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": true,
+        "eps_surprise": 8.5,
+        "revenue_surprise": 2.1,
+        "guidance_change": "raised",
+        "summary": "Company announced earnings recently."
+      },
+      "analyst_actions": [
+        {
+          "firm": "benzinga",
+          "action": "price_target_change",
+          "old_target": null,
+          "new_target": null,
+          "summary": "Evercore ISI Group Maintains Outperform on Accenture, Lowers Price Target to $180"
+        }
+      ],
+      "sector_context": {
+        "sector_name": "Technology",
+        "sector_change_percent": -14.26,
+        "index_change_percent": -8.91,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector Technology is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 7.02,
+        "volume_interpretation": "unusual",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 7.0x. Institutional flow proxy score is 35."
+      },
+      "technical_context": {
+        "trend": "downtrend",
+        "breakout_level": 181.16,
+        "support_level": 155.88,
+        "resistance_level": 181.16,
+        "rsi": 21.081206277873576,
+        "macd_signal": "bearish",
+        "vwap_position": "below",
+        "summary": "Price is BEARISH overall. RSI at 21.081206277873576."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": 2.5,
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 125,
+        "high": 135
+      },
+      "stop_loss": 120,
+      "target_1": 145,
+      "target_2": 155,
+      "risk_reward": 2,
+      "entry_reason": "The stock is in a strong downtrend with high volume. Wait for stabilization.",
+      "wait_for_confirmation": "Look for signs of stabilization or reversal before considering entry."
+    },
+    "short_trade_view": {
+      "short_bias": "wait_for_breakdown",
+      "short_entry_trigger": 130,
+      "short_stop_loss": 140,
+      "short_target_1": 120,
+      "short_target_2": 110,
+      "reason": "The stock is in a strong downtrend with bearish technical indicators."
+    },
+    "final_summary": {
+      "one_line_story": "Accenture's stock plummeted due to a weak outlook despite an earnings beat.",
+      "layman_summary": "Accenture's stock took a big hit today because investors were worried about the company's future outlook, even though it did better than expected in the recent earnings report.",
+      "trader_action": "Monitor for any signs of stabilization or reversal before making any decisions.",
+      "risk_warning": "The stock is in a strong downtrend, and further declines are possible if the outlook remains weak."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "ACN",
+    "analysisDate": "2026-06-18",
+    "currentPrice": 128.29,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 15,
+    "gradientPositionPercent": 15,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "HIGH",
+    "oneLineSummary": "ACN is in a strong downtrend with high volume and bearish momentum, indicating a high-risk setup.",
+    "laymanSummary": "The stock is in a strong downward trend with a lot of trading activity, suggesting it might be risky right now.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 0,
+        "maxScore": 20,
+        "status": "NEGATIVE",
+        "evidence": "Price is below EMA(20), EMA(50), and EMA(200) with a death cross."
+      },
+      "volumeConfirmation": {
+        "score": 15,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "High relative volume (>2x avg) supports the current price move."
+      },
+      "momentumIndicators": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "RSI(14) is oversold (<30) and MACD is bearish."
+      },
+      "movingAverageStructure": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Price is below all key moving averages with a death cross."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP, indicating selling pressure."
+      },
+      "supportResistanceRiskReward": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is far below support levels, increasing downside risk."
+      },
+      "sectorIndexAlignment": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "NEGATIVE",
+        "evidence": "Sector sentiment is negative, and the stock is underperforming."
+      },
+      "shortInterestContext": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No specific short interest data provided."
+      },
+      "newsCatalystConfirmation": {
+        "score": 0,
+        "maxScore": 3,
+        "status": "NEGATIVE",
+        "evidence": "Recent news sentiment is negative, impacting stock outlook."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow indicates distribution with bearish OBV trend."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [],
+      "redSignals": [
+        "Price below EMA(20), EMA(50), and EMA(200)",
+        "High relative volume supports downtrend",
+        "RSI(14) oversold and MACD bearish",
+        "Negative news sentiment",
+        "Institutional distribution proxy"
+      ],
+      "strongestPositiveEvidence": "High relative volume supports the current price move.",
+      "strongestNegativeEvidence": "Price is significantly below all key moving averages with a death cross.",
+      "mixedSignalExplanation": "No mixed signals; all indicators align negatively."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 125.62,
+      "nearestResistance": 134.68,
+      "distanceToSupportPercent": 2.08,
+      "distanceToResistancePercent": 4.97,
+      "riskRewardView": "UNFAVORABLE",
+      "explanation": "Current price is close to support with limited upside to resistance."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a high-risk setup due to strong bearish indicators and negative sentiment."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Price recovery above EMA(20) and VWAP",
+        "Improvement in news sentiment",
+        "Positive shift in institutional flow"
+      ],
+      "forYellowToGreenUpgrade": [],
+      "forRedZoneWarning": [
+        "Continued high volume with falling price",
+        "Further negative news or sentiment"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 15,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "ACN is in a strong downtrend with high volume and bearish momentum.",
+      "supportingPointsBelowBar": [
+        "Price below all key moving averages",
+        "High relative volume supports downtrend",
+        "Negative news sentiment"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "HIGH_RISK_CAUTION",
+      "summary": "ACN is experiencing a strong downtrend with significant bearish indicators and negative sentiment, making it a high-risk setup.",
+      "riskWarning": "The stock is currently in a high-risk zone due to strong bearish momentum and negative news sentiment.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "ACN",
+    "available": true,
+    "price": 128.29,
+    "open": 127.63,
+    "high": 134.68,
+    "low": 125.605,
+    "close": 128.29,
+    "volume": 1625464,
+    "vwap": 129.173611,
+    "bid": 122.31,
+    "ask": null,
+    "spread": null,
+    "changePercent": -17.83,
+    "timestamp": "2026-06-18T19:59:59.231368451Z",
+    "raw": {
+      "dailyBar": {
+        "c": 128.29,
+        "h": 134.68,
+        "l": 125.605,
+        "n": 26238,
+        "o": 127.63,
+        "t": "2026-06-18T04:00:00Z",
+        "v": 1625464,
+        "vw": 129.173611
+      },
+      "latestQuote": {
+        "ap": 0,
+        "as": 0,
+        "ax": " ",
+        "bp": 122.31,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-18T20:00:02.890084311Z",
+        "z": "A"
+      },
+      "latestTrade": {
+        "c": [
+          " "
+        ],
+        "i": 52984064199514,
+        "p": 128.29,
+        "s": 100,
+        "t": "2026-06-18T19:59:59.231368451Z",
+        "x": "V",
+        "z": "A"
+      },
+      "minuteBar": {
+        "c": 128.29,
+        "h": 131.07,
+        "l": 126.32,
+        "n": 522,
+        "o": 126.72,
+        "t": "2026-06-18T19:59:00Z",
+        "v": 35269,
+        "vw": 126.933614
+      },
+      "prevDailyBar": {
+        "c": 156.12,
+        "h": 166.65,
+        "l": 155.95,
+        "n": 8678,
+        "o": 164.81,
+        "t": "2026-06-17T04:00:00Z",
+        "v": 474733,
+        "vw": 160.72628
+      },
+      "symbol": "ACN"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 168.49633601542303,
+      "ema50": 179.2125005767591,
+      "ema200": 220.92391845256847,
+      "sma20": 173.25799999999998,
+      "sma50": 177.82770000000005,
+      "sma200": 226.12507500000004,
+      "rsi14": 21.081206277873576,
+      "rsi14Prev": 32.309531482729014,
+      "macdLine": -7.541107016440151,
+      "macdSignal": -3.6716440357549716,
+      "macdHist": -3.8694629806851792,
+      "bbUpper": 200.01539101631545,
+      "bbMiddle": 173.25799999999998,
+      "bbLower": 146.50060898368451,
+      "bbWidth": 30.887336822906263,
+      "atr14": 8.931376575186125,
+      "obv": -6345053,
+      "relVolume": 7.015115524313276,
+      "vwap": 163.64097872322517,
+      "adx14": 309.37616272952476,
+      "plusDI": 11.905297218352784,
+      "minusDI": 49.02548654205229,
+      "supportLevels": [
+        155.88,
+        163.62,
+        173.93
+      ],
+      "resistanceLevels": [
+        181.16,
+        183.11,
+        184.66,
+        197.98,
+        199.65
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "RSI oversold (<30)",
+        "MACD bearish",
+        "Price below EMA20 < EMA50",
+        "Death cross (EMA50 < EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)",
+        "High relative volume (>2x avg)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 78763393024,
+    "peRatio": 10.490165,
+    "pbRatio": 2.5211773,
+    "epsTrailing": 12.2,
+    "epsForward": 14.84602,
+    "revenue": 72110325760,
+    "debtToEquity": 25.469,
+    "dividendYield": 0.0394,
+    "beta": 1.069,
+    "week52High": 307.77,
+    "week52Low": 125.6,
+    "sector": "Technology",
+    "industry": "Information Technology Services",
+    "description": "Accenture plc provides strategy and consulting, industry X, song, and technology and operation services in the Americas, Europe, the Middle East, Africa, and the Asia Pacific. It offers systems integration and application management; security; intelligent platform; infrastructure; software engineering; data, AI, cloud; and automation and global delivery services. The company also operates business processes for specific enterprise functions, including finance and accounting, sourcing and procure"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Evercore ISI Group Maintains Outperform on Accenture, Lowers Price Target to $180",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53286915/evercore-isi-group-maintains-outperform-on-accenture-lowers-price-target-to-180",
+        "publishedAt": "2026-06-18T18:00:02Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "12 Information Technology Stocks Moving In Thursday's Intraday Session",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/movers/26/06/53285079/12-information-technology-stocks-moving-in-thursdays-intraday-session",
+        "publishedAt": "2026-06-18T17:06:36Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Crude Oil Down 2%; Accenture Shares Fall After Q3 Results",
+        "summary": "U.S. stocks traded higher on Thursday with the S&amp;P 500 gaining 1% while tech shares surged 2.3%. Accenture stock tumbled 15% after weaker outlook.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/06/53284938/crude-oil-down-2-accenture-shares-fall-after-q3-results",
+        "publishedAt": "2026-06-18T17:02:56Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Nasdaq 100 Rallies, Oil Sinks To $75 On Iran Peace Deal: Stock Market Today",
+        "summary": "Stocks staged a broad rebound Thursday as a signed U.S.-Iran peace deal sank oil and an Intel-Apple chip pact powered semis.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/06/53283834/nasdaq-100-rallied-intel-apple-deal-oil-sinks-on-iran-peace-deal",
+        "publishedAt": "2026-06-18T16:33:55Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Accenture Stock Crashes To 52-Week Low On Weak Outlook, Fed Jitters",
+        "summary": "Why is Accenture (ACN) stock crashing today? Inside the Q3 earnings beat, revenue miss, and weak FY26 outlook that spooked investors.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/earnings/26/06/53277604/accenture-stock-crashes-to-52-week-low-on-weak-outlook-fed-jitters",
+        "publishedAt": "2026-06-18T14:15:57Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Why Is IBM Stock Declining On Thursday?",
+        "summary": "International Business Machines Corp. (NYSE: IBM) stock faces downward pressure on Thursday after sector peer Accenture narrows its fiscal 2026 sales guidance.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53274515/why-is-ibm-stock-declining-on-thursday",
+        "publishedAt": "2026-06-18T13:29:22Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Accenture Sees Q4 Sales $17.750B-$18.400B vs $18.474B Est",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53275246/accenture-sees-q4-sales-17-750b-18-400b-vs-18-474b-est",
+        "publishedAt": "2026-06-18T13:41:21Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "12 Information Technology Stocks Moving In Thursday's Pre-Market Session",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/movers/26/06/53271973/12-information-technology-stocks-moving-in-thursdays-pre-market-session",
+        "publishedAt": "2026-06-18T12:06:29Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Earnings Scheduled For June 18, 2026",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/earnings/26/06/53270980/earnings-scheduled-for-june-18-2026",
+        "publishedAt": "2026-06-18T11:11:13Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Accenture Narrows FY2026 Sales Guidance from $71.763B-$73.157B to $71.763B-$72.460B vs $74.006B Est",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/ACN",
+        "publishedAt": "2026-06-18T10:46:15Z",
+        "sentiment": "NEUTRAL"
+      }
+    ],
+    "sentiment": "NEGATIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 20,
+      "obvTrendScore": 0,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 2,
+      "supportHoldScore": 0,
+      "breakoutVolScore": 8,
+      "largeBodyScore": 5
+    },
+    "signals": [
+      "Very high relative volume (7.0x)",
+      "OBV trend strongly bearish",
+      "Price below VWAP (-21.6%)",
+      "Price falling with rising volume (bearish distribution)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 20,
+  "fundamentalScore": 40,
+  "newsCatalystScore": 30,
+  "institutionalFlowProxyScore": 35,
+  "keyCatalysts": [
+    "Weak earnings outlook",
+    "Negative sentiment from recent news"
+  ],
+  "keyRisks": [
+    "Strong downtrend",
+    "Negative news sentiment",
+    "Weak earnings outlook"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock is experiencing distribution with high relative volume and a bearish OBV trend. Price is significantly below VWAP, indicating strong selling pressure."
+}

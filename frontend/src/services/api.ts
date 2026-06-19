@@ -42,35 +42,73 @@ api.interceptors.request.use((config: any) => {
   return Promise.reject(error);
 });
 
+// ── 401 handler state ─────────────────────────────────────────────────────
+// Debounce so parallel requests (e.g. page load fires 3 API calls at once)
+// don't each trigger their own redirect. Only the first confirmed 401 wins.
+let isHandling401 = false;
+let handle401Timer: ReturnType<typeof setTimeout> | null = null;
+
+function scheduleSessionExpiry() {
+  if (isHandling401) return; // already in flight
+  if (handle401Timer) clearTimeout(handle401Timer);
+  // Wait 1.5s — if it's a transient error the page will succeed on retry.
+  // If it's a real session expiry, multiple calls will all hit this and we redirect once.
+  handle401Timer = setTimeout(async () => {
+    const token = localStorage.getItem('trader_auth_token');
+    if (!token) {
+      // No token — user was never logged in, no need to redirect
+      handle401Timer = null;
+      return;
+    }
+    isHandling401 = true;
+    handle401Timer = null;
+    console.warn('[Auth] Session confirmed expired — clearing credentials and redirecting to login.');
+    localStorage.removeItem('trader_auth_token');
+    try {
+      const { useAppStore } = await import('../store/useAppStore');
+      useAppStore.setState({ token: null, user: null });
+    } catch {}
+    const onLogin = window.location.pathname === '/login' || window.location.pathname === '/register';
+    if (!onLogin) {
+      window.location.href = '/login?expired=true';
+    }
+    // Reset after navigation
+    setTimeout(() => { isHandling401 = false; }, 3000);
+  }, 1500);
+}
+
 // Response interceptor for error handling
 api.interceptors.response.use(
   (response: any) => response.data,
   async (error: any) => {
-    // Log detailed response errors for clientLogger to capture
     const status = error.response?.status;
     const url = error.config?.url;
     const method = error.config?.method?.toUpperCase();
     const responseData = error.response?.data;
 
-    console.error(`[API Error] ${method} ${url} failed with status ${status || 'Network Error'}:`, {
-      status,
-      url,
-      method,
-      responseData,
-      message: error.message,
-    });
-
-    // Default 401 behavior (clearing token and redirecting)
     if (status === 401) {
-      console.warn(`[Auth] Clearing token and redirecting to login page.`);
-      localStorage.removeItem('trader_auth_token');
-      try {
-        const { useAppStore } = await import('../store/useAppStore');
-        useAppStore.setState({ token: null, user: null });
-      } catch {}
-      if (!window.location.pathname.endsWith('/login') && !window.location.pathname.endsWith('/register')) {
-        window.location.href = '/login?expired=true';
+      // 401 on /auth/me during app boot is expected when there's no valid session.
+      // Don't redirect — the store's fetchMe handles this gracefully.
+      const isAuthMeBoot = url?.includes('/auth/me');
+      if (!isAuthMeBoot) {
+        scheduleSessionExpiry();
+      } else {
+        // Clean up the stale token silently — no redirect needed
+        const token = localStorage.getItem('trader_auth_token');
+        if (token) {
+          console.warn(`[Auth] /auth/me returned 401 — session no longer valid. Clearing token.`);
+          localStorage.removeItem('trader_auth_token');
+          try {
+            const { useAppStore } = await import('../store/useAppStore');
+            useAppStore.setState({ token: null, user: null });
+          } catch {}
+        }
       }
+    } else {
+      // Log all non-401 errors — these are real application issues worth capturing
+      console.error(`[API Error] ${method} ${url} failed with status ${status || 'Network Error'}:`, {
+        status, url, method, responseData, message: error.message,
+      });
     }
 
     const message =
@@ -102,7 +140,13 @@ export const authApi = {
 
 // ── Analysis ──────────────────────────────────────────────────────
 export const analysisApi = {
-  analyze: (symbol: string, bypassCache?: boolean) => api.post('/analyze', { symbol, bypassCache }),
+  /** Step 1: kick off analysis — returns { jobId, status, symbol } immediately (<1s) */
+  enqueue: (symbol: string, bypassCache?: boolean) =>
+    api.post('/analyze', { symbol, bypassCache }),
+
+  /** Step 2: poll until status === 'done' or 'error' */
+  pollStatus: (jobId: string) =>
+    api.get(`/analyze/status/${jobId}`),
 };
 
 // ── Stocks ────────────────────────────────────────────────────────
@@ -112,6 +156,7 @@ export const stocksApi = {
   getMarketData: (symbol: string) => api.get(`/stocks/${symbol}/market-data`),
   getTechnicals: (symbol: string) => api.get(`/stocks/${symbol}/technicals`),
   searchStocks: (q: string) => api.get(`/stocks/search?q=${encodeURIComponent(q)}`),
+  getMovers: () => api.get('/stocks/movers'),
 };
 
 // ── Video Jobs ───────────────────────────────────────────────────
@@ -168,6 +213,7 @@ export const adminApi = {
   getConsistency: () => api.get('/admin/data-quality/consistency'),
   getDataGaps: () => api.get('/admin/data-quality/gaps'),
   getFeedback: () => api.get('/admin/feedback'),
+  getReportQuality: () => api.get('/admin/report-quality'),
   getClientLogs: (params?: { limit?: number; level?: string }) => api.get('/client-logs/admin', { params }),
 };
 

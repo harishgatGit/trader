@@ -1,0 +1,932 @@
+{
+  "symbol": "CTSH",
+  "analysisDateTime": "2026-06-19T02:01:12.375Z",
+  "currentPrice": 43.675,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data is available and up-to-date for analysis."
+  },
+  "finalDecision": {
+    "finalRating": "AVOID",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 40,
+    "decisionSummary": "The stock is currently in a strong downtrend with bearish technical indicators and high selling pressure. The risk/reward ratio is poor, and the stock is experiencing distribution. Therefore, it is advisable to avoid entering a position at this time.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is in a bearish trend with significant downside momentum and high relative volume indicating distribution.",
+    "bestActionNow": "Avoid entering a position until there is a clear reversal or stabilization in price."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": true,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": false,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently in a strong downward trend with high selling pressure, making it a risky investment at this time. It is advisable to avoid buying until there is a clear sign of reversal or stabilization. The stock has been declining sharply, and technical indicators suggest continued bearish momentum. High relative volume indicates strong selling pressure, and the stock is trading well below key moving averages. Despite positive news sentiment, the technical setup remains unfavorable for a buy decision.",
+  "technicalAnalysis": {
+    "overallBias": "BEARISH",
+    "trendStage": "MARKDOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 20,
+    "keySignals": [
+      "RSI oversold",
+      "MACD bearish",
+      "Price below EMA20, EMA50, EMA200",
+      "Strong downtrend (ADX>25, -DI>+DI)"
+    ],
+    "supportLevels": [
+      43.405,
+      45.5
+    ],
+    "resistanceLevels": [
+      57.64,
+      61.88
+    ],
+    "vwapAnalysis": "Price is significantly below VWAP, indicating bearish sentiment.",
+    "movingAverageAnalysis": "Price is below all major moving averages, confirming a bearish trend.",
+    "rsiAnalysis": "RSI indicates oversold conditions, but no reversal confirmation.",
+    "macdAnalysis": "MACD is bearish, supporting the downtrend.",
+    "volumeAnalysis": "High relative volume suggests strong selling pressure.",
+    "volumeTrendStatus": "UNUSUAL_SPIKE",
+    "atrVolatilityAnalysis": "ATR indicates high volatility, increasing risk.",
+    "adxTrendStrengthAnalysis": "ADX shows strong trend strength, supporting the bearish bias.",
+    "bollingerBandAnalysis": "Price is near the lower Bollinger Band, indicating potential oversold conditions."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "NO_TRADE",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "No valid buy zone due to bearish trend."
+    },
+    "pullbackEntryZone": {
+      "low": null,
+      "high": null,
+      "description": "No pullback entry zone identified."
+    },
+    "breakoutEntryLevel": {
+      "price": null,
+      "confirmationRule": "No breakout confirmation due to bearish trend."
+    },
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone due to distribution phase."
+    },
+    "invalidationLevel": {
+      "price": 45.5,
+      "reason": "Price breaking above recent support could indicate a change in trend."
+    },
+    "stopLoss": {
+      "price": 43.405,
+      "stopType": "TECHNICAL",
+      "description": "Stop loss set at recent low to limit downside risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": null,
+        "reason": "No target set due to bearish outlook."
+      },
+      {
+        "label": "T2",
+        "price": null,
+        "reason": "No target set due to bearish outlook."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No target set due to bearish outlook."
+      }
+    ],
+    "exitRules": [
+      "Avoid entering until trend reversal is confirmed."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 43.675,
+    "riskPerShare": 2.27,
+    "rewardToTarget1": null,
+    "rewardToTarget2": null,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": null,
+    "riskRewardToTarget2": null,
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "Due to high volatility and bearish trend, position sizing should be conservative."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No favorable entry zone due to bearish trend."
+    },
+    "stopLoss": {
+      "price": 43.405,
+      "description": "Stop loss set at recent low to limit downside risk."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Avoid entering until trend reversal is confirmed."
+    ],
+    "tradeQuality": "D"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No favorable entry zone due to bearish trend."
+    },
+    "stopLoss": {
+      "price": 43.405,
+      "description": "Stop loss set at recent low to limit downside risk."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone due to distribution phase."
+    },
+    "riskReward": "POOR",
+    "swingVerdict": "AVOID"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BEARISH",
+    "swingSetup": {
+      "setup": "NO_SETUP",
+      "analysis": "The stock is in a strong downtrend with no clear reversal signals."
+    },
+    "entryTiming": {
+      "trigger": "NO_TRIGGER",
+      "analysis": "No favorable entry timing due to bearish momentum."
+    },
+    "supportLevels": [
+      {
+        "price": 43.405,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 57.64,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 43.405,
+    "riskMetrics": {
+      "atr": 2.27,
+      "atrAnalysis": "High ATR indicates increased volatility.",
+      "vwap": 44.528097,
+      "vwapAnalysis": "Price is below VWAP, indicating bearish sentiment.",
+      "volumeAnalysis": "High relative volume suggests strong selling pressure.",
+      "supportResistanceAnalysis": "Price is near support, but overall trend is bearish."
+    },
+    "catalysts": {
+      "news": "Positive sentiment but overshadowed by technicals.",
+      "earnings": "No immediate earnings risk.",
+      "secFilings": "No significant filings impacting the stock."
+    },
+    "shortFilter": {
+      "borrowFee": "Unavailable",
+      "shortInterest": "Unavailable",
+      "ssrStatus": "Unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "The stock is in a distribution phase with strong selling pressure and no immediate signs of reversal.",
+    "dailyTrend": {
+      "trend": "BEARISH",
+      "barCount": 252,
+      "analysis": "CTSH has seen a substantial decline in its stock price, closing at $43.675, which is a 10.53% drop from the previous day. This decline is supported by a very high trading volume, more than six times the average, indicating strong selling pressure. The technical indicators are aligned with this bearish trend: RSI(14) is in the oversold territory at 25.58, suggesting that the stock is heavily sold off. The MACD is bearish, and the stock is trading below all major moving averages (EMA(20), EMA(50), and EMA(200)), which confirms the downward momentum. Furthermore, the ADX value is extremely high, indicating a strong trend strength. Institutional flow data shows a distribution pattern, reinforcing the bearish sentiment. Despite the overall positive sentiment in the news, it seems not to have impacted CTSH's stock positively, possibly due to broader sector or company-specific issues.",
+      "laymanExplanation": "Think of CTSH like a car that's rolling downhill fast. The brakes (buyers) aren't working well, and there's a lot of weight pushing it down (sellers). Even though there are some good news stories, they're not enough to stop the car from rolling. It's a risky ride right now.",
+      "ticker": "CTSH",
+      "companyName": "Cognizant Technology Solutions Corporation",
+      "confidenceScore": 95,
+      "trendSummary": "CTSH is experiencing a strong bearish trend, evidenced by a significant drop in price with high volume, and multiple technical indicators confirming the downward momentum.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Negative",
+          "evidence": "RSI(14) is oversold, MACD is bearish, price is below EMA(20), EMA(50), and EMA(200), and ADX indicates a strong downtrend."
+        },
+        {
+          "driver": "Volume and Institutional Flow",
+          "impact": "Negative",
+          "evidence": "Very high relative volume (6.1x) and institutional distribution signals suggest strong selling pressure."
+        },
+        {
+          "driver": "Market Sentiment",
+          "impact": "Neutral",
+          "evidence": "Despite positive news sentiment, the stock continues to decline, indicating other factors are at play."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The stock price has sharply declined, closing significantly lower with a large bearish candle.",
+        "movingAverageView": "Price is below EMA(20), EMA(50), and EMA(200), indicating a bearish trend.",
+        "momentumView": "RSI(14) is oversold, and MACD is bearish, confirming strong downward momentum.",
+        "volumeView": "Volume is extremely high, more than six times the average, indicating strong selling pressure.",
+        "supportResistanceView": "The stock has broken below recent support levels, with no immediate support in sight.",
+        "volatilityView": "ATR is high, indicating increased volatility and risk."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data impacting the current trend.",
+        "newsImpact": "Overall positive news sentiment, but not enough to counteract the bearish technical indicators.",
+        "institutionalFlowImpact": "Institutional flow shows distribution, contributing to the bearish trend.",
+        "sectorMacroImpact": "Sector-specific issues or broader market conditions may be influencing the stock negatively."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Continued selling pressure",
+          "High volatility",
+          "Lack of immediate support levels"
+        ],
+        "whatNeedsConfirmation": "Confirmation is needed to see if the stock can find support and stabilize, or if the bearish trend will continue."
+      },
+      "watchStatus": "High risk",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BEARISH",
+    "investmentQuality": "WEAK",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "INSUFFICIENT_DATA"
+    },
+    "bullCase": "A reversal in trend with improving fundamentals.",
+    "baseCase": "Continued bearish trend with potential for further downside.",
+    "bearCase": "Further decline due to sustained selling pressure and weak technicals.",
+    "longTermVerdict": "AVOID"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 60,
+    "rating": "MIXED",
+    "revenueTrend": "Stable revenue but no significant growth.",
+    "epsTrend": "EPS is stable but not growing significantly.",
+    "profitability": "Moderate profitability with low P/E ratio.",
+    "debtRisk": "Low debt-to-equity ratio indicates manageable debt.",
+    "cashFlowQuality": "Stable cash flow but no significant growth.",
+    "valuationCommentary": "Valuation appears reasonable but lacks growth catalysts."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "FAIRLY_VALUED",
+    "valuationScore": 50,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "The stock is fairly valued based on current earnings and book value ratios."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 60,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Positive news sentiment from recent articles."
+    ],
+    "keyRisksFromNews": [
+      "No significant risks identified from news."
+    ],
+    "earningsRisk": "No immediate earnings risk.",
+    "catalystVerdict": "NEUTRAL"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 30,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock is experiencing distribution with high relative volume and strong selling pressure. This proxy score suggests bearish sentiment among large traders.",
+    "signals": [
+      "Very high relative volume (6.1x)",
+      "OBV trend strongly bearish",
+      "Price below VWAP (-13.9%)",
+      "Price falling with rising volume (bearish distribution)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 20,
+    "reason": "Current bearish trend and lack of growth catalysts reduce multibagger potential.",
+    "requiredConditions": [
+      "Reversal in technical trend",
+      "Improvement in growth metrics"
+    ],
+    "majorBlockers": [
+      "Strong downtrend",
+      "High selling pressure"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "HIGH",
+    "technicalRisk": "Strong bearish trend with high volatility.",
+    "fundamentalRisk": "Mixed fundamentals with no significant growth.",
+    "valuationRisk": "Fairly valued but lacks growth catalysts.",
+    "newsRisk": "Positive sentiment but overshadowed by technicals.",
+    "liquidityRisk": "High relative volume suggests adequate liquidity.",
+    "eventRisk": "No immediate earnings or event risk.",
+    "topRisks": [
+      "Strong downtrend",
+      "High selling pressure",
+      "Lack of growth catalysts"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Reversal in trend with improving fundamentals.",
+      "pricePath": "Potential recovery to previous highs.",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Continued bearish trend with potential for further downside.",
+      "pricePath": "Gradual decline with intermittent recoveries.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Further decline due to sustained selling pressure and weak technicals.",
+      "pricePath": "Sharp decline to new lows.",
+      "probability": "MEDIUM"
+    }
+  },
+  "finalActionPlan": [
+    "Avoid entering a position until there is a clear reversal or stabilization in price.",
+    "Monitor for any signs of trend reversal or improvement in fundamentals.",
+    "Reassess if price action shows a clear change in trend."
+  ],
+  "doNotTradeConditions": [
+    "Strong bearish trend with no signs of reversal.",
+    "High selling pressure and distribution phase."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": null,
+    "stopLossAlert": 43.405,
+    "target1Alert": null,
+    "target2Alert": null,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "trendStory": {
+    "ticker": "CTSH",
+    "analysis_date": "2026-06-18",
+    "price_summary": {
+      "current_price": 43.675,
+      "previous_close": 48.82,
+      "day_change_percent": -10.53,
+      "day_range": {
+        "high": 46.41,
+        "low": 43.405
+      },
+      "volume": 3324864,
+      "average_volume": 542629,
+      "relative_volume": 6.13
+    },
+    "move_classification": {
+      "primary_reason": "sector-sympathy",
+      "secondary_reasons": [
+        "technical-breakdown"
+      ],
+      "confidence": "medium",
+      "confidence_score": 70
+    },
+    "story_for_layman": {
+      "headline": "Cognizant Stock Drops Sharply Amid Sector Weakness",
+      "simple_explanation": "Cognizant's stock fell significantly today, losing over 10% of its value. This drop is part of a broader decline in the technology sector.",
+      "why_it_moved": "The technology sector is experiencing a downturn, and Cognizant's stock is moving in sympathy with this trend.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The move is driven by sector weakness, but the high volume suggests strong selling pressure."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "Nasdaq 100 Rallies, Oil Sinks To $75 On Iran Peace Deal: Stock Market Today",
+          "summary": "Stocks staged a broad rebound Thursday as a signed U.S.-Iran peace deal sank oil and an Intel-Apple chip pact powered semis.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T16:33:55Z",
+          "impact": "neutral",
+          "relevance_score": 90
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "eps_surprise": null,
+        "revenue_surprise": null,
+        "guidance_change": "unknown",
+        "summary": "No recent earnings announcement identified in news feeds."
+      },
+      "analyst_actions": [
+        {
+          "firm": "benzinga",
+          "action": "upgrade",
+          "old_target": null,
+          "new_target": null,
+          "summary": "Wedbush Upgrades Cognizant Tech Solns to Outperform, Raises Price Target to $70"
+        }
+      ],
+      "sector_context": {
+        "sector_name": "Technology",
+        "sector_change_percent": -8.42,
+        "index_change_percent": -5.26,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector Technology is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 6.13,
+        "volume_interpretation": "unusual",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 6.1x. Institutional flow proxy score is 30."
+      },
+      "technical_context": {
+        "trend": "downtrend",
+        "breakout_level": 57.64,
+        "support_level": 45.5,
+        "resistance_level": 57.64,
+        "rsi": 25.57571713698698,
+        "macd_signal": "bearish",
+        "vwap_position": "below",
+        "summary": "Price is BEARISH overall. RSI at 25.57571713698698."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": 2.5,
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 42,
+        "high": 45
+      },
+      "stop_loss": 41,
+      "target_1": 50,
+      "target_2": 55,
+      "risk_reward": 2.5,
+      "entry_reason": "Wait for stabilization or reversal signal before considering entry.",
+      "wait_for_confirmation": "Look for signs of support or reversal before entering."
+    },
+    "short_trade_view": {
+      "short_bias": "wait_for_breakdown",
+      "short_entry_trigger": 43,
+      "short_stop_loss": 46,
+      "short_target_1": 40,
+      "short_target_2": 38,
+      "reason": "Consider shorting if the downtrend continues and breaks below current levels."
+    },
+    "final_summary": {
+      "one_line_story": "Cognizant stock drops sharply amid technology sector weakness.",
+      "layman_summary": "Cognizant's stock fell over 10% today as part of a larger decline in the tech sector. The stock is in a strong downtrend, and it's important to watch for any signs of stabilization or reversal.",
+      "trader_action": "Monitor for any reversal signals or stabilization above new support levels.",
+      "risk_warning": "Continued sector weakness could lead to further declines."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "CTSH",
+    "analysisDate": "2026-06-19",
+    "currentPrice": 43.675,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 20,
+    "gradientPositionPercent": 20,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "HIGH",
+    "oneLineSummary": "CTSH is in a strong downtrend with bearish momentum and high relative volume, indicating a high-risk zone.",
+    "laymanSummary": "The stock is currently in a risky position with strong selling pressure and negative trends. It's best to be cautious.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 0,
+        "maxScore": 20,
+        "status": "NEGATIVE",
+        "evidence": "Price is below EMA(20), EMA(50), and EMA(200) with a death cross indicating a strong downtrend."
+      },
+      "volumeConfirmation": {
+        "score": 10,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "High relative volume (>2x avg) supports the bearish move."
+      },
+      "momentumIndicators": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "RSI(14) is oversold (<30) and MACD is bearish, indicating strong negative momentum."
+      },
+      "movingAverageStructure": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Price is below all key moving averages with EMA(50) below EMA(200)."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is significantly below VWAP, indicating selling pressure."
+      },
+      "supportResistanceRiskReward": {
+        "score": 5,
+        "maxScore": 10,
+        "status": "MIXED",
+        "evidence": "Price is near support at 43.68 but far from resistance, offering limited risk/reward."
+      },
+      "sectorIndexAlignment": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "NEGATIVE",
+        "evidence": "Sector performance is not supportive of the stock's current trend."
+      },
+      "shortInterestContext": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No specific short interest data provided."
+      },
+      "newsCatalystConfirmation": {
+        "score": 1,
+        "maxScore": 3,
+        "status": "MIXED",
+        "evidence": "Overall news sentiment is positive, but recent price action is bearish."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow proxy indicates distribution with strong selling pressure."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [],
+      "redSignals": [
+        "Price below EMA(20), EMA(50), and EMA(200)",
+        "High relative volume with bearish trend",
+        "RSI(14) oversold and MACD bearish",
+        "Institutional distribution proxy"
+      ],
+      "strongestPositiveEvidence": "High relative volume supports the current trend.",
+      "strongestNegativeEvidence": "Price is below all key moving averages with a death cross.",
+      "mixedSignalExplanation": "While there is high relative volume, the overall trend and momentum are strongly negative."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 43.68,
+      "nearestResistance": 57.64,
+      "distanceToSupportPercent": 0.01,
+      "distanceToResistancePercent": 31.97,
+      "riskRewardView": "UNFAVORABLE",
+      "explanation": "The price is very close to support with limited upside potential to resistance."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a high-risk setup with strong bearish signals and limited upside potential."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Price recovery above EMA(20) and VWAP",
+        "Improvement in RSI(14) and MACD"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Sustained positive news or sector support",
+        "Reduction in selling pressure"
+      ],
+      "forRedZoneWarning": [
+        "Continued price decline below support",
+        "Increasing selling volume"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 20,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "CTSH is in a high-risk zone with strong bearish signals.",
+      "supportingPointsBelowBar": [
+        "Price below all key moving averages",
+        "High relative volume with bearish trend",
+        "Institutional distribution proxy"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "HIGH_RISK_CAUTION",
+      "summary": "CTSH is currently in a high-risk zone with strong bearish momentum and institutional distribution signals. Caution is advised.",
+      "riskWarning": "The stock is experiencing strong selling pressure and is below key support levels.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "CTSH",
+    "available": true,
+    "price": 43.675,
+    "open": 46.07,
+    "high": 46.41,
+    "low": 43.405,
+    "close": 43.675,
+    "volume": 3324864,
+    "vwap": 44.528097,
+    "bid": 42,
+    "ask": 46.04,
+    "spread": 4.04,
+    "changePercent": -10.53,
+    "timestamp": "2026-06-18T19:59:59.756346912Z",
+    "raw": {
+      "dailyBar": {
+        "c": 43.675,
+        "h": 46.41,
+        "l": 43.405,
+        "n": 27942,
+        "o": 46.07,
+        "t": "2026-06-18T04:00:00Z",
+        "v": 3324864,
+        "vw": 44.528097
+      },
+      "latestQuote": {
+        "ap": 46.04,
+        "as": 100,
+        "ax": "V",
+        "bp": 42,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-18T20:00:00.573699Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@"
+        ],
+        "i": 27942,
+        "p": 43.675,
+        "s": 100,
+        "t": "2026-06-18T19:59:59.756346912Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 43.675,
+        "h": 43.69,
+        "l": 43.66,
+        "n": 382,
+        "o": 43.69,
+        "t": "2026-06-18T19:59:00Z",
+        "v": 50419,
+        "vw": 43.672174
+      },
+      "prevDailyBar": {
+        "c": 48.815,
+        "h": 50.95,
+        "l": 48.495,
+        "n": 9956,
+        "o": 50.06,
+        "t": "2026-06-17T04:00:00Z",
+        "v": 682170,
+        "vw": 49.373743
+      },
+      "symbol": "CTSH"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 51.31925472792275,
+      "ema50": 54.14684855768978,
+      "ema200": 65.02107256438839,
+      "sma20": 52.37925,
+      "sma50": 53.50169999999999,
+      "sma200": 67.59725000000002,
+      "rsi14": 25.57571713698698,
+      "rsi14Prev": 35.69569230973097,
+      "macdLine": -1.3742097860835543,
+      "macdSignal": -0.6791905632071764,
+      "macdHist": -0.6950192228763779,
+      "bbUpper": 57.72709842249666,
+      "bbMiddle": 52.37925,
+      "bbLower": 47.03140157750334,
+      "bbWidth": 20.419721254109827,
+      "atr14": 2.2675027124913343,
+      "obv": -5031775,
+      "relVolume": 6.127320610283982,
+      "vwap": 50.713443839465064,
+      "adx14": 282.1268287140265,
+      "plusDI": 14.698765442008105,
+      "minusDI": 41.31741666270328,
+      "supportLevels": [
+        45.5,
+        49.66
+      ],
+      "resistanceLevels": [
+        57.64,
+        61.88
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "RSI oversold (<30)",
+        "MACD bearish",
+        "Price below EMA20 < EMA50",
+        "Death cross (EMA50 < EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)",
+        "High relative volume (>2x avg)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 20670099456,
+    "peRatio": 9.479392,
+    "pbRatio": 1.3746895,
+    "epsTrailing": 4.61,
+    "epsForward": 6.16583,
+    "revenue": 21405999104,
+    "debtToEquity": 7.247,
+    "dividendYield": 0.025899999,
+    "beta": 0.81,
+    "week52High": 87.03,
+    "week52Low": 43.405,
+    "sector": "Technology",
+    "industry": "Information Technology Services",
+    "description": "Cognizant Technology Solutions Corporation, a professional services company, provides consulting and technology, and outsourcing services in North America, Europe, and internationally. It operates through four segments: Financial Services; Health Sciences; Products and Resources; and Communications, Media and Technology. The company provides services including artificial intelligence (AI) and other technology services and solutions, consulting, application development, systems integration, quali"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Nasdaq 100 Rallies, Oil Sinks To $75 On Iran Peace Deal: Stock Market Today",
+        "summary": "Stocks staged a broad rebound Thursday as a signed U.S.-Iran peace deal sank oil and an Intel-Apple chip pact powered semis.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/06/53283834/nasdaq-100-rallied-intel-apple-deal-oil-sinks-on-iran-peace-deal",
+        "publishedAt": "2026-06-18T16:33:55Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Why Is Nebius Stock Surging On Tuesday?",
+        "summary": "Nebius Group N.V. (NASDAQ: NBIS) stock surged on Tuesday after confirming its upcoming addition to the Nasdaq-100 Index and closing its Eigen AI acquisition.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53233833/why-is-nebius-stock-surging-on-tuesday",
+        "publishedAt": "2026-06-16T18:09:46Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "CoreWeave, Astera Labs, Nebius Group, And Others Added To Nasdaq-100: A 'Big Deal,' Says Jim Cramer",
+        "summary": "CoreWeave, Astera Labs, Nebius, Rocket Lab &amp; Teradyne join the Nasdaq-100. Jim Cramer calls this June 2026 index rebalance a &#39;big deal&#39;.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/06/53163628/coreweave-astera-labs-nebius-group-and-others-added-to-nasdaq-100-a-big-deal-says-jim-cramer",
+        "publishedAt": "2026-06-12T12:46:48Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Why Is CoreWeave Stock Soaring Friday?",
+        "summary": "CRWV stock climbs 5% as CoreWeave gears up to join the Nasdaq-100. Get the latest price action, inclusion details, and analysis.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53161677/why-is-coreweave-stock-soaring-friday",
+        "publishedAt": "2026-06-12T10:41:06Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "This ADC Therapeutics Analyst Is No Longer Bullish; Here Are Top 2 Downgrades For Monday",
+        "summary": "Top Wall Street analysts changed outlook on top names. ADCT downgraded See analysts&#39; views.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/downgrades/26/06/53064967/this-adc-therapeutics-analyst-is-no-longer-bullish-here-are-top-2-downgrades-for-monday",
+        "publishedAt": "2026-06-08T16:13:48Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "This Biogen Analyst Turns Bullish; Here Are Top 3 Upgrades For Monday",
+        "summary": "Top Wall Street analysts upgraded Biogen Inc. and Cognizant Technology Solutions, see analyst ratings page for full changes and other stock views.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/analyst-stock-ratings/upgrades/26/06/53058607/this-biogen-analyst-turns-bullish-here-are-top-3-upgrades-for-monday",
+        "publishedAt": "2026-06-08T13:58:05Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Wedbush Upgrades Cognizant Tech Solns to Outperform, Raises Price Target to $70",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53058084/wedbush-upgrades-cognizant-tech-solns-to-outperform-raises-price-target-to-70",
+        "publishedAt": "2026-06-08T13:49:10Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Cognizant Integrates Its Cognizant Neuro AI Trust With ServiceNow To Offer Unified Platform For AI Governance",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53014356/cognizant-integrates-its-cognizant-neuro-ai-trust-with-servicenow-to-offer-unified-platform-for-ai-g",
+        "publishedAt": "2026-06-04T19:03:09Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Cognizant And Snowflake Expand Collaboration To Deploy Production Grade AI Agents On Snowflake CoCo For Data Engineering Analytics And Enterprise Decision Workflows",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/52971220/cognizant-and-snowflake-expand-collaboration-to-deploy-production-grade-ai-agents-on-snowflake-coco",
+        "publishedAt": "2026-06-03T14:02:09Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Cognizant And CrowdStrike Expand Strategic Alliance To Offer Deeper Security For AI Agents And Models",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/CTSH",
+        "publishedAt": "2026-06-02T18:35:25Z",
+        "sentiment": "NEUTRAL"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 30,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 20,
+      "obvTrendScore": 0,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 2,
+      "supportHoldScore": 0,
+      "breakoutVolScore": 8,
+      "largeBodyScore": 0
+    },
+    "signals": [
+      "Very high relative volume (6.1x)",
+      "OBV trend strongly bearish",
+      "Price below VWAP (-13.9%)",
+      "Price falling with rising volume (bearish distribution)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "AVOID",
+  "technicalScore": 20,
+  "fundamentalScore": 60,
+  "newsCatalystScore": 60,
+  "institutionalFlowProxyScore": 30,
+  "keyCatalysts": [
+    "Positive news sentiment from recent articles."
+  ],
+  "keyRisks": [
+    "Strong downtrend",
+    "High selling pressure",
+    "Lack of growth catalysts"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock is experiencing distribution with high relative volume and strong selling pressure. This proxy score suggests bearish sentiment among large traders."
+}

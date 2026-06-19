@@ -1,0 +1,230 @@
+{
+  "ticker": "LILA",
+  "reportDate": "Unavailable",
+  "videoTitle": "LILA Stock Report",
+  "durationSeconds": 161.84,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for LILA, Liberty Latin America Ltd. Today, we\u2019re examining a stock currently in a strong downtrend, with selling pressure suggesting it may not be a prudent time to invest. \n\nAs of the latest session, LILA trades at $4.80, reflecting a daily decline of 9.52%. This sharp intraday move highlights significant downward momentum, driven by robust selling activity that exceeds previous trading volumes.\n\nThe prevailing trend for LILA is clearly bearish. The primary driver behind this trend is sector sympathy, where broader market conditions are influencing the stock\u2019s performance negatively.\n\nEvidence of this trend's strength can be seen in the high relative volume, which is nearly three times the average, indicating that strong selling pressure is present. Additionally, despite positive news sentiment regarding new credit facilities, it has not been sufficient to counteract the prevailing bearish technical signals.\n\nWhen we examine the daily trend chart, we observe that LILA is facing challenges at key support levels. With no significant consolidation or breakout patterns developing, the stock is instead in a pronounced downtrend, suggesting a lack of buying interest.\n\nFocusing on technical metrics, the RSI is currently at 20.37, indicating that the stock is oversold but has not yet reached a reversal point. Meanwhile, the MACD remains bearish, and the price is significantly below its key moving averages, further confirming the downtrend.\n\nFor tactical traders, there is no defined entry zone at this time. A stop loss is suggested just below the recent support level at $4.78, as the risk/reward profile remains unfavorable under current conditions.\n\nFrom a short trade perspective, caution is warranted. Although there's a low short squeeze risk currently, the breakdown level is critical to monitor, as any further declines could intensify selling pressure.\n\nIn terms of ecosystem insights, the broader sector trends are contributing to LILA\u2019s challenges. Even with positive news in the market, the stock\u2019s performance remains weak, aligning with a bearish sentiment among investors.\n\nIn conclusion, the final verdict for LILA is to avoid entering a position at this time. Key levels to watch include the $4.78 stop loss, while remaining aware of the significant risk associated with continued volatility and selling pressure. Always exercise caution and conduct thorough research before making investment decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 15.18,
+      "narration": "Welcome to the Investing Atti stock analysis for LILA, Liberty Latin America Ltd. Today, we\u2019re examining a stock currently in a strong downtrend, with selling pressure suggesting it may not be a prudent time to invest.",
+      "pandaAction": "default",
+      "speechBubbleText": "LILA: Strong Downtrend!",
+      "visualElements": [
+        "LILA logo",
+        "downward trend graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in on logo"
+      ],
+      "dataFields": {
+        "catchyLine": "LILA: Strong Downtrend - Time to Avoid?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 15.6,
+      "narration": "As of the latest session, LILA trades at $4.80, reflecting a daily decline of 9.52%. This sharp intraday move highlights significant downward momentum, driven by robust selling activity that exceeds previous trading volumes.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $4.80",
+      "visualElements": [
+        "price tag graphic",
+        "decline arrow"
+      ],
+      "chartElements": [
+        "intraday price chart"
+      ],
+      "animationInstructions": [
+        "slide in price tag",
+        "animate decline arrow"
+      ],
+      "dataFields": {
+        "currentPrice": 4.8,
+        "dailyDecline": 9.52
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 13.23,
+      "narration": "The prevailing trend for LILA is clearly bearish. The primary driver behind this trend is sector sympathy, where broader market conditions are influencing the stock\u2019s performance negatively.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Bearish Trend Ahead",
+      "visualElements": [
+        "bear graphic",
+        "sector performance chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake bear graphic",
+        "fade in sector chart"
+      ],
+      "dataFields": {
+        "trend": "Bearish",
+        "driver": "Sector Sympathy"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 11.63,
+      "narration": "Evidence of this trend's strength can be seen in the high relative volume, which is nearly three times the average, indicating that strong selling pressure is present.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "High Relative Volume!",
+      "visualElements": [
+        "volume bars graphic"
+      ],
+      "chartElements": [
+        "relative volume chart"
+      ],
+      "animationInstructions": [
+        "zoom in on volume bars",
+        "highlight relative volume"
+      ],
+      "dataFields": {
+        "relativeVolume": "3x average"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 17.83,
+      "narration": "When we examine the daily trend chart, we observe that LILA is facing challenges at key support levels. With no significant consolidation or breakout patterns developing, the stock is instead in a pronounced downtrend, suggesting a lack of buying interest.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Key Support Levels",
+      "visualElements": [
+        "support level lines"
+      ],
+      "chartElements": [
+        "daily trend chart"
+      ],
+      "animationInstructions": [
+        "draw support lines",
+        "fade in daily trend chart"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 19.09,
+      "narration": "Focusing on technical metrics, the RSI is currently at 20.37, indicating that the stock is oversold but has not yet reached a reversal point. Meanwhile, the MACD remains bearish, and the price is significantly below its key moving averages, further confirming the downtrend.",
+      "pandaAction": "default",
+      "speechBubbleText": "RSI: 20.37",
+      "visualElements": [
+        "RSI gauge",
+        "MACD chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "animate RSI gauge",
+        "highlight MACD"
+      ],
+      "dataFields": {
+        "RSI": 20.37,
+        "MACD": "Bearish"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 14.63,
+      "narration": "For tactical traders, there is no defined entry zone at this time. A stop loss is suggested just below the recent support level at $4.78, as the risk/reward profile remains unfavorable under current conditions.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Stop Loss: $4.78",
+      "visualElements": [
+        "stop loss graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight stop loss",
+        "fade in caution graphic"
+      ],
+      "dataFields": {
+        "stopLoss": 4.78
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 14.49,
+      "narration": "From a short trade perspective, caution is warranted. Although there's a low short squeeze risk currently, the breakdown level is critical to monitor, as any further declines could intensify selling pressure.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Monitor Breakdown Level",
+      "visualElements": [
+        "short trade graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in short trade graphic",
+        "animate caution sign"
+      ],
+      "dataFields": {
+        "squeezeRisk": "Low"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 15.6,
+      "narration": "In terms of ecosystem insights, the broader sector trends are contributing to LILA\u2019s challenges. Even with positive news in the market, the stock\u2019s performance remains weak, aligning with a bearish sentiment among investors.",
+      "pandaAction": "default",
+      "speechBubbleText": "Broader Sector Impact",
+      "visualElements": [
+        "sector trends graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in sector trends graphic"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 24.56,
+      "narration": "In conclusion, the final verdict for LILA is to avoid entering a position at this time. Key levels to watch include the $4.78 stop loss, while remaining aware of the significant risk associated with continued volatility and selling pressure. Always exercise caution and conduct thorough research before making investment decisions.",
+      "pandaAction": "default",
+      "speechBubbleText": "Final Verdict: Avoid",
+      "visualElements": [
+        "warning sign graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in warning sign",
+        "zoom out"
+      ],
+      "dataFields": {
+        "quote": "Patience is key in investing.",
+        "disclaimer": "This content is for informational purposes only and should not be considered financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

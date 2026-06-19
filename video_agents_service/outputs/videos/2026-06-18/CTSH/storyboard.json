@@ -1,0 +1,237 @@
+{
+  "ticker": "CTSH",
+  "reportDate": "Unavailable",
+  "videoTitle": "CTSH Stock Report",
+  "durationSeconds": 167.32000000000002,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for CTSH. With the stock currently facing significant downward pressure, is this a signal for caution or an opportunity to reassess your strategy?\n\nCTSH is currently priced at $43.675, reflecting a notable intraday trend with a 10.53% drop from the previous day. This sharp decline indicates strong selling pressure, suggesting that traders are actively offloading their positions.\n\nThe current trend for CTSH is decidedly bearish, primarily driven by sector sympathy that has negatively impacted the stock's performance. This downward trajectory raises concerns about the stability of the investment at this time.\n\nEvidence supporting this trend includes an unusually high trading volume, exceeding six times the average, which corroborates the strong selling activity. Despite some positive news sentiment circulating, it has not translated into upward momentum for CTSH.\n\nAnalyzing the daily trend chart reveals that CTSH is trading below all major moving averages, with no clear support levels established. This indicates a lack of buyer interest and reinforces the notion that the stock is in a consolidation phase, potentially leading to further declines.\n\nTechnical metrics paint a clear picture of weakness: the RSI is currently at 25.58, which signifies an oversold condition, while the MACD remains bearish. These indicators suggest that the stock is under significant selling pressure and may continue its downward path.\n\nFor tactical traders, there are no defined entry zones at this moment, and a stop loss is recommended at $43.405 to limit potential losses. Given the current market conditions, there are no target levels available for a potential rebound.\n\nWhen considering a short trade, caution is advised. Although there is a low risk of a short squeeze, the breakdown level must be monitored closely, as any sudden changes could impact the stock's volatility.\n\nIn terms of ecosystem insight, broader sector and company-specific challenges appear to weigh heavily on CTSH's performance, overshadowing any positive sentiment from recent news articles. This context further complicates the investment landscape for potential buyers.\n\nIn conclusion, the final investment rating for CTSH suggests avoiding entry at this time due to the prevailing bearish trend and high selling pressure. Key levels to watch include the recent low at $43.405, which serves as a critical point for risk management, reminding investors to stay vigilant in this uncertain environment.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 12.64,
+      "narration": "Welcome to the Investing Atti stock analysis for CTSH. With the stock currently facing significant downward pressure, is this a signal for caution or an opportunity to reassess your strategy?",
+      "pandaAction": "default",
+      "speechBubbleText": "CTSH: Caution or Opportunity?",
+      "visualElements": [
+        "CTSH logo",
+        "downward arrow",
+        "question mark"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in"
+      ],
+      "dataFields": {
+        "catchyLine": "CTSH: Caution or Opportunity?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 15.42,
+      "narration": "CTSH is currently priced at $43.675, reflecting a notable intraday trend with a 10.53% drop from the previous day. This sharp decline indicates strong selling pressure, suggesting that traders are actively offloading their positions.",
+      "pandaAction": "point",
+      "speechBubbleText": "Current Price: $43.675",
+      "visualElements": [
+        "price tag",
+        "red downward trend"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "slide in",
+        "highlight price"
+      ],
+      "dataFields": {
+        "Current Price": "$43.675",
+        "Price Drop": "10.53%"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 15.28,
+      "narration": "The current trend for CTSH is decidedly bearish, primarily driven by sector sympathy that has negatively impacted the stock's performance. This downward trajectory raises concerns about the stability of the investment at this time.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Bearish Trend Alert!",
+      "visualElements": [
+        "bear icon",
+        "sector symbols"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade out"
+      ],
+      "dataFields": {
+        "Trend": "Bearish",
+        "Sector Impact": "Negative"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 17.01,
+      "narration": "Evidence supporting this trend includes an unusually high trading volume, exceeding six times the average, which corroborates the strong selling activity. Despite some positive news sentiment circulating, it has not translated into upward momentum for CTSH.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "High Trading Volume!",
+      "visualElements": [
+        "volume chart",
+        "news articles"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "zoom in",
+        "highlight volume"
+      ],
+      "dataFields": {
+        "Trading Volume": "6x Average",
+        "News Sentiment": "Positive"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 18.92,
+      "narration": "Analyzing the daily trend chart reveals that CTSH is trading below all major moving averages, with no clear support levels established. This indicates a lack of buyer interest and reinforces the notion that the stock is in a consolidation phase, potentially leading to further declines.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Below Major Averages!",
+      "visualElements": [
+        "daily trend chart",
+        "moving averages"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "draw lines",
+        "fade in"
+      ],
+      "dataFields": {
+        "Moving Averages": "Below All",
+        "Support Levels": "None"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 17.73,
+      "narration": "Technical metrics paint a clear picture of weakness: the RSI is currently at 25.58, which signifies an oversold condition, while the MACD remains bearish. These indicators suggest that the stock is under significant selling pressure and may continue its downward path.",
+      "pandaAction": "default",
+      "speechBubbleText": "RSI: 25.58",
+      "visualElements": [
+        "RSI chart",
+        "MACD chart"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight metrics",
+        "fade in"
+      ],
+      "dataFields": {
+        "RSI": "25.58",
+        "MACD": "Bearish"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 15.75,
+      "narration": "For tactical traders, there are no defined entry zones at this moment, and a stop loss is recommended at $43.405 to limit potential losses. Given the current market conditions, there are no target levels available for a potential rebound.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Stop Loss: $43.405",
+      "visualElements": [
+        "stop loss marker",
+        "no entry zones"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight stop loss",
+        "fade in"
+      ],
+      "dataFields": {
+        "Entry Zone": "None",
+        "Stop Loss": "$43.405"
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 13.63,
+      "narration": "When considering a short trade, caution is advised. Although there is a low risk of a short squeeze, the breakdown level must be monitored closely, as any sudden changes could impact the stock's volatility.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Monitor Breakdown Level!",
+      "visualElements": [
+        "short trade icon",
+        "caution sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "shake",
+        "fade in"
+      ],
+      "dataFields": {
+        "Short Squeeze Risk": "Low"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 17.73,
+      "narration": "In terms of ecosystem insight, broader sector and company-specific challenges appear to weigh heavily on CTSH's performance, overshadowing any positive sentiment from recent news articles. This context further complicates the investment landscape for potential buyers.",
+      "pandaAction": "default",
+      "speechBubbleText": "Sector Challenges Ahead!",
+      "visualElements": [
+        "sector overview",
+        "news articles"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "pan across"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 23.21,
+      "narration": "In conclusion, the final investment rating for CTSH suggests avoiding entry at this time due to the prevailing bearish trend and high selling pressure. Key levels to watch include the recent low at $43.405, which serves as a critical point for risk management, reminding investors to stay vigilant in this uncertain environment.",
+      "pandaAction": "default",
+      "speechBubbleText": "Avoid Entry!",
+      "visualElements": [
+        "warning sign",
+        "risk management"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "highlight key levels"
+      ],
+      "dataFields": {
+        "quote": "In investing, what is comfortable is rarely profitable.",
+        "disclaimer": "This content is for informational purposes only and should not be considered financial advice."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

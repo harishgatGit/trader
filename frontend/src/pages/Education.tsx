@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   BookOpen, 
   TrendingUp, 
@@ -12,10 +13,38 @@ import {
   Info
 } from 'lucide-react';
 import { PageContainer, PageHeader, SectionHeader, ResponsiveGrid, InsightCard } from '../components/ui';
+import { useSEO } from '../utils/useSEO';
+import { StructuredData } from '../components/StructuredData';
 
 const Education: React.FC = () => {
+  useSEO({
+    title: 'Stock Market Education & Cheat Sheet | Investing Atti',
+    description: 'Learn how to analyze stocks using technical indicators, moving averages, support and resistance lines, and AI-generated insights.',
+    robots: 'index, follow',
+  });
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://investingatti.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Learning Center",
+        "item": "https://investingatti.com/education"
+      }
+    ]
+  };
+
   return (
     <PageContainer>
+      <StructuredData data={breadcrumbSchema} />
       {/* Page Header */}
       <PageHeader
         title="Learning Center & Cheat Sheet"
@@ -104,7 +133,7 @@ const Education: React.FC = () => {
                 <div className="space-y-0.5">
                   <span className="text-xs font-bold text-slate-100 block">Price Sitting in the Accumulation/Entry Zone</span>
                   <p className="text-[11px] text-slate-450 font-sans leading-relaxed">
-                    Always compare the current stock price to our suggested entry zone. Buying inside the zone minimizes downside risk and provides a clear stop-loss margin.
+                    Always compare the current stock price to our suggested entry zone. Run a fresh check on our <Link to="/analyze" className="text-brand-400 hover:underline">Analysis Page</Link> to find current values.
                   </p>
                 </div>
               </div>
@@ -114,7 +143,7 @@ const Education: React.FC = () => {
                 <div className="space-y-0.5">
                   <span className="text-xs font-bold text-slate-100 block">Price Bouncing Above Support Floors</span>
                   <p className="text-[11px] text-slate-450 font-sans leading-relaxed">
-                    Support is where buyers step in. When a stock hits a support level (especially one tested 3x or more) and rebounds, it proves the "floor" is holding.
+                    Support is where buyers step in. When a stock hits a support floor (especially one tested multiple times) and rebounds, it validates the level. View floor levels for <Link to="/stocks/AAPL" className="text-brand-400 hover:underline">AAPL</Link> or <Link to="/stocks/NVDA" className="text-brand-400 hover:underline">NVDA</Link>.
                   </p>
                 </div>
               </div>

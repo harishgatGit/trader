@@ -1,0 +1,23 @@
+{
+  "jobId": "a7b722ed-f5fe-4463-a8d3-a1bd10b29a9a",
+  "reportId": "cmqkabn3j03s2k5s0029siddk",
+  "ticker": "CTSH",
+  "reportDate": "2026-06-18",
+  "status": "GENERATED",
+  "startedAt": "2026-06-19T02:03:33.801773",
+  "completedAt": "2026-06-19T02:12:12.480323",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/a7b722ed-f5fe-4463-a8d3-a1bd10b29a9a/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\CTSH\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\CTSH\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\CTSH\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\CTSH\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\CTSH\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\CTSH\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\CTSH\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\CTSH\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

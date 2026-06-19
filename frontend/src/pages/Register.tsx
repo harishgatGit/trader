@@ -5,10 +5,17 @@ import { useAppStore } from '../store/useAppStore';
 import { LoadingSpinner } from '../components/ui';
 import { useGoogleOAuth } from '../utils/useGoogleOAuth';
 import { useMicrosoftOAuth } from '../utils/useMicrosoftOAuth';
+import { useSEO } from '../utils/useSEO';
 
 const Register: React.FC = () => {
   const navigate = useNavigate();
   const { register, socialLogin, authLoading, user } = useAppStore();
+
+  useSEO({
+    title: 'Sign Up | Investing Atti',
+    description: 'Create a free account on Investing Atti to start researching stocks, tracking market indicators, and building watchlists.',
+    robots: 'noindex, nofollow',
+  });
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

@@ -212,7 +212,11 @@ model AgentReport {
   // Status
   status          String   @default("completed") // completed, failed, partial
 
+  // Accuracy tracking
+  outcome         ReportOutcome?
+
   @@index([symbol, createdAt])
+  @@index([finalRating])
   @@map("agent_reports")
 }
 
@@ -589,3 +593,38 @@ model PromptImprovementNote {
   @@map("prompt_improvement_notes")
 }
 
+
+model ReportOutcome {
+  id               String    @id @default(cuid())
+  reportId         String    @unique
+  symbol           String
+  ratingAtTime     String
+  priceAtReport    Float?
+  confidenceAtTime Float?
+  technicalScore   Float?
+  targetPrice      Float?
+  stopLossPrice    Float?
+
+  // Populated by daily cron after N trading days
+  price5dClose     Float?
+  price10dClose    Float?
+  price20dClose    Float?
+  targetHit5d      Boolean?
+  stopHit5d        Boolean?
+  return5d         Float?
+  return10d        Float?
+  return20d        Float?
+  directionCorrect Boolean?
+  overallVerdict   String?   // WIN | LOSS | NEUTRAL | PENDING
+
+  reportCreatedAt  DateTime
+  evaluatedAt      DateTime?
+  createdAt        DateTime  @default(now())
+
+  report AgentReport @relation(fields: [reportId], references: [id])
+
+  @@index([symbol])
+  @@index([overallVerdict])
+  @@index([ratingAtTime])
+  @@map("report_outcomes")
+}

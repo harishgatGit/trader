@@ -1,0 +1,1031 @@
+{
+  "symbol": "LLY",
+  "analysisDateTime": "2026-06-19T06:32:27.522Z",
+  "currentPrice": 1098.76,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data is available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "WAIT",
+    "decisionType": "TRADE",
+    "confidenceScore": 65,
+    "decisionSummary": "The stock is currently in a bullish trend but is near resistance levels with mixed momentum signals. The risk/reward ratio is not optimal for immediate entry, and recent news sentiment is negative. Waiting for a clearer entry signal or a pullback would be prudent.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is near resistance and recent news sentiment is negative, making immediate entry risky.",
+    "bestActionNow": "Wait for a pullback to a more favorable entry zone or confirmation of a breakout above resistance."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": true,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": false,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is in a strong uptrend but currently faces resistance and negative news sentiment. It's wise to wait for a clearer buying opportunity or a pullback before considering entry. The stock has shown strong upward momentum over the past months, but recent price action suggests caution due to mixed technical signals and potential resistance around current levels. The recent news has been somewhat negative, which could impact short-term price movements. In the near term, expect some volatility as the stock approaches key resistance levels. Long-term prospects remain positive if the company continues its growth trajectory, but short-term caution is advised.",
+  "technicalAnalysis": {
+    "overallBias": "MIXED",
+    "trendStage": "MARKUP",
+    "setupType": "CHASE_RISK",
+    "technicalScore": 60,
+    "keySignals": [
+      "Price above EMA20 > EMA50",
+      "Strong uptrend (ADX>25, +DI>-DI)",
+      "MACD histogram negative"
+    ],
+    "supportLevels": [
+      850.64,
+      888.26,
+      944.23,
+      979.16,
+      1052.54
+    ],
+    "resistanceLevels": [
+      996.45,
+      1022.56,
+      1148.43,
+      1181.62
+    ],
+    "vwapAnalysis": "Price is below VWAP, indicating potential weakness.",
+    "movingAverageAnalysis": "Price is above EMA20 and EMA50, indicating a bullish trend.",
+    "rsiAnalysis": "RSI(14) is neutral at 54, indicating no immediate overbought or oversold condition.",
+    "macdAnalysis": "MACD histogram is negative, suggesting weakening momentum.",
+    "volumeAnalysis": "Volume is below average, indicating lack of strong buying interest.",
+    "volumeTrendStatus": "FADING",
+    "atrVolatilityAnalysis": "ATR(14) suggests moderate volatility.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong trend.",
+    "bollingerBandAnalysis": "Price is near the middle of the Bollinger Bands, indicating no immediate breakout or breakdown."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current price is near resistance; not an ideal buy zone."
+    },
+    "pullbackEntryZone": {
+      "low": 1022.56,
+      "high": 1052.54,
+      "description": "Wait for a pullback to this zone for a better risk/reward entry."
+    },
+    "breakoutEntryLevel": {
+      "price": 1148.43,
+      "confirmationRule": "Wait for a daily close above this level with strong volume."
+    },
+    "accumulationZone": {
+      "low": 944.23,
+      "high": 979.16,
+      "description": "Consider accumulation if price stabilizes in this zone."
+    },
+    "invalidationLevel": {
+      "price": 1052.54,
+      "reason": "A break below this level would invalidate the current bullish setup."
+    },
+    "stopLoss": {
+      "price": 1052.54,
+      "stopType": "TECHNICAL",
+      "description": "Set stop-loss below recent support to limit downside risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 1148.43,
+        "reason": "First target at resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 1181.62,
+        "reason": "Second target at next resistance level."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "Not defined due to current market conditions."
+      }
+    ],
+    "exitRules": [
+      "Exit at T1 if resistance holds",
+      "Move stop-loss to breakeven after T1"
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 1098.76,
+    "riskPerShare": 46.22,
+    "rewardToTarget1": 49.67,
+    "rewardToTarget2": 82.86,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": "1.07",
+    "riskRewardToTarget2": "1.79",
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "ACCEPTABLE",
+    "positionSizingNote": "Consider reducing position size due to proximity to resistance and mixed signals."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "MIXED",
+    "entryZone": {
+      "low": 1022.56,
+      "high": 1052.54,
+      "description": "Wait for price to enter this zone for a better entry."
+    },
+    "stopLoss": {
+      "price": 1052.54,
+      "description": "Set stop-loss below recent support."
+    },
+    "targets": [
+      {
+        "price": 1148.43,
+        "label": "T1"
+      },
+      {
+        "price": 1181.62,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit at T1 if resistance holds",
+      "Consider partial exit at T2"
+    ],
+    "tradeQuality": "C"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 1022.56,
+      "high": 1052.54,
+      "description": "Look for entry in this pullback zone."
+    },
+    "stopLoss": {
+      "price": 1052.54,
+      "description": "Set stop-loss below recent support to limit downside risk."
+    },
+    "targets": [
+      {
+        "price": 1148.43,
+        "label": "T1"
+      },
+      {
+        "price": 1181.62,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 944.23,
+      "high": 979.16,
+      "description": "Consider accumulation if price stabilizes in this zone."
+    },
+    "riskReward": "ACCEPTABLE",
+    "swingVerdict": "WAIT"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "MIXED",
+    "swingSetup": {
+      "setup": "PULLBACK",
+      "analysis": "The stock is pulling back from recent highs and may offer a better entry if it stabilizes near support."
+    },
+    "entryTiming": {
+      "trigger": "WAIT_FOR_PULLBACK",
+      "analysis": "Entry timing is not ideal; wait for a pullback to support levels."
+    },
+    "supportLevels": [
+      {
+        "price": 1052.54,
+        "tests": 2
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 1148.43,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 1052.54,
+    "riskMetrics": {
+      "atr": 33.04828805163593,
+      "atrAnalysis": "ATR indicates moderate volatility.",
+      "vwap": 1099.520299,
+      "vwapAnalysis": "Price is below VWAP, indicating potential weakness.",
+      "volumeAnalysis": "Volume is below average, indicating lack of strong buying interest.",
+      "supportResistanceAnalysis": "Price is near resistance, suggesting caution."
+    },
+    "catalysts": {
+      "news": "Recent news sentiment is negative.",
+      "earnings": "Earnings data not provided.",
+      "secFilings": "No recent filings impacting the stock."
+    },
+    "shortFilter": {
+      "borrowFee": "1.5%",
+      "shortInterest": "2.2%",
+      "ssrStatus": "Inactive",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "The stock is in a pullback phase with mixed technical signals. Waiting for a clearer entry signal is advisable.",
+    "dailyTrend": {
+      "trend": "MIXED",
+      "barCount": 252,
+      "analysis": "Eli Lilly's stock shows a mixed trend due to conflicting signals. The daily technical indicators suggest a bullish bias with the price above EMA(20) and EMA(50), and a strong uptrend indicated by ADX(14). However, the MACD histogram is negative, and the price is below the VWAP, suggesting some bearish pressure. The recent news sentiment is negative, with concerns about the company's drug programs and acquisitions, which might be weighing on investor sentiment. Additionally, institutional flow shows uncertainty with below-average volume and a bearish OBV trend. These conflicting signals contribute to the mixed trend observed.",
+      "laymanExplanation": "Think of Eli Lilly's stock like a car that is trying to decide whether to go uphill or downhill. Some signs suggest it might go up, like being above certain key levels, but other signs, like recent news and some technical indicators, suggest it could go down. It's like the car is hesitating at the crossroads, and we need more information to see which way it will go for sure.",
+      "ticker": "LLY",
+      "companyName": "Eli Lilly and Company",
+      "confidenceScore": 70,
+      "trendSummary": "Eli Lilly's stock is experiencing a mixed trend with conflicting signals from technical indicators and market sentiment.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Mixed",
+          "evidence": "Price above EMA(20) and EMA(50) suggests bullishness, but negative MACD histogram and price below VWAP indicate bearish pressure."
+        },
+        {
+          "driver": "News Sentiment",
+          "impact": "Negative",
+          "evidence": "Recent news articles have a negative sentiment, particularly concerning drug program challenges and acquisitions."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "Uncertain",
+          "evidence": "Below-average volume and bearish OBV trend indicate uncertainty among institutional investors."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The stock closed at $1098.76, below its opening price of $1121.42, indicating a bearish intraday move.",
+        "movingAverageView": "Price is above EMA(20) and EMA(50), suggesting a longer-term bullish trend.",
+        "momentumView": "MACD histogram is negative, indicating weakening momentum.",
+        "volumeView": "Volume is below average, suggesting a lack of strong buying or selling conviction.",
+        "supportResistanceView": "Price is below the VWAP, indicating potential resistance around $1113.",
+        "volatilityView": "ATR(14) at 33.05 suggests moderate volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data provided.",
+        "newsImpact": "Negative sentiment from recent news about drug programs and acquisitions.",
+        "institutionalFlowImpact": "Uncertain institutional activity with bearish OBV trend.",
+        "sectorMacroImpact": "No specific sector or macroeconomic impacts provided."
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Negative news sentiment",
+          "Uncertain institutional flow",
+          "Conflicting technical signals"
+        ],
+        "whatNeedsConfirmation": "Confirmation of trend direction through consistent volume and price action."
+      },
+      "watchStatus": "Needs confirmation",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BULLISH",
+    "investmentQuality": "STRONG",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "INSUFFICIENT_DATA"
+    },
+    "bullCase": "Continued growth in pharmaceutical segment and successful new product launches.",
+    "baseCase": "Steady revenue growth with stable market conditions.",
+    "bearCase": "Regulatory challenges or failure in product pipeline could impact growth.",
+    "longTermVerdict": "ACCUMULATE"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 85,
+    "rating": "STRONG",
+    "revenueTrend": "Revenue is growing steadily.",
+    "epsTrend": "EPS is improving with strong forward guidance.",
+    "profitability": "High profitability with strong margins.",
+    "debtRisk": "Moderate due to high debt-to-equity ratio.",
+    "cashFlowQuality": "Strong cash flow supports operations.",
+    "valuationCommentary": "Valuation is high but supported by strong growth prospects."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "OVERVALUED",
+    "valuationScore": 40,
+    "peerComparisonAvailable": true,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "The stock is trading at a high valuation compared to peers, but growth prospects justify some premium."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 40,
+    "overallSentiment": "NEGATIVE",
+    "keyCatalysts": [
+      "Acquisition of 4E Therapeutics",
+      "Label expansion for leukemia drug"
+    ],
+    "keyRisksFromNews": [
+      "Negative sentiment from recent news articles"
+    ],
+    "earningsRisk": "Earnings data not provided.",
+    "catalystVerdict": "RISKY"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 20,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates potential distribution pressure with below-average volume and bearish OBV trend.",
+    "signals": [
+      "Below-average volume (0.8x)",
+      "OBV trend strongly bearish",
+      "Price below VWAP (-1.3%)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 30,
+    "reason": "High valuation and recent negative news sentiment reduce multibagger potential.",
+    "requiredConditions": [
+      "Significant new product success",
+      "Improved market conditions"
+    ],
+    "majorBlockers": [
+      "High valuation",
+      "Negative news sentiment"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "MEDIUM",
+    "technicalRisk": "Near resistance with mixed signals.",
+    "fundamentalRisk": "Moderate due to high debt levels.",
+    "valuationRisk": "High valuation compared to peers.",
+    "newsRisk": "Negative sentiment from recent news.",
+    "liquidityRisk": "Low liquidity risk with strong trading volume.",
+    "eventRisk": "Potential regulatory challenges.",
+    "topRisks": [
+      "High valuation",
+      "Negative news sentiment",
+      "Near resistance"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Successful new product launches and market expansion.",
+      "pricePath": "Continued upward trend towards new highs.",
+      "probability": "MEDIUM"
+    },
+    "baseCase": {
+      "condition": "Steady growth with stable market conditions.",
+      "pricePath": "Gradual increase with occasional pullbacks.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Regulatory challenges or market downturn.",
+      "pricePath": "Potential decline towards support levels.",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for a pullback to support levels.",
+    "Wait for confirmation of breakout above resistance.",
+    "Reassess entry if news sentiment improves."
+  ],
+  "doNotTradeConditions": [
+    "Price remains near resistance without breakout confirmation.",
+    "Negative news sentiment persists."
+  ],
+  "alertLevels": {
+    "buyAlert": 1022.56,
+    "breakoutAlert": 1148.43,
+    "stopLossAlert": 1052.54,
+    "target1Alert": 1148.43,
+    "target2Alert": 1181.62,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Elanco Animal Health",
+        "ownershipPct": "null",
+        "performance": "Elanco has been focusing on expanding its product portfolio and improving operational efficiency.",
+        "upcomingEvents": [
+          "Potential new product launches",
+          "Regulatory approvals for new veterinary drugs"
+        ],
+        "impactPotential": "Successful product launches or regulatory approvals could boost Elanco's revenues, positively impacting LLY's stock through increased equity value."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Lonza Group",
+          "role": "Supplier",
+          "description": "Provides active pharmaceutical ingredients (APIs)",
+          "riskExposure": "Disruption could delay drug production, impacting revenue."
+        },
+        {
+          "name": "Boehringer Ingelheim",
+          "role": "Supplier",
+          "description": "Supplies biologics manufacturing services",
+          "riskExposure": "Any supply chain issues could affect the availability of key biologic drugs."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Catalent, Inc.",
+          "role": "Outsource Partner",
+          "description": "Contract manufacturing and development services",
+          "riskExposure": "Disruptions could lead to delays in drug production and delivery."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Publicis Groupe",
+          "role": "Marketing Partner",
+          "description": "Provides advertising and marketing services",
+          "riskExposure": "Ineffective marketing strategies could lead to lower drug adoption rates."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Healthcare Providers",
+          "role": "Customer",
+          "description": "Purchase pharmaceuticals for patient care",
+          "riskExposure": "Changes in healthcare regulations or funding could affect purchasing volumes."
+        },
+        {
+          "name": "Government Health Agencies",
+          "role": "Customer",
+          "description": "Bulk purchases for public health programs",
+          "riskExposure": "Policy shifts or budget cuts could reduce demand."
+        }
+      ]
+    },
+    "strategicOutlook": "Eli Lilly's ecosystem is robust, with a diverse range of suppliers and partners supporting its operations. Its investment in Elanco provides a strategic foothold in the animal health sector. The main risks involve supply chain disruptions and regulatory changes affecting healthcare spending. Key externalities to watch include regulatory approvals for new drugs and shifts in healthcare policy."
+  },
+  "trendStory": {
+    "ticker": "LLY",
+    "analysis_date": "2026-06-19",
+    "price_summary": {
+      "current_price": 1098.76,
+      "previous_close": 1112.11,
+      "day_change_percent": -1.2,
+      "day_range": {
+        "high": 1121.42,
+        "low": 1089.845
+      },
+      "volume": 111474,
+      "average_volume": 138496,
+      "relative_volume": 0.8
+    },
+    "move_classification": {
+      "primary_reason": "news-driven",
+      "secondary_reasons": [
+        "sector-sympathy"
+      ],
+      "confidence": "medium",
+      "confidence_score": 65
+    },
+    "story_for_layman": {
+      "headline": "Eli Lilly's stock pulls back amid sector weakness and mixed news.",
+      "simple_explanation": "Eli Lilly's stock price dropped slightly today as the healthcare sector faced some challenges. Despite recent good news about drug developments, the stock is taking a breather.",
+      "why_it_moved": "The stock moved due to a combination of sector weakness and mixed news about the company's drug developments.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The move is uncertain due to mixed news and sector weakness, but the overall uptrend remains intact."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "Eli Lilly To Acquire Neuroscience Firm 4E Therapeutics; Financial Terms Undisclosed",
+          "summary": "Eli Lilly To Acquire Neuroscience Firm 4E Therapeutics; Financial Terms Undisclosed",
+          "source": "benzinga",
+          "published_at": "2026-06-16T13:33:30Z",
+          "impact": "neutral",
+          "relevance_score": 90
+        },
+        {
+          "headline": "Elizabeth Warren Says Your Wages Are Stalled, But Trump's Net Worth Is Up $1.4 Billion: President 'Doesn't Care' About Your Financial Situation",
+          "summary": "Elizabeth Warren says Trump's net worth rose $1.4 billion this year even as wage growth slowed for many Americans.",
+          "source": "benzinga",
+          "published_at": "2026-06-16T03:50:04Z",
+          "impact": "positive",
+          "relevance_score": 80
+        },
+        {
+          "headline": "Eli Lilly Eyes Label Expansion For Leukemia Drug",
+          "summary": "Eli Lilly's Phase 3 BRUIN CLL-322 study showed Jaypirca combination therapy cut progression or death risk by 45% in CLL/SLL.",
+          "source": "benzinga",
+          "published_at": "2026-06-15T17:43:04Z",
+          "impact": "negative",
+          "relevance_score": 70
+        },
+        {
+          "headline": "Doctors Warn Medicare's New Weight-Loss Drug Program Could Lead To A Rush Of Patients That Clinics May Struggle To Handle",
+          "summary": "Medicare's GLP-1 rollout could overwhelm doctors as seniors rush for $50 weight-loss drugs.",
+          "source": "benzinga",
+          "published_at": "2026-06-15T13:11:41Z",
+          "impact": "negative",
+          "relevance_score": 60
+        },
+        {
+          "headline": "Reported Saturday, Lilly Presents Phase 1 AJX-101 Data At EHA 2026 Showing First-In-Class Type II JAK2 Inhibitor Delivers 70% Spleen Volume Reduction And Symptom Improvement In Myelofibrosis",
+          "summary": "Reported Saturday, Lilly Presents Phase 1 AJX-101 Data At EHA 2026 Showing First-In-Class Type II JAK2 Inhibitor Delivers 70% Spleen Volume Reduction And Symptom Improvement In Myelofibrosis",
+          "source": "benzinga",
+          "published_at": "2026-06-15T07:16:00Z",
+          "impact": "neutral",
+          "relevance_score": 50
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "eps_surprise": null,
+        "revenue_surprise": null,
+        "guidance_change": "unknown",
+        "summary": "No recent earnings announcement identified in news feeds."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Healthcare",
+        "sector_change_percent": -0.96,
+        "index_change_percent": -0.6,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector Healthcare is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 0.8,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 0.8x. Institutional flow proxy score is 14."
+      },
+      "technical_context": {
+        "trend": "uptrend",
+        "breakout_level": 996.45,
+        "support_level": 850.64,
+        "resistance_level": 996.45,
+        "rsi": 53.96107500099548,
+        "macd_signal": "bearish",
+        "vwap_position": "below",
+        "summary": "Price is BULLISH overall. RSI at 53.96107500099548."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": 2.2,
+        "days_to_cover": 2.1,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short Interest at 2.2% with borrow fee of 1.5%. Squeeze risk is low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 1089.85,
+        "high": 1121.42
+      },
+      "stop_loss": 1080,
+      "target_1": 1150,
+      "target_2": 1180,
+      "risk_reward": 2.5,
+      "entry_reason": "The stock is in an uptrend with a temporary pullback, offering a potential entry point.",
+      "wait_for_confirmation": "Look for a bounce from current levels to confirm the uptrend continuation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 0,
+      "short_stop_loss": 0,
+      "short_target_1": 0,
+      "short_target_2": 0,
+      "reason": "The stock is in an uptrend, making short positions risky."
+    },
+    "final_summary": {
+      "one_line_story": "Eli Lilly's stock pulls back amid sector weakness and mixed news.",
+      "layman_summary": "Eli Lilly's stock price dropped slightly today as the healthcare sector faced some challenges. Despite recent good news about drug developments, the stock is taking a breather.",
+      "trader_action": "Monitor for confirmation of support and potential resumption of the uptrend.",
+      "risk_warning": "Sector weakness and mixed news could lead to further volatility."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "LLY",
+    "analysisDate": "2026-06-19",
+    "currentPrice": 1098.76,
+    "correlationName": "Signal Correlation",
+    "finalZone": "YELLOW_ZONE",
+    "correlationScore": 52,
+    "gradientPositionPercent": 52,
+    "gradientLabel": "Orange",
+    "confidenceLevel": "MEDIUM",
+    "oneLineSummary": "LLY shows mixed signals with a bullish long-term trend but short-term bearish pressures and negative sentiment.",
+    "laymanSummary": "Eli Lilly's stock has a strong long-term uptrend, but recent price action shows some weakness. The stock is currently in a mixed zone, indicating caution.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 12,
+        "maxScore": 20,
+        "status": "MIXED",
+        "evidence": "Price is above EMA(20) and EMA(50) but below VWAP and showing short-term bearish signals."
+      },
+      "volumeConfirmation": {
+        "score": 5,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Relative volume is below 1.5x, indicating weak volume support for recent price movements."
+      },
+      "momentumIndicators": {
+        "score": 8,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "RSI(14) is neutral at 53.96, MACD histogram is negative, indicating mixed momentum."
+      },
+      "movingAverageStructure": {
+        "score": 12,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20), EMA(50), and EMA(200) with a golden cross (EMA50 > EMA200)."
+      },
+      "vwapPosition": {
+        "score": 3,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP, indicating potential bearish pressure."
+      },
+      "supportResistanceRiskReward": {
+        "score": 6,
+        "maxScore": 10,
+        "status": "MIXED",
+        "evidence": "Price is closer to support at 1052.54 than resistance at 1148.43, offering mixed risk/reward."
+      },
+      "sectorIndexAlignment": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Healthcare sector performance is not clearly aligned with the stock's current trend."
+      },
+      "shortInterestContext": {
+        "score": 2,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Short interest data is not provided, limiting analysis of squeeze potential."
+      },
+      "newsCatalystConfirmation": {
+        "score": 1,
+        "maxScore": 3,
+        "status": "NEGATIVE",
+        "evidence": "Overall news sentiment is negative, which could impact stock performance."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow proxy indicates possible distribution with bearish signals."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Price above EMA(20), EMA(50), and EMA(200)",
+        "Golden cross (EMA50 > EMA200)"
+      ],
+      "yellowSignals": [
+        "RSI(14) is neutral",
+        "Mixed sector alignment"
+      ],
+      "redSignals": [
+        "Price below VWAP",
+        "Negative news sentiment",
+        "Weak volume confirmation"
+      ],
+      "strongestPositiveEvidence": "Price is above key moving averages with a golden cross.",
+      "strongestNegativeEvidence": "Price is below VWAP with negative news sentiment.",
+      "mixedSignalExplanation": "While the long-term trend is bullish, short-term indicators and sentiment suggest caution."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 1052.54,
+      "nearestResistance": 1148.43,
+      "distanceToSupportPercent": 4.21,
+      "distanceToResistancePercent": 4.52,
+      "riskRewardView": "MIXED",
+      "explanation": "The stock is closer to support than resistance, but the risk/reward is not clearly favorable."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a mixed zone due to conflicting signals from technical indicators and sentiment."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Improvement in volume confirmation",
+        "Positive shift in news sentiment"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Price moving above VWAP",
+        "Stronger volume support"
+      ],
+      "forRedZoneWarning": [
+        "Further decline below support levels",
+        "Continued negative news impact"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 52,
+      "markerText": "Orange",
+      "displaySummaryBelowBar": "LLY shows mixed signals with a bullish long-term trend but short-term bearish pressures and negative sentiment.",
+      "supportingPointsBelowBar": [
+        "Price above key moving averages",
+        "Negative news sentiment impacting short-term outlook"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "WAIT_FOR_CONFIRMATION",
+      "summary": "LLY is in a mixed zone with a strong long-term trend but short-term bearish pressures. Wait for confirmation of trend continuation or reversal.",
+      "riskWarning": "Negative news sentiment and weak volume could impact short-term performance.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "LLY",
+    "available": true,
+    "price": 1098.76,
+    "open": 1121.42,
+    "high": 1121.42,
+    "low": 1089.845,
+    "close": 1098.76,
+    "volume": 111474,
+    "vwap": 1099.520299,
+    "bid": 1035.5,
+    "ask": null,
+    "spread": null,
+    "changePercent": -1.2,
+    "timestamp": "2026-06-18T19:59:57.407474309Z",
+    "raw": {
+      "dailyBar": {
+        "c": 1098.76,
+        "h": 1121.42,
+        "l": 1089.845,
+        "n": 4958,
+        "o": 1121.42,
+        "t": "2026-06-18T04:00:00Z",
+        "v": 111474,
+        "vw": 1099.520299
+      },
+      "latestQuote": {
+        "ap": 0,
+        "as": 0,
+        "ax": " ",
+        "bp": 1035.5,
+        "bs": 40,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-18T20:00:01.292256572Z",
+        "z": "A"
+      },
+      "latestTrade": {
+        "c": [
+          " "
+        ],
+        "i": 52984064066409,
+        "p": 1098.76,
+        "s": 50,
+        "t": "2026-06-18T19:59:57.407474309Z",
+        "x": "V",
+        "z": "A"
+      },
+      "minuteBar": {
+        "c": 1098.76,
+        "h": 1099.57,
+        "l": 1098.7,
+        "n": 137,
+        "o": 1099.09,
+        "t": "2026-06-18T19:59:00Z",
+        "v": 3469,
+        "vw": 1099.18325
+      },
+      "prevDailyBar": {
+        "c": 1112.1,
+        "h": 1120.475,
+        "l": 1106.64,
+        "n": 4359,
+        "o": 1114.25,
+        "t": "2026-06-17T04:00:00Z",
+        "v": 108224,
+        "vw": 1114.151317
+      },
+      "symbol": "LLY"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 1098.0543423274837,
+      "ema50": 1045.3079309660188,
+      "ema200": 948.3551464783786,
+      "sma20": 1108.2185,
+      "sma50": 1011.3326999999999,
+      "sma200": 966.0804999999997,
+      "rsi14": 53.96107500099548,
+      "rsi14Prev": 57.28648913406873,
+      "macdLine": 31.152311396395817,
+      "macdSignal": 38.27209071766979,
+      "macdHist": -7.119779321273974,
+      "bbUpper": 1173.0050736939374,
+      "bbMiddle": 1108.2185,
+      "bbLower": 1043.4319263060625,
+      "bbWidth": 11.692021689574302,
+      "atr14": 33.04828805163593,
+      "obv": 3353362,
+      "relVolume": 0.8048911248179096,
+      "vwap": 1113.4175045114598,
+      "adx14": 478.60786937739647,
+      "plusDI": 26.71131022136818,
+      "minusDI": 19.11734372002295,
+      "supportLevels": [
+        850.64,
+        888.26,
+        944.23,
+        979.16,
+        1052.54
+      ],
+      "resistanceLevels": [
+        996.45,
+        1022.56,
+        1148.43,
+        1181.62
+      ],
+      "overallBias": "BULLISH",
+      "signals": [
+        "MACD histogram negative",
+        "Price above EMA20 > EMA50",
+        "Golden cross (EMA50 > EMA200)",
+        "Price below VWAP",
+        "Strong uptrend (ADX>25, +DI>-DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 979640254464,
+    "peRatio": 38.997868,
+    "pbRatio": 31.462324,
+    "epsTrailing": 28.17,
+    "epsForward": 44.48992,
+    "revenue": 72248999936,
+    "debtToEquity": 139.015,
+    "dividendYield": null,
+    "beta": 0.517,
+    "week52High": 1182.73,
+    "week52Low": 623.78,
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers - General",
+    "description": "Eli Lilly and Company discovers, develops, manufactures, and markets human pharmaceutical products in the United States, Europe, China, Japan, and internationally. The company offers cardiometabolic health products, including Basaglar, Humalog, Humalog Mix 75/25, Humalog U-100, Humalog U-200, Humalog Mix 50/50, insulin lispro, insulin lispro protamine, insulin lispro mix 75/25, Humulin, Humulin 70/30, Humulin N, Humulin R, Humulin U-500 for diabetes; Jardiance, Mounjaro, and Trulicity for type 2"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Eli Lilly To Acquire Neuroscience Firm 4E Therapeutics; Financial Terms Undisclosed",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/m-a/26/06/53222445/eli-lilly-to-acquire-neuroscience-firm-4e-therapeutics-financial-terms-undisclosed",
+        "publishedAt": "2026-06-16T13:33:30Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Elizabeth Warren Says Your Wages Are Stalled, But Trump's Net Worth Is Up $1.4 Billion: President 'Doesn't Care' About Your Financial Situation",
+        "summary": "Elizabeth Warren says Trump&#39;s net worth rose $1.4 billion this year even as wage growth slowed for many Americans.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/politics/26/06/53214685/elizabeth-warren-says-trumps-net-worth-is-up-1-4-billion-while-workers-wages-remain-stalled",
+        "publishedAt": "2026-06-16T03:50:04Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Eli Lilly Eyes Label Expansion For Leukemia Drug",
+        "summary": "Eli Lilly&#39;s Phase 3 BRUIN CLL-322 study showed Jaypirca combination therapy cut progression or death risk by 45% in CLL/SLL.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/health-care/26/06/53205800/eli-lilly-eyes-label-expansion-for-leukemia-drug",
+        "publishedAt": "2026-06-15T17:43:04Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Doctors Warn Medicare's New Weight-Loss Drug Program Could Lead To A Rush Of Patients That Clinics May Struggle To Handle",
+        "summary": "Medicare&#39;s GLP-1 rollout could overwhelm doctors as seniors rush for $50 weight-loss drugs.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/health-care/26/06/53193103/doctors-warn-medicares-new-weight-loss-drug-program-could-lead-to-a-rush-of-patients-that-clinics-may-struggle-to-handle",
+        "publishedAt": "2026-06-15T13:11:41Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Reported Saturday, Lilly Presents Phase 1 AJX-101 Data At EHA 2026 Showing First-In-Class Type II JAK2 Inhibitor Delivers 70% Spleen Volume Reduction And Symptom Improvement In Myelofibrosis",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/LLY",
+        "publishedAt": "2026-06-15T07:16:00Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Reported Sunday, Lilly's Jaypirca Plus Venetoclax And Rituximab Reduces Risk Of Disease Progression Or Death By 45% Versus Venetoclax And Rituximab Alone In Previously Treated CLL/SLL Phase 3 Study",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/LLY",
+        "publishedAt": "2026-06-15T07:04:48Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "American Express, Live Nation And A Health Care Stock: CNBC's 'Final Trades'",
+        "summary": "Eli Lilly and American Express are top picks on CNBC&#39;s Halftime Report Final Trades. Live Nation is on the verge of a new 52-week high.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/06/53162349/american-express-live-nation-and-a-health-care-stock-cnbcs-final-trades",
+        "publishedAt": "2026-06-12T11:26:45Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "CNBC Halftime Report Final Trades: Eli Lilly, American Express, Live Nation Entertainment",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/LYV",
+        "publishedAt": "2026-06-11T17:01:32Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Reported Earlier, Lilly's EBGLYSS Wins FDA Approval For Every-Eight-Week Maintenance Dose In Moderate-To-Severe Atopic Dermatitis, Becoming Only Option With Six Annual Injections And No Required Topicals",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/quote/LLY",
+        "publishedAt": "2026-06-10T07:46:11Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "7 Health Care Stocks With Whale Alerts In Today's Session",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/options/26/06/53091312/7-health-care-stocks-with-whale-alerts-in-todays-session",
+        "publishedAt": "2026-06-09T15:15:44Z",
+        "sentiment": "NEUTRAL"
+      }
+    ],
+    "sentiment": "NEGATIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 14,
+    "interpretation": "UNCERTAIN",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 0,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 8,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 0
+    },
+    "signals": [
+      "Below-average volume (0.8x)",
+      "OBV trend strongly bearish",
+      "Price below VWAP (-1.3%)",
+      "Price declining with decreasing volume (possible absorption)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WAIT",
+  "technicalScore": 60,
+  "fundamentalScore": 85,
+  "newsCatalystScore": 40,
+  "institutionalFlowProxyScore": 20,
+  "keyCatalysts": [
+    "Acquisition of 4E Therapeutics",
+    "Label expansion for leukemia drug"
+  ],
+  "keyRisks": [
+    "High valuation",
+    "Negative news sentiment",
+    "Near resistance"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score indicates potential distribution pressure with below-average volume and bearish OBV trend."
+}

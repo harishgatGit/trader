@@ -4,7 +4,23 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { VideoJobService } from '../video/video-job.service';
 import axios from 'axios';
 import * as crypto from 'crypto';
+import { v4 as uuidv4 } from 'uuid';
 import { getNYDateString } from '../../utils/date';
+
+// ── In-memory async job store ─────────────────────────────────────────────────
+export type JobStatus = 'queued' | 'running' | 'done' | 'error';
+
+export interface AnalysisJob {
+  jobId: string;
+  symbol: string;
+  status: JobStatus;
+  progress: Array<{ step: string; status: string; message?: string }>;
+  result?: any;
+  error?: string;
+  createdAt: number;   // Date.now()
+  completedAt?: number;
+}
+// ─────────────────────────────────────────────────────────────────────────────
 
 export function isFundSymbol(symbol: string): boolean {
   const clean = symbol.toUpperCase().trim();
@@ -20,15 +36,94 @@ export function isFundSymbol(symbol: string): boolean {
 @Injectable()
 export class AnalysisService {
   private readonly logger = new Logger(AnalysisService.name);
-  // Per-symbol lock to prevent cache-stampede: if N users request the same
-  // symbol simultaneously with no cache, only the first triggers the pipeline.
+  // Per-symbol lock to prevent cache-stampede
   private readonly analysisInFlight = new Map<string, Promise<any>>();
+
+  // ── Async Job Store (in-memory, TTL 30 min) ──────────────────────────────
+  private readonly jobs = new Map<string, AnalysisJob>();
+  private readonly JOB_TTL_MS = 30 * 60 * 1000; // 30 minutes
 
   constructor(
     private readonly orchestrator: OrchestratorAgent,
     private readonly prisma: PrismaService,
     private readonly videoJobService: VideoJobService,
-  ) {}
+  ) {
+    // Prune expired jobs every 10 minutes
+    setInterval(() => this.pruneExpiredJobs(), 10 * 60 * 1000);
+  }
+
+  private pruneExpiredJobs() {
+    const now = Date.now();
+    for (const [id, job] of this.jobs.entries()) {
+      if (now - job.createdAt > this.JOB_TTL_MS) {
+        this.jobs.delete(id);
+      }
+    }
+  }
+
+  /** Returns job by id (for polling endpoint) */
+  getJob(jobId: string): AnalysisJob | undefined {
+    return this.jobs.get(jobId);
+  }
+
+  /**
+   * Enqueue an analysis — returns immediately with { jobId, status: 'queued' }.
+   * Real work runs in background; client polls GET /analyze/status/:jobId.
+   */
+  async enqueueAnalysis(symbol: string, user?: any, bypassCache = false, ip?: string): Promise<{ jobId: string; status: JobStatus; symbol: string }> {
+    const clean = sanitizeSymbol(symbol);
+    const jobId = uuidv4();
+
+    const STEPS = [
+      'Market Data', 'Historical Data', 'Technical Analysis',
+      'Fundamental Data', 'News & Events', 'Institutional Flow Proxy',
+      'AI Synthesis',
+    ];
+
+    const job: AnalysisJob = {
+      jobId,
+      symbol: clean,
+      status: 'queued',
+      progress: STEPS.map(s => ({ step: s, status: 'pending' })),
+      createdAt: Date.now(),
+    };
+    this.jobs.set(jobId, job);
+
+    // Fire-and-forget — do NOT await
+    this.runJobInBackground(job, user, bypassCache, ip);
+
+    return { jobId, status: 'queued', symbol: clean };
+  }
+
+  private async runJobInBackground(job: AnalysisJob, user?: any, bypassCache = false, ip?: string) {
+    job.status = 'running';
+    // Mark first step as running
+    if (job.progress[0]) job.progress[0].status = 'running';
+
+    try {
+      const result = await this.analyze(job.symbol, user, bypassCache, ip);
+      // Merge real progress if returned
+      if (result?.progress?.length) {
+        job.progress = result.progress;
+      } else {
+        job.progress = job.progress.map(p => ({ ...p, status: 'done' }));
+      }
+      job.result = result;
+      job.status = 'done';
+      job.completedAt = Date.now();
+      this.logger.log(`Job ${job.jobId} completed for ${job.symbol}`);
+    } catch (err: any) {
+      job.status = 'error';
+      job.error = err?.message || 'Analysis failed';
+      job.progress = job.progress.map(p =>
+        p.status === 'pending' || p.status === 'running'
+          ? { ...p, status: 'error', message: err?.message }
+          : p
+      );
+      job.completedAt = Date.now();
+      this.logger.error(`Job ${job.jobId} failed for ${job.symbol}: ${err?.message}`);
+    }
+  }
 
   async analyze(symbol: string, user?: any, bypassCache = false, ip?: string) {
     const clean = sanitizeSymbol(symbol);

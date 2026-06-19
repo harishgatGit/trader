@@ -110,6 +110,17 @@ function queueLog(level: string, message: string, stack?: string) {
     return;
   }
 
+  // Don't queue 401 auth errors — expected when session expires or user is not logged in.
+  // These are not application bugs and would otherwise flood the log queue.
+  if (
+    message.includes('status 401') ||
+    message.includes('status code 401') ||
+    message.includes('Session expired') ||
+    message.includes('Unauthorized') ||
+    (message.includes('/auth/me') && level === 'error')
+  ) {
+    return;
+  }
   try {
     const newLog: QueuedLog = {
       level,

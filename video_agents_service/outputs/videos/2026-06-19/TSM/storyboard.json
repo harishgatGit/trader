@@ -1,0 +1,232 @@
+{
+  "ticker": "TSM",
+  "reportDate": "Unavailable",
+  "videoTitle": "TSM Stock Report",
+  "durationSeconds": 168.66000000000003,
+  "character": {
+    "name": "Atti Panda",
+    "role": "animated stock research guide",
+    "style": "friendly fintech mascot",
+    "placement": "bottom-left or side panel",
+    "behavior": [
+      "point",
+      "magnifying",
+      "caution",
+      "drawing",
+      "celebrate",
+      "walk"
+    ]
+  },
+  "narrationScript": "Welcome to the Investing Atti stock analysis for TSM. The Taiwan Semiconductor Manufacturing Company is currently experiencing a strong upward trend, but with the stock trading near its recent highs, is now the right time to invest?\n\nThe current price for TSM stands at $462.15, reflecting a notable daily increase of 6.95%. This upward movement has been characterized by significant buying interest throughout the trading day, suggesting robust market activity.\n\nThe stock is firmly in a bullish trend, driven primarily by positive sentiment within the semiconductor sector. This momentum is further supported by institutional interest, indicating strong demand for TSM shares.\n\nEvidence of this trend can be seen in the above-average trading volume, confirming the buying interest behind the recent price action. Additionally, the stock's price is positioned above key moving averages, which reinforces the bullish outlook.\n\nAnalyzing the daily trend chart, TSM is navigating near resistance levels, which could impact future price movements. The stock is currently in a breakout zone, but caution is advised, as it trades close to its recent highs.\n\nKey technical metrics reinforce this bullish sentiment; the MACD shows a positive trend, while the RSI is at 63.57, indicating that the stock is in bullish territory but not yet overbought. This suggests there may still be room for upward movement.\n\nFor tactical traders, the recommended entry zone lies between $385.64 and $405.7, with a stop loss set at $405.7 to protect against downside risk. Potential target levels for profit-taking are positioned at $450.1 and $464.905.\n\nHowever, caution is warranted for those considering short positions. While short selling data is unavailable, the stock's current proximity to resistance suggests a medium risk for a potential squeeze if prices decline.\n\nLooking at the broader ecosystem, positive developments in the semiconductor sector, particularly related to Intel's strategic initiatives, contribute to the overall strength of TSM's setup. This sector sentiment plays a crucial role in shaping investor confidence.\n\nIn conclusion, TSM is currently rated as a \"WAIT.\" While the stock shows a strong upward trend supported by solid fundamentals, entering at this level carries higher risk due to resistance levels. Investors should consider waiting for a pullback or clearer breakout confirmation before making any decisions.",
+  "storyboard": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Stock Overview",
+      "durationSeconds": 16.1,
+      "narration": "Welcome to the Investing Atti stock analysis for TSM. The Taiwan Semiconductor Manufacturing Company is currently experiencing a strong upward trend, but with the stock trading near its recent highs, is now the right time to invest?",
+      "pandaAction": "default",
+      "speechBubbleText": "Is now the right time to invest?",
+      "visualElements": [
+        "TSM logo",
+        "upward trend graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in",
+        "zoom in on TSM logo"
+      ],
+      "dataFields": {
+        "catchyLine": "TSM Pullback: Buying Opportunity or Value Trap?"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Price Action",
+      "durationSeconds": 15.82,
+      "narration": "The current price for TSM stands at $462.15, reflecting a notable daily increase of 6.95%. This upward movement has been characterized by significant buying interest throughout the trading day, suggesting robust market activity.",
+      "pandaAction": "point",
+      "speechBubbleText": "$462.15, +6.95%",
+      "visualElements": [
+        "price tag",
+        "bullish market graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "slide in price tag",
+        "highlight increase"
+      ],
+      "dataFields": {
+        "currentPrice": 462.15,
+        "dailyIncrease": 6.95
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Trend Reason",
+      "durationSeconds": 14.85,
+      "narration": "The stock is firmly in a bullish trend, driven primarily by positive sentiment within the semiconductor sector. This momentum is further supported by institutional interest, indicating strong demand for TSM shares.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Bullish trend supported by sentiment!",
+      "visualElements": [
+        "bullish trend line",
+        "institutional interest graphic"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "zoom in on trend line",
+        "fade in institutional graphic"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Evidence",
+      "durationSeconds": 17.0,
+      "narration": "Evidence of this trend can be seen in the above-average trading volume, confirming the buying interest behind the recent price action. Additionally, the stock's price is positioned above key moving averages, which reinforces the bullish outlook.",
+      "pandaAction": "drawing",
+      "speechBubbleText": "Above-average trading volume!",
+      "visualElements": [
+        "volume chart",
+        "moving averages overlay"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "draw volume bars",
+        "highlight moving averages"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Daily Trend",
+      "durationSeconds": 15.54,
+      "narration": "Analyzing the daily trend chart, TSM is navigating near resistance levels, which could impact future price movements. The stock is currently in a breakout zone, but caution is advised, as it trades close to its recent highs.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Caution: Near resistance!",
+      "visualElements": [
+        "daily trend chart",
+        "resistance level marker"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight resistance level",
+        "fade in breakout zone"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Technical Metrics",
+      "durationSeconds": 17.21,
+      "narration": "Key technical metrics reinforce this bullish sentiment; the MACD shows a positive trend, while the RSI is at 63.57, indicating that the stock is in bullish territory but not yet overbought. This suggests there may still be room for upward movement.",
+      "pandaAction": "default",
+      "speechBubbleText": "MACD positive, RSI 63.57!",
+      "visualElements": [
+        "MACD chart",
+        "RSI indicator"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "animate MACD line",
+        "highlight RSI value"
+      ],
+      "dataFields": {
+        "MACD": "positive",
+        "RSI": 63.57
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Tactical Setup",
+      "durationSeconds": 15.75,
+      "narration": "For tactical traders, the recommended entry zone lies between $385.64 and $405.7, with a stop loss set at $405.7 to protect against downside risk. Potential target levels for profit-taking are positioned at $450.1 and $464.905.",
+      "pandaAction": "point",
+      "speechBubbleText": "Entry Zone: $385.64 - $405.7",
+      "visualElements": [
+        "entry zone graphic",
+        "stop loss marker"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "highlight entry zone",
+        "fade in target levels"
+      ],
+      "dataFields": {
+        "entryZoneLow": 385.64,
+        "entryZoneHigh": 405.7,
+        "stopLoss": 405.7,
+        "targets": [
+          450.1,
+          464.905
+        ]
+      }
+    },
+    {
+      "sceneNumber": 8,
+      "sceneName": "Short Trade",
+      "durationSeconds": 15.2,
+      "narration": "However, caution is warranted for those considering short positions. While short selling data is unavailable, the stock's current proximity to resistance suggests a medium risk for a potential squeeze if prices decline.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Medium risk for short positions!",
+      "visualElements": [
+        "short selling graphic",
+        "risk warning sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in risk sign",
+        "highlight proximity to resistance"
+      ],
+      "dataFields": {
+        "squeezeRisk": "MEDIUM"
+      }
+    },
+    {
+      "sceneNumber": 9,
+      "sceneName": "Ecosystem Insight",
+      "durationSeconds": 18.39,
+      "narration": "Looking at the broader ecosystem, positive developments in the semiconductor sector, particularly related to Intel's strategic initiatives, contribute to the overall strength of TSM's setup. This sector sentiment plays a crucial role in shaping investor confidence.",
+      "pandaAction": "default",
+      "speechBubbleText": "Positive sector developments!",
+      "visualElements": [
+        "semiconductor sector graphic",
+        "Intel logo"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in sector graphic",
+        "highlight Intel initiatives"
+      ],
+      "dataFields": {}
+    },
+    {
+      "sceneNumber": 10,
+      "sceneName": "Final Verdict",
+      "durationSeconds": 22.8,
+      "narration": "In conclusion, TSM is currently rated as a \"WAIT.\" While the stock shows a strong upward trend supported by solid fundamentals, entering at this level carries higher risk due to resistance levels. Investors should consider waiting for a pullback or clearer breakout confirmation before making any decisions.",
+      "pandaAction": "default",
+      "speechBubbleText": "TSM Rating: WAIT",
+      "visualElements": [
+        "rating graphic",
+        "wait sign"
+      ],
+      "chartElements": [],
+      "animationInstructions": [
+        "fade in rating",
+        "highlight wait sign"
+      ],
+      "dataFields": {
+        "quote": "Patience is the key to successful investing.",
+        "disclaimer": "This is not financial advice. Please do your own research."
+      }
+    }
+  ],
+  "designStyle": {
+    "theme": "dark InvestingAtti fintech UI",
+    "characterStyle": "animated panda guide",
+    "layout": "vertical mobile video",
+    "animationStyle": "smooth, modern, educational, interactive",
+    "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
+    "colors": "use website theme tokens"
+  }
+}

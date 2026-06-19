@@ -1,0 +1,715 @@
+{
+  "symbol": "COGNIZANT",
+  "analysisDateTime": "2026-06-19T02:00:25.036Z",
+  "currentPrice": null,
+  "dataQuality": {
+    "rating": "INSUFFICIENT",
+    "missingFields": [
+      "price",
+      "volume",
+      "historicalCandles",
+      "technicals",
+      "fundamentals",
+      "news",
+      "valuation"
+    ],
+    "staleDataWarning": "Insufficient historical candle data and lack of current market data.",
+    "decisionAllowed": false,
+    "reason": "The data provided is insufficient for a reliable analysis."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 0,
+    "decisionSummary": "Due to the lack of sufficient data across price, volume, technical indicators, and fundamentals, a reliable trading decision cannot be made. The stock should be placed on a watchlist until more comprehensive data becomes available.",
+    "shouldBuyNow": false,
+    "buyNowReason": "Insufficient data to support a buy decision.",
+    "bestActionNow": "Monitor the stock for more data availability."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": false,
+    "nearResistanceRisk": false,
+    "earningsRisk": false,
+    "newsRiskAcceptable": false,
+    "liquidityAcceptable": false,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The current lack of data makes it impossible to form a reliable trading strategy for Cognizant. Without key information like price trends, volume, and fundamental insights, it's best to wait until more data is available. The stock should be monitored for any updates that could provide a clearer picture. In the meantime, avoid making any trading decisions based on the current incomplete data.",
+  "technicalAnalysis": {
+    "overallBias": "INSUFFICIENT_DATA",
+    "trendStage": "UNKNOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 0,
+    "keySignals": [],
+    "supportLevels": [],
+    "resistanceLevels": [],
+    "vwapAnalysis": "Insufficient data to analyze VWAP.",
+    "movingAverageAnalysis": "Insufficient data to analyze moving averages.",
+    "rsiAnalysis": "Insufficient data to analyze RSI.",
+    "macdAnalysis": "Insufficient data to analyze MACD.",
+    "volumeAnalysis": "Insufficient data to analyze volume.",
+    "volumeTrendStatus": "INSUFFICIENT_DATA",
+    "atrVolatilityAnalysis": "Insufficient data to analyze ATR volatility.",
+    "adxTrendStrengthAnalysis": "Insufficient data to analyze ADX trend strength.",
+    "bollingerBandAnalysis": "Insufficient data to analyze Bollinger Bands."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "NO_TRADE",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "No valid entry zone due to insufficient data."
+    },
+    "pullbackEntryZone": {
+      "low": null,
+      "high": null,
+      "description": "No pullback entry zone due to insufficient data."
+    },
+    "breakoutEntryLevel": {
+      "price": null,
+      "confirmationRule": "No breakout entry level due to insufficient data."
+    },
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone due to insufficient data."
+    },
+    "invalidationLevel": {
+      "price": null,
+      "reason": "No invalidation level due to insufficient data."
+    },
+    "stopLoss": {
+      "price": null,
+      "stopType": "NOT_AVAILABLE",
+      "description": "No stop loss available due to insufficient data."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": null,
+        "reason": "No target price due to insufficient data."
+      },
+      {
+        "label": "T2",
+        "price": null,
+        "reason": "No target price due to insufficient data."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No target price due to insufficient data."
+      }
+    ],
+    "exitRules": [
+      "No exit rules due to insufficient data."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": null,
+    "riskPerShare": null,
+    "rewardToTarget1": null,
+    "rewardToTarget2": null,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": null,
+    "riskRewardToTarget2": null,
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "UNAVAILABLE",
+    "positionSizingNote": "Position sizing cannot be determined due to lack of data."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "NEUTRAL",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to insufficient data."
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "No stop loss due to insufficient data."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "No exit rules due to insufficient data."
+    ],
+    "tradeQuality": "F"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "NEUTRAL",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to insufficient data."
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "No stop loss due to insufficient data."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone due to insufficient data."
+    },
+    "riskReward": null,
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "NEUTRAL",
+    "swingSetup": {
+      "setup": "No setup",
+      "analysis": "Insufficient data for swing analysis."
+    },
+    "entryTiming": {
+      "trigger": "No trigger",
+      "analysis": "Insufficient data for entry timing analysis."
+    },
+    "supportLevels": [],
+    "resistanceLevels": [],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": null,
+    "riskMetrics": {
+      "atr": null,
+      "atrAnalysis": "Insufficient data for ATR analysis.",
+      "vwap": null,
+      "vwapAnalysis": "Insufficient data for VWAP analysis.",
+      "volumeAnalysis": "Insufficient data for volume analysis.",
+      "supportResistanceAnalysis": "Insufficient data for support/resistance analysis."
+    },
+    "catalysts": {
+      "news": "No news data available.",
+      "earnings": "No earnings data available.",
+      "secFilings": "No SEC filings data available."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "No tactical horizon details due to insufficient data.",
+    "dailyTrend": {
+      "trend": "NEUTRAL",
+      "barCount": 252,
+      "analysis": "The analysis for Cognizant Technology Solutions is inconclusive because there is no available historical price data, technical indicators, or fundamental information. Without this data, it's impossible to determine a clear trend or the reasons behind any potential price movements. The institutional flow data is also uncertain, providing no clear signals.",
+      "laymanExplanation": "We don't have enough information to say what's happening with Cognizant's stock right now. It's like trying to guess the weather without looking outside or checking a forecast. We need more data to understand the situation better.",
+      "ticker": "COGNIZANT",
+      "companyName": "Cognizant Technology Solutions",
+      "confidenceScore": 0,
+      "trendSummary": "The trend for Cognizant is currently neutral due to insufficient data.",
+      "keyDrivers": [
+        {
+          "driver": "Data Availability",
+          "impact": "Neutral",
+          "evidence": "Price, volume, technical indicators, and fundamental data are unavailable."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "No data available to assess price action.",
+        "movingAverageView": "No data available to assess moving averages.",
+        "momentumView": "No data available to assess momentum.",
+        "volumeView": "No data available to assess volume.",
+        "supportResistanceView": "No data available to assess support or resistance levels.",
+        "volatilityView": "No data available to assess volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "No earnings data available.",
+        "newsImpact": "No news data available.",
+        "institutionalFlowImpact": "Institutional flow data is uncertain with no clear signals.",
+        "sectorMacroImpact": "No sector or macro data available."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Lack of data makes it difficult to assess the stock's current situation."
+        ],
+        "whatNeedsConfirmation": "Availability of historical price and volume data, technical indicators, and fundamental information."
+      },
+      "watchStatus": "High risk",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "INSUFFICIENT_DATA",
+    "investmentQuality": "INSUFFICIENT_DATA",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient_data"
+    },
+    "bullCase": "Insufficient data for bull case.",
+    "baseCase": "Insufficient data for base case.",
+    "bearCase": "Insufficient data for bear case.",
+    "longTermVerdict": "INSUFFICIENT_DATA"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": null,
+    "rating": "INSUFFICIENT_DATA",
+    "revenueTrend": "Insufficient data",
+    "epsTrend": "Insufficient data",
+    "profitability": "Insufficient data",
+    "debtRisk": "Insufficient data",
+    "cashFlowQuality": "Insufficient data",
+    "valuationCommentary": "Insufficient data"
+  },
+  "valuationAnalysis": {
+    "valuationRating": "INSUFFICIENT_DATA",
+    "valuationScore": null,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Insufficient data for valuation analysis."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": null,
+    "overallSentiment": "UNAVAILABLE",
+    "keyCatalysts": [],
+    "keyRisksFromNews": [],
+    "earningsRisk": "No earnings data available.",
+    "catalystVerdict": "UNAVAILABLE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": null,
+    "interpretation": "UNAVAILABLE",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The institutional flow proxy score is unavailable, making it difficult to determine any accumulation or distribution trends.",
+    "signals": [],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "INSUFFICIENT_DATA",
+    "probabilityScore": null,
+    "reason": "Insufficient data to assess multibagger probability.",
+    "requiredConditions": [],
+    "majorBlockers": []
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "VERY_HIGH",
+    "technicalRisk": "Insufficient data to assess technical risk.",
+    "fundamentalRisk": "Insufficient data to assess fundamental risk.",
+    "valuationRisk": "Insufficient data to assess valuation risk.",
+    "newsRisk": "Insufficient data to assess news risk.",
+    "liquidityRisk": "Insufficient data to assess liquidity risk.",
+    "eventRisk": "Insufficient data to assess event risk.",
+    "topRisks": [
+      "Insufficient data across all key areas."
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Insufficient data",
+      "pricePath": "Insufficient data",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Insufficient data",
+      "pricePath": "Insufficient data",
+      "probability": "LOW"
+    },
+    "bearCase": {
+      "condition": "Insufficient data",
+      "pricePath": "Insufficient data",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for data updates",
+    "Avoid trading until data improves",
+    "Reassess when more information is available"
+  ],
+  "doNotTradeConditions": [
+    "Insufficient data for reliable analysis"
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": null,
+    "stopLossAlert": null,
+    "target1Alert": null,
+    "target2Alert": null,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Trizetto Corporation",
+        "ownershipPct": "100%",
+        "performance": "Trizetto has been integrated into Cognizant's healthcare offerings, enhancing its healthcare IT services.",
+        "upcomingEvents": [
+          "Expansion of healthcare IT services"
+        ],
+        "impactPotential": "Positive impact on Cognizant's stock due to enhanced service offerings and potential new client acquisitions in the healthcare sector."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Microsoft",
+          "role": "Supplier",
+          "description": "Cloud services and software solutions",
+          "riskExposure": "High impact if disrupted, as cloud services are critical for Cognizant's digital solutions."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Tata Consultancy Services",
+          "role": "Outsource Partner",
+          "description": "IT services and support",
+          "riskExposure": "Moderate impact if disrupted, as Cognizant relies on outsourcing for cost-effective service delivery."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Salesforce",
+          "role": "Marketing Partner",
+          "description": "Joint marketing and sales initiatives for cloud-based solutions",
+          "riskExposure": "Moderate impact, as collaboration enhances market reach and solution integration."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Healthcare Providers",
+          "role": "Customer",
+          "description": "IT solutions and services for healthcare management",
+          "riskExposure": "High impact if this sector faces downturns, as it is a significant revenue stream for Cognizant."
+        }
+      ]
+    },
+    "strategicOutlook": "Cognizant's ecosystem is robust with a strong foothold in the healthcare IT sector through its acquisition of Trizetto. The company faces moderate concentration risk due to reliance on key suppliers like Microsoft for cloud services. Upcoming expansions in healthcare IT services present growth opportunities, while any disruptions in cloud services or downturns in the healthcare sector could pose challenges."
+  },
+  "trendStory": {
+    "ticker": "COGNIZANT",
+    "analysis_date": "2026-06-18",
+    "price_summary": {
+      "current_price": 0,
+      "previous_close": 0,
+      "day_change_percent": 0,
+      "day_range": {
+        "high": 0,
+        "low": 0
+      },
+      "volume": 0,
+      "average_volume": 0,
+      "relative_volume": 1
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "COGNIZANT trades up 0.0% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 1,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 0,
+        "high": 0
+      },
+      "stop_loss": 0,
+      "target_1": 0,
+      "target_2": 0,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 0,
+      "short_stop_loss": 0,
+      "short_target_1": 0,
+      "short_target_2": 0,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "COGNIZANT moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "COGNIZANT",
+    "analysisDate": "2026-06-19",
+    "currentPrice": null,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 0,
+    "gradientPositionPercent": 0,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "LOW",
+    "oneLineSummary": "Insufficient data to assess Cognizant's stock signal correlation.",
+    "laymanSummary": "There isn't enough data available to determine if Cognizant's stock is in a favorable, mixed, or high-risk zone.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 0,
+        "maxScore": 20,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No price data available."
+      },
+      "volumeConfirmation": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No volume data available."
+      },
+      "momentumIndicators": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No momentum indicators provided."
+      },
+      "movingAverageStructure": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No moving average data available."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No VWAP data available."
+      },
+      "supportResistanceRiskReward": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No support/resistance data available."
+      },
+      "sectorIndexAlignment": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No sector or index performance data available."
+      },
+      "shortInterestContext": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No short interest data available."
+      },
+      "newsCatalystConfirmation": {
+        "score": 0,
+        "maxScore": 3,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No news or catalyst data available."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "Institutional flow proxy is uncertain."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [],
+      "redSignals": [],
+      "strongestPositiveEvidence": "None due to lack of data.",
+      "strongestNegativeEvidence": "Complete lack of data across all categories.",
+      "mixedSignalExplanation": "No data available to provide a mixed signal explanation."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": null,
+      "nearestResistance": null,
+      "distanceToSupportPercent": null,
+      "distanceToResistancePercent": null,
+      "riskRewardView": "INSUFFICIENT_DATA",
+      "explanation": "No support or resistance data available."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The analysis falls into the RED_ZONE due to a complete lack of data, indicating high uncertainty and risk."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Complete data set including price, volume, and technical indicators."
+      ],
+      "forYellowToGreenUpgrade": [
+        "Partial data indicating positive trends or momentum."
+      ],
+      "forRedZoneWarning": [
+        "Any data indicating negative trends or high risk."
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 0,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "Insufficient data to assess stock signals.",
+      "supportingPointsBelowBar": [
+        "No price or volume data.",
+        "No technical indicators available.",
+        "No news or sentiment data."
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "INSUFFICIENT_DATA",
+      "summary": "The current analysis lacks sufficient data to provide a meaningful signal correlation for Cognizant.",
+      "riskWarning": "Due to the absence of data, any investment decision would be highly speculative.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "COGNIZANT",
+    "available": false,
+    "price": null,
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "vwap": null,
+    "bid": null,
+    "ask": null,
+    "spread": null,
+    "changePercent": null,
+    "timestamp": null,
+    "raw": null
+  },
+  "technicals": {
+    "primary": null,
+    "timeframes": []
+  },
+  "fundamentals": {
+    "available": false,
+    "source": "unavailable",
+    "marketCap": null,
+    "peRatio": null,
+    "pbRatio": null,
+    "epsTrailing": null,
+    "epsForward": null,
+    "revenue": null,
+    "debtToEquity": null,
+    "dividendYield": null,
+    "beta": null,
+    "week52High": null,
+    "week52Low": null,
+    "sector": null,
+    "industry": null,
+    "description": null,
+    "unavailableReason": "Fundamental data not available from free sources for this symbol."
+  },
+  "news": {
+    "available": false,
+    "source": "alpaca_news",
+    "items": [],
+    "sentiment": null,
+    "unavailableReason": "No recent news available for this symbol."
+  },
+  "institutionalFlow": {
+    "proxyScore": 0,
+    "interpretation": "UNCERTAIN",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 0,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 0,
+      "supportHoldScore": 0,
+      "breakoutVolScore": 0,
+      "largeBodyScore": 0
+    },
+    "signals": [],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 0,
+  "fundamentalScore": null,
+  "newsCatalystScore": null,
+  "institutionalFlowProxyScore": null,
+  "keyCatalysts": [],
+  "keyRisks": [
+    "Insufficient data across all key areas."
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The institutional flow proxy score is unavailable, making it difficult to determine any accumulation or distribution trends."
+}

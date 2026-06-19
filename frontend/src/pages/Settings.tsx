@@ -2,8 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { riskSettingsApi, healthApi } from '../services/api';
 import { LoadingSpinner, PageContainer, PageHeader } from '../components/ui';
 import { CheckCircle, XCircle, AlertCircle, RefreshCw, Save, Key, ShieldCheck } from 'lucide-react';
+import { useSEO } from '../utils/useSEO';
 
 const Settings: React.FC = () => {
+  useSEO({
+    title: 'Settings | Investing Atti',
+    description: 'Configure risk management parameters, system settings, and check API integrations.',
+    robots: 'noindex, nofollow',
+  });
   const [riskSettings, setRiskSettings] = useState<any>(null);
   const [apiStatus, setApiStatus] = useState<any>(null);
   const [loading, setLoading] = useState(true);

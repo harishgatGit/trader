@@ -3,6 +3,7 @@ import { Plus, Trash2, Power, Mail, MailX, Bell, AlertCircle, Sparkles } from 'l
 import { useAppStore } from '../store/useAppStore';
 import { EmptyState, LoadingSpinner, PageContainer, PageHeader } from '../components/ui';
 import { AlertType } from '../types';
+import { useSEO } from '../utils/useSEO';
 
 const ALERT_TYPE_LABELS: Record<AlertType, string> = {
   price_above: 'Price Above',
@@ -21,6 +22,12 @@ const ALERT_TYPE_LABELS: Record<AlertType, string> = {
 const NUMERIC_TYPES = ['price_above', 'price_below', 'rsi_above', 'rsi_below', 'stop_loss_hit', 'target_hit'];
 
 const AlertsPage: React.FC = () => {
+  useSEO({
+    title: 'Timing Alerts | Investing Atti',
+    description: 'Set custom price triggers, RSI level crossers, or AI rating update notifications.',
+    robots: 'noindex, nofollow',
+  });
+
   const { alerts, alertsLoading, fetchAlerts, createAlert, updateAlert, deleteAlert } = useAppStore();
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({

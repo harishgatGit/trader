@@ -1,0 +1,28 @@
+{
+  "ticker": "AMD",
+  "companyName": "AMD",
+  "reportDate": "Unavailable",
+  "currentPrice": 536.59,
+  "dayChangePct": 4.87,
+  "overallSignal": "WAIT",
+  "whyStockMoved": "analyst-driven",
+  "catalystSummary": "Positive sentiment around recent performance",
+  "volumeSummary": "Volume is stable, supporting the current price levels.",
+  "trendSummary": "AMD's stock is in a bullish trend, as evidenced by its price consistently moving above key moving averages, such as the EMA(20) and EMA(50), and a recent golden cross where the EMA(50) crossed above the EMA(200). The ADX(14) indicates a strong trend, and the RSI(14) is at 61.18, suggesting that the stock is not yet overbought. Despite a negative MACD histogram, the price is above the VWAP and continues to rise, supported by increasing volume. The recent positive news sentiment and bullish institutional flow further support this upward movement.",
+  "supportLevels": [
+    486.96
+  ],
+  "resistanceLevels": [
+    558.22
+  ],
+  "entryZone": "Low: 437.71, High: 486.96",
+  "stopLoss": "Price: 486.96 (Stop-loss below support to protect against downside.)",
+  "targets": [
+    558.22,
+    580.0
+  ],
+  "shortTradeView": "SI%: Data unavailable, Borrow Fee: Data unavailable, Squeeze Risk: LOW",
+  "riskWarnings": "High valuation; Price near resistance",
+  "finalVerdict": "AMD is in a strong uptrend but currently extended and near resistance levels. The risk/reward ratio is not ideal for immediate entry. Wait for a pullback or breakout confirmation.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: AMD is currently in a strong upward trend, but the stock price is quite high and close to resistance levels. It might be better to wait for the price to come down a bit or to see if it can break through the resistance before buying. The stock has been gaining due to positive sentiment around its performance, but buying now could be risky due to the high price. In the short term, expect some volatility as the stock tests these high levels. Long-term, AMD remains a strong player in the semiconductor industry, but entering at a lower price would be more prudent."
+}

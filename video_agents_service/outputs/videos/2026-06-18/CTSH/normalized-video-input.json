@@ -1,0 +1,25 @@
+{
+  "ticker": "CTSH",
+  "companyName": "CTSH",
+  "reportDate": "Unavailable",
+  "currentPrice": 43.675,
+  "dayChangePct": -10.53,
+  "overallSignal": "AVOID",
+  "whyStockMoved": "sector-sympathy",
+  "catalystSummary": "Positive news sentiment from recent articles.",
+  "volumeSummary": "High relative volume suggests strong selling pressure.",
+  "trendSummary": "CTSH has seen a substantial decline in its stock price, closing at $43.675, which is a 10.53% drop from the previous day. This decline is supported by a very high trading volume, more than six times the average, indicating strong selling pressure. The technical indicators are aligned with this bearish trend: RSI(14) is in the oversold territory at 25.58, suggesting that the stock is heavily sold off. The MACD is bearish, and the stock is trading below all major moving averages (EMA(20), EMA(50), and EMA(200)), which confirms the downward momentum. Furthermore, the ADX value is extremely high, indicating a strong trend strength. Institutional flow data shows a distribution pattern, reinforcing the bearish sentiment. Despite the overall positive sentiment in the news, it seems not to have impacted CTSH's stock positively, possibly due to broader sector or company-specific issues.",
+  "supportLevels": [
+    43.405
+  ],
+  "resistanceLevels": [
+    57.64
+  ],
+  "entryZone": "Low: None, High: None",
+  "stopLoss": "Price: 43.405 (Stop loss set at recent low to limit downside risk.)",
+  "targets": [],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: LOW",
+  "riskWarnings": "Strong downtrend; High selling pressure; Lack of growth catalysts",
+  "finalVerdict": "The stock is currently in a strong downtrend with bearish technical indicators and high selling pressure. The risk/reward ratio is poor, and the stock is experiencing distribution. Therefore, it is advisable to avoid entering a position at this time.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently in a strong downward trend with high selling pressure, making it a risky investment at this time. It is advisable to avoid buying until there is a clear sign of reversal or stabilization. The stock has been declining sharply, and technical indicators suggest continued bearish momentum. High relative volume indicates strong selling pressure, and the stock is trading well below key moving averages. Despite positive news sentiment, the technical setup remains unfavorable for a buy decision."
+}

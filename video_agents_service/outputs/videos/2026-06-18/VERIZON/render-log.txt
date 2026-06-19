@@ -1,0 +1,1311 @@
+STDOUT:
+[90mRemotion root directory:[39m [90mC:\Users\haris\Documents\code_base\trader\video_agents_service\templates\remotion[39m
+[90mNo config file loaded.[39m
+[90mChecking if[39m [90mindex.ts[39m [90mis the entry file[39m
+[90m[90mEntry point = C:\Users\haris\Documents\code_base\trader\video_agents_service\templates\remotion\index.ts (argument passed - found in cwd)[39m[90m[39m
+[90mEnsuring browser executable[39m
+[90mEnsured browser is available.[39m
+[40m openBrowser() [49m [90mOpening browser: gl = null, executable = C:\Users\haris\Documents\code_base\trader\video_agents_service\templates\remotion\node_modules\.remotion\chrome-headless-shell\win64\chrome-headless-shell-win64\chrome-headless-shell.exe, enableMultiProcessOnLinux = true[39m
+Bundling 6%
+Bundling 18%
+Bundling 51%
+Bundling 65%
+Bundling 71%
+Bundling 76%
+Bundling 81%
+Bundling 86%
+Bundling 91%
+Bundling 98%
+Bundling 100%
+[90mBundling done in 3695ms[39m
+[90mCopying done in 0ms[39m
+Getting composition
+[90mBundled under[39m [90mC:\Users\haris\AppData\Local\Temp\remotion-webpack-bundle-jNDhkK[39m
+[90mCreated directory for temporary files[39m [90mC:\Users\haris\AppData\Local\Temp\remotion-v4.0.472-assetsh29h05w5yw[39m
+[40m compositor [49m [90mStarting Rust process. Max video cache size: 337MB, max threads = 2[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 1ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 16ms[39m[90m[39m
+[40m selectComposition() [49m [90mRunning calculateMetadata()...[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Running the calculateMetadata() function for composition StockReportVideo" handle was cleared after 4ms[39m[90m[39m
+[40m selectComposition() [49m [90mcalculateMetadata() took 14ms[39m
+[90mComposition = StockReportVideo (Passed as argument)[39m
+[90mCodec = h264 (derived from out name)[39m
+[90mOutput = C:\Users\haris\Documents\code_base\trader\video_agents_service\outputs\videos\2026-06-18\VERIZON\final-video.mp4[39m
+[90mConcurrency = 4x[39m
+[40m renderMedia() [49m [90mFree memory:[39m [90m682594304[39m [90mEstimated usage parallel encoding[39m [90m921600000[39m
+[40m renderMedia() [49m [90mUsing concurrency:[39m [90m4[39m
+[40m renderMedia() [49m [90mdelayRender() timeout:[39m [90m30000[39m
+[40m renderMedia() [49m [90mCodec supports parallel rendering:[39m [90mtrue[39m
+[40m renderMedia() [49m [90mParallel encoding is disabled.[39m
+[40m renderMedia() [49m [90mRendering frames 0-4644[39m
+Rendered 0/4645
+[40m Tab 0, delayRender() [49m [90m[90m"Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 2ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 1ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 5ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 1ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 3ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 23ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 1ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Waiting for Composition "StockReportVideo"" handle was cleared after 76ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Waiting for Composition "StockReportVideo"" handle was cleared after 71ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Waiting for Composition "StockReportVideo"" handle was cleared after 82ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 3ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 1" handle was cleared after 0ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 0" handle was cleared after 0ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 2" handle was cleared after 0ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Waiting for Composition "StockReportVideo"" handle was cleared after 79ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 3" handle was cleared after 0ms[39m[90m[39m
+[90mStarting download [0]:[39m [90mhttp://localhost:3001/public/VERIZON_Unavailable_audio.mp3[39m
+Rendered 1/4645, time remaining: 49m 41s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 4" handle was cleared after 6ms[39m[90m[39m
+Rendered 2/4645, time remaining: 25m 39s
+Rendered 3/4645, time remaining: 17m 22s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 5" handle was cleared after 3ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 6" handle was cleared after 24ms[39m[90m[39m
+Rendered 4/4645, time remaining: 14m 49s
+Rendered 5/4645, time remaining: 11m 54s
+Rendered 6/4645, time remaining: 10m 30s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 7" handle was cleared after 35ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 8" handle was cleared after 34ms[39m[90m[39m
+Rendered 7/4645, time remaining: 9m 31s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 9" handle was cleared after 77ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 10" handle was cleared after 37ms[39m[90m[39m
+Rendered 8/4645, time remaining: 9m 58s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 11" handle was cleared after 14ms[39m[90m[39m
+Rendered 9/4645, time remaining: 9m 14s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 12" handle was cleared after 6ms[39m[90m[39m
+Rendered 10/4645, time remaining: 8m 34s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 13" handle was cleared after 5ms[39m[90m[39m
+Rendered 11/4645, time remaining: 8m 1s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 14" handle was cleared after 25ms[39m[90m[39m
+Rendered 12/4645, time remaining: 7m 50s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 15" handle was cleared after 5ms[39m[90m[39m
+Rendered 13/4645, time remaining: 7m 38s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 16" handle was cleared after 15ms[39m[90m[39m
+Rendered 14/4645, time remaining: 7m 15s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 17" handle was cleared after 3ms[39m[90m[39m
+Rendered 15/4645, time remaining: 7m 13s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 18" handle was cleared after 43ms[39m[90m[39m
+Rendered 16/4645, time remaining: 7m 3s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 19" handle was cleared after 49ms[39m[90m[39m
+Rendered 17/4645, time remaining: 7m 1s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 20" handle was cleared after 3ms[39m[90m[39m
+Rendered 18/4645, time remaining: 6m 45s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 21" handle was cleared after 8ms[39m[90m[39m
+Rendered 19/4645, time remaining: 6m 43s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 22" handle was cleared after 4ms[39m[90m[39m
+Rendered 20/4645, time remaining: 6m 41s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 23" handle was cleared after 14ms[39m[90m[39m
+Rendered 21/4645, time remaining: 6m 49s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 24" handle was cleared after 5ms[39m[90m[39m
+Rendered 22/4645, time remaining: 6m 37s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 25" handle was cleared after 26ms[39m[90m[39m
+Rendered 23/4645, time remaining: 6m 31s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 26" handle was cleared after 27ms[39m[90m[39m
+Rendered 24/4645, time remaining: 6m 26s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 27" handle was cleared after 35ms[39m[90m[39m
+Rendered 25/4645, time remaining: 6m 37s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 28" handle was cleared after 22ms[39m[90m[39m
+Rendered 26/4645, time remaining: 6m 27s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 29" handle was cleared after 5ms[39m[90m[39m
+Rendered 27/4645, time remaining: 6m 24s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 30" handle was cleared after 14ms[39m[90m[39m
+Rendered 28/4645, time remaining: 6m 27s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 31" handle was cleared after 16ms[39m[90m[39m
+Rendered 29/4645, time remaining: 6m 31s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 32" handle was cleared after 28ms[39m[90m[39m
+Rendered 30/4645, time remaining: 6m 28s
+Rendered 31/4645, time remaining: 6m 19s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 33" handle was cleared after 15ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 34" handle was cleared after 5ms[39m[90m[39m
+Rendered 32/4645, time remaining: 6m 18s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 35" handle was cleared after 3ms[39m[90m[39m
+Rendered 33/4645, time remaining: 6m 16s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 36" handle was cleared after 47ms[39m[90m[39m
+Rendered 34/4645, time remaining: 6m 15s
+Rendered 35/4645, time remaining: 6m 10s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 37" handle was cleared after 36ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 38" handle was cleared after 20ms[39m[90m[39m
+Rendered 36/4645, time remaining: 6m 6s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 39" handle was cleared after 41ms[39m[90m[39m
+Rendered 37/4645, time remaining: 6m 6s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 40" handle was cleared after 37ms[39m[90m[39m
+Rendered 38/4645, time remaining: 6m 5s
+Rendered 39/4645, time remaining: 5m 59s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 41" handle was cleared after 23ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 42" handle was cleared after 45ms[39m[90m[39m
+Rendered 40/4645, time remaining: 5m 57s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 43" handle was cleared after 34ms[39m[90m[39m
+Rendered 41/4645, time remaining: 5m 57s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 44" handle was cleared after 5ms[39m[90m[39m
+Rendered 42/4645, time remaining: 5m 55s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 45" handle was cleared after 43ms[39m[90m[39m
+Rendered 43/4645, time remaining: 5m 53s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 46" handle was cleared after 12ms[39m[90m[39m
+Rendered 44/4645, time remaining: 5m 55s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 47" handle was cleared after 5ms[39m[90m[39m
+Rendered 45/4645, time remaining: 5m 51s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 48" handle was cleared after 15ms[39m[90m[39m
+Rendered 46/4645, time remaining: 5m 57s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 49" handle was cleared after 44ms[39m[90m[39m
+Rendered 47/4645, time remaining: 5m 54s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 50" handle was cleared after 13ms[39m[90m[39m
+Rendered 48/4645, time remaining: 5m 54s
+Rendered 49/4645, time remaining: 5m 53s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 51" handle was cleared after 76ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 52" handle was cleared after 13ms[39m[90m[39m
+Rendered 50/4645, time remaining: 5m 59s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 53" handle was cleared after 17ms[39m[90m[39m
+Rendered 51/4645, time remaining: 5m 57s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 54" handle was cleared after 60ms[39m[90m[39m
+Rendered 52/4645, time remaining: 5m 59s
+Rendered 53/4645, time remaining: 5m 54s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 55" handle was cleared after 28ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 56" handle was cleared after 18ms[39m[90m[39m
+Rendered 54/4645, time remaining: 5m 57s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 57" handle was cleared after 8ms[39m[90m[39m
+Rendered 55/4645, time remaining: 5m 57s
+Rendered 56/4645, time remaining: 5m 53s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 58" handle was cleared after 48ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 59" handle was cleared after 17ms[39m[90m[39m
+Rendered 57/4645, time remaining: 5m 49s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 60" handle was cleared after 19ms[39m[90m[39m
+Rendered 58/4645, time remaining: 5m 51s
+Rendered 59/4645, time remaining: 5m 48s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 61" handle was cleared after 37ms[39m[90m[39m
+Rendered 60/4645, time remaining: 5m 44s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 62" handle was cleared after 8ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 63" handle was cleared after 35ms[39m[90m[39m
+Rendered 61/4645, time remaining: 5m 43s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 64" handle was cleared after 22ms[39m[90m[39m
+Rendered 62/4645, time remaining: 5m 44s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 65" handle was cleared after 32ms[39m[90m[39m
+Rendered 63/4645, time remaining: 5m 42s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 66" handle was cleared after 3ms[39m[90m[39m
+Rendered 64/4645, time remaining: 5m 42s
+Rendered 65/4645, time remaining: 5m 40s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 67" handle was cleared after 23ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 68" handle was cleared after 7ms[39m[90m[39m
+Rendered 66/4645, time remaining: 5m 39s
+Rendered 67/4645, time remaining: 5m 36s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 69" handle was cleared after 17ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 70" handle was cleared after 10ms[39m[90m[39m
+Rendered 68/4645, time remaining: 5m 42s
+Rendered 69/4645, time remaining: 5m 39s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 72" handle was cleared after 17ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 71" handle was cleared after 49ms[39m[90m[39m
+Rendered 70/4645, time remaining: 5m 40s
+Rendered 71/4645, time remaining: 5m 38s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 73" handle was cleared after 66ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 74" handle was cleared after 18ms[39m[90m[39m
+Rendered 72/4645, time remaining: 5m 44s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 75" handle was cleared after 8ms[39m[90m[39m
+Rendered 73/4645, time remaining: 5m 43s
+Rendered 74/4645, time remaining: 5m 41s
+Rendered 75/4645, time remaining: 5m 38s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 77" handle was cleared after 29ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 76" handle was cleared after 67ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 78" handle was cleared after 16ms[39m[90m[39m
+Rendered 76/4645, time remaining: 5m 42s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 79" handle was cleared after 42ms[39m[90m[39m
+Rendered 77/4645, time remaining: 5m 43s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 80" handle was cleared after 25ms[39m[90m[39m
+Rendered 78/4645, time remaining: 5m 41s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 81" handle was cleared after 19ms[39m[90m[39m
+Rendered 79/4645, time remaining: 5m 40s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 82" handle was cleared after 13ms[39m[90m[39m
+Rendered 80/4645, time remaining: 5m 41s
+Rendered 81/4645, time remaining: 5m 40s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 84" handle was cleared after 17ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 83" handle was cleared after 66ms[39m[90m[39m
+Rendered 82/4645, time remaining: 5m 38s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 85" handle was cleared after 42ms[39m[90m[39m
+Rendered 83/4645, time remaining: 5m 37s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 86" handle was cleared after 20ms[39m[90m[39m
+Rendered 84/4645, time remaining: 5m 37s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 87" handle was cleared after 16ms[39m[90m[39m
+Rendered 85/4645, time remaining: 5m 35s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 88" handle was cleared after 43ms[39m[90m[39m
+Rendered 86/4645, time remaining: 5m 35s
+Rendered 87/4645, time remaining: 5m 32s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 89" handle was cleared after 5ms[39m[90m[39m
+Rendered 88/4645, time remaining: 5m 31s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 90" handle was cleared after 38ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 91" handle was cleared after 31ms[39m[90m[39m
+Rendered 89/4645, time remaining: 5m 30s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 92" handle was cleared after 10ms[39m[90m[39m
+Rendered 90/4645, time remaining: 5m 30s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 93" handle was cleared after 18ms[39m[90m[39m
+Rendered 91/4645, time remaining: 5m 29s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 94" handle was cleared after 37ms[39m[90m[39m
+Rendered 92/4645, time remaining: 5m 28s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 95" handle was cleared after 22ms[39m[90m[39m
+Rendered 93/4645, time remaining: 5m 28s
+Rendered 94/4645, time remaining: 5m 25s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 96" handle was cleared after 9ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 97" handle was cleared after 6ms[39m[90m[39m
+Rendered 95/4645, time remaining: 5m 25s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 98" handle was cleared after 9ms[39m[90m[39m
+Rendered 96/4645, time remaining: 5m 26s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 99" handle was cleared after 13ms[39m[90m[39m
+Rendered 97/4645, time remaining: 5m 24s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 100" handle was cleared after 15ms[39m[90m[39m
+Rendered 98/4645, time remaining: 5m 23s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 101" handle was cleared after 13ms[39m[90m[39m
+Rendered 99/4645, time remaining: 5m 21s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 102" handle was cleared after 9ms[39m[90m[39m
+Rendered 100/4645, time remaining: 5m 23s
+Rendered 101/4645, time remaining: 5m 21s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 103" handle was cleared after 21ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 104" handle was cleared after 16ms[39m[90m[39m
+Rendered 102/4645, time remaining: 5m 19s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 105" handle was cleared after 14ms[39m[90m[39m
+Rendered 103/4645, time remaining: 5m 19s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 106" handle was cleared after 31ms[39m[90m[39m
+Rendered 104/4645, time remaining: 5m 19s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 107" handle was cleared after 11ms[39m[90m[39m
+Rendered 105/4645, time remaining: 5m 17s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 108" handle was cleared after 28ms[39m[90m[39m
+Rendered 106/4645, time remaining: 5m 17s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 109" handle was cleared after 3ms[39m[90m[39m
+Rendered 107/4645, time remaining: 5m 17s
+Rendered 108/4645, time remaining: 5m 15s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 110" handle was cleared after 15ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 111" handle was cleared after 13ms[39m[90m[39m
+Rendered 109/4645, time remaining: 5m 15s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 112" handle was cleared after 21ms[39m[90m[39m
+Rendered 110/4645, time remaining: 5m 14s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 113" handle was cleared after 6ms[39m[90m[39m
+Rendered 111/4645, time remaining: 5m 15s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 114" handle was cleared after 22ms[39m[90m[39m
+Rendered 112/4645, time remaining: 5m 14s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 115" handle was cleared after 35ms[39m[90m[39m
+Rendered 113/4645, time remaining: 5m 13s
+Rendered 114/4645, time remaining: 5m 12s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 116" handle was cleared after 30ms[39m[90m[39m
+Rendered 115/4645, time remaining: 5m 12s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 117" handle was cleared after 49ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 118" handle was cleared after 7ms[39m[90m[39m
+Rendered 116/4645, time remaining: 5m 12s
+Rendered 117/4645, time remaining: 5m 11s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 119" handle was cleared after 34ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 120" handle was cleared after 5ms[39m[90m[39m
+Rendered 118/4645, time remaining: 5m 12s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 121" handle was cleared after 23ms[39m[90m[39m
+Rendered 119/4645, time remaining: 5m 11s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 122" handle was cleared after 25ms[39m[90m[39m
+Rendered 120/4645, time remaining: 5m 10s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 123" handle was cleared after 13ms[39m[90m[39m
+Rendered 121/4645, time remaining: 5m 10s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 124" handle was cleared after 60ms[39m[90m[39m
+Rendered 122/4645, time remaining: 5m 10s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 125" handle was cleared after 28ms[39m[90m[39m
+Rendered 123/4645, time remaining: 5m 10s
+Rendered 124/4645, time remaining: 5m 9s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 126" handle was cleared after 17ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 127" handle was cleared after 10ms[39m[90m[39m
+Rendered 125/4645, time remaining: 5m 10s
+Rendered 126/4645, time remaining: 5m 9s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 128" handle was cleared after 35ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 129" handle was cleared after 24ms[39m[90m[39m
+Rendered 127/4645, time remaining: 5m 8s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 130" handle was cleared after 39ms[39m[90m[39m
+Rendered 128/4645, time remaining: 5m 8s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 131" handle was cleared after 19ms[39m[90m[39m
+Rendered 129/4645, time remaining: 5m 9s
+Rendered 130/4645, time remaining: 5m 7s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 132" handle was cleared after 8ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 133" handle was cleared after 8ms[39m[90m[39m
+Rendered 131/4645, time remaining: 5m 7s
+Rendered 132/4645, time remaining: 5m 6s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 134" handle was cleared after 50ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 135" handle was cleared after 8ms[39m[90m[39m
+Rendered 133/4645, time remaining: 5m 8s
+Rendered 134/4645, time remaining: 5m 7s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 136" handle was cleared after 22ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 137" handle was cleared after 11ms[39m[90m[39m
+Rendered 135/4645, time remaining: 5m 7s
+Rendered 136/4645, time remaining: 5m 7s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 138" handle was cleared after 23ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 139" handle was cleared after 8ms[39m[90m[39m
+Rendered 137/4645, time remaining: 5m 7s
+Rendered 138/4645, time remaining: 5m 5s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 141" handle was cleared after 4ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 140" handle was cleared after 11ms[39m[90m[39m
+Rendered 139/4645, time remaining: 5m 5s
+Rendered 140/4645, time remaining: 5m 4s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 142" handle was cleared after 31ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 143" handle was cleared after 11ms[39m[90m[39m
+Rendered 141/4645, time remaining: 5m 5s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 144" handle was cleared after 25ms[39m[90m[39m
+Rendered 142/4645, time remaining: 5m 5s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 145" handle was cleared after 52ms[39m[90m[39m
+Rendered 143/4645, time remaining: 5m 5s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 146" handle was cleared after 31ms[39m[90m[39m
+Rendered 144/4645, time remaining: 5m 4s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 147" handle was cleared after 42ms[39m[90m[39m
+Rendered 145/4645, time remaining: 5m 4s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 148" handle was cleared after 5ms[39m[90m[39m
+Rendered 146/4645, time remaining: 5m 3s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 149" handle was cleared after 12ms[39m[90m[39m
+Rendered 147/4645, time remaining: 5m 4s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 150" handle was cleared after 5ms[39m[90m[39m
+Rendered 148/4645, time remaining: 5m 3s
+Rendered 149/4645, time remaining: 5m 2s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 151" handle was cleared after 32ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 152" handle was cleared after 5ms[39m[90m[39m
+Rendered 150/4645, time remaining: 5m 1s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 153" handle was cleared after 12ms[39m[90m[39m
+Rendered 151/4645, time remaining: 4m 45s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 154" handle was cleared after 5ms[39m[90m[39m
+Rendered 152/4645, time remaining: 4m 47s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 155" handle was cleared after 4ms[39m[90m[39m
+Rendered 153/4645, time remaining: 4m 47s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 156" handle was cleared after 19ms[39m[90m[39m
+Rendered 154/4645, time remaining: 4m 46s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 157" handle was cleared after 12ms[39m[90m[39m
+Rendered 155/4645, time remaining: 4m 47s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 158" handle was cleared after 3ms[39m[90m[39m
+Rendered 156/4645, time remaining: 4m 49s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 159" handle was cleared after 22ms[39m[90m[39m
+Rendered 157/4645, time remaining: 4m 49s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 160" handle was cleared after 10ms[39m[90m[39m
+Rendered 158/4645, time remaining: 4m 45s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 161" handle was cleared after 10ms[39m[90m[39m
+Rendered 159/4645, time remaining: 4m 45s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 162" handle was cleared after 5ms[39m[90m[39m
+Rendered 160/4645, time remaining: 4m 47s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 163" handle was cleared after 36ms[39m[90m[39m
+Rendered 161/4645, time remaining: 4m 48s
+Rendered 162/4645, time remaining: 4m 47s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 164" handle was cleared after 52ms[39m[90m[39m
+Rendered 163/4645, time remaining: 4m 46s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 165" handle was cleared after 3ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 166" handle was cleared after 45ms[39m[90m[39m
+Rendered 164/4645, time remaining: 4m 47s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 167" handle was cleared after 16ms[39m[90m[39m
+Rendered 165/4645, time remaining: 4m 46s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 168" handle was cleared after 23ms[39m[90m[39m
+Rendered 166/4645, time remaining: 4m 46s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 169" handle was cleared after 52ms[39m[90m[39m
+Rendered 167/4645, time remaining: 4m 46s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 170" handle was cleared after 13ms[39m[90m[39m
+Rendered 168/4645, time remaining: 4m 48s
+Rendered 169/4645, time remaining: 4m 47s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 172" handle was cleared after 9ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 171" handle was cleared after 55ms[39m[90m[39m
+Rendered 170/4645, time remaining: 4m 45s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 173" handle was cleared after 6ms[39m[90m[39m
+Rendered 171/4645, time remaining: 4m 43s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 174" handle was cleared after 4ms[39m[90m[39m
+Rendered 172/4645, time remaining: 4m 45s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 175" handle was cleared after 5ms[39m[90m[39m
+Rendered 173/4645, time remaining: 4m 44s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 176" handle was cleared after 32ms[39m[90m[39m
+Rendered 174/4645, time remaining: 4m 44s
+Rendered 175/4645, time remaining: 4m 41s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 177" handle was cleared after 49ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 178" handle was cleared after 6ms[39m[90m[39m
+Rendered 176/4645, time remaining: 4m 42s
+Rendered 177/4645, time remaining: 4m 42s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 179" handle was cleared after 47ms[39m[90m[39m
+Rendered 178/4645, time remaining: 4m 41s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 180" handle was cleared after 64ms[39m[90m[39m
+Rendered 179/4645, time remaining: 4m 39s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 181" handle was cleared after 4ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 182" handle was cleared after 36ms[39m[90m[39m
+Rendered 180/4645, time remaining: 4m 38s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 183" handle was cleared after 12ms[39m[90m[39m
+Rendered 181/4645, time remaining: 4m 40s
+Rendered 182/4645, time remaining: 4m 38s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 184" handle was cleared after 24ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 185" handle was cleared after 18ms[39m[90m[39m
+Rendered 183/4645, time remaining: 4m 38s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 186" handle was cleared after 6ms[39m[90m[39m
+Rendered 184/4645, time remaining: 4m 38s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 187" handle was cleared after 34ms[39m[90m[39m
+Rendered 185/4645, time remaining: 4m 38s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 188" handle was cleared after 37ms[39m[90m[39m
+Rendered 186/4645, time remaining: 4m 38s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 189" handle was cleared after 29ms[39m[90m[39m
+Rendered 187/4645, time remaining: 4m 37s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 190" handle was cleared after 14ms[39m[90m[39m
+Rendered 188/4645, time remaining: 4m 36s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 191" handle was cleared after 15ms[39m[90m[39m
+Rendered 189/4645, time remaining: 4m 38s
+Rendered 190/4645, time remaining: 4m 37s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 192" handle was cleared after 37ms[39m[90m[39m
+Rendered 191/4645, time remaining: 4m 36s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 194" handle was cleared after 33ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 193" handle was cleared after 39ms[39m[90m[39m
+Rendered 192/4645, time remaining: 4m 36s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 195" handle was cleared after 5ms[39m[90m[39m
+Rendered 193/4645, time remaining: 4m 36s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 196" handle was cleared after 3ms[39m[90m[39m
+Rendered 194/4645, time remaining: 4m 35s
+Rendered 195/4645, time remaining: 4m 36s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 197" handle was cleared after 73ms[39m[90m[39m
+Rendered 196/4645, time remaining: 4m 33s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 198" handle was cleared after 30ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 199" handle was cleared after 16ms[39m[90m[39m
+Rendered 197/4645, time remaining: 4m 32s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 200" handle was cleared after 11ms[39m[90m[39m
+Rendered 198/4645, time remaining: 4m 32s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 201" handle was cleared after 36ms[39m[90m[39m
+Rendered 199/4645, time remaining: 4m 32s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 202" handle was cleared after 5ms[39m[90m[39m
+Rendered 200/4645, time remaining: 4m 29s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 203" handle was cleared after 5ms[39m[90m[39m
+Rendered 201/4645, time remaining: 4m 29s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 204" handle was cleared after 4ms[39m[90m[39m
+Rendered 202/4645, time remaining: 4m 29s
+Rendered 203/4645, time remaining: 4m 29s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 205" handle was cleared after 43ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 206" handle was cleared after 12ms[39m[90m[39m
+Rendered 204/4645, time remaining: 4m 26s
+Rendered 205/4645, time remaining: 4m 25s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 207" handle was cleared after 27ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 208" handle was cleared after 14ms[39m[90m[39m
+Rendered 206/4645, time remaining: 4m 27s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 209" handle was cleared after 39ms[39m[90m[39m
+Rendered 207/4645, time remaining: 4m 27s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 210" handle was cleared after 14ms[39m[90m[39m
+Rendered 208/4645, time remaining: 4m 26s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 211" handle was cleared after 42ms[39m[90m[39m
+Rendered 209/4645, time remaining: 4m 27s
+Rendered 210/4645, time remaining: 4m 28s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 212" handle was cleared after 87ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 213" handle was cleared after 6ms[39m[90m[39m
+Rendered 211/4645, time remaining: 4m 28s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 214" handle was cleared after 10ms[39m[90m[39m
+Rendered 212/4645, time remaining: 4m 28s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 215" handle was cleared after 4ms[39m[90m[39m
+Rendered 213/4645, time remaining: 4m 29s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 216" handle was cleared after 38ms[39m[90m[39m
+Rendered 214/4645, time remaining: 4m 28s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 217" handle was cleared after 7ms[39m[90m[39m
+Rendered 215/4645, time remaining: 4m 29s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 218" handle was cleared after 25ms[39m[90m[39m
+Rendered 216/4645, time remaining: 4m 28s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 219" handle was cleared after 23ms[39m[90m[39m
+Rendered 217/4645, time remaining: 4m 29s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 220" handle was cleared after 11ms[39m[90m[39m
+Rendered 218/4645, time remaining: 4m 25s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 221" handle was cleared after 4ms[39m[90m[39m
+Rendered 219/4645, time remaining: 4m 26s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 222" handle was cleared after 25ms[39m[90m[39m
+Rendered 220/4645, time remaining: 4m 25s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 223" handle was cleared after 20ms[39m[90m[39m
+Rendered 221/4645, time remaining: 4m 25s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 224" handle was cleared after 32ms[39m[90m[39m
+Rendered 222/4645, time remaining: 4m 21s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 225" handle was cleared after 18ms[39m[90m[39m
+Rendered 223/4645, time remaining: 4m 22s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 226" handle was cleared after 14ms[39m[90m[39m
+Rendered 224/4645, time remaining: 4m 22s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 227" handle was cleared after 14ms[39m[90m[39m
+Rendered 225/4645, time remaining: 4m 23s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 228" handle was cleared after 34ms[39m[90m[39m
+Rendered 226/4645, time remaining: 4m 20s
+Rendered 227/4645, time remaining: 4m 18s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 229" handle was cleared after 26ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 230" handle was cleared after 40ms[39m[90m[39m
+Rendered 228/4645, time remaining: 4m 19s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 231" handle was cleared after 4ms[39m[90m[39m
+Rendered 229/4645, time remaining: 4m 20s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 232" handle was cleared after 6ms[39m[90m[39m
+Rendered 230/4645, time remaining: 4m 18s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 233" handle was cleared after 17ms[39m[90m[39m
+Rendered 231/4645, time remaining: 4m 19s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 234" handle was cleared after 16ms[39m[90m[39m
+Rendered 232/4645, time remaining: 4m 19s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 235" handle was cleared after 8ms[39m[90m[39m
+Rendered 233/4645, time remaining: 4m 19s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 236" handle was cleared after 27ms[39m[90m[39m
+Rendered 234/4645, time remaining: 4m 19s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 237" handle was cleared after 24ms[39m[90m[39m
+Rendered 235/4645, time remaining: 4m 19s
+Rendered 236/4645, time remaining: 4m 18s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 238" handle was cleared after 5ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 239" handle was cleared after 36ms[39m[90m[39m
+Rendered 237/4645, time remaining: 4m 19s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 240" handle was cleared after 5ms[39m[90m[39m
+Rendered 238/4645, time remaining: 4m 19s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 241" handle was cleared after 6ms[39m[90m[39m
+Rendered 239/4645, time remaining: 4m 19s
+Rendered 240/4645, time remaining: 4m 18s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 242" handle was cleared after 44ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 243" handle was cleared after 15ms[39m[90m[39m
+Rendered 241/4645, time remaining: 4m 18s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 244" handle was cleared after 5ms[39m[90m[39m
+Rendered 242/4645, time remaining: 4m 18s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 245" handle was cleared after 5ms[39m[90m[39m
+Rendered 243/4645, time remaining: 4m 18s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 246" handle was cleared after 16ms[39m[90m[39m
+Rendered 244/4645, time remaining: 4m 18s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 247" handle was cleared after 28ms[39m[90m[39m
+Rendered 245/4645, time remaining: 4m 18s
+Rendered 246/4645, time remaining: 4m 16s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 249" handle was cleared after 23ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 248" handle was cleared after 30ms[39m[90m[39m
+Rendered 247/4645, time remaining: 4m 16s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 250" handle was cleared after 7ms[39m[90m[39m
+Rendered 248/4645, time remaining: 4m 17s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 251" handle was cleared after 4ms[39m[90m[39m
+Rendered 249/4645, time remaining: 4m 17s
+Rendered 250/4645, time remaining: 4m 15s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 252" handle was cleared after 22ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 253" handle was cleared after 4ms[39m[90m[39m
+Rendered 251/4645, time remaining: 4m 16s
+Rendered 252/4645, time remaining: 4m 15s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 254" handle was cleared after 7ms[39m[90m[39m
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 255" handle was cleared after 4ms[39m[90m[39m
+Rendered 253/4645, time remaining: 4m 15s
+Rendered 254/4645, time remaining: 4m 14s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 256" handle was cleared after 23ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 257" handle was cleared after 12ms[39m[90m[39m
+Rendered 255/4645, time remaining: 4m 15s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 258" handle was cleared after 36ms[39m[90m[39m
+Rendered 256/4645, time remaining: 4m 15s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 259" handle was cleared after 5ms[39m[90m[39m
+Rendered 257/4645, time remaining: 4m 15s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 260" handle was cleared after 26ms[39m[90m[39m
+Rendered 258/4645, time remaining: 4m 16s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 261" handle was cleared after 8ms[39m[90m[39m
+Rendered 259/4645, time remaining: 4m 15s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 262" handle was cleared after 28ms[39m[90m[39m
+Rendered 260/4645, time remaining: 4m 15s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 263" handle was cleared after 23ms[39m[90m[39m
+Rendered 261/4645, time remaining: 4m 15s
+Rendered 262/4645, time remaining: 4m 15s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 264" handle was cleared after 19ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 265" handle was cleared after 14ms[39m[90m[39m
+Rendered 263/4645, time remaining: 4m 14s
+Rendered 264/4645, time remaining: 4m 13s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 266" handle was cleared after 6ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 267" handle was cleared after 3ms[39m[90m[39m
+Rendered 265/4645, time remaining: 4m 15s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 268" handle was cleared after 27ms[39m[90m[39m
+Rendered 266/4645, time remaining: 4m 13s
+Rendered 267/4645, time remaining: 4m 14s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 269" handle was cleared after 69ms[39m[90m[39m
+Rendered 268/4645, time remaining: 4m 13s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 270" handle was cleared after 15ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 271" handle was cleared after 6ms[39m[90m[39m
+Rendered 269/4645, time remaining: 4m 13s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 272" handle was cleared after 5ms[39m[90m[39m
+Rendered 270/4645, time remaining: 4m 14s
+Rendered 271/4645, time remaining: 4m 13s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 273" handle was cleared after 53ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 274" handle was cleared after 13ms[39m[90m[39m
+Rendered 272/4645, time remaining: 4m 12s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 275" handle was cleared after 11ms[39m[90m[39m
+Rendered 273/4645, time remaining: 4m 12s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 276" handle was cleared after 13ms[39m[90m[39m
+Rendered 274/4645, time remaining: 4m 13s
+Rendered 275/4645, time remaining: 4m 11s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 277" handle was cleared after 11ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 278" handle was cleared after 8ms[39m[90m[39m
+Rendered 276/4645, time remaining: 4m 11s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 279" handle was cleared after 40ms[39m[90m[39m
+Rendered 277/4645, time remaining: 4m 11s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 280" handle was cleared after 13ms[39m[90m[39m
+Rendered 278/4645, time remaining: 4m 11s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 281" handle was cleared after 26ms[39m[90m[39m
+Rendered 279/4645, time remaining: 4m 9s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 282" handle was cleared after 13ms[39m[90m[39m
+Rendered 280/4645, time remaining: 4m 11s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 283" handle was cleared after 30ms[39m[90m[39m
+Rendered 281/4645, time remaining: 4m 10s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 284" handle was cleared after 6ms[39m[90m[39m
+Rendered 282/4645, time remaining: 4m 11s
+Rendered 283/4645, time remaining: 4m 9s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 285" handle was cleared after 32ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 286" handle was cleared after 8ms[39m[90m[39m
+Rendered 284/4645, time remaining: 4m 9s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 287" handle was cleared after 25ms[39m[90m[39m
+Rendered 285/4645, time remaining: 4m 8s
+Rendered 286/4645, time remaining: 4m 9s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 288" handle was cleared after 61ms[39m[90m[39m
+Rendered 287/4645, time remaining: 4m 7s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 289" handle was cleared after 12ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 290" handle was cleared after 6ms[39m[90m[39m
+Rendered 288/4645, time remaining: 4m 8s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 291" handle was cleared after 12ms[39m[90m[39m
+Rendered 289/4645, time remaining: 4m 9s
+Rendered 290/4645, time remaining: 4m 9s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 292" handle was cleared after 36ms[39m[90m[39m
+Rendered 291/4645, time remaining: 4m 7s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 294" handle was cleared after 7ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 293" handle was cleared after 22ms[39m[90m[39m
+Rendered 292/4645, time remaining: 4m 6s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 295" handle was cleared after 14ms[39m[90m[39m
+Rendered 293/4645, time remaining: 4m 7s
+Rendered 294/4645, time remaining: 4m 7s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 296" handle was cleared after 20ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 297" handle was cleared after 15ms[39m[90m[39m
+Rendered 295/4645, time remaining: 4m 6s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 298" handle was cleared after 14ms[39m[90m[39m
+Rendered 296/4645, time remaining: 4m 6s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 299" handle was cleared after 11ms[39m[90m[39m
+Rendered 297/4645, time remaining: 4m 6s
+Rendered 298/4645, time remaining: 4m 5s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 300" handle was cleared after 29ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 301" handle was cleared after 7ms[39m[90m[39m
+Rendered 299/4645, time remaining: 4m 6s
+Rendered 300/4645, time remaining: 4m 6s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 302" handle was cleared after 5ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 303" handle was cleared after 5ms[39m[90m[39m
+Rendered 301/4645, time remaining: 4m 5s
+Rendered 302/4645, time remaining: 4m 4s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 304" handle was cleared after 7ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 305" handle was cleared after 8ms[39m[90m[39m
+Rendered 303/4645, time remaining: 4m 5s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 306" handle was cleared after 26ms[39m[90m[39m
+Rendered 304/4645, time remaining: 4m 4s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 307" handle was cleared after 14ms[39m[90m[39m
+Rendered 305/4645, time remaining: 4m 5s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 308" handle was cleared after 47ms[39m[90m[39m
+Rendered 306/4645, time remaining: 4m 4s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 309" handle was cleared after 13ms[39m[90m[39m
+Rendered 307/4645, time remaining: 4m 3s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 310" handle was cleared after 14ms[39m[90m[39m
+Rendered 308/4645, time remaining: 4m 3s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 311" handle was cleared after 13ms[39m[90m[39m
+Rendered 309/4645, time remaining: 4m 4s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 312" handle was cleared after 32ms[39m[90m[39m
+Rendered 310/4645, time remaining: 4m 2s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 313" handle was cleared after 13ms[39m[90m[39m
+Rendered 311/4645, time remaining: 4m 2s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 314" handle was cleared after 29ms[39m[90m[39m
+Rendered 312/4645, time remaining: 4m 1s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 315" handle was cleared after 4ms[39m[90m[39m
+Rendered 313/4645, time remaining: 4m 2s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 316" handle was cleared after 38ms[39m[90m[39m
+Rendered 314/4645, time remaining: 4m 2s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 317" handle was cleared after 22ms[39m[90m[39m
+Rendered 315/4645, time remaining: 4m 1s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 318" handle was cleared after 36ms[39m[90m[39m
+Rendered 316/4645, time remaining: 4m 2s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 319" handle was cleared after 30ms[39m[90m[39m
+Rendered 317/4645, time remaining: 4m 1s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 320" handle was cleared after 3ms[39m[90m[39m
+Rendered 318/4645, time remaining: 4m 0s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 321" handle was cleared after 20ms[39m[90m[39m
+Rendered 319/4645, time remaining: 4m 0s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 322" handle was cleared after 31ms[39m[90m[39m
+Rendered 320/4645, time remaining: 4m 0s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 323" handle was cleared after 15ms[39m[90m[39m
+Rendered 321/4645, time remaining: 4m 1s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 324" handle was cleared after 16ms[39m[90m[39m
+Rendered 322/4645, time remaining: 4m 0s
+Rendered 323/4645, time remaining: 4m 1s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 325" handle was cleared after 69ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 326" handle was cleared after 5ms[39m[90m[39m
+Rendered 324/4645, time remaining: 4m 0s
+Rendered 325/4645, time remaining: 3m 59s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 328" handle was cleared after 3ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 327" handle was cleared after 28ms[39m[90m[39m
+Rendered 326/4645, time remaining: 4m 1s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 329" handle was cleared after 21ms[39m[90m[39m
+Rendered 327/4645, time remaining: 4m 1s
+Rendered 328/4645, time remaining: 4m 0s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 331" handle was cleared after 16ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 330" handle was cleared after 51ms[39m[90m[39m
+Rendered 329/4645, time remaining: 4m 0s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 332" handle was cleared after 24ms[39m[90m[39m
+Rendered 330/4645, time remaining: 4m 1s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 333" handle was cleared after 8ms[39m[90m[39m
+Rendered 331/4645, time remaining: 4m 0s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 334" handle was cleared after 27ms[39m[90m[39m
+Rendered 332/4645, time remaining: 4m 1s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 335" handle was cleared after 5ms[39m[90m[39m
+Rendered 333/4645, time remaining: 4m 2s
+Rendered 334/4645, time remaining: 4m 1s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 336" handle was cleared after 40ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 337" handle was cleared after 41ms[39m[90m[39m
+Rendered 335/4645, time remaining: 4m 2s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 338" handle was cleared after 10ms[39m[90m[39m
+Rendered 336/4645, time remaining: 4m 3s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 339" handle was cleared after 29ms[39m[90m[39m
+Rendered 337/4645, time remaining: 4m 3s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 340" handle was cleared after 37ms[39m[90m[39m
+Rendered 338/4645, time remaining: 4m 3s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 341" handle was cleared after 18ms[39m[90m[39m
+Rendered 339/4645, time remaining: 4m 2s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 342" handle was cleared after 8ms[39m[90m[39m
+Rendered 340/4645, time remaining: 4m 3s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 343" handle was cleared after 15ms[39m[90m[39m
+Rendered 341/4645, time remaining: 4m 3s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 344" handle was cleared after 22ms[39m[90m[39m
+Rendered 342/4645, time remaining: 4m 3s
+Rendered 343/4645, time remaining: 4m 2s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 346" handle was cleared after 31ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 345" handle was cleared after 34ms[39m[90m[39m
+Rendered 344/4645, time remaining: 4m 2s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 347" handle was cleared after 9ms[39m[90m[39m
+Rendered 345/4645, time remaining: 4m 2s
+Rendered 346/4645, time remaining: 4m 3s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 348" handle was cleared after 43ms[39m[90m[39m
+Rendered 347/4645, time remaining: 4m 4s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 349" handle was cleared after 55ms[39m[90m[39m
+Rendered 348/4645, time remaining: 4m 2s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 350" handle was cleared after 8ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 351" handle was cleared after 5ms[39m[90m[39m
+Rendered 349/4645, time remaining: 4m 3s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 352" handle was cleared after 5ms[39m[90m[39m
+Rendered 350/4645, time remaining: 4m 4s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 353" handle was cleared after 14ms[39m[90m[39m
+Rendered 351/4645, time remaining: 4m 4s
+Rendered 352/4645, time remaining: 4m 2s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 354" handle was cleared after 47ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 355" handle was cleared after 6ms[39m[90m[39m
+Rendered 353/4645, time remaining: 4m 4s
+Rendered 354/4645, time remaining: 4m 4s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 356" handle was cleared after 13ms[39m[90m[39m
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 357" handle was cleared after 24ms[39m[90m[39m
+Rendered 355/4645, time remaining: 4m 5s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 358" handle was cleared after 15ms[39m[90m[39m
+Rendered 356/4645, time remaining: 4m 4s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 359" handle was cleared after 20ms[39m[90m[39m
+Rendered 357/4645, time remaining: 4m 5s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 360" handle was cleared after 28ms[39m[90m[39m
+Rendered 358/4645, time remaining: 4m 5s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 361" handle was cleared after 54ms[39m[90m[39m
+Rendered 359/4645, time remaining: 4m 5s
+Rendered 360/4645, time remaining: 4m 3s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 363" handle was cleared after 27ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 362" handle was cleared after 29ms[39m[90m[39m
+Rendered 361/4645, time remaining: 4m 4s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 364" handle was cleared after 9ms[39m[90m[39m
+Rendered 362/4645, time remaining: 4m 4s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 365" handle was cleared after 5ms[39m[90m[39m
+Rendered 363/4645, time remaining: 4m 4s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 366" handle was cleared after 10ms[39m[90m[39m
+Rendered 364/4645, time remaining: 4m 3s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 367" handle was cleared after 35ms[39m[90m[39m
+Rendered 365/4645, time remaining: 4m 3s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 368" handle was cleared after 12ms[39m[90m[39m
+Rendered 366/4645, time remaining: 4m 4s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 369" handle was cleared after 26ms[39m[90m[39m
+Rendered 367/4645, time remaining: 4m 4s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 370" handle was cleared after 30ms[39m[90m[39m
+Rendered 368/4645, time remaining: 4m 5s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 371" handle was cleared after 17ms[39m[90m[39m
+Rendered 369/4645, time remaining: 4m 4s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 372" handle was cleared after 19ms[39m[90m[39m
+Rendered 370/4645, time remaining: 4m 5s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 373" handle was cleared after 25ms[39m[90m[39m
+Rendered 371/4645, time remaining: 4m 5s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 374" handle was cleared after 27ms[39m[90m[39m
+Rendered 372/4645, time remaining: 4m 5s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 375" handle was cleared after 39ms[39m[90m[39m
+Rendered 373/4645, time remaining: 4m 4s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 376" handle was cleared after 6ms[39m[90m[39m
+Rendered 374/4645, time remaining: 4m 4s
+Rendered 375/4645, time remaining: 4m 4s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 377" handle was cleared after 4ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 378" handle was cleared after 42ms[39m[90m[39m
+Rendered 376/4645, time remaining: 4m 4s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 379" handle was cleared after 10ms[39m[90m[39m
+Rendered 377/4645, time remaining: 4m 6s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 380" handle was cleared after 8ms[39m[90m[39m
+Rendered 378/4645, time remaining: 4m 6s
+Rendered 379/4645, time remaining: 4m 3s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 381" handle was cleared after 44ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 382" handle was cleared after 24ms[39m[90m[39m
+Rendered 380/4645, time remaining: 4m 4s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 383" handle was cleared after 13ms[39m[90m[39m
+Rendered 381/4645, time remaining: 4m 4s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 384" handle was cleared after 5ms[39m[90m[39m
+Rendered 382/4645, time remaining: 4m 5s
+Rendered 383/4645, time remaining: 4m 3s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 385" handle was cleared after 49ms[39m[90m[39m
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 386" handle was cleared after 23ms[39m[90m[39m
+Rendered 384/4645, time remaining: 4m 3s
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 387" handle was cleared after 17ms[39m[90m[39m
+Rendered 385/4645, time remaining: 4m 3s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 388" handle was cleared after 12ms[39m[90m[39m
+Rendered 386/4645, time remaining: 4m 5s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 389" handle was cleared after 21ms[39m[90m[39m
+Rendered 387/4645, time remaining: 4m 4s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 390" handle was cleared after 6ms[39m[90m[39m
+Rendered 388/4645, time remaining: 4m 4s
+Rendered 389/4645, time remaining: 4m 3s
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 391" handle was cleared after 19ms[39m[90m[39m
+[40m Tab 3, delayRender() [49m [90m[90m"Setting the current frame to 392" handle was cleared after 4ms[39m[90m[39m
+Rendered 390/4645, time remaining: 4m 4s
+[40m Tab 1, delayRender() [49m [90m[90m"Setting the current frame to 393" handle was cleared after 24ms[39m[90m[39m
+Rendered 391/4645, time remaining: 4m 4s
+Rendered 392/4645, time remaining: 4m 4s
+[40m Tab 2, delayRender() [49m [90m[90m"Setting the current frame to 394" handle was cleared after 54ms[39m[90m[39m
+
+[40m Tab 0, delayRender() [49m [90m[90m"Setting the current frame to 395" handle was cleared after 36ms[39m[90m[39m
+[31mAn error occurred while rendering frame 394:[39m
+
+at [4mscenes/PriceActionScene.tsx:107[24m
+[90m105[39m │ [90m}}>[39m
+[90m106[39m │ [90m  <div style={{ fontSize: 9, fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Day Change</div>[39m
+107 │   <div style={{ fontSize: 22, fontWeight: 900, color }}>{isPositive ? '+' : ''}{dayChangePct.toFixed(2)}%</div>
+[90m108[39m │ [90m</div>[39m
+[90m109[39m │ [90m<div style={{ fontSize: 10, color: '#475569', fontFamily: 'monospace' }}>[39m
+[90m110[39m │ [90m  H: ${dayHigh.toFixed(2)} / L: ${dayLow.toFixed(2)}[39m
+
+[90mat Nh [94m(node_modules/react-dom/cjs/react-dom.production.min.js:159)[39m[90m[39m
+[90mat Vk [94m(node_modules/react-dom/cjs/react-dom.production.min.js:288)[39m[90m[39m
+[90mat Uk [94m(node_modules/react-dom/cjs/react-dom.production.min.js:278)[39m[90m[39m
+[90mat Tk [94m(node_modules/react-dom/cjs/react-dom.production.min.js:278)[39m[90m[39m
+[90mat Ik [94m(node_modules/react-dom/cjs/react-dom.production.min.js:278)[39m[90m[39m
+[90mat Nk [94m(node_modules/react-dom/cjs/react-dom.production.min.js:269)[39m[90m[39m
+[90mat Gk [94m(node_modules/react-dom/cjs/react-dom.production.min.js:266)[39m[90m[39m
+[90mat J [94m(node_modules/scheduler/cjs/scheduler.production.min.js:12)[39m[90m[39m
+[90mat R [94m(node_modules/scheduler/cjs/scheduler.production.min.js:13)[39m[90m[39m
+[90mCleaning up...[39m
+[90mCleanup job "Delete C:\Users\haris\AppData\Local\Temp\remotion-webpack-bundle-jNDhkK" done[39m
+[90mCleanup job "Cleanup bundle" done[39m
+[90mReceived SIGTERM signal. Killing browser process[39m
+[90mCleanup job "Closing browser instance" done[39m
+[90mCleanup job "Close server" done[39m
+[90mCleanup job "Delete C:\Users\haris\AppData\Local\Temp\react-motion-render7DUetN" done[39m
+[90mCleanup done in 70ms[39m
+
+
+STDERR:
+[40m chrome [49m [31m[0618/211313.031:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 1ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.072:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.088:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Running the calculateMetadata() function for composition StockReportVideo" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.466:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 2ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.491:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 1ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.502:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211313.504:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 1ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.527:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.532:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.597:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Loading root component - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 1ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.597:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for Composition "StockReportVideo"" handle was cleared after 76ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.598:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for Composition "StockReportVideo"" handle was cleared after 71ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.622:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for Composition "StockReportVideo"" handle was cleared after 82ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.629:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for root component to load - See https://remotion.dev/docs/troubleshooting/loading-root-component if you experience a timeout" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.661:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 1" handle was cleared after 0ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211313.662:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 0" handle was cleared after 0ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211313.663:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 2" handle was cleared after 0ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.726:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Waiting for Composition "StockReportVideo"" handle was cleared after 79ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.749:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 3" handle was cleared after 0ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.796:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 4" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.815:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 5" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.849:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 6" handle was cleared after 24ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211313.954:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 7" handle was cleared after 35ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211313.954:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 8" handle was cleared after 34ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.043:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 9" handle was cleared after 77ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.043:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 10" handle was cleared after 37ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.194:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 11" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.227:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 12" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.261:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 13" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.312:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 14" handle was cleared after 25ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.368:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 15" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.453:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 16" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.464:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 17" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.601:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 18" handle was cleared after 43ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.661:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 19" handle was cleared after 49ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.694:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 20" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.733:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 21" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.809:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 22" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211314.895:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 23" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.009:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 24" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.064:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 25" handle was cleared after 26ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.119:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 26" handle was cleared after 27ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.185:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 27" handle was cleared after 35ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.318:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 28" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.337:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 29" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.409:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 30" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.508:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 31" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.636:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 32" handle was cleared after 28ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.687:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 33" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.714:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 34" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.769:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 35" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.899:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 36" handle was cleared after 47ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.950:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 37" handle was cleared after 36ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211315.979:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 38" handle was cleared after 20ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.054:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 39" handle was cleared after 41ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.124:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 40" handle was cleared after 37ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.187:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 41" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.242:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 42" handle was cleared after 45ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.291:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 43" handle was cleared after 34ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.334:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 44" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.441:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 45" handle was cleared after 43ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.460:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 46" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.547:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 47" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.597:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 48" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.763:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 49" handle was cleared after 44ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.784:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 50" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.926:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 51" handle was cleared after 76ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211316.927:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 52" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.081:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 53" handle was cleared after 17ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.174:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 54" handle was cleared after 60ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.240:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 55" handle was cleared after 28ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.262:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 56" handle was cleared after 18ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.357:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 57" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.480:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 58" handle was cleared after 48ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211317.480:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 59" handle was cleared after 17ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.511:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 60" handle was cleared after 19ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.646:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 61" handle was cleared after 37ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.660:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 62" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.695:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 63" handle was cleared after 35ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.743:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 64" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.841:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 65" handle was cleared after 32ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.853:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 66" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.969:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 67" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211317.982:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 68" handle was cleared after 7ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.076:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 69" handle was cleared after 17ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.077:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 70" handle was cleared after 10ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.287:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 72" handle was cleared after 17ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.287:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 71" handle was cleared after 49ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.419:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 73" handle was cleared after 66ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.420:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 74" handle was cleared after 18ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.574:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 75" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.702:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 77" handle was cleared after 29ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211318.703:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 76" handle was cleared after 67ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.737:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 78" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.888:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 79" handle was cleared after 42ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211318.978:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 80" handle was cleared after 25ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.005:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 81" handle was cleared after 19ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.049:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 82" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.206:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 83" handle was cleared after 66ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.206:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 84" handle was cleared after 17ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.276:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 85" handle was cleared after 42ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.303:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 86" handle was cleared after 20ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.389:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 87" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.442:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 88" handle was cleared after 43ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.498:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 89" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.545:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 90" handle was cleared after 38ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.600:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 91" handle was cleared after 31ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.623:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 92" handle was cleared after 10ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.707:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 93" handle was cleared after 18ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.759:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 94" handle was cleared after 37ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.814:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 95" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.875:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 96" handle was cleared after 9ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.882:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 97" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211319.951:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 98" handle was cleared after 9ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.054:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 99" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.077:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 100" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.124:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 101" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.164:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 102" handle was cleared after 9ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.313:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 103" handle was cleared after 21ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211320.314:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 104" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.338:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 105" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.434:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 106" handle was cleared after 31ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.487:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 107" handle was cleared after 11ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.531:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 108" handle was cleared after 28ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.570:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 109" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.671:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 110" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.671:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 111" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.764:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 112" handle was cleared after 21ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.779:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 113" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.893:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 114" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211320.938:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 115" handle was cleared after 35ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.005:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 116" handle was cleared after 30ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.066:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 117" handle was cleared after 49ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.083:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 118" handle was cleared after 7ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.193:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 119" handle was cleared after 34ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.206:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 120" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.301:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 121" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.383:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 122" handle was cleared after 25ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.402:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 123" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.496:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 124" handle was cleared after 60ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.559:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 125" handle was cleared after 28ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.620:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 126" handle was cleared after 17ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.642:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 127" handle was cleared after 10ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.766:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 128" handle was cleared after 35ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.796:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 129" handle was cleared after 24ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.873:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 130" handle was cleared after 39ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211321.909:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 131" handle was cleared after 19ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.005:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 132" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.015:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 133" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.120:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 134" handle was cleared after 50ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.135:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 135" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.270:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 136" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.292:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 137" handle was cleared after 11ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.398:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 138" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.419:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 139" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.509:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 141" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.509:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 140" handle was cleared after 11ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.607:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 142" handle was cleared after 31ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.620:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 143" handle was cleared after 11ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.764:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 144" handle was cleared after 25ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.834:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 145" handle was cleared after 52ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.883:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 146" handle was cleared after 31ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.936:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 147" handle was cleared after 42ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211322.976:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 148" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.021:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 149" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.086:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 150" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.181:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 151" handle was cleared after 32ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.184:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 152" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.232:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 153" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.305:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 154" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.400:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 155" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.452:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 156" handle was cleared after 19ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.508:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 157" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.523:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 158" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.657:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 159" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.698:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 160" handle was cleared after 10ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.746:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 161" handle was cleared after 10ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.783:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 162" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.927:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 163" handle was cleared after 36ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211323.991:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 164" handle was cleared after 52ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.031:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 165" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.081:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 166" handle was cleared after 45ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.105:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 167" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.193:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 168" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.269:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 169" handle was cleared after 52ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.292:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 170" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.432:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 171" handle was cleared after 55ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211324.432:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 172" handle was cleared after 9ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.469:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 173" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.501:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 174" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.606:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 175" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.682:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 176" handle was cleared after 32ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.747:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 177" handle was cleared after 49ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.760:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 178" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.878:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 179" handle was cleared after 47ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.949:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 180" handle was cleared after 64ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211324.982:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 181" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.032:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 182" handle was cleared after 36ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.055:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 183" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.137:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 184" handle was cleared after 24ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.164:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 185" handle was cleared after 18ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.201:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 186" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.313:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 187" handle was cleared after 34ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.375:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 188" handle was cleared after 37ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.422:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 189" handle was cleared after 29ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.448:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 190" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.495:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 191" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.604:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 192" handle was cleared after 37ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.668:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 194" handle was cleared after 33ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211325.668:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 193" handle was cleared after 39ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.705:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 195" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.770:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 196" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.903:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 197" handle was cleared after 73ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.935:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 198" handle was cleared after 30ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.959:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 199" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211325.988:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 200" handle was cleared after 11ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.103:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 201" handle was cleared after 36ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.117:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 202" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.180:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 203" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.216:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 204" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.342:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 206" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211326.342:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 205" handle was cleared after 43ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.397:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 207" handle was cleared after 27ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.418:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 208" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.539:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 209" handle was cleared after 39ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.562:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 210" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.635:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 211" handle was cleared after 42ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.758:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 212" handle was cleared after 87ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.759:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 213" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.804:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 214" handle was cleared after 10ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211326.887:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 215" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.002:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 216" handle was cleared after 38ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.022:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 217" handle was cleared after 7ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.112:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 218" handle was cleared after 25ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.176:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 219" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.198:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 220" handle was cleared after 11ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.238:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 221" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.331:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 222" handle was cleared after 25ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.387:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 223" handle was cleared after 20ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.442:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 224" handle was cleared after 32ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.469:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 225" handle was cleared after 18ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.555:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 226" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.602:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 227" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.669:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 228" handle was cleared after 34ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.726:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 229" handle was cleared after 26ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.783:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 230" handle was cleared after 40ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.796:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 231" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.919:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 232" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211327.947:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 233" handle was cleared after 17ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.000:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 234" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.041:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 235" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.145:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 236" handle was cleared after 27ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.202:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 237" handle was cleared after 24ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.256:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 238" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.310:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 239" handle was cleared after 36ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.325:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 240" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.394:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 241" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.485:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 242" handle was cleared after 44ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211328.487:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 243" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.528:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 244" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.592:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 245" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.674:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 246" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.710:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 247" handle was cleared after 28ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.790:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 249" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211328.791:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 248" handle was cleared after 30ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.831:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 250" handle was cleared after 7ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.892:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 251" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.972:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 252" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211328.984:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 253" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.069:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 254" handle was cleared after 7ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.069:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 255" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.151:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 256" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.174:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 257" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.281:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 258" handle was cleared after 36ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.296:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 259" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.393:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 260" handle was cleared after 26ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.436:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 261" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.499:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 262" handle was cleared after 28ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.529:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 263" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.645:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 265" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.646:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 264" handle was cleared after 19ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.702:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 266" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.706:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 267" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.843:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 268" handle was cleared after 27ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.919:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 269" handle was cleared after 69ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211329.953:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 270" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211329.957:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 271" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.023:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 272" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.166:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 273" handle was cleared after 53ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211330.166:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 274" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.185:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 275" handle was cleared after 11ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.255:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 276" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.348:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 277" handle was cleared after 11ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.366:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 278" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.464:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 279" handle was cleared after 40ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.487:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 280" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.552:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 281" handle was cleared after 26ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.575:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 282" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.676:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 283" handle was cleared after 30ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.691:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 284" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.797:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 285" handle was cleared after 32ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.813:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 286" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.907:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 287" handle was cleared after 25ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211330.982:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 288" handle was cleared after 61ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.013:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 289" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.016:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 290" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.082:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 291" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.205:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 292" handle was cleared after 36ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.262:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 294" handle was cleared after 7ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.262:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 293" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.290:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 295" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.410:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 296" handle was cleared after 20ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.432:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 297" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.481:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 298" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.518:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 299" handle was cleared after 11ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.620:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 300" handle was cleared after 29ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.635:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 301" handle was cleared after 7ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.725:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 302" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.726:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 303" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.823:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 304" handle was cleared after 7ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.837:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 305" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.930:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 306" handle was cleared after 26ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211331.951:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 307" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.062:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 308" handle was cleared after 47ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.085:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 309" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.141:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 310" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.165:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 311" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.268:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 312" handle was cleared after 32ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.288:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 313" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.357:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 314" handle was cleared after 29ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.368:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 315" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.474:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 316" handle was cleared after 38ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.505:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 317" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.572:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 318" handle was cleared after 36ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.638:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 319" handle was cleared after 30ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.650:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 320" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.737:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 321" handle was cleared after 20ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.804:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 322" handle was cleared after 31ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.830:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 323" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211332.879:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 324" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.019:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 325" handle was cleared after 69ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.021:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 326" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.086:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 328" handle was cleared after 3ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.086:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 327" handle was cleared after 28ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.222:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 329" handle was cleared after 21ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.322:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 330" handle was cleared after 51ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.322:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 331" handle was cleared after 16ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.360:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 332" handle was cleared after 24ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.432:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 333" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.535:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 334" handle was cleared after 27ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.550:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 335" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.682:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 336" handle was cleared after 40ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.739:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 337" handle was cleared after 41ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.758:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 338" handle was cleared after 10ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.884:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 339" handle was cleared after 29ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.939:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 340" handle was cleared after 37ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211333.970:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 341" handle was cleared after 18ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.012:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 342" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.096:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 343" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.157:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 344" handle was cleared after 22ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.251:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 346" handle was cleared after 31ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211334.252:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 345" handle was cleared after 34ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.302:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 347" handle was cleared after 9ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.424:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 348" handle was cleared after 43ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.486:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 349" handle was cleared after 55ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.524:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 350" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.537:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 351" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.636:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 352" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.728:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 353" handle was cleared after 14ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.782:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 354" handle was cleared after 47ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.796:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 355" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.928:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 356" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211334.962:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 357" handle was cleared after 24ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.013:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 358" handle was cleared after 15ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.067:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 359" handle was cleared after 20ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.164:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 360" handle was cleared after 28ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.256:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 361" handle was cleared after 54ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.318:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 362" handle was cleared after 29ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211335.319:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 363" handle was cleared after 27ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.365:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 364" handle was cleared after 9ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.454:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 365" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.527:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 366" handle was cleared after 10ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.597:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 367" handle was cleared after 35ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.638:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 368" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.733:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 369" handle was cleared after 26ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.812:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 370" handle was cleared after 30ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.845:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 371" handle was cleared after 17ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.900:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 372" handle was cleared after 19ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211335.993:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 373" handle was cleared after 25ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.055:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 374" handle was cleared after 27ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.119:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 375" handle was cleared after 39ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.135:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 376" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.219:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 377" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.267:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 378" handle was cleared after 42ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.290:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 379" handle was cleared after 10ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.382:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 380" handle was cleared after 8ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.494:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 381" handle was cleared after 44ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.494:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 382" handle was cleared after 24ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.535:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 383" handle was cleared after 13ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.601:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 384" handle was cleared after 5ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.731:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 386" handle was cleared after 23ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211336.731:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 385" handle was cleared after 49ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.758:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 387" handle was cleared after 17ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.833:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 388" handle was cleared after 12ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.931:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 389" handle was cleared after 21ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211336.944:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 390" handle was cleared after 6ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211337.024:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 391" handle was cleared after 19ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211337.039:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 392" handle was cleared after 4ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211337.128:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 393" handle was cleared after 24ms", source: http://localhost:3001/bundle.js (4523)[39m
+[40m chrome [49m [31m[0618/211337.202:INFO:CONSOLE:2930] "TypeError: dayChangePct.toFixed is not a function", source: http://localhost:3001/bundle.js (2930)[39m
+[40m Tab 2, node_modules/react-dom/cjs/react-dom.production.min.js:187 [49m [31m[0mTypeError: dayChangePct.toFixed is not a function[0m[39m
+[31m[0m    at PriceActionScene (http://localhost:3001/bundle.js:464:26)[0m[39m
+[31m[0m    at Nh (http://localhost:3001/bundle.js:2902:137)[0m[39m
+[31m[0m    at Vk (http://localhost:3001/bundle.js:3031:337)[0m[39m
+[31m[0m    at Uk (http://localhost:3001/bundle.js:3021:389)[0m[39m
+[31m[0m    at Tk (http://localhost:3001/bundle.js:3021:320)[0m[39m
+[31m[0m    at Ik (http://localhost:3001/bundle.js:3021:180)[0m[39m
+[31m[0m    at Nk (http://localhost:3001/bundle.js:3012:88)[0m[39m
+[31m[0m    at Gk (http://localhost:3001/bundle.js:3009:429)[0m[39m
+[31m[0m    at J (http://localhost:3001/bundle.js:3219:203)[0m[39m
+[31m[0m    at MessagePort.R (http://localhost:3001/bundle.js:3220:128)[0m[39m
+[40m Tab 0, node_modules/react-dom/cjs/react-dom.production.min.js:187 [49m [31m[0mTypeError: dayChangePct.toFixed is not a function[0m[39m
+[31m[0m    at PriceActionScene (http://localhost:3001/bundle.js:464:26)[0m[39m
+[31m[0m    at Nh (http://localhost:3001/bundle.js:2902:137)[0m[39m
+[31m[0m    at Vk (http://localhost:3001/bundle.js:3031:337)[0m[39m
+[31m[0m    at Uk (http://localhost:3001/bundle.js:3021:389)[0m[39m
+[31m[0m    at Tk (http://localhost:3001/bundle.js:3021:320)[0m[39m
+[31m[0m    at Ik (http://localhost:3001/bundle.js:3021:180)[0m[39m
+[31m[0m    at Nk (http://localhost:3001/bundle.js:3012:88)[0m[39m
+[31m[0m    at Gk (http://localhost:3001/bundle.js:3009:429)[0m[39m
+[31m[0m    at J (http://localhost:3001/bundle.js:3219:203)[0m[39m
+[31m[0m    at MessagePort.R (http://localhost:3001/bundle.js:3220:128)[0m[39m
+[40m chrome [49m [31m[0618/211337.211:INFO:CONSOLE:464] "Uncaught TypeError: dayChangePct.toFixed is not a function", source: http://localhost:3001/bundle.js (464)[39m
+[31m[0618/211337.212:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 394" handle was cleared after 54ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[0618/211337.248:INFO:CONSOLE:2930] "TypeError: dayChangePct.toFixed is not a function", source: http://localhost:3001/bundle.js (2930)[39m
+[31m[0618/211337.248:INFO:CONSOLE:464] "Uncaught TypeError: dayChangePct.toFixed is not a function", source: http://localhost:3001/bundle.js (464)[39m
+[31m[0618/211337.249:INFO:CONSOLE:4523] "Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) "Setting the current frame to 395" handle was cleared after 36ms", source: http://localhost:3001/bundle.js (4523)[39m
+[31m[41m[37m TypeError [39m[31m[49m[39m [31mdayChangePct.toFixed is not a function[39m

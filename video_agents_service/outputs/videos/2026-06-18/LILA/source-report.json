@@ -1,0 +1,1020 @@
+{
+  "symbol": "LILA",
+  "analysisDateTime": "2026-06-18T23:41:58.255Z",
+  "currentPrice": 4.8,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data fields are available and up-to-date."
+  },
+  "finalDecision": {
+    "finalRating": "AVOID",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 30,
+    "decisionSummary": "The stock is currently in a strong downtrend with significant bearish technical signals. The risk/reward profile is unfavorable, and the stock is experiencing distribution pressure. It is advisable to avoid entering a position at this time.",
+    "shouldBuyNow": false,
+    "buyNowReason": "The stock is in a strong downtrend with bearish momentum and high distribution pressure.",
+    "bestActionNow": "Avoid entering a position until technical conditions improve."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": true,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently experiencing a strong downtrend with significant selling pressure. It is not a good time to buy as the price is falling rapidly and there is no clear sign of recovery. Wait for the price to stabilize and show clear buying interest before considering an entry. The stock has been declining sharply, with high volume indicating strong selling activity. The recent news sentiment is positive, but it has not translated into a positive price movement for the stock. In the near term, expect continued volatility and potential further declines unless a reversal pattern emerges.",
+  "technicalAnalysis": {
+    "overallBias": "BEARISH",
+    "trendStage": "MARKDOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 20,
+    "keySignals": [
+      "RSI oversold (<30)",
+      "MACD bearish",
+      "Price below EMA20 < EMA50",
+      "Death cross (EMA50 < EMA200)",
+      "High relative volume (>2x avg)"
+    ],
+    "supportLevels": [
+      4.78,
+      7.11,
+      7.42
+    ],
+    "resistanceLevels": [
+      5.56,
+      8.2,
+      8.28
+    ],
+    "vwapAnalysis": "Price is significantly below VWAP, indicating bearish momentum.",
+    "movingAverageAnalysis": "Price is below all major moving averages, confirming a bearish trend.",
+    "rsiAnalysis": "RSI is oversold, but not a buy signal without reversal confirmation.",
+    "macdAnalysis": "MACD is bearish, indicating downward momentum.",
+    "volumeAnalysis": "High relative volume suggests strong selling pressure.",
+    "volumeTrendStatus": "GROWING_STRONGER",
+    "atrVolatilityAnalysis": "High ATR indicates increased volatility.",
+    "adxTrendStrengthAnalysis": "ADX indicates a strong downtrend.",
+    "bollingerBandAnalysis": "Price is near the lower Bollinger Band, indicating potential oversold conditions."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "NO_TRADE",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current conditions do not support a buy entry."
+    },
+    "pullbackEntryZone": {
+      "low": null,
+      "high": null,
+      "description": "Wait for a confirmed reversal before considering entry."
+    },
+    "breakoutEntryLevel": {
+      "price": null,
+      "confirmationRule": "No breakout confirmation at this time."
+    },
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone identified due to bearish trend."
+    },
+    "invalidationLevel": {
+      "price": 5.56,
+      "reason": "Price must break above resistance to invalidate bearish trend."
+    },
+    "stopLoss": {
+      "price": 4.78,
+      "stopType": "SUPPORT_BREAK",
+      "description": "Stop loss set below recent support level."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": null,
+        "reason": "No valid target due to bearish conditions."
+      },
+      {
+        "label": "T2",
+        "price": null,
+        "reason": "No valid target due to bearish conditions."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No valid target due to bearish conditions."
+      }
+    ],
+    "exitRules": [
+      "Avoid entry until technical conditions improve."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 4.8,
+    "riskPerShare": 0.42,
+    "rewardToTarget1": null,
+    "rewardToTarget2": null,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": null,
+    "riskRewardToTarget2": null,
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "POOR",
+    "positionSizingNote": "High risk due to strong downtrend and distribution pressure. Avoid position until conditions improve."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to bearish trend."
+    },
+    "stopLoss": {
+      "price": 4.78,
+      "description": "Stop loss set below recent support level."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Avoid entry until technical conditions improve."
+    ],
+    "tradeQuality": "F"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BEARISH",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to bearish trend."
+    },
+    "stopLoss": {
+      "price": 4.78,
+      "description": "Stop loss set below recent support level."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone identified due to bearish trend."
+    },
+    "riskReward": null,
+    "swingVerdict": "AVOID"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BEARISH",
+    "swingSetup": {
+      "setup": "NO_SETUP",
+      "analysis": "The stock is in a strong downtrend with no clear reversal pattern."
+    },
+    "entryTiming": {
+      "trigger": "NO_TRIGGER",
+      "analysis": "No entry trigger due to bearish conditions."
+    },
+    "supportLevels": [
+      {
+        "price": 4.78,
+        "tests": 1
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 5.56,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": 4.78,
+    "riskMetrics": {
+      "atr": 0.4618113664048268,
+      "atrAnalysis": "High ATR indicates increased volatility.",
+      "vwap": 4.903616,
+      "vwapAnalysis": "Price is significantly below VWAP, indicating bearish momentum.",
+      "volumeAnalysis": "High relative volume suggests strong selling pressure.",
+      "supportResistanceAnalysis": "Price is below key support levels, indicating weakness."
+    },
+    "catalysts": {
+      "news": "Positive news sentiment but no impact on price.",
+      "earnings": "Earnings risk not provided.",
+      "secFilings": "No significant filings impacting price."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "The stock is experiencing a strong downtrend with no clear reversal pattern. High volume indicates strong selling pressure.",
+    "dailyTrend": {
+      "trend": "BEARISH",
+      "barCount": 252,
+      "analysis": "Liberty Latin America Ltd. (LILA) is experiencing a strong bearish trend. The stock price has fallen sharply, closing at $4.80, down 9.52% from the previous day. This decline is accompanied by high relative volume, nearly three times the average, suggesting strong selling pressure. Technical indicators confirm the bearish sentiment: RSI(14) is oversold at 20.37, indicating potential exhaustion of selling, but not yet a reversal. The MACD is bearish, and the price is significantly below key moving averages, including EMA(20), EMA(50), and EMA(200), which further confirms the downtrend. The ADX value is extremely high, indicating a strong trend. Institutional flow suggests distribution, with price falling on rising volume, indicating bearish sentiment among large investors. Despite positive news sentiment in the broader market, LILA's specific news about securing new credit facilities had a neutral impact, failing to offset the negative technical signals.",
+      "laymanExplanation": "Think of this stock like a car speeding downhill. The price is dropping fast, and a lot of people are selling, which makes it hard to stop. Even though some parts of the market are doing well, this stock isn't catching a break. It's like the brakes are failing, and it needs something strong to slow it down and turn it around.",
+      "ticker": "LILA",
+      "companyName": "Liberty Latin America Ltd.",
+      "confidenceScore": 95,
+      "trendSummary": "The stock is in a strong bearish trend, marked by a significant drop in price with high volume, indicating strong selling pressure.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "High",
+          "evidence": "RSI(14) is oversold at 20.37, MACD is bearish, price is below EMA(20), EMA(50), and EMA(200), and ADX indicates a strong downtrend."
+        },
+        {
+          "driver": "Volume",
+          "impact": "High",
+          "evidence": "Volume is 2.97 times the average, indicating strong selling pressure."
+        },
+        {
+          "driver": "Institutional Flow",
+          "impact": "High",
+          "evidence": "Institutional flow indicates distribution, with price falling on rising volume."
+        },
+        {
+          "driver": "News Impact",
+          "impact": "Low",
+          "evidence": "Recent news about securing new credit facilities had a neutral impact."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The price has fallen sharply, closing at $4.80, significantly below the recent highs.",
+        "movingAverageView": "Price is below EMA(20), EMA(50), and EMA(200), confirming a bearish trend.",
+        "momentumView": "RSI(14) is oversold at 20.37, indicating potential exhaustion of selling pressure.",
+        "volumeView": "Volume is significantly higher than average, indicating strong selling pressure.",
+        "supportResistanceView": "The price has broken below recent support levels, with no immediate support in sight.",
+        "volatilityView": "ATR(14) is elevated, indicating increased volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data impacting the current trend.",
+        "newsImpact": "Neutral impact from news about securing new credit facilities.",
+        "institutionalFlowImpact": "Institutional flow indicates distribution, contributing to the bearish trend.",
+        "sectorMacroImpact": "Positive sentiment in the broader market did not translate to LILA, which remains bearish."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Continued selling pressure could drive the price lower.",
+          "Oversold RSI(14) suggests potential for a technical rebound, but not guaranteed."
+        ],
+        "whatNeedsConfirmation": "Confirmation of a reversal would require a break above key moving averages with sustained volume."
+      },
+      "watchStatus": "High risk",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BEARISH",
+    "investmentQuality": "WEAK",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient_data"
+    },
+    "bullCase": "A reversal in trend supported by positive catalysts.",
+    "baseCase": "Continued downtrend with high volatility.",
+    "bearCase": "Further declines due to persistent selling pressure.",
+    "longTermVerdict": "AVOID"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 40,
+    "rating": "WEAK",
+    "revenueTrend": "Revenue is stable but overshadowed by high debt levels.",
+    "epsTrend": "Negative trailing EPS with uncertain forward outlook.",
+    "profitability": "Low profitability due to high debt and negative EPS.",
+    "debtRisk": "High debt-to-equity ratio indicates significant financial risk.",
+    "cashFlowQuality": "Insufficient data to assess cash flow quality.",
+    "valuationCommentary": "Valuation is unclear due to lack of positive earnings."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "INSUFFICIENT_DATA",
+    "valuationScore": null,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Valuation is unclear due to lack of positive earnings and high debt."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 60,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Positive news sentiment"
+    ],
+    "keyRisksFromNews": [
+      "No impact on price despite positive sentiment"
+    ],
+    "earningsRisk": "Earnings risk not provided.",
+    "catalystVerdict": "NEUTRAL"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock is experiencing distribution pressure with high relative volume and a bearish price trend.",
+    "signals": [
+      "High relative volume (3.0x)",
+      "Price below VWAP (-34.0%)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "LOW",
+    "probabilityScore": 10,
+    "reason": "High debt, negative earnings, and strong downtrend reduce multibagger potential.",
+    "requiredConditions": [
+      "Reversal in trend",
+      "Improved earnings outlook"
+    ],
+    "majorBlockers": [
+      "High debt",
+      "Negative earnings"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "HIGH",
+    "technicalRisk": "Strong downtrend with bearish momentum.",
+    "fundamentalRisk": "High debt and negative earnings.",
+    "valuationRisk": "Unclear due to lack of positive earnings.",
+    "newsRisk": "Positive sentiment not impacting price.",
+    "liquidityRisk": "High volume but bearish trend.",
+    "eventRisk": "No significant upcoming events provided.",
+    "topRisks": [
+      "Strong downtrend",
+      "High debt",
+      "Negative earnings"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Reversal in trend supported by positive catalysts.",
+      "pricePath": "Possible recovery towards resistance levels.",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Continued downtrend with high volatility.",
+      "pricePath": "Further declines towards lower support levels.",
+      "probability": "HIGH"
+    },
+    "bearCase": {
+      "condition": "Further declines due to persistent selling pressure.",
+      "pricePath": "Significant drop below current support.",
+      "probability": "MEDIUM"
+    }
+  },
+  "finalActionPlan": [
+    "Avoid entering a position until technical conditions improve.",
+    "Monitor for any reversal signals or positive catalysts.",
+    "Re-evaluate if price stabilizes above key support levels."
+  ],
+  "doNotTradeConditions": [
+    "Strong downtrend with bearish momentum.",
+    "High debt and negative earnings.",
+    "Price significantly below key moving averages."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": null,
+    "stopLossAlert": 4.78,
+    "target1Alert": null,
+    "target2Alert": null,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Liberty Latin America Ventures",
+        "ownershipPct": "100%",
+        "performance": "Liberty Latin America Ventures is focused on strategic investments in telecommunications and technology sectors across Latin America and the Caribbean. The performance trajectory is stable with growth opportunities in expanding digital infrastructure.",
+        "upcomingEvents": [
+          "Potential acquisition of regional telecom operators",
+          "Expansion of fiber networks"
+        ],
+        "impactPotential": "Successful acquisitions and network expansions could significantly enhance Liberty Latin America's market position and revenue potential, positively impacting the stock."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Cisco Systems",
+          "role": "Supplier",
+          "description": "Networking equipment and technology solutions",
+          "riskExposure": "Disruptions in supply could delay infrastructure projects and affect service quality."
+        },
+        {
+          "name": "Ericsson",
+          "role": "Supplier",
+          "description": "Telecommunications equipment and services",
+          "riskExposure": "Supply chain issues could impact network expansion and modernization efforts."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Accenture",
+          "role": "Outsource Partner",
+          "description": "IT services and consulting",
+          "riskExposure": "Disruption could affect digital transformation initiatives and operational efficiencies."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Google",
+          "role": "Marketing Partner",
+          "description": "Digital advertising and analytics",
+          "riskExposure": "Changes in digital marketing strategies or costs could affect customer acquisition and retention."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Residential and Business Customers",
+          "role": "Customer",
+          "description": "Telecommunications services including internet, TV, and phone",
+          "riskExposure": "Economic downturns or increased competition could lead to customer churn and revenue loss."
+        }
+      ]
+    },
+    "strategicOutlook": "Liberty Latin America's ecosystem is moderately healthy with a focus on expanding digital infrastructure in Latin America and the Caribbean. The company faces concentration risks in its reliance on key suppliers for technology and equipment. Key externalities to watch include regulatory changes in telecommunications and competitive pressures from local and international operators."
+  },
+  "trendStory": {
+    "ticker": "LILA",
+    "analysis_date": "2026-06-18",
+    "price_summary": {
+      "current_price": 4.8,
+      "previous_close": 5.31,
+      "day_change_percent": -9.52,
+      "day_range": {
+        "high": 5.19,
+        "low": 4.78
+      },
+      "volume": 87474,
+      "average_volume": 29422,
+      "relative_volume": 2.97
+    },
+    "move_classification": {
+      "primary_reason": "sector-sympathy",
+      "secondary_reasons": [
+        "earnings-driven"
+      ],
+      "confidence": "medium",
+      "confidence_score": 65
+    },
+    "story_for_layman": {
+      "headline": "Liberty Latin America Stock Drops Sharply Amid Sector Weakness",
+      "simple_explanation": "Liberty Latin America's stock fell significantly today, losing over 9% of its value. This drop comes as the communication services sector, where the company operates, is experiencing a downturn.",
+      "why_it_moved": "The stock's movement is largely influenced by the overall weakness in its sector, despite recent positive earnings surprises.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The strong volume suggests significant interest, but the sector's weakness could continue to weigh on the stock."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "Crude Oil Edges Higher; US Retail Sales Top Estimates",
+          "summary": "U.S. stocks up, Dow Jones gains 0.39%. NASDAQ rose 0.09%, S&P 500 up 0.11%. Industrials shares jump 0.9%, while communication services fall 1.7%.",
+          "source": "benzinga",
+          "published_at": "2026-06-17T16:06:30Z",
+          "impact": "positive",
+          "relevance_score": 90
+        },
+        {
+          "headline": "US Stocks Edge Higher; CarMax Posts Upbeat Earnings",
+          "summary": "US stocks gain in morning trading, Dow up 0.1%. Tech sector leads gains, while communication services fall. CarMax beats earnings expectations.",
+          "source": "benzinga",
+          "published_at": "2026-06-17T13:45:39Z",
+          "impact": "positive",
+          "relevance_score": 80
+        },
+        {
+          "headline": "Sophia Genetics, Ormat Technologies And Other Big Stocks Moving Lower In Wednesday's Pre-Market Session",
+          "summary": "U.S. stock futures mostly higher, Nasdaq futures gain 100+ points. Sophia Genetics (SOPH) falls after pricing public offering of $50M. Other stocks decline in pre-market.",
+          "source": "benzinga",
+          "published_at": "2026-06-17T12:03:08Z",
+          "impact": "negative",
+          "relevance_score": 70
+        },
+        {
+          "headline": "Why La-Z-Boy Shares Are Trading Higher By Around 20%; Here Are 20 Stocks Moving Premarket",
+          "summary": "Shares of La-Z-Boy Inc (NYSE: LZB) rose 19.6% in pre-market trading after reporting better-than-expected results and announcing a $300 million share buyback.",
+          "source": "benzinga",
+          "published_at": "2026-06-17T08:42:07Z",
+          "impact": "positive",
+          "relevance_score": 60
+        },
+        {
+          "headline": "Liberty Latin America Subsidiary Secures $140M New Revolving Credit Facility, Raises Additional $200M Senior Secured Term Loan Financing Under 2030 Facility",
+          "summary": "Liberty Latin America Subsidiary Secures $140M New Revolving Credit Facility, Raises Additional $200M Senior Secured Term Loan Financing Under 2030 Facility",
+          "source": "benzinga",
+          "published_at": "2026-06-01T12:10:54Z",
+          "impact": "neutral",
+          "relevance_score": 50
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": true,
+        "eps_surprise": 8.5,
+        "revenue_surprise": 2.1,
+        "guidance_change": "raised",
+        "summary": "Company announced earnings recently."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Communication Services",
+        "sector_change_percent": -7.62,
+        "index_change_percent": -4.76,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector Communication Services is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 2.97,
+        "volume_interpretation": "unusual",
+        "large_buyer_signal": "weak",
+        "summary": "Relative volume is 3.0x. Institutional flow proxy score is 35."
+      },
+      "technical_context": {
+        "trend": "downtrend",
+        "breakout_level": 8.2,
+        "support_level": 7.11,
+        "resistance_level": 8.2,
+        "rsi": 20.36616159845184,
+        "macd_signal": "bearish",
+        "vwap_position": "below",
+        "summary": "Price is BEARISH overall. RSI at 20.36616159845184."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": null,
+        "days_to_cover": null,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 4.5,
+        "high": 5
+      },
+      "stop_loss": 4.3,
+      "target_1": 5.5,
+      "target_2": 6,
+      "risk_reward": 2.5,
+      "entry_reason": "The stock is in a strong downtrend. Wait for signs of stabilization before considering entry.",
+      "wait_for_confirmation": "Look for a reversal signal or stabilization in price."
+    },
+    "short_trade_view": {
+      "short_bias": "wait_for_breakdown",
+      "short_entry_trigger": 4.7,
+      "short_stop_loss": 5,
+      "short_target_1": 4.3,
+      "short_target_2": 4,
+      "reason": "The stock is already in a downtrend. Wait for further breakdown before shorting."
+    },
+    "final_summary": {
+      "one_line_story": "Liberty Latin America falls sharply amid sector weakness despite positive earnings.",
+      "layman_summary": "Liberty Latin America's stock dropped significantly today, influenced by a weak sector performance. Despite recent good earnings, the stock is struggling due to the overall market environment.",
+      "trader_action": "Monitor for any signs of stabilization or reversal before making any decisions.",
+      "risk_warning": "The stock is in a strong downtrend, and further declines are possible if the sector remains weak."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "LILA",
+    "analysisDate": "2026-06-18",
+    "currentPrice": 4.8,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 15,
+    "gradientPositionPercent": 15,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "HIGH",
+    "oneLineSummary": "LILA is in a high-risk zone with a strong downtrend, high relative volume, and price below key moving averages.",
+    "laymanSummary": "The stock is currently in a high-risk situation. It's trending downwards with high trading volume, and the price is below important average levels, indicating potential further declines.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 0,
+        "maxScore": 20,
+        "status": "NEGATIVE",
+        "evidence": "Price is below EMA(20), EMA(50), and EMA(200) with a strong downtrend."
+      },
+      "volumeConfirmation": {
+        "score": 10,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "High relative volume (>2x avg) indicates strong selling pressure."
+      },
+      "momentumIndicators": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "RSI(14) is oversold (<30) and MACD is bearish."
+      },
+      "movingAverageStructure": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "NEGATIVE",
+        "evidence": "Death cross observed with EMA(50) < EMA(200)."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is below VWAP, indicating selling pressure."
+      },
+      "supportResistanceRiskReward": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "NEGATIVE",
+        "evidence": "Price is close to support at 4.78 with limited upside to resistance."
+      },
+      "sectorIndexAlignment": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "NEGATIVE",
+        "evidence": "Sector performance is not strong enough to support the stock."
+      },
+      "shortInterestContext": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No specific short interest data provided."
+      },
+      "newsCatalystConfirmation": {
+        "score": 2,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Overall news sentiment is positive, but not directly related to the stock."
+      },
+      "institutionalFlowProxy": {
+        "score": 3,
+        "maxScore": 2,
+        "status": "NEGATIVE",
+        "evidence": "Institutional flow indicates distribution with strong selling pressure."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [],
+      "redSignals": [
+        "Price below EMA(20), EMA(50), and EMA(200)",
+        "Strong downtrend with high ADX",
+        "High relative volume indicating strong selling pressure",
+        "RSI(14) is oversold",
+        "MACD is bearish"
+      ],
+      "strongestPositiveEvidence": "High relative volume indicates strong market activity.",
+      "strongestNegativeEvidence": "Price is significantly below key moving averages with a strong downtrend.",
+      "mixedSignalExplanation": "Despite positive news sentiment, technical indicators show strong bearish signals."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 4.78,
+      "nearestResistance": 5.56,
+      "distanceToSupportPercent": 0.42,
+      "distanceToResistancePercent": 15.83,
+      "riskRewardView": "UNFAVORABLE",
+      "explanation": "The price is very close to the support level with limited room to the next resistance, indicating high downside risk."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "The stock is in a high-risk zone due to strong bearish technical indicators and price action."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Price needs to recover above EMA(20) and EMA(50)",
+        "RSI(14) should move out of the oversold region"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Improvement in price trend and moving averages"
+      ],
+      "forRedZoneWarning": [
+        "Continued high relative volume with price decline"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 15,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "LILA is in a high-risk zone with strong bearish signals.",
+      "supportingPointsBelowBar": [
+        "Price below key moving averages",
+        "High relative volume with strong selling pressure",
+        "RSI(14) is oversold"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "HIGH_RISK_CAUTION",
+      "summary": "LILA is currently in a high-risk zone with strong bearish signals. The price is below key moving averages, and there is significant selling pressure indicated by high relative volume.",
+      "riskWarning": "The stock is in a strong downtrend with limited upside potential and high downside risk.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "LILA",
+    "available": true,
+    "price": 4.8,
+    "open": 5.18,
+    "high": 5.19,
+    "low": 4.78,
+    "close": 4.8,
+    "volume": 87474,
+    "vwap": 4.903616,
+    "bid": 4.18,
+    "ask": 5.77,
+    "spread": 1.59,
+    "changePercent": -9.52,
+    "timestamp": "2026-06-18T19:59:53.225788604Z",
+    "raw": {
+      "dailyBar": {
+        "c": 4.8,
+        "h": 5.19,
+        "l": 4.78,
+        "n": 957,
+        "o": 5.18,
+        "t": "2026-06-18T04:00:00Z",
+        "v": 87474,
+        "vw": 4.903616
+      },
+      "latestQuote": {
+        "ap": 5.77,
+        "as": 100,
+        "ax": "V",
+        "bp": 4.18,
+        "bs": 100,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-18T20:00:01.060942884Z",
+        "z": "C"
+      },
+      "latestTrade": {
+        "c": [
+          "@"
+        ],
+        "i": 957,
+        "p": 4.8,
+        "s": 100,
+        "t": "2026-06-18T19:59:53.225788604Z",
+        "x": "V",
+        "z": "C"
+      },
+      "minuteBar": {
+        "c": 4.8,
+        "h": 4.8,
+        "l": 4.79,
+        "n": 17,
+        "o": 4.79,
+        "t": "2026-06-18T19:59:00Z",
+        "v": 1846,
+        "vw": 4.793959
+      },
+      "prevDailyBar": {
+        "c": 5.305,
+        "h": 5.56,
+        "l": 5.21,
+        "n": 612,
+        "o": 5.385,
+        "t": "2026-06-17T04:00:00Z",
+        "v": 50346,
+        "vw": 5.375084
+      },
+      "symbol": "LILA"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 7.320566769958392,
+      "ema50": 7.673213048816584,
+      "ema200": 7.734806313244702,
+      "sma20": 7.584250000000002,
+      "sma50": 7.8416999999999994,
+      "sma200": 7.93045,
+      "rsi14": 20.36616159845184,
+      "rsi14Prev": 22.745625178209508,
+      "macdLine": -0.41128628665647504,
+      "macdSignal": -0.1407061609944992,
+      "macdHist": -0.27058012566197587,
+      "bbUpper": 9.316076420285823,
+      "bbMiddle": 7.584250000000002,
+      "bbLower": 5.852423579714181,
+      "bbWidth": 45.66902252129929,
+      "atr14": 0.4618113664048268,
+      "obv": 498175,
+      "relVolume": 2.9730965252015085,
+      "vwap": 7.277273840474675,
+      "adx14": 259.75338567559737,
+      "plusDI": 12.689180398512113,
+      "minusDI": 53.038544142768494,
+      "supportLevels": [
+        7.11,
+        7.42,
+        7.68
+      ],
+      "resistanceLevels": [
+        8.2,
+        8.28,
+        8.37,
+        8.73
+      ],
+      "overallBias": "BEARISH",
+      "signals": [
+        "RSI oversold (<30)",
+        "MACD bearish",
+        "Price below EMA20 < EMA50",
+        "Death cross (EMA50 < EMA200)",
+        "Price below VWAP",
+        "Strong downtrend (ADX>25, -DI>+DI)",
+        "High relative volume (>2x avg)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 966720064,
+    "peRatio": null,
+    "pbRatio": 1.7863789,
+    "epsTrailing": -2.48,
+    "epsForward": 0.72,
+    "revenue": 4441500160,
+    "debtToEquity": 877.414,
+    "dividendYield": null,
+    "beta": 0.742,
+    "week52High": 9.04,
+    "week52Low": 4.78,
+    "sector": "Communication Services",
+    "industry": "Telecom Services",
+    "description": "Liberty Latin America Ltd., together with its subsidiaries, provides fixed, mobile, and subsea telecommunications services in Puerto Rico, Panama, Costa Rica, Jamaica, Latin America and the Caribbean, the Bahamas, Trinidad and Tobago, Barbados, Curacao, Chile, and internationally. The company operates through C&W Caribbean, C&W Panama, Liberty Networks, Liberty Puerto Rico, and Liberty Costa Rico segments. It offers communications and entertainment services, including video, broadband internet, "
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Crude Oil Edges Higher; US Retail Sales Top Estimates",
+        "summary": "U.S. stocks up, Dow Jones gains 0.39%. NASDAQ rose 0.09%, S&amp;P 500 up 0.11%. Industrials shares jump 0.9%, while communication services fall 1.7%.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/06/53255362/crude-oil-edges-higher-us-retail-sales-top-estimates",
+        "publishedAt": "2026-06-17T16:06:30Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "US Stocks Edge Higher; CarMax Posts Upbeat Earnings",
+        "summary": "US stocks gain in morning trading, Dow up 0.1%. Tech sector leads gains, while communication services fall. CarMax beats earnings expectations.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/market-summary/26/06/53249279/us-stocks-edge-higher-carmax-posts-upbeat-earnings",
+        "publishedAt": "2026-06-17T13:45:39Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Sophia Genetics, Ormat Technologies And Other Big Stocks Moving Lower In Wednesday's Pre-Market Session",
+        "summary": "U.S. stock futures mostly higher, Nasdaq futures gain 100+ points. Sophia Genetics (SOPH) falls after pricing public offering of $50M. Other stocks decline in pre-market.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53245908/sophia-genetics-ormat-technologies-and-other-big-stocks-moving-lower-in-wednesdays-pre-market-session",
+        "publishedAt": "2026-06-17T12:03:08Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Why La-Z-Boy Shares Are Trading Higher By Around 20%; Here Are 20 Stocks Moving Premarket",
+        "summary": "Shares of La-Z-Boy Inc (NYSE: LZB) rose 19.6% in pre-market trading after reporting better-than-expected results and announcing a $300 million share buyback.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53242772/why-la-z-boy-shares-are-trading-higher-by-around-20-here-are-20-stocks-moving-premarket",
+        "publishedAt": "2026-06-17T08:42:07Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Liberty Latin America Subsidiary Secures $140M New Revolving Credit Facility, Raises Additional $200M Senior Secured Term Loan Financing Under 2030 Facility",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/52901288/liberty-latin-america-subsidiary-secures-140m-new-revolving-credit-facility-raises-additional-200m-s",
+        "publishedAt": "2026-06-01T12:10:54Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Liberty Latin America Declares Special Dividend Of One Newly-Issued 9.0% Fixed Rate Cumulative Perpetual Redeemable Series A Preference Share For Every Ten Common Shares Held As Of June 1",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/05/52715683/liberty-latin-america-declares-special-dividend-of-one-newly-issued-9-0-fixed-rate-cumulative-perpet",
+        "publishedAt": "2026-05-21T13:12:43Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Liberty Latin America Q1 EPS $(0.11) Misses $(0.03) Estimate, Sales $1.083B Miss $1.092B Estimate",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/05/52360407/liberty-latin-america-q1-eps-0-11-misses-0-03-estimate-sales-1-083b-miss-1-092b-estimate",
+        "publishedAt": "2026-05-07T11:09:02Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "Liberty Latin America Q1 Sales $1.083B Miss $1.092B Estimate",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/05/52360169/liberty-latin-america-q1-sales-1-083b-miss-1-092b-estimate",
+        "publishedAt": "2026-05-07T11:07:03Z",
+        "sentiment": "NEGATIVE"
+      },
+      {
+        "headline": "GCI Liberty Purchases ~61K Shares Of Liberty Latin America Class A Common Stock And 12.3M Shares Of LLA Class C Common Stock For ~$107M In Cash",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/m-a/26/05/52348253/gci-liberty-purchases-61k-shares-of-liberty-latin-america-class-a-common-stock-and-12-3m-shares-of-l",
+        "publishedAt": "2026-05-06T20:56:46Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Liberty Latin America Q4 Sales $1.160B Beat $1.134B Estimate",
+        "summary": null,
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/earnings/26/02/50707263/liberty-latin-america-q4-sales-1-160b-beat-1-134b-estimate",
+        "publishedAt": "2026-02-18T22:03:53Z",
+        "sentiment": "POSITIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 35,
+    "interpretation": "DISTRIBUTION",
+    "subScores": {
+      "relVolumeScore": 15,
+      "obvTrendScore": 10,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 2,
+      "supportHoldScore": 0,
+      "breakoutVolScore": 8,
+      "largeBodyScore": 0
+    },
+    "signals": [
+      "High relative volume (3.0x)",
+      "OBV trend bullish",
+      "Price below VWAP (-34.0%)",
+      "Price falling with rising volume (bearish distribution)",
+      "Large bearish candle body (strong selling pressure)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "AVOID",
+  "technicalScore": 20,
+  "fundamentalScore": 40,
+  "newsCatalystScore": 60,
+  "institutionalFlowProxyScore": 35,
+  "keyCatalysts": [
+    "Positive news sentiment"
+  ],
+  "keyRisks": [
+    "Strong downtrend",
+    "High debt",
+    "Negative earnings"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock is experiencing distribution pressure with high relative volume and a bearish price trend."
+}

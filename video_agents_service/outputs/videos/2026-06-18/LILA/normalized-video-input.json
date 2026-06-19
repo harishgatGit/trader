@@ -1,0 +1,25 @@
+{
+  "ticker": "LILA",
+  "companyName": "LILA",
+  "reportDate": "Unavailable",
+  "currentPrice": 4.8,
+  "dayChangePct": -9.52,
+  "overallSignal": "AVOID",
+  "whyStockMoved": "sector-sympathy",
+  "catalystSummary": "Positive news sentiment",
+  "volumeSummary": "High relative volume suggests strong selling pressure.",
+  "trendSummary": "Liberty Latin America Ltd. (LILA) is experiencing a strong bearish trend. The stock price has fallen sharply, closing at $4.80, down 9.52% from the previous day. This decline is accompanied by high relative volume, nearly three times the average, suggesting strong selling pressure. Technical indicators confirm the bearish sentiment: RSI(14) is oversold at 20.37, indicating potential exhaustion of selling, but not yet a reversal. The MACD is bearish, and the price is significantly below key moving averages, including EMA(20), EMA(50), and EMA(200), which further confirms the downtrend. The ADX value is extremely high, indicating a strong trend. Institutional flow suggests distribution, with price falling on rising volume, indicating bearish sentiment among large investors. Despite positive news sentiment in the broader market, LILA's specific news about securing new credit facilities had a neutral impact, failing to offset the negative technical signals.",
+  "supportLevels": [
+    4.78
+  ],
+  "resistanceLevels": [
+    5.56
+  ],
+  "entryZone": "Low: None, High: None",
+  "stopLoss": "Price: 4.78 (Stop loss set below recent support level.)",
+  "targets": [],
+  "shortTradeView": "SI%: Data unavailable, Borrow Fee: Data unavailable, Squeeze Risk: LOW",
+  "riskWarnings": "Strong downtrend; High debt; Negative earnings",
+  "finalVerdict": "The stock is currently in a strong downtrend with significant bearish technical signals. The risk/reward profile is unfavorable, and the stock is experiencing distribution pressure. It is advisable to avoid entering a position at this time.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently experiencing a strong downtrend with significant selling pressure. It is not a good time to buy as the price is falling rapidly and there is no clear sign of recovery. Wait for the price to stabilize and show clear buying interest before considering an entry. The stock has been declining sharply, with high volume indicating strong selling activity. The recent news sentiment is positive, but it has not translated into a positive price movement for the stock. In the near term, expect continued volatility and potential further declines unless a reversal pattern emerges."
+}

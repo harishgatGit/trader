@@ -1,0 +1,23 @@
+{
+  "jobId": "dc5a23bb-052d-4c94-bd24-08e1b19b4d97",
+  "reportId": "cmqk5a3e002cvk5s0sn2758f6",
+  "ticker": "LILA",
+  "reportDate": "2026-06-18",
+  "status": "GENERATED",
+  "startedAt": "2026-06-18T23:42:23.472180",
+  "completedAt": "2026-06-18T23:53:55.936019",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/dc5a23bb-052d-4c94-bd24-08e1b19b4d97/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\LILA\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\LILA\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\LILA\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\LILA\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\LILA\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\LILA\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\LILA\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\LILA\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

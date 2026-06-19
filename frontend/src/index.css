@@ -418,7 +418,13 @@
 
   .fade-in { animation: fadeIn 0.3s ease-in-out; }
   .slide-up { animation: slideUp 0.3s ease-out; }
+  .animate-fade-in { animation: fadeIn 0.35s ease-out; }
 
+  /* Toast auto-dismiss progress bar shrinks from 100% → 0% over 5s */
+  @keyframes toast-progress {
+    from { width: 100%; }
+    to   { width: 0%;   }
+  }
 
   @keyframes bounceIn {
     0% {

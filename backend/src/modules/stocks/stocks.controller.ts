@@ -8,6 +8,11 @@ import { RoleGuard } from '../auth/role.guard';
 export class StocksController {
   constructor(private readonly stocksService: StocksService) {}
 
+  @Get('movers')
+  async getMovers() {
+    return this.stocksService.getTopMovers();
+  }
+
   @Get('search')
   async search(@Query('q') query: string) {
     return this.stocksService.searchAssets(query);

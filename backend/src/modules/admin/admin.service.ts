@@ -258,6 +258,113 @@ export class AdminService {
     return user;
   }
 
+  async getReportQuality() {
+    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+
+    // ── 1. Rating distribution (all time vs last 30d) ──────────────────────────
+    const [allByRating, recentByRating] = await Promise.all([
+      this.prisma.agentReport.groupBy({
+        by: ['finalRating'], _count: true,
+        where: { status: 'completed' },
+      }),
+      this.prisma.agentReport.groupBy({
+        by: ['finalRating'], _count: true,
+        where: { status: 'completed', createdAt: { gte: thirtyDaysAgo } },
+      }),
+    ]);
+
+    const totalAll    = allByRating.reduce((s, r) => s + r._count, 0);
+    const totalRecent = recentByRating.reduce((s, r) => s + r._count, 0);
+
+    // ── 2. Data quality metrics ────────────────────────────────────────────────
+    const [total, nullPrice, zeroConf, zeroTech] = await Promise.all([
+      this.prisma.agentReport.count({ where: { status: 'completed' } }),
+      this.prisma.agentReport.count({ where: { status: 'completed', currentPrice: null } }),
+      this.prisma.agentReport.count({ where: { status: 'completed', confidenceScore: { lte: 0 } } }),
+      this.prisma.agentReport.count({ where: { status: 'completed', technicalScore: { lte: 0 } } }),
+    ]);
+
+    const priceOk = total > 0 ? Math.round(100 * (total - nullPrice) / total) : 0;
+    const confOk  = total > 0 ? Math.round(100 * (total - zeroConf)  / total) : 0;
+    const techOk  = total > 0 ? Math.round(100 * (total - zeroTech)  / total) : 0;
+    const dataQualityScore = Math.round((priceOk + confOk + techOk) / 3);
+
+    // ── 3. Confidence calibration buckets ──────────────────────────────────────
+    const outcomes = await this.prisma.reportOutcome.findMany({
+      where: { overallVerdict: { not: 'PENDING' } },
+      select: { confidenceAtTime: true, overallVerdict: true, ratingAtTime: true },
+    });
+
+    const bands = [
+      { label: '80-100%', min: 80, max: 100 },
+      { label: '60-79%',  min: 60, max: 80  },
+      { label: '40-59%',  min: 40, max: 60  },
+      { label: '0-39%',   min: 0,  max: 40  },
+    ];
+    const calibration = bands.map(b => {
+      const inBand = outcomes.filter(o =>
+        (o.confidenceAtTime ?? 0) >= b.min && (o.confidenceAtTime ?? 0) < b.max
+      );
+      const wins = inBand.filter(o => o.overallVerdict === 'WIN').length;
+      return {
+        band: b.label,
+        total: inBand.length,
+        wins,
+        winRate: inBand.length > 0 ? Math.round(100 * wins / inBand.length) : null,
+      };
+    });
+
+    // ── 4. Per-symbol outcome table (last 60 days, max 50) ────────────────────
+    const outcomeRows = await this.prisma.reportOutcome.findMany({
+      where: { reportCreatedAt: { gte: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000) } },
+      orderBy: { reportCreatedAt: 'desc' },
+      take: 50,
+      select: {
+        symbol: true, ratingAtTime: true, priceAtReport: true,
+        confidenceAtTime: true, return5d: true, return10d: true,
+        overallVerdict: true, reportCreatedAt: true, evaluatedAt: true,
+      },
+    });
+
+    // ── 5. Daily report count (last 14d) ─────────────────────────────────────
+    const reports14d = await this.prisma.agentReport.findMany({
+      where: { status: 'completed', createdAt: { gte: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000) } },
+      select: { createdAt: true, finalRating: true },
+    });
+    const dailyMap: Record<string, { date: string; count: number; watchlistPct: number; counts: Record<string, number> }> = {};
+    reports14d.forEach(r => {
+      const d = r.createdAt.toISOString().split('T')[0];
+      if (!dailyMap[d]) dailyMap[d] = { date: d, count: 0, watchlistPct: 0, counts: {} };
+      dailyMap[d].count++;
+      dailyMap[d].counts[r.finalRating] = (dailyMap[d].counts[r.finalRating] || 0) + 1;
+    });
+    Object.values(dailyMap).forEach(day => {
+      day.watchlistPct = day.count > 0 ? Math.round(100 * (day.counts['WATCHLIST'] || 0) / day.count) : 0;
+    });
+    const dailyTrend = Object.values(dailyMap).sort((a, b) => a.date.localeCompare(b.date));
+
+    return {
+      summary: {
+        totalReports: total,
+        reportsLast30d: totalRecent,
+        dataQualityScore,
+        priceOkPct: priceOk,
+        confidenceOkPct: confOk,
+        technicalOkPct: techOk,
+        nullPriceCount: nullPrice,
+        zeroConfCount: zeroConf,
+        zeroTechCount: zeroTech,
+      },
+      ratingDistribution: {
+        all: allByRating.map(r => ({ rating: r.finalRating, count: r._count, pct: Math.round(100 * r._count / totalAll) })),
+        recent: recentByRating.map(r => ({ rating: r.finalRating, count: r._count, pct: Math.round(100 * r._count / (totalRecent || 1)) })),
+      },
+      calibration,
+      outcomeTable: outcomeRows,
+      dailyTrend,
+    };
+  }
+
   async deleteUser(id: string) {
     await this.prisma.user.delete({
       where: { id },

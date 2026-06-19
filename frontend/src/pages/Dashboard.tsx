@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { TrendingUp, TrendingDown, AlertTriangle, ChevronRight, Bot, Star, FileText, Bell } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { RatingBadge, LoadingSpinner, EmptyState, Skeleton, PageContainer, PageHeader, MetricCard, ResponsiveGrid, StatusBadge } from '../components/ui';
+import { useSEO } from '../utils/useSEO';
 
 const Dashboard: React.FC = () => {
   const {
@@ -13,6 +14,12 @@ const Dashboard: React.FC = () => {
     alerts, fetchAlerts,
   } = useAppStore();
   const navigate = useNavigate();
+
+  useSEO({
+    title: 'Dashboard | Investing Atti',
+    description: 'Access your watchlists, dynamic timing alerts, and recent AI-generated stock market reports.',
+    robots: 'noindex, nofollow',
+  });
 
   useEffect(() => {
     fetchWatchlist();

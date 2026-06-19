@@ -81,9 +81,11 @@ const Layout: React.FC = () => {
 
   const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 
-  // Logo switches src/class by theme
-  const logoSrc = '/brand/logo_dark_600x160.png'; // light logo (native dark text)
-  const logoClass = `h-7 w-auto object-contain transition-all duration-200${theme === 'dark' ? ' brightness-0 invert' : ''}`;
+  // Logo: serve the correct file for each theme — no CSS filter tricks needed
+  const logoSrc = theme === 'dark'
+    ? '/brand/logo_dark_600x160.png'
+    : '/brand/logo_light_600x160.png';
+  const logoClass = 'h-7 w-auto object-contain transition-all duration-200';
   const mobileLogoSrc = '/brand/logo_mobile_dark.png';
 
   const filteredNavItems = navItems.filter((item) => {
@@ -106,7 +108,7 @@ const Layout: React.FC = () => {
     <div className="relative group/tip flex items-center">
       {children}
       {collapsed && (
-        <div className="pointer-events-none absolute left-full ml-2 z-50 px-2 py-1 rounded-lg bg-slate-800 text-slate-100 text-xs font-semibold whitespace-nowrap opacity-0 group-hover/tip:opacity-100 transition-opacity duration-150 shadow-xl border border-slate-700">
+        <div className="pointer-events-none absolute left-full ml-2 z-50 px-2 py-1 rounded-lg bg-white text-slate-800 text-xs font-semibold whitespace-nowrap opacity-0 group-hover/tip:opacity-100 transition-opacity duration-150 shadow-xl border border-slate-200">
           {label}
         </div>
       )}

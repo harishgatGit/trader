@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { WatchlistItem, Alert, AgentReport, User, UserSession } from '../types';
-import { watchlistApi, alertsApi, reportsApi, healthApi, authApi, analysisApi } from '../services/api';
+import { watchlistApi, alertsApi, reportsApi, healthApi, authApi, analysisApi, stocksApi } from '../services/api';
 
 interface AppState {
   // Auth
@@ -41,6 +41,7 @@ interface AppState {
 
   // Analysis state
   analyzing: boolean;
+  activeSymbol: string;          // symbol currently being analyzed (survives navigation)
   analysisProgress: Array<{ step: string; status: string; message?: string }>;
   currentAnalysis: any | null;
   runAnalysis: (symbol: string, bypassCache?: boolean) => Promise<any>;
@@ -271,34 +272,151 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   // ── Analysis ─────────────────────────────────────────────────────
   analyzing: false,
+  activeSymbol: '',
   analysisProgress: [],
   currentAnalysis: null,
 
   runAnalysis: async (symbol: string, bypassCache?: boolean) => {
-    set({ analyzing: true, analysisProgress: [], currentAnalysis: null });
+    const cleanSymbol = symbol.toUpperCase().trim();
+    set({ analyzing: true, activeSymbol: cleanSymbol, analysisProgress: [], currentAnalysis: null });
 
-    // Simulate progress steps while waiting
-    const steps = [
+    const STEPS = [
       'Market Data', 'Historical Data', 'Technical Analysis',
       'Fundamental Data', 'News & Events', 'Institutional Flow Proxy',
+      'AI Synthesis',
     ];
+    set({ analysisProgress: STEPS.map((s) => ({ step: s, status: 'pending' })) });
 
-    set({ analysisProgress: steps.map((s) => ({ step: s, status: 'pending' })) });
+    const POLL_INTERVAL = 4000;           // 4 s between polls
+    const MAX_WAIT_MS   = 8 * 60 * 1000; // 8 min hard cap
+    const SLOW_WARN_MS  = 60 * 1000;     // 60s → "still generating" toast
+    const VERY_SLOW_MS  = 90 * 1000;     // 90s → in-page amber banner
+
+    const started = Date.now();
+    let slowToastFired = false;
+    let verySlowFired  = false;
 
     try {
-      const result = await analysisApi.analyze(symbol, bypassCache);
+      // ── Step 1: POST /analyze — returns { jobId } in < 1s ─────────────────
+      const enqueueResp = await analysisApi.enqueue(cleanSymbol, bypassCache);
+
+      // Detect old synchronous backend: if the response already contains a
+      // finalRating, the old backend returned the full report synchronously.
+      if (enqueueResp?.report?.finalRating || enqueueResp?.analysisReport?.finalRating) {
+        set({
+          currentAnalysis: enqueueResp,
+          analysisProgress: enqueueResp.progress || STEPS.map((s) => ({ step: s, status: 'done' })),
+        });
+        await get().fetchRecentReports();
+        get().addToast('success', `Analysis complete for ${cleanSymbol} — Rating: ${enqueueResp?.report?.finalRating}`);
+        return enqueueResp;
+      }
+
+      const jobId: string | undefined = enqueueResp?.jobId;
+
+      // ── Step 2: Poll until done ────────────────────────────────────────────
+      // PRIMARY:  GET /analyze/status/:jobId   (new backend — in-memory job store)
+      // FALLBACK: GET /stocks/:symbol/report/latest  (works on ALL backend versions)
+      //
+      // We start with the primary. The first time it returns 404 we switch to
+      // fallback mode and never try the primary again.
+      let useFallback = !jobId; // if no jobId was returned, go straight to fallback
+      const reportCreatedAfter = new Date(started - 5000); // allow ±5s clock skew
+
+      const result = await new Promise<any>((resolve, reject) => {
+        const interval = setInterval(async () => {
+          try {
+            const elapsed = Date.now() - started;
+
+            // ── Hard timeout ─────────────────────────────────────────────────
+            if (elapsed > MAX_WAIT_MS) {
+              clearInterval(interval);
+              reject(new Error('Analysis timed out after 8 minutes. Please try again.'));
+              return;
+            }
+
+            // ── User-facing slow warnings ─────────────────────────────────────
+            if (!slowToastFired && elapsed > SLOW_WARN_MS) {
+              slowToastFired = true;
+              get().addToast('info' as any,
+                `⏳ ${cleanSymbol} report is still generating — deep analysis can take up to 3 minutes.`);
+            }
+            if (!verySlowFired && elapsed > VERY_SLOW_MS) {
+              verySlowFired = true;
+              set((state) => ({
+                analysisProgress: state.analysisProgress.map((p) =>
+                  p.status === 'pending' ? { ...p, status: 'running', message: 'Deep analysis in progress…' } : p
+                ),
+              }));
+            }
+
+            // ── PRIMARY: poll job status endpoint ─────────────────────────────
+            if (!useFallback && jobId) {
+              try {
+                const job = await analysisApi.pollStatus(jobId);
+                if (job.progress?.length) set({ analysisProgress: job.progress });
+
+                if (job.status === 'done') { clearInterval(interval); resolve(job.result); return; }
+                if (job.status === 'error') { clearInterval(interval); reject(new Error(job.error || 'Analysis failed')); return; }
+                // queued | running → keep polling
+                return;
+              } catch (statusErr: any) {
+                // 404 = endpoint not deployed yet → fall back permanently
+                const is404 = statusErr?.response?.status === 404 || statusErr?.status === 404;
+                if (is404) {
+                  console.warn('[analyze] /analyze/status/:jobId not found — switching to report-poll fallback');
+                  useFallback = true;
+                } else {
+                  // Transient error (network, 5xx) — skip tick, retry next time
+                  console.warn('[analyze] poll tick error (will retry):', statusErr?.message);
+                  return;
+                }
+              }
+            }
+
+            // ── FALLBACK: poll /stocks/:symbol/report/latest ──────────────────
+            // The background job saves to DB when done; we detect a new report
+            // by checking that createdAt is after we started this analysis.
+            try {
+              const latest = await stocksApi.getLatestReport(cleanSymbol);
+              if (latest && new Date(latest.createdAt) >= reportCreatedAfter) {
+                // New report found in DB — reconstruct the result shape
+                const syntheticResult = {
+                  symbol: cleanSymbol,
+                  report: { ...(latest.reportJson ?? latest), id: latest.id, createdAt: latest.createdAt },
+                  analysisReport: { ...(latest.reportJson ?? latest), id: latest.id, createdAt: latest.createdAt },
+                  progress: STEPS.map((s) => ({ step: s, status: 'done' })),
+                };
+                clearInterval(interval);
+                resolve(syntheticResult);
+              }
+              // else: report not ready yet → keep polling
+            } catch (latestErr: any) {
+              // 404 = no report yet → keep waiting
+              if (latestErr?.response?.status !== 404) {
+                console.warn('[analyze] fallback poll error (will retry):', latestErr?.message);
+              }
+            }
+
+          } catch (outerErr: any) {
+            console.warn('[analyze] unexpected poll error (will retry):', outerErr?.message);
+          }
+        }, POLL_INTERVAL);
+      });
+
       set({
         currentAnalysis: result,
-        analysisProgress: result.progress || steps.map((s) => ({ step: s, status: 'done' })),
+        analysisProgress: result?.progress || STEPS.map((s) => ({ step: s, status: 'done' })),
       });
       await get().fetchRecentReports();
-      get().addToast('success', `Analysis complete for ${symbol} — Rating: ${result.report?.finalRating}`);
+      get().addToast('success', `Analysis complete for ${cleanSymbol} — Rating: ${result?.report?.finalRating}`);
       return result;
-    } catch (e) {
+
+    } catch (e: any) {
       get().addToast('error', `Analysis failed: ${e.message}`);
       throw e;
     } finally {
-      set({ analyzing: false });
+      set({ analyzing: false, activeSymbol: '' });
     }
   },
 

@@ -1,25 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
-import Dashboard from './pages/Dashboard';
-import AnalyzePage from './pages/Analyze';
-import StockDetail from './pages/StockDetail';
-import Watchlist from './pages/Watchlist';
-import AlertsPage from './pages/Alerts';
-import Reports from './pages/Reports';
-import Settings from './pages/Settings';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import LandingPage from './pages/LandingPage';
-import Profile from './pages/Profile';
-import Education from './pages/Education';
-import Glossary from './pages/Glossary';
-import Admin from './pages/Admin';
-import WhatsForToday from './pages/WhatsForToday';
-import PennyStocksToWatch from './pages/PennyStocksToWatch';
 import { ToastContainer, LoadingSpinner } from './components/ui';
 import { useAppStore } from './store/useAppStore';
 import DirectionalTransition from './components/DirectionalTransition';
+
+// ── Lazy page imports ────────────────────────────────────────────────────────
+// Each page is code-split into its own chunk. It is only downloaded when the
+// user first navigates to that route. Heavy pages (StockDetail, Admin) are
+// never loaded for users who don't visit them.
+const Dashboard         = lazy(() => import('./pages/Dashboard'));
+const AnalyzePage       = lazy(() => import('./pages/Analyze'));
+const StockDetail       = lazy(() => import('./pages/StockDetail'));
+const Watchlist         = lazy(() => import('./pages/Watchlist'));
+const AlertsPage        = lazy(() => import('./pages/Alerts'));
+const Reports           = lazy(() => import('./pages/Reports'));
+const Settings          = lazy(() => import('./pages/Settings'));
+const Login             = lazy(() => import('./pages/Login'));
+const Register          = lazy(() => import('./pages/Register'));
+const LandingPage       = lazy(() => import('./pages/LandingPage'));
+const Profile           = lazy(() => import('./pages/Profile'));
+const Privacy           = lazy(() => import('./pages/Privacy'));
+const Terms             = lazy(() => import('./pages/Terms'));
+const Contact           = lazy(() => import('./pages/Contact'));
+const Education         = lazy(() => import('./pages/Education'));
+const Glossary          = lazy(() => import('./pages/Glossary'));
+const Admin             = lazy(() => import('./pages/Admin'));
+const WhatsForToday     = lazy(() => import('./pages/WhatsForToday'));
+const PennyStocksToWatch = lazy(() => import('./pages/PennyStocksToWatch'));
+
+// ── Page-level loading fallback ───────────────────────────────────────────────
+const PageLoader: React.FC = () => (
+  <div className="min-h-[60vh] flex items-center justify-center">
+    <LoadingSpinner size="sm" />
+  </div>
+);
 
 // ── Silent auto-login splash ────────────────────────────────────────────────
 const AppLoader: React.FC = () => (
@@ -118,105 +133,110 @@ const App: React.FC = () => {
 
   return (
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <Routes>
-        {/* Public pages */}
-        <Route path="/landing" element={<LandingPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          {/* Public pages */}
+          <Route path="/landing" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/contact" element={<Contact />} />
 
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Layout />
-            </ProtectedRoute>
-          }
-        >
-          {/* Superuser Only Routes */}
           <Route
-            index
+            path="/"
             element={
               <ProtectedRoute>
-                <DirectionalTransition>
-                  <IndexRoute />
-                </DirectionalTransition>
+                <Layout />
               </ProtectedRoute>
             }
-          />
-          <Route
-            path="watchlist"
-            element={
-              <ProtectedRoute requireSuper>
-                <DirectionalTransition>
-                  <Watchlist />
-                </DirectionalTransition>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="alerts"
-            element={
-              <ProtectedRoute requireSuper>
-                <DirectionalTransition>
-                  <AlertsPage />
-                </DirectionalTransition>
-              </ProtectedRoute>
-            }
-          />
+          >
+            {/* Superuser Only Routes */}
+            <Route
+              index
+              element={
+                <ProtectedRoute>
+                  <DirectionalTransition>
+                    <IndexRoute />
+                  </DirectionalTransition>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="watchlist"
+              element={
+                <ProtectedRoute requireSuper>
+                  <DirectionalTransition>
+                    <Watchlist />
+                  </DirectionalTransition>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="alerts"
+              element={
+                <ProtectedRoute requireSuper>
+                  <DirectionalTransition>
+                    <AlertsPage />
+                  </DirectionalTransition>
+                </ProtectedRoute>
+              }
+            />
 
-          <Route
-            path="reports"
-            element={
-              <ProtectedRoute requireSuper>
-                <DirectionalTransition>
-                  <Reports />
-                </DirectionalTransition>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="settings"
-            element={
-              <ProtectedRoute requireSuper>
-                <DirectionalTransition>
-                  <Settings />
-                </DirectionalTransition>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="admin"
-            element={
-              <ProtectedRoute requireSuper>
-                <DirectionalTransition>
-                  <Admin />
-                </DirectionalTransition>
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="stocks/:symbol"
-            element={
-              <ProtectedRoute>
-                <DirectionalTransition>
-                  <StockDetail />
-                </DirectionalTransition>
-              </ProtectedRoute>
-            }
-          />
+            <Route
+              path="reports"
+              element={
+                <ProtectedRoute requireSuper>
+                  <DirectionalTransition>
+                    <Reports />
+                  </DirectionalTransition>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="settings"
+              element={
+                <ProtectedRoute requireSuper>
+                  <DirectionalTransition>
+                    <Settings />
+                  </DirectionalTransition>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="admin"
+              element={
+                <ProtectedRoute requireSuper>
+                  <DirectionalTransition>
+                    <Admin />
+                  </DirectionalTransition>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="stocks/:symbol"
+              element={
+                <ProtectedRoute>
+                  <DirectionalTransition>
+                    <StockDetail />
+                  </DirectionalTransition>
+                </ProtectedRoute>
+              }
+            />
 
-          {/* Shared Routes (Standard Users and Superusers) */}
-          <Route path="whats-for-today" element={<DirectionalTransition><WhatsForToday /></DirectionalTransition>} />
-          <Route path="penny-stocks" element={<DirectionalTransition><PennyStocksToWatch /></DirectionalTransition>} />
-          <Route path="analyze" element={<DirectionalTransition><AnalyzePage /></DirectionalTransition>} />
-          <Route path="profile" element={<DirectionalTransition><Profile /></DirectionalTransition>} />
-          <Route path="education" element={<DirectionalTransition><Education /></DirectionalTransition>} />
-          <Route path="glossary" element={<DirectionalTransition><Glossary /></DirectionalTransition>} />
-        </Route>
+            {/* Shared Routes (Standard Users and Superusers) */}
+            <Route path="whats-for-today" element={<DirectionalTransition><WhatsForToday /></DirectionalTransition>} />
+            <Route path="penny-stocks" element={<DirectionalTransition><PennyStocksToWatch /></DirectionalTransition>} />
+            <Route path="analyze" element={<DirectionalTransition><AnalyzePage /></DirectionalTransition>} />
+            <Route path="profile" element={<DirectionalTransition><Profile /></DirectionalTransition>} />
+            <Route path="education" element={<DirectionalTransition><Education /></DirectionalTransition>} />
+            <Route path="glossary" element={<DirectionalTransition><Glossary /></DirectionalTransition>} />
+          </Route>
 
-        {/* Catch-all Fallback */}
-        <Route path="*" element={<Navigate to="/landing" replace />} />
-      </Routes>
+          {/* Catch-all Fallback */}
+          <Route path="*" element={<Navigate to="/landing" replace />} />
+        </Routes>
+      </Suspense>
       <ToastContainer />
     </BrowserRouter>
   );

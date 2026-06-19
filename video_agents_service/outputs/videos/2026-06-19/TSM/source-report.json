@@ -1,0 +1,1022 @@
+{
+  "symbol": "TSM",
+  "analysisDateTime": "2026-06-19T06:08:57.105Z",
+  "currentPrice": 462.15,
+  "dataQuality": {
+    "rating": "HIGH",
+    "missingFields": [],
+    "staleDataWarning": null,
+    "decisionAllowed": true,
+    "reason": "All necessary data is available and current."
+  },
+  "finalDecision": {
+    "finalRating": "WAIT",
+    "decisionType": "TRADE",
+    "confidenceScore": 75,
+    "decisionSummary": "The stock is in a strong uptrend but is currently extended and near resistance levels. The risk/reward ratio is not favorable for immediate entry. Waiting for a pullback or a breakout confirmation is advisable.",
+    "shouldBuyNow": false,
+    "buyNowReason": "Price is extended and near resistance; better risk/reward expected on pullback.",
+    "bestActionNow": "Wait for a pullback to a more favorable entry zone."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": true,
+    "momentumConfirmed": true,
+    "volumeConfirmed": true,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": true,
+    "nearResistanceRisk": true,
+    "earningsRisk": false,
+    "newsRiskAcceptable": true,
+    "liquidityAcceptable": true,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently in a strong upward trend, showing significant buying interest. However, it is trading near its recent highs, which could act as resistance. It's advisable to wait for the price to stabilize and potentially pull back to a lower level before considering a purchase. In the short term, the stock has shown strong momentum with increasing volume, indicating potential further gains. However, entering at this level carries higher risk due to the proximity to resistance. In the long term, the stock's fundamentals remain strong, supported by positive news sentiment and institutional interest.",
+  "technicalAnalysis": {
+    "overallBias": "BULLISH",
+    "trendStage": "MARKUP",
+    "setupType": "CONTINUATION",
+    "technicalScore": 85,
+    "keySignals": [
+      "Price above EMA20, EMA50, and EMA200",
+      "Strong uptrend confirmed by ADX",
+      "MACD bullish"
+    ],
+    "supportLevels": [
+      360.57,
+      385.64,
+      405.7
+    ],
+    "resistanceLevels": [
+      450.1,
+      464.905
+    ],
+    "vwapAnalysis": "Price is significantly above VWAP, indicating strong buying interest.",
+    "movingAverageAnalysis": "Price is above all key moving averages, confirming bullish trend.",
+    "rsiAnalysis": "RSI(14) is at 63.57, indicating strong momentum but not overbought.",
+    "macdAnalysis": "MACD is bullish, supporting the upward momentum.",
+    "volumeAnalysis": "Volume is above average, confirming buying interest.",
+    "volumeTrendStatus": "GROWING_STRONGER",
+    "atrVolatilityAnalysis": "ATR indicates high volatility, suitable for active trading.",
+    "adxTrendStrengthAnalysis": "ADX is very high, confirming strong trend strength.",
+    "bollingerBandAnalysis": "Price is near the upper Bollinger Band, indicating potential overextension."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "WAIT_FOR_PULLBACK",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "Current price is extended; wait for a pullback."
+    },
+    "pullbackEntryZone": {
+      "low": 405.7,
+      "high": 426.15,
+      "description": "Consider entry on pullback to this zone for better risk/reward."
+    },
+    "breakoutEntryLevel": {
+      "price": 464.905,
+      "confirmationRule": "Enter on breakout above resistance with volume confirmation."
+    },
+    "accumulationZone": {
+      "low": 385.64,
+      "high": 405.7,
+      "description": "Longer-term accumulation zone for strategic entries."
+    },
+    "invalidationLevel": {
+      "price": 405.7,
+      "reason": "Break below this level would invalidate the current bullish setup."
+    },
+    "stopLoss": {
+      "price": 405.7,
+      "stopType": "TECHNICAL",
+      "description": "Set stop-loss below key support to limit downside risk."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": 450.1,
+        "reason": "First target near recent resistance level."
+      },
+      {
+        "label": "T2",
+        "price": 464.905,
+        "reason": "Second target at recent high, requiring breakout confirmation."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No third target defined due to current market conditions."
+      }
+    ],
+    "exitRules": [
+      "Exit if price falls below 405.7, indicating trend reversal."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": 426.15,
+    "riskPerShare": 20.45,
+    "rewardToTarget1": 23.95,
+    "rewardToTarget2": 38.755,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": "1.17",
+    "riskRewardToTarget2": "1.89",
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "ACCEPTABLE",
+    "positionSizingNote": "Consider reducing position size due to proximity to resistance and high volatility."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 426.15,
+      "high": 450.1,
+      "description": "Look for entry on pullback within this range."
+    },
+    "stopLoss": {
+      "price": 405.7,
+      "description": "Stop-loss set below key support to manage risk."
+    },
+    "targets": [
+      {
+        "price": 450.1,
+        "label": "T1"
+      },
+      {
+        "price": 464.905,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "Exit if price falls below 405.7 or hits target levels."
+    ],
+    "tradeQuality": "B"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "BULLISH",
+    "entryZone": {
+      "low": 405.7,
+      "high": 426.15,
+      "description": "Swing entry on pullback to this zone."
+    },
+    "stopLoss": {
+      "price": 405.7,
+      "description": "Swing stop-loss below key support."
+    },
+    "targets": [
+      {
+        "price": 450.1,
+        "label": "T1"
+      },
+      {
+        "price": 464.905,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": 385.64,
+      "high": 405.7,
+      "description": "Strategic accumulation zone for longer-term positions."
+    },
+    "riskReward": "1.89",
+    "swingVerdict": "WAIT"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "BULLISH",
+    "swingSetup": {
+      "setup": "CONTINUATION",
+      "analysis": "Strong uptrend on 4H chart with bullish signals; wait for pullback."
+    },
+    "entryTiming": {
+      "trigger": "PULLBACK",
+      "analysis": "Wait for price to pull back to support levels for entry."
+    },
+    "supportLevels": [
+      {
+        "price": 405.7,
+        "tests": 2
+      }
+    ],
+    "resistanceLevels": [
+      {
+        "price": 450.1,
+        "tests": 1
+      }
+    ],
+    "suggestedEntryPrice": 426.15,
+    "suggestedExitPrice": 450.1,
+    "stopLossPrice": 405.7,
+    "riskMetrics": {
+      "atr": 18.07,
+      "atrAnalysis": "High ATR indicates volatility; manage position size accordingly.",
+      "vwap": 456.065279,
+      "vwapAnalysis": "Price above VWAP, indicating bullish momentum.",
+      "volumeAnalysis": "Volume is strong, supporting upward movement.",
+      "supportResistanceAnalysis": "Key support at 405.7; resistance at 450.1."
+    },
+    "catalysts": {
+      "news": "Positive news sentiment supports bullish outlook.",
+      "earnings": "No immediate earnings risk.",
+      "secFilings": "No significant filings impacting outlook."
+    },
+    "shortFilter": {
+      "borrowFee": "Unavailable",
+      "shortInterest": "Unavailable",
+      "ssrStatus": "Unavailable",
+      "squeezeRisk": "MEDIUM"
+    },
+    "horizonDetails": "The stock is in a strong uptrend with potential for further gains, but current levels are extended. Wait for a pullback to improve risk/reward.",
+    "dailyTrend": {
+      "trend": "BULLISH",
+      "barCount": 252,
+      "analysis": "The stock of Taiwan Semiconductor Manufacturing Company Limited (TSM) is in a bullish trend. The price closed at $462.15, marking a 6.95% increase from the previous day. This upward movement is supported by several technical indicators: the price is above the EMA(20), EMA(50), and EMA(200), indicating a strong upward trend. The MACD is bullish, and the ADX indicates a strong trend with a value above 25. Additionally, the stock is trading above the VWAP, suggesting strong buying interest. The RSI(14) is at 63.57, which is in the bullish territory but not yet overbought, indicating room for further upward movement. The institutional flow indicates accumulation, with a proxy score of 66, suggesting strong buying pressure. The positive sentiment in the semiconductor sector, along with news about Intel's strategic moves, likely contributed to the positive sentiment around TSM.",
+      "laymanExplanation": "Think of TSM like a car that's speeding up on a clear highway. The stock price is moving up strongly, backed by a lot of buying interest and positive signals from technical indicators. It's a good sign that the car (stock) is in the fast lane, but it's important to keep an eye on the road ahead for any bumps or changes in traffic (market conditions).",
+      "ticker": "TSM",
+      "companyName": "Taiwan Semiconductor Manufacturing Company Limited",
+      "confidenceScore": 95,
+      "trendSummary": "TSM is experiencing a bullish trend, with the price making significant upward progress supported by strong volume and positive technical indicators.",
+      "keyDrivers": [
+        {
+          "driver": "Technical Indicators",
+          "impact": "Positive",
+          "evidence": "Price above EMA(20), EMA(50), EMA(200); MACD bullish; ADX indicates strong trend."
+        },
+        {
+          "driver": "Institutional Accumulation",
+          "impact": "Positive",
+          "evidence": "Institutional flow proxy score of 66 indicates accumulation."
+        },
+        {
+          "driver": "Sector Sentiment",
+          "impact": "Positive",
+          "evidence": "Positive news in the semiconductor sector, including Intel's strategic moves."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "The price increased by 6.95% and closed at $462.15, indicating strong upward movement.",
+        "movingAverageView": "Price is above EMA(20), EMA(50), and EMA(200), confirming a strong bullish trend.",
+        "momentumView": "MACD is bullish, and RSI(14) is at 63.57, indicating positive momentum.",
+        "volumeView": "Volume is above average, supporting the bullish price action.",
+        "supportResistanceView": "Price is well above support levels, with no immediate resistance in sight.",
+        "volatilityView": "ATR(14) is at 18.07, indicating moderate volatility."
+      },
+      "catalystView": {
+        "earningsImpact": "No recent earnings data impacting today's price.",
+        "newsImpact": "Positive sentiment in the semiconductor sector, driven by news about Intel and other companies.",
+        "institutionalFlowImpact": "Institutional accumulation is evident, supporting the bullish trend.",
+        "sectorMacroImpact": "Positive sector sentiment and macro trends in technology are supportive."
+      },
+      "riskView": {
+        "riskLevel": "Medium",
+        "mainRisks": [
+          "Potential overbought conditions if RSI(14) continues to rise.",
+          "Sector volatility due to geopolitical factors affecting semiconductor supply chains."
+        ],
+        "whatNeedsConfirmation": "Sustained volume and price action above key moving averages to confirm ongoing trend strength."
+      },
+      "watchStatus": "Worth watching",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "BULLISH",
+    "investmentQuality": "STRONG",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "insufficient data"
+    },
+    "bullCase": "Continued growth in semiconductor demand supports long-term price appreciation.",
+    "baseCase": "Steady growth with potential volatility due to market conditions.",
+    "bearCase": "Market downturn or sector-specific risks could impact growth.",
+    "longTermVerdict": "ACCUMULATE"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": 85,
+    "rating": "STRONG",
+    "revenueTrend": "Consistent revenue growth supports strong fundamentals.",
+    "epsTrend": "EPS growth is positive, indicating profitability.",
+    "profitability": "Strong profitability metrics.",
+    "debtRisk": "Low debt-to-equity ratio minimizes financial risk.",
+    "cashFlowQuality": "Strong cash flow supports operations and growth.",
+    "valuationCommentary": "Valuation is high but justified by growth prospects."
+  },
+  "valuationAnalysis": {
+    "valuationRating": "OVERVALUED",
+    "valuationScore": 60,
+    "peerComparisonAvailable": true,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Current valuation is high relative to peers, but growth prospects support premium."
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": 80,
+    "overallSentiment": "POSITIVE",
+    "keyCatalysts": [
+      "Positive sentiment from sector news",
+      "Institutional interest"
+    ],
+    "keyRisksFromNews": [
+      "Potential sector volatility"
+    ],
+    "earningsRisk": "No immediate earnings risk.",
+    "catalystVerdict": "SUPPORTIVE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": 66,
+    "interpretation": "ACCUMULATION",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock shows signs of accumulation with strong buying pressure and price above VWAP.",
+    "signals": [
+      "OBV trend strongly bullish",
+      "Price significantly above VWAP",
+      "Large bullish candle body"
+    ],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "MEDIUM",
+    "probabilityScore": 50,
+    "reason": "Strong sector growth potential but high current valuation.",
+    "requiredConditions": [
+      "Continued demand for semiconductors",
+      "Sustained revenue and EPS growth"
+    ],
+    "majorBlockers": [
+      "Market volatility",
+      "Sector-specific risks"
+    ]
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "MEDIUM",
+    "technicalRisk": "High due to proximity to resistance and volatility.",
+    "fundamentalRisk": "Low due to strong fundamentals.",
+    "valuationRisk": "High due to current overvaluation.",
+    "newsRisk": "Low with positive sentiment.",
+    "liquidityRisk": "Low with strong volume.",
+    "eventRisk": "Medium due to potential sector volatility.",
+    "topRisks": [
+      "Price near resistance",
+      "High valuation"
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Continued sector growth and demand for semiconductors.",
+      "pricePath": "Potential to reach new highs with sustained momentum.",
+      "probability": "HIGH"
+    },
+    "baseCase": {
+      "condition": "Steady growth with occasional pullbacks.",
+      "pricePath": "Gradual appreciation with volatility.",
+      "probability": "MEDIUM"
+    },
+    "bearCase": {
+      "condition": "Market downturn or sector-specific issues.",
+      "pricePath": "Potential decline towards support levels.",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for pullback to 405.7-426.15 zone.",
+    "Consider entry on confirmed breakout above 464.905.",
+    "Set stop-loss below 405.7 to manage risk."
+  ],
+  "doNotTradeConditions": [
+    "Avoid entry if price remains near resistance without pullback."
+  ],
+  "alertLevels": {
+    "buyAlert": 426.15,
+    "breakoutAlert": 464.905,
+    "stopLossAlert": 405.7,
+    "target1Alert": 450.1,
+    "target2Alert": 464.905,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "ASML Holding N.V.",
+        "ownershipPct": "null",
+        "performance": "ASML is experiencing strong growth due to high demand for its EUV lithography machines.",
+        "upcomingEvents": [
+          "Expansion of EUV production capacity",
+          "New product launches"
+        ],
+        "impactPotential": "Positive impact on TSMC as increased EUV capacity and new technologies could enhance TSMC's production capabilities and efficiency."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "ASML Holding N.V.",
+          "role": "Supplier",
+          "description": "Provides EUV lithography machines",
+          "riskExposure": "High impact if supply is disrupted, as EUV machines are critical for advanced semiconductor manufacturing."
+        },
+        {
+          "name": "Applied Materials",
+          "role": "Supplier",
+          "description": "Supplies semiconductor manufacturing equipment",
+          "riskExposure": "Moderate impact; delays could affect production timelines."
+        },
+        {
+          "name": "Shin-Etsu Chemical Co.",
+          "role": "Supplier",
+          "description": "Provides silicon wafers",
+          "riskExposure": "High impact; silicon wafer shortages could directly impact production capacity."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Foxconn",
+          "role": "Outsource Partner",
+          "description": "Assembly and packaging services",
+          "riskExposure": "Moderate impact; disruptions could delay product delivery."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Apple Inc.",
+          "role": "Marketing Partner",
+          "description": "Co-marketing for new chip technologies",
+          "riskExposure": "High impact; strong marketing partnership enhances brand visibility and sales."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Apple Inc.",
+          "role": "Customer",
+          "description": "Purchases custom chips for iPhones and other devices",
+          "riskExposure": "High impact; Apple's demand significantly affects TSMC's revenue."
+        },
+        {
+          "name": "NVIDIA Corporation",
+          "role": "Customer",
+          "description": "Buys GPUs and other semiconductor components",
+          "riskExposure": "Moderate impact; NVIDIA's growth in AI and gaming boosts TSMC's sales."
+        },
+        {
+          "name": "Qualcomm",
+          "role": "Customer",
+          "description": "Acquires chips for mobile devices",
+          "riskExposure": "Moderate impact; fluctuations in mobile market demand can affect orders."
+        }
+      ]
+    },
+    "strategicOutlook": "TSMC's ecosystem is robust, with strong ties to leading technology companies and critical suppliers. The concentration risk is primarily with key customers like Apple and NVIDIA, whose demand significantly influences TSMC's performance. Upcoming technological advancements and capacity expansions in the semiconductor industry are crucial externalities to monitor."
+  },
+  "trendStory": {
+    "ticker": "TSM",
+    "analysis_date": "2026-06-19",
+    "price_summary": {
+      "current_price": 462.15,
+      "previous_close": 432.12,
+      "day_change_percent": 6.95,
+      "day_range": {
+        "high": 464.905,
+        "low": 438.87
+      },
+      "volume": 665690,
+      "average_volume": 504376,
+      "relative_volume": 1.32
+    },
+    "move_classification": {
+      "primary_reason": "sector-sympathy",
+      "secondary_reasons": [
+        "market-wide"
+      ],
+      "confidence": "medium",
+      "confidence_score": 75
+    },
+    "story_for_layman": {
+      "headline": "TSM Surges on Strong Sector Performance",
+      "simple_explanation": "TSM's stock price jumped significantly today, riding the wave of strong performance in the technology sector.",
+      "why_it_moved": "The technology sector is experiencing a strong rally, which is positively impacting TSM's stock price.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "The move is supported by sector strength, but sustainability depends on continued market and sector momentum."
+    },
+    "evidence": {
+      "news_catalysts": [
+        {
+          "headline": "Intel's Next Move Could Be Bigger Than Today's Pop",
+          "summary": " ",
+          "source": "benzinga",
+          "published_at": "2026-06-18T14:26:55Z",
+          "impact": "neutral",
+          "relevance_score": 90
+        },
+        {
+          "headline": "Why Is Intel Stock Soaring Thursday?",
+          "summary": "Intel stock surges 8% on Trump's announcement that Apple, NVIDIA, and Tesla will build chips domestically with Intel. Read the details.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T11:24:31Z",
+          "impact": "positive",
+          "relevance_score": 80
+        },
+        {
+          "headline": "Why Is Marvell Technology Stock Gaining Thursday?",
+          "summary": "MRVL Technical Analysis: Marvell stock holds a powerful long-term uptrend near its 52-week high. Is a brief consolidation ahead?",
+          "source": "benzinga",
+          "published_at": "2026-06-18T09:40:18Z",
+          "impact": "positive",
+          "relevance_score": 70
+        },
+        {
+          "headline": "After Nvidia And Tesla, Trump Confirms Apple Has Agreed To Build Chips With Intel Amid US Manufacturing Push: 'When Was The Last Time...'",
+          "summary": "Trump says Apple will work with Intel on U.S.-made chips, joining Nvidia in a push to revive American semiconductor manufacturing.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T08:15:53Z",
+          "impact": "neutral",
+          "relevance_score": 60
+        },
+        {
+          "headline": "Jim Cramer Names Intel His Favorite Stock, Says Chipmaker 'Will Work' Because Of This Reason",
+          "summary": "CNBC's Jim Cramer called Intel Corp his favorite stock, citing rising CPU demand from AI infrastructure growth.",
+          "source": "benzinga",
+          "published_at": "2026-06-18T03:48:45Z",
+          "impact": "positive",
+          "relevance_score": 50
+        }
+      ],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "eps_surprise": null,
+        "revenue_surprise": null,
+        "guidance_change": "unknown",
+        "summary": "No recent earnings announcement identified in news feeds."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Technology",
+        "sector_change_percent": 5.56,
+        "index_change_percent": 3.48,
+        "is_stock_outperforming_sector": true,
+        "summary": "Sector Technology is moving. Index overall changed slightly."
+      },
+      "volume_context": {
+        "relative_volume": 1.32,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "strong",
+        "summary": "Relative volume is 1.3x. Institutional flow proxy score is 66."
+      },
+      "technical_context": {
+        "trend": "uptrend",
+        "breakout_level": 382.11,
+        "support_level": 360.57,
+        "resistance_level": 382.11,
+        "rsi": 63.567301015109976,
+        "macd_signal": "bullish",
+        "vwap_position": "above",
+        "summary": "Price is BULLISH overall. RSI at 63.567301015109976."
+      },
+      "short_context": {
+        "short_interest_available": true,
+        "short_interest_percent": 2.5,
+        "days_to_cover": 1.5,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short borrow is available. Squeeze risk is currently low."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 438.87,
+        "high": 464.905
+      },
+      "stop_loss": 426.025,
+      "target_1": 482,
+      "target_2": 500,
+      "risk_reward": 2.5,
+      "entry_reason": "Strong sector performance and breakout above resistance.",
+      "wait_for_confirmation": "Watch for continued sector strength."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 0,
+      "short_stop_loss": 0,
+      "short_target_1": 0,
+      "short_target_2": 0,
+      "reason": "Stock is in a strong uptrend with sector support."
+    },
+    "final_summary": {
+      "one_line_story": "TSM surged on strong sector performance, breaking above resistance.",
+      "layman_summary": "TSM's stock price jumped significantly today, riding the wave of strong performance in the technology sector.",
+      "trader_action": "Monitor sector trends and market conditions for continued strength.",
+      "risk_warning": "The move might need confirmation if sector momentum fades."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "TSM",
+    "analysisDate": "2026-06-19T06:08:57.118Z",
+    "currentPrice": 462.15,
+    "correlationName": "Signal Correlation",
+    "finalZone": "GREEN_ZONE",
+    "correlationScore": 86,
+    "gradientPositionPercent": 86,
+    "gradientLabel": "Strong Green",
+    "confidenceLevel": "HIGH",
+    "oneLineSummary": "TSM shows strong bullish signals with price above key moving averages and positive momentum indicators.",
+    "laymanSummary": "TSM is currently in a favorable position with strong upward trends and positive market signals, making it a good candidate for further research.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 20,
+        "maxScore": 20,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20), EMA(50), and EMA(200), indicating a strong upward trend."
+      },
+      "volumeConfirmation": {
+        "score": 10,
+        "maxScore": 15,
+        "status": "MIXED",
+        "evidence": "Relative volume is slightly below 1.5x, but price rise is supported by increasing volume."
+      },
+      "momentumIndicators": {
+        "score": 15,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "RSI(14) is at 63.57, indicating strong momentum; MACD is bullish."
+      },
+      "movingAverageStructure": {
+        "score": 15,
+        "maxScore": 15,
+        "status": "POSITIVE",
+        "evidence": "Price is above EMA(20), EMA(50), and EMA(200) with a golden cross present."
+      },
+      "vwapPosition": {
+        "score": 10,
+        "maxScore": 10,
+        "status": "POSITIVE",
+        "evidence": "Price is above VWAP, indicating strong buying interest."
+      },
+      "supportResistanceRiskReward": {
+        "score": 8,
+        "maxScore": 10,
+        "status": "POSITIVE",
+        "evidence": "Price is near resistance but has room to move higher with strong support levels below."
+      },
+      "sectorIndexAlignment": {
+        "score": 5,
+        "maxScore": 5,
+        "status": "POSITIVE",
+        "evidence": "Technology sector is performing well, supporting TSM's upward movement."
+      },
+      "shortInterestContext": {
+        "score": 3,
+        "maxScore": 5,
+        "status": "MIXED",
+        "evidence": "Short interest data is not provided, but no significant squeeze risk is indicated."
+      },
+      "newsCatalystConfirmation": {
+        "score": 2,
+        "maxScore": 3,
+        "status": "POSITIVE",
+        "evidence": "Overall positive sentiment in related news articles."
+      },
+      "institutionalFlowProxy": {
+        "score": 2,
+        "maxScore": 2,
+        "status": "POSITIVE",
+        "evidence": "Institutional accumulation is suggested by proxy data."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [
+        "Price above EMA(20), EMA(50), and EMA(200)",
+        "Strong RSI(14) and bullish MACD",
+        "Price above VWAP",
+        "Positive sector performance"
+      ],
+      "yellowSignals": [
+        "Relative volume slightly below 1.5x"
+      ],
+      "redSignals": [],
+      "strongestPositiveEvidence": "Price is above all key moving averages with strong momentum indicators.",
+      "strongestNegativeEvidence": "Relative volume is not significantly high.",
+      "mixedSignalExplanation": "While volume is not extremely high, the overall trend and momentum are strongly positive."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": 405.7,
+      "nearestResistance": 450.1,
+      "distanceToSupportPercent": 12.2,
+      "distanceToResistancePercent": 2.6,
+      "riskRewardView": "FAVORABLE",
+      "explanation": "Price is closer to resistance but has strong support levels below, offering a favorable risk/reward ratio."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "TSM is in a strong upward trend with positive technical indicators and sector support, making it a favorable research zone."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Sustained volume increase",
+        "Continued positive news sentiment"
+      ],
+      "forYellowToGreenUpgrade": [],
+      "forRedZoneWarning": []
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 86,
+      "markerText": "Strong Green",
+      "displaySummaryBelowBar": "TSM is in a strong upward trend with positive technical indicators.",
+      "supportingPointsBelowBar": [
+        "Price above key moving averages",
+        "Strong RSI(14) and MACD",
+        "Positive sector performance"
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "FAVORABLE_WATCH",
+      "summary": "TSM is currently in a strong bullish trend with favorable technical and sector indicators, making it a good candidate for further research.",
+      "riskWarning": "Monitor volume levels and news sentiment for sustained bullish momentum.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "TSM",
+    "available": true,
+    "price": 462.15,
+    "open": 439.08,
+    "high": 464.905,
+    "low": 438.87,
+    "close": 462.15,
+    "volume": 665690,
+    "vwap": 456.065279,
+    "bid": 395.66,
+    "ask": 528.68,
+    "spread": 133.02,
+    "changePercent": 6.95,
+    "timestamp": "2026-06-18T19:59:55.069910328Z",
+    "raw": {
+      "dailyBar": {
+        "c": 462.15,
+        "h": 464.905,
+        "l": 438.87,
+        "n": 20827,
+        "o": 439.08,
+        "t": "2026-06-18T04:00:00Z",
+        "v": 665690,
+        "vw": 456.065279
+      },
+      "latestQuote": {
+        "ap": 528.68,
+        "as": 40,
+        "ax": "V",
+        "bp": 395.66,
+        "bs": 40,
+        "bx": "V",
+        "c": [
+          "R"
+        ],
+        "t": "2026-06-18T20:00:00.019320439Z",
+        "z": "A"
+      },
+      "latestTrade": {
+        "c": [
+          " "
+        ],
+        "i": 52984063878264,
+        "p": 462.15,
+        "s": 80,
+        "t": "2026-06-18T19:59:55.069910328Z",
+        "x": "V",
+        "z": "A"
+      },
+      "minuteBar": {
+        "c": 462.15,
+        "h": 463.39,
+        "l": 461.83,
+        "n": 439,
+        "o": 463.38,
+        "t": "2026-06-18T19:59:00Z",
+        "v": 18198,
+        "vw": 462.597355
+      },
+      "prevDailyBar": {
+        "c": 432.12,
+        "h": 442.395,
+        "l": 431.655,
+        "n": 13155,
+        "o": 434.5,
+        "t": "2026-06-17T04:00:00Z",
+        "v": 404624,
+        "vw": 436.784316
+      },
+      "symbol": "TSM"
+    }
+  },
+  "technicals": {
+    "primary": {
+      "ema20": 426.15778526403375,
+      "ema50": 406.34063590852594,
+      "ema200": 338.09798120324126,
+      "sma20": 426.94025,
+      "sma50": 405.6123000000001,
+      "sma200": 335.16444999999993,
+      "rsi14": 63.567301015109976,
+      "rsi14Prev": 55.29549230690086,
+      "macdLine": 10.004253748017788,
+      "macdSignal": 9.039365908777299,
+      "macdHist": 0.9648878392404896,
+      "bbUpper": 455.54052770407134,
+      "bbMiddle": 426.94025,
+      "bbLower": 398.33997229592865,
+      "bbWidth": 13.397789364704474,
+      "atr14": 18.070347559727626,
+      "obv": 8804661,
+      "relVolume": 1.3198292503497144,
+      "vwap": 428.03450695230845,
+      "adx14": 282.3632269876391,
+      "plusDI": 27.459827101987905,
+      "minusDI": 14.581091563471402,
+      "supportLevels": [
+        360.57,
+        385.64,
+        405.7
+      ],
+      "resistanceLevels": [
+        382.11,
+        414.4,
+        420.93,
+        450.1
+      ],
+      "overallBias": "BULLISH",
+      "signals": [
+        "MACD bullish",
+        "Price above EMA20 > EMA50",
+        "Golden cross (EMA50 > EMA200)",
+        "Price above VWAP",
+        "Strong uptrend (ADX>25, +DI>-DI)"
+      ]
+    },
+    "timeframes": [
+      "1Day",
+      "4Hour",
+      "1Hour",
+      "15Min",
+      "5Min"
+    ]
+  },
+  "fundamentals": {
+    "available": true,
+    "source": "yahoo_finance",
+    "marketCap": 2396773416960,
+    "peRatio": 39.73517,
+    "pbRatio": 70.689156,
+    "epsTrailing": 11.63,
+    "epsForward": 19.65615,
+    "revenue": 4103904165888,
+    "debtToEquity": 18.447,
+    "dividendYield": null,
+    "beta": 1.25,
+    "week52High": 465.22,
+    "week52Low": 206.2,
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "description": "Taiwan Semiconductor Manufacturing Company Limited, together with its subsidiaries, manufactures, packages, tests, and sells integrated circuits and other semiconductor devices in Taiwan, China, Europe, the Middle East, Africa, Japan, the United States, and internationally. It provides various wafer fabrication processes, such as processes to manufacture complementary metal- oxide-semiconductor (CMOS) logic, mixed-signal, radio frequency, embedded memory, bipolar CMOS mixed-signal, and others. T"
+  },
+  "news": {
+    "available": true,
+    "source": "alpaca_news",
+    "items": [
+      {
+        "headline": "Intel's Next Move Could Be Bigger Than Today's Pop",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/Opinion/26/06/53278084/intels-next-move-could-be-bigger-than-todays-pop",
+        "publishedAt": "2026-06-18T14:26:55Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Why Is Intel Stock Soaring Thursday?",
+        "summary": "Intel stock surges 8% on Trump&#39;s announcement that Apple, NVIDIA, and Tesla will build chips domestically with Intel. Read the details.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53271124/why-is-intel-stock-soaring-thursday",
+        "publishedAt": "2026-06-18T11:24:31Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Why Is Marvell Technology Stock Gaining Thursday?",
+        "summary": "MRVL Technical Analysis: Marvell stock holds a powerful long-term uptrend near its 52-week high. Is a brief consolidation ahead?",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53269310/why-is-marvell-technology-stock-gaining-thursday-2",
+        "publishedAt": "2026-06-18T09:40:18Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "After Nvidia And Tesla, Trump Confirms Apple Has Agreed To Build Chips With Intel Amid US Manufacturing Push: 'When Was The Last Time...'",
+        "summary": "Trump says Apple will work with Intel on U.S.-made chips, joining Nvidia in a push to revive American semiconductor manufacturing.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/news/26/06/53268744/after-nvidia-and-tesla-trump-confirms-apple-has-agreed-to-build-chips-with-intel-amid-us-manufacturing-push-when-was-the-last-time",
+        "publishedAt": "2026-06-18T08:15:53Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Jim Cramer Names Intel His Favorite Stock, Says Chipmaker 'Will Work' Because Of This Reason",
+        "summary": "CNBC&#39;s Jim Cramer called Intel Corp his favorite stock, citing rising CPU demand from AI infrastructure growth.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/06/53267532/jim-cramer-names-intel-his-favorite-stock-and-says-it-will-work",
+        "publishedAt": "2026-06-18T03:48:45Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "$100 Invested In Taiwan Semiconductor 5 Years Ago Would Be Worth This Much Today",
+        "summary": " ",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/insights/news/26/06/53265916/100-invested-in-taiwan-semiconductor-5-years-ago-would-be-worth-this-much-today",
+        "publishedAt": "2026-06-17T21:45:32Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "EXCLUSIVE: Google And Meta May Have The Most To Lose In The AI\u2011Agent Era, Says Founder Who Rejected OpenAI",
+        "summary": "Google, Meta, Uber and Airbnb face disruption from AI agents, while Nvidia, TSMC and Qualcomm remain the safest AI investments, says AGI founder who rejected OpenAI",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/tech/26/06/53252394/google-meta-may-lose-in-ai%e2%80%91agent-era-says-founder-who-rejected-openai",
+        "publishedAt": "2026-06-17T14:47:06Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Stock Market Today: Dow Futures Tumble, S&P 500, Nasdaq Gains As Investors Await FOMC Decision\u2014 Amkor, La-Z-Boy In Focus (UPDATED)",
+        "summary": "(Editor\u2019s note: The future prices of benchmark tracking ETFs and the headline were updated in the story.)\n\n\n\nU.S. stock futures were mixed on Wednesday, as the Dow Jones fell, while the Nasdaq 100 and S&amp;P 500 advanced, following Tuesday\u2019s mixed close.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/markets/equities/26/06/53243117/stock-market-today-dow-jones-futures-tumble-sp-500-gains-as-investors-await-fomc-decision-amkor-la-z-boy-in-focus",
+        "publishedAt": "2026-06-17T12:44:37Z",
+        "sentiment": "POSITIVE"
+      },
+      {
+        "headline": "Intel Stock Gains As 18A-P Semiconductor Node Enters Risk Production",
+        "summary": "Intel Corp. (NASDAQ: INTC) advances its semiconductor roadmap as the 18A-P process node enters risk production, yielding performance gains and enhanced thermal characteristics.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53246855/intel-stock-gains-as-18a-p-semiconductor-node-enters-risk-production",
+        "publishedAt": "2026-06-17T12:35:39Z",
+        "sentiment": "NEUTRAL"
+      },
+      {
+        "headline": "Why Is Amkor Technology Stock Soaring Wednesday?",
+        "summary": "Amkor (AMKR) stock surges after announcing a massive U.S. chip packaging deal with Taiwan Semiconductor. Get the full details here.",
+        "source": "benzinga",
+        "url": "https://www.benzinga.com/trading-ideas/movers/26/06/53243368/why-is-amkor-technology-stock-soaring-wednesday",
+        "publishedAt": "2026-06-17T09:57:52Z",
+        "sentiment": "POSITIVE"
+      }
+    ],
+    "sentiment": "POSITIVE"
+  },
+  "institutionalFlow": {
+    "proxyScore": 66,
+    "interpretation": "ACCUMULATION",
+    "subScores": {
+      "relVolumeScore": 5,
+      "obvTrendScore": 15,
+      "priceVwapScore": 15,
+      "pvDivergenceScore": 15,
+      "supportHoldScore": 3,
+      "breakoutVolScore": 3,
+      "largeBodyScore": 10
+    },
+    "signals": [
+      "OBV trend strongly bullish",
+      "Price significantly above VWAP (+8.0%)",
+      "Price rising with increasing volume (bullish)",
+      "Large bullish candle body (strong buying pressure)"
+    ],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WAIT",
+  "technicalScore": 85,
+  "fundamentalScore": 85,
+  "newsCatalystScore": 80,
+  "institutionalFlowProxyScore": 66,
+  "keyCatalysts": [
+    "Positive sentiment from sector news",
+    "Institutional interest"
+  ],
+  "keyRisks": [
+    "Price near resistance",
+    "High valuation"
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The stock shows signs of accumulation with strong buying pressure and price above VWAP."
+}

@@ -1,0 +1,28 @@
+{
+  "ticker": "TSM",
+  "companyName": "TSM",
+  "reportDate": "Unavailable",
+  "currentPrice": 462.15,
+  "dayChangePct": 6.95,
+  "overallSignal": "WAIT",
+  "whyStockMoved": "sector-sympathy",
+  "catalystSummary": "Positive sentiment from sector news; Institutional interest",
+  "volumeSummary": "Volume is above average, confirming buying interest.",
+  "trendSummary": "The stock of Taiwan Semiconductor Manufacturing Company Limited (TSM) is in a bullish trend. The price closed at $462.15, marking a 6.95% increase from the previous day. This upward movement is supported by several technical indicators: the price is above the EMA(20), EMA(50), and EMA(200), indicating a strong upward trend. The MACD is bullish, and the ADX indicates a strong trend with a value above 25. Additionally, the stock is trading above the VWAP, suggesting strong buying interest. The RSI(14) is at 63.57, which is in the bullish territory but not yet overbought, indicating room for further upward movement. The institutional flow indicates accumulation, with a proxy score of 66, suggesting strong buying pressure. The positive sentiment in the semiconductor sector, along with news about Intel's strategic moves, likely contributed to the positive sentiment around TSM.",
+  "supportLevels": [
+    405.7
+  ],
+  "resistanceLevels": [
+    450.1
+  ],
+  "entryZone": "Low: 385.64, High: 405.7",
+  "stopLoss": "Price: 405.7 (Swing stop-loss below key support.)",
+  "targets": [
+    450.1,
+    464.905
+  ],
+  "shortTradeView": "SI%: Unavailable, Borrow Fee: Unavailable, Squeeze Risk: MEDIUM",
+  "riskWarnings": "Price near resistance; High valuation",
+  "finalVerdict": "The stock is in a strong uptrend but is currently extended and near resistance levels. The risk/reward ratio is not favorable for immediate entry. Waiting for a pullback or a breakout confirmation is advisable.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently in a strong upward trend, showing significant buying interest. However, it is trading near its recent highs, which could act as resistance. It's advisable to wait for the price to stabilize and potentially pull back to a lower level before considering a purchase. In the short term, the stock has shown strong momentum with increasing volume, indicating potential further gains. However, entering at this level carries higher risk due to the proximity to resistance. In the long term, the stock's fundamentals remain strong, supported by positive news sentiment and institutional interest."
+}

@@ -1,0 +1,23 @@
+{
+  "jobId": "19448100-b342-437f-85bb-cbea96daf2f9",
+  "reportId": "cmqkaj6fy03sik5s0c2fbh2oi",
+  "ticker": "VERIZON",
+  "reportDate": "2026-06-18",
+  "status": "ERROR",
+  "startedAt": "2026-06-19T02:09:25.487960",
+  "completedAt": "2026-06-19T02:13:37.597462",
+  "errorMessage": "Remotion render failed (exit 1).\nCheck render-log.txt for details.\nLast stderr: ndle.js (2930)\u001b[39m\n\u001b[31m[0618/211337.248:INFO:CONSOLE:464] \"Uncaught TypeError: dayChangePct.toFixed is not a function\", source: http://localhost:3001/bundle.js (464)\u001b[39m\n\u001b[31m[0618/211337.249:INFO:CONSOLE:4523] \"Symbol(__remotion_tag_delayRender()) Symbol(__remotion_level_verbose) \"Setting the current frame to 395\" handle was cleared after 36ms\", source: http://localhost:3001/bundle.js (4523)\u001b[39m\n\u001b[31m\u001b[41m\u001b[37m TypeError \u001b[39m\u001b[31m\u001b[49m\u001b[39m \u001b[31mdayChangePct.toFixed is not a function\u001b[39m\n",
+  "eligibilityNote": null,
+  "videoUrl": null,
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\VERIZON\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\VERIZON\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\VERIZON\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\VERIZON\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\VERIZON\\narration-audio.mp3",
+    "ffprobe": null,
+    "validation": null,
+    "finalVideo": null
+  },
+  "forceRegenerate": false
+}

@@ -14,6 +14,8 @@ import {
   RatingBadge, ScoreBar, PriceChange, LoadingSpinner, EmptyState, Skeleton,
   DataUnavailable, TermTooltip, StatusBadge, PageContainer
 } from '../components/ui';
+import { useSEO } from '../utils/useSEO';
+import { StructuredData } from '../components/StructuredData';
 import { Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area, XAxis, YAxis } from 'recharts';
 
 const StockDetail: React.FC = () => {
@@ -22,6 +24,39 @@ const StockDetail: React.FC = () => {
   const location = useLocation();
   const fromContext = location.state?.from || 'direct';
   const { addToWatchlist, watchlist, runAnalysis, analyzing, user } = useAppStore();
+
+  const ticker = symbol?.toUpperCase() || 'Stock';
+
+  useSEO({
+    title: `${ticker} Stock Analysis | Investing Atti`,
+    description: `Full AI research deck and technical analysis report for ${ticker}. View support & resistance zones, indicators, and catalysts.`,
+    robots: 'index, follow',
+  });
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://investingatti.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Stock Research",
+        "item": "https://investingatti.com/analyze"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": ticker,
+        "item": `https://investingatti.com/stocks/${ticker}`
+      }
+    ]
+  };
   
   const [report, setReport] = useState<any>(null);
   const [candles, setCandles] = useState<any[]>([]);
@@ -354,6 +389,7 @@ const StockDetail: React.FC = () => {
       </div>
 
       <PageContainer className="pt-6 pb-28 md:py-8 space-y-6">
+        <StructuredData data={breadcrumbSchema} />
         
         {/* Header Title Bar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-850 pb-5">

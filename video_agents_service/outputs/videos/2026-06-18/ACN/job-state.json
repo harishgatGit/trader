@@ -1,0 +1,23 @@
+{
+  "jobId": "a104274c-a265-4fc8-894a-bb5e94b02ce3",
+  "reportId": "cmqk55d8h01k8k5s01aqtiwa3",
+  "ticker": "ACN",
+  "reportDate": "2026-06-18",
+  "status": "GENERATED",
+  "startedAt": "2026-06-18T23:38:43.033691",
+  "completedAt": "2026-06-18T23:45:57.591898",
+  "errorMessage": null,
+  "eligibilityNote": null,
+  "videoUrl": "/api/video-jobs/a104274c-a265-4fc8-894a-bb5e94b02ce3/video",
+  "artifacts": {
+    "sourceReport": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\ACN\\source-report.json",
+    "normalizedInput": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\ACN\\normalized-video-input.json",
+    "script": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\ACN\\narration-script.txt",
+    "storyboard": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\ACN\\storyboard.json",
+    "audio": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\ACN\\narration-audio.mp3",
+    "ffprobe": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\ACN\\ffprobe.json",
+    "validation": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\ACN\\validation-result.json",
+    "finalVideo": "C:\\Users\\haris\\Documents\\code_base\\trader\\video_agents_service\\outputs\\videos\\2026-06-18\\ACN\\final-video.mp4"
+  },
+  "forceRegenerate": false
+}

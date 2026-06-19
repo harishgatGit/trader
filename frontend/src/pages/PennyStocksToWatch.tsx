@@ -3,6 +3,7 @@ import { AlertTriangle, RefreshCw, HelpCircle, AlertOctagon, Newspaper } from 'l
 import { whatsForTodayApi } from '../services/api';
 import { useAppStore } from '../store/useAppStore';
 import { LoadingSpinner, EmptyState, PageContainer, PageHeader, ResponsiveGrid, InsightCard, TermTooltip } from '../components/ui';
+import { useSEO } from '../utils/useSEO';
 
 interface PennyStockItem {
   id: string;
@@ -19,6 +20,12 @@ interface PennyStockItem {
 }
 
 const PennyStocksToWatch: React.FC = () => {
+  useSEO({
+    title: 'Penny Stocks to Watch | Investing Atti',
+    description: 'Track speculative micro-cap catalysts and high-volume penny stocks with real-time AI-powered scanner diagnostics.',
+    robots: 'index, follow',
+  });
+
   const { user } = useAppStore();
   const [stocks, setStocks] = useState<PennyStockItem[]>([]);
   const [generatedAt, setGeneratedAt] = useState<string | null>(null);

@@ -5,11 +5,18 @@ import { Link } from 'react-router-dom';
 import { Plus, Trash2, Search, RefreshCw, BarChart2 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { LoadingSpinner, EmptyState, PageContainer, PageHeader, StatusBadge } from '../components/ui';
+import { useSEO } from '../utils/useSEO';
 
 const Watchlist: React.FC = () => {
   const { watchlist, fetchWatchlist, addToWatchlist, removeFromWatchlist, watchlistLoading, runAnalysis, analyzing } = useAppStore();
   const [newSymbol, setNewSymbol] = useState('');
   const [analyzingSymbol, setAnalyzingSymbol] = useState<string | null>(null);
+
+  useSEO({
+    title: 'Stock Watchlist | Investing Atti',
+    description: 'Monitor your personalized stock watchlists, real-time prices, and AI signal ratings.',
+    robots: 'noindex, nofollow',
+  });
 
   useEffect(() => {
     fetchWatchlist();
@@ -52,6 +59,7 @@ const Watchlist: React.FC = () => {
               placeholder="Add ticker symbol (e.g. AAPL)"
               className="input pl-10 font-mono w-full"
               maxLength={10}
+              aria-label="New stock ticker symbol"
             />
           </div>
           <button type="submit" className="btn btn-primary px-5 rounded-xl">

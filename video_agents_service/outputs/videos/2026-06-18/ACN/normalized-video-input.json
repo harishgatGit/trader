@@ -1,0 +1,25 @@
+{
+  "ticker": "ACN",
+  "companyName": "ACN",
+  "reportDate": "Unavailable",
+  "currentPrice": 128.29,
+  "dayChangePct": -17.83,
+  "overallSignal": "WATCHLIST",
+  "whyStockMoved": "earnings-driven",
+  "catalystSummary": "Weak earnings outlook; Negative sentiment from recent news",
+  "volumeSummary": "High relative volume indicates strong market activity.",
+  "trendSummary": "Accenture's stock has been under significant pressure, closing at $128.29, down 17.83% for the day. This sharp decline is accompanied by a high relative trading volume, more than 7 times the average, suggesting strong selling pressure. Technically, the stock is in a bearish phase, with the price well below key moving averages such as EMA(20), EMA(50), and EMA(200), indicating a strong downtrend. The RSI(14) is deeply oversold at 21.08, reflecting extreme bearish momentum. The MACD is also bearish, reinforcing the negative sentiment. The news of a weak outlook and concerns over Fed policy have further contributed to the negative sentiment, as reflected in the negative news sentiment. Institutional flow indicates distribution, with price falling alongside rising volume, confirming the bearish trend.",
+  "supportLevels": [
+    125.62
+  ],
+  "resistanceLevels": [
+    181.16
+  ],
+  "entryZone": "Low: None, High: None",
+  "stopLoss": "Price: 155.88 (Stop loss set below support to manage downside risk.)",
+  "targets": [],
+  "shortTradeView": "SI%: Data unavailable, Borrow Fee: Data unavailable, Squeeze Risk: Data unavailable",
+  "riskWarnings": "Strong downtrend; Negative news sentiment; Weak earnings outlook",
+  "finalVerdict": "The stock is currently in a strong downtrend with bearish technical indicators and negative news sentiment. It is oversold, but lacks a clear reversal signal. Monitoring for potential stabilization or reversal is advised.",
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently in a downward spiral, showing significant weakness and high selling pressure. It's not the right time to buy, but keep an eye on it for any signs of recovery. The stock has been declining sharply, hitting a new 52-week low. Recent news and earnings reports have been negative, contributing to the decline. The overall market sentiment is bearish, and the stock is oversold, indicating potential for a bounce, but caution is advised. In the near term, expect continued volatility and potential further declines unless a reversal pattern emerges. Long-term, the stock may recover if fundamentals improve and market conditions stabilize."
+}

@@ -1,0 +1,737 @@
+{
+  "symbol": "VERIZON",
+  "analysisDateTime": "2026-06-19T02:08:59.786Z",
+  "currentPrice": null,
+  "dataQuality": {
+    "rating": "INSUFFICIENT",
+    "missingFields": [
+      "currentPrice",
+      "historicalCandles",
+      "technicals",
+      "fundamentals",
+      "news",
+      "valuation"
+    ],
+    "staleDataWarning": "Data is insufficient for a reliable analysis.",
+    "decisionAllowed": false,
+    "reason": "The data provided is insufficient for making a reliable trading or investment decision."
+  },
+  "finalDecision": {
+    "finalRating": "WATCHLIST",
+    "decisionType": "NO_TRADE",
+    "confidenceScore": 0,
+    "decisionSummary": "Due to the lack of sufficient data, including price, technical indicators, and fundamental information, it is not possible to make a reliable decision on Verizon at this time. The stock should be placed on a watchlist until more comprehensive data becomes available.",
+    "shouldBuyNow": false,
+    "buyNowReason": "Insufficient data to support a buy decision.",
+    "bestActionNow": "Add to watchlist and wait for more data."
+  },
+  "preDecisionChecklist": {
+    "trendConfirmed": false,
+    "momentumConfirmed": false,
+    "volumeConfirmed": false,
+    "entryNotExtended": false,
+    "riskRewardAcceptable": false,
+    "stopLossDefined": false,
+    "nearResistanceRisk": false,
+    "earningsRisk": false,
+    "newsRiskAcceptable": false,
+    "liquidityAcceptable": false,
+    "finalChecklistPass": false
+  },
+  "executiveSummary": "LAYMAN'S TAKEAWAY: The current data for Verizon is insufficient to make a confident trading or investment decision. Without key information such as price trends, technical indicators, and fundamental data, it's best to place this stock on a watchlist. Monitor for updates and more comprehensive data before considering any action.",
+  "technicalAnalysis": {
+    "overallBias": "INSUFFICIENT_DATA",
+    "trendStage": "UNKNOWN",
+    "setupType": "NO_SETUP",
+    "technicalScore": 0,
+    "keySignals": [],
+    "supportLevels": [],
+    "resistanceLevels": [],
+    "vwapAnalysis": "Insufficient data to analyze VWAP.",
+    "movingAverageAnalysis": "Insufficient data to analyze moving averages.",
+    "rsiAnalysis": "Insufficient data to analyze RSI.",
+    "macdAnalysis": "Insufficient data to analyze MACD.",
+    "volumeAnalysis": "Insufficient data to analyze volume.",
+    "volumeTrendStatus": "INSUFFICIENT_DATA",
+    "atrVolatilityAnalysis": "Insufficient data to analyze ATR volatility.",
+    "adxTrendStrengthAnalysis": "Insufficient data to analyze ADX.",
+    "bollingerBandAnalysis": "Insufficient data to analyze Bollinger Bands."
+  },
+  "entryExitPlan": {
+    "preferredEntryStyle": "NO_TRADE",
+    "buyNowZone": {
+      "low": null,
+      "high": null,
+      "valid": false,
+      "description": "No valid entry zone due to insufficient data."
+    },
+    "pullbackEntryZone": {
+      "low": null,
+      "high": null,
+      "description": "No pullback entry zone due to insufficient data."
+    },
+    "breakoutEntryLevel": {
+      "price": null,
+      "confirmationRule": "No breakout confirmation due to insufficient data."
+    },
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone due to insufficient data."
+    },
+    "invalidationLevel": {
+      "price": null,
+      "reason": "No invalidation level due to insufficient data."
+    },
+    "stopLoss": {
+      "price": null,
+      "stopType": "NOT_AVAILABLE",
+      "description": "No stop loss defined due to insufficient data."
+    },
+    "targets": [
+      {
+        "label": "T1",
+        "price": null,
+        "reason": "No target due to insufficient data."
+      },
+      {
+        "label": "T2",
+        "price": null,
+        "reason": "No target due to insufficient data."
+      },
+      {
+        "label": "T3",
+        "price": null,
+        "reason": "No target due to insufficient data."
+      }
+    ],
+    "exitRules": [
+      "No exit rules due to insufficient data."
+    ]
+  },
+  "riskRewardAnalysis": {
+    "entryReferencePrice": null,
+    "riskPerShare": null,
+    "rewardToTarget1": null,
+    "rewardToTarget2": null,
+    "rewardToTarget3": null,
+    "riskRewardToTarget1": null,
+    "riskRewardToTarget2": null,
+    "riskRewardToTarget3": null,
+    "riskRewardVerdict": "UNAVAILABLE",
+    "positionSizingNote": "Position sizing cannot be determined due to insufficient data."
+  },
+  "shortTermView": {
+    "horizon": "1-5 days",
+    "bias": "NEUTRAL",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to insufficient data."
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "No stop loss due to insufficient data."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      },
+      {
+        "price": null,
+        "label": "T3"
+      }
+    ],
+    "exitRules": [
+      "No exit rules due to insufficient data."
+    ],
+    "tradeQuality": "F"
+  },
+  "swingTradeView": {
+    "horizon": "2-6 weeks",
+    "bias": "NEUTRAL",
+    "entryZone": {
+      "low": null,
+      "high": null,
+      "description": "No entry zone due to insufficient data."
+    },
+    "stopLoss": {
+      "price": null,
+      "description": "No stop loss due to insufficient data."
+    },
+    "targets": [
+      {
+        "price": null,
+        "label": "T1"
+      },
+      {
+        "price": null,
+        "label": "T2"
+      }
+    ],
+    "accumulationZone": {
+      "low": null,
+      "high": null,
+      "description": "No accumulation zone due to insufficient data."
+    },
+    "riskReward": null,
+    "swingVerdict": "WATCHLIST"
+  },
+  "tacticalHorizonView": {
+    "horizon": "5-15 days",
+    "bias": "NEUTRAL",
+    "swingSetup": {
+      "setup": "No setup due to insufficient data.",
+      "analysis": "No analysis due to insufficient data."
+    },
+    "entryTiming": {
+      "trigger": "No trigger due to insufficient data.",
+      "analysis": "No analysis due to insufficient data."
+    },
+    "supportLevels": [],
+    "resistanceLevels": [],
+    "suggestedEntryPrice": null,
+    "suggestedExitPrice": null,
+    "stopLossPrice": null,
+    "riskMetrics": {
+      "atr": null,
+      "atrAnalysis": "No ATR analysis due to insufficient data.",
+      "vwap": null,
+      "vwapAnalysis": "No VWAP analysis due to insufficient data.",
+      "volumeAnalysis": "No volume analysis due to insufficient data.",
+      "supportResistanceAnalysis": "No support/resistance analysis due to insufficient data."
+    },
+    "catalysts": {
+      "news": "No news due to insufficient data.",
+      "earnings": "No earnings data due to insufficient data.",
+      "secFilings": "No SEC filings due to insufficient data."
+    },
+    "shortFilter": {
+      "borrowFee": "Data unavailable",
+      "shortInterest": "Data unavailable",
+      "ssrStatus": "Data unavailable",
+      "squeezeRisk": "LOW"
+    },
+    "horizonDetails": "No detailed analysis due to insufficient data.",
+    "dailyTrend": {
+      "trend": "NEUTRAL",
+      "barCount": 252,
+      "analysis": "The analysis for Verizon's stock trend is limited due to the lack of available price, volume, and technical data. Without historical candles or current market data, it's impossible to determine a clear trend direction. Additionally, there are no fundamental data or news events to provide context or catalysts for movement. The institutional flow data is available but marked as uncertain, providing no clear insight into market sentiment.",
+      "laymanExplanation": "Right now, it's like trying to figure out the weather without looking outside or checking a forecast. We don't have enough information to say if Verizon's stock is going up, down, or staying the same. It's best to wait until more data is available to get a clearer picture.",
+      "ticker": "VERIZON",
+      "companyName": "Verizon Communications Inc.",
+      "confidenceScore": 0,
+      "trendSummary": "The trend for Verizon is currently neutral due to insufficient data.",
+      "keyDrivers": [
+        {
+          "driver": "Data Availability",
+          "impact": "Neutral",
+          "evidence": "Price, volume, technical indicators, and fundamental data are unavailable."
+        }
+      ],
+      "technicalView": {
+        "priceAction": "Unavailable due to missing data.",
+        "movingAverageView": "Unavailable due to missing data.",
+        "momentumView": "Unavailable due to missing data.",
+        "volumeView": "Unavailable due to missing data.",
+        "supportResistanceView": "Unavailable due to missing data.",
+        "volatilityView": "Unavailable due to missing data."
+      },
+      "catalystView": {
+        "earningsImpact": "Unavailable due to missing data.",
+        "newsImpact": "Unavailable due to missing data.",
+        "institutionalFlowImpact": "Uncertain due to lack of clear signals.",
+        "sectorMacroImpact": "Unavailable due to missing data."
+      },
+      "riskView": {
+        "riskLevel": "High",
+        "mainRisks": [
+          "Lack of data makes it difficult to assess the stock's current condition."
+        ],
+        "whatNeedsConfirmation": "Availability of price, volume, and fundamental data to determine the trend."
+      },
+      "watchStatus": "Neutral watch",
+      "disclaimer": "This is educational market research only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "longTermView": {
+    "horizon": "6-24 months",
+    "bias": "INSUFFICIENT_DATA",
+    "investmentQuality": "INSUFFICIENT_DATA",
+    "fairValueRange": {
+      "low": null,
+      "high": null,
+      "method": "Insufficient data"
+    },
+    "bullCase": "Insufficient data",
+    "baseCase": "Insufficient data",
+    "bearCase": "Insufficient data",
+    "longTermVerdict": "INSUFFICIENT_DATA"
+  },
+  "fundamentalAnalysis": {
+    "fundamentalScore": null,
+    "rating": "INSUFFICIENT_DATA",
+    "revenueTrend": "Insufficient data",
+    "epsTrend": "Insufficient data",
+    "profitability": "Insufficient data",
+    "debtRisk": "Insufficient data",
+    "cashFlowQuality": "Insufficient data",
+    "valuationCommentary": "Insufficient data"
+  },
+  "valuationAnalysis": {
+    "valuationRating": "INSUFFICIENT_DATA",
+    "valuationScore": null,
+    "peerComparisonAvailable": false,
+    "fairValueRange": {
+      "low": null,
+      "high": null
+    },
+    "marginOfSafetyBuyZone": {
+      "low": null,
+      "high": null
+    },
+    "commentary": "Insufficient data"
+  },
+  "newsAndCatalysts": {
+    "newsCatalystScore": null,
+    "overallSentiment": "UNAVAILABLE",
+    "keyCatalysts": [],
+    "keyRisksFromNews": [],
+    "earningsRisk": "Insufficient data",
+    "catalystVerdict": "UNAVAILABLE"
+  },
+  "institutionalFlowProxy": {
+    "institutionalFlowProxyScore": null,
+    "interpretation": "UNAVAILABLE",
+    "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score is uncertain, and there are no clear signals from the available data. This should not be treated as confirmed institutional activity.",
+    "signals": [],
+    "limitations": [
+      "This is proxy analysis only and should not be treated as confirmed dark pool or institutional ownership data."
+    ]
+  },
+  "multibaggerProbability": {
+    "rating": "INSUFFICIENT_DATA",
+    "probabilityScore": null,
+    "reason": "Insufficient data to assess multibagger potential.",
+    "requiredConditions": [],
+    "majorBlockers": []
+  },
+  "riskAnalysis": {
+    "overallRiskLevel": "VERY_HIGH",
+    "technicalRisk": "Insufficient data",
+    "fundamentalRisk": "Insufficient data",
+    "valuationRisk": "Insufficient data",
+    "newsRisk": "Insufficient data",
+    "liquidityRisk": "Insufficient data",
+    "eventRisk": "Insufficient data",
+    "topRisks": [
+      "Insufficient data for comprehensive risk analysis."
+    ]
+  },
+  "scenarioAnalysis": {
+    "bullCase": {
+      "condition": "Insufficient data",
+      "pricePath": "Insufficient data",
+      "probability": "LOW"
+    },
+    "baseCase": {
+      "condition": "Insufficient data",
+      "pricePath": "Insufficient data",
+      "probability": "LOW"
+    },
+    "bearCase": {
+      "condition": "Insufficient data",
+      "pricePath": "Insufficient data",
+      "probability": "LOW"
+    }
+  },
+  "finalActionPlan": [
+    "Monitor for updated data.",
+    "Reassess when more information is available.",
+    "Avoid trading until data quality improves."
+  ],
+  "doNotTradeConditions": [
+    "Insufficient data for analysis."
+  ],
+  "alertLevels": {
+    "buyAlert": null,
+    "breakoutAlert": null,
+    "stopLossAlert": null,
+    "target1Alert": null,
+    "target2Alert": null,
+    "riskAlert": null
+  },
+  "disclaimer": "This analysis is for informational purposes only and does not constitute financial advice. All trading and investing involve risk. Past performance is not indicative of future results.",
+  "companyInsights": {
+    "investedCompanies": [
+      {
+        "name": "Hulu",
+        "ownershipPct": "null",
+        "performance": "Growing subscriber base with increasing competition in streaming.",
+        "upcomingEvents": [
+          "Potential changes in ownership structure",
+          "New content partnerships"
+        ],
+        "impactPotential": "Changes in ownership could affect Verizon's strategic partnerships and content offerings."
+      },
+      {
+        "name": "BlueJeans by Verizon",
+        "ownershipPct": "100%",
+        "performance": "Stable with moderate growth in enterprise video conferencing.",
+        "upcomingEvents": [
+          "Integration with Verizon's 5G services"
+        ],
+        "impactPotential": "Successful integration could enhance Verizon's enterprise offerings and drive new revenue streams."
+      }
+    ],
+    "dependencies": {
+      "suppliers": [
+        {
+          "name": "Nokia",
+          "role": "Supplier",
+          "description": "5G network infrastructure",
+          "riskExposure": "Disruption could delay 5G rollout and affect service quality."
+        },
+        {
+          "name": "Ericsson",
+          "role": "Supplier",
+          "description": "Telecom equipment",
+          "riskExposure": "Supply chain issues could impact network expansion and maintenance."
+        }
+      ],
+      "outsourcePartners": [
+        {
+          "name": "Infosys",
+          "role": "Outsource Partner",
+          "description": "IT services and support",
+          "riskExposure": "Disruptions could affect customer service and operational efficiency."
+        }
+      ],
+      "marketingPartners": [
+        {
+          "name": "Apple",
+          "role": "Marketing Partner",
+          "description": "Co-marketing for iPhone sales",
+          "riskExposure": "Changes in Apple's product popularity could affect Verizon's sales."
+        }
+      ],
+      "customers": [
+        {
+          "name": "Enterprise Clients",
+          "role": "Customer",
+          "description": "Business communication and network services",
+          "riskExposure": "Economic downturns could reduce enterprise spending, impacting revenue."
+        },
+        {
+          "name": "Retail Consumers",
+          "role": "Customer",
+          "description": "Mobile and internet services",
+          "riskExposure": "Shifts in consumer preferences or competitive pricing could impact subscriber numbers."
+        }
+      ]
+    },
+    "strategicOutlook": "Verizon's ecosystem is robust with a strong focus on 5G expansion and enterprise services. However, it faces concentration risks in its reliance on a few key suppliers for network infrastructure. Upcoming changes in media partnerships and technological integrations are critical externalities that could significantly influence Verizon's market position."
+  },
+  "trendStory": {
+    "ticker": "VERIZON",
+    "analysis_date": "2026-06-18",
+    "price_summary": {
+      "current_price": 0,
+      "previous_close": 0,
+      "day_change_percent": 0,
+      "day_range": {
+        "high": 0,
+        "low": 0
+      },
+      "volume": 0,
+      "average_volume": 0,
+      "relative_volume": 1
+    },
+    "move_classification": {
+      "primary_reason": "unknown-mixed",
+      "secondary_reasons": [
+        "technical-levels"
+      ],
+      "confidence": "low",
+      "confidence_score": 30
+    },
+    "story_for_layman": {
+      "headline": "VERIZON trades up 0.0% in normal activity",
+      "simple_explanation": "We could not find a clear external reason for today's move. The price action appears mostly technical and volume-driven.",
+      "why_it_moved": "The stock is currently consolidating sideways while waiting for a fresh corporate catalyst.",
+      "who_may_be_buying_or_selling": "mixed",
+      "is_move_sustainable": "uncertain",
+      "sustainability_reason": "Without high volume or news backing, the current price levels might not be sustainable."
+    },
+    "evidence": {
+      "news_catalysts": [],
+      "earnings_catalyst": {
+        "has_recent_earnings": false,
+        "summary": "No earnings details found."
+      },
+      "analyst_actions": [],
+      "sector_context": {
+        "sector_name": "Unknown",
+        "sector_change_percent": 0,
+        "index_change_percent": 0,
+        "is_stock_outperforming_sector": false,
+        "summary": "Sector index detail unavailable."
+      },
+      "volume_context": {
+        "relative_volume": 1,
+        "volume_interpretation": "normal",
+        "large_buyer_signal": "unknown",
+        "summary": "Volume is trading in normal bounds."
+      },
+      "technical_context": {
+        "trend": "sideways",
+        "breakout_level": null,
+        "support_level": null,
+        "resistance_level": null,
+        "rsi": 50,
+        "macd_signal": "neutral",
+        "vwap_position": "near",
+        "summary": "Technical indicators are neutral."
+      },
+      "short_context": {
+        "short_interest_available": false,
+        "borrow_available": true,
+        "short_squeeze_risk": "low",
+        "summary": "Short parameters are within normal ranges."
+      }
+    },
+    "swing_trade_view": {
+      "trade_bias": "wait",
+      "entry_zone": {
+        "low": 0,
+        "high": 0
+      },
+      "stop_loss": 0,
+      "target_1": 0,
+      "target_2": 0,
+      "risk_reward": 2,
+      "entry_reason": "Wait for validation.",
+      "wait_for_confirmation": "Wait for high volume confirmation."
+    },
+    "short_trade_view": {
+      "short_bias": "avoid_short",
+      "short_entry_trigger": 0,
+      "short_stop_loss": 0,
+      "short_target_1": 0,
+      "short_target_2": 0,
+      "reason": "Consolidating price range makes shorting speculative."
+    },
+    "final_summary": {
+      "one_line_story": "VERIZON moves slightly on technical indicators.",
+      "layman_summary": "The stock moved without headlines. It is currently waiting for a fresh catalyst.",
+      "trader_action": "Stand aside and wait for a clear directional trigger.",
+      "risk_warning": "Consolidation moves are prone to false breakouts."
+    }
+  },
+  "signalCorrelation": {
+    "ticker": "VERIZON",
+    "analysisDate": "2026-06-19",
+    "currentPrice": null,
+    "correlationName": "Signal Correlation",
+    "finalZone": "RED_ZONE",
+    "correlationScore": 0,
+    "gradientPositionPercent": 0,
+    "gradientLabel": "Deep Red",
+    "confidenceLevel": "LOW",
+    "oneLineSummary": "Insufficient data to assess Verizon's stock setup; high-risk zone.",
+    "laymanSummary": "We don't have enough data to make a clear assessment of Verizon's stock. It's best to be cautious until more information is available.",
+    "signalScores": {
+      "priceTrendAlignment": {
+        "score": 0,
+        "maxScore": 20,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No price trend data available."
+      },
+      "volumeConfirmation": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No volume data available."
+      },
+      "momentumIndicators": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No momentum indicator data available."
+      },
+      "movingAverageStructure": {
+        "score": 0,
+        "maxScore": 15,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No moving average data available."
+      },
+      "vwapPosition": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No VWAP data available."
+      },
+      "supportResistanceRiskReward": {
+        "score": 0,
+        "maxScore": 10,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No support or resistance data available."
+      },
+      "sectorIndexAlignment": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No sector or index performance data available."
+      },
+      "shortInterestContext": {
+        "score": 0,
+        "maxScore": 5,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No short interest data available."
+      },
+      "newsCatalystConfirmation": {
+        "score": 0,
+        "maxScore": 3,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "No news or catalyst data available."
+      },
+      "institutionalFlowProxy": {
+        "score": 0,
+        "maxScore": 2,
+        "status": "INSUFFICIENT_DATA",
+        "evidence": "Institutional flow proxy is uncertain."
+      }
+    },
+    "correlationEvidence": {
+      "greenSignals": [],
+      "yellowSignals": [],
+      "redSignals": [],
+      "strongestPositiveEvidence": "None",
+      "strongestNegativeEvidence": "Lack of data across all categories.",
+      "mixedSignalExplanation": "All data points are missing, leading to a lack of clarity."
+    },
+    "supportResistanceContext": {
+      "nearestSupport": null,
+      "nearestResistance": null,
+      "distanceToSupportPercent": null,
+      "distanceToResistancePercent": null,
+      "riskRewardView": "INSUFFICIENT_DATA",
+      "explanation": "No data available to determine support or resistance levels."
+    },
+    "zoneInterpretation": {
+      "greenZoneMeaning": "Favorable research zone. Not a guaranteed buy.",
+      "yellowZoneMeaning": "Mixed setup. Wait for confirmation.",
+      "redZoneMeaning": "High-risk setup. Be cautious.",
+      "currentZoneExplanation": "Due to the absence of data, the stock is considered high-risk."
+    },
+    "confirmationNeeded": {
+      "forGreenZone": [
+        "Complete market data",
+        "Technical indicators",
+        "Fundamental data"
+      ],
+      "forYellowToGreenUpgrade": [
+        "Price trend data",
+        "Volume confirmation"
+      ],
+      "forRedZoneWarning": [
+        "Any data to assess risk"
+      ]
+    },
+    "uiRecommendation": {
+      "showGradientBar": true,
+      "barStartLabel": "Red Zone",
+      "barMiddleLabel": "Yellow Zone",
+      "barEndLabel": "Green Zone",
+      "markerPositionPercent": 0,
+      "markerText": "Deep Red",
+      "displaySummaryBelowBar": "Insufficient data to assess Verizon's stock.",
+      "supportingPointsBelowBar": [
+        "Lack of price, volume, and trend data."
+      ]
+    },
+    "finalInsight": {
+      "researchAction": "INSUFFICIENT_DATA",
+      "summary": "Currently, there is not enough data to make a reliable assessment of Verizon's stock. Exercise caution.",
+      "riskWarning": "The absence of data makes this a high-risk assessment.",
+      "disclaimer": "This is educational stock signal correlation only. It is not financial advice or a buy/sell recommendation."
+    }
+  },
+  "marketData": {
+    "symbol": "VERIZON",
+    "available": false,
+    "price": null,
+    "open": null,
+    "high": null,
+    "low": null,
+    "close": null,
+    "volume": null,
+    "vwap": null,
+    "bid": null,
+    "ask": null,
+    "spread": null,
+    "changePercent": null,
+    "timestamp": null,
+    "raw": null
+  },
+  "technicals": {
+    "primary": null,
+    "timeframes": []
+  },
+  "fundamentals": {
+    "available": false,
+    "source": "unavailable",
+    "marketCap": null,
+    "peRatio": null,
+    "pbRatio": null,
+    "epsTrailing": null,
+    "epsForward": null,
+    "revenue": null,
+    "debtToEquity": null,
+    "dividendYield": null,
+    "beta": null,
+    "week52High": null,
+    "week52Low": null,
+    "sector": null,
+    "industry": null,
+    "description": null,
+    "unavailableReason": "Fundamental data not available from free sources for this symbol."
+  },
+  "news": {
+    "available": false,
+    "source": "alpaca_news",
+    "items": [],
+    "sentiment": null,
+    "unavailableReason": "No recent news available for this symbol."
+  },
+  "institutionalFlow": {
+    "proxyScore": 0,
+    "interpretation": "UNCERTAIN",
+    "subScores": {
+      "relVolumeScore": 0,
+      "obvTrendScore": 0,
+      "priceVwapScore": 0,
+      "pvDivergenceScore": 0,
+      "supportHoldScore": 0,
+      "breakoutVolScore": 0,
+      "largeBodyScore": 0
+    },
+    "signals": [],
+    "disclaimer": "IMPORTANT: This is an Institutional Flow PROXY score only. It is calculated from publicly available volume and price data. It does NOT represent actual dark pool data, institutional ownership data, block trade data, or any premium feed. Do not treat this as official institutional activity."
+  },
+  "finalRating": "WATCHLIST",
+  "technicalScore": 0,
+  "fundamentalScore": null,
+  "newsCatalystScore": null,
+  "institutionalFlowProxyScore": null,
+  "keyCatalysts": [],
+  "keyRisks": [
+    "Insufficient data for comprehensive risk analysis."
+  ],
+  "institutionalFlowSummary": "PROXY SCORE ONLY \u2014 NOT OFFICIAL INSTITUTIONAL DATA. The proxy score is uncertain, and there are no clear signals from the available data. This should not be treated as confirmed institutional activity."
+}
