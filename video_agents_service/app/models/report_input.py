@@ -11,4 +11,4 @@ class VideoJobRequest(BaseModel):
     forceRegenerate: bool = False
     # SHORTS = fast-paced vertical video ≤90s (default, YouTube Shorts optimized)
     # LONG_FORM = reserved for future in-depth 8-15 min horizontal video
-    videoFormat: Literal["SHORTS", "LONG_FORM", "SHORT_30S"] = "SHORTS"
+    videoFormat: Literal["SHORTS", "LONG_FORM", "SHORT_30S", "MARKET_RECAP"] = "SHORTS"

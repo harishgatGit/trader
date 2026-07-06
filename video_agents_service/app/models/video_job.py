@@ -50,4 +50,4 @@ class VideoJob(BaseModel):
     videoUrl: Optional[str] = None
     artifacts: VideoJobArtifacts = Field(default_factory=VideoJobArtifacts)
     forceRegenerate: bool = False
-    videoFormat: Literal["SHORTS", "LONG_FORM"] = "SHORTS"
+    videoFormat: Literal["SHORTS", "LONG_FORM", "MARKET_RECAP"] = "SHORTS"

@@ -405,7 +405,7 @@ def create_video_job(request: VideoJobRequest, api_key: str = Depends(get_api_ke
     job_db.upsert_received(job_id, ticker, date_str, request.reportId, request.forceRegenerate)
 
     # ── Step 2: Eligibility check ────────────────────────────────────────────
-    eligible, reason = check_eligibility(ticker, date_str, request.reportJson, request.forceRegenerate)
+    eligible, reason = check_eligibility(ticker, date_str, request.reportJson, request.forceRegenerate, request.videoFormat)
 
     if not eligible:
         # ── Step 3a: Not eligible ────────────────────────────────────────────

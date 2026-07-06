@@ -17,11 +17,15 @@ Rules (in order):
 from typing import Tuple, Optional, Dict, Any
 from app import db
 
-# Minimum fields required in the report JSON to produce a meaningful video
-REQUIRED_REPORT_FIELDS = [
-    "finalRating",
-    "executiveSummary",
-]
+# Minimum fields required per video format
+REQUIRED_FIELDS_BY_FORMAT = {
+    "SHORTS":        ["finalRating", "executiveSummary"],
+    "LONG_FORM":     ["finalRating", "executiveSummary"],
+    "SHORT_30S":     ["finalRating", "executiveSummary"],
+    "MARKET_RECAP":  ["mood", "marketStorySummary"],
+}
+# Default for unknown formats
+REQUIRED_REPORT_FIELDS = ["finalRating", "executiveSummary"]
 
 
 def check_eligibility(
@@ -29,6 +33,7 @@ def check_eligibility(
     report_date: str,
     report_json: Dict[str, Any],
     force_regenerate: bool = False,
+    video_format: str = "SHORTS",
 ) -> Tuple[bool, Optional[str]]:
     """
     Returns (is_eligible, reason).
@@ -40,11 +45,9 @@ def check_eligibility(
     if not force_regenerate and db.has_successful_job(ticker, report_date):
         return False, f"A GENERATED video already exists for {ticker} on {report_date}. Use force_regenerate=true to override."
 
-    # Rule 2: Skip if report JSON is missing critical fields
-    missing_fields = [
-        field for field in REQUIRED_REPORT_FIELDS
-        if not report_json.get(field)
-    ]
+    # Rule 2: Skip if report JSON is missing critical fields for this format
+    required = REQUIRED_FIELDS_BY_FORMAT.get(video_format, REQUIRED_REPORT_FIELDS)
+    missing_fields = [field for field in required if not report_json.get(field)]
     if missing_fields:
         return False, f"Report JSON is missing critical fields required for video generation: {', '.join(missing_fields)}"
 

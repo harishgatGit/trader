@@ -19,11 +19,10 @@ export class EODVideoWorkflowService {
    * 2. Fetches WhatsForToday Run 4 (EOD report) and fires one MARKET_RECAP video.
    */
   async runEODWorkflow(): Promise<{ shorts: string[]; marketRecap: boolean }> {
-    // Use EST date — market closes 4 PM EST; cron fires ~5:45 PM EST
-    const now = new Date();
-    const estOffset = -5 * 60 * 60 * 1000; // UTC-5 (EST, no DST adjustment — close enough)
-    const estNow = new Date(now.getTime() + estOffset);
-    const today = estNow.toISOString().split('T')[0];
+    // Use UTC date. The cron fires at 5:45 PM EST = 9:45 PM UTC, so UTC date always
+    // matches the trading date. For manual triggers before midnight UTC the UTC date
+    // is also correct since all data (WFT reports, AgentReports) is stored in UTC.
+    const today = new Date().toISOString().split('T')[0];
 
     this.logger.log(`[EOD] Starting EOD video workflow for market date ${today}...`);
 
