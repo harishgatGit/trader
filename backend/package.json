@@ -20,7 +20,8 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
     "prisma:studio": "prisma studio",
-    "prisma:seed": "ts-node prisma/seed.ts"
+    "prisma:seed": "ts-node prisma/seed.ts",
+    "trigger:trending": "npx ts-node src/trigger-trending-analysis.ts"
   },
   "dependencies": {
     "@nestjs/bull": "^10.1.1",
@@ -34,6 +35,7 @@
     "axios": "^1.6.8",
     "bull": "^4.12.2",
     "bullmq": "^5.4.2",
+    "cheerio": "^1.2.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "compression": "^1.7.4",

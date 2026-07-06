@@ -22,6 +22,7 @@ export class VideoJobService {
     reportId: string,
     reportJson: any,
     forceRegenerate = false,
+    videoFormat: 'SHORTS' | 'LONG_FORM' | 'MARKET_RECAP' = 'SHORTS',
   ): Promise<void> {
     if (process.env.DISABLE_VIDEO_PIPELINE === 'true') {
       this.logger.log(`Video pipeline disabled (DISABLE_VIDEO_PIPELINE=true). Skipping for ${ticker}.`);
@@ -85,6 +86,7 @@ export class VideoJobService {
       reportId,
       reportJson,
       forceRegenerate,
+      videoFormat,
     });
   }
 

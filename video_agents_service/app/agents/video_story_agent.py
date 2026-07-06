@@ -5,6 +5,16 @@ from openai import OpenAI
 from app.config import OPENAI_API_KEY, OPENAI_MODEL
 
 class VideoStoryAgent:
+    """
+    Generates narration scripts for stock videos.
+
+    SHORTS format (default): 12 ultra-short punchy lines, ≤220 words total.
+    Each line = one scene (~6-8 seconds). Written for YouTube Shorts energy:
+    fast, vivid, hook-driven, no jargon.
+
+    LONG_FORM format (future): Reserved. Will use a separate detailed prompt.
+    """
+
     def __init__(self):
         if OPENAI_API_KEY:
             self.client = OpenAI(api_key=OPENAI_API_KEY)
@@ -22,157 +32,189 @@ class VideoStoryAgent:
             print(f"[VideoStoryAgent] Error reading prompt template {filename}: {e}")
             return fallback
 
-    def generate(self, normalized_json: Dict[str, Any], output_path: Path) -> str:
+    def generate(self, normalized_json: Dict[str, Any], output_path: Path,
+                 video_format: str = "SHORTS") -> str:
         """
-        Creates a layman-friendly narration script for a 45-60 second stock video story.
-        Saves the script to narration-script.txt.
+        Generates the narration script and saves it to narration-script.txt.
+        video_format: "SHORTS" (default) or "LONG_FORM" (future).
         """
-        ticker = normalized_json.get("ticker", "Unavailable")
-        company_name = normalized_json.get("companyName", ticker)
-        overall_signal = normalized_json.get("overallSignal", "Unavailable")
-        current_price = normalized_json.get("currentPrice", "Unavailable")
-        why_moved = normalized_json.get("whyStockMoved", "Unavailable")
-        catalyst = normalized_json.get("catalystSummary", "Unavailable")
-        volume = normalized_json.get("volumeSummary", "Unavailable")
-        trend = normalized_json.get("trendSummary", "Unavailable")
-        entry = normalized_json.get("entryZone", "Unavailable")
-        stop = normalized_json.get("stopLoss", "Unavailable")
-        targets = normalized_json.get("targets", [])
-        short_view = normalized_json.get("shortTradeView", "Unavailable")
-        verdict = normalized_json.get("finalVerdict", "Unavailable")
-        exec_summary = normalized_json.get("executiveSummary", "Unavailable")
+        if video_format == "LONG_FORM":
+            return self._generate_long_form(normalized_json, output_path)
+        return self._generate_shorts(normalized_json, output_path)
 
-        target_str = ", ".join([f"${t}" for t in targets]) if targets else "Unavailable"
+    # ─── SHORTS ──────────────────────────────────────────────────────────────
 
-        user_fallback = f"""
-You are the lead narrative scriptwriter for InvestingAtti, a platform that explains complex stock setups to retail traders in simple terms.
-Write a narrative voiceover script for an animated short video about the stock {ticker} ({company_name}) as a professional financial analyst.
+    def _generate_shorts(self, normalized_json: Dict[str, Any], output_path: Path) -> str:
+        ticker        = normalized_json.get("ticker", "this stock")
+        company_name  = normalized_json.get("companyName", ticker)
+        price         = normalized_json.get("currentPrice", "N/A")
+        day_change    = normalized_json.get("dayChangePct", "N/A")
+        overall_signal= normalized_json.get("overallSignal", "HOLD")
+        why_moved     = normalized_json.get("whyStockMoved", "general market movement")
+        catalyst      = normalized_json.get("catalystSummary", "N/A")
+        entry         = normalized_json.get("entryZone", "N/A")
+        stop          = normalized_json.get("stopLoss", "N/A")
+        targets       = normalized_json.get("targets", [])
+        risk_warnings = normalized_json.get("riskWarnings", "standard market risk")
+        verdict       = normalized_json.get("finalVerdict", "Watch and confirm")
+        exec_summary  = normalized_json.get("executiveSummary", "N/A")
+        support_levels= normalized_json.get("supportLevels", [])
+        resistance_levels = normalized_json.get("resistanceLevels", [])
 
-Narrator Personality:
-- Professional, clear, engaging, beginner-friendly.
-- Speaks with authority but explains complex metrics simply.
-- No hype, no guaranteed-profit language.
+        target_str    = ", ".join([f"${t}" for t in targets]) if targets else "N/A"
+        support_str   = ", ".join([f"${s}" for s in support_levels]) if support_levels else "N/A"
+        resistance_str= ", ".join([f"${r}" for r in resistance_levels]) if resistance_levels else "N/A"
 
-Here is the completed daily stock analysis report data:
+        prompt = f"""You are a YouTube Shorts scriptwriter for InvestingAtti — an AI stock analysis platform.
+
+Write EXACTLY 11 lines of narration for a YouTube Short about {ticker} ({company_name}).
+Each line = one scene. Each line must be 15-22 words max — punchy, vivid, no jargon.
+Total script must be under 220 words.
+
+RULES (CRISP Framework):
+- Line 1: HOOK — Grab attention in 1 sentence. Make it a burning question or shocking fact.
+- Line 2: COMPANY SNAPSHOT — Simple, high-impact one-sentence profile of the company.
+- Line 3: CURRENT MARKET ACTION — State the current price of ${price} and day change of {day_change}% in one vivid line.
+- Line 4: TREND ANALYSIS — Explain the overall price trend direction or EMA levels.
+- Line 5: MOMENTUM INDICATORS — Describe the current momentum (e.g., RSI or MACD) status.
+- Line 6: SUPPORT & RESISTANCE — Highlight key support ({support_str}) and resistance ({resistance_str}) levels.
+- Line 7: ENTRY ZONE — Describe the safer entry zone of {entry}.
+- Line 8: RISK ANALYSIS — State the stop loss level ({stop}) and core risk warnings.
+- Line 9: UPSIDE POTENTIAL — Detail the upside targets ({target_str}).
+- Line 10: AI INSIGHTS — State the AI signal ({overall_signal}) and executive summary.
+- Line 11: RECOMMENDATION & CTA — Final investment verdict and call-to-action: "Get the full report at InvestingAtti.com!"
+
+FINANCIAL SAFETY: Never say "buy now", "guaranteed profit", or "will go up".
+Use "if confirmed", "watch zone", "risk increases if", "may offer".
+
+Stock data:
 - Ticker: {ticker} ({company_name})
-- Current Price: ${current_price}
-- Executive Summary / Key Findings: {exec_summary}
+- Price: ${price} | Day change: {day_change}%
 - Signal: {overall_signal}
-- Why it moved: {why_moved}
-- Catalysts: {catalyst}
-- Volume: {volume}
-- Trend: {trend}
-- Swing Entry Zone: {entry}
-- Stop Loss: {stop}
+- Why moved: {why_moved}
+- Catalyst: {catalyst}
+- Support: {support_str} | Resistance: {resistance_str}
+- Entry zone: {entry}
+- Stop loss: {stop}
 - Targets: {target_str}
-- Short Selling View: {short_view}
-- Final Verdict: {verdict}
+- Risk: {risk_warnings}
+- Verdict: {verdict}
+- Summary: {exec_summary}
 
-CRITICAL RULES:
-1. The script must be exactly 10 detailed paragraphs (one paragraph per scene, in exact order, separated by a single newline). Each paragraph should contain 2-3 sentences, walking the viewer through the charts, graphs, and indicators shown on the screen.
-   Scene 1: Stock Overview (Start directly with a professional analyst greeting, introducing the ticker, name, rating, and confidence, with a catchy hook. Do NOT use any informal or mascot language, and NEVER mention any panda mascot or "Atti Panda").
-   Scene 2: Current Price and Price Action (Current price, intraday trend, and daily percentage move)
-   Scene 3: Current Trend and Reason for Trend (Trend direction and main driver/reason)
-   Scene 4: Evidence Behind the Trend (The source/strength of news, volume confirmation, or key levels)
-   Scene 5: Daily Trend chart story (Support, resistance, and zone type like consolidation or breakout)
-   Scene 6: Technical Metrics (Briefly explain RSI, MACD, or Moving Average bias)
-   Scene 7: Tactical Trader Setup (Entry zone, stop loss, and target levels)
-   Scene 8: Short Trade View (Cautionary view on shorting, breakdown level, or short squeeze risk)
-   Scene 9: Ecosystem Insight (How sector, market, or peers support/weaken the setup)
-   Scene 10: Final Verdict and Risk Warning (Final rating action, key level to watch, main risk, and disclaimer)
-
-2. GREETING & HOOK RULE: Start the script directly with a professional analyst greeting and a catchy hook, for example: "Welcome to the Investing Atti stock analysis for TSM. With the stock pulling back sharply today, is this a golden buying opportunity or a warning sign?"
-   NEVER use generic, informal, or mascot-based greetings like "Hello investors", "Hello traders", "Welcome back", "It's/I'm Atti Panda here", or mention any panda mascot. Keep it strictly professional, direct, and focused on the stock.
-3. The voiceover script should feel like a direct, interactive stock research walkthrough.
-4. Keep the narration script concise and avoid repeating information across different scenes (e.g. do not repeat the price or rating multiple times).
-5. The total narration script should be around 250 to 300 words to ensure it fits comfortably in the video duration constraints and keeps the viewer engaged.
-6. Output ONLY the raw script text. Do not include scene numbers, titles, or bracketed instructions. Only the 10 spoken paragraphs, separated by a single newline.
-"""
-
-        user_template = self._get_prompt_template("video-story.user.md", None)
-        if user_template:
-            prompt = user_template.format(
-                ticker=ticker,
-                company_name=company_name,
-                current_price=current_price,
-                exec_summary=exec_summary,
-                overall_signal=overall_signal,
-                why_moved=why_moved,
-                catalyst=catalyst,
-                volume=volume,
-                trend=trend,
-                entry=entry,
-                stop=stop,
-                target_str=target_str,
-                short_view=short_view,
-                verdict=verdict
-            )
-        else:
-            prompt = user_fallback
+Output ONLY the 11 lines, each on its own line. No numbering, no titles, no markdown."""
 
         script_text = ""
-        
         if self.client:
             try:
-                print(f"[VideoStoryAgent] Prompting OpenAI model={OPENAI_MODEL}...")
-                
-                system_fallback = (
-                    "You are a professional financial analyst and video scriptwriter for Investing Atti. "
-                    "You write direct, institutional-grade walkthroughs. You NEVER speak as a mascot or a character (like 'Atti Panda' or 'Panda'). "
-                    "You start scripts directly with the ticker analysis and a professional, high-impact hook."
+                print(f"[VideoStoryAgent] Generating SHORTS script for {ticker}...")
+                system_prompt = (
+                    "You are an energetic YouTube Shorts scriptwriter for a financial platform. "
+                    "You write exactly 11 lines — each under 22 words — punchy, vivid, hook-driven. "
+                    "Never give direct buy/sell advice. Always conditional language. Output raw lines only."
                 )
-                system_prompt = self._get_prompt_template("video-story.system.md", system_fallback)
-
                 response = self.client.chat.completions.create(
                     model=OPENAI_MODEL,
                     messages=[
-                        {
-                            "role": "system", 
-                            "content": system_prompt
-                        },
+                        {"role": "system", "content": system_prompt},
                         {"role": "user", "content": prompt}
                     ],
-                    temperature=0.7,
-                    max_tokens=1200
+                    temperature=0.8,
+                    max_tokens=600
                 )
                 script_text = response.choices[0].message.content.strip()
-                print(f"[VideoStoryAgent] Generated Script:\n{script_text}\n---")
+                print(f"[VideoStoryAgent] SHORTS script generated ({len(script_text.split())} words)")
             except Exception as e:
-                print(f"[VideoStoryAgent] Error calling OpenAI: {e}")
-                # If OpenAI fails, use a fallback local script generator
-                script_text = self._fallback_script(normalized_json)
+                print(f"[VideoStoryAgent] OpenAI error: {e}. Using fallback.")
+                script_text = self._fallback_shorts_script(normalized_json)
         else:
-            script_text = self._fallback_script(normalized_json)
+            script_text = self._fallback_shorts_script(normalized_json)
 
-        # Write to file
         output_path.parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(script_text)
-
         return script_text
 
-    def _fallback_script(self, data: Dict[str, Any]) -> str:
-        ticker = data.get("ticker", "Unavailable")
-        company_name = data.get("companyName", ticker)
-        price = data.get("currentPrice", "N/A")
-        why_moved = data.get("whyStockMoved", "general market movement")
-        signal = data.get("overallSignal", "HOLD")
-        entry = data.get("entryZone", "N/A")
-        stop = data.get("stopLoss", "N/A")
-        targets = data.get("targets", [])
-        target_str = ", ".join([f"${t}" for t in targets]) if targets else "N/A"
-        verdict = data.get("finalVerdict", "Unavailable")
-        day_change = data.get("dayChangePct", "N/A")
+    def _fallback_shorts_script(self, data: Dict[str, Any]) -> str:
+        ticker   = data.get("ticker", "this stock")
+        company  = data.get("companyName", ticker)
+        price    = data.get("currentPrice", "N/A")
+        change   = data.get("dayChangePct", "N/A")
+        signal   = data.get("overallSignal", "HOLD")
+        why      = data.get("whyStockMoved", "market momentum")
+        catalyst = data.get("catalystSummary", "N/A")
+        entry    = data.get("entryZone", "N/A")
+        stop     = data.get("stopLoss", "N/A")
+        targets  = data.get("targets", [])
+        risk     = data.get("riskWarnings", "standard market risk")
+        verdict  = data.get("finalVerdict", "Watch and confirm")
+        support  = data.get("supportLevels", [])
+        resistance = data.get("resistanceLevels", [])
 
+        target_str = f"${targets[0]}" if targets else "N/A"
+        support_str = f"${support[0]}" if support else "N/A"
+        resistance_str = f"${resistance[0]}" if resistance else "N/A"
+
+        signal_upper = signal.upper()
+        zone = "Buy Watch Zone" if "BUY" in signal_upper or "BULL" in signal_upper else \
+               "Risk Zone" if "SELL" in signal_upper or "BEAR" in signal_upper else "Wait Zone"
+
+        lines = [
+            f"Is {ticker} about to break out — or is this the classic trap? Here's what the AI says.",
+            f"{company} is a leading player in its space, building next-generation technology.",
+            f"The stock is trading at ${price}, up {change}% today following recent momentum.",
+            f"The overall trend remains {signal_upper} as price holds near key moving averages.",
+            f"Momentum indicators show RSI is holding neutral while MACD prepares a cross signal.",
+            f"Key support rests near {support_str} with minor resistance overhead at {resistance_str}.",
+            f"If price settles near {entry}, that may offer the safest entry zone.",
+            f"Risk management is clear: a stop loss below {stop} invalidates the current setup.",
+            f"Upside targets sit near {target_str} if buyers resume control.",
+            f"AI signal is {signal} — indicating support holds but warnings remain on {risk}.",
+            f"Final take: {verdict}. Get the full analysis and report at InvestingAtti.com!"
+        ]
+        return "\n".join(lines)
+
+    # ─── LONG_FORM (reserved) ─────────────────────────────────────────────────
+
+    def _generate_long_form(self, normalized_json: Dict[str, Any], output_path: Path) -> str:
+        """
+        Placeholder for future long-form (8-15 min) video narration generation.
+        Uses the original 7-section walkthrough format with extended detail.
+        Falls back to original fallback script for now.
+        """
+        print("[VideoStoryAgent] LONG_FORM format requested — using extended walkthrough script.")
+        script_text = self._fallback_long_form_script(normalized_json)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(script_text)
+        return script_text
+
+    def _fallback_long_form_script(self, data: Dict[str, Any]) -> str:
+        ticker   = data.get("ticker", "Unavailable")
+        company  = data.get("companyName", ticker)
+        price    = data.get("currentPrice", "N/A")
+        signal   = data.get("overallSignal", "HOLD")
+        why      = data.get("whyStockMoved", "general market movement")
+        entry    = data.get("entryZone", "N/A")
+        stop     = data.get("stopLoss", "N/A")
+        targets  = data.get("targets", [])
+        target_str = ", ".join([f"${t}" for t in targets]) if targets else "N/A"
+        verdict  = data.get("finalVerdict", "Watch and confirm")
+        support  = data.get("supportLevels", [])
+        resistance = data.get("resistanceLevels", [])
+        risk     = data.get("riskWarnings", "standard market risk")
+        support_str = ", ".join([f"${s}" for s in support]) if support else "nearby support"
+        resistance_str = ", ".join([f"${r}" for r in resistance]) if resistance else "overhead resistance"
+        signal_upper = signal.upper()
+        zone = "Buy Watch Zone" if "BUY" in signal_upper or "BULL" in signal_upper else \
+               "Risk Zone" if "SELL" in signal_upper or "BEAR" in signal_upper else "Wait Zone"
         return (
-            f"Welcome to the Investing Atti stock briefing. Analyzing {company_name}, ticker {ticker}, showing a {signal} rating setup.\n"
-            f"The stock is trading around ${price}, following a daily move of {day_change}%.\n"
-            f"The main catalyst behind today's movement is {why_moved}.\n"
-            f"Our report analyzes news, volume, and sector flows, indicating supportive evidence.\n"
-            f"On the daily chart, we are tracking key support and resistance levels closely.\n"
-            f"Key metrics show momentum and buying pressure are adjusting to this recent move.\n"
-            f"For tactical swing traders, the possible entry zone is between {entry}, with a stop loss near {stop}.\n"
-            f"Short sellers should use extreme caution due to possible short squeeze risks.\n"
-            f"Looking at the broader market, the sector and peer group are influencing the setup.\n"
-            f"Our final verdict is {verdict}. Keep risk managed, and visit investingatti.com for the full report."
+            f"Welcome to the InvestingAtti decision walkthrough for {company}, ticker {ticker}. "
+            f"The stock is near a key zone — should you chase this move, or wait for confirmation?\n"
+            f"Right now, {ticker} is in a {zone} at ${price}. Signal: {signal}. Let's break it down.\n"
+            f"The main driver: {why}. Watch how price reacts to key levels before making any decision.\n"
+            f"A safer entry may form near {entry} if {support_str} holds and volume confirms.\n"
+            f"For profit booking, watch resistance near {resistance_str}. Targets: {target_str}.\n"
+            f"Risk factors include {risk}. Stop loss area: {stop}.\n"
+            f"Verdict: {verdict}. Use this as research support, not financial advice. "
+            f"Visit investingatti.com for the full report."
         )

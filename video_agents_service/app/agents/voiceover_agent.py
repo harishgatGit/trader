@@ -9,7 +9,7 @@ class VoiceoverAgent:
         self.tts = tts_service
         self.ffmpeg = ffmpeg_service
 
-    def generate(self, script_text: str, output_dir: Path) -> Path:
+    def generate(self, script_text: str, output_dir: Path, video_format: str = "SHORTS") -> Path:
         """
         Generates, normalizes, and validates the voiceover audio file.
         Saves output to narration-audio.mp3.
@@ -18,9 +18,9 @@ class VoiceoverAgent:
         temp_audio_path = output_dir / "temp-narration-audio.mp3"
         final_audio_path = output_dir / "narration-audio.mp3"
 
-        # 1. Synthesize audio
+        # 1. Synthesize audio with format-specific voice
         try:
-            self.tts.synthesize(script_text, temp_audio_path)
+            self.tts.synthesize(script_text, temp_audio_path, video_format)
         except Exception as e:
             raise Exception(f"Voice synthesis failed: {e}")
 

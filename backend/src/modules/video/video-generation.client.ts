@@ -7,6 +7,7 @@ export interface VideoJobPayload {
   reportId: string;
   reportJson: any;
   forceRegenerate?: boolean;
+  videoFormat?: 'SHORTS' | 'LONG_FORM' | 'MARKET_RECAP';
 }
 
 export interface VideoJobResponse {
@@ -41,7 +42,14 @@ export class VideoGenerationClient {
     this.logger.log(`[fire-and-forget] Triggering video job for ${payload.ticker} at ${url}`);
 
     axios
-      .post<VideoJobResponse>(url, payload, {
+      .post<VideoJobResponse>(url, {
+        ticker: payload.ticker,
+        reportDate: payload.reportDate,
+        reportId: payload.reportId,
+        reportJson: payload.reportJson,
+        forceRegenerate: payload.forceRegenerate || false,
+        videoFormat: payload.videoFormat || 'SHORTS',
+      }, {
         headers: {
           'Content-Type': 'application/json',
           'x-api-key': this.apiKey,

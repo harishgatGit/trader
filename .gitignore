@@ -106,3 +106,11 @@ backend/node_modules/.prisma/
 # ── Redis dump ────────────────────────────────────────────────────────────────
 redis/data/
 dump.rdb
+
+# ── OAuth tokens (never commit) ───────────────────────────────────────────────
+tokens.json
+**/tokens.json
+
+# ── Video service outputs (generated artifacts) ───────────────────────────────
+video_agents_service/outputs/
+video_agents_service/outputs/video_jobs.db

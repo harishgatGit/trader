@@ -8,6 +8,20 @@ import helmet from 'helmet';
   return Number(this);
 };
 
+const INSECURE_DEFAULTS = new Set(['your-key', 'your-key-here', '']);
+
+function warnInsecureKeys(logger: Logger) {
+  const checks: Array<[string, string]> = [
+    ['VIDEO_SERVICE_API_KEY', process.env.VIDEO_SERVICE_API_KEY ?? ''],
+    ['CURRENT_APP_CALLBACK_API_KEY', process.env.CURRENT_APP_CALLBACK_API_KEY ?? ''],
+  ];
+  for (const [name, value] of checks) {
+    if (INSECURE_DEFAULTS.has(value.trim())) {
+      logger.warn(`[Security] ${name} is using an insecure default value. Set a strong key in .env.`);
+    }
+  }
+}
+
 async function bootstrap() {
   const logger = new Logger('Bootstrap');
   const app = await NestFactory.create(AppModule, {
@@ -64,6 +78,8 @@ async function bootstrap() {
       transformOptions: { enableImplicitConversion: true },
     }),
   );
+
+  warnInsecureKeys(logger);
 
   const port = process.env.PORT || 3000;
   await app.listen(port);

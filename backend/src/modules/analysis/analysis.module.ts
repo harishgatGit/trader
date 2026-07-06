@@ -7,5 +7,6 @@ import { AgentsModule } from '../../agents/agents.module';
   imports: [AgentsModule],
   controllers: [AnalysisController],
   providers: [AnalysisService],
+  exports: [AnalysisService],
 })
 export class AnalysisModule {}

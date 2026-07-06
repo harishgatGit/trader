@@ -1,17 +1,19 @@
-import { Injectable, ConflictException } from '@nestjs/common';
+import { Injectable, ConflictException, Logger } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
-import * as crypto from 'crypto';
 import { CreateUserDto } from './dto/create-user.dto';
+import { hashPassword } from '../../utils/crypto';
+import { AnalysisService } from '../analysis/analysis.service';
+import { TrendingScraperService } from '../../services/trending-scraper.service';
 
 @Injectable()
 export class AdminService {
-  constructor(private readonly prisma: PrismaService) {}
+  private readonly logger = new Logger(AdminService.name);
 
-  private hashPassword(password: string): string {
-    const salt = crypto.randomBytes(16).toString('hex');
-    const hash = crypto.scryptSync(password, salt, 64).toString('hex');
-    return `${salt}:${hash}`;
-  }
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly analysisService: AnalysisService,
+    private readonly trendingScraper: TrendingScraperService,
+  ) {}
 
   async getUsers() {
     return this.prisma.user.findMany({
@@ -39,7 +41,7 @@ export class AdminService {
       throw new ConflictException('Username is already taken');
     }
 
-    const passwordHash = this.hashPassword(dto.password);
+    const passwordHash = hashPassword(dto.password);
     const user = await this.prisma.user.create({
       data: {
         username: dto.username,
@@ -370,5 +372,56 @@ export class AdminService {
       where: { id },
     });
     return { success: true };
+  }
+
+  async triggerTrendingAnalysis(excludeSymbols: string[] = []) {
+    let systemAdmin = await this.prisma.user.findUnique({
+      where: { username: 'systemadmin' },
+    });
+
+    if (!systemAdmin) {
+      systemAdmin = await this.prisma.user.create({
+        data: {
+          username: 'systemadmin',
+          passwordHash: hashPassword('systemadmin123'),
+          role: 'SUPERUSER',
+        },
+      });
+    }
+
+    const excluded = new Set(excludeSymbols.map((s) => s.toUpperCase()));
+
+    // Fetch extra candidates so we still get 20 after filtering exclusions
+    const fetchLimit = 20 + excluded.size + 10;
+    const candidates = await this.trendingScraper.fetchTrendingTickers(fetchLimit);
+    const filtered = candidates
+      .filter((s) => !excluded.has(s.toUpperCase()))
+      .slice(0, 20);
+
+    this.logger.log(
+      `[Trending Trigger] ${candidates.length} candidates fetched. ` +
+      `${excluded.size} excluded. Running analysis for ${filtered.length} symbols: ${filtered.join(', ')}`
+    );
+
+    const queued: string[] = [];
+
+    for (const symbol of filtered) {
+      try {
+        console.log(`[Trending Trigger] Running full sequential analysis for ${symbol}...`);
+        await this.analysisService.analyze(symbol, systemAdmin, false, '127.0.0.1');
+        queued.push(symbol);
+        console.log(`[Trending Trigger] Completed analysis for ${symbol}. Waiting 10s...`);
+        await new Promise(resolve => setTimeout(resolve, 10000));
+      } catch (err: any) {
+        console.error(`[Trending Trigger] ❌ Failed to analyze trending symbol ${symbol}:`, err.message);
+      }
+    }
+
+    return {
+      success: true,
+      message: `Enqueued analysis for ${queued.length} trending symbols (${excluded.size} excluded from yesterday).`,
+      symbols: queued,
+      excluded: [...excluded],
+    };
   }
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import { Composition } from 'remotion';
 import { MainVideo } from './MainVideo';
 import { StudioMainVideo } from './StudioMainVideo';
+import { ShortsVideo } from './ShortsVideo';
+import { MarketRecapVideo } from './MarketRecapVideo';
 
 // Default scenes for Studio preview
 // Default scenes for Studio preview
@@ -152,7 +154,8 @@ const DEFAULT_PROPS = {
 };
 
 const FPS = 30;
-const MAX_FRAMES = 5400; // 180 seconds safety cap
+const MAX_FRAMES = 5400;       // 180s safety cap — long-form
+const SHORTS_MAX_FRAMES = 2700; // 90s hard cap — Shorts
 
 const makeCalculateMetadata = (defaultScenes: Array<{ durationSeconds: number }>) =>
   ({ props }: { props: any }) => {
@@ -169,6 +172,29 @@ const makeCalculateMetadata = (defaultScenes: Array<{ durationSeconds: number }>
 export const VideoReport: React.FC = () => {
   return (
     <>
+      {/* ── YouTube Shorts (12 scenes, ≤90s, 720×1280) ── */}
+      <Composition
+        id="ShortsVideo"
+        component={ShortsVideo as any}
+        durationInFrames={SHORTS_MAX_FRAMES}
+        fps={FPS}
+        width={720}
+        height={1280}
+        defaultProps={{
+          ...DEFAULT_PROPS,
+          scenes: DEFAULT_SCENES.slice(0, 12),
+        }}
+        calculateMetadata={({ props }: { props: any }) => {
+          const scenes: Array<{ durationSeconds: number }> =
+            (props?.scenes && props.scenes.length > 0) ? props.scenes : DEFAULT_SCENES;
+          const totalSeconds = scenes.reduce(
+            (acc, scene) => acc + (Number(scene.durationSeconds) || 7), 0
+          );
+          const frames = Math.min(Math.round(totalSeconds * FPS), SHORTS_MAX_FRAMES);
+          return { durationInFrames: frames || SHORTS_MAX_FRAMES, fps: FPS, width: 720, height: 1280, props };
+        }}
+      />
+
       {/* ── Original panda-guide walkthrough ── */}
       <Composition
         id="StockReportVideo"
@@ -181,7 +207,7 @@ export const VideoReport: React.FC = () => {
         calculateMetadata={makeCalculateMetadata(DEFAULT_SCENES)}
       />
 
-      {/* ── New studio avatar presenter walkthrough ── */}
+      {/* ── Studio avatar presenter walkthrough ── */}
       <Composition
         id="StockReportStudio"
         component={StudioMainVideo as any}
@@ -191,6 +217,32 @@ export const VideoReport: React.FC = () => {
         height={1280}
         defaultProps={DEFAULT_PROPS}
         calculateMetadata={makeCalculateMetadata(DEFAULT_SCENES)}
+      />
+
+      {/* ── Daily Market Recap (landscape 1280×720, ~3-5 min) ── */}
+      <Composition
+        id="MarketRecapVideo"
+        component={MarketRecapVideo as any}
+        durationInFrames={MAX_FRAMES}
+        fps={FPS}
+        width={1280}
+        height={720}
+        defaultProps={{
+          ticker: 'MARKET_RECAP',
+          date: '2026-07-06',
+          audioUrl: 'narration-audio.mp3',
+          scenes: DEFAULT_SCENES.slice(0, 11),
+          normalizedData: {},
+        }}
+        calculateMetadata={({ props }: { props: any }) => {
+          const scenes: Array<{ durationSeconds: number }> =
+            (props?.scenes && props.scenes.length > 0) ? props.scenes : DEFAULT_SCENES;
+          const totalSeconds = scenes.reduce(
+            (acc, scene) => acc + (Number(scene.durationSeconds) || 12), 0
+          );
+          const frames = Math.min(Math.round(totalSeconds * FPS), MAX_FRAMES);
+          return { durationInFrames: frames || MAX_FRAMES, fps: FPS, width: 1280, height: 720, props };
+        }}
       />
     </>
   );

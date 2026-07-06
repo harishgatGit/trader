@@ -15,6 +15,7 @@ import {
   DataUnavailable, TermTooltip, StatusBadge, PageContainer
 } from '../components/ui';
 import { useSEO } from '../utils/useSEO';
+import { STOCK_DICTIONARY } from '../utils/stockDictionary';
 import { StructuredData } from '../components/StructuredData';
 import { Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area, XAxis, YAxis } from 'recharts';
 
@@ -27,8 +28,29 @@ const StockDetail: React.FC = () => {
 
   const ticker = symbol?.toUpperCase() || 'Stock';
 
+  // Derive company name and report date for title — updated reactively once report loads
+  const [pageTitle, setPageTitle] = React.useState(`${ticker} Stock Analysis | Investing Atti`);
+
+  React.useEffect(() => {
+    const dictEntry = STOCK_DICTIONARY.find((s) => s.symbol === ticker);
+    const companyName = (report as any)?.reportJson?.companyName
+      || (report as any)?.reportJson?.fundName
+      || dictEntry?.name
+      || null;
+    const createdAt = (report as any)?.createdAt;
+    const dateStr = createdAt
+      ? new Date(createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+      : null;
+
+    const parts = [ticker];
+    if (companyName) parts.push(companyName);
+    const base = parts.join(' – ');
+    const suffix = dateStr ? ` | ${dateStr} | Investing Atti` : ' Stock Analysis | Investing Atti';
+    setPageTitle(`${base} Stock Analysis${suffix}`);
+  }, [ticker, report]);
+
   useSEO({
-    title: `${ticker} Stock Analysis | Investing Atti`,
+    title: pageTitle,
     description: `Full AI research deck and technical analysis report for ${ticker}. View support & resistance zones, indicators, and catalysts.`,
     robots: 'index, follow',
   });

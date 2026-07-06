@@ -58,8 +58,27 @@ const AnalyzePage: React.FC = () => {
   const report = currentAnalysis?.report;
   const activeTicker = report?.symbol || currentAnalysis?.symbol;
 
+  // Build enriched page title with company name and report date
+  const analyzeTitle = React.useMemo(() => {
+    if (!activeTicker) return 'Stock Research & Analysis | Investing Atti';
+    const dictEntry = STOCK_DICTIONARY.find((s) => s.symbol === activeTicker.toUpperCase());
+    const companyName = (report as any)?.reportJson?.companyName
+      || (report as any)?.reportJson?.fundName
+      || dictEntry?.name
+      || null;
+    const createdAt = (report as any)?.createdAt;
+    const dateStr = createdAt
+      ? new Date(createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+      : null;
+    const parts = [activeTicker.toUpperCase()];
+    if (companyName) parts.push(companyName);
+    const base = parts.join(' – ');
+    const suffix = dateStr ? ` | ${dateStr} | Investing Atti` : ' Stock Analysis | Investing Atti';
+    return `${base} Stock Analysis${suffix}`;
+  }, [activeTicker, report]);
+
   useSEO({
-    title: activeTicker ? `${activeTicker} Stock Analysis | Investing Atti` : 'Stock Research & Analysis | Investing Atti',
+    title: analyzeTitle,
     description: activeTicker 
       ? `Real-time AI stock analysis for ${activeTicker}. View rating, support/resistance levels, trend bias, and news catalysts.`
       : 'Analyze technical indicators, support and resistance floors, news catalysts, and volume profiles using our AI analysis system.',

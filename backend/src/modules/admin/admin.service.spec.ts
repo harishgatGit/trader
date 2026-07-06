@@ -2,6 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ConflictException } from '@nestjs/common';
 import { AdminService } from './admin.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { AnalysisService } from '../analysis/analysis.service';
+import { TrendingScraperService } from '../../services/trending-scraper.service';
 
 describe('AdminService', () => {
   let service: AdminService;
@@ -26,11 +28,21 @@ describe('AdminService', () => {
     },
   };
 
+  const mockAnalysisService = {
+    // Add mock methods if needed, or leave empty for basic injection
+  };
+
+  const mockTrendingScraperService = {
+    // Add mock methods if needed
+  };
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         AdminService,
         { provide: PrismaService, useValue: mockPrismaService },
+        { provide: AnalysisService, useValue: mockAnalysisService },
+        { provide: TrendingScraperService, useValue: mockTrendingScraperService },
       ],
     }).compile();
 

@@ -1,12 +1,16 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
 import { WhatsForTodayService } from './whats-for-today.service';
+import { EODVideoWorkflowService } from './eod-video-workflow.service';
 
 @Injectable()
 export class WhatsForTodayScheduler {
   private readonly logger = new Logger(WhatsForTodayScheduler.name);
 
-  constructor(private readonly service: WhatsForTodayService) {}
+  constructor(
+    private readonly service: WhatsForTodayService,
+    private readonly eodWorkflow: EODVideoWorkflowService,
+  ) {}
 
   // 1. Pre-Market: 8:00 AM CST (9:00 AM EST), Mon-Fri
   @Cron('0 9 * * 1-5', { timeZone: 'America/New_York' })
@@ -66,6 +70,22 @@ export class WhatsForTodayScheduler {
       this.logger.log('Cron: Penny Stock Watchlist Scan completed successfully.');
     } catch (err: any) {
       this.logger.error(`Cron: Penny Stock Watchlist Scan failed: ${err.message}`);
+    }
+  }
+
+  // 6. EOD Video Workflow: 5:45 PM EST Mon-Fri
+  //    Fires after Run 4 (5:20 PM EST) and penny scan (5:00 PM EST).
+  //    Top 5 trending SHORTS + one MARKET_RECAP long-form storytelling video.
+  @Cron('45 17 * * 1-5', { timeZone: 'America/New_York' })
+  async handleEODVideoWorkflow() {
+    this.logger.log('Cron: Triggering EOD video workflow (top-5 SHORTS + MARKET_RECAP)...');
+    try {
+      const result = await this.eodWorkflow.runEODWorkflow();
+      this.logger.log(
+        `Cron: EOD workflow completed. SHORTS: ${result.shorts.join(', ') || 'none'}. Recap: ${result.marketRecap}`,
+      );
+    } catch (err: any) {
+      this.logger.error(`Cron: EOD video workflow failed: ${err.message}`);
     }
   }
 }

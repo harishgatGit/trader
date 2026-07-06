@@ -2,327 +2,362 @@ import os
 import json
 import re
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, List
 from openai import OpenAI
 from app.config import OPENAI_API_KEY, OPENAI_MODEL
 
+# ─── Scene type → Remotion component name mapping ────────────────────────────
+SHORTS_SCENE_TYPES = [
+    "crisp_hook",             # 1 Hook
+    "company_snapshot",       # 2 Company Snapshot
+    "market_action",          # 3 Current Market Action
+    "trend_analysis",         # 4 Trend Analysis
+    "momentum_indicators",     # 5 Momentum Indicators
+    "support_resistance",     # 6 Support & Resistance
+    "entry_zone",             # 7 Entry Zone
+    "risk_analysis",          # 8 Risk Analysis
+    "upside_potential",       # 9 Upside Potential
+    "ai_insights",            # 10 AI Insights
+    "final_recommendation",   # 11 Final Recommendation + Outro
+]
+
+# Total duration ~80s
+SHORTS_DURATIONS = [6, 7, 7, 7, 8, 8, 8, 7, 7, 7, 8]
+
+
 class StoryboardAgent:
+    """
+    Generates storyboards for stock videos.
+
+    SHORTS (default): Exactly 11 scenes, 6-8 seconds each, ≤90s total.
+    Each scene maps to a dedicated animated Remotion component.
+    """
+
     def __init__(self):
         if OPENAI_API_KEY:
             self.client = OpenAI(api_key=OPENAI_API_KEY)
         else:
             self.client = None
 
-    def _get_prompt_template(self, filename: str, fallback: str) -> str:
-        try:
-            dir_path = Path(__file__).parent / "prompts"
-            file_path = dir_path / filename
-            if file_path.exists():
-                return file_path.read_text(encoding="utf-8")
-            return fallback
-        except Exception as e:
-            print(f"[StoryboardAgent] Error reading prompt template {filename}: {e}")
-            return fallback
+    def generate(self, normalized_json: Dict[str, Any], script_text: str,
+                 output_path: Path, video_format: str = "SHORTS") -> Dict[str, Any]:
+        return self._generate_shorts(normalized_json, script_text, output_path)
 
-    def generate(self, normalized_json: Dict[str, Any], script_text: str, output_path: Path) -> Dict[str, Any]:
-        """
-        Generates a 6-8 scene storyboard based on the narration script and report data.
-        Returns the storyboard JSON and saves it to storyboard.json.
-        """
-        ticker = normalized_json.get("ticker", "Unavailable")
-        overall_signal = normalized_json.get("overallSignal", "Unavailable")
-        price = normalized_json.get("currentPrice", "Unavailable")
-        exec_summary = normalized_json.get("executiveSummary", "Unavailable")
-        
-        user_fallback = f"""
-You are the lead visual storyboard designer for InvestingAtti. Your job is to split a 10-line narration script into exactly 10 visual scenes for a vertical video (9:16) with professional layouts, charts, and data cards.
+    # ─── SHORTS ──────────────────────────────────────────────────────────────
 
-Here is the 10-line Narration Script (each line corresponds to one scene, in order):
-"{script_text}"
+    def _generate_shorts(self, normalized_json: Dict[str, Any], script_text: str,
+                          output_path: Path) -> Dict[str, Any]:
+        ticker        = normalized_json.get("ticker", "STOCK")
+        company_name  = normalized_json.get("companyName", ticker)
+        price         = normalized_json.get("currentPrice", "N/A")
+        day_change    = normalized_json.get("dayChangePct", 0)
+        signal        = normalized_json.get("overallSignal", "HOLD")
+        entry         = normalized_json.get("entryZone", "N/A")
+        stop          = normalized_json.get("stopLoss", "N/A")
+        targets       = normalized_json.get("targets", [])
+        support       = normalized_json.get("supportLevels", [])
+        resistance    = normalized_json.get("resistanceLevels", [])
+        risk          = normalized_json.get("riskWarnings", "N/A")
+        catalyst      = normalized_json.get("catalystSummary", "N/A")
+        why_moved     = normalized_json.get("whyStockMoved", "N/A")
+        verdict       = normalized_json.get("finalVerdict", "Watch and confirm")
+        exec_summary  = normalized_json.get("executiveSummary", "N/A")
+        confidence    = normalized_json.get("confidenceScore", 80)
 
-Here is the stock report data:
-- Ticker: {ticker}
-- Current Price: ${price}
-- Rating: {overall_signal}
-- Executive Summary: {exec_summary}
-- Entry Zone: {normalized_json.get("entryZone")}
-- Stop Loss: {normalized_json.get("stopLoss")}
-- Targets: {normalized_json.get("targets")}
-- Short Selling: {normalized_json.get("shortTradeView")}
-- Catalysts: {normalized_json.get("catalystSummary")}
-- Trend: {normalized_json.get("trendSummary")}
+        target_str    = ", ".join([f"${t}" for t in targets]) if targets else "N/A"
+        support_str   = f"${support[0]}" if support else "N/A"
+        resistance_str= f"${resistance[0]}" if resistance else "N/A"
 
-Create a JSON storyboard containing exactly 10 scenes in order:
-1. "Stock Overview" (Make sure to include a catchy, one-line highlight summarizing the stock's current main situation or question under the key "catchyLine" inside "dataFields", e.g., "TSM Pullback: Buying Opportunity or Value Trap?")
-2. "Price Action"
-3. "Trend Reason"
-4. "Evidence"
-5. "Daily Trend"
-6. "Technical Metrics"
-7. "Tactical Setup"
-8. "Short Trade"
-9. "Ecosystem Insight"
-10. "Final Verdict" (Make sure to include a custom motivational/encouraging trading quote under the key "quote", and a short legal disclaimer under the key "disclaimer" inside "dataFields")
+        signal_upper = signal.upper()
+        is_bullish   = "BUY" in signal_upper or "BULL" in signal_upper
+        is_bearish   = "SELL" in signal_upper or "BEAR" in signal_upper
+        signal_color = "green" if is_bullish else "red" if is_bearish else "yellow"
 
-For each scene, output these fields:
-- "sceneNumber" (number, 1 to 10)
-- "sceneName" (string, the name of the scene)
-- "durationSeconds" (number, typically 10 to 18 seconds per scene, total video must be 100-180 seconds)
-- "narration" (string, the specific paragraph from the script for this scene)
-- "pandaAction" (string, legacy layout control property, choose from: "point", "magnifying", "caution", "drawing", "celebrate", "walk", or "default")
-- "speechBubbleText" (string, short key highlight overlay text for the scene)
-- "visualElements" (array of strings)
-- "chartElements" (array of strings)
-- "animationInstructions" (array of strings)
-- "dataFields" (object/dictionary of relevant data values for the scene; for scene 1, this MUST include the key "catchyLine"; for scene 10, this MUST include the keys "quote" and "disclaimer")
+        # Split script into 11 lines
+        lines = [l.strip() for l in script_text.split('\n') if l.strip()]
+        while len(lines) < 11:
+            lines.append("Visit InvestingAtti.com for the full analysis and AI research report.")
 
-CRITICAL: Output ONLY a valid JSON object matching the requested schema. No markdown wrappers.
-"""
-        
-        user_template = self._get_prompt_template("storyboard.user.md", None)
-        if user_template:
-            prompt = user_template.format(
-                script_text=script_text,
-                ticker=ticker,
-                price=price,
-                overall_signal=overall_signal,
-                exec_summary=exec_summary,
-                entry=normalized_json.get("entryZone", "Unavailable"),
-                stop=normalized_json.get("stopLoss", "Unavailable"),
-                targets=normalized_json.get("targets", "Unavailable"),
-                short_view=normalized_json.get("shortTradeView", "Unavailable"),
-                catalyst=normalized_json.get("catalystSummary", "Unavailable"),
-                trend=normalized_json.get("trendSummary", "Unavailable")
-            )
-        else:
-            prompt = user_fallback
-
-        storyboard_data = None
+        # Try AI-enhanced storyboard generation
+        storyboard = None
         if self.client:
             try:
-                print(f"[StoryboardAgent] Generating storyboard with OpenAI model={OPENAI_MODEL}...")
-                
-                system_fallback = (
-                    "You are a professional storyboard designer. Output only raw JSON. "
-                    "CRITICAL: You must ensure that scene 1's 'dataFields' contains the key 'catchyLine' "
-                    "(e.g., 'TSM Pullback: Buying Opportunity or Value Trap?') representing a catchy one-line hook."
+                storyboard = self._ai_enhance_storyboard(
+                    ticker, company_name, price, day_change, signal, signal_color,
+                    entry, stop, targets, support, resistance, risk, catalyst,
+                    why_moved, verdict, confidence, lines
                 )
-                system_prompt = self._get_prompt_template("storyboard.system.md", system_fallback)
-
-                response = self.client.chat.completions.create(
-                    model=OPENAI_MODEL,
-                    messages=[
-                        {
-                            "role": "system", 
-                            "content": system_prompt
-                        },
-                        {"role": "user", "content": prompt}
-                    ],
-                    response_format={"type": "json_object"},
-                    temperature=0.3
-                )
-                storyboard_data = json.loads(response.choices[0].message.content.strip())
-                print(f"[StoryboardAgent] Storyboard generated successfully.")
             except Exception as e:
-                print(f"[StoryboardAgent] Error generating storyboard: {e}")
-                storyboard_data = self._fallback_storyboard(normalized_json, script_text)
-        else:
-            storyboard_data = self._fallback_storyboard(normalized_json, script_text)
+                print(f"[StoryboardAgent] AI enhance failed: {e}. Using deterministic storyboard.")
 
-        # Robust helper to recursively locate the "storyboard" or "scenes" list in the parsed JSON structure
-        def find_scenes_recursive(data):
-            if isinstance(data, dict):
-                for key in ["storyboard", "scenes"]:
-                    if key in data and isinstance(data[key], list) and len(data[key]) > 0:
-                        return data[key]
-                for k, v in data.items():
-                    res = find_scenes_recursive(v)
-                    if res:
-                        return res
-            elif isinstance(data, list):
-                if len(data) > 0 and isinstance(data[0], dict) and ("sceneNumber" in data[0] or "sceneName" in data[0]):
-                    return data
-                for item in data:
-                    res = find_scenes_recursive(item)
-                    if res:
-                        return res
-            return None
+        if not storyboard:
+            storyboard = self._build_deterministic_storyboard(
+                ticker, company_name, price, day_change, signal, signal_color,
+                entry, stop, targets, support_str, resistance_str, risk, catalyst,
+                why_moved, verdict, confidence, lines
+            )
 
-        scenes_list = find_scenes_recursive(storyboard_data)
-        
-        # If we failed to find any scenes, or if it is empty, fall back to the robust offline generator
-        if not scenes_list:
-            print("[StoryboardAgent] Failed to find scenes in AI response. Falling back to default storyboard.")
-            fallback_res = self._fallback_storyboard(normalized_json, script_text)
-            scenes_list = fallback_res.get("storyboard", fallback_res.get("scenes", []))
-
-        # Define dynamic motivational trading quotes based on signal rating
-        signal_upper = overall_signal.upper()
-        if "BUY" in signal_upper or "BULL" in signal_upper:
-            motivation_quote = "Success in trading comes from risk control, not from predicting the future. Let the trend be your guide!"
-        elif "SELL" in signal_upper or "BEAR" in signal_upper:
-            motivation_quote = "Protecting capital is the first rule of trading. Capital preservation is the key to longevity."
-        else:
-            motivation_quote = "Patience is also a position. The best trades are the ones you have the discipline to wait for."
-
-        # Post-process scenes list to ensure dataFields is present and populated for scene 10
-        for scene in scenes_list:
-            scene_num = scene.get("sceneNumber")
-            if str(scene_num) == "10" or scene == scenes_list[-1]:
-                if "dataFields" not in scene or not isinstance(scene["dataFields"], dict):
-                    scene["dataFields"] = {}
-                df = scene["dataFields"]
-                if "quote" not in df:
-                    df["quote"] = motivation_quote
-                if "disclaimer" not in df:
-                    df["disclaimer"] = "Disclaimer: Educational insights only. Not financial advice. Past performance is not indicative of future results."
-
-        storyboard_data = {
+        result = {
             "ticker": ticker,
-            "reportDate": normalized_json.get("reportDate", "2026-06-05"),
-            "videoTitle": f"{ticker} Stock Report",
-            "durationSeconds": sum(float(s.get("durationSeconds", 6)) for s in scenes_list),
-            "character": {
-                "name": "Atti Panda",
-                "role": "animated stock research guide",
-                "style": "friendly fintech mascot",
-                "placement": "bottom-left or side panel",
-                "behavior": ["point", "magnifying", "caution", "drawing", "celebrate", "walk"]
-            },
+            "companyName": company_name,
+            "videoTitle": f"{ticker} Stock Analysis — {signal} Signal",
+            "videoFormat": "SHORTS",
+            "layout": "vertical_9_16",
+            "durationSeconds": sum(s["durationSeconds"] for s in storyboard),
             "narrationScript": script_text,
-            "storyboard": scenes_list,
+            "storyboard": storyboard,
+            "scenes": storyboard,  # alias for backward compat
             "designStyle": {
-                "theme": "dark InvestingAtti fintech UI",
-                "characterStyle": "animated panda guide",
-                "layout": "vertical mobile video",
-                "animationStyle": "smooth, modern, educational, interactive",
-                "charts": "animated line chart, candlestick chart, volume bars, indicator cards",
-                "colors": "use website theme tokens"
+                "theme": "dark InvestingAtti fintech",
+                "layout": "vertical_9_16",
+                "fps": 30,
+                "resolution": "720x1280",
+                "colorPalette": {
+                    "background": "#090d16",
+                    "surface": "#111827",
+                    "teal": "#14b8a6",
+                    "green": "#10b981",
+                    "red": "#ef4444",
+                    "yellow": "#f59e0b",
+                    "text": "#f8fafc",
+                    "muted": "#64748b"
+                }
             }
         }
 
-        # Write to file
         output_path.parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(storyboard_data, f, indent=2)
+            json.dump(result, f, indent=2)
+        print(f"[StoryboardAgent] SHORTS storyboard saved ({len(storyboard)} scenes, "
+              f"{result['durationSeconds']:.1f}s total)")
+        return result
 
-        return storyboard_data
+    def _build_deterministic_storyboard(
+        self, ticker, company_name, price, day_change, signal, signal_color,
+        entry, stop, targets, support_str, resistance_str, risk, catalyst,
+        why_moved, verdict, confidence, lines
+    ) -> List[Dict[str, Any]]:
+        """Builds the 11-scene storyboard deterministically — no AI call needed."""
 
-    def _fallback_storyboard(self, data: Dict[str, Any], script_text: str) -> Dict[str, Any]:
-        ticker = data.get("ticker", "Unavailable")
-        price = data.get("currentPrice", "Unavailable")
-        overall_signal = data.get("overallSignal", "Unavailable")
-        
-        # Split script into lines
-        sentences = [s.strip() for s in script_text.split('\n') if s.strip()]
-        while len(sentences) < 10:
-            sentences.append("Stay tuned for more updates from investingatti.com.")
-        
-        scene_names = [
-            "Stock Overview", "Price Action", "Trend Reason", "Evidence",
-            "Daily Trend", "Technical Metrics", "Tactical Setup", "Short Trade",
-            "Ecosystem Insight", "Final Verdict"
+        target_str = ", ".join([f"${t}" for t in targets]) if isinstance(targets, list) else str(targets)
+        is_bullish = "BUY" in signal.upper() or "BULL" in signal.upper()
+        is_bearish = "SELL" in signal.upper() or "BEAR" in signal.upper()
+
+        change_num = float(day_change) if day_change not in ("N/A", None) else 0
+        change_sign = "+" if change_num >= 0 else ""
+        change_color = "green" if change_num >= 0 else "red"
+
+        scenes = [
+            # 1 ─ Hook
+            {
+                "sceneNumber": 1, "sceneType": "crisp_hook",
+                "sceneName": "Hook", "durationSeconds": SHORTS_DURATIONS[0],
+                "narration": lines[0],
+                "textOverlay": f"{ticker} CRITICAL LEVEL",
+                "subText": "SHOULD YOU BUY?",
+                "decisionColor": signal_color,
+                "dataFields": {
+                    "ticker": ticker, "companyName": company_name,
+                    "hookQuestion": lines[0], "signal": signal,
+                    "decisionColor": signal_color,
+                    "badge": "DAILY AI ANALYSIS"
+                }
+            },
+            # 2 ─ Company Snapshot
+            {
+                "sceneNumber": 2, "sceneType": "company_snapshot",
+                "sceneName": "Snapshot", "durationSeconds": SHORTS_DURATIONS[1],
+                "narration": lines[1],
+                "textOverlay": company_name,
+                "subText": "STABILITY PROFILE ACTIVE",
+                "decisionColor": "yellow",
+                "dataFields": {
+                    "ticker": ticker, "companyName": company_name,
+                    "description": lines[1][:100], "decisionColor": "yellow"
+                }
+            },
+            # 3 ─ Current Market Action
+            {
+                "sceneNumber": 3, "sceneType": "market_action",
+                "sceneName": "Market Action", "durationSeconds": SHORTS_DURATIONS[2],
+                "narration": lines[2],
+                "textOverlay": f"${price}",
+                "subText": f"{change_sign}{day_change}% today",
+                "decisionColor": change_color,
+                "dataFields": {
+                    "price": price, "dayChangePct": day_change,
+                    "changeSign": change_sign, "changeColor": change_color,
+                    "decisionColor": change_color
+                }
+            },
+            # 4 ─ Trend Analysis
+            {
+                "sceneNumber": 4, "sceneType": "trend_analysis",
+                "sceneName": "Trend Analysis", "durationSeconds": SHORTS_DURATIONS[3],
+                "narration": lines[3],
+                "textOverlay": "EMA TREND ALIGNED",
+                "subText": "MOMENTUM CONFIRMED",
+                "decisionColor": signal_color,
+                "dataFields": {
+                    "trend": "bullish" if is_bullish else "bearish" if is_bearish else "neutral",
+                    "decisionColor": signal_color
+                }
+            },
+            # 5 ─ Momentum Indicators
+            {
+                "sceneNumber": 5, "sceneType": "momentum_indicators",
+                "sceneName": "Momentum", "durationSeconds": SHORTS_DURATIONS[4],
+                "narration": lines[4],
+                "textOverlay": "RSI STABLE",
+                "subText": "MACD BULLISH CROSS",
+                "decisionColor": signal_color,
+                "dataFields": {
+                    "rsi": 55, "macd": "bullish" if is_bullish else "bearish" if is_bearish else "neutral",
+                    "decisionColor": signal_color
+                }
+            },
+            # 6 ─ Support & Resistance
+            {
+                "sceneNumber": 6, "sceneType": "support_resistance",
+                "sceneName": "Levels", "durationSeconds": SHORTS_DURATIONS[5],
+                "narration": lines[5],
+                "textOverlay": f"RESISTANCE: {resistance_str}",
+                "subText": f"SUPPORT: {support_str}",
+                "decisionColor": "yellow",
+                "dataFields": {
+                    "support": support_str, "resistance": resistance_str,
+                    "decisionColor": "yellow"
+                }
+            },
+            # 7 ─ Entry Zone
+            {
+                "sceneNumber": 7, "sceneType": "entry_zone",
+                "sceneName": "Entry Zone", "durationSeconds": SHORTS_DURATIONS[6],
+                "narration": lines[6],
+                "textOverlay": f"BUY ZONE: {entry}",
+                "subText": f"STOP LOSS: {stop}",
+                "decisionColor": "green" if is_bullish else "yellow",
+                "dataFields": {
+                    "entryZone": entry, "stopLoss": stop,
+                    "decisionColor": "green" if is_bullish else "yellow"
+                }
+            },
+            # 8 ─ Risk Analysis
+            {
+                "sceneNumber": 8, "sceneType": "risk_analysis",
+                "sceneName": "Risk Analysis", "durationSeconds": SHORTS_DURATIONS[7],
+                "narration": lines[7],
+                "textOverlay": "RISK LEVEL: MEDIUM",
+                "subText": risk[:60] if risk != "N/A" else "Standard market risk",
+                "decisionColor": "red",
+                "dataFields": {
+                    "risk": risk, "stopLoss": stop, "decisionColor": "red"
+                }
+            },
+            # 9 ─ Upside Potential
+            {
+                "sceneNumber": 9, "sceneType": "upside_potential",
+                "sceneName": "Upside Potential", "durationSeconds": SHORTS_DURATIONS[8],
+                "narration": lines[8],
+                "textOverlay": f"TARGET: {target_str}",
+                "subText": "MAX POTENTIAL UPSIDE",
+                "decisionColor": "green",
+                "dataFields": {
+                    "targets": targets, "targetStr": target_str, "decisionColor": "green"
+                }
+            },
+            # 10 ─ AI Insights
+            {
+                "sceneNumber": 10, "sceneType": "ai_insights",
+                "sceneName": "AI Insights", "durationSeconds": SHORTS_DURATIONS[9],
+                "narration": lines[9],
+                "textOverlay": f"AI RATING: {signal}",
+                "subText": f"CONFIDENCE: {confidence}%",
+                "decisionColor": signal_color,
+                "dataFields": {
+                    "signal": signal, "confidence": confidence, "decisionColor": signal_color
+                }
+            },
+            # 11 ─ Final Recommendation & Outro
+            {
+                "sceneNumber": 11, "sceneType": "final_recommendation",
+                "sceneName": "Recommendation", "durationSeconds": SHORTS_DURATIONS[10],
+                "narration": lines[10],
+                "textOverlay": f"VERDICT: {signal}",
+                "subText": "GET FULL AT INVESTINGATTI.COM",
+                "decisionColor": signal_color,
+                "dataFields": {
+                    "verdict": verdict, "signal": signal,
+                    "websiteUrl": "www.investingatti.com",
+                    "disclaimer": "Not financial advice. Educational insights only.",
+                    "decisionColor": signal_color
+                }
+            },
         ]
-        
-        scenes = []
-        for i in range(10):
-            voiceover = sentences[i]
-            name = scene_names[i]
-            
-            data_fields = {}
-            panda_action = "default"
-            speech_bubble = ""
-            visuals = []
-            charts = []
-            anims = []
-            
-            if i == 0:
-                data_fields = {
-                    "ticker": ticker,
-                    "signal": overall_signal,
-                    "catchyLine": f"{ticker} Setup: Key Levels to Watch Today"
-                }
-                panda_action = "walk"
-                speech_bubble = f"Let's look at {ticker}!"
-                visuals = ["InvestingAtti logo", "ticker card", "confidence meter"]
-                anims = ["panda slide in", "logo fade in", "confidence meter count-up"]
-            elif i == 1:
-                data_fields = {"price": price, "ticker": ticker}
-                panda_action = "point"
-                speech_bubble = f"Trading around ${price} right now."
-                visuals = ["Price card", "Day change badge"]
-                charts = ["Mini price trendline"]
-                anims = ["price count-up", "day change color pulse"]
-            elif i == 2:
-                data_fields = {"reason": data.get("whyStockMoved")}
-                panda_action = "magnifying"
-                speech_bubble = "Checking the trend catalyst."
-                visuals = ["Trend arrow", "Reason badge"]
-                anims = ["arrow drawing", "catalyst fade-in"]
-            elif i == 3:
-                data_fields = {"news": data.get("catalystSummary")}
-                panda_action = "point"
-                speech_bubble = "Analyzing news and volume data."
-                visuals = ["News card", "Evidence cards list"]
-                anims = ["evidence stamp reveal"]
-            elif i == 4:
-                data_fields = {"support": data.get("entryZone")}
-                panda_action = "drawing"
-                speech_bubble = "Here are the support and resistance lines."
-                visuals = ["Daily chart card"]
-                charts = ["Daily candlestick chart"]
-                anims = ["candlestick path draw", "levels overlay draw"]
-            elif i == 5:
-                data_fields = {"metrics": "Volume, RSI, MACD"}
-                panda_action = "point"
-                speech_bubble = "Technical metrics showing momentum."
-                visuals = ["RSI meter", "MACD indicator"]
-                anims = ["metrics flip in", "RSI indicator fill"]
-            elif i == 6:
-                data_fields = {
-                    "entry": data.get("entryZone"),
-                    "stop": data.get("stopLoss"),
-                    "targets": data.get("targets")
-                }
-                panda_action = "point"
-                speech_bubble = "Swing trade entry and stop loss."
-                visuals = ["Trade levels dashboard"]
-                charts = ["Entry/Stop/Target overlay"]
-                anims = ["zones highlights slide-in", "targets flag placement"]
-            elif i == 7:
-                data_fields = {"short_view": data.get("shortTradeView")}
-                panda_action = "caution"
-                speech_bubble = "Be careful with short trades here!"
-                visuals = ["Short warning card", "Squeeze risk meter"]
-                anims = ["squeeze risk warning pulse"]
-            elif i == 8:
-                data_fields = {"ecosystem": "Sector and Peers"}
-                panda_action = "magnifying"
-                speech_bubble = "Broad market and sector view."
-                visuals = ["Ecosystem map"]
-                anims = ["map zoom out", "peer group connections pulse"]
-            else:
-                data_fields = {
-                    "verdict": overall_signal,
-                    "quote": "Success in trading comes from risk control, not from predicting the future. Stay disciplined!",
-                    "disclaimer": "Disclaimer: All trading carries risk. Past performance does not guarantee future results. Invest responsibly."
-                }
-                panda_action = "celebrate" if "BUY" in overall_signal or "BULL" in overall_signal else "caution"
-                speech_bubble = f"Final rating: {overall_signal}!"
-                visuals = ["Final verdict badge", "Disclaimer footer"]
-                anims = ["badge pop in", "checklist tick reveal"]
+        return scenes
 
-            scenes.append({
-                "sceneNumber": i + 1,
-                "sceneName": name,
-                "durationSeconds": 15.0,
-                "narration": voiceover,
-                "pandaAction": panda_action,
-                "speechBubbleText": speech_bubble,
-                "visualElements": visuals,
-                "chartElements": charts,
-                "animationInstructions": anims,
-                "dataFields": data_fields
-            })
+    def _ai_enhance_storyboard(
+        self, ticker, company_name, price, day_change, signal, signal_color,
+        entry, stop, targets, support, resistance, risk, catalyst,
+        why_moved, verdict, confidence, lines
+    ) -> List[Dict[str, Any]]:
+        """
+        Calls OpenAI to generate richer textOverlay / subText per scene.
+        """
+        target_str = ", ".join([f"${t}" for t in targets]) if targets else "N/A"
+        support_str = f"${support[0]}" if support else "N/A"
+        resistance_str = f"${resistance[0]}" if resistance else "N/A"
 
-        return {"storyboard": scenes}
+        prompt = f"""You are a YouTube Shorts video text editor for InvestingAtti.
+
+Given stock data, write the textOverlay (main big text) and subText (smaller detail text) for exactly 11 scenes.
+Keep each textOverlay under 6 words. Keep each subText under 12 words. Make them punchy and vivid.
+
+Stock: {ticker} ({company_name})
+Price: ${price} | Change: {day_change}% | Signal: {signal}
+Why moved: {why_moved[:100]}
+Catalyst: {catalyst[:100]}
+Entry: {entry} | Stop: {stop} | Targets: {target_str}
+Support: {support_str} | Resistance: {resistance_str}
+Risk: {risk[:100]}
+Verdict: {verdict[:100]}
+
+Output JSON array with exactly 11 objects:
+[
+  {{"sceneNumber": 1, "textOverlay": "...", "subText": "..."}},
+  ...
+  {{"sceneNumber": 11, "textOverlay": "VERDICT: ...", "subText": "WWW.INVESTINGATTI.COM"}}
+]
+Output ONLY the JSON array, no markdown."""
+
+        response = self.client.chat.completions.create(
+            model=OPENAI_MODEL,
+            messages=[
+                {"role": "system", "content": "You write punchy YouTube Shorts text overlays under 6 words. Output only valid JSON arrays."},
+                {"role": "user", "content": prompt}
+            ],
+            response_format={"type": "json_object"},
+            temperature=0.5,
+            max_tokens=800
+        )
+
+        raw = json.loads(response.choices[0].message.content.strip())
+        ai_scenes = raw if isinstance(raw, list) else next(
+            (v for v in raw.values() if isinstance(v, list)), []
+        )
+
+        if len(ai_scenes) != 11:
+            raise ValueError(f"AI returned {len(ai_scenes)} scenes, expected 11")
+
+        base = self._build_deterministic_storyboard(
+            ticker, company_name, price, day_change, signal, signal_color,
+            entry, stop, targets, support_str, resistance_str, risk, catalyst,
+            why_moved, verdict, confidence, lines
+        )
+
+        for i, ai_scene in enumerate(ai_scenes):
+            if i < len(base):
+                base[i]["textOverlay"] = ai_scene.get("textOverlay", base[i]["textOverlay"])
+                base[i]["subText"] = ai_scene.get("subText", base[i]["subText"])
+
+        return base

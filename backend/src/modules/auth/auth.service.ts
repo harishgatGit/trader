@@ -1,6 +1,7 @@
 import { Injectable, UnauthorizedException, BadRequestException, ConflictException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import * as crypto from 'crypto';
+import { hashPassword, verifyPassword } from '../../utils/crypto';
 
 // ── Session cache ────────────────────────────────────────────────────────────
 // Caches validated sessions in memory to avoid a DB round-trip on every request.
@@ -29,19 +30,6 @@ export class AuthService {
   /** In-memory session cache: token → CachedSession */
   private readonly sessionCache = new Map<string, CachedSession>();
 
-  private hashPassword(password: string): string {
-    const salt = crypto.randomBytes(16).toString('hex');
-    const hash = crypto.scryptSync(password, salt, 64).toString('hex');
-    return `${salt}:${hash}`;
-  }
-
-  private verifyPassword(password: string, passwordHash: string): boolean {
-    const [salt, hash] = passwordHash.split(':');
-    if (!salt || !hash) return false;
-    const verifyHash = crypto.scryptSync(password, salt, 64).toString('hex');
-    return verifyHash === hash;
-  }
-
   async register(username: string, password: string, email?: string) {
     const finalEmail = email || (username.includes('@') ? username : null);
 
@@ -61,7 +49,7 @@ export class AuthService {
       }
     }
 
-    const passwordHash = this.hashPassword(password);
+    const passwordHash = hashPassword(password);
     
     const user = await this.prisma.user.create({
       data: {
@@ -334,7 +322,7 @@ export class AuthService {
       where: { username },
     });
 
-    if (!user || !user.passwordHash || !this.verifyPassword(password, user.passwordHash)) {
+    if (!user || !user.passwordHash || !verifyPassword(password, user.passwordHash)) {
       throw new UnauthorizedException('Invalid credentials');
     }
 
@@ -437,11 +425,11 @@ export class AuthService {
       where: { id: userId },
     });
 
-    if (!user || !this.verifyPassword(oldPass, user.passwordHash)) {
+    if (!user || !verifyPassword(oldPass, user.passwordHash)) {
       throw new BadRequestException('Incorrect old password');
     }
 
-    const passwordHash = this.hashPassword(newPass);
+    const passwordHash = hashPassword(newPass);
     await this.prisma.user.update({
       where: { id: userId },
       data: { passwordHash },

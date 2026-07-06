@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Patch, Delete, Body, Query, Param, UseGuards } from '@nestjs/common';
 import { AdminService } from './admin.service';
 import { DataQualityService } from './data-quality.service';
+import { EODVideoWorkflowService } from '../whats-for-today/eod-video-workflow.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { AuthGuard } from '../auth/auth.guard';
 import { RoleGuard, Roles } from '../auth/role.guard';
@@ -12,6 +13,7 @@ export class AdminController {
   constructor(
     private readonly adminService: AdminService,
     private readonly dataQualityService: DataQualityService,
+    private readonly eodWorkflow: EODVideoWorkflowService,
   ) {}
 
   @Get('users')
@@ -27,6 +29,26 @@ export class AdminController {
   @Get('analytics')
   async getAnalytics() {
     return this.adminService.getAnalytics();
+  }
+
+  @Get('feedback')
+  async getFeedback() {
+    return this.adminService.getFeedback();
+  }
+
+  @Get('report-quality')
+  async getReportQuality() {
+    return this.adminService.getReportQuality();
+  }
+
+  @Post('trigger-trending')
+  async triggerTrendingAnalysis(@Body() body: { excludeSymbols?: string[] } = {}) {
+    return this.adminService.triggerTrendingAnalysis(body?.excludeSymbols || []);
+  }
+
+  @Post('trigger-eod-videos')
+  async triggerEODVideos() {
+    return this.eodWorkflow.runEODWorkflow();
   }
 
   // ── Data Quality Endpoints ─────────────────────────────────────
@@ -45,16 +67,6 @@ export class AdminController {
   @Get('data-quality/gaps')
   async getDataGaps() {
     return this.dataQualityService.getDataGapReport();
-  }
-
-  @Get('feedback')
-  async getFeedback() {
-    return this.adminService.getFeedback();
-  }
-
-  @Get('report-quality')
-  async getReportQuality() {
-    return this.adminService.getReportQuality();
   }
 
   @Patch('users/:id/status')

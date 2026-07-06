@@ -3,9 +3,9 @@ import { OrchestratorAgent, sanitizeSymbol } from '../../agents/orchestrator.age
 import { PrismaService } from '../../prisma/prisma.service';
 import { VideoJobService } from '../video/video-job.service';
 import axios from 'axios';
-import * as crypto from 'crypto';
 import { v4 as uuidv4 } from 'uuid';
 import { getNYDateString } from '../../utils/date';
+import { hashPassword } from '../../utils/crypto';
 
 // ── In-memory async job store ─────────────────────────────────────────────────
 export type JobStatus = 'queued' | 'running' | 'done' | 'error';
@@ -145,13 +145,10 @@ export class AnalysisService {
           where: { username: 'systemadmin' },
         });
         if (!systemAdmin) {
-          const salt = crypto.randomBytes(16).toString('hex');
-          const hash = crypto.scryptSync('systemadmin123', salt, 64).toString('hex');
-          const passwordHash = `${salt}:${hash}`;
           systemAdmin = await this.prisma.user.create({
             data: {
               username: 'systemadmin',
-              passwordHash,
+              passwordHash: hashPassword('systemadmin123'),
               role: 'SUPERUSER',
             },
           });
