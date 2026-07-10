@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Maintenance | Investing Atti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Reset & Variables */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --bg-dark: #090e1a;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-color: #0d9488; /* Teal */
+      --accent-glow: rgba(13, 148, 136, 0.15);
+      --card-bg: rgba(17, 24, 39, 0.65);
+      --card-border: rgba(255, 255, 255, 0.08);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Ambient Background Glows */
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(140px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .orb-1 {
+      width: 400px;
+      height: 400px;
+      background: rgba(13, 148, 136, 0.25);
+      top: -100px;
+      left: -100px;
+      animation: drift 15s ease-in-out infinite alternate;
+    }
+
+    .orb-2 {
+      width: 500px;
+      height: 500px;
+      background: rgba(59, 130, 246, 0.2);
+      bottom: -150px;
+      right: -100px;
+      animation: drift 20s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes drift {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(50px, 40px) scale(1.15); }
+    }
+
+    /* Main Container */
+    .container {
+      width: 100%;
+      max-width: 580px;
+      padding: 24px;
+      z-index: 10;
+      text-align: center;
+    }
+
+    /* Glassmorphic Maintenance Card */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 48px 32px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Top Logo Header */
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .brand img {
+      height: 36px;
+      width: auto;
+    }
+
+    .brand span {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 30%, #a5f3fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Maintenance Icon Illustration */
+    .illustration-wrapper {
+      margin-bottom: 28px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .pulse-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border: 2px solid var(--accent-color);
+      border-radius: 50%;
+      opacity: 0;
+      animation: pulse 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0% { width: 80px; height: 80px; opacity: 0.6; }
+      100% { width: 180px; height: 180px; opacity: 0; }
+    }
+
+    .icon-svg {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 0 12px var(--accent-color));
+    }
+
+    /* Typography */
+    h1 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      background: linear-gradient(to right, #ffffff, #e2e8f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Action Buttons & Links */
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      max-width: 280px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.4);
+    }
+
+    .btn-primary:hover {
+      background-color: #0f766e;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(13, 148, 136, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Footer Meta Info */
+    .footer {
+      margin-top: 36px;
+      font-size: 12px;
+      color: rgba(148, 163, 184, 0.5);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .support-link {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .support-link:hover {
+      color: #2dd4bf;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Orbs -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="card">
+      
+      <!-- Brand Logo -->
+      <div class="brand">
+        <!-- Render simple glowing financial icon representation -->
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 22V12L10 16L17 8L24 14V22H4Z" fill="url(#brandGrad)" fill-opacity="0.25"/>
+          <path d="M4 22V12L10 16L17 8L24 14" stroke="#0D9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="17" cy="8" r="3" fill="#2DD4BF"/>
+          <defs>
+            <linearGradient id="brandGrad" x1="14" y1="8" x2="14" y2="22" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0D9488"/>
+              <stop offset="1" stop-color="#0D9488" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Investing Atti</span>
+      </div>
+
+      <!-- Icon Animation -->
+      <div class="illustration-wrapper">
+        <div class="pulse-ring"></div>
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Outer Gear Ring -->
+          <circle cx="12" cy="12" r="3" stroke="#2dd4bf" stroke-width="2"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="#0D9488" stroke-width="1.8"></path>
+        </svg>
+      </div>
+
+      <!-- Main Messages -->
+      <h1>Upgrading the Engines</h1>
+      <p>Investing Atti is undergoing scheduled database and algorithmic maintenance to deliver faster AI stock insights. We'll be back online in a few minutes.</p>
+
+      <!-- Buttons -->
+      <div class="button-group">
+        <button onclick="window.location.reload();" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 1px;">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+          </svg>
+          Check if System is Back
+        </button>
+        <a href="https://status.investingatti.com" target="_blank" class="btn btn-secondary">
+          System Status Monitor
+        </a>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="footer">
+        Need urgent assistance? Contact <a href="mailto:support@investingatti.com" class="support-link">support@investingatti.com</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

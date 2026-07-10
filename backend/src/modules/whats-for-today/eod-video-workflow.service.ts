@@ -81,7 +81,7 @@ export class EODVideoWorkflowService {
 
   // ── Step 2: MARKET_RECAP long-form storytelling video ──────────────────────
 
-  private async fireMarketRecapVideo(today: string): Promise<boolean> {
+  async fireMarketRecapVideo(today: string): Promise<boolean> {
     try {
       const run4 = await this.prisma.dailyMarketReport.findUnique({
         where: { date_runNumber: { date: today, runNumber: 4 } },

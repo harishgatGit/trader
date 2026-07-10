@@ -1,0 +1,224 @@
+{
+  "ticker": "BAC",
+  "companyName": "BAC",
+  "reportDate": "Unavailable",
+  "currentPrice": 57.81,
+  "dayChangePct": -0.66,
+  "overallSignal": "WAIT",
+  "audioUrl": "BAC_Unavailable_audio.mp3",
+  "scenes": [
+    {
+      "sceneNumber": 1,
+      "sceneName": "Hook & The Big Question",
+      "durationSeconds": 27.56,
+      "narration": "Welcome to the Investing Atti decision map for BAC. The stock is sitting near a critical zone \u2014 should you chase this move, or is it safer to wait for confirmation? Currently priced at $57.81, BAC is in a strong upward trend, but it\u2019s approaching a resistance level at $58.2 and shows signs of being overbought. This raises important questions about timing and risk for any potential investor.",
+      "pandaAction": "point",
+      "speechBubbleText": "Should You Chase This Move or Wait?",
+      "visualElements": [
+        "BAC logo",
+        "price tag",
+        "upward trend arrow"
+      ],
+      "chartElements": [
+        "current price chart",
+        "resistance level line"
+      ],
+      "animationInstructions": [
+        "fade in logo",
+        "bounce price tag",
+        "slide in trend arrow"
+      ],
+      "dataFields": {
+        "catchyLine": "BAC: Should You Chase This Move or Wait?",
+        "decisionColor": "yellow"
+      }
+    },
+    {
+      "sceneNumber": 2,
+      "sceneName": "Can I Buy Now?",
+      "durationSeconds": 24.13,
+      "narration": "In this context, it appears we are in a Wait Zone. While the stock has shown remarkable strength, the current price is near a significant resistance level. Chasing here could carry some risk, especially with the RSI indicating overbought conditions. Therefore, it might be wise to hold off on any immediate action until further clarity emerges.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Wait Zone \u2014 confirmation needed",
+      "visualElements": [
+        "warning sign",
+        "resistance level marker"
+      ],
+      "chartElements": [
+        "RSI indicator",
+        "price action chart"
+      ],
+      "animationInstructions": [
+        "shake warning sign",
+        "highlight resistance level"
+      ],
+      "dataFields": {
+        "zoneLabel": "Wait Zone",
+        "decisionColor": "yellow"
+      }
+    },
+    {
+      "sceneNumber": 3,
+      "sceneName": "Better Entry Zone",
+      "durationSeconds": 23.64,
+      "narration": "For a safer entry, consider monitoring the price closely around the support level of $55.74. If BAC can maintain its position above this support and demonstrate volume confirmation, that may signal a more favorable entry point. However, if this level fails, the risk of further downside becomes a concern, and caution would be warranted.",
+      "pandaAction": "magnifying",
+      "speechBubbleText": "Watch Support at $55.74",
+      "visualElements": [
+        "support level line",
+        "volume indicator"
+      ],
+      "chartElements": [
+        "price chart with support level",
+        "volume trend"
+      ],
+      "animationInstructions": [
+        "zoom in on support level",
+        "pulse volume indicator"
+      ],
+      "dataFields": {
+        "entryZone": "$55.74",
+        "support": "$55.74",
+        "confirmationTrigger": "volume confirmation",
+        "decisionColor": "yellow"
+      }
+    },
+    {
+      "sceneNumber": 4,
+      "sceneName": "Can I Sell or Book Profit?",
+      "durationSeconds": 23.08,
+      "narration": "If you currently hold BAC, you might contemplate reducing risk or booking profits as the stock approaches the resistance level of $58.2. Should momentum begin to slow around this area, short-term traders may look for signs to lock in gains. Watching for weakness signals could also inform your decision on whether to trail stops.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Consider Booking Profits Near $58.2",
+      "visualElements": [
+        "profit booking icon",
+        "resistance level indicator"
+      ],
+      "chartElements": [
+        "price chart with resistance level",
+        "momentum indicators"
+      ],
+      "animationInstructions": [
+        "fade in profit icon",
+        "highlight resistance level"
+      ],
+      "dataFields": {
+        "resistance": "$58.2",
+        "targetZone": "$60.0 - $64.0",
+        "weaknessSignals": "momentum slowing",
+        "decisionColor": "yellow"
+      }
+    },
+    {
+      "sceneNumber": 5,
+      "sceneName": "Risk If Support Breaks",
+      "durationSeconds": 21.39,
+      "narration": "The downside risk escalates if the stock breaks below the $55.74 support level, particularly if accompanied by strong selling volume. Such a breakdown could indicate a higher probability of further declines, making it crucial to keep an eye on volume trends and overall market conditions for confirmation.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Risk Increases Below $55.74",
+      "visualElements": [
+        "downward arrow",
+        "support level marker"
+      ],
+      "chartElements": [
+        "support level chart",
+        "volume trend"
+      ],
+      "animationInstructions": [
+        "shake downward arrow",
+        "highlight support level"
+      ],
+      "dataFields": {
+        "supportBreakLevel": "$55.74",
+        "downsideArea": "below $55.74",
+        "riskWarning": "strong selling volume",
+        "decisionColor": "red"
+      }
+    },
+    {
+      "sceneNumber": 6,
+      "sceneName": "Downside Trigger",
+      "durationSeconds": 22.79,
+      "narration": "Looking ahead, the risk of a pullback increases if BAC fails to hold above support, especially if market sentiment weakens or selling pressure intensifies. In this scenario, a breakdown below the support could trigger a notable decline, with the next support area to watch being around the swing entry zone of $51.5 to $53.5.",
+      "pandaAction": "caution",
+      "speechBubbleText": "Watch for Breakdown Below Support",
+      "visualElements": [
+        "breakdown warning",
+        "next support level"
+      ],
+      "chartElements": [
+        "support level chart",
+        "market sentiment indicator"
+      ],
+      "animationInstructions": [
+        "fade in breakdown warning",
+        "highlight next support area"
+      ],
+      "dataFields": {
+        "breakdownTrigger": "below $55.74",
+        "weaknessSignal": "selling pressure intensifies",
+        "nextSupport": "$51.5 - $53.5",
+        "decisionColor": "red"
+      }
+    },
+    {
+      "sceneNumber": 7,
+      "sceneName": "Final Decision Map",
+      "durationSeconds": 33.41,
+      "narration": "In summary, the current view suggests waiting for confirmation before acting. The possible buy zone lies around the $55.74 support level, while the risk zone is below this level. If the price can push above the $58.2 resistance, that may indicate stronger momentum. Remember, it\u2019s essential to watch, confirm, and then decide. This is not a buy or sell call. Use this as research support, not financial advice. Visit investingatti.com for the full report.",
+      "pandaAction": "default",
+      "speechBubbleText": "Final Decision: Wait for Confirmation",
+      "visualElements": [
+        "decision map",
+        "buy zone indicator",
+        "risk zone indicator"
+      ],
+      "chartElements": [
+        "support and resistance levels",
+        "price action chart"
+      ],
+      "animationInstructions": [
+        "fade in decision map",
+        "highlight buy and risk zones"
+      ],
+      "dataFields": {
+        "currentView": "Wait for confirmation",
+        "possibleBuyZone": "$55.74",
+        "riskZone": "below $55.74",
+        "upsideWatch": "above $58.2",
+        "bestAction": "watch and confirm",
+        "quote": "This is not a buy or sell call.",
+        "disclaimer": "Use this as research support, not financial advice.",
+        "decisionColor": "yellow"
+      }
+    }
+  ],
+  "normalizedData": {
+    "ticker": "BAC",
+    "companyName": "BAC",
+    "reportDate": "Unavailable",
+    "currentPrice": 57.81,
+    "dayChangePct": -0.66,
+    "overallSignal": "WAIT",
+    "whyStockMoved": "analyst-driven",
+    "catalystSummary": "Analyst upgrades; Positive sector sentiment",
+    "volumeSummary": "Volume is stable, supporting the current trend.",
+    "trendSummary": "The stock of Bank of America (BAC) is in a bullish trend. Over the past several months, the price has been climbing, supported by positive technical indicators and favorable news. The price is above key moving averages, such as EMA(20) and EMA(50), indicating a strong upward momentum. The RSI(14) is above 70, suggesting the stock is overbought, but this is often seen in strong uptrends. The MACD is bullish, and the ADX indicates a strong trend. Recent positive news, including raised price targets from major financial institutions, has contributed to the bullish sentiment. However, the RSI(14) being overbought could suggest a potential pullback if momentum doesn't sustain.",
+    "supportLevels": [
+      55.74
+    ],
+    "resistanceLevels": [
+      58.2
+    ],
+    "entryZone": "Low: 51.5, High: 53.5",
+    "stopLoss": "Price: 54.5 (Stop-loss set below key support.)",
+    "targets": [
+      60.0,
+      64.0
+    ],
+    "shortTradeView": "SI%: 7.2%, Borrow Fee: 6.5%, Squeeze Risk: MEDIUM",
+    "riskWarnings": "Overbought RSI; Near resistance",
+    "finalVerdict": "The stock is currently in a bullish trend with strong technical indicators, but it is near overbought levels and close to resistance. Waiting for a pullback or breakout confirmation is advisable.",
+    "executiveSummary": "LAYMAN'S TAKEAWAY: The stock is currently in a strong upward trend, but it's approaching a resistance level and is considered overbought. It's advisable to wait for the price to stabilize or confirm a breakout before making a purchase. The recent positive news and analyst upgrades support the stock's potential, but caution is warranted due to the current technical setup. In the near term, the stock may face resistance, but the long-term outlook remains positive if the trend continues."
+  }
+}
