@@ -19,6 +19,8 @@ export class RiskSettingsService {
     requireStopLoss: boolean;
     blockDuplicateWindow: number;
     maxDailyOrders: number;
+    maxTotalCapitalDeployed: number;
+    maxConcurrentOpenPositions: number;
   }>) {
     const existing = await this.prisma.riskSetting.findFirst();
 
@@ -43,6 +45,14 @@ export class RiskSettingsService {
       blockDuplicateWindow: 24,
       paperTradingOnly: true,
       maxDailyOrders: 10,
+      kellyFractionCap: 0.25,
+      monteCarloMinTrades: 30,
+      graduationMinClosedTrades: 20,
+      graduationMinSharpe: 1.0,
+      graduationMinWinRatePct: 45,
+      graduationMinExpectancyR: 0,
+      maxTotalCapitalDeployed: 1000,
+      maxConcurrentOpenPositions: 6,
     };
   }
 }

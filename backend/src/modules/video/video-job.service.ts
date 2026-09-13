@@ -176,4 +176,44 @@ export class VideoJobService {
 
     this.logger.log(`Updated video job ${job.id} → ${payload.status}`);
   }
+
+  /**
+   * Callback from the Python video agent service's YouTube upload task
+   * (main.py's send_youtube_callback). Unlike updateJobCallback, this only
+   * ever carries jobId + youtube-specific fields, so the job is looked up
+   * by jobId alone.
+   */
+  async updateYoutubeUploadStatus(payload: {
+    jobId: string;
+    youtubeVideoId?: string;
+    youtubeUrl?: string;
+    youtubeTitle?: string;
+    youtubeDescription?: string;
+    youtubeUploadStatus: string;
+    youtubeUploadError?: string;
+  }): Promise<void> {
+    const job = await this.prisma.videoGenerationJob.findUnique({
+      where: { jobId: payload.jobId },
+    });
+
+    if (!job) {
+      this.logger.warn(`YouTube callback received for unknown jobId: ${payload.jobId}`);
+      return;
+    }
+
+    await this.prisma.videoGenerationJob.update({
+      where: { id: job.id },
+      data: {
+        youtubeVideoId: payload.youtubeVideoId || null,
+        youtubeUrl: payload.youtubeUrl || null,
+        youtubeTitle: payload.youtubeTitle || null,
+        youtubeDescription: payload.youtubeDescription || null,
+        youtubeUploadStatus: payload.youtubeUploadStatus,
+        youtubeUploadError: payload.youtubeUploadError || null,
+        youtubeUploadedAt: payload.youtubeUploadStatus === 'UPLOADED' ? new Date() : null,
+      },
+    });
+
+    this.logger.log(`Updated YouTube upload status for job ${job.id} (${job.ticker}) → ${payload.youtubeUploadStatus}`);
+  }
 }

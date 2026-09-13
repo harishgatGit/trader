@@ -57,6 +57,19 @@ class FFmpegService:
         if code != 0:
             raise Exception(f"FFmpeg loudnorm failed with code {code}: {stderr}")
 
+    def extract_first_frame(self, input_path: Path, output_path: Path):
+        """Extracts the very first frame of a video as a JPEG image (used as the YouTube thumbnail)."""
+        args = [
+            self.ffmpeg, "-y",
+            "-i", str(input_path),
+            "-vframes", "1",
+            "-q:v", "2",
+            str(output_path),
+        ]
+        stdout, stderr, code = self.run_cmd(args)
+        if code != 0:
+            raise Exception(f"FFmpeg first-frame extraction failed with code {code}: {stderr}")
+
     def probe_media(self, file_path: Path) -> Dict[str, Any]:
         """Runs ffprobe and returns the parsed metadata JSON"""
         args = [

@@ -20,6 +20,9 @@ import { AdminModule } from './modules/admin/admin.module';
 import { ClientLogsModule } from './modules/client-logs/client-logs.module';
 import { VideoModule } from './modules/video/video.module';
 import { WhatsForTodayModule } from './modules/whats-for-today/whats-for-today.module';
+import { DeepResearchModule } from './modules/deep-research/deep-research.module';
+import { SimulationModule } from './simulation/simulation.module';
+import { OptionRecommendationsModule } from './modules/option-recommendations/option-recommendations.module';
 
 @Module({
   imports: [
@@ -74,6 +77,7 @@ import { WhatsForTodayModule } from './modules/whats-for-today/whats-for-today.m
     AnalysisModule,
     StocksModule,
     WatchlistModule,
+    OptionRecommendationsModule,
     AlertsModule,
     ReportsModule,
     RiskSettingsModule,
@@ -83,6 +87,8 @@ import { WhatsForTodayModule } from './modules/whats-for-today/whats-for-today.m
     ClientLogsModule,
     VideoModule,
     WhatsForTodayModule,
+    DeepResearchModule,
+    SimulationModule,
   ],
 })
 export class AppModule {}

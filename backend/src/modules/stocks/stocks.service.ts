@@ -1,10 +1,31 @@
 import { Injectable, NotFoundException, OnApplicationBootstrap, Logger } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '../../prisma/prisma.service';
 import { MarketDataAgent } from '../../agents/market-data.agent';
 import { sanitizeSymbol } from '../../agents/orchestrator.agent';
 import { AlpacaService } from '../../services/alpaca.service';
+import OpenAI from 'openai';
+import { z } from 'zod';
 import * as fs from 'fs';
 import * as path from 'path';
+import { OpenAIRateLimiterService } from '../../agents/openai-rate-limiter.service';
+import { OPENAI_TOKEN_ESTIMATES } from '../../agents/openai-token-estimates';
+
+export interface SwingCandle {
+  time: number;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+}
+
+const SwingAIContextSchema = z.object({
+  trendBias: z.enum(['BULLISH', 'BEARISH', 'NEUTRAL']),
+  summary: z.string(),
+  keyObservation: z.string(),
+});
+export type SwingAIContext = z.infer<typeof SwingAIContextSchema>;
 
 export interface CachedAsset {
   symbol: string;
@@ -42,11 +63,19 @@ export class StocksService implements OnApplicationBootstrap {
     { symbol: 'AMD', name: 'Advanced Micro Devices, Inc.', exchange: 'NASDAQ' },
   ];
 
+  private readonly openai: OpenAI;
+  private readonly model: string;
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly marketDataAgent: MarketDataAgent,
     private readonly alpaca: AlpacaService,
-  ) {}
+    private readonly config: ConfigService,
+    private readonly rateLimiter: OpenAIRateLimiterService,
+  ) {
+    this.openai = new OpenAI({ apiKey: this.config.get('OPENAI_API_KEY') || 'mock-key-not-configured' });
+    this.model = this.config.get('OPENAI_MODEL', 'gpt-4o');
+  }
 
   // ─────────────────────────────────────────────────────────────────────────
   // TOP MOVERS — cached in-memory for 1 hour
@@ -156,6 +185,13 @@ export class StocksService implements OnApplicationBootstrap {
     } catch (err: any) {
       this.logger.warn(`Failed to save cache file: ${err.message}`);
     }
+  }
+
+  /** All known tradable ticker symbols, uppercased — used to validate candidate
+   * tickers extracted from free text (e.g. social-trending discovery) so a
+   * random capitalized word ("CEO", "USA") doesn't get treated as a real symbol. */
+  getSymbolSet(): Set<string> {
+    return new Set(this.assetsCache.map((a) => a.symbol.toUpperCase()));
   }
 
   async searchAssets(query: string): Promise<CachedAsset[]> {
@@ -282,5 +318,101 @@ export class StocksService implements OnApplicationBootstrap {
         vwap: c.vwap,
       })),
     };
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // SWING DASHBOARD — real 1H candles + live price from Alpaca (never
+  // web-scraped), with an optional short OpenAI read using that real data
+  // as context. AI failure is non-fatal — price/candles still return.
+  // ─────────────────────────────────────────────────────────────────────────
+
+  async getSwingData(rawSymbol: string): Promise<{
+    symbol: string;
+    currentPrice: number;
+    candles: SwingCandle[];
+    aiContext: SwingAIContext | null;
+  }> {
+    const symbol = sanitizeSymbol(rawSymbol);
+
+    // Alpaca requires an explicit `start` for intraday timeframes — 30 calendar
+    // days comfortably covers 100 hourly bars (~15 trading days) with margin
+    // for weekends/holidays, matching HistoricalDataAgent's 1Hour window.
+    //
+    // Alpaca's bars endpoint returns oldest-first starting at `start`, capped
+    // by `limit` — a 30-day window holds well over 100 trading hours, so a
+    // `limit: 100` request here silently truncates to the OLDEST 100 bars in
+    // the window (ending roughly a week ago), not the most recent ones. Ask
+    // for far more than can exist in the window, then take the newest 100.
+    const start = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
+
+    const [snapshot, rawBars] = await Promise.all([
+      this.alpaca.getSnapshot(symbol),
+      this.alpaca.getBars(symbol, '1Hour', 1000, start),
+    ]);
+    const bars = rawBars.slice(-100);
+
+    if (!bars || bars.length === 0) {
+      throw new NotFoundException(`No intraday price data available for ${symbol}.`);
+    }
+
+    const candles: SwingCandle[] = bars.map((b) => ({
+      time: new Date(b.t).getTime(),
+      open: b.o,
+      high: b.h,
+      low: b.l,
+      close: b.c,
+      volume: b.v,
+    }));
+
+    const currentPrice =
+      snapshot?.latestTrade?.p ?? snapshot?.minuteBar?.c ?? candles[candles.length - 1].close;
+
+    const aiContext = await this.getSwingAIContext(symbol, candles, currentPrice);
+
+    return { symbol, currentPrice, candles, aiContext };
+  }
+
+  private async getSwingAIContext(
+    symbol: string,
+    candles: SwingCandle[],
+    currentPrice: number,
+  ): Promise<SwingAIContext | null> {
+    try {
+      // Keep the prompt small — last 30 hourly bars is enough context for a
+      // short technical read without a heavyweight token spend.
+      const recent = candles.slice(-30);
+      const systemPrompt =
+        'You are a swing-trading technical analyst. Given recent 1-hour OHLCV candles for a US stock, ' +
+        'return a concise structured read based only on that data. Respond with JSON only.';
+      const userPrompt = [
+        `Symbol: ${symbol}`,
+        `Current price: $${currentPrice.toFixed(2)}`,
+        `Most recent ${recent.length} hourly candles (oldest to newest), each as [open,high,low,close,volume]:`,
+        JSON.stringify(recent.map((c) => [c.open, c.high, c.low, c.close, c.volume])),
+        '',
+        'Return JSON: { "trendBias": "BULLISH"|"BEARISH"|"NEUTRAL", "summary": "<=280 chars", "keyObservation": "<=160 chars" }',
+      ].join('\n');
+
+      await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.SWING_AI_CONTEXT);
+      const completion = await this.openai.chat.completions.create({
+        model: this.model,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt },
+        ],
+        response_format: { type: 'json_object' },
+        temperature: 0.3,
+        max_tokens: 400,
+      });
+
+      const raw = completion.choices[0]?.message?.content;
+      if (!raw) return null;
+
+      const result = SwingAIContextSchema.safeParse(JSON.parse(raw));
+      return result.success ? result.data : null;
+    } catch (err: any) {
+      this.logger.warn(`Swing AI context failed for ${symbol}: ${err.message}`);
+      return null;
+    }
   }
 }

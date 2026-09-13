@@ -55,6 +55,8 @@ const Settings: React.FC = () => {
         requireStopLoss: riskSettings.requireStopLoss,
         blockDuplicateWindow: riskSettings.blockDuplicateWindow,
         maxDailyOrders: riskSettings.maxDailyOrders,
+        maxTotalCapitalDeployed: riskSettings.maxTotalCapitalDeployed,
+        maxConcurrentOpenPositions: riskSettings.maxConcurrentOpenPositions,
       };
       await riskSettingsApi.update(payload);
       setSaved(true);
@@ -201,6 +203,30 @@ const Settings: React.FC = () => {
                   onChange={(e) => setRiskSettings({ ...riskSettings, maxDailyOrders: parseInt(e.target.value) })}
                 />
                 <span className="text-[10px] text-slate-500 block">Cap on daily executed orders</span>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="label">Trading Swarm Capital Pool ($)</label>
+                <input
+                  type="number"
+                  className="input font-mono w-full"
+                  min={10} max={1000000} step={10}
+                  value={riskSettings.maxTotalCapitalDeployed ?? 1000}
+                  onChange={(e) => setRiskSettings({ ...riskSettings, maxTotalCapitalDeployed: parseFloat(e.target.value) })}
+                />
+                <span className="text-[10px] text-slate-500 block">Total $ the sector-swarm agents may have deployed across all open positions at once — capital locked in an open trade isn't available for a new one until it closes and rotates back into the pool</span>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="label">Max Concurrent Open Positions</label>
+                <input
+                  type="number"
+                  className="input font-mono w-full"
+                  min={1} max={100}
+                  value={riskSettings.maxConcurrentOpenPositions ?? 6}
+                  onChange={(e) => setRiskSettings({ ...riskSettings, maxConcurrentOpenPositions: parseInt(e.target.value) })}
+                />
+                <span className="text-[10px] text-slate-500 block">Standing-exposure cap, independent of the daily order limit above — how many positions can be open at the same time</span>
               </div>
             </div>
 

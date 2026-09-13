@@ -21,7 +21,10 @@
     "prisma:migrate:deploy": "prisma migrate deploy",
     "prisma:studio": "prisma studio",
     "prisma:seed": "ts-node prisma/seed.ts",
-    "trigger:trending": "npx ts-node src/trigger-trending-analysis.ts"
+    "trigger:trending": "npx ts-node src/trigger-trending-analysis.ts",
+    "drop:daily": "npx ts-node -r tsconfig-paths/register src/daily-market-drop.ts",
+    "video:status": "npx ts-node -r tsconfig-paths/register src/check-video-status.ts",
+    "youtube:retry": "npx ts-node -r tsconfig-paths/register src/retry-failed-uploads.ts"
   },
   "dependencies": {
     "@nestjs/bull": "^10.1.1",

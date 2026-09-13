@@ -37,7 +37,7 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
 # YouTube configuration
 YOUTUBE_CLIENT_ID = os.getenv("YOUTUBE_CLIENT_ID", "")
 YOUTUBE_CLIENT_SECRET = os.getenv("YOUTUBE_CLIENT_SECRET", "")
-YOUTUBE_UPLOAD_VISIBILITY = os.getenv("YOUTUBE_UPLOAD_VISIBILITY", "private")
+YOUTUBE_UPLOAD_VISIBILITY = os.getenv("YOUTUBE_UPLOAD_VISIBILITY", "public")
 BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:3000")
 BASE_DIR = Path(__file__).resolve().parent
 

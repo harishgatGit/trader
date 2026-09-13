@@ -2,21 +2,20 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { PrismaService } from './prisma/prisma.service';
 import { getNYDateString } from './utils/date';
-import axios from 'axios';
+import { isYoutubeAuthorized, triggerYoutubeUpload } from './utils/youtube-upload.client';
 
 (BigInt.prototype as any).toJSON = function () {
   return Number(this);
 };
 
-const YOUTUBE_SERVICE_URL = 'http://localhost:8095';
-const YOUTUBE_API_KEY = 'investingatti-youtube-key-dev';
+const POLL_TIMEOUT_MS = Number(process.env.RETRY_POLL_TIMEOUT_MS || 45 * 60 * 1000);
 
 async function run() {
   console.log('Initializing NestJS application context...');
   const app = await NestFactory.createApplicationContext(AppModule);
   const prisma = app.get(PrismaService);
 
-  const todayStr = process.env.TARGET_DATE || '2026-07-02';
+  const todayStr = process.env.TARGET_DATE || getNYDateString();
   console.log(`Target date for retrying failed uploads: ${todayStr}`);
 
   // Fetch failed upload jobs for the target date
@@ -37,17 +36,9 @@ async function run() {
   }
 
   // Verify YouTube service auth
-  try {
-    const ls = await axios.get(`${YOUTUBE_SERVICE_URL}/login-status`, { timeout: 5000 });
-    if (!ls.data?.authorized) {
-      console.error(`❌ YouTube service is NOT authorized. Visit ${YOUTUBE_SERVICE_URL}/login to log in first.`);
-      await app.close();
-      return;
-    }
-    console.log('✅ YouTube service is authorized.');
-  } catch (e: any) {
-    console.error(`❌ Cannot reach YouTube service at ${YOUTUBE_SERVICE_URL}: ${e.message}`);
+  if (!(await isYoutubeAuthorized())) {
     await app.close();
+    process.exitCode = 1;
     return;
   }
 
@@ -65,28 +56,15 @@ async function run() {
       }
     });
 
-    const payload = {
-      jobId: `upload-${job.ticker}-${todayStr}-${Date.now()}`,
+    const queued = await triggerYoutubeUpload({
+      jobId: job.jobId,
       ticker: job.ticker,
-      reportDate: todayStr,
-      videoPath: job.finalVideoPath,
-      reportData: {},
-      visibility: 'public',
-    };
-
-    try {
-      const res = await axios.post(`${YOUTUBE_SERVICE_URL}/upload`, payload, {
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': YOUTUBE_API_KEY,
-        },
-        timeout: 15000,
-      });
-      console.log(`[Retry] ✅ Queued ${job.ticker}:`, res.data);
+      reportDate: job.reportDate,
+      videoPath: job.finalVideoPath!,
+    });
+    if (queued) {
       activeJobs.push(job.ticker);
       await new Promise(r => setTimeout(r, 3000)); // gap between triggers
-    } catch (err: any) {
-      console.error(`[Retry] ❌ Failed to queue ${job.ticker}:`, err.response?.data || err.message);
     }
   }
 
@@ -95,7 +73,18 @@ async function run() {
   const completed = new Set<string>();
   const failed = new Set<string>();
 
+  const deadline = Date.now() + POLL_TIMEOUT_MS;
+
   while (completed.size + failed.size < activeJobs.length) {
+    if (Date.now() > deadline) {
+      for (const ticker of activeJobs) {
+        if (!completed.has(ticker) && !failed.has(ticker)) {
+          console.error(`  [${ticker}] ⏱️ Timed out waiting for upload callback — giving up.`);
+          failed.add(ticker);
+        }
+      }
+      break;
+    }
     console.log(`\n[${new Date().toLocaleTimeString()}] Checking status...`);
     
     for (const ticker of activeJobs) {
@@ -128,6 +117,8 @@ async function run() {
   console.log(`Succeeded:`, Array.from(completed));
   console.log(`Failed:`, Array.from(failed));
   console.log(`========================================\n`);
+
+  if (failed.size) process.exitCode = 1;
 
   await app.close();
 }

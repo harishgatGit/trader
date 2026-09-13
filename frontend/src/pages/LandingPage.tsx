@@ -183,34 +183,34 @@ const LandingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden font-sans">
       <StructuredData data={orgSchema} />
       <StructuredData data={siteSchema} />
       <StructuredData data={appSchema} />
       <StructuredData data={faqSchema} />
 
       {/* ── Navbar ─────────────────────────────────────────────────────────── */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100' : 'bg-transparent'}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-950/90 backdrop-blur-md shadow-sm border-b border-slate-850' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <img src="/brand/icon_256.png" alt="InvestingAtti" className="w-9 h-9 object-contain" />
             <span className="text-xl font-bold tracking-tight">
-              <span className="text-slate-900">Investing</span>
-              <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Atti</span>
+              <span className="text-slate-100">Investing</span>
+              <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">Atti</span>
             </span>
           </div>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-            <a href="#features" className="hover:text-blue-600 transition-colors">Features</a>
-            <a href="#how-it-works" className="hover:text-blue-600 transition-colors">How It Works</a>
-            <a href="#video-reports" className="hover:text-blue-600 transition-colors">Video Reports</a>
-            <a href="#pricing" className="hover:text-blue-600 transition-colors">Pricing</a>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-450">
+            <a href="#features" className="hover:text-violet-400 transition-colors">Features</a>
+            <a href="#how-it-works" className="hover:text-violet-400 transition-colors">How It Works</a>
+            <a href="#video-reports" className="hover:text-violet-400 transition-colors">Video Reports</a>
+            <a href="#pricing" className="hover:text-violet-400 transition-colors">Pricing</a>
             <a
               href="https://www.youtube.com/@InvestingAtti"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-red-600 hover:text-red-700 font-semibold transition-colors"
+              className="flex items-center gap-1.5 text-red-500 hover:text-red-400 font-semibold transition-colors"
             >
               <YouTubeIcon className="w-4 h-4" />
               YouTube
@@ -218,66 +218,66 @@ const LandingPage: React.FC = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <Link to="/login" className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors px-4 py-2">
+            <Link to="/login" className="text-sm font-semibold text-slate-300 hover:text-violet-400 transition-colors px-4 py-2">
               Sign In
             </Link>
-            <Link to="/register" className="text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 px-5 py-2.5 rounded-xl transition-all shadow-md shadow-blue-500/20">
+            <Link to="/register" className="text-sm font-bold text-white bg-gradient-to-r from-violet-600 to-violet-500 hover:from-violet-700 hover:to-violet-600 px-5 py-2.5 rounded-xl transition-all shadow-md shadow-violet-500/20">
               Get Started Free
             </Link>
           </div>
 
           {/* Mobile hamburger */}
-          <button className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" onClick={() => setMobileMenuOpen(v => !v)}>
+          <button className="md:hidden p-2 rounded-lg text-slate-400 hover:bg-slate-850" onClick={() => setMobileMenuOpen(v => !v)}>
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-slate-100 px-6 py-4 flex flex-col gap-4">
-            <a href="#features" className="text-sm font-medium text-slate-600">Features</a>
-            <a href="#how-it-works" className="text-sm font-medium text-slate-600">How It Works</a>
-            <a href="#video-reports" className="text-sm font-medium text-slate-600">Video Reports</a>
+          <div className="md:hidden bg-slate-950 border-t border-slate-850 px-6 py-4 flex flex-col gap-4">
+            <a href="#features" className="text-sm font-medium text-slate-450">Features</a>
+            <a href="#how-it-works" className="text-sm font-medium text-slate-450">How It Works</a>
+            <a href="#video-reports" className="text-sm font-medium text-slate-450">Video Reports</a>
             <a
               href="https://www.youtube.com/@InvestingAtti"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold text-red-600 flex items-center gap-2"
+              className="text-sm font-semibold text-red-500 flex items-center gap-2"
             >
               <YouTubeIcon className="w-4 h-4" />
               Watch on YouTube
             </a>
-            <div className="flex flex-col gap-2 pt-2 border-t border-slate-100">
-              <Link to="/login" className="text-sm font-semibold text-center py-2.5 border border-slate-200 rounded-xl">Sign In</Link>
-              <Link to="/register" className="text-sm font-bold text-center text-white bg-gradient-to-r from-blue-600 to-blue-500 py-2.5 rounded-xl">Get Started Free</Link>
+            <div className="flex flex-col gap-2 pt-2 border-t border-slate-850">
+              <Link to="/login" className="text-sm font-semibold text-center py-2.5 border border-slate-800 rounded-xl">Sign In</Link>
+              <Link to="/register" className="text-sm font-bold text-center text-white bg-gradient-to-r from-violet-600 to-violet-500 py-2.5 rounded-xl">Get Started Free</Link>
             </div>
           </div>
         )}
       </header>
 
       {/* ── HERO SECTION ────────────────────────────────────────────────────── */}
-      <section className="relative pt-24 pb-8 min-h-screen flex items-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #f0f9ff 40%, #ecfeff 100%)' }}>
+      <section className="relative pt-24 pb-8 min-h-screen flex items-center overflow-hidden bg-slate-950">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-300/5 rounded-full blur-3xl" />
+          <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-violet-500/15 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-violet-500/8 rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left content */}
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold px-4 py-2 rounded-full mb-6 shadow-sm">
+              <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-bold px-4 py-2 rounded-full mb-6 shadow-sm">
                 <Zap className="w-3.5 h-3.5" />
                 AI-Powered Stock Research Platform
               </div>
-              <h1 className="text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-900 mb-4">
+              <h1 className="text-5xl lg:text-6xl font-black leading-tight tracking-tight text-slate-100 mb-4">
                 AI Stock Research<br />
-                <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">Made Simple.</span>
+                <span className="bg-gradient-to-r from-violet-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">Made Simple.</span>
               </h1>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-lg">
-                InvestingAtti explains the <strong className="text-slate-800">U.S. stock market</strong> in simple language so beginner and intermediate investors can invest with <strong className="text-blue-600">clarity</strong> and <strong className="text-blue-600">confidence</strong>.
+              <p className="text-lg text-slate-400 leading-relaxed mb-8 max-w-lg">
+                InvestingAtti explains the <strong className="text-slate-200">U.S. stock market</strong> in simple language so beginner and intermediate investors can invest with <strong className="text-violet-400">clarity</strong> and <strong className="text-violet-400">confidence</strong>.
               </p>
 
               {/* Feature pills */}
@@ -287,12 +287,12 @@ const LandingPage: React.FC = () => {
                   { icon: Eye, text: 'Easy to Understand', sub: 'Simple language, clear actions' },
                   { icon: Shield, text: 'Built for Investors', sub: 'Beginner-friendly, always' },
                 ].map(({ icon: Icon, text, sub }) => (
-                  <div key={text} className="flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-slate-100 rounded-2xl px-4 py-3 shadow-sm w-fit">
-                    <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-                      <Icon className="w-4.5 h-4.5 text-blue-600" style={{ width: 18, height: 18 }} />
+                  <div key={text} className="flex items-center gap-3 bg-slate-900/70 backdrop-blur-sm border border-slate-850 rounded-2xl px-4 py-3 shadow-sm w-fit">
+                    <div className="w-9 h-9 rounded-xl bg-violet-500/15 flex items-center justify-center shrink-0">
+                      <Icon className="w-4.5 h-4.5 text-violet-400" style={{ width: 18, height: 18 }} />
                     </div>
                     <div>
-                      <p className="text-sm font-bold text-slate-800">{text}</p>
+                      <p className="text-sm font-bold text-slate-200">{text}</p>
                       <p className="text-xs text-slate-500">{sub}</p>
                     </div>
                   </div>
@@ -301,18 +301,18 @@ const LandingPage: React.FC = () => {
 
               <div className="flex flex-wrap gap-4 items-center">
                 <Link to="/register"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold px-7 py-3.5 rounded-2xl shadow-lg shadow-blue-500/30 transition-all hover:scale-105 text-sm">
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-violet-500 hover:from-violet-700 hover:to-violet-600 text-white font-bold px-7 py-3.5 rounded-2xl shadow-lg shadow-violet-500/30 transition-all hover:scale-105 text-sm">
                   Get Started Free
                   <ChevronRight className="w-4 h-4" />
                 </Link>
                 <Link to="/login"
-                  className="inline-flex items-center gap-2 text-slate-700 font-semibold hover:text-blue-600 transition-colors text-sm">
+                  className="inline-flex items-center gap-2 text-slate-300 font-semibold hover:text-violet-400 transition-colors text-sm">
                   Sign In
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
 
-              <p className="mt-4 text-xs text-slate-400 flex items-center gap-1.5">
+              <p className="mt-4 text-xs text-slate-500 flex items-center gap-1.5">
                 <CheckCircle className="w-3.5 h-3.5 text-emerald-500" />
                 Research. Learn to Grow. — Free to get started, no credit card required.
               </p>
@@ -322,16 +322,16 @@ const LandingPage: React.FC = () => {
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative w-full max-w-lg">
                 {/* Main app mockup card */}
-                <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden">
+                <div className="bg-slate-900 rounded-3xl shadow-2xl border border-slate-800 overflow-hidden">
                   {/* App header */}
-                  <div className="bg-slate-900 px-4 py-3 flex items-center gap-2">
+                  <div className="bg-slate-950 px-4 py-3 flex items-center gap-2">
                     <div className="flex gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
                       <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
                       <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
                     </div>
                     <div className="flex-1 flex items-center justify-center">
-                      <div className="bg-slate-700 rounded-md px-3 py-1 text-[10px] text-slate-400 flex items-center gap-1.5">
+                      <div className="bg-slate-800 rounded-md px-3 py-1 text-[10px] text-slate-400 flex items-center gap-1.5">
                         <img src="/brand/icon_256.png" alt="" className="w-3 h-3" />
                         InvestingAtti
                       </div>
@@ -343,14 +343,14 @@ const LandingPage: React.FC = () => {
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <p className="text-xs text-slate-500 font-medium">AAPL · Apple Inc. · NASDAQ</p>
-                        <p className="text-3xl font-black text-slate-900 mt-0.5">$193.42</p>
-                        <p className="text-sm font-bold text-emerald-600 flex items-center gap-1">
+                        <p className="text-3xl font-black text-slate-100 mt-0.5">$193.42</p>
+                        <p className="text-sm font-bold text-emerald-400 flex items-center gap-1">
                           <TrendingUp className="w-3.5 h-3.5" />
                           +2.31 (+1.21%) Today
                         </p>
                       </div>
                       <div className="text-right">
-                        <div className="inline-flex items-center gap-1.5 bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-xl">
+                        <div className="inline-flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-bold px-3 py-1.5 rounded-xl">
                           <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                           Bullish Trend
                         </div>
@@ -358,16 +358,16 @@ const LandingPage: React.FC = () => {
                     </div>
 
                     {/* Chart */}
-                    <div className="h-28 bg-slate-50 rounded-2xl p-2 mb-4 overflow-hidden">
+                    <div className="h-28 bg-slate-950/60 rounded-2xl p-2 mb-4 overflow-hidden">
                       <StockChartSVG />
                     </div>
 
                     {/* Key levels grid */}
                     <div className="grid grid-cols-3 gap-2 mb-4">
                       {[
-                        { label: 'Entry Zone', value: '$192.50–$194.50', color: 'text-emerald-600', bg: 'bg-emerald-50' },
-                        { label: 'Exit Target', value: '$198.50–$203', color: 'text-blue-600', bg: 'bg-blue-50' },
-                        { label: 'Stop-Loss', value: '$189.00', color: 'text-red-500', bg: 'bg-red-50' },
+                        { label: 'Entry Zone', value: '$192.50–$194.50', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
+                        { label: 'Exit Target', value: '$198.50–$203', color: 'text-violet-400', bg: 'bg-violet-500/10' },
+                        { label: 'Stop-Loss', value: '$189.00', color: 'text-red-400', bg: 'bg-red-500/10' },
                       ].map(({ label, value, color, bg }) => (
                         <div key={label} className={`${bg} rounded-xl p-2.5 text-center`}>
                           <p className="text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-1">{label}</p>
@@ -377,15 +377,15 @@ const LandingPage: React.FC = () => {
                     </div>
 
                     {/* AI Summary */}
-                    <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-100 rounded-2xl p-3">
+                    <div className="bg-gradient-to-r from-violet-500/10 to-cyan-500/10 border border-violet-500/20 rounded-2xl p-3">
                       <div className="flex items-center gap-1.5 mb-1.5">
-                        <div className="w-4 h-4 rounded bg-blue-600 flex items-center justify-center">
+                        <div className="w-4 h-4 rounded bg-violet-500 flex items-center justify-center">
                           <Brain className="w-2.5 h-2.5 text-white" />
                         </div>
-                        <span className="text-[10px] font-bold text-blue-700">AI Summary</span>
+                        <span className="text-[10px] font-bold text-violet-300">AI Summary</span>
                       </div>
-                      <p className="text-[11px] text-slate-600 leading-relaxed">
-                        AAPL shows <strong>strong bullish momentum</strong> with breakout above $192.50. Upside potential toward $198.50–$203.00 with a favorable risk-reward setup.
+                      <p className="text-[11px] text-slate-400 leading-relaxed">
+                        AAPL shows <strong className="text-slate-300">strong bullish momentum</strong> with breakout above $192.50. Upside potential toward $198.50–$203.00 with a favorable risk-reward setup.
                       </p>
                     </div>
 
@@ -398,25 +398,25 @@ const LandingPage: React.FC = () => {
                             <div className="w-2 h-2 rounded-full bg-white border-2 border-slate-400 -mt-0.5" />
                           </div>
                         </div>
-                        <div className="flex justify-between text-[9px] text-slate-400 mt-0.5 w-48">
+                        <div className="flex justify-between text-[9px] text-slate-500 mt-0.5 w-48">
                           <span>Low Risk</span><span>Moderate</span><span>High Risk</span>
                         </div>
                       </div>
                       <div className="text-center">
-                        <div className="w-14 h-14 rounded-full border-4 border-emerald-400 flex items-center justify-center bg-emerald-50">
+                        <div className="w-14 h-14 rounded-full border-4 border-emerald-400 flex items-center justify-center bg-emerald-500/10">
                           <div className="text-center">
-                            <p className="text-base font-black text-emerald-600 leading-none">72%</p>
+                            <p className="text-base font-black text-emerald-400 leading-none">72%</p>
                             <p className="text-[8px] font-bold text-emerald-500">Good</p>
                           </div>
                         </div>
-                        <p className="text-[9px] text-slate-400 mt-0.5">Confidence</p>
+                        <p className="text-[9px] text-slate-500 mt-0.5">Confidence</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Floating badge */}
-                <div className="absolute -top-3 -right-3 bg-gradient-to-br from-blue-600 to-cyan-500 text-white text-xs font-black px-3 py-1.5 rounded-xl shadow-lg rotate-3">
+                <div className="absolute -top-3 -right-3 bg-gradient-to-br from-violet-600 to-cyan-500 text-white text-xs font-black px-3 py-1.5 rounded-xl shadow-lg rotate-3">
                   AI-Powered ✨
                 </div>
               </div>
@@ -445,20 +445,20 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* ── Problem Section ──────────────────────────────────────────────────── */}
-      <section id="how-it-works" className="py-24" style={{ background: 'linear-gradient(180deg, #f8fafc 0%, #eff6ff 100%)' }}>
+      <section id="how-it-works" className="py-24 bg-slate-950">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left — problem */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-red-50 border border-red-100 text-red-600 text-xs font-bold px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-aurora-500/10 border border-aurora-500/20 text-aurora-400 text-xs font-bold px-4 py-2 rounded-full mb-6">
                 The Problem
               </div>
-              <h2 className="text-4xl lg:text-5xl font-black leading-tight text-slate-900 mb-4">
+              <h2 className="text-4xl lg:text-5xl font-black leading-tight text-slate-100 mb-4">
                 Too Much Noise.<br />
-                <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Not Enough Clarity.</span>
+                <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">Not Enough Clarity.</span>
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                New investors are overwhelmed by complex charts, confusing terms, and scattered information. <strong className="text-blue-600">Where to enter? When to exit? What's next?</strong>
+              <p className="text-slate-400 text-lg leading-relaxed mb-8">
+                New investors are overwhelmed by complex charts, confusing terms, and scattered information. <strong className="text-violet-400">Where to enter? When to exit? What's next?</strong>
               </p>
               {/* Noise grid */}
               <div className="grid grid-cols-2 gap-3">
@@ -468,12 +468,12 @@ const LandingPage: React.FC = () => {
                   { label: 'Confusing Terms', icon: '❓', items: ['Bull Trap', 'Head & Shoulders', 'Support', 'Resistance', 'Breakout'] },
                   { label: 'Too Many Opinions', icon: '💬', items: ['Buy AAPL at $200?', 'Wait for $190...', 'Dead cat bounce!'] },
                 ].map(({ label, icon, items }) => (
-                  <div key={label} className="bg-white border border-slate-200 rounded-2xl p-4 relative overflow-hidden">
-                    <div className="absolute top-2 right-2 text-slate-200 text-2xl font-black">?</div>
-                    <p className="text-xs font-bold text-slate-700 mb-2 flex items-center gap-1.5">{icon} {label}</p>
+                  <div key={label} className="bg-slate-900 border border-slate-800 rounded-2xl p-4 relative overflow-hidden">
+                    <div className="absolute top-2 right-2 text-slate-800 text-2xl font-black">?</div>
+                    <p className="text-xs font-bold text-slate-300 mb-2 flex items-center gap-1.5">{icon} {label}</p>
                     <div className="flex flex-wrap gap-1">
                       {items.map(item => (
-                        <span key={item} className="text-[9px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded font-medium">{item}</span>
+                        <span key={item} className="text-[9px] bg-slate-850 text-slate-450 px-1.5 py-0.5 rounded font-medium">{item}</span>
                       ))}
                     </div>
                   </div>
@@ -483,68 +483,68 @@ const LandingPage: React.FC = () => {
 
             {/* Right — solution */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-bold px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold px-4 py-2 rounded-full mb-6">
                 The InvestingAtti Solution ✓
               </div>
-              <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+              <div className="bg-slate-900 rounded-3xl shadow-xl border border-slate-800 overflow-hidden">
                 {/* Card header */}
-                <div className="bg-gradient-to-r from-blue-600 to-cyan-500 p-4">
+                <div className="bg-gradient-to-r from-violet-600 to-cyan-500 p-4">
                   <div className="flex items-center justify-between mb-1">
                     <p className="text-white font-bold text-sm">Today's U.S. Stock Market Report</p>
                     <span className="bg-white/20 text-white text-[9px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
                       <CheckCircle className="w-2.5 h-2.5" /> Updated Today
                     </span>
                   </div>
-                  <p className="text-blue-100 text-xs">Apple Inc. (AAPL) – NASDAQ · Clear insights. Simple actions. Confident decisions.</p>
+                  <p className="text-violet-100 text-xs">Apple Inc. (AAPL) – NASDAQ · Clear insights. Simple actions. Confident decisions.</p>
                 </div>
                 <div className="p-5 space-y-4">
                   {/* Market outlook row */}
                   <div className="grid grid-cols-3 gap-3">
-                    <div className="bg-slate-50 rounded-xl p-3">
-                      <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Market Outlook</p>
-                      <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full">● Bullish</span>
+                    <div className="bg-slate-950/60 rounded-xl p-3">
+                      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Market Outlook</p>
+                      <span className="inline-flex items-center gap-1 bg-emerald-500/15 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded-full">● Bullish</span>
                       <p className="text-[9px] text-slate-500 mt-1.5">Momentum positive across U.S. equities.</p>
                     </div>
-                    <div className="bg-slate-50 rounded-xl p-3">
-                      <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Key Levels</p>
-                      <p className="text-[9px] text-slate-600"><span className="text-red-500 font-bold">Resist.</span> $198.50–$203</p>
-                      <p className="text-[9px] text-slate-600"><span className="text-blue-600 font-bold">Entry</span> $192.50–$194.50</p>
-                      <p className="text-[9px] text-slate-600"><span className="text-emerald-600 font-bold">Support</span> $189–$190.60</p>
+                    <div className="bg-slate-950/60 rounded-xl p-3">
+                      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Key Levels</p>
+                      <p className="text-[9px] text-slate-400"><span className="text-red-400 font-bold">Resist.</span> $198.50–$203</p>
+                      <p className="text-[9px] text-slate-400"><span className="text-violet-400 font-bold">Entry</span> $192.50–$194.50</p>
+                      <p className="text-[9px] text-slate-400"><span className="text-emerald-400 font-bold">Support</span> $189–$190.60</p>
                     </div>
-                    <div className="bg-slate-50 rounded-xl p-3 text-center">
-                      <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-2">Confidence</p>
-                      <div className="w-10 h-10 mx-auto rounded-full border-3 border-emerald-400 bg-emerald-50 flex items-center justify-center" style={{ borderWidth: 3 }}>
-                        <p className="text-xs font-black text-emerald-600">72%</p>
+                    <div className="bg-slate-950/60 rounded-xl p-3 text-center">
+                      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-wider mb-2">Confidence</p>
+                      <div className="w-10 h-10 mx-auto rounded-full border-3 border-emerald-400 bg-emerald-500/10 flex items-center justify-center" style={{ borderWidth: 3 }}>
+                        <p className="text-xs font-black text-emerald-400">72%</p>
                       </div>
-                      <p className="text-[9px] text-emerald-600 font-bold mt-1">High</p>
+                      <p className="text-[9px] text-emerald-400 font-bold mt-1">High</p>
                     </div>
                   </div>
                   {/* What to do */}
                   <div>
-                    <p className="text-xs font-bold text-slate-700 mb-2">What to Do</p>
+                    <p className="text-xs font-bold text-slate-300 mb-2">What to Do</p>
                     <div className="grid grid-cols-3 gap-2">
-                      <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-2.5">
-                        <div className="flex items-center gap-1 mb-1"><TrendingUp className="w-3 h-3 text-emerald-600" /><span className="text-[9px] font-bold text-emerald-700">Entry Zone</span></div>
-                        <p className="text-[10px] font-black text-emerald-700">$192.50–$194.50</p>
+                      <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-2.5">
+                        <div className="flex items-center gap-1 mb-1"><TrendingUp className="w-3 h-3 text-emerald-400" /><span className="text-[9px] font-bold text-emerald-400">Entry Zone</span></div>
+                        <p className="text-[10px] font-black text-emerald-400">$192.50–$194.50</p>
                         <p className="text-[8px] text-slate-500 mt-0.5">Consider buying in this range.</p>
                       </div>
-                      <div className="bg-blue-50 border border-blue-100 rounded-xl p-2.5">
-                        <div className="flex items-center gap-1 mb-1"><Target className="w-3 h-3 text-blue-600" /><span className="text-[9px] font-bold text-blue-700">Target</span></div>
-                        <p className="text-[10px] font-black text-blue-700">$198.50–$203.00</p>
+                      <div className="bg-violet-500/10 border border-violet-500/20 rounded-xl p-2.5">
+                        <div className="flex items-center gap-1 mb-1"><Target className="w-3 h-3 text-violet-400" /><span className="text-[9px] font-bold text-violet-400">Target</span></div>
+                        <p className="text-[10px] font-black text-violet-400">$198.50–$203.00</p>
                         <p className="text-[8px] text-slate-500 mt-0.5">Potential upside based on analysis.</p>
                       </div>
-                      <div className="bg-red-50 border border-red-100 rounded-xl p-2.5">
-                        <div className="flex items-center gap-1 mb-1"><Shield className="w-3 h-3 text-red-500" /><span className="text-[9px] font-bold text-red-600">Stop Loss</span></div>
-                        <p className="text-[10px] font-black text-red-600">$187.30</p>
+                      <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-2.5">
+                        <div className="flex items-center gap-1 mb-1"><Shield className="w-3 h-3 text-red-400" /><span className="text-[9px] font-bold text-red-400">Stop Loss</span></div>
+                        <p className="text-[10px] font-black text-red-400">$187.30</p>
                         <p className="text-[8px] text-slate-500 mt-0.5">Manage risk and protect capital.</p>
                       </div>
                     </div>
                   </div>
                   {/* Why it matters */}
                   <div>
-                    <p className="text-xs font-bold text-slate-700 mb-2">Why This Matters</p>
+                    <p className="text-xs font-bold text-slate-300 mb-2">Why This Matters</p>
                     {['Strong earnings momentum', 'Favorable risk-reward setup', 'Key levels aligned with structure'].map(item => (
-                      <div key={item} className="flex items-center gap-2 text-[11px] text-slate-600 py-0.5">
+                      <div key={item} className="flex items-center gap-2 text-[11px] text-slate-400 py-0.5">
                         <CheckCircle className="w-3 h-3 text-emerald-500 shrink-0" />
                         {item}
                       </div>
@@ -558,20 +558,20 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* ── Bottom feature strip for problem section ────────────────────────── */}
-      <div className="bg-white border-y border-slate-100 py-6">
+      <div className="bg-slate-900 border-y border-slate-850 py-6">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { icon: Target, label: 'Clear Entry & Exit', sub: 'Know exactly what to do.', color: 'text-blue-600', bg: 'bg-blue-50' },
-            { icon: BarChart2, label: 'Simplified Insights', sub: 'No jargon. Just clarity.', color: 'text-purple-600', bg: 'bg-purple-50' },
-            { icon: Brain, label: 'AI-Powered Analysis', sub: 'Data-driven. Bias-free.', color: 'text-cyan-600', bg: 'bg-cyan-50' },
-            { icon: Users, label: 'Built for New Investors', sub: 'Learn. Grow. Succeed.', color: 'text-emerald-600', bg: 'bg-emerald-50' },
+            { icon: Target, label: 'Clear Entry & Exit', sub: 'Know exactly what to do.', color: 'text-violet-400', bg: 'bg-violet-500/10' },
+            { icon: BarChart2, label: 'Simplified Insights', sub: 'No jargon. Just clarity.', color: 'text-purple-400', bg: 'bg-purple-500/10' },
+            { icon: Brain, label: 'AI-Powered Analysis', sub: 'Data-driven. Bias-free.', color: 'text-cyan-400', bg: 'bg-cyan-500/10' },
+            { icon: Users, label: 'Built for New Investors', sub: 'Learn. Grow. Succeed.', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
           ].map(({ icon: Icon, label, sub, color, bg }) => (
             <div key={label} className="flex items-center gap-3">
               <div className={`w-10 h-10 rounded-xl ${bg} flex items-center justify-center shrink-0`}>
                 <Icon className={`w-5 h-5 ${color}`} />
               </div>
               <div>
-                <p className="text-sm font-bold text-slate-800">{label}</p>
+                <p className="text-sm font-bold text-slate-200">{label}</p>
                 <p className="text-xs text-slate-500">{sub}</p>
               </div>
             </div>
@@ -580,36 +580,36 @@ const LandingPage: React.FC = () => {
       </div>
 
       {/* ── VIDEO REPORTS SECTION ────────────────────────────────────────────── */}
-      <section id="video-reports" className="py-24" style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #f0f9ff 50%, #ecfeff 100%)' }}>
+      <section id="video-reports" className="py-24 bg-slate-950">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left content */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 text-blue-700 text-xs font-bold px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-violet-500/15 border border-violet-500/25 text-violet-300 text-xs font-bold px-4 py-2 rounded-full mb-6">
                 <Video className="w-3.5 h-3.5" />
                 AI Video Reports
               </div>
-              <h2 className="text-4xl lg:text-5xl font-black leading-tight text-slate-900 mb-4">
+              <h2 className="text-4xl lg:text-5xl font-black leading-tight text-slate-100 mb-4">
                 AI Video Reports<br />
-                <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">That Explain the Story.</span>
+                <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">That Explain the Story.</span>
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-10">
+              <p className="text-slate-400 text-lg leading-relaxed mb-10">
                 Get AI-powered stock video reports that break down market moves, trends, and insights in simple visual stories.
               </p>
 
               <div className="space-y-4">
                 {[
                   { icon: Volume2, label: 'AI Narrated Insights', color: 'bg-purple-500', desc: 'Every report is narrated in plain English' },
-                  { icon: TrendingUp, label: 'Trend Analysis', color: 'bg-blue-500', desc: 'Automated technical pattern recognition' },
+                  { icon: TrendingUp, label: 'Trend Analysis', color: 'bg-violet-500', desc: 'Automated technical pattern recognition' },
                   { icon: Eye, label: 'Clear Visuals', color: 'bg-amber-500', desc: 'Charts, annotations, and key levels highlighted' },
                   { icon: Target, label: 'Actionable Takeaways', color: 'bg-cyan-500', desc: 'Know exactly what to watch and when to act' },
                 ].map(({ icon: Icon, label, color, desc }) => (
-                  <div key={label} className="flex items-center gap-4 bg-white border border-slate-100 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md transition-shadow">
+                  <div key={label} className="flex items-center gap-4 bg-slate-900 border border-slate-850 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md transition-shadow">
                     <div className={`w-10 h-10 rounded-xl ${color} flex items-center justify-center shrink-0`}>
                       <Icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <p className="font-bold text-slate-800 text-sm">{label}</p>
+                      <p className="font-bold text-slate-200 text-sm">{label}</p>
                       <p className="text-xs text-slate-500 mt-0.5">{desc}</p>
                     </div>
                     <CheckCircle className="w-4 h-4 text-emerald-500 ml-auto shrink-0" />
@@ -620,17 +620,17 @@ const LandingPage: React.FC = () => {
 
             {/* Right — Video report mockup */}
             <div className="relative">
-              <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden">
+              <div className="bg-slate-900 rounded-3xl shadow-2xl border border-slate-800 overflow-hidden">
                 {/* Video report header */}
-                <div className="bg-slate-50 border-b border-slate-100 px-5 py-3 flex items-center justify-between">
-                  <div className="inline-flex items-center gap-2 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg">
+                <div className="bg-slate-950/60 border-b border-slate-850 px-5 py-3 flex items-center justify-between">
+                  <div className="inline-flex items-center gap-2 bg-violet-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg">
                     <Zap className="w-3 h-3" />
                     AI VIDEO REPORT
                   </div>
                   <div className="flex items-center gap-1.5 text-xs text-slate-500">
                     Powered by
                     <img src="/brand/icon_256.png" alt="" className="w-4 h-4" />
-                    <span className="font-bold text-slate-700">InvestingAtti AI</span>
+                    <span className="font-bold text-slate-300">InvestingAtti AI</span>
                   </div>
                 </div>
 
@@ -638,17 +638,17 @@ const LandingPage: React.FC = () => {
                   {/* Stock info */}
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <p className="text-lg font-black text-slate-900">AAPL MARKET UPDATE</p>
-                      <p className="text-emerald-600 font-bold text-sm flex items-center gap-1">
+                      <p className="text-lg font-black text-slate-100">AAPL MARKET UPDATE</p>
+                      <p className="text-emerald-400 font-bold text-sm flex items-center gap-1">
                         <TrendingUp className="w-3.5 h-3.5" />
                         1.30% ($2.49)
                       </p>
                     </div>
                     <div className="text-right space-y-1">
-                      <div className="flex justify-end"><span className="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-lg">Bullish Trend</span></div>
-                      {[['PRICE', '$193.42', 'text-slate-700'], ['CHANGE', '+1.30%', 'text-emerald-600'], ['VOLUME', '78.4M', 'text-slate-700'], ['TREND', 'Bullish', 'text-emerald-600']].map(([k, v, c]) => (
+                      <div className="flex justify-end"><span className="bg-emerald-500/15 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded-lg">Bullish Trend</span></div>
+                      {[['PRICE', '$193.42', 'text-slate-300'], ['CHANGE', '+1.30%', 'text-emerald-400'], ['VOLUME', '78.4M', 'text-slate-300'], ['TREND', 'Bullish', 'text-emerald-400']].map(([k, v, c]) => (
                         <div key={k} className="text-right">
-                          <p className="text-[8px] font-bold text-slate-400 uppercase">{k}</p>
+                          <p className="text-[8px] font-bold text-slate-500 uppercase">{k}</p>
                           <p className={`text-xs font-black ${c}`}>{v}</p>
                         </div>
                       ))}
@@ -656,40 +656,40 @@ const LandingPage: React.FC = () => {
                   </div>
 
                   {/* Chart */}
-                  <div className="h-32 bg-slate-50 rounded-2xl p-2 mb-4 overflow-hidden">
+                  <div className="h-32 bg-slate-950/60 rounded-2xl p-2 mb-4 overflow-hidden">
                     <StockChartSVG />
                     {/* X-axis labels */}
-                    <div className="flex justify-between text-[9px] text-slate-400 px-1 mt-1">
+                    <div className="flex justify-between text-[9px] text-slate-500 px-1 mt-1">
                       {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'].map(m => <span key={m}>{m}</span>)}
                     </div>
                   </div>
 
                   {/* AI Narration */}
-                  <div className="bg-slate-50 rounded-2xl p-4 mb-4">
+                  <div className="bg-slate-950/60 rounded-2xl p-4 mb-4">
                     <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">AI NARRATION</p>
                     {/* Waveform */}
                     <div className="flex items-center gap-1 mb-3">
-                      <div className="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
+                      <div className="w-7 h-7 rounded-full bg-violet-600 flex items-center justify-center shrink-0">
                         <Play className="w-3.5 h-3.5 text-white ml-0.5" fill="white" />
                       </div>
                       <div className="flex-1 flex items-center gap-0.5 h-6">
                         {Array.from({ length: 40 }).map((_, i) => (
-                          <div key={i} className="flex-1 rounded-full bg-blue-400"
+                          <div key={i} className="flex-1 rounded-full bg-violet-400"
                             style={{ height: `${20 + Math.sin(i * 0.8) * 12 + Math.random() * 8}%`, opacity: i < 25 ? 1 : 0.4 }} />
                         ))}
                       </div>
                     </div>
-                    <p className="text-[11px] text-slate-600 leading-relaxed">
-                      Apple (AAPL) continues its bullish momentum with strong breakout above key resistance levels. The trend remains positive as long as it holds above <strong>$189.00</strong>. Watch for further upside towards <strong>$198.50 to $203.00.</strong>
+                    <p className="text-[11px] text-slate-400 leading-relaxed">
+                      Apple (AAPL) continues its bullish momentum with strong breakout above key resistance levels. The trend remains positive as long as it holds above <strong className="text-slate-300">$189.00</strong>. Watch for further upside towards <strong className="text-slate-300">$198.50 to $203.00.</strong>
                     </p>
                   </div>
 
                   {/* Video player bar */}
-                  <div className="bg-slate-900 rounded-xl px-4 py-2.5 flex items-center gap-3">
+                  <div className="bg-slate-950 rounded-xl px-4 py-2.5 flex items-center gap-3">
                     <Play className="w-4 h-4 text-white shrink-0" fill="white" />
                     <span className="text-[10px] text-slate-400 shrink-0">01:24 / 04:36</span>
-                    <div className="flex-1 h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-500 rounded-full" style={{ width: '32%' }} />
+                    <div className="flex-1 h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-violet-500 rounded-full" style={{ width: '32%' }} />
                     </div>
                     <Volume2 className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                   </div>
@@ -697,12 +697,12 @@ const LandingPage: React.FC = () => {
               </div>
 
               {/* Floating badge */}
-              <div className="absolute -bottom-3 -left-3 bg-white border border-slate-100 shadow-xl rounded-2xl px-4 py-2.5 flex items-center gap-2">
-                <div className="w-7 h-7 rounded-xl bg-blue-100 flex items-center justify-center">
-                  <Video className="w-3.5 h-3.5 text-blue-600" />
+              <div className="absolute -bottom-3 -left-3 bg-slate-900 border border-slate-800 shadow-xl rounded-2xl px-4 py-2.5 flex items-center gap-2">
+                <div className="w-7 h-7 rounded-xl bg-violet-500/15 flex items-center justify-center">
+                  <Video className="w-3.5 h-3.5 text-violet-400" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-slate-800">New report ready</p>
+                  <p className="text-[10px] font-bold text-slate-200">New report ready</p>
                   <p className="text-[9px] text-slate-500">AAPL · Just now</p>
                 </div>
               </div>
@@ -712,20 +712,20 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* ── Bottom feature strip for video section ──────────────────────────── */}
-      <div className="bg-white border-y border-slate-100 py-6">
+      <div className="bg-slate-900 border-y border-slate-850 py-6">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { icon: Video, label: 'AI Video Reports', sub: 'Daily market stories, explained visually', color: 'text-purple-600', bg: 'bg-purple-50' },
-            { icon: Brain, label: 'Smart Narration', sub: 'AI voices complex data in simple words', color: 'text-blue-600', bg: 'bg-blue-50' },
-            { icon: TrendingUp, label: 'Visual Insights', sub: 'Charts, trends & signals made easy', color: 'text-amber-600', bg: 'bg-amber-50' },
-            { icon: Users, label: 'Investor Focused', sub: 'Clear takeaways to make better decisions', color: 'text-emerald-600', bg: 'bg-emerald-50' },
+            { icon: Video, label: 'AI Video Reports', sub: 'Daily market stories, explained visually', color: 'text-purple-400', bg: 'bg-purple-500/10' },
+            { icon: Brain, label: 'Smart Narration', sub: 'AI voices complex data in simple words', color: 'text-violet-400', bg: 'bg-violet-500/10' },
+            { icon: TrendingUp, label: 'Visual Insights', sub: 'Charts, trends & signals made easy', color: 'text-amber-400', bg: 'bg-amber-500/10' },
+            { icon: Users, label: 'Investor Focused', sub: 'Clear takeaways to make better decisions', color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
           ].map(({ icon: Icon, label, sub, color, bg }) => (
             <div key={label} className="flex items-center gap-3">
               <div className={`w-10 h-10 rounded-xl ${bg} flex items-center justify-center shrink-0`}>
                 <Icon className={`w-5 h-5 ${color}`} />
               </div>
               <div>
-                <p className="text-sm font-bold text-slate-800">{label}</p>
+                <p className="text-sm font-bold text-slate-200">{label}</p>
                 <p className="text-xs text-slate-500">{sub}</p>
               </div>
             </div>
@@ -734,28 +734,28 @@ const LandingPage: React.FC = () => {
       </div>
 
       {/* ── Features grid ────────────────────────────────────────────────────── */}
-      <section id="features" className="py-24 bg-white">
+      <section id="features" className="py-24 bg-slate-950">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-bold px-4 py-2 rounded-full mb-4">
               Everything You Need
             </div>
-            <h2 className="text-4xl font-black text-slate-900 mb-4">Built for Every Investor</h2>
+            <h2 className="text-4xl font-black text-slate-100 mb-4">Built for Every Investor</h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto">From complete beginners to active traders — InvestingAtti gives you the tools to invest with confidence.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: Brain, title: 'AI-Powered', desc: 'Advanced models analyze thousands of data points to surface actionable insights.', color: 'from-blue-500 to-blue-600', bg: 'bg-blue-50' },
-              { icon: CheckCircle, title: 'Clear & Simple', desc: 'No jargon. Plain language explanations that anyone can act on immediately.', color: 'from-emerald-500 to-emerald-600', bg: 'bg-emerald-50' },
-              { icon: Shield, title: 'Trusted Insights', desc: 'Data-driven analysis with transparent confidence scores and risk signals.', color: 'from-purple-500 to-purple-600', bg: 'bg-purple-50' },
-              { icon: Users, title: 'For Every Investor', desc: 'From beginner to intermediate — always accessible, always actionable.', color: 'from-amber-500 to-amber-600', bg: 'bg-amber-50' },
+              { icon: Brain, title: 'AI-Powered', desc: 'Advanced models analyze thousands of data points to surface actionable insights.', color: 'from-violet-500 to-violet-600', bg: 'bg-violet-500/8' },
+              { icon: CheckCircle, title: 'Clear & Simple', desc: 'No jargon. Plain language explanations that anyone can act on immediately.', color: 'from-emerald-500 to-emerald-600', bg: 'bg-emerald-500/8' },
+              { icon: Shield, title: 'Trusted Insights', desc: 'Data-driven analysis with transparent confidence scores and risk signals.', color: 'from-purple-500 to-purple-600', bg: 'bg-purple-500/8' },
+              { icon: Users, title: 'For Every Investor', desc: 'From beginner to intermediate — always accessible, always actionable.', color: 'from-amber-500 to-amber-600', bg: 'bg-amber-500/8' },
             ].map(({ icon: Icon, title, desc, color, bg }) => (
-              <div key={title} className={`${bg} rounded-3xl p-6 border border-white shadow-sm hover:shadow-md transition-all hover:-translate-y-1`}>
+              <div key={title} className={`${bg} rounded-3xl p-6 border border-slate-850 shadow-sm hover:shadow-md transition-all hover:-translate-y-1`}>
                 <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center mb-4 shadow-lg`}>
                   <Icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-black text-slate-900 text-base mb-2">{title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{desc}</p>
+                <h3 className="font-black text-slate-100 text-base mb-2">{title}</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -763,20 +763,20 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* ── ABOUT & KEY FEATURES (SEO blocks) ───────────────────────────────── */}
-      <section className="py-24 bg-slate-50 border-t border-slate-100">
+      <section className="py-24 bg-slate-900 border-t border-slate-850">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
-          
+
           {/* Column 1: What is Investing Atti & Who Is It For */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl font-black text-slate-900">What is Investing Atti?</h2>
-              <p className="text-slate-600 text-base leading-relaxed font-sans font-normal">
+              <h2 className="text-3xl font-black text-slate-100">What is Investing Atti?</h2>
+              <p className="text-slate-400 text-base leading-relaxed font-sans font-normal">
                 Investing Atti is an AI-powered stock research and education platform that helps retail investors understand stocks, ETFs, and market trends through simple explanations, technical analysis, support and resistance levels, and AI-generated insights. We bridge the gap between high-level institutional market research and everyday trading setups.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-slate-900">Who Is It For?</h3>
+              <h3 className="text-xl font-bold text-slate-100">Who Is It For?</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {[
                   { label: "Beginner Investors", desc: "Learn key indicators with clear, jargon-free analogies." },
@@ -785,8 +785,8 @@ const LandingPage: React.FC = () => {
                   { label: "Long-Term Investors", desc: "Monitor major support floors and cycle transitions." },
                   { label: "Market Learners", desc: "Upgrade your technical analysis and market literacy." }
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-white border border-slate-200/60 p-4 rounded-2xl shadow-sm">
-                    <h4 className="text-sm font-bold text-slate-800 mb-1">{item.label}</h4>
+                  <div key={idx} className="bg-slate-950/60 border border-slate-800 p-4 rounded-2xl shadow-sm">
+                    <h4 className="text-sm font-bold text-slate-200 mb-1">{item.label}</h4>
                     <p className="text-xs text-slate-500 font-sans leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
@@ -796,7 +796,7 @@ const LandingPage: React.FC = () => {
 
           {/* Column 2: Key Features Checklist */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-black text-slate-900">Key Features</h2>
+            <h2 className="text-3xl font-black text-slate-100">Key Features</h2>
             <div className="space-y-3.5">
               {[
                 { title: "AI Stock Analysis", desc: "Generate complete reports on U.S. tickers instantly." },
@@ -808,10 +808,10 @@ const LandingPage: React.FC = () => {
                 { title: "Dynamic Watchlists", desc: "Add tickers to follow order books and track signal notifications." },
                 { title: "AI Research Summaries", desc: "Read short, plain-English executive summaries of any asset." }
               ].map((feature, idx) => (
-                <div key={idx} className="flex gap-3 bg-white border border-slate-200/60 p-3.5 rounded-2xl shadow-sm">
+                <div key={idx} className="flex gap-3 bg-slate-950/60 border border-slate-800 p-3.5 rounded-2xl shadow-sm">
                   <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                   <div className="space-y-0.5">
-                    <h4 className="text-sm font-bold text-slate-800">{feature.title}</h4>
+                    <h4 className="text-sm font-bold text-slate-200">{feature.title}</h4>
                     <p className="text-xs text-slate-500 font-sans leading-relaxed">{feature.desc}</p>
                   </div>
                 </div>
@@ -823,14 +823,14 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* ── FAQ SECTION (SEO accordion) ──────────────────────────────────────── */}
-      <section className="py-24 bg-white border-y border-slate-100">
+      <section className="py-24 bg-slate-950 border-y border-slate-850">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold px-4 py-2 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-bold px-4 py-2 rounded-full mb-4">
               <HelpCircle className="w-3.5 h-3.5" />
               Frequently Asked Questions
             </div>
-            <h2 className="text-4xl font-black text-slate-900 mb-2">Got Questions? We Have Answers.</h2>
+            <h2 className="text-4xl font-black text-slate-100 mb-2">Got Questions? We Have Answers.</h2>
             <p className="text-slate-500 text-sm font-sans">Everything you need to know about Investing Atti, technical analysis, and stock research parameters.</p>
           </div>
 
@@ -838,30 +838,30 @@ const LandingPage: React.FC = () => {
             {faqItems.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-                    isOpen ? 'border-blue-200 bg-blue-50/10 shadow-sm' : 'border-slate-200 hover:border-slate-300 bg-white'
+                    isOpen ? 'border-violet-500/30 bg-violet-500/5 shadow-sm' : 'border-slate-800 hover:border-slate-700 bg-slate-900'
                   }`}
                 >
                   <button
                     onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                    className="w-full text-left px-6 py-4.5 flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-slate-900 transition-colors"
+                    className="w-full text-left px-6 py-4.5 flex items-center justify-between gap-4 font-bold text-slate-200 hover:text-slate-100 transition-colors"
                   >
                     <span className="text-sm md:text-base leading-snug">{faq.q}</span>
                     {isOpen ? (
-                      <ChevronUp className="w-4 h-4 text-blue-600 shrink-0" />
+                      <ChevronUp className="w-4 h-4 text-violet-400 shrink-0" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-slate-400 shrink-0" />
+                      <ChevronDown className="w-4 h-4 text-slate-500 shrink-0" />
                     )}
                   </button>
-                  
-                  <div 
+
+                  <div
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                      isOpen ? 'max-h-60 border-t border-slate-100' : 'max-h-0'
+                      isOpen ? 'max-h-60 border-t border-slate-850' : 'max-h-0'
                     }`}
                   >
-                    <p className="px-6 py-4 text-xs md:text-sm text-slate-600 leading-relaxed font-sans font-normal">
+                    <p className="px-6 py-4 text-xs md:text-sm text-slate-400 leading-relaxed font-sans font-normal">
                       {faq.a}
                     </p>
                   </div>
@@ -873,7 +873,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* ── CTA Section ──────────────────────────────────────────────────────── */}
-      <section id="pricing" className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%)' }}>
+      <section id="pricing" className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #6d28d9 0%, #0e7490 100%)' }}>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-20 -right-20 w-80 h-80 bg-white/5 rounded-full" />
           <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-white/5 rounded-full" />
@@ -885,12 +885,12 @@ const LandingPage: React.FC = () => {
           <h2 className="text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
             Start Investing with<br />Clarity Today
           </h2>
-          <p className="text-blue-100 text-lg mb-10 leading-relaxed">
+          <p className="text-violet-100 text-lg mb-10 leading-relaxed">
             Join thousands of investors who use InvestingAtti to cut through the noise and make confident, data-driven decisions.
           </p>
           <div className="flex flex-wrap gap-4 justify-center mb-8">
             <Link to="/register"
-              className="inline-flex items-center gap-2 bg-white text-blue-600 font-black px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:scale-105 text-sm">
+              className="inline-flex items-center gap-2 bg-white text-violet-600 font-black px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:scale-105 text-sm">
               Create Free Account
               <ChevronRight className="w-4 h-4" />
             </Link>
@@ -899,7 +899,7 @@ const LandingPage: React.FC = () => {
               Sign In
             </Link>
           </div>
-          <div className="flex flex-wrap justify-center gap-6 text-blue-100 text-xs font-medium">
+          <div className="flex flex-wrap justify-center gap-6 text-violet-100 text-xs font-medium">
             {['No credit card required', 'Free AI stock analysis', 'Cancel anytime'].map(item => (
               <span key={item} className="flex items-center gap-1.5">
                 <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
@@ -918,7 +918,7 @@ const LandingPage: React.FC = () => {
               <img src="/brand/icon_256.png" alt="InvestingAtti" className="w-8 h-8 object-contain" />
               <div>
                 <p className="text-white font-bold text-sm">
-                  Investing<span className="text-blue-400">Atti</span>
+                  Investing<span className="text-violet-400">Atti</span>
                 </p>
                 <p className="text-xs text-slate-500">Research. Learn to Grow.</p>
               </div>

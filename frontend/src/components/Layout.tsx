@@ -5,7 +5,7 @@ import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, Search, Star, Bell, TrendingUp,
   FileText, Settings, Shield, BookOpen, AlertTriangle, Menu, X,
-  Compass, Sun, Moon, LogOut, User, ChevronLeft, ChevronRight,
+  Compass, Sun, Moon, LogOut, User, ChevronLeft, ChevronRight, Activity, LineChart, Bot, BarChart3, Target,
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { FeedbackWidget } from './FeedbackWidget';
@@ -24,12 +24,17 @@ const pathWeights: Record<string, number> = {
   '/whats-for-today': 2,
   '/penny-stocks': 3,
   '/watchlist': 4,
+  '/agent-recommendations': 4.5,
   '/alerts': 5,
   '/reports': 6,
+  '/simulation-board': 6.5,
   '/settings': 7,
   '/education': 8,
   '/glossary': 9,
   '/admin': 10,
+  '/swing-dashboard': 11,
+  '/deep-research': 12,
+  '/trading': 13,
 };
 
 const navItems = [
@@ -37,13 +42,18 @@ const navItems = [
   { path: '/', icon: LayoutDashboard, label: 'Dashboard', exact: true },
   { path: '/whats-for-today', icon: TrendingUp, label: "What's for Today?" },
   { path: '/penny-stocks', icon: AlertTriangle, label: 'Micro-Cap Catalysts' },
+  { path: '/swing-dashboard', icon: Activity, label: 'Swing Dashboard' },
+  { path: '/simulation-board', icon: BarChart3, label: 'Simulation Board' },
+  { path: '/deep-research', icon: LineChart, label: 'Deep Research' },
   { path: '/watchlist', icon: Star, label: 'Watchlist' },
+  { path: '/agent-recommendations', icon: Target, label: 'Agent Trades' },
   { path: '/alerts', icon: Bell, label: 'Alerts' },
   { path: '/reports', icon: FileText, label: 'Reports' },
   { path: '/settings', icon: Settings, label: 'Settings' },
   { path: '/education', icon: BookOpen, label: 'How It Works' },
   { path: '/glossary', icon: Compass, label: 'Glossary' },
   { path: '/admin', icon: Shield, label: 'Admin Panel' },
+  { path: '/trading', icon: Bot, label: 'Trading Agents' },
 ];
 
 const Layout: React.FC = () => {
@@ -93,6 +103,9 @@ const Layout: React.FC = () => {
       return (
         item.path === '/whats-for-today' ||
         item.path === '/penny-stocks' ||
+        item.path === '/swing-dashboard' ||
+        item.path === '/simulation-board' ||
+        item.path === '/deep-research' ||
         item.path === '/analyze' ||
         item.path === '/education' ||
         item.path === '/glossary'
@@ -160,7 +173,7 @@ const Layout: React.FC = () => {
           className={`w-full flex items-center rounded-xl hover:bg-slate-850/60 transition-all group ${collapsed ? 'justify-center p-1.5' : 'gap-2.5 px-2 py-1.5'}`}
           title={collapsed ? user?.username || 'Profile' : undefined}
         >
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center shrink-0 shadow-sm">
+          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-400 via-cyan-400 to-violet-500 flex items-center justify-center shrink-0 shadow-sm shadow-brand-500/30">
             <span className="text-[11px] font-black text-white select-none">
               {user?.username?.slice(0, 2).toUpperCase() || 'U'}
             </span>

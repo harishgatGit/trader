@@ -9,6 +9,7 @@ interface RatingBadgeProps {
 
 const ratingConfig: Record<string, { label: string; className: string; dot: string }> = {
   BUY: { label: 'BUY', className: 'badge-buy', dot: 'bg-emerald-400' },
+  'SPEC BUY': { label: 'SPEC BUY', className: 'badge-buy', dot: 'bg-amber-400' },
   SELL: { label: 'SELL', className: 'badge-sell', dot: 'bg-red-400' },
   HOLD: { label: 'HOLD', className: 'badge-hold', dot: 'bg-amber-400' },
   WATCHLIST: { label: 'WATCHLIST', className: 'badge-watchlist', dot: 'bg-indigo-400' },
@@ -107,8 +108,8 @@ interface EmptyStateProps {
 export const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description, action }) => (
   <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
     {icon && <div className="text-slate-600 mb-4 text-4xl">{icon}</div>}
-    <h3 className="text-slate-300 font-semibold mb-2">{title}</h3>
-    {description && <p className="text-slate-500 text-sm max-w-sm mb-4">{description}</p>}
+    <h3 className="text-h3 mb-2">{title}</h3>
+    {description && <p className="text-body-sm max-w-sm mb-4">{description}</p>}
     {action}
   </div>
 );
@@ -152,11 +153,11 @@ const TOAST_CONFIG = {
   },
   info: {
     icon: 'i',
-    iconBg: 'bg-sky-700',
+    iconBg: 'bg-indigo-600',
     border: 'border-slate-200/80',
     bg: 'bg-white',
-    bar: 'bg-sky-600',
-    label: 'text-sky-800',
+    bar: 'bg-indigo-500',
+    label: 'text-indigo-800',
     text: 'text-slate-900',
     badge: 'Info',
   },
@@ -293,12 +294,12 @@ export const DataUnavailable: React.FC<DataUnavailableProps> = ({
       </div>
 
       {/* Heading */}
-      <h3 className="text-lg font-bold text-slate-200 mb-2">
+      <h3 className="text-h3 mb-2">
         {symbol ? `${symbol} — Data Unavailable` : 'Data Unavailable'}
       </h3>
 
       {/* Message */}
-      <p className="text-sm text-slate-400 max-w-sm leading-relaxed mb-6">
+      <p className="text-body-sm max-w-sm mb-6">
         We are sorry, we are not able to serve you this time. We will fix it. Please try again.
       </p>
 
@@ -450,12 +451,12 @@ export const PageHeader: React.FC<{
     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-850 pb-5">
       <div>
         <div className="flex items-center gap-2.5 flex-wrap">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-slate-100 tracking-tight">{title}</h1>
+          <h1 className="text-h1 text-gradient-aurora">{title}</h1>
           <span className="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-700/40 dark:text-slate-300 border border-slate-300 dark:border-slate-600 shrink-0">
             🇺🇸 <strong className="font-black">US</strong> Markets Only
           </span>
         </div>
-        {subtitle && <p className="text-slate-450 text-sm md:text-base mt-1.5 leading-relaxed">{subtitle}</p>}
+        {subtitle && <p className="text-body-sm mt-1.5">{subtitle}</p>}
       </div>
       {actions && <div className="flex items-center gap-3 shrink-0">{actions}</div>}
     </div>
@@ -471,10 +472,10 @@ export const SectionHeader: React.FC<{
   return (
     <div className="mb-4">
       <div className="flex items-center gap-3">
-        <h2 className="text-lg md:text-xl font-bold text-slate-100 tracking-tight">{title}</h2>
+        <h2 className="text-h2">{title}</h2>
         {badge}
       </div>
-      {subtitle && <p className="text-slate-450 text-xs md:text-sm mt-1 leading-relaxed">{subtitle}</p>}
+      {subtitle && <p className="text-body-sm mt-1">{subtitle}</p>}
     </div>
   );
 };
@@ -512,13 +513,13 @@ export const InsightCard: React.FC<{
     <div className={`card flex flex-col gap-4 ${className}`}>
       <div className="flex items-start justify-between gap-4 border-b border-slate-850/50 pb-3">
         <div>
-          <h3 className="text-base md:text-lg font-bold text-slate-100">{title}</h3>
+          <h3 className="text-h3">{title}</h3>
           {subtitle && <p className="text-xs text-slate-450 mt-0.5">{subtitle}</p>}
         </div>
         {verdict && <div className="shrink-0">{verdict}</div>}
       </div>
-      
-      {children && <div className="text-sm text-slate-200 leading-relaxed">{children}</div>}
+
+      {children && <div className="text-body">{children}</div>}
       
       {whyItMatters && (
         <div className="p-3 rounded-xl bg-slate-950/40 border border-slate-850/60 text-xs text-slate-350 leading-relaxed">

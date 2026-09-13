@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 // @ts-ignore
 import { ViewTransition } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Trash2, Search, RefreshCw, BarChart2 } from 'lucide-react';
+import { Plus, Trash2, Search, RefreshCw, BarChart2, Target } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { LoadingSpinner, EmptyState, PageContainer, PageHeader, StatusBadge } from '../components/ui';
 import { useSEO } from '../utils/useSEO';
@@ -24,8 +24,14 @@ const Watchlist: React.FC = () => {
 
   const handleAdd = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newSymbol.trim()) return;
-    await addToWatchlist(newSymbol.trim().toUpperCase());
+    // Accept one ticker or a pasted list ("AAPL, MSFT NVDA")
+    const symbols = Array.from(new Set(
+      newSymbol.toUpperCase().split(/[\s,;]+/).map((s) => s.trim()).filter(Boolean),
+    ));
+    if (symbols.length === 0) return;
+    for (const symbol of symbols) {
+      await addToWatchlist(symbol);
+    }
     setNewSymbol('');
   };
 
@@ -44,7 +50,12 @@ const Watchlist: React.FC = () => {
       {/* Header */}
       <PageHeader
         title="Watchlist"
-        subtitle={`${watchlist.length} symbols currently tracked for signal alerts`}
+        subtitle={`${watchlist.length} symbols currently tracked for signal alerts and the daily options scan`}
+        actions={
+          <Link to="/agent-recommendations" className="btn btn-secondary text-xs py-1.5 px-3 rounded-lg flex items-center gap-1">
+            <Target className="w-3.5 h-3.5" /> Agent Trades
+          </Link>
+        }
       />
 
       {/* Add Symbol Input */}
@@ -56,9 +67,9 @@ const Watchlist: React.FC = () => {
               type="text"
               value={newSymbol}
               onChange={(e) => setNewSymbol(e.target.value.toUpperCase())}
-              placeholder="Add ticker symbol (e.g. AAPL)"
+              placeholder="Add ticker(s) — e.g. AAPL or AAPL, MSFT, NVDA"
               className="input pl-10 font-mono w-full"
-              maxLength={10}
+              maxLength={200}
               aria-label="New stock ticker symbol"
             />
           </div>

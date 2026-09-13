@@ -2,6 +2,20 @@ import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import axios from 'axios';
 
+export interface AnalystCounts {
+  strongBuy: number;
+  buy: number;
+  hold: number;
+  sell: number;
+  strongSell: number;
+}
+
+export interface RevenueHistoryPoint {
+  fiscalYearEnd: string;
+  totalRevenue: number;
+  netIncome: number | null;
+}
+
 export interface FundamentalResult {
   available: boolean;
   source: string;
@@ -20,6 +34,23 @@ export interface FundamentalResult {
   industry: string | null;
   description: string | null;
   unavailableReason?: string;
+
+  // Analyst consensus + revenue history (from recommendationTrend/financialData/incomeStatementHistory).
+  // Independently nullable — a symbol can have price fundamentals but no analyst coverage (e.g. thinly
+  // traded small caps) or no income statement history (e.g. ETFs/funds).
+  targetHighPrice: number | null;
+  targetLowPrice: number | null;
+  targetMeanPrice: number | null;
+  targetMedianPrice: number | null;
+  recommendationKey: string | null;
+  numberOfAnalystOpinions: number | null;
+  analystCounts: AnalystCounts | null;
+  freeCashflow: number | null;
+  operatingCashflow: number | null;
+  revenueGrowthPct: number | null;
+  grossMarginPct: number | null;
+  operatingMarginPct: number | null;
+  revenueHistory: RevenueHistoryPoint[] | null;
 }
 
 @Injectable()
@@ -71,6 +102,19 @@ export class FundamentalAgent {
           sector: recent.sector,
           industry: recent.industry,
           description: recent.description,
+          targetHighPrice: recent.targetHighPrice,
+          targetLowPrice: recent.targetLowPrice,
+          targetMeanPrice: recent.targetMeanPrice,
+          targetMedianPrice: recent.targetMedianPrice,
+          recommendationKey: recent.recommendationKey,
+          numberOfAnalystOpinions: recent.numberOfAnalystOpinions,
+          analystCounts: (recent.analystCounts as unknown as AnalystCounts | null) || null,
+          freeCashflow: recent.freeCashflow,
+          operatingCashflow: recent.operatingCashflow,
+          revenueGrowthPct: recent.revenueGrowthPct,
+          grossMarginPct: recent.grossMarginPct,
+          operatingMarginPct: recent.operatingMarginPct,
+          revenueHistory: (recent.revenueHistory as unknown as RevenueHistoryPoint[] | null) || null,
         };
       }
     } catch (e) {
@@ -85,6 +129,10 @@ export class FundamentalAgent {
       debtToEquity: null, dividendYield: null, beta: null,
       week52High: null, week52Low: null, sector: null,
       industry: null, description: null,
+      targetHighPrice: null, targetLowPrice: null, targetMeanPrice: null, targetMedianPrice: null,
+      recommendationKey: null, numberOfAnalystOpinions: null, analystCounts: null,
+      freeCashflow: null, operatingCashflow: null, revenueGrowthPct: null,
+      grossMarginPct: null, operatingMarginPct: null, revenueHistory: null,
       unavailableReason: 'Fundamental data not available from free sources for this symbol.',
     };
   }
@@ -141,7 +189,7 @@ export class FundamentalAgent {
     const summaryRes = await axios.get(quoteUrl, {
       params: {
         crumb: creds.crumb,
-        modules: 'summaryDetail,defaultKeyStatistics,assetProfile,financialData',
+        modules: 'summaryDetail,defaultKeyStatistics,assetProfile,financialData,recommendationTrend,incomeStatementHistory',
       },
       timeout: 8000,
       headers,
@@ -152,6 +200,31 @@ export class FundamentalAgent {
     const ks = summary?.defaultKeyStatistics || {};
     const ap = summary?.assetProfile || {};
     const fd = summary?.financialData || {};
+
+    // Both independently absent for symbols with no analyst coverage or income-statement
+    // filings (ETFs/funds) — degrade to null rather than failing the whole fetch.
+    const recTrend = summary?.recommendationTrend?.trend?.[0];
+    const analystCounts: AnalystCounts | null = recTrend
+      ? {
+          strongBuy: recTrend.strongBuy ?? 0,
+          buy: recTrend.buy ?? 0,
+          hold: recTrend.hold ?? 0,
+          sell: recTrend.sell ?? 0,
+          strongSell: recTrend.strongSell ?? 0,
+        }
+      : null;
+
+    const incomeHistory = summary?.incomeStatementHistory?.incomeStatementHistory;
+    const revenueHistory: RevenueHistoryPoint[] | null = Array.isArray(incomeHistory) && incomeHistory.length > 0
+      ? incomeHistory
+          .filter((row: any) => row?.totalRevenue?.raw != null)
+          .map((row: any) => ({
+            fiscalYearEnd: row.endDate?.fmt || null,
+            totalRevenue: row.totalRevenue.raw,
+            netIncome: row.netIncome?.raw ?? null,
+          }))
+          .reverse() // Yahoo returns newest-first; oldest-to-newest reads better for a chart timeline.
+      : null;
 
     return {
       available: true,
@@ -170,6 +243,19 @@ export class FundamentalAgent {
       sector: ap.sector || null,
       industry: ap.industry || null,
       description: ap.longBusinessSummary?.substring(0, 500) || null,
+      targetHighPrice: fd.targetHighPrice?.raw ?? null,
+      targetLowPrice: fd.targetLowPrice?.raw ?? null,
+      targetMeanPrice: fd.targetMeanPrice?.raw ?? null,
+      targetMedianPrice: fd.targetMedianPrice?.raw ?? null,
+      recommendationKey: fd.recommendationKey ?? null,
+      numberOfAnalystOpinions: fd.numberOfAnalystOpinions?.raw ?? null,
+      analystCounts,
+      freeCashflow: fd.freeCashflow?.raw ?? null,
+      operatingCashflow: fd.operatingCashflow?.raw ?? null,
+      revenueGrowthPct: fd.revenueGrowth?.raw != null ? fd.revenueGrowth.raw * 100 : null,
+      grossMarginPct: fd.grossMargins?.raw != null ? fd.grossMargins.raw * 100 : null,
+      operatingMarginPct: fd.operatingMargins?.raw != null ? fd.operatingMargins.raw * 100 : null,
+      revenueHistory,
     };
   }
 
@@ -194,6 +280,19 @@ export class FundamentalAgent {
           sector: data.sector,
           industry: data.industry,
           description: data.description,
+          targetHighPrice: data.targetHighPrice,
+          targetLowPrice: data.targetLowPrice,
+          targetMeanPrice: data.targetMeanPrice,
+          targetMedianPrice: data.targetMedianPrice,
+          recommendationKey: data.recommendationKey,
+          numberOfAnalystOpinions: data.numberOfAnalystOpinions,
+          analystCounts: (data.analystCounts as any) ?? undefined,
+          freeCashflow: data.freeCashflow,
+          operatingCashflow: data.operatingCashflow,
+          revenueGrowthPct: data.revenueGrowthPct,
+          grossMarginPct: data.grossMarginPct,
+          operatingMarginPct: data.operatingMarginPct,
+          revenueHistory: (data.revenueHistory as any) ?? undefined,
         },
       });
     } catch (e) {

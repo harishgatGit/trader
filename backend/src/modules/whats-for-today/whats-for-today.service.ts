@@ -6,6 +6,8 @@ import OpenAI from 'openai';
 import { z } from 'zod';
 import * as fs from 'fs';
 import * as path from 'path';
+import { OpenAIRateLimiterService } from '../../agents/openai-rate-limiter.service';
+import { OPENAI_TOKEN_ESTIMATES } from '../../agents/openai-token-estimates';
 
 // Zod schema for report output from OpenAI
 export const MarketReportOutputSchema = z.object({
@@ -451,6 +453,7 @@ export class WhatsForTodayService {
     private readonly prisma: PrismaService,
     private readonly alpaca: AlpacaService,
     private readonly config: ConfigService,
+    private readonly rateLimiter: OpenAIRateLimiterService,
   ) {
     this.openai = new OpenAI({
       apiKey: this.config.get('OPENAI_API_KEY') || 'mock-key-not-configured',
@@ -701,6 +704,7 @@ Ensure the JSON output strictly matches the following Zod schema:
 
     let parsedReport: any = null;
     try {
+      await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.DAILY_MARKET_REPORT);
       const completion = await this.openai.chat.completions.create({
         model: this.openaiModel,
         messages: [
@@ -850,6 +854,7 @@ Output raw JSON matching this structure:
 }`;
 
     try {
+      await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.EOD_EVALUATION);
       const completion = await this.openai.chat.completions.create({
         model: this.openaiModel,
         messages: [
@@ -1055,6 +1060,7 @@ Output raw JSON matching this structure:
     }`;
 
     try {
+      await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.PENNY_STOCK_SCAN);
       const completion = await this.openai.chat.completions.create({
         model: this.openaiModel,
         messages: [

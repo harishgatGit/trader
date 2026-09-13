@@ -1,9 +1,69 @@
 import os
+import sys
 import json
 import uuid
 import queue
 import threading
 from datetime import datetime
+
+# Windows' default console codepage (cp1252) can't encode arbitrary Unicode
+# (smart quotes, em-dashes, emoji) that shows up in AI-generated titles/
+# descriptions or third-party error messages. A stray character here used to
+# crash the print() call itself mid-request, silently killing background
+# upload tasks before they could send a terminal callback. Force UTF-8 with
+# lossy fallback so logging never crashes the process.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
+# The local network's DNS resolver (router at 192.168.1.1) hijacks lookups for
+# Google's API domains — googleapis.com resolves to the router itself instead
+# of Google's real IPs, breaking every YouTube upload/OAuth call with SSL EOF/
+# read-timeout errors (confirmed: `nslookup googleapis.com` returns the router,
+# `nslookup googleapis.com 8.8.8.8` returns real Google IPs). Rather than
+# requiring a system-wide DNS change (needs admin rights we don't have here),
+# resolve just the domains this process actually talks to via Google's public
+# DNS directly, with a short TTL cache. Falls back to normal resolution for
+# every other hostname and degrades to the original getaddrinfo if the
+# override itself fails for any reason.
+import socket
+import time
+
+try:
+    import dns.resolver
+
+    _google_resolver = dns.resolver.Resolver(configure=False)
+    _google_resolver.nameservers = ["8.8.8.8", "8.8.4.4"]
+    _dns_cache: dict[str, tuple[str, float]] = {}
+    _DNS_CACHE_TTL_SEC = 300
+    _GOOGLE_DOMAIN_SUFFIXES = (".google.com", ".googleapis.com", ".googleusercontent.com", ".gstatic.com")
+    _GOOGLE_EXACT_DOMAINS = {"google.com", "googleapis.com"}
+    _orig_getaddrinfo = socket.getaddrinfo
+
+    def _is_google_domain(host: str) -> bool:
+        return host in _GOOGLE_EXACT_DOMAINS or host.endswith(_GOOGLE_DOMAIN_SUFFIXES)
+
+    def _patched_getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+        if isinstance(host, str) and _is_google_domain(host):
+            cached = _dns_cache.get(host)
+            if cached and (time.time() - cached[1]) < _DNS_CACHE_TTL_SEC:
+                ip = cached[0]
+            else:
+                try:
+                    answer = _google_resolver.resolve(host, "A")
+                    ip = str(answer[0])
+                    _dns_cache[host] = (ip, time.time())
+                except Exception as e:
+                    print(f"[DNS Override] Failed to resolve {host} via 8.8.8.8: {e}. Falling back to system DNS.")
+                    return _orig_getaddrinfo(host, port, family, type, proto, flags)
+            return _orig_getaddrinfo(ip, port, family, type, proto, flags)
+        return _orig_getaddrinfo(host, port, family, type, proto, flags)
+
+    socket.getaddrinfo = _patched_getaddrinfo
+    print("[DNS Override] Google API domains will resolve via 8.8.8.8 (local router DNS hijacks them).")
+except ImportError:
+    print("[DNS Override] dnspython not installed — Google API calls will use system DNS as-is.")
+
 from pathlib import Path
 from typing import Dict, Any, Optional
 from fastapi import FastAPI, Header, HTTPException, Depends, status, BackgroundTasks
@@ -19,7 +79,7 @@ from app.models.video_job import VideoJob, JobStatus, VideoJobArtifacts
 from app.models.validation import VideoValidationResult
 
 from app.agents.youtube_metadata_agent import YouTubeMetadataAgent
-from app.agents.youtube_uploader_agent import YouTubeUploaderAgent
+from app.agents.youtube_uploader_agent import YouTubeUploaderAgent, YOUTUBE_SCOPES
 
 # Import Services and Agents
 from app.services.storage_service import StorageService
@@ -74,7 +134,7 @@ market_recap_storyboard_agent = MarketRecapStoryboardAgent()
 
 # YouTube Agents
 youtube_metadata_agent = YouTubeMetadataAgent()
-youtube_uploader_agent = YouTubeUploaderAgent()
+youtube_uploader_agent = YouTubeUploaderAgent(ffmpeg_service)
 
 # In-memory active jobs map (jobId -> VideoJob)
 active_jobs: Dict[str, VideoJob] = {}
@@ -517,7 +577,7 @@ class YouTubeUploadRequest(BaseModel):
     videoPath: str
     reportData: Dict[str, Any]
     refreshToken: Optional[str] = None
-    visibility: Optional[str] = "private"
+    visibility: Optional[str] = "public"
 
 def process_youtube_upload_task(req: YouTubeUploadRequest):
     """
@@ -542,17 +602,30 @@ def process_youtube_upload_task(req: YouTubeUploadRequest):
     send_youtube_callback(payload)
 
     try:
-        # Extract metadata helpers
-        rating = report_data.get("finalRating", "ANALYZED")
-        summary = report_data.get("executiveSummary", "AI stock analysis report")
-        report_json = report_data.get("reportJson", {})
-        bias = report_json.get("technicals", {}).get("primary", {}).get("overallBias", "") if isinstance(report_json, dict) else ""
-        rsi = str(report_json.get("technicals", {}).get("primary", {}).get("rsi14", "")) if isinstance(report_json, dict) else ""
-        sector = report_json.get("fundamentals", {}).get("sector", "") if isinstance(report_json, dict) else ""
-
         # 1. Generate Metadata
         print(f"[YouTube Job] Generating metadata for {ticker}...")
-        meta = youtube_metadata_agent.generate(ticker, report_date, rating, summary, bias, rsi, sector)
+        if ticker.upper() == "MARKET_RECAP":
+            mood = report_data.get("mood", "MIXED")
+            market_story_summary = report_data.get("marketStorySummary", "")
+            catalyst_summary = report_data.get("catalystSummary", "")
+            sector_names = [s.get("name") for s in (report_data.get("sectors") or []) if s.get("name")]
+            meta = youtube_metadata_agent.generate_market_recap(
+                report_date, mood, market_story_summary, catalyst_summary, sector_names,
+            )
+            summary = market_story_summary
+        else:
+            rating = report_data.get("finalRating", "ANALYZED")
+            summary = report_data.get("executiveSummary", "AI stock analysis report")
+            report_json = report_data.get("reportJson") or {}
+            if not isinstance(report_json, dict):
+                report_json = {}
+            technicals = (report_json.get("technicals") or {}).get("primary") or {}
+            fundamentals = report_json.get("fundamentals") or {}
+            bias = technicals.get("overallBias", "")
+            rsi = str(technicals.get("rsi14", ""))
+            sector = fundamentals.get("sector", "")
+            meta = youtube_metadata_agent.generate(ticker, report_date, rating, summary, bias, rsi, sector)
+
         title = meta.get("title", f"${ticker} Stock Analysis - {report_date}")
         description = meta.get("description", summary)
         tags = meta.get("tags", [ticker, "stocks"])
@@ -579,7 +652,7 @@ def process_youtube_upload_task(req: YouTubeUploadRequest):
             "youtubeUploadError": None
         }
     except Exception as e:
-        print(f"[YouTube Job] ❌ Upload task failed for {ticker}: {e}")
+        print(f"[YouTube Job] Upload task failed for {ticker}: {e}")
         payload = {
             "jobId": job_id,
             "youtubeUploadStatus": "FAILED",
@@ -632,7 +705,7 @@ def youtube_login():
         "client_id": YOUTUBE_CLIENT_ID,
         "redirect_uri": "http://localhost:8090/youtube/oauth2callback",
         "response_type": "code",
-        "scope": "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.upload",
+        "scope": " ".join(YOUTUBE_SCOPES),
         "access_type": "offline",
         "prompt": "consent"
     }

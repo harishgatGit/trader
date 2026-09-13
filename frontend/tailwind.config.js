@@ -5,17 +5,45 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Aurora Fintech — electric teal/cyan primary ramp
         brand: {
-          50: '#f0fdf9',
-          100: '#ccfbef',
-          200: '#99f6e0',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#0891b2',
+          600: '#0e7490',
+          700: '#155e75',
+          800: '#164e63',
+          900: '#0b3542',
+        },
+        // Aurora Fintech — coral highlight ramp (alerts, secondary accents)
+        aurora: {
+          50: '#fff1f2',
+          100: '#ffe4e6',
+          200: '#fecdd3',
+          300: '#fda4af',
+          400: '#fb7185',
+          500: '#f43f5e',
+          600: '#e11d48',
+          700: '#be123c',
+          800: '#881337',
+          900: '#4c0519',
+        },
+        // Aurora Fintech — base indigo-black surfaces (dark mode hero)
+        obsidian: {
+          50: '#f5f6fb',
+          100: '#e8eaf6',
+          200: '#c7cceb',
+          300: '#9aa3d8',
+          400: '#5c67a8',
+          500: '#333c73',
+          600: '#232a52',
+          700: '#181e3d',
+          800: '#131829',
+          900: '#0b0e1a',
+          950: '#05070c',
         },
         slate: {
           50: 'var(--color-slate-50)',
@@ -52,6 +80,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Sora', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {
@@ -59,6 +88,9 @@ export default {
         'slide-up': 'slideUp 0.3s ease-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
+        'glow-pulse': 'glowPulse 3.5s ease-in-out infinite',
+        'shimmer': 'shimmer 2.2s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -72,6 +104,18 @@ export default {
         glow: {
           '0%': { boxShadow: '0 0 5px rgba(20, 184, 166, 0.3)' },
           '100%': { boxShadow: '0 0 20px rgba(20, 184, 166, 0.7)' },
+        },
+        glowPulse: {
+          '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
+          '50%': { opacity: '1', transform: 'scale(1.04)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-6px)' },
         },
       },
       backgroundImage: {

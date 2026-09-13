@@ -20,14 +20,12 @@ import { PrismaService } from './prisma/prisma.service';
 import { WhatsForTodayService } from './modules/whats-for-today/whats-for-today.service';
 import { EODVideoWorkflowService } from './modules/whats-for-today/eod-video-workflow.service';
 import { getNYDateString } from './utils/date';
-import axios from 'axios';
+import { isYoutubeAuthorized, triggerYoutubeUpload } from './utils/youtube-upload.client';
 
 (BigInt.prototype as any).toJSON = function () {
   return Number(this);
 };
 
-const YOUTUBE_SERVICE_URL = 'http://localhost:8095';
-const YOUTUBE_API_KEY = 'investingatti-youtube-key-dev';
 // Gap between ticker kickoffs. The previous ticker's video-generation OpenAI calls
 // (script + storyboard) are still in flight when the next ticker's analysis starts,
 // and both share the same OpenAI TPM budget — too short a gap causes 429s.
@@ -35,6 +33,11 @@ const TICKER_KICKOFF_GAP_SECONDS = 90;
 // Upload retry-with-backoff: attempt 1 immediate, then retries after 30s, 60s, 120s.
 const MAX_UPLOAD_ATTEMPTS = 4;
 const UPLOAD_RETRY_BASE_DELAY_MS = 30000;
+// Hard ceiling on the watch loop. The video queue is single-threaded and a render
+// can take several minutes per job, but without a deadline an upload that never
+// reports back (e.g. a dropped callback) would hang this script forever.
+const POLL_TIMEOUT_MS = Number(process.env.DROP_POLL_TIMEOUT_MS || 90 * 60 * 1000);
+const POLL_INTERVAL_MS = 15000;
 
 function parseIncludeArg(): string[] {
   const arg = process.argv.find((a) => a.startsWith('--include='));
@@ -46,25 +49,35 @@ function parseIncludeArg(): string[] {
     .filter(Boolean);
 }
 
-async function uploadToYoutube(ticker: string, reportDate: string, finalVideoPath: string) {
-  const payload = {
-    jobId: `upload-${ticker}-${reportDate}-${Date.now()}`,
-    ticker,
-    reportDate,
-    videoPath: finalVideoPath,
-    reportData: {},
-    visibility: 'public',
-  };
-  console.log(`  [${ticker}] Triggering YouTube upload for path: ${finalVideoPath}`);
-  try {
-    const res = await axios.post(`${YOUTUBE_SERVICE_URL}/upload`, payload, {
-      headers: { 'Content-Type': 'application/json', 'x-api-key': YOUTUBE_API_KEY },
-      timeout: 15000,
-    });
-    console.log(`  [${ticker}] ✅ YouTube upload queued successfully:`, res.data);
-  } catch (err: any) {
-    console.error(`  [${ticker}] ❌ Failed to trigger upload:`, err.response?.data || err.message);
-  }
+/**
+ * The metadata agent builds the public title/description from reportData, so feed
+ * it the ticker's analysis report where we have one. MARKET_RECAP's reportId is a
+ * synthetic `market-recap-<date>` key rather than an AgentReport row, so it falls
+ * back to generic metadata.
+ */
+async function loadReportData(
+  prisma: PrismaService,
+  job: { ticker: string; reportId: string | null },
+): Promise<Record<string, any>> {
+  if (!job.reportId || job.ticker.toUpperCase() === 'MARKET_RECAP') return {};
+  const report = await prisma.agentReport.findUnique({
+    where: { id: job.reportId },
+    select: { reportJson: true },
+  });
+  return (report?.reportJson as Record<string, any>) ?? {};
+}
+
+async function uploadJob(
+  prisma: PrismaService,
+  job: { jobId: string | null; ticker: string; reportDate: string; finalVideoPath: string | null; reportId: string | null },
+) {
+  await triggerYoutubeUpload({
+    jobId: job.jobId,
+    ticker: job.ticker,
+    reportDate: job.reportDate,
+    videoPath: job.finalVideoPath!,
+    reportData: await loadReportData(prisma, job),
+  });
 }
 
 /** Polls videoGenerationJob rows to GENERATED, triggers upload, then waits for UPLOADED/FAILED. */
@@ -78,8 +91,18 @@ async function pollUntilDone(
   // exponential backoff instead of being treated as terminal on the first try.
   const uploadAttempts = new Map<string, number>();
   const retryNotBefore = new Map<string, number>();
+  const deadline = Date.now() + POLL_TIMEOUT_MS;
 
   while (uploaded.size + failed.size < items.length) {
+    if (Date.now() > deadline) {
+      for (const item of items) {
+        if (!uploaded.has(item.ticker) && !failed.has(item.ticker)) {
+          console.error(`  [${item.ticker}] ⏱️ Timed out after ${POLL_TIMEOUT_MS / 60000} min — giving up.`);
+          failed.add(item.ticker);
+        }
+      }
+      break;
+    }
     console.log(`\n[${new Date().toLocaleTimeString()}] Checking status...`);
     for (const item of items) {
       if (uploaded.has(item.ticker) || failed.has(item.ticker)) continue;
@@ -107,12 +130,12 @@ async function pollUntilDone(
               where: { id: item.dbJobId },
               data: { youtubeUploadStatus: null, youtubeUploadError: null },
             });
-            await uploadToYoutube(item.ticker, job.reportDate, job.finalVideoPath);
+            await uploadJob(prisma, job);
             uploadAttempts.set(item.ticker, attempts + 1);
             retryNotBefore.set(item.ticker, Date.now() + delayMs);
           }
         } else if (job.youtubeUploadStatus !== 'UPLOADING') {
-          await uploadToYoutube(item.ticker, job.reportDate, job.finalVideoPath);
+          await uploadJob(prisma, job);
           uploadAttempts.set(item.ticker, (uploadAttempts.get(item.ticker) ?? 0) + 1);
         }
       } else if (['FAILED', 'ERROR', 'NOT_ELIGIBLE'].includes(job.status)) {
@@ -121,7 +144,7 @@ async function pollUntilDone(
       }
     }
     if (uploaded.size + failed.size < items.length) {
-      await new Promise((r) => setTimeout(r, 15000));
+      await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
     }
   }
   return { uploaded: [...uploaded], failed: [...failed] };
@@ -208,17 +231,9 @@ async function run() {
   }
 
   // ── 2. Verify YouTube service is authorized before any uploads ─────────────
-  try {
-    const ls = await axios.get(`${YOUTUBE_SERVICE_URL}/login-status`, { timeout: 5000 });
-    if (!ls.data?.authorized) {
-      console.error(`❌ YouTube service is NOT authorized. Visit ${YOUTUBE_SERVICE_URL}/login to log in first.`);
-      await app.close();
-      return;
-    }
-    console.log('✅ YouTube service is authorized.');
-  } catch (e: any) {
-    console.error(`❌ Cannot reach YouTube service at ${YOUTUBE_SERVICE_URL}: ${e.message}`);
+  if (!(await isYoutubeAuthorized())) {
     await app.close();
+    process.exitCode = 1;
     return;
   }
 
@@ -273,6 +288,10 @@ async function run() {
   console.log(`Market recap uploaded:`, recapResult.uploaded);
   console.log(`Market recap failed:`, recapResult.failed);
   console.log(`========================================\n`);
+
+  // Non-zero exit tells a supervising caller (cron, /loop) that something needs
+  // a human look, without it having to parse this log.
+  if (stockResult.failed.length || recapResult.failed.length) process.exitCode = 1;
 
   await app.close();
 }

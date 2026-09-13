@@ -1,13 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { PrismaService } from './prisma/prisma.service';
+import { getNYDateString } from './utils/date';
 
 (BigInt.prototype as any).toJSON = function () { return Number(this); };
 
 async function run() {
   const app = await NestFactory.createApplicationContext(AppModule);
   const prisma = app.get(PrismaService);
-  const today = '2026-06-28';
+  const today = process.env.TARGET_DATE || getNYDateString();
 
   const jobs = await prisma.videoGenerationJob.findMany({
     where: { reportDate: today },

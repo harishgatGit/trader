@@ -82,6 +82,23 @@ services:
     volumes:
       - ./video_agents_service/outputs:/outputs
 
+  trading-agents:
+    build:
+      context: ./trading_agents_service
+      dockerfile: Dockerfile
+    container_name: trader_trading_agents
+    restart: unless-stopped
+    ports:
+      - '3100:3100'
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://trader:trader_pass@postgres:5432/trader_db
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: sh -c "npx prisma migrate deploy && node dist/main.js"
+
 
 volumes:
   postgres_data:

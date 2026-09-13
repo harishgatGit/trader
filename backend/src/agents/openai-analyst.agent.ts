@@ -2,14 +2,16 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import OpenAI from 'openai';
 import { z } from 'zod';
-import * as fs from 'fs';
-import * as path from 'path';
+import { loadPromptTemplate } from './prompt-loader.util';
 import { MarketDataResult } from './market-data.agent';
 import { TechnicalAgentResult } from './technical.agent';
 import { FundamentalResult } from './fundamental.agent';
 import { NewsResult } from './news.agent';
 import { InstitutionalFlowResult } from './institutional-flow.agent';
 import { HistoricalDataResult } from './historical-data.agent';
+import { OpenAIRateLimiterService, parseRetryAfterMs } from './openai-rate-limiter.service';
+import { OPENAI_TOKEN_ESTIMATES } from './openai-token-estimates';
+import { summarizeCandlesForPrompt } from './candle-summary.lib';
 
 // ── Zod Schemas for the New Pre-Decision JSON Output ──────────────────
 const LevelWithStrengthSchema = z.object({
@@ -891,27 +893,22 @@ export class OpenAIAnalystAgent {
   private readonly logger = new Logger(OpenAIAnalystAgent.name);
   private readonly openai: OpenAI;
   private readonly model: string;
+  private readonly secondaryModel: string;
 
-  constructor(private readonly config: ConfigService) {
+  constructor(
+    private readonly config: ConfigService,
+    private readonly rateLimiter: OpenAIRateLimiterService,
+  ) {
     this.openai = new OpenAI({
       apiKey: this.config.get('OPENAI_API_KEY') || 'mock-key-not-configured',
     });
     this.model = this.config.get('OPENAI_MODEL', 'gpt-4o');
+    // Ecosystem Insights is a narrower, more mechanical lookup than the flagship
+    // report — moved to the secondary model/quota tier so it doesn't contend with
+    // gpt-4o's TPM budget alongside the other Phase 4 calls.
+    this.secondaryModel = this.config.get('OPENAI_SECONDARY_MODEL', 'gpt-4o-mini');
   }
 
-  private getPromptTemplate(filename: string, fallback: string): string {
-    try {
-      const filePath = path.join(process.cwd(), 'src/agents/prompts', filename);
-      if (fs.existsSync(filePath)) {
-        return fs.readFileSync(filePath, 'utf8');
-      }
-      this.logger.warn(`Prompt file not found at ${filePath}. Using inline fallback.`);
-      return fallback;
-    } catch (err: any) {
-      this.logger.error(`Failed to read prompt file ${filename}: ${err.message}`);
-      return fallback;
-    }
-  }
 
   async run(params: {
     symbol: string;
@@ -926,13 +923,14 @@ export class OpenAIAnalystAgent {
 
     const prompt = this.buildPrompt(params);
     let attempt = 0;
-    const maxAttempts = 2;
+    const maxAttempts = 3;
 
-    const systemPrompt = this.getPromptTemplate('stock-analyst.system.md', SYSTEM_PROMPT);
+    const systemPrompt = loadPromptTemplate(this.logger, 'stock-analyst.system.md', SYSTEM_PROMPT);
 
     while (attempt < maxAttempts) {
       attempt++;
       try {
+        await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.ANALYST_REPORT);
         const completion = await this.openai.chat.completions.create({
           model: this.model,
           messages: [
@@ -966,44 +964,54 @@ export class OpenAIAnalystAgent {
       } catch (error) {
         this.logger.warn(`OpenAI attempt ${attempt} failed: ${error.message}`);
         if (attempt >= maxAttempts) throw error;
-        await new Promise((r) => setTimeout(r, 2000)); // Wait before retry
+        await new Promise((r) => setTimeout(r, parseRetryAfterMs(error)));
       }
     }
   }
 
   async runCompanyInsights(symbol: string): Promise<{ companyInsights: z.infer<typeof CompanyInsightsSchema> | null; insightTokens: number }> {
     this.logger.log(`Running parallel ecosystem insights for ${symbol}`);
-    try {
-      const insightsSystemPrompt = this.getPromptTemplate('ecosystem-insights.system.md', INSIGHTS_SYSTEM_PROMPT);
-      const completion = await this.openai.chat.completions.create({
-        model: this.model,
-        messages: [
-          { role: 'system', content: insightsSystemPrompt },
-          { role: 'user', content: `Analyze the ecosystem for stock ticker: ${symbol}` },
-        ],
-        response_format: { type: 'json_object' },
-        temperature: 0.3,
-        max_tokens: 2500,
-      });
+    const insightsSystemPrompt = loadPromptTemplate(this.logger, 'ecosystem-insights.system.md', INSIGHTS_SYSTEM_PROMPT);
 
-      const rawContent = completion.choices[0]?.message?.content;
-      if (!rawContent) return { companyInsights: null, insightTokens: 0 };
+    let attempt = 0;
+    const maxAttempts = 2;
 
-      const parsed = JSON.parse(rawContent);
-      const validated = CompanyInsightsSchema.safeParse(parsed);
-      if (!validated.success) {
-        this.logger.warn(`CompanyInsights validation failed for ${symbol}: ${JSON.stringify(validated.error.errors)}`);
-        return { companyInsights: null, insightTokens: completion.usage?.total_tokens || 0 };
+    while (attempt < maxAttempts) {
+      attempt++;
+      try {
+        await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.COMPANY_INSIGHTS, 'secondary');
+        const completion = await this.openai.chat.completions.create({
+          model: this.secondaryModel,
+          messages: [
+            { role: 'system', content: insightsSystemPrompt },
+            { role: 'user', content: `Analyze the ecosystem for stock ticker: ${symbol}` },
+          ],
+          response_format: { type: 'json_object' },
+          temperature: 0.3,
+          max_tokens: 2500,
+        });
+
+        const rawContent = completion.choices[0]?.message?.content;
+        if (!rawContent) return { companyInsights: null, insightTokens: 0 };
+
+        const parsed = JSON.parse(rawContent);
+        const validated = CompanyInsightsSchema.safeParse(parsed);
+        if (!validated.success) {
+          this.logger.warn(`CompanyInsights validation failed for ${symbol}: ${JSON.stringify(validated.error.errors)}`);
+          return { companyInsights: null, insightTokens: completion.usage?.total_tokens || 0 };
+        }
+
+        return {
+          companyInsights: validated.data,
+          insightTokens: completion.usage?.total_tokens || 0,
+        };
+      } catch (error) {
+        this.logger.warn(`CompanyInsights call failed for ${symbol}: ${error.message}`);
+        if (attempt >= maxAttempts) return { companyInsights: null, insightTokens: 0 };
+        await new Promise((r) => setTimeout(r, parseRetryAfterMs(error)));
       }
-
-      return {
-        companyInsights: validated.data,
-        insightTokens: completion.usage?.total_tokens || 0,
-      };
-    } catch (error) {
-      this.logger.warn(`CompanyInsights call failed for ${symbol}: ${error.message}`);
-      return { companyInsights: null, insightTokens: 0 };
     }
+    return { companyInsights: null, insightTokens: 0 };
   }
 
   async runFundAnalysis(symbol: string): Promise<{ report: any; promptTokens: number; completionTokens: number }> {
@@ -1014,7 +1022,7 @@ Do NOT attempt to fetch live stock data, technical indicators, or news. Use your
 
 Generate the analysis matching the required Fund JSON schema.`;
 
-    const systemPrompt = this.getPromptTemplate('fund-analyst.system.md', `You are Investingatti’s Senior Fund Analyst & Investment Strategist. Produce a comprehensive review for symbol and return JSON.`);
+    const systemPrompt = loadPromptTemplate(this.logger, 'fund-analyst.system.md', `You are Investingatti’s Senior Fund Analyst & Investment Strategist. Produce a comprehensive review for symbol and return JSON.`);
 
     let attempt = 0;
     const maxAttempts = 2;
@@ -1022,6 +1030,7 @@ Generate the analysis matching the required Fund JSON schema.`;
     while (attempt < maxAttempts) {
       attempt++;
       try {
+        await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.FUND_ANALYSIS);
         const completion = await this.openai.chat.completions.create({
           model: this.model,
           messages: [
@@ -1076,7 +1085,7 @@ Generate the analysis matching the required Fund JSON schema.`;
       ssrStatus,
       squeezeRisk,
       borrowAvailability: 'Available',
-    }, null, 2);
+    });
     
     const techTimeframes: any = {};
     for (const [tf, tech] of Object.entries(technicals.timeframes)) {
@@ -1119,7 +1128,7 @@ Generate the analysis matching the required Fund JSON schema.`;
           epsTrailing: fundamentals.epsTrailing,
           epsForward: fundamentals.epsForward,
           beta: fundamentals.beta,
-        }, null, 2)
+        })
       : 'Insufficient valuation data';
 
     const dailyCandles = historicalData?.timeframes?.['1Day']?.candles || [];
@@ -1135,14 +1144,14 @@ Generate the analysis matching the required Fund JSON schema.`;
     };
 
     const candleDataStr = dailyCandles.length > 0
-      ? JSON.stringify(dailyCandles.slice(-252).map(c => ({
+      ? JSON.stringify(summarizeCandlesForPrompt(dailyCandles.map(c => ({
           date: c.timestamp.split('T')[0],
           open: c.open,
           high: c.high,
           low: c.low,
           close: c.close,
           volume: Number(c.volume)
-        })), null, 2)
+        })), 20))
       : 'Insufficient historical candle data';
 
     return `Analyze the following stock data and return a pre-decision JSON analyst report.
@@ -1150,9 +1159,9 @@ Generate the analysis matching the required Fund JSON schema.`;
 SYMBOL: ${symbol}
 ANALYSIS_DATE_TIME: ${timestamp}
 ## BACKEND DATA QUALITY CHECK
-${JSON.stringify(dataQualitySummary, null, 2)}
+${JSON.stringify(dataQualitySummary)}
 
-## HISTORICAL CANDLES (1Day)
+## HISTORICAL CANDLES (1Day) — recent 20 days full detail, older history bucketed into 5-day chunks, plus precomputed period stats
 ${candleDataStr}
 USER_TRADING_STYLE: Short-term swing trading and tactical investing
 PRIMARY_HORIZONS:
@@ -1184,10 +1193,10 @@ ${JSON.stringify({
   spread: marketData.spread,
   changePercent: marketData.changePercent,
   available: marketData.available,
-}, null, 2)}
+})}
 
 ## TECHNICAL INDICATORS — MULTI TIMEFRAME
-${JSON.stringify(techTimeframes, null, 2)}
+${JSON.stringify(techTimeframes)}
 
 Expected technical timeframes may include:
 - 1Min
@@ -1218,7 +1227,7 @@ ${JSON.stringify({
   sector: fundamentals.sector,
   industry: fundamentals.industry,
   description: fundamentals.description,
-}, null, 2)}
+})}
 
 ## VALUATION DATA
 ${valuationDataStr}
@@ -1233,7 +1242,7 @@ ${JSON.stringify({
     source: n.source,
     publishedAt: n.publishedAt,
   })),
-}, null, 2)}
+})}
 
 ## EARNINGS AND UPCOMING CATALYSTS
 Earnings and upcoming catalysts data not provided by backend. Rely on news sentiment and general catalyst checklist.
@@ -1248,7 +1257,7 @@ ${JSON.stringify({
   interpretation: institutionalFlow.interpretation,
   signals: institutionalFlow.signals,
   subScores: institutionalFlow.subScores,
-}, null, 2)}
+})}
 
 ## OPTIONAL OPTIONS FLOW DATA
 Options flow data unavailable

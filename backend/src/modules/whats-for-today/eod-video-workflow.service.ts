@@ -1,7 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 import { VideoJobService } from '../video/video-job.service';
-import { TrendingScraperService } from '../../services/trending-scraper.service';
+import { SocialTrendingService } from '../../services/social-trending.service';
+
+const TRENDING_COUNT = 10;
 
 @Injectable()
 export class EODVideoWorkflowService {
@@ -10,12 +12,13 @@ export class EODVideoWorkflowService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly videoJobService: VideoJobService,
-    private readonly trendingScraper: TrendingScraperService,
+    private readonly socialTrending: SocialTrendingService,
   ) {}
 
   /**
    * Runs every weekday after market close (~5:45 PM EST).
-   * 1. Fetches top 5 trending tickers and fires a SHORTS video job for each.
+   * 1. Discovers top 10 trending tickers (YouTube + Reddit social signal, with
+   *    fallback) and fires a SHORTS video job for each.
    * 2. Fetches WhatsForToday Run 4 (EOD report) and fires one MARKET_RECAP video.
    */
   async runEODWorkflow(): Promise<{ shorts: string[]; marketRecap: boolean }> {
@@ -26,25 +29,24 @@ export class EODVideoWorkflowService {
 
     this.logger.log(`[EOD] Starting EOD video workflow for market date ${today}...`);
 
-    const firedShorts = await this.fireTop5Shorts(today);
+    const firedShorts = await this.fireTopShorts(today);
     const marketRecap = await this.fireMarketRecapVideo(today);
 
     this.logger.log(
-      `[EOD] Completed. SHORTS fired: ${firedShorts.length}/5, MARKET_RECAP: ${marketRecap}`,
+      `[EOD] Completed. SHORTS fired: ${firedShorts.length}/${TRENDING_COUNT}, MARKET_RECAP: ${marketRecap}`,
     );
     return { shorts: firedShorts, marketRecap };
   }
 
-  // ── Step 1: SHORTS for top 5 trending stocks ────────────────────────────────
+  // ── Step 1: SHORTS for top trending stocks ──────────────────────────────────
 
-  private async fireTop5Shorts(today: string): Promise<string[]> {
+  private async fireTopShorts(today: string): Promise<string[]> {
     const fired: string[] = [];
     try {
-      const trending = await this.trendingScraper.fetchTrendingTickers(10);
-      const top5 = trending.slice(0, 5);
-      this.logger.log(`[EOD] Top 5 trending: ${top5.join(', ')}`);
+      const topTickers = await this.socialTrending.discoverTrendingTickers(TRENDING_COUNT);
+      this.logger.log(`[EOD] Top ${TRENDING_COUNT} trending: ${topTickers.join(', ')}`);
 
-      for (const symbol of top5) {
+      for (const symbol of topTickers) {
         try {
           const report = await this.findTodaysReport(symbol, today);
           if (!report) {
@@ -61,7 +63,7 @@ export class EODVideoWorkflowService {
         }
       }
     } catch (err: any) {
-      this.logger.error(`[EOD] Error in top-5 SHORTS step: ${err.message}`);
+      this.logger.error(`[EOD] Error in top-trending SHORTS step: ${err.message}`);
     }
     return fired;
   }

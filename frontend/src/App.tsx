@@ -28,6 +28,11 @@ const Glossary          = lazy(() => import('./pages/Glossary'));
 const Admin             = lazy(() => import('./pages/Admin'));
 const WhatsForToday     = lazy(() => import('./pages/WhatsForToday'));
 const PennyStocksToWatch = lazy(() => import('./pages/PennyStocksToWatch'));
+const SwingDashboard     = lazy(() => import('./pages/SwingDashboard'));
+const DeepResearch       = lazy(() => import('./pages/DeepResearch'));
+const TradingAgents      = lazy(() => import('./pages/TradingAgents'));
+const SimulationBoard    = lazy(() => import('./pages/SimulationBoard/SimulationBoardPage'));
+const AgentRecommendations = lazy(() => import('./pages/AgentRecommendations'));
 
 // ── Page-level loading fallback ───────────────────────────────────────────────
 const PageLoader: React.FC = () => (
@@ -214,6 +219,16 @@ const App: React.FC = () => {
               }
             />
             <Route
+              path="trading"
+              element={
+                <ProtectedRoute requireSuper>
+                  <DirectionalTransition>
+                    <TradingAgents />
+                  </DirectionalTransition>
+                </ProtectedRoute>
+              }
+            />
+            <Route
               path="stocks/:symbol"
               element={
                 <ProtectedRoute>
@@ -227,7 +242,11 @@ const App: React.FC = () => {
             {/* Shared Routes (Standard Users and Superusers) */}
             <Route path="whats-for-today" element={<DirectionalTransition><WhatsForToday /></DirectionalTransition>} />
             <Route path="penny-stocks" element={<DirectionalTransition><PennyStocksToWatch /></DirectionalTransition>} />
+            <Route path="swing-dashboard" element={<DirectionalTransition><SwingDashboard /></DirectionalTransition>} />
             <Route path="analyze" element={<DirectionalTransition><AnalyzePage /></DirectionalTransition>} />
+            <Route path="simulation-board" element={<DirectionalTransition><SimulationBoard /></DirectionalTransition>} />
+            <Route path="deep-research" element={<DirectionalTransition><DeepResearch /></DirectionalTransition>} />
+            <Route path="agent-recommendations" element={<DirectionalTransition><AgentRecommendations /></DirectionalTransition>} />
             <Route path="profile" element={<DirectionalTransition><Profile /></DirectionalTransition>} />
             <Route path="education" element={<DirectionalTransition><Education /></DirectionalTransition>} />
             <Route path="glossary" element={<DirectionalTransition><Glossary /></DirectionalTransition>} />

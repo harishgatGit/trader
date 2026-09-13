@@ -28,6 +28,15 @@ const StockDetail: React.FC = () => {
 
   const ticker = symbol?.toUpperCase() || 'Stock';
 
+  const [report, setReport] = useState<any>(null);
+  const [candles, setCandles] = useState<any[]>([]);
+  const [technicals, setTechnicals] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState<'fundamentals' | 'news' | 'analysts' | 'ecosystem'>('fundamentals');
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [showStickyBar, setShowStickyBar] = useState(false);
+  const [actionTab, setActionTab] = useState<'swing' | 'short' | 'long'>('swing');
+
   // Derive company name and report date for title — updated reactively once report loads
   const [pageTitle, setPageTitle] = React.useState(`${ticker} Stock Analysis | Investing Atti`);
 
@@ -79,15 +88,6 @@ const StockDetail: React.FC = () => {
       }
     ]
   };
-  
-  const [report, setReport] = useState<any>(null);
-  const [candles, setCandles] = useState<any[]>([]);
-  const [technicals, setTechnicals] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'fundamentals' | 'news' | 'analysts' | 'ecosystem'>('fundamentals');
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
-  const [showStickyBar, setShowStickyBar] = useState(false);
-  const [actionTab, setActionTab] = useState<'swing' | 'short' | 'long'>('swing');
   const [activeSection, setActiveSection] = useState('summary');
 
   const isWatchlisted = watchlist.some((w) => w.symbol === symbol);

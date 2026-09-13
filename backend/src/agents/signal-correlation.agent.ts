@@ -2,8 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import OpenAI from 'openai';
 import { z } from 'zod';
-import * as fs from 'fs';
-import * as path from 'path';
+import { loadPromptTemplate } from './prompt-loader.util';
 import { MarketDataResult } from './market-data.agent';
 import { TechnicalAgentResult } from './technical.agent';
 import { FundamentalResult } from './fundamental.agent';
@@ -11,6 +10,9 @@ import { NewsResult } from './news.agent';
 import { InstitutionalFlowResult } from './institutional-flow.agent';
 import { HistoricalDataResult } from './historical-data.agent';
 import { getNYDateString } from '../utils/date';
+import { OpenAIRateLimiterService, parseRetryAfterMs } from './openai-rate-limiter.service';
+import { OPENAI_TOKEN_ESTIMATES } from './openai-token-estimates';
+import { summarizeCandlesForPrompt } from './candle-summary.lib';
 
 export const SignalCorrelationResultSchema = z.object({
   ticker: z.string(),
@@ -165,26 +167,16 @@ export class SignalCorrelationAgent {
   private readonly openai: OpenAI;
   private readonly model: string;
 
-  constructor(private readonly config: ConfigService) {
+  constructor(
+    private readonly config: ConfigService,
+    private readonly rateLimiter: OpenAIRateLimiterService,
+  ) {
     this.openai = new OpenAI({
       apiKey: this.config.get('OPENAI_API_KEY') || 'mock-key-not-configured',
     });
-    this.model = this.config.get('OPENAI_MODEL', 'gpt-4o');
+    this.model = this.config.get('OPENAI_SECONDARY_MODEL', 'gpt-4o-mini');
   }
 
-  private getPromptTemplate(filename: string, fallback: string): string {
-    try {
-      const filePath = path.join(process.cwd(), 'src/agents/prompts', filename);
-      if (fs.existsSync(filePath)) {
-        return fs.readFileSync(filePath, 'utf8');
-      }
-      this.logger.warn(`Prompt file not found at ${filePath}. Using inline fallback.`);
-      return fallback;
-    } catch (err: any) {
-      this.logger.error(`Failed to read prompt file ${filename}: ${err.message}`);
-      return fallback;
-    }
-  }
 
   async run(params: {
     symbol: string;
@@ -199,13 +191,14 @@ export class SignalCorrelationAgent {
 
     const prompt = this.buildPrompt(params);
     let attempt = 0;
-    const maxAttempts = 2;
+    const maxAttempts = 3;
 
-    const systemPrompt = this.getPromptTemplate('signal-correlation.system.md', SIGNAL_CORRELATION_SYSTEM_PROMPT);
+    const systemPrompt = loadPromptTemplate(this.logger, 'signal-correlation.system.md', SIGNAL_CORRELATION_SYSTEM_PROMPT);
 
     while (attempt < maxAttempts) {
       attempt++;
       try {
+        await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.SIGNAL_CORRELATION, 'secondary');
         const completion = await this.openai.chat.completions.create({
           model: this.model,
           messages: [
@@ -229,7 +222,7 @@ export class SignalCorrelationAgent {
         if (attempt >= maxAttempts) {
           return this.getFallbackResult(params.symbol, params.marketData.price);
         }
-        await new Promise((r) => setTimeout(r, 2000));
+        await new Promise((r) => setTimeout(r, parseRetryAfterMs(error)));
       }
     }
 
@@ -352,14 +345,14 @@ export class SignalCorrelationAgent {
     const dailyCandles = historicalData?.timeframes?.['1Day']?.candles || [];
     const candleCount = dailyCandles.length;
 
-    const candleSummary = dailyCandles.slice(-15).map(c => ({
+    const candleSummary = summarizeCandlesForPrompt(dailyCandles.slice(-15).map(c => ({
       date: c.timestamp.split('T')[0],
       open: c.open,
       high: c.high,
       low: c.low,
       close: c.close,
       volume: Number(c.volume)
-    }));
+    })), 20);
 
     return `Determine the stock signal correlation, score, and zone details.
 SYMBOL: ${symbol}
@@ -374,10 +367,10 @@ ${JSON.stringify({
   volume: marketData.volume,
   vwap: marketData.vwap,
   changePercent: marketData.changePercent,
-}, null, 2)}
+})}
 
 ## TECHNICAL INDICATORS
-${JSON.stringify(techTimeframes, null, 2)}
+${JSON.stringify(techTimeframes)}
 
 ## FUNDAMENTAL DATA
 ${JSON.stringify({
@@ -392,7 +385,7 @@ ${JSON.stringify({
   dividendYield: fundamentals.dividendYield,
   sector: fundamentals.sector,
   industry: fundamentals.industry,
-}, null, 2)}
+})}
 
 ## NEWS AND SENTIMENT
 ${JSON.stringify({
@@ -403,17 +396,17 @@ ${JSON.stringify({
     sentiment: n.sentiment,
     publishedAt: n.publishedAt,
   })),
-}, null, 2)}
+})}
 
 ## INSTITUTIONAL FLOW PROXY
 ${JSON.stringify({
   proxyScore: institutionalFlow.proxyScore,
   interpretation: institutionalFlow.interpretation,
   signals: institutionalFlow.signals,
-}, null, 2)}
+})}
 
-## RECENT HISTORICAL DAILY CANDLES
-${JSON.stringify(candleSummary, null, 2)}
+## RECENT HISTORICAL DAILY CANDLES (recent rows + bucketed older history + period stats)
+${JSON.stringify(candleSummary)}
 `;
   }
 }

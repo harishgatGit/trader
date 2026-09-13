@@ -17,6 +17,13 @@ and short-form/long-form videos, across a web app, mobile app, and backend servi
 | Video Agents Service | `video_agents_service/` | Python 3.11 FastAPI, OpenAI, edge-tts, Remotion, FFmpeg, SQLite | 8090 |
 | Mobile App | `mobile-app/` | Expo (SDK 54), React Native, TypeScript, Zustand | — |
 | YouTube Agent Service | `youtube_agent_service/` | NestJS 11, googleapis | — |
+| Option Trading Agent | `option-trading-agent/` | Python 3.11, MCP client (OAuth) → `mcp.investingatti.com`, pandas/scipy, psycopg2 | — (CLI: `python -m app.main scan\|monitor`) |
+
+`option-trading-agent/` holds no broker keys: every quote, bar and option chain comes from the Trading
+MCP server (source: `~/Documents/Jarvis/Money/mcp`, Alpaca-backed, OAuth 2.1 — `python -m app.main login`
+once). It reads the watchlist from `watchlists`, writes ideas to `option_recommendations` (surfaced on the
+frontend's Agent Trades page, `/agent-recommendations`), and posts to Slack `#scanner-`.
+`options_agent/` is the earlier yfinance-based scanner kept as a fallback; don't extend it.
 
 `youtube_agent_service/` is a **zombie service** — not wired into `docker-compose.yml`. Its YouTube-upload
 functionality was migrated into `video_agents_service/app/main.py`. Don't build new features there; if

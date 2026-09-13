@@ -11,6 +11,8 @@ class UpdateRiskSettingsDto {
   @IsBoolean() @IsOptional() requireStopLoss?: boolean;
   @IsNumber() @IsOptional() @Min(1) @Max(168) blockDuplicateWindow?: number;
   @IsNumber() @IsOptional() @Min(1) @Max(100) maxDailyOrders?: number;
+  @IsNumber() @IsOptional() @Min(10) @Max(1000000) maxTotalCapitalDeployed?: number;
+  @IsNumber() @IsOptional() @Min(1) @Max(100) maxConcurrentOpenPositions?: number;
 }
 
 @Controller('risk-settings')

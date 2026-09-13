@@ -138,6 +138,20 @@ model FundamentalSnapshot {
   description String?
   raw         Json?
 
+  targetHighPrice   Float?
+  targetLowPrice    Float?
+  targetMeanPrice   Float?
+  targetMedianPrice Float?
+  recommendationKey String?
+  numberOfAnalystOpinions Int?
+  analystCounts     Json?
+  freeCashflow      Float?
+  operatingCashflow Float?
+  revenueGrowthPct  Float?
+  grossMarginPct    Float?
+  operatingMarginPct Float?
+  revenueHistory    Json?
+
   @@index([symbol, timestamp])
   @@map("fundamental_snapshots")
 }
@@ -221,6 +235,31 @@ model AgentReport {
 }
 
 // ─────────────────────────────────────────────────────────────────
+// DEEP RESEARCH REPORTS
+// ─────────────────────────────────────────────────────────────────
+model DeepResearchReport {
+  id               String   @id @default(cuid())
+  symbol           String
+  createdAt        DateTime @default(now())
+  // Report JSON (full structured output)
+  reportJson       Json
+  // Summary fields for quick queries
+  rating           String   // BUY, SPEC BUY, HOLD, SELL, WATCHLIST, AVOID
+  currentPrice     Float?
+  targetPrice12mo  Float?
+  // Processing metadata
+  processingTime   Int?     // milliseconds
+  openaiModel      String?
+  promptTokens     Int?
+  completionTokens Int?
+  // Status
+  status           String   @default("completed") // completed, failed
+
+  @@index([symbol, createdAt])
+  @@map("deep_research_reports")
+}
+
+// ─────────────────────────────────────────────────────────────────
 // ALERTS
 // ─────────────────────────────────────────────────────────────────
 model Alert {
@@ -285,6 +324,21 @@ model PaperOrder {
   previewApproved Boolean @default(false)
   // From AI report
   reportId      String?
+  // Sector-swarm trading agent linkage (trading_agents_service is the writer;
+  // kept nullable/untyped-relation here since that service owns its own tables).
+  sectorAgentStrategyId String?
+  swingOrPosition        String?  // SWING | POSITION
+  monteCarloRunId        String?
+  kellyFraction          Float?
+  edgeProbability        Float?   // Monte-Carlo-derived P(target before stop)
+  expectedReturnPct      Float?   // Monte-Carlo-derived probability-weighted expected return
+  autoExecuted           Boolean  @default(false)
+  // Close-out
+  closedAt               DateTime?
+  exitPrice              Float?
+  exitReason             String?  // target_hit | stop_hit | manual_close | time_exit
+  realizedPnl            Float?
+  realizedPnlPct         Float?
   // Timestamps
   submittedAt   DateTime?
   filledAt      DateTime?
@@ -321,6 +375,26 @@ model RiskSetting {
   blockDuplicateWindow Int     @default(24) // hours
   paperTradingOnly     Boolean @default(true)
   maxDailyOrders       Int     @default(10)
+  // Sector-swarm trading agent risk ceilings (trading_agents_service enforces these;
+  // stored here so they share the same SUPERUSER settings surface as the fields above).
+  kellyFractionCap          Float @default(0.25) // hard ceiling: never exceed quarter-Kelly platform-wide
+  monteCarloMinTrades       Int   @default(30)    // below this sample size, Monte Carlo output is flagged untrustworthy
+  graduationMinClosedTrades Int   @default(20)
+  graduationMinSharpe       Float @default(1.0)
+  graduationMinWinRatePct   Float @default(45)
+  graduationMinExpectancyR  Float @default(0)
+  // Standing-exposure caps — bound total live risk independent of
+  // maxDailyOrders (which only bounds *new* orders per day, not how much
+  // stays open at once).
+  maxConcurrentOpenPositions Int   @default(6)
+  // The rotating capital pool: the total dollar amount the trading swarm is
+  // allowed to have deployed across all open positions at once, regardless
+  // of the paper account's real (much larger) equity. Capital locked in an
+  // open position isn't available for a new trade until that position
+  // closes — sizing draws against (pool - currently-locked notional), not
+  // raw account equity, so a $1000 pool never lets total exposure exceed
+  // $1000 no matter how many trades are open.
+  maxTotalCapitalDeployed    Float @default(1000)
   updatedAt            DateTime @updatedAt
 
   @@map("risk_settings")
@@ -356,6 +430,7 @@ model User {
   sessions         UserSession[]
   problemReports   ProblemReport[]
   searchLogs       SearchLog[]
+  simulationRecords SimulationRecord[]
 
   @@map("users")
 }
@@ -627,4 +702,99 @@ model ReportOutcome {
   @@index([overallVerdict])
   @@index([ratingAtTime])
   @@map("report_outcomes")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SIMULATION RECORDS (Simulation Board feature)
+// ─────────────────────────────────────────────────────────────────
+model SimulationRecord {
+  id                    String   @id @default(cuid())
+  userId                String
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Investment details
+  symbol                String
+  purchaseDate          DateTime
+  purchasePrice         Float
+  quantity              Float
+  investmentAmount      Float
+
+  // Optional constraints
+  targetPrice           Float?
+  stopLoss              Float?
+
+  // Simulation configuration
+  horizons              String[] // ["30d", "90d", "180d", "1y", "2y"]
+  simulationModel       String   @default("MonteCarlo-Regime-v1") // model identifier
+  simulationCount       Int      @default(20000) // number of paths
+
+  // Market context at time of simulation
+  marketRegime          String?  // Bullish, Bearish, Neutral, etc.
+  currentPrice          Float?
+  historicalVolatility  Float?
+
+  // Simulation parameters (metadata)
+  simulationParameters  Json?    // stores model-specific params
+
+  // Results (comprehensive JSONB output)
+  results               Json     // horizonResults, probabilities, scenarios, riskMetrics, etc.
+
+  // Rate limiting tracking (for BASIC users: 5 runs/day)
+  simulationRunCount    Int      @default(1)
+  lastSimulationRun     DateTime @default(now())
+
+  // Timestamps
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([userId, createdAt])
+  @@index([symbol, createdAt])
+  @@index([userId, lastSimulationRun]) // for rate-limit checks
+  @@map("simulation_records")
+}
+
+// ─────────────────────────────────────────────────────────────────
+// OPTIONS AGENT RECOMMENDATIONS (written by options_agent/options_scanner.py)
+// ─────────────────────────────────────────────────────────────────
+model OptionRecommendation {
+  id             String    @id @default(cuid())
+  runDate        DateTime  @db.Date
+  ticker         String
+  contract       String    // OCC contract symbol, e.g. AAPL261002C00335000
+  expiry         DateTime  @db.Date
+  dte            Int
+  strike         Float
+  callPut        String    // call | put
+  buySell        String    // buy | sell
+  entry1Premium  Float
+  entry1Price    Float
+  entry2Premium  Float
+  entry2Price    Float
+  stopPremium    Float
+  stopPrice      Float
+  exit1Premium   Float
+  exit1Price     Float
+  exit2Premium   Float
+  exit2Price     Float
+  probability    Float     // 0-1
+  iv             Float?
+  delta          Float?
+  setup          String?
+  direction      String?   // bullish | bearish
+  score          Float?
+
+  // Outcome tracking — auto-evaluated by the scanner, overridable from the UI
+  status         String    @default("OPEN") // OPEN | WIN | LOSS | EXPIRED | SKIPPED
+  realizedPnlPct Float?    // % return on the option premium
+  outcomeNotes   String?
+  evaluatedBy    String?   // auto | user
+  closedAt       DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@unique([runDate, contract])
+  @@index([status])
+  @@index([ticker])
+  @@index([runDate])
+  @@map("option_recommendations")
 }

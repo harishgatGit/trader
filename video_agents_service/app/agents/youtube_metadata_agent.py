@@ -143,6 +143,95 @@ Respond strictly in valid JSON:
             print(f"[YouTubeMetadataAgent] OpenAI error: {e}. Falling back.")
             return self._fallback_metadata(ticker, company, formatted_date, rating, summary)
 
+    def generate_market_recap(
+        self,
+        report_date: str,
+        mood: str,
+        market_story_summary: str,
+        catalyst_summary: str,
+        sector_names: list[str],
+    ) -> dict:
+        """
+        Generates SEO-optimized YouTube Title, Description, and Tags for a
+        whole-market MARKET_RECAP video (not tied to a single ticker).
+        Title format: MM/DD/YYYY — Stock Market Recap | Mood | Top Sector
+        """
+        formatted_date = _fmt_date(report_date)
+        top_sector = sector_names[0] if sector_names else "All Sectors"
+
+        if not self.client:
+            print("[YouTubeMetadataAgent] OpenAI API key not configured, using fallback.")
+            return self._fallback_market_recap_metadata(
+                formatted_date, mood, market_story_summary, catalyst_summary, sector_names
+            )
+
+        prompt = f"""You are writing YouTube SEO metadata for an AI-generated daily stock MARKET RECAP video
+(covers the whole market, not a single stock).
+Details:
+- Date: {formatted_date}
+- Market Mood: {mood}
+- Market Story Summary: {market_story_summary}
+- Catalyst Summary: {catalyst_summary}
+- Sectors covered: {', '.join(sector_names)}
+
+Generate a YouTube title, description, and tags.
+Rules:
+- Title: max 95 characters. MUST START WITH THE DATE in MM/DD/YYYY format (no brackets). Do NOT reference a
+  single ticker. Format: "MM/DD/YYYY — Stock Market Recap | {mood} | Key Theme"
+- Description: 3-5 short paragraphs. Paragraph 1 summarizes the day's overall market action. Paragraph 2
+  covers the main catalysts/news driving the move. Paragraph 3 highlights notable sector trends. Paragraph 4
+  contains an educational disclaimer. Paragraph 5 contains relevant hashtags (e.g. #stockmarket #investing
+  #marketrecap).
+- Tags: A list of 10-15 relevant keywords/tags (no ticker symbols).
+
+Respond strictly in valid JSON:
+{{
+  "title": "...",
+  "description": "...",
+  "tags": ["...", "...", ...]
+}}
+"""
+        try:
+            response = self.client.chat.completions.create(
+                model=OPENAI_MODEL,
+                messages=[{"role": "user", "content": prompt}],
+                response_format={"type": "json_object"},
+                temperature=0.7,
+                max_tokens=800,
+            )
+            result = json.loads(response.choices[0].message.content.strip())
+            if not result.get("title"):
+                result["title"] = f"{formatted_date} — Stock Market Recap | {mood} | {top_sector} in Focus"
+            if not result.get("description"):
+                result["description"] = market_story_summary
+            if not result.get("tags"):
+                result["tags"] = ["stockmarket", "marketrecap", "investing", "finance", "stocks"]
+            return result
+        except Exception as e:
+            print(f"[YouTubeMetadataAgent] OpenAI error: {e}. Falling back.")
+            return self._fallback_market_recap_metadata(
+                formatted_date, mood, market_story_summary, catalyst_summary, sector_names
+            )
+
+    def _fallback_market_recap_metadata(
+        self, report_date: str, mood: str, market_story_summary: str,
+        catalyst_summary: str, sector_names: list[str],
+    ) -> dict:
+        top_sector = sector_names[0] if sector_names else "All Sectors"
+        return {
+            "title": f"{report_date} — Stock Market Recap | {mood} | {top_sector} in Focus",
+            "description": (
+                f"Stock market recap for {report_date}.\n\n"
+                f"Market Mood: {mood}\n\n"
+                f"{market_story_summary}\n\n"
+                f"Key Catalysts: {catalyst_summary}\n\n"
+                "⚠️ Disclaimer: Educational purposes only. Stock trading carries high risk. This is not financial advice.\n\n"
+                "#stockmarket #investing #marketrecap #finance #stocks"
+            ),
+            "tags": ["stockmarket", "marketrecap", "investing", "finance", "stocks", "dailymarket"]
+                    + [s.lower().replace(" ", "") for s in sector_names[:5]],
+        }
+
     def _fallback_metadata(self, ticker: str, company: str, report_date: str, rating: str, summary: str) -> dict:
         return {
             "title": f"{report_date} — {company} Stock Analysis | {rating} | AI Trade Setup #{ticker.lower()}",

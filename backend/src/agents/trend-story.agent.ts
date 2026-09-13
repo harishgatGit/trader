@@ -2,8 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import OpenAI from 'openai';
 import { z } from 'zod';
-import * as fs from 'fs';
-import * as path from 'path';
+import { loadPromptTemplate } from './prompt-loader.util';
 import { MarketDataResult } from './market-data.agent';
 import { TechnicalAgentResult } from './technical.agent';
 import { FundamentalResult } from './fundamental.agent';
@@ -11,6 +10,9 @@ import { NewsResult } from './news.agent';
 import { InstitutionalFlowResult } from './institutional-flow.agent';
 import { HistoricalDataResult } from './historical-data.agent';
 import { getNYDateString } from '../utils/date';
+import { OpenAIRateLimiterService, parseRetryAfterMs } from './openai-rate-limiter.service';
+import { OPENAI_TOKEN_ESTIMATES } from './openai-token-estimates';
+import { summarizeCandlesForPrompt } from './candle-summary.lib';
 
 export const TrendStoryResultSchema = z.object({
   ticker: z.string(),
@@ -684,26 +686,16 @@ export class TrendStoryAgent {
   private readonly openai: OpenAI;
   private readonly model: string;
 
-  constructor(private readonly config: ConfigService) {
+  constructor(
+    private readonly config: ConfigService,
+    private readonly rateLimiter: OpenAIRateLimiterService,
+  ) {
     this.openai = new OpenAI({
       apiKey: this.config.get('OPENAI_API_KEY') || 'mock-key-not-configured',
     });
-    this.model = this.config.get('OPENAI_MODEL', 'gpt-4o');
+    this.model = this.config.get('OPENAI_SECONDARY_MODEL', 'gpt-4o-mini');
   }
 
-  private getPromptTemplate(filename: string, fallback: string): string {
-    try {
-      const filePath = path.join(process.cwd(), 'src/agents/prompts', filename);
-      if (fs.existsSync(filePath)) {
-        return fs.readFileSync(filePath, 'utf8');
-      }
-      this.logger.warn(`Prompt file not found at ${filePath}. Using inline fallback.`);
-      return fallback;
-    } catch (err: any) {
-      this.logger.error(`Failed to read prompt file ${filename}: ${err.message}`);
-      return fallback;
-    }
-  }
 
   async run(params: {
     symbol: string;
@@ -718,13 +710,14 @@ export class TrendStoryAgent {
 
     const prompt = this.buildPrompt(params);
     let attempt = 0;
-    const maxAttempts = 2;
+    const maxAttempts = 3;
 
-    const systemPrompt = this.getPromptTemplate('trend-story.system.md', TREND_STORY_SYSTEM_PROMPT);
+    const systemPrompt = loadPromptTemplate(this.logger, 'trend-story.system.md', TREND_STORY_SYSTEM_PROMPT);
 
     while (attempt < maxAttempts) {
       attempt++;
       try {
+        await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.TREND_STORY, 'secondary');
         const completion = await this.openai.chat.completions.create({
           model: this.model,
           messages: [
@@ -758,7 +751,7 @@ export class TrendStoryAgent {
         if (attempt >= maxAttempts) {
           return this.getFallbackResult(params);
         }
-        await new Promise((r) => setTimeout(r, 2000));
+        await new Promise((r) => setTimeout(r, parseRetryAfterMs(error)));
       }
     }
 
@@ -795,7 +788,7 @@ export class TrendStoryAgent {
     const avgVolume = relVolume > 0 ? volume / relVolume : volume;
 
     const dailyCandles = historicalData?.timeframes?.['1Day']?.candles || [];
-    const candleData = dailyCandles.length > 0
+    const rawCandleRows = dailyCandles.length > 0
       ? dailyCandles.slice(-120).map(c => ({
           date: c.timestamp.split('T')[0],
           open: c.open,
@@ -805,14 +798,17 @@ export class TrendStoryAgent {
           volume: Number(c.volume)
         }))
       : [];
+    // Recent 20 days full detail + older history bucketed into 5-day chunks + period
+    // stats, instead of embedding all 120 raw rows — same lookback, far fewer tokens.
+    const candleData = summarizeCandlesForPrompt(rawCandleRows, 20);
 
     const normalizedData = {
       ticker: symbol,
       analysis_date: getNYDateString(),
       data_quality_check: {
         price_available: price > 0,
-        historical_candles_count: candleData.length,
-        historical_candles_quality: candleData.length >= 120 ? 'sufficient' : 'insufficient',
+        historical_candles_count: rawCandleRows.length,
+        historical_candles_quality: rawCandleRows.length >= 120 ? 'sufficient' : 'insufficient',
         technicals_available: dailyTech.overallBias !== undefined,
         fundamentals_available: fundamentals.available,
         news_count: this.normalizeNews(news).length,
@@ -869,8 +865,8 @@ export class TrendStoryAgent {
       },
     };
 
-    return `Determine the trend story and layman explanation for ${symbol} using this normalized data context:
-${JSON.stringify(normalizedData, null, 2)}
+    return `Determine the trend story and layman explanation for ${symbol} using this normalized data context. historical_candles is a compact summary: recent (last 20 days full detail), buckets (older history in 5-day chunks), and stats (period high/low/change/avg volume) — not a raw daily series.
+${JSON.stringify(normalizedData)}
 `;
   }
 

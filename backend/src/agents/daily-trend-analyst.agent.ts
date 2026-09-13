@@ -2,14 +2,16 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import OpenAI from 'openai';
 import { z } from 'zod';
-import * as fs from 'fs';
-import * as path from 'path';
+import { loadPromptTemplate } from './prompt-loader.util';
 import { MarketDataResult } from './market-data.agent';
 import { TechnicalAgentResult } from './technical.agent';
 import { FundamentalResult } from './fundamental.agent';
 import { NewsResult } from './news.agent';
 import { InstitutionalFlowResult } from './institutional-flow.agent';
 import { HistoricalDataResult } from './historical-data.agent';
+import { OpenAIRateLimiterService, parseRetryAfterMs } from './openai-rate-limiter.service';
+import { OPENAI_TOKEN_ESTIMATES } from './openai-token-estimates';
+import { summarizeCandlesForPrompt } from './candle-summary.lib';
 
 export const DailyTrendResultSchema = z.object({
   trend: z.enum(['BULLISH', 'BEARISH', 'NEUTRAL', 'MIXED']),
@@ -48,26 +50,16 @@ export class DailyTrendAnalystAgent {
   private readonly openai: OpenAI;
   private readonly model: string;
 
-  constructor(private readonly config: ConfigService) {
+  constructor(
+    private readonly config: ConfigService,
+    private readonly rateLimiter: OpenAIRateLimiterService,
+  ) {
     this.openai = new OpenAI({
       apiKey: this.config.get('OPENAI_API_KEY') || 'mock-key-not-configured',
     });
-    this.model = this.config.get('OPENAI_MODEL', 'gpt-4o');
+    this.model = this.config.get('OPENAI_SECONDARY_MODEL', 'gpt-4o-mini');
   }
 
-  private getPromptTemplate(filename: string, fallback: string): string {
-    try {
-      const filePath = path.join(process.cwd(), 'src/agents/prompts', filename);
-      if (fs.existsSync(filePath)) {
-        return fs.readFileSync(filePath, 'utf8');
-      }
-      this.logger.warn(`Prompt file not found at ${filePath}. Using inline fallback.`);
-      return fallback;
-    } catch (err: any) {
-      this.logger.error(`Failed to read prompt file ${filename}: ${err.message}`);
-      return fallback;
-    }
-  }
 
   async run(params: {
     symbol: string;
@@ -82,13 +74,14 @@ export class DailyTrendAnalystAgent {
 
     const prompt = this.buildPrompt(params);
     let attempt = 0;
-    const maxAttempts = 2;
+    const maxAttempts = 3;
 
-    const systemPrompt = this.getPromptTemplate('daily-trend.system.md', DAILY_TREND_SYSTEM_PROMPT);
+    const systemPrompt = loadPromptTemplate(this.logger, 'daily-trend.system.md', DAILY_TREND_SYSTEM_PROMPT);
 
     while (attempt < maxAttempts) {
       attempt++;
       try {
+        await this.rateLimiter.acquire(OPENAI_TOKEN_ESTIMATES.DAILY_TREND, 'secondary');
         const completion = await this.openai.chat.completions.create({
           model: this.model,
           messages: [
@@ -118,7 +111,7 @@ export class DailyTrendAnalystAgent {
             laymanExplanation: `We are experiencing high traffic from our analysis provider. The stock is currently consolidating sideways while waiting for a catalyst.`,
           };
         }
-        await new Promise((r) => setTimeout(r, 2000));
+        await new Promise((r) => setTimeout(r, parseRetryAfterMs(error)));
       }
     }
 
@@ -184,14 +177,14 @@ export class DailyTrendAnalystAgent {
     };
 
     const candleDataStr = dailyCandles.length > 0
-      ? JSON.stringify(dailyCandles.slice(-252).map(c => ({
+      ? JSON.stringify(summarizeCandlesForPrompt(dailyCandles.map(c => ({
           date: c.timestamp.split('T')[0],
           open: c.open,
           high: c.high,
           low: c.low,
           close: c.close,
           volume: Number(c.volume)
-        })), null, 2)
+        })), 20))
       : 'Insufficient historical candle data';
 
     return `Explain the daily trend reason and layman translation for this stock.
@@ -199,9 +192,9 @@ export class DailyTrendAnalystAgent {
 SYMBOL: ${symbol}
 TIMESTAMP: ${timestamp}
 ## BACKEND DATA QUALITY CHECK
-${JSON.stringify(dataQualitySummary, null, 2)}
+${JSON.stringify(dataQualitySummary)}
 
-## HISTORICAL CANDLES (1Day)
+## HISTORICAL CANDLES (1Day) — recent 20 days full detail, older history bucketed into 5-day chunks, plus precomputed period stats
 ${candleDataStr}
 
 ## CURRENT MARKET DATA
@@ -213,10 +206,10 @@ ${JSON.stringify({
   volume: marketData.volume,
   vwap: marketData.vwap,
   changePercent: marketData.changePercent,
-}, null, 2)}
+})}
 
 ## TECHNICAL INDICATORS — MULTI TIMEFRAME
-${JSON.stringify(techTimeframes, null, 2)}
+${JSON.stringify(techTimeframes)}
 
 ## FUNDAMENTAL DATA
 ${JSON.stringify({
@@ -232,7 +225,7 @@ ${JSON.stringify({
   sector: fundamentals.sector,
   industry: fundamentals.industry,
   description: fundamentals.description,
-}, null, 2)}
+})}
 
 ## NEWS AND EVENTS
 ${JSON.stringify({
@@ -244,14 +237,14 @@ ${JSON.stringify({
     source: n.source,
     publishedAt: n.publishedAt,
   })),
-}, null, 2)}
+})}
 
 ## INSTITUTIONAL FLOW PROXY
 ${JSON.stringify({
   proxyScore: institutionalFlow.proxyScore,
   interpretation: institutionalFlow.interpretation,
   signals: institutionalFlow.signals,
-}, null, 2)}
+})}
 `;
   }
 }

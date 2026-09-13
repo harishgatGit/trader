@@ -116,7 +116,11 @@ api.interceptors.response.use(
       error.response?.data?.error ||
       error.message ||
       'An error occurred';
-    return Promise.reject(new Error(Array.isArray(message) ? message.join(', ') : message));
+    const wrapped: any = new Error(Array.isArray(message) ? message.join(', ') : message);
+    // Preserve status/response so callers can branch on error.response?.status (e.g. 404/401 checks).
+    wrapped.status = status;
+    wrapped.response = error.response;
+    return Promise.reject(wrapped);
   },
 );
 
@@ -149,6 +153,13 @@ export const analysisApi = {
     api.get(`/analyze/status/${jobId}`),
 };
 
+// ── Deep Research ─────────────────────────────────────────────────
+export const deepResearchApi = {
+  generate: (symbol: string, bypassCache?: boolean) =>
+    api.post('/deep-research', { symbol, bypassCache }),
+  getLatest: (symbol: string) => api.get(`/deep-research/${symbol}/latest`),
+};
+
 // ── Stocks ────────────────────────────────────────────────────────
 export const stocksApi = {
   getLatestReport: (symbol: string) => api.get(`/stocks/${symbol}/report/latest`),
@@ -157,6 +168,7 @@ export const stocksApi = {
   getTechnicals: (symbol: string) => api.get(`/stocks/${symbol}/technicals`),
   searchStocks: (q: string) => api.get(`/stocks/search?q=${encodeURIComponent(q)}`),
   getMovers: () => api.get('/stocks/movers'),
+  getSwingData: (symbol: string) => api.get(`/stocks/${symbol}/swing-data`),
 };
 
 // ── Video Jobs ───────────────────────────────────────────────────
@@ -179,6 +191,16 @@ export const alertsApi = {
   create: (data: any) => api.post('/alerts', data),
   update: (id: string, data: any) => api.patch(`/alerts/${id}`, data),
   delete: (id: string) => api.delete(`/alerts/${id}`),
+};
+
+// ── Options Agent Recommendations ────────────────────────────────
+export const optionRecommendationsApi = {
+  list: (params?: { status?: string; ticker?: string; days?: number; limit?: number }) =>
+    api.get('/option-recommendations', { params }),
+  stats: (days?: number) => api.get('/option-recommendations/stats', { params: { days } }),
+  updateOutcome: (id: string, data: { status?: string; realizedPnlPct?: number | null; outcomeNotes?: string | null }) =>
+    api.patch(`/option-recommendations/${id}`, data),
+  remove: (id: string) => api.delete(`/option-recommendations/${id}`),
 };
 
 // ── Reports ───────────────────────────────────────────────────────

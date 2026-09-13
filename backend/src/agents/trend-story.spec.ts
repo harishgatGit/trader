@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ConfigService } from '@nestjs/config';
 import { TrendStoryAgent, TrendStoryResult } from './trend-story.agent';
+import { OpenAIRateLimiterService } from './openai-rate-limiter.service';
 
 // Mock OpenAI client
 jest.mock('openai', () => {
@@ -116,6 +117,10 @@ describe('TrendStoryAgent', () => {
               return defaultValue;
             }),
           },
+        },
+        {
+          provide: OpenAIRateLimiterService,
+          useValue: { acquire: jest.fn().mockResolvedValue(undefined) },
         },
       ],
     }).compile();
@@ -486,7 +491,7 @@ describe('TrendStoryAgent', () => {
     });
 
     it('should fallback gracefully when OpenAI API fails', async () => {
-      mockOpenAIInstance.chat.completions.create.mockRejectedValueOnce(
+      mockOpenAIInstance.chat.completions.create.mockRejectedValue(
         new Error('Rate limit exceeded or API error'),
       );
 
@@ -497,6 +502,8 @@ describe('TrendStoryAgent', () => {
       expect(result.move_classification.primary_reason).toBe('unknown-mixed');
       expect(result.move_classification.confidence).toBe('low');
       expect(result.story_for_layman.simple_explanation).toContain('could not find a clear external reason');
-    });
+      // maxAttempts=3 with a non-429 fallback backoff of 5s between attempts
+      // means this test needs headroom beyond Jest's 5s default timeout.
+    }, 20000);
   });
 });

@@ -13,6 +13,8 @@ import { AlertAgent } from './alert.agent';
 import { DocumentBuilderAgent } from './document-builder.agent';
 import { OrchestratorAgent } from './orchestrator.agent';
 import { AlpacaService } from '../services/alpaca.service';
+import { OpenAIRateLimiterService } from './openai-rate-limiter.service';
+import { DeepResearchAgent } from './deep-research.agent';
 
 @Global()
 @Module({
@@ -31,6 +33,8 @@ import { AlpacaService } from '../services/alpaca.service';
     AlertAgent,
     DocumentBuilderAgent,
     OrchestratorAgent,
+    OpenAIRateLimiterService,
+    DeepResearchAgent,
   ],
   exports: [
     AlpacaService,
@@ -47,6 +51,8 @@ import { AlpacaService } from '../services/alpaca.service';
     AlertAgent,
     DocumentBuilderAgent,
     OrchestratorAgent,
+    OpenAIRateLimiterService,
+    DeepResearchAgent,
   ],
 })
 export class AgentsModule {}

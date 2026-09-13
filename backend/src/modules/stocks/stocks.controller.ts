@@ -37,4 +37,9 @@ export class StocksController {
   async getTechnicals(@Param('symbol') symbol: string) {
     return this.stocksService.getTechnicals(symbol);
   }
+
+  @Get(':symbol/swing-data')
+  async getSwingData(@Param('symbol') symbol: string) {
+    return this.stocksService.getSwingData(symbol);
+  }
 }

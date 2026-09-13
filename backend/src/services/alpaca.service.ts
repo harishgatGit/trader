@@ -167,6 +167,7 @@ export interface DataQualityProbe {
 export class AlpacaService {
   private readonly logger = new Logger(AlpacaService.name);
   private readonly dataClient: AxiosInstance;
+  private readonly tradingClient: AxiosInstance;
   private readonly apiKey: string;
   private readonly secretKey: string;
 
@@ -175,6 +176,7 @@ export class AlpacaService {
     this.secretKey = this.config.get('ALPACA_SECRET_KEY', '');
 
     const dataBaseUrl = this.config.get('ALPACA_DATA_BASE_URL', 'https://data.alpaca.markets');
+    const tradingBaseUrl = this.config.get('ALPACA_PAPER_BASE_URL', 'https://paper-api.alpaca.markets');
 
     const headers = {
       'APCA-API-KEY-ID': this.apiKey,
@@ -184,6 +186,12 @@ export class AlpacaService {
 
     this.dataClient = axios.create({
       baseURL: dataBaseUrl,
+      headers,
+      timeout: 15000,
+    });
+
+    this.tradingClient = axios.create({
+      baseURL: tradingBaseUrl,
       headers,
       timeout: 15000,
     });
@@ -298,18 +306,42 @@ export class AlpacaService {
     return { data: dataOk, trading: true };
   }
 
+  // ── Trading Account ─────────────────────────────────────────────
+
+  async getAccount(): Promise<AlpacaAccount | null> {
+    try {
+      const res = await this.tradingClient.get('/v2/account');
+      return res.data;
+    } catch (error) {
+      this.logger.warn(`Account fetch failed: ${error.message}`);
+      return null;
+    }
+  }
+
+  /** Returns the current open position for `symbol`, or null if none is held. */
+  async getPositions(symbol: string): Promise<AlpacaPosition | null> {
+    try {
+      const res = await this.tradingClient.get(`/v2/positions/${symbol}`);
+      return res.data;
+    } catch (error) {
+      if (error.response?.status === 404) {
+        this.logger.debug(`No open position for ${symbol}`);
+        return null;
+      }
+      this.logger.warn(`Position fetch failed for ${symbol}: ${error.message}`);
+      return null;
+    }
+  }
+
   async getAssets(): Promise<any[]> {
     try {
-      const baseUrl = this.config.get('ALPACA_PAPER_BASE_URL', 'https://paper-api.alpaca.markets');
-      const res = await this.dataClient.get(`${baseUrl}/v2/assets`, {
-        baseURL: '', // Override baseURL since we are using full URL
+      // Use tradingClient — it already points to ALPACA_PAPER_BASE_URL with the
+      // correct auth headers. The previous implementation mixed dataClient (data
+      // API keys) with the trading base URL, which caused a 401.
+      const res = await this.tradingClient.get('/v2/assets', {
         params: {
           status: 'active',
           asset_class: 'us_equity',
-        },
-        headers: {
-          'APCA-API-KEY-ID': this.apiKey,
-          'APCA-API-SECRET-KEY': this.secretKey,
         },
         timeout: 15000,
       });

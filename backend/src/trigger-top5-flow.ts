@@ -4,15 +4,14 @@ import { TrendingScraperService } from './services/trending-scraper.service';
 import { AnalysisService } from './modules/analysis/analysis.service';
 import { PrismaService } from './prisma/prisma.service';
 import { getNYDateString } from './utils/date';
-import axios from 'axios';
+import { isYoutubeAuthorized, triggerYoutubeUpload } from './utils/youtube-upload.client';
 
 // Globally support BigInt serialization
 (BigInt.prototype as any).toJSON = function () {
   return Number(this);
 };
 
-const YOUTUBE_SERVICE_URL = 'http://localhost:8095';
-const YOUTUBE_API_KEY = 'investingatti-youtube-key-dev';
+const POLL_TIMEOUT_MS = Number(process.env.FLOW_POLL_TIMEOUT_MS || 90 * 60 * 1000);
 
 async function run() {
   console.log('Initializing NestJS application context...');
@@ -118,17 +117,9 @@ async function run() {
   }
 
   // 6. Check YouTube Service Login Status
-  try {
-    const ls = await axios.get(`${YOUTUBE_SERVICE_URL}/login-status`, { timeout: 5000 });
-    if (!ls.data?.authorized) {
-      console.error(`❌ YouTube service is NOT authorized. Visit ${YOUTUBE_SERVICE_URL}/login to log in first.`);
-      await app.close();
-      return;
-    }
-    console.log('✅ YouTube service is authorized.');
-  } catch (e: any) {
-    console.error(`❌ Cannot reach YouTube service at ${YOUTUBE_SERVICE_URL}: ${e.message}`);
+  if (!(await isYoutubeAuthorized())) {
     await app.close();
+    process.exitCode = 1;
     return;
   }
 
@@ -136,8 +127,18 @@ async function run() {
   console.log('\nMonitoring video generation progress...');
   const uploadedSet = new Set<string>();
   const failedSet = new Set<string>();
+  const deadline = Date.now() + POLL_TIMEOUT_MS;
 
   while (uploadedSet.size + failedSet.size < activeJobIds.length) {
+    if (Date.now() > deadline) {
+      for (const item of activeJobIds) {
+        if (!uploadedSet.has(item.ticker) && !failedSet.has(item.ticker)) {
+          console.error(`  [${item.ticker}] ⏱️ Timed out — giving up.`);
+          failedSet.add(item.ticker);
+        }
+      }
+      break;
+    }
     console.log(`\n[${new Date().toLocaleTimeString()}] Checking status...`);
     for (const item of activeJobIds) {
       if (uploadedSet.has(item.ticker) || failedSet.has(item.ticker)) {
@@ -172,29 +173,13 @@ async function run() {
           continue;
         }
 
-        console.log(`  [${item.ticker}] Triggering YouTube upload for path: ${job.finalVideoPath}`);
-        try {
-          const payload = {
-            jobId: `upload-${job.ticker}-${todayStr}-${Date.now()}`,
-            ticker: job.ticker,
-            reportDate: todayStr,
-            videoPath: job.finalVideoPath,
-            reportData: {},
-            visibility: 'public',
-          };
-
-          const res = await axios.post(`${YOUTUBE_SERVICE_URL}/upload`, payload, {
-            headers: {
-              'Content-Type': 'application/json',
-              'x-api-key': YOUTUBE_API_KEY,
-            },
-            timeout: 15000,
-          });
-          console.log(`  [${item.ticker}] ✅ YouTube upload queued successfully:`, res.data);
-        } catch (uploadErr: any) {
-          console.error(`  [${item.ticker}] ❌ Failed to trigger upload:`, uploadErr.response?.data || uploadErr.message);
-          failedSet.add(item.ticker);
-        }
+        const queued = await triggerYoutubeUpload({
+          jobId: job.jobId,
+          ticker: job.ticker,
+          reportDate: job.reportDate,
+          videoPath: job.finalVideoPath,
+        });
+        if (!queued) failedSet.add(item.ticker);
       } else if (['FAILED', 'ERROR', 'NOT_ELIGIBLE'].includes(job.status)) {
         console.error(`  [${item.ticker}] Video generation failed with status: ${job.status}`);
         failedSet.add(item.ticker);

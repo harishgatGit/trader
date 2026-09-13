@@ -28,6 +28,25 @@ export class VideoCallbackController {
     await this.videoJobService.updateJobCallback(payload);
     return { success: true };
   }
+
+  /**
+   * Private server-to-server callback from the Python video agent service's
+   * YouTube upload task. Secured the same way as /video-callback.
+   */
+  @Post('youtube-callback') // Maps to /api/youtube-callback
+  @HttpCode(HttpStatus.OK)
+  async handleYoutubeCallback(
+    @Body() payload: any,
+    @Headers('x-api-key') apiKey: string,
+  ) {
+    const configuredKey = process.env.CURRENT_APP_CALLBACK_API_KEY || 'your-key';
+    if (!apiKey || apiKey !== configuredKey) {
+      throw new UnauthorizedException('Invalid callback API key');
+    }
+
+    await this.videoJobService.updateYoutubeUploadStatus(payload);
+    return { success: true };
+  }
 }
 
 @Controller('video-jobs')
